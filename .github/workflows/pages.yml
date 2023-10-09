@@ -1,0 +1,14 @@
+name: Deploy static files to GitHub Pages
+on:
+  push:
+    branches: ["main"]
+  workflow_dispatch:
+jobs:
+  Deploy:
+    uses: seanh/ghp-static/.github/workflows/static.yml@main
+    with:
+      path: 'site/'
+    permissions:
+      contents: read
+      pages: write
+      id-token: write

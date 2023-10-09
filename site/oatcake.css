@@ -1,0 +1,1102 @@
+:root {
+  --body-background-color: white;
+  --body-color: #16171a;
+  --bold-color: #16171a;
+  --muted-color: #888;
+  --code-background-color: rgba(175, 184, 193, 0.2);
+  --pre-code-background-color: rgb(243, 243, 243);
+  --code-color: inherit;
+  --pre-code-color: inherit;
+
+  /* This is the System UI font stack from https://modernfontstacks.com/ */
+  --body-font-family: system-ui, sans-serif;
+
+  /* This is the Monospace Code font stack from https://modernfontstacks.com/ */
+  --code-font-family: ui-monospace, 'Cascadia Code', 'Source Code Pro', Menlo, Consolas, 'DejaVu Sans Mono', monospace;
+
+  /* 400 corresponds to `font-weight: normal` in CSS and all fonts in Oatcake's
+   * system font stacks have this weight. See:
+   * https://github.com/system-fonts/modern-font-stacks?tab=readme-ov-file#css-font-stack. */
+  --normal-font-weight: 400;
+
+  /* 700 corresponds to `font-weight: bold` in CSS and all fonts in Oatcake's
+   * system font stacks have this weight. See:
+   * https://github.com/system-fonts/modern-font-stacks?tab=readme-ov-file#css-font-stack. */
+  --bold-font-weight: 700;
+
+  --body-font-size: 16px;
+  /* This sets the vertical rhythm to 28px.
+   * All sizes, margins, paddings, and borders must be added in multiples of 28px. */
+  --body-line-height: 24px;
+
+  --small-font-size: 13px;
+}
+
+/* http://meyerweb.com/eric/tools/css/reset/, v2.0 | 20110126, License: none (public domain) */
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video,
+hr {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+
+@media all and (max-width: 800px) {
+  .wide-only {
+    display: none !important;
+  }
+}
+
+body {
+  font-size: var(--body-font-size);
+  font-family: var(--body-font-family);
+  font-weight: var(--normal-font-weight);
+  background-color: var(--body-background-color);
+  color: var(--body-color);
+  line-height: var(--body-line-height);
+}
+
+blockquote,
+p,
+ul,
+ol,
+figure,
+pre,
+dd,
+details,
+.scroll,
+.admonition,
+.attention,
+.caution,
+.danger,
+.error,
+.important,
+.warning,
+.hint,
+.tip,
+.note,
+.seealso,
+.todo,
+.headings-demo {
+  margin-bottom: var(--body-line-height);
+}
+
+img,
+iframe,
+video {
+  padding-top: var(--body-line-height);
+  margin-bottom: calc(var(--body-line-height) *2);
+}
+
+figure+img {
+  margin-bottom: var(--body-line-height);
+}
+
+/* Fix for list item bullets messing up the vertical rhythm. */
+ul>li {
+  list-style-type: "•";
+  padding-inline-start: 1ch;
+  margin-left: 18px;
+}
+
+em,
+i {
+  font-style: italic;
+}
+
+strong,
+b {
+  font-weight: var(--bold-font-weight);
+  color: var(--bold-color);
+}
+
+hr {
+  background: transparent;
+  border: 0;
+  border-top: 1px solid var(--muted-color);
+  margin-bottom: -1px;
+  padding-bottom: var(--body-line-height);
+}
+
+sup,
+sub {
+  vertical-align: baseline;
+  position: relative;
+  font-size: var(--small-font-size);
+  padding-left: .1em;
+}
+
+sup,
+sub {
+  top: -0.4em;
+  line-height: 0;
+}
+
+sub {
+  top: 0.4em;
+}
+
+small,
+.small {
+  font-size: var(--small-font-size);
+  vertical-align: bottom; /* Prevent <small>'s from throwing off the vertical rhythm. */
+}
+
+var {
+  font-style: italic;
+}
+
+summary {
+  cursor: pointer;
+}
+
+.muted {
+  color: var(--muted-color);
+}
+
+/* Prevent really long words in code spans from overflowing the container and
+ * introducing a page-level horizontal scrollbar on mobile.
+ * See https://css-tricks.com/snippets/css/prevent-long-urls-from-breaking-out-of-container/
+ */
+code {
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  -ms-word-break: break-all;
+  word-break: break-all;
+  word-break: break-word;
+  -ms-hyphens: auto;
+  -moz-hyphens: auto;
+  -webkit-hyphens: auto;
+  hyphens: auto;
+}
+
+mark {
+  background-color: yellow;
+  color: black;
+}
+
+samp {
+  background-color: var(--code-background-color);
+  color: #444d56;
+  line-height: 1rem;
+  font-family: var(--code-font-family);
+}
+
+pre samp {
+  background-color: inherit;
+  color: inherit;
+}
+
+q {
+  quotes: "“""”""‘""’";
+}
+
+q:before {
+  content: open-quote;
+}
+
+q:after {
+  content: close-quote;
+}
+
+blockquote {
+  quotes: none;
+  border-left: 3px solid #2b90d9;
+  padding-left: 20px;
+}
+
+blockquote:before,
+blockquote:after {
+  content: '';
+  content: none;
+}
+
+blockquote blockquote,
+li blockquote {
+  margin-left: 3px;
+}
+
+blockquote footer,
+blockquote cite {
+  color: var(--muted-color);
+}
+
+blockquote footer:before,
+blockquote cite:before {
+  content: "\2014 \00A0";
+}
+
+blockquote footer cite:before {
+  content: "";
+}
+
+blockquote *:last-child {
+  margin-bottom: 0;
+}
+
+ol li {
+  margin-left: 30px;
+}
+
+li ul,
+li ol,
+li dl {
+  margin-bottom: 0;
+}
+
+dl {
+  padding-left: 20px;
+}
+
+dt {
+  font-weight: var(--bold-font-weight);
+}
+
+.lines {
+  background-image: url("images/lines.svg");
+  background-size: var(--body-line-height);
+  background-position: left top;
+  background-repeat: repeat;
+}
+
+/* Remove horizontal scrollbars from <pre> when the guidelines are being shown
+ * because they upset the vertical rhythm. */
+.lines pre {
+  overflow-x: hidden;
+}
+
+/* Make <pre>'s transparent when the guidelines are being shown so that you can
+ * see the lines. */
+.lines pre,
+.lines pre code {
+  background-color: rgba(243, 243, 243, 0.7);
+}
+
+.lead {
+  font-size: 1.3rem;
+}
+
+.lead code,
+.lead samp {
+  font-size: .8em;
+}
+
+.lead kbd {
+  font-size: 0.75em;
+  padding-top: 1px;
+  padding-bottom: 1px;
+}
+
+h1+.lead,
+h2+.lead,
+h3+.lead {
+  margin-bottom: calc(var(--body-line-height) * 2);
+}
+
+kbd {
+  background-color: #fafbfc;
+  border: 1px solid #c6cbd1;
+  border-bottom-color: #959da5;
+  border-radius: 3px;
+  color: #444d56;
+  font-family: var(--code-font-family);
+  font-size: 11px;
+  padding-left: 5px;
+  padding-right: 5px;
+  padding-top: 3px;
+  padding-bottom: 3px;
+  vertical-align: top;
+  font-weight: var(--bold-font-weight);
+}
+
+kbd kbd {
+  padding-top: 2px;
+  padding-bottom: 2px;
+}
+
+kbd kbd kbd {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 100%;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: var(--bold-font-weight);
+}
+
+h1,
+h2 {
+  padding-top: calc(var(--body-line-height) * 2);
+  font-size: 24px;
+  line-height: var(--body-line-height);
+  padding-bottom: var(--body-line-height);
+}
+
+h2 {
+  padding-top: calc(var(--body-line-height) * 1);
+}
+
+h3 {
+  padding-top: calc(var(--body-line-height) * 1);
+  font-size: 19px;
+  line-height: var(--body-line-height);
+  padding-bottom: var(--body-line-height);
+}
+
+h4,
+h5,
+h6 {
+  font-size: var(--body-font-size);
+  line-height: var(--body-line-height);
+  padding-bottom: 0;
+}
+
+.headings-demo h1:first-child,
+.headings-demo h2:first-child,
+.headings-demo h3:first-child,
+.headings-demo h4:first-child,
+.headings-demo h5:first-child,
+.headings-demo h6:first-child,
+blockquote h1:first-child,
+blockquote h2:first-child,
+blockquote h3:first-child,
+.admonition h1:first-child,
+.admonition h2:first-child,
+.admonition h3:first-child,
+.admonition h4:first-child,
+.admonition h5:first-child,
+.admonition h6:first-child,
+.attention h1:first-child,
+.attention h2:first-child,
+.attention h3:first-child,
+.attention h4:first-child,
+.attention h5:first-child,
+.attention h6:first-child,
+.caution h1:first-child,
+.caution h2:first-child,
+.caution h3:first-child,
+.caution h4:first-child,
+.caution h5:first-child,
+.caution h6:first-child,
+.danger h1:first-child,
+.danger h2:first-child,
+.danger h3:first-child,
+.danger h4:first-child,
+.danger h5:first-child,
+.danger h6:first-child,
+.error h1:first-child,
+.error h2:first-child,
+.error h3:first-child,
+.error h4:first-child,
+.error h5:first-child,
+.error h6:first-child,
+.important h1:first-child,
+.important h2:first-child,
+.important h3:first-child,
+.important h4:first-child,
+.important h5:first-child,
+.important h6:first-child,
+.warning h1:first-child,
+.warning h2:first-child,
+.warning h3:first-child,
+.warning h4:first-child,
+.warning h5:first-child,
+.warning h6:first-child,
+.hint h1:first-child,
+.hint h2:first-child,
+.hint h3:first-child,
+.hint h4:first-child,
+.hint h5:first-child,
+.hint h6:first-child,
+.tip h1:first-child,
+.tip h2:first-child,
+.tip h3:first-child,
+.tip h4:first-child,
+.tip h5:first-child,
+.tip h6:first-child,
+.note h1:first-child,
+.note h2:first-child,
+.note h3:first-child,
+.note h4:first-child,
+.note h5:first-child,
+.note h6:first-child,
+.seealso h1:first-child,
+.seealso h2:first-child,
+.seealso h3:first-child,
+.seealso h4:first-child,
+.seealso h5:first-child,
+.seealso h6:first-child,
+.todo h1:first-child,
+.todo h2:first-child,
+.todo h3:first-child,
+.todo h4:first-child,
+.todo h5:first-child,
+.todo h6:first-child,
+h1+h1,
+h1+h2,
+h1+h3,
+h1+h4,
+h1+h5,
+h1+h6,
+h2+h1,
+h2+h2,
+h2+h3,
+h2+h4,
+h2+h5,
+h2+h6,
+h3+h1,
+h3+h2,
+h3+h3,
+h3+h4,
+h3+h5,
+h3+h6,
+h4+h1,
+h4+h2,
+h4+h3,
+h4+h4,
+h4+h5,
+h4+h6,
+h5+h1,
+h5+h2,
+h5+h3,
+h5+h4,
+h5+h5,
+h5+h6,
+h6+h1,
+h6+h2,
+h6+h3,
+h6+h4,
+h6+h5,
+h6+h6,
+details h1:first-child,
+details h2:first-child,
+details h3:first-child,
+details h4:first-child,
+details h5:first-child,
+details h6:first-child,
+details summary+h1,
+details summary+h2,
+details summary+h3,
+details summary+h4,
+details summary+h5,
+details summary+h6 {
+  padding-top: 0;
+}
+
+.headings-demo {
+  background-color: LemonChiffon;
+  padding-top: var(--body-line-height);
+  padding-left: var(--body-line-height);
+  padding-right: var(--body-line-height);
+  padding-bottom: var(--body-line-height);
+}
+
+.headings-demo :last-child {
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.lines .headings-demo {
+  background-color: inherit;
+}
+
+
+figure figcaption {
+  text-align: center;
+}
+
+figure img {
+  margin-bottom: var(--body-line-height) !important;
+}
+
+figure figcaption,
+figure figcaption p {
+  color: var(--muted-color);
+}
+
+/* If a figure has a caption then make the vertical space below the caption
+   be larger than the vertical space above the caption. This is to put the
+   caption visibly closer to the figure that it belongs to than to whatever
+   follows the figure. */
+figcaption {
+  padding-bottom: var(--body-line-height);
+}
+
+code {
+  background-color: var(--code-background-color);
+  color: var(--code-color);
+  padding-left: 5px;
+  padding-right: 5px;
+  font-family: var(--code-font-family);
+  border-radius: 3px;
+  font-size: 16px;
+  line-height: 18px;
+}
+
+a code {
+  background-color: inherit;
+  color: inherit;
+  padding: 0;
+}
+
+h1 code,
+h2 code,
+h1 samp,
+h2 samp {
+  font-size: .8em;
+}
+
+h3 code,
+h4 code,
+h5 code,
+h6 code,
+h3 samp,
+h4 samp,
+h5 samp,
+h6 samp {
+  font-size: .85em;
+}
+
+h1 kbd,
+h2 kbd {
+  font-size: .55em;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+h3 kbd,
+h4 kbd,
+h5 kbd,
+h6 kbd {
+  font-size: .7em;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+pre {
+  padding-top: calc(0.5 * var(--body-line-height));
+  padding-bottom: calc(0.5 * var(--body-line-height));
+  padding-left: calc(var(--body-line-height) * 0.5);
+  padding-right: calc(var(--body-line-height) * 0.5);
+  overflow: auto;
+}
+
+.inner-container pre {
+  border-radius: 4px;
+}
+
+pre {
+  border-radius: 5px;
+}
+
+pre,
+pre code {
+  color: var(--pre-code-color);
+  background-color: var(--pre-code-background-color);
+}
+
+pre code {
+  padding: 0;
+  white-space: pre;
+}
+
+.badge,
+.badge-primary,
+.badge-secondary,
+.badge-success,
+.badge-danger,
+.badge-warning,
+.badge-info,
+.badge-light,
+.badge-dark,
+.pill,
+.pill-primary,
+.pill-secondary,
+.pill-success,
+.pill-danger,
+.pill-warning,
+.pill-info,
+.pill-light,
+.pill-dark {
+  padding: .1rem .3rem;
+  font-size: var(--small-font-size);
+  font-weight: 700;
+  line-height: 1;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: baseline;
+  border-radius: .25rem;
+  transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+}
+
+.pill,
+.pill-primary,
+.pill-secondary,
+.pill-success,
+.pill-danger,
+.pill-warning,
+.pill-info,
+.pill-light,
+.pill-dark {
+  padding-right: .6em;
+  padding-left: .6em;
+  border-radius: 10rem;
+}
+
+.badge-primary,
+.pill-primary {
+  color: #fff;
+  background-color: #007bff;
+}
+
+.badge-secondary,
+.pill-secondary {
+  color: #fff;
+  background-color: #6c757d;
+}
+
+.badge-success,
+.pill-success {
+  color: #fff;
+  background-color: #28a745;
+}
+
+.badge-danger,
+.pill-danger {
+  color: #fff;
+  background-color: #dc3545;
+}
+
+.badge-warning,
+.pill-warning {
+  color: #212529;
+  background-color: #ffc107;
+  border-color: #ffc107;
+}
+
+.badge-info,
+.pill-info {
+  color: #fff;
+  background-color: #17a2b8;
+}
+
+.badge-light,
+.pill-light {
+  color: #212529;
+  background-color: #f8f9fa;
+  border-color: #f8f9fa;
+}
+
+.badge,
+.pill,
+.badge-dark,
+.pill-dark {
+  color: #fff;
+  background-color: #343a40;
+}
+
+a.badge,
+a.badge:focus,
+a.badge:hover,
+a.badge-primary,
+a.badge-primary:focus,
+a.badge-primary:hover,
+a.badge-secondary,
+a.badge-secondary:focus,
+a.badge-secondary:hover,
+a.badge-success,
+a.badge-success:focus,
+a.badge-success:hover,
+a.badge-danger,
+a.badge-danger:focus,
+a.badge-danger:hover,
+a.badge-warning,
+a.badge-warning:focus,
+a.badge-warning:hover,
+a.badge-info,
+a.badge-info:focus,
+a.badge-info:hover,
+a.badge-light,
+a.badge-light:focus,
+a.badge-light:hover,
+a.badge-dark,
+a.badge-dark:focus,
+a.badge-dark:hover,
+a.pill,
+a.pill:focus,
+a.pill:hover,
+a.pill-primary,
+a.pill-primary:focus,
+a.pill-primary:hover,
+a.pill-secondary,
+a.pill-secondary:focus,
+a.pill-secondary:hover,
+a.pill-success,
+a.pill-success:focus,
+a.pill-success:hover,
+a.pill-danger,
+a.pill-danger:focus,
+a.pill-danger:hover,
+a.pill-warning,
+a.pill-warning:focus,
+a.pill-warning:hover,
+a.pill-info,
+a.pill-info:focus,
+a.pill-info:hover,
+a.pill-light,
+a.pill-light:focus,
+a.pill-light:hover,
+a.pill-dark,
+a.pill-dark:focus,
+a.pill-dark:hover {
+  text-decoration: none;
+  border-bottom: none;
+}
+
+a.badge:focus,
+a.badge-primary:focus,
+a.badge-secondary:focus,
+a.badge-success:focus,
+a.badge-danger:focus,
+a.badge-warning:focus,
+a.badge-info:focus,
+a.badge-light:focus,
+a.badge-dark:focus,
+a.pill:focus,
+a.pill-primary:focus,
+a.pill-secondary:focus,
+a.pill-success:focus,
+a.pill-danger:focus,
+a.pill-warning:focus,
+a.pill-info:focus,
+a.pill-light:focus,
+a.pill-dark:focus {
+  outline: 0;
+}
+
+a.badge-primary:focus,
+a.badge-primary:hover,
+a.pill-primary:focus,
+a.pill-primary:hover {
+  color: #fff;
+  background-color: #0062cc;
+}
+
+a.badge-primary:focus,
+a.pill-primary:focus {
+  box-shadow: 0 0 0 .2rem rgba(0, 123, 255, .5);
+}
+
+a.badge-secondary:focus,
+a.badge-secondary:hover,
+a.pill-secondary:focus,
+a.pill-secondary:hover {
+  color: #fff;
+  background-color: #545b62;
+}
+
+a.badge-secondary:focus,
+a.pill-secondary:focus {
+  box-shadow: 0 0 0 .2rem rgba(108, 117, 125, .5);
+}
+
+a.badge-success:focus,
+a.badge-success:hover,
+a.pill-success:focus,
+a.pill-success:hover {
+  color: #fff;
+  background-color: #1e7e34;
+}
+
+a.badge-success:focus,
+a.pill-success:focus {
+  box-shadow: 0 0 0 .2rem rgba(40, 167, 69, .5);
+}
+
+a.badge-danger:focus,
+a.badge-danger:hover,
+a.pill-danger:focus,
+a.pill-danger:hover {
+  color: #fff;
+  background-color: #bd2130;
+}
+
+a.badge-danger:focus,
+a.pill-danger:focus {
+  box-shadow: 0 0 0 .2rem rgba(220, 53, 69, .5);
+}
+
+a.badge-warning:focus,
+a.badge-warning:hover,
+a.pill-warning:focus,
+a.pill-warning:hover {
+  color: #212529;
+  background-color: #d39e00;
+}
+
+a.badge-warning:focus,
+a.pill-warning:focus {
+  box-shadow: 0 0 0 .2rem rgba(255, 193, 7, .5);
+}
+
+a.badge-info:focus,
+a.badge-info:hover,
+a.pill-info:focus,
+a.pill-info:hover {
+  color: #fff;
+  background-color: #117a8b;
+}
+
+a.badge-info:focus,
+a.pill-info:focus {
+  box-shadow: 0 0 0 .2rem rgba(23, 162, 184, .5);
+}
+
+a.badge-light:focus,
+a.badge-light:hover,
+a.pill-light:focus,
+a.pill-light:hover {
+  color: #212529;
+  background-color: #dae0e5;
+}
+
+a.badge-light:focus,
+a.pill-light:focus {
+  box-shadow: 0 0 0 .2rem rgba(248, 249, 250, .5);
+}
+
+a.badge:focus,
+a.badge:hover,
+a.badge-dark:focus,
+a.badge-dark:hover,
+a.pill:focus,
+a.pill:hover,
+a.pill-dark:focus,
+a.pill-dark:hover {
+  color: #fff;
+  background-color: #1d2124;
+}
+
+a.badge:focus,
+a.badge-dark:focus,
+a.pill:focus,
+a.pill-dark:focus {
+  box-shadow: 0 0 0 .2rem rgba(52, 58, 64, .5);
+}
+
+.admonition,
+.attention,
+.caution,
+.danger,
+.error,
+.important,
+.warning,
+.hint,
+.tip,
+.note,
+.seealso,
+.todo {
+  border: 1px solid transparent;
+
+  border-radius: .25rem;
+
+  padding-top: calc(var(--body-line-height) - 1px);
+  padding-bottom: calc(var(--body-line-height) - 1px);
+
+  padding-left: calc(var(--body-line-height) * 0.5);
+  padding-right: calc(var(--body-line-height) * 0.5);
+}
+
+.admonition>*:last-child,
+.attention>*:last-child,
+.caution>*:last-child,
+.danger>*:last-child,
+.error>*:last-child,
+.important>*:last-child,
+.warning>*:last-child,
+.hint>*:last-child,
+.tip>*:last-child,
+.note>*:last-child,
+.seealso>*:last-child,
+.todo>*:last-child {
+  margin-bottom: 0;
+}
+
+.admonition {
+  background-color: #d6d8d9;
+  border-color: #c6c8ca;
+  color: #1b1e21;
+}
+
+.admonition a {
+  color: #040505;
+}
+
+.attention,
+.caution,
+.danger,
+.error,
+.important,
+.warning {
+  background-color: #f8d7da;
+  border-color: #f5c6cb;
+  color: #721c24;
+}
+
+.attention a,
+.caution a,
+.danger a,
+.error a,
+.important a,
+.warning a {
+  color: #491217;
+}
+
+.hint,
+.tip {
+  background-color: #d1ecf1;
+  border-color: #bee5eb;
+  color: #0c5460;
+}
+
+.hint a,
+.tip a {
+  color: #062c33;
+}
+
+.note {
+  background-color: #e2e3e5;
+  border-color: #d6d8db;
+  color: #383d41;
+}
+
+.note a {
+  color: #202326;
+}
+
+.todo {
+  background-color: #cce5ff;
+  border-color: #b8daff;
+  color: #004085;
+}
+
+.todo a {
+  color: #002752;
+}
+
+.seealso {
+  background-color: #fff3cd;
+  border-color: #ffeeba;
+  color: #856404;
+}
+
+.seealso a {
+  color: #533f03;
+}
