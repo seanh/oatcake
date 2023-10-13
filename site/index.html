@@ -527,23 +527,28 @@ support for dark mode and for different colour schemes.</p>
 
 <h2>Headings</h2>
 
-<p>HTML provides six levels of headings, more than most documents need. Trying
-to make all six levels visually distinct results in distractions like overlarge
-font sizes, overheavy font weights, ALL CAPS, underlines, centered text, too
-many different fonts, etc.</p>
+<p>Headings are one of the hardest things to get right.
+HTML provides six levels of headings, far more than most documents need.
+Themes trying to make all six levels visually distinct results in distractions
+like overlarge font sizes, excessively heavy weights, ALL CAPS, underlines,
+centered text, too many font faces, too much indentation, etc.</p>
 
-<p>Most pages should use no more than three levels of headings, preferably two.
-More levels make it difficult and confusing for readers to orient themselves
-within the structure of the text. So Oatcake provides three levels of clearly
-distinct headings, using the smallest necessary increments in font size and
-space above and below to emphasise and distinguish headings without the design
-attracting too much attention.</p>
+<p>Most pages should use no more than three levels of headings anyway,
+preferably two. More levels are confusing and make it difficult for readers to
+use the headings to orient themselves within the document.</p>
+
+<p>Oatcake focuses on providing three visually distinct levels of headings,
+using the smallest necessary increments in font size and space above and below
+to emphasise and distinguish headings without the design attracting too much
+attention.</p>
 
 <p>A common mistake is to vertically align headings closer to the paragraph
 above than to the one below, or evenly mid-way between them. Oatcake gives
-headings a little more vertical space above them than below so that they're
-visually related more with the text below (that belongs to the heading) than to
-the unrelated text above. Here's a demo:</p>
+headings a little more vertical space above than below so they're visually
+related more with the text below (that belongs to the heading) than to the
+unrelated text above.</p>
+
+<p>Here's a demo of Oatcake's headings:</p>
 
 <div class="note">
   <h1 class="notoc">Page title (level 1 heading)</h1>
@@ -572,21 +577,23 @@ the unrelated text above. Here's a demo:</p>
   tincidunt.</p>
 </div>
 
-<p><code>&lt;h1&gt;</code> and <code>&lt;h2&gt;</code> headings are the same size
+<p><code>&lt;h1&gt;</code>'s and <code>&lt;h2&gt;</code>'s look the same
 (other than a bit more vertical space above an <code>&lt;h1&gt;</code>). The
-assumption is that pages will start with a single <code>&lt;h1&gt;</code> whose
-position at the top of the page makes it clear that it's the top-level page title,
+intention is that pages will start with a single <code>&lt;h1&gt;</code> whose
+position at the top of the page makes it clear that it's the top-level title,
 and then <code>&lt;h2&gt;</code>'s will be used for any mid-document headings.</p>
 
 <p>If you need sub-headings and sub-sub-headings use <code>&lt;h3&gt;</code>'s
 and <code>&lt;h4&gt;</code>'s.
 
+<p>You can also use <code>&lt;h5&gt;</code>'s and <code>&lt;h6&gt;</code>'s but
+they look the same as <code>&lt;h4&gt;</code>'s.</p>
+
 <h3>Hierarchical headings</h3>
 
 <p>It's better to use fewer levels of headings but if you really need several
-levels I recommend explicitly denoting the structure of the document by
-hierarchically numbering the headings (you have to do this yourself, Oatcake
-won't do it for you):</p>
+levels I recommend making the structure explicit by hierarchically numbering
+the headings (you have to do this yourself, Oatcake won't do it for you):</p>
 
 <div class="note">
   <h1 class="notoc">Document title</h1>
