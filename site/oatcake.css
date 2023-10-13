@@ -172,8 +172,7 @@ details,
 .tip,
 .note,
 .seealso,
-.todo,
-.headings-demo {
+.todo {
   margin-bottom: var(--body-line-height);
 }
 
@@ -452,12 +451,6 @@ h6 {
   padding-bottom: 0;
 }
 
-.headings-demo h1:first-child,
-.headings-demo h2:first-child,
-.headings-demo h3:first-child,
-.headings-demo h4:first-child,
-.headings-demo h5:first-child,
-.headings-demo h6:first-child,
 blockquote h1:first-child,
 blockquote h2:first-child,
 blockquote h3:first-child,
@@ -583,24 +576,6 @@ details summary+h5,
 details summary+h6 {
   padding-top: 0;
 }
-
-.headings-demo {
-  background-color: LemonChiffon;
-  padding-top: var(--body-line-height);
-  padding-left: var(--body-line-height);
-  padding-right: var(--body-line-height);
-  padding-bottom: var(--body-line-height);
-}
-
-.headings-demo :last-child {
-  margin-bottom: 0;
-  padding-bottom: 0;
-}
-
-.lines .headings-demo {
-  background-color: inherit;
-}
-
 
 figure figcaption {
   text-align: center;
@@ -1020,6 +995,7 @@ a.pill-dark:focus {
 .seealso>*:last-child,
 .todo>*:last-child {
   margin-bottom: 0;
+  padding-bottom: 0;
 }
 
 .admonition {
