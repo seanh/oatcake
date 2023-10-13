@@ -171,10 +171,6 @@ video {
   margin-bottom: calc(var(--body-line-height) *2);
 }
 
-figure+img {
-  margin-bottom: var(--body-line-height);
-}
-
 /* Fix for list item bullets messing up the vertical rhythm. */
 ul>li {
   list-style-type: "•";
@@ -519,8 +515,8 @@ figure figcaption {
   text-align: center;
 }
 
-figure img {
-  margin-bottom: var(--body-line-height) !important;
+figure img + figcaption {
+  margin-top: calc(var(--body-line-height) * -1);
 }
 
 figure figcaption,
