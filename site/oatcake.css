@@ -724,7 +724,6 @@ pre code {
   font-weight: 700;
   line-height: 1;
   text-align: center;
-  white-space: nowrap;
   vertical-align: baseline;
   border-radius: .25rem;
   transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
@@ -1093,4 +1092,12 @@ a.pill-dark:focus {
 
 .seealso a {
   color: #533f03;
+}
+
+/* Prevent line wrapping within certain elements. This does mean that if you
+ * put really long text in one of these it will overflow. */
+.badge,
+.pill,
+kbd  {
+  white-space: nowrap;
 }
