@@ -1072,6 +1072,25 @@ it.</p>
   <li>Third list item <span class="badge">32</span></li>
 </ul>
 
+<h2>Preventing really long words from overflowing the container</h2>
+
+<p>Long unbroken words or other strings (such as URLs) that are too long to fit
+on one line can overflow their containers, especially on mobile, causing
+unwanted horizontal scrollbars or other layout breakage. Oatcake wraps long
+words over multiple lines if necessary to prevent overflow.</p>
+
+<p>For example this really long Sanskrit word should get wrapped:
+िरन्तरान्धकारित-दिगन्तर-कन्दलदमन्द-सुधारस-बिन्दु-सान्द्रतर-घनाघन-वृन्द-सन्देहकर-स्यन्दमान-मकरन्द-बिन्दु-बन्धुरतर-माकन्द-तरु-कुल-तल्प-कल्प-मृदुल-सिकता-जाल-जटिल-मूल-तल-मरुवक-मिलदलघु-लघु-लय-कलित-रमणीय-पानीय-शालिका-बालिका-करार-विन्द-गलन्तिका-गलदेला-लवङ्ग-पाटल-घनसार-कस्तूरिकातिसौरभ-मेदुर-लघुतर-मधुर-शीतलतर-सलिलधारा-निराकरिष्णु-तदीय-विमल-विलोचन-मयूख-रेखापसारित-पिपासायास-पथिक-लोकान्.
+</p>
+
+<p>So should this really long URL in a <code>&lt;code&gt;</code> tag: <code>https://github.com/seanh/oatcake/commit/8675ffcb168b1d76d708c84a2821c20a3f99e86d</code>.</p>
+
+<p>Oatcake <em>doesn't</em> wrap long words instead preformatted text
+(<code>&lt;pre&gt;</code>) blocks -- you don't want your code being wrapped for
+you, these use a horizontal scrollbar instead:
+
+<pre><code>url = 'https://github.com/seanh/oatcake/commit/8675ffcb168b1d76d708c84a2821c20a3f99e86d'</code></pre>
+
 <h2>Embedding media (videos, iframes)</h2>
 
 <p>Embedded videos, iframes, and the like work nicely and get the right top and

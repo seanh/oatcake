@@ -250,20 +250,14 @@ summary {
   color: var(--muted-color);
 }
 
-/* Prevent really long words in code spans from overflowing the container and
- * introducing a page-level horizontal scrollbar on mobile.
- * See https://css-tricks.com/snippets/css/prevent-long-urls-from-breaking-out-of-container/
- */
-code {
+/* If a single unbroken string (e.g. a URL) is too long to fit on one line then
+ * break it across lines rather than letting it overflow. */
+body {
   overflow-wrap: break-word;
-  word-wrap: break-word;
-  -ms-word-break: break-all;
-  word-break: break-all;
-  word-break: break-word;
-  -ms-hyphens: auto;
-  -moz-hyphens: auto;
-  -webkit-hyphens: auto;
-  hyphens: auto;
+}
+/* Don't break long words in <pre>'s: they have horizontal scrollbars instead. */
+pre {
+  overflow-wrap: normal;
 }
 
 mark {
