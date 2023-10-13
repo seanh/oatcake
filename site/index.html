@@ -758,7 +758,7 @@ With Oatcake multi-line headings wrap well, this is a multi-line
     containing <em>emphasis</em>,
     <code>&lt;code tags&gt;</code>,
     some <samp>sample output</samp>,
-    a couple of <code>&lt;kbd&gt;</code>'s: <kbd>Ctrl</kbd> + <kbd>c</kbd>,
+    a couple of code>&lt;kbd&gt;</code>'s: <kbd>Ctrl</kbd>&nbsp;+&nbsp;<kbd>c</kbd>,
     <u>underlined text</u>,
     <mark>highlighted text</mark>,
     <del>struck-through text</del>,
@@ -771,7 +771,7 @@ With Oatcake multi-line headings wrap well, this is a multi-line
     containing <em>emphasis</em>,
     <code>&lt;code tags&gt;</code>,
     some <samp>sample output</samp>,
-    a couple of <code>&lt;kbd&gt;</code>'s: <kbd>Ctrl</kbd> + <kbd>c</kbd>,
+    a couple of <code>&lt;kbd&gt;</code>'s: <kbd>Ctrl</kbd>&nbsp;+&nbsp;<kbd>c</kbd>,
     <u>underlined text</u>,
     <mark>highlighted text</mark>,
     <del>struck-through text</del>,
@@ -784,7 +784,7 @@ With Oatcake multi-line headings wrap well, this is a multi-line
     containing <em>emphasis</em>,
     <code>&lt;code tags&gt;</code>,
     some <samp>sample output</samp>,
-    a couple of <code>&lt;kbd&gt;</code>'s: <kbd>Ctrl</kbd> + <kbd>c</kbd>,
+    a couple of <code>&lt;kbd&gt;</code>'s: <kbd>Ctrl</kbd>&nbsp;+&nbsp;<kbd>c</kbd>,
     <u>underlined text</u>,
     <mark>highlighted text</mark>,
     <del>struck-through text</del>,
@@ -834,7 +834,7 @@ also work in subtitles and lead paragraphs:</p>
   containing <em>emphasis</em>,
   <code>&lt;code tags&gt;</code>,
   some <samp>sample output</samp>,
-  a couple of <code>&lt;kbd&gt;</code>'s: <kbd>Ctrl</kbd> + <kbd>c</kbd>,
+  a couple of <code>&lt;kbd&gt;</code>'s: <kbd>Ctrl</kbd>&nbsp;+&nbsp;<kbd>c</kbd>,
   <u>underlined text</u>,
   <mark>highlighted text</mark>,
   <del>struck-through text</del>,
@@ -944,13 +944,36 @@ it in <code>&lt;kbd&gt;</code> tags: <kbd>help mycommand</kbd></p>
 <p>You can use nested <code>&lt;kbd&gt;</code>'s to represent multiple keystrokes that form a
 single input: <kbd><kbd>Ctrl</kbd> + <kbd>c</kbd></kbd>.
 Although you might prefer to write it without nesting like this:
-<kbd>Ctrl</kbd> + <kbd>c</kbd>.</p>
+<kbd>Ctrl</kbd>&nbsp;+&nbsp;<kbd>c</kbd>.</p>
 
 <p>Up to two levels of nesting are supported:
 <kbd><kbd><kbd>Ctrl</kbd> + <kbd>b</kbd></kbd> <kbd><kbd>Shift</kbd> + <kbd>t</kbd></kbd></kbd>.</p>
 
 <p>To represent sample or quoted output from a computer program, wrap it in
 <code>&lt;samp&gt;</code> tags: <samp>Keyboard not found. Press F1 to continue</samp></p>
+
+<div class="note">
+  <h4>Tip: use non-breaking spaces between <code>&lt;kbd&gt;</code>'s</h4>
+
+  <p>Oatcake prevents browsers from wrapping a <code>&lt;kbd&gt;</code> (nested
+  or single) over multiple lines, but if you're using a chain of separate
+  <code>&lt;kbd&gt;</code>'s (as in
+  <kbd>Ctrl</kbd>&nbsp;+&nbsp;<kbd>c</kbd>) consider using non-breaking spaces
+  (<code>&amp;nbsp;</code>) instead of normal spaces around the <code>+</code>
+  to prevent line breaks from being inserted in-between the
+  <code>&lt;kbd&gt;</code>'s. Wrapping the whole sequence of
+  <code>&lt;kbd&gt;</code>'s in a <code>&lt;span style="white-space: nowrap;"&gt;</code>
+  should also work.</p>
+
+  <p>You can also use either technique if you don't want a
+  <code>&lt;code&gt;</code>,
+  <code>&lt;samp&gt;</code>,
+  <code>&lt;mark&gt;</code>,
+  etc to be wrapped (Oatcake doesn't prevent wrapping within these elements by
+  default because often you do what them to wrap, especially if they contain
+  long strings might otherwise
+  <a href="#overflow">overflow the container</a>).</p>
+</div>
 
 <h2>Badges and pills</h2>
 
@@ -971,7 +994,9 @@ states:</p>
 <h3 class="notoc" style="padding-top: 0;">Heading <span class="pill">Pill</span></h3>
 
 <p>This is a paragraph with an inline <span class="badge">badge</span> in
-it.</p>
+it. As with <code>&lt;kbd&gt;</code>'s, if your badge or pill contains
+<span class="pill">more than one word</span> Oatcake prevents browsers from
+wrapping it over multiple lines.</p>
 
 <ul>
   <li>First list item <span class="badge">23</span></li>
@@ -983,7 +1008,7 @@ it.</p>
 choices for badges and pills but this would be distracting and would make it
 harder to add dark mode and multiple colour schemes.</p>
 
-<h2>Preventing really long words from overflowing the container</h2>
+<h2 id="overflow">Preventing really long words from overflowing the container</h2>
 
 <p>Long unbroken words or other strings (such as URLs) that are too long to fit
 on one line can overflow their containers, especially on mobile, causing
