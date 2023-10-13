@@ -560,6 +560,20 @@ h2 samp {
   font-size: .8em;
 }
 
+/* I've no idea why but when I reduce the font-size of `<mark>`'s within
+ * headings and lead paragraphs it offsets the vertical-rhythm unless I say
+ * `line-height: 100%;`.
+ * You'd think it'd mean the same thing but `line-height: var(--body-line-height);`
+ * doesn't fix the rhtyhm.
+ * This doesn't seem to be necessary when reducing the font-sizes of other
+ * elements like <code>'s and <samp>'s in headings and lead paragraphs. */
+h1 mark,
+h2 mark,
+.lead mark {
+  font-size: .8em;
+  line-height: 100%;
+}
+
 h3 code,
 h4 code,
 h5 code,
