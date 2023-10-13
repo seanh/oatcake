@@ -871,7 +871,7 @@ also work in subtitles and lead paragraphs:</p>
 flow nicely. This works the same whether or not you wrap your
 <code>&lt;img&gt;</code>'s in <code>&lt;p&gt;</code>'s:</p>
 
-<img src="images/sand.jpg" alt="A photo of some sand" title="A photo of some sand" style="height:456px;" />
+<img src="images/sand.jpg" alt="A photo of some sand" title="A photo of some sand" />
 
 <p>An image's height can upset the vertical rhythm unless you make sure your
 images are displayed in multiples of 28 pixels in height.  I recommend not
@@ -897,7 +897,7 @@ tag:</p>
 <p>That'll produce this output:</p>
 
 <figure>
-  <img src="images/cow.jpg" alt="A photo of a cow." style="height:456px;">
+  <img src="images/cow.jpg" alt="A photo of a cow.">
   <figcaption>A photo of a cow.</figcaption>
 </figure>
 
@@ -917,7 +917,7 @@ end</code></pre>
 <p>Multi-line captions work fine, as do inline styles within captions:</p>
 
 <figure>
-  <img src="images/houses.jpg" alt="A photo of some houses." style="height:528px;">
+  <img src="images/houses.jpg" alt="A photo of some houses.">
   <figcaption>
     <strong>Laboris</strong> nisi ut aliquip ex ea
 commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
@@ -1108,6 +1108,19 @@ bottom margins to fit into the vertical flow. Here's an
           addLines();
         }
       });
+    </script>
+    <script>
+      function resizeImages() {
+        let images = document.getElementsByTagName('main')[0].getElementsByTagName('img');
+        let lineHeight = parseInt(getComputedStyle(document.documentElement).getPropertyValue('--body-line-height'));
+        for (let image of images) {
+          image.style.height = 'auto';
+          originalHeight = image.offsetHeight;
+          image.style.height = (lineHeight * Math.floor(originalHeight / lineHeight)) + 'px';
+        }
+      }
+      window.addEventListener('load', resizeImages);
+      window.addEventListener('resize', resizeImages);
     </script>
   </body>
 </html>
