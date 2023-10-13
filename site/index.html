@@ -961,11 +961,12 @@ Although you might prefer to write it without nesting like this:
   <h4>Tip: use non-breaking spaces between <code>&lt;kbd&gt;</code>'s</h4>
 
   <p>Oatcake prevents browsers from wrapping a <code>&lt;kbd&gt;</code> (nested
-  or single) over multiple lines, but if you're using a chain of separate
+  or single) over multiple lines even if the <code>&lt;kbd&gt;</code> contains
+  multiple words separated by spaces, but if you're using a chain of separate
   <code>&lt;kbd&gt;</code>'s (as in
-  <kbd>Ctrl</kbd>&nbsp;+&nbsp;<kbd>c</kbd>) consider using non-breaking spaces
+  <kbd>Ctrl</kbd>&nbsp;+&nbsp;<kbd>c</kbd>) you must use non-breaking spaces
   (<code>&amp;nbsp;</code>) instead of normal spaces around the <code>+</code>
-  to prevent line breaks from being inserted in-between the
+  if you want to prevent line breaks from being inserted in-between the
   <code>&lt;kbd&gt;</code>'s. Wrapping the whole sequence of
   <code>&lt;kbd&gt;</code>'s in a <code>&lt;span style="white-space: nowrap;"&gt;</code>
   should also work.</p>
@@ -976,7 +977,7 @@ Although you might prefer to write it without nesting like this:
   <code>&lt;mark&gt;</code>,
   etc to be wrapped (Oatcake doesn't prevent wrapping within these elements by
   default because often you do what them to wrap, especially if they contain
-  long strings might otherwise
+  long strings that might otherwise
   <a href="#overflow">overflow the container</a>).</p>
 </div>
 
