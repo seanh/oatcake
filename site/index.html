@@ -867,15 +867,19 @@ also work in subtitles and lead paragraphs:</p>
 
 <h2>Images</h2>
 
-<p>Oatcake gives images the right margins so that they fit into the vertical
-flow nicely. This works the same whether or not you wrap your
-<code>&lt;img&gt;</code>'s in <code>&lt;p&gt;</code>'s:</p>
+<p>Images need a little more space above and below them than paragraphs do,
+otherwise they feel cramped. Oatcake gives images just enough space&ndash;not too
+much, not too little, and sticking to the vertical rhythm. This works the same
+whether or not you wrap your <code>&lt;img&gt;</code>'s in
+<code>&lt;p&gt;</code>'s:</p>
 
 <img src="images/sand.jpg" alt="A photo of some sand" title="A photo of some sand" />
 
 <p>An image's height can upset the vertical rhythm unless you make sure your
-images are displayed in multiples of 28 pixels in height.  I recommend not
-worrying about it.</p>
+it's an even multiple of the line height, and browsers resizing images to fit
+the display width can complicate things. This page contains a snippet of
+JavaScript that fixes the sizes of images to the vertical rhythm.  But I
+recommend not worrying about it.</p>
 
 <h2>Figures</h2>
 
