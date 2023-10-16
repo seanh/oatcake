@@ -482,48 +482,62 @@ Oatcake uses the "pointer" cursor style when you hover over one:</p>
 
 <h2>Note boxes</h2>
 
-<p>You can create a note box by using a <code>&lt;div&gt;</code> with the CSS
-class <code>note</code> on it, like this:</p>
+<p>You can create a "note" by adding the CSS class <code>note</code> to a paragraph:</p>
 
-<pre><code>&lt;div class="note"&gt;
-  This is a note.
-&lt;/div&gt;
-</code></pre>
+<pre>&lt;p class="note"&gt;This is a paragraph that stands out as a note.&lt;/p&gt;</pre>
 
-<p>It will look like this:</p>
+<p>It'll look like this:</p>
 
-<div class="note">
-  <p>This is a note.</p>
-</div>
+<p class="note">This is a paragraph that stands out as a note.</p>
 
-<p>You can put arbitrary HTML inside notes, even horizontal rules:</p>
+<p>A multi-line paragraph note will also work nicely:</p>
+
+<p class="note">Morbi sed facilisis nunc. Quisque dictum lectus vitae purus
+lobortis, dapibus malesuada sapien imperdiet. Vestibulum ante ipsum primis in
+faucibus orci luctus et ultrices posuere cubilia curae.</p>
+
+<p>You can also put the <code>note</code> class on an <code>&lt;ol&gt;</code>
+or <code>&lt;ul&gt;</code> to style a list as a note:
+
+<ul class="note">
+  <li>Aenean</li>
+  <li>Quis</li>
+  <li>Odio</li>
+  <li>Libero</li>
+</ul>
+
+<p>You can put multiple paragraphs and other arbitrary content (headings,
+blockquotes, lists, code blocks&hellip;) in a note by putting the
+<code>note</code> class on a containing <code>&lt;div&gt;</code>:</p>
 
 <div class="note">
   <h3 class="notoc noanchor">This note has a heading</h3>
 
   <blockquote>
-    <p>This is a blockquote with a list in it:</p>
-
+    <p>Duis efficitur justo semper mauris tempor:</p>
     <ul>
-      <li>A list item</li>
-      <li>List item two, with <a href="">a link</a> in it</li>
-      <li><strong>A bold list item</strong></li>
-      <li>A list item with some <code>code</code> and a <kbd>kbd</kbd> in it</li>
+      <li>Eget hendrerit diam</li>
+      <li>Nunc feugiat congue dictum, <a href="">nullam auctor</a> in dui</li>
+      <li><strong>a tempus nunc elementum</strong></li>
+      <li>Pellentesque velit felis <code>bibendum</code> ac <kbd>quis</kbd> euismod</li>
     </ul>
   </blockquote>
 
-  <p>Here's a horizontal rule:</p>
-
   <hr />
 
-  <p>Aliquam eu quam blandit, condimentum velit nec, hendrerit urna.</p>
+  <pre><code>You can even put code blocks in notes.</code></pre>
 </div>
 
-<p>It would be easy to provide a variety of different colours for note and
-alert boxes like other frameworks do. But documents with lots of
-different-coloured boxes would distract from both reading and writing (always
-having to choose which type of box to use) and would make it difficult to add
-support for dark mode and for different colour schemes.</p>
+<p><a href="https://html.spec.whatwg.org/multipage/sections.html#the-aside-element"><code>&lt;aside class="note"&gt;</code></a>
+would also work with the <code>note</code> class and has special meaning: it's
+for content that is separate from the main content of the page and not part of
+the main flow of the document.</p>
+
+<p>It would be easy to provide a variety of different colours for note boxes
+like other frameworks do. But documents with lots of different-coloured boxes
+would distract from both reading and writing (always having to choose which
+type of box to use) and would make it difficult to add support for dark mode
+and for different colour schemes.</p>
 
 <h2>Headings</h2>
 

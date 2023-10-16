@@ -715,6 +715,11 @@ a.pill:focus {
 
 .note>*:last-child {
   margin-bottom: 0;
+}
+
+.note>h1:last-child,
+.note>h2:last-child,
+.note>h3:last-child {
   padding-bottom: 0;
 }
 
