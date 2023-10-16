@@ -627,13 +627,35 @@ pre code {
 .badge,
 .pill {
   padding: .1rem .3rem;
-  font-size: var(--small-font-size);
   font-weight: 700;
-  line-height: 1;
   text-align: center;
   vertical-align: baseline;
   border-radius: .25rem;
   transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+  /* Prevent badges and pills from offsetting the vertical rhythm in iOS Safari. */
+  margin-bottom: -.3rem;
+}
+
+.badge,
+.pill,
+.badge code,
+.pill code {
+  font-size: var(--small-font-size);
+  line-height: 1;
+}
+
+button.badge,
+button.pill {
+  border-width: 0;
+  font-family: var(--body-font-family);
+  line-height: normal;
+  cursor: pointer;
+}
+
+.badge code,
+.pill code {
+  background-color: inherit;
+  padding: 0;
 }
 
 .pill {
