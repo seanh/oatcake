@@ -18,58 +18,45 @@
 
 <h1 class="notoc">Oatcake: web typography</h1>
 
-<p class="lead">A drop-in CSS file that adds nice typography to a web page.
-Aims to look good while not attracting attention to itself or getting in the
-way of reading or writing. Works great on mobile.</p>
+<p class="lead">
+A drop-in stylesheet that makes any HTML page's text attractive and readable,
+no CSS classes needed.
+Looks good without drawing attention to the design,
+lots of features and details,
+everything works great on mobile.
+</p>
 
-<p>This page is styled using <code>oatcake.css</code>, my basic typography
-stylesheet. To add it to your own page just add this to your HTML file's
+<p>This page is a demo of Oatcake, my universal typography stylesheet. To add
+Oatcake to your own page just add this link to your HTML file's
 <code>&lt;head&gt;</code>:</p>
 
 <pre><code>&lt;link rel="stylesheet" href="https://www.seanh.cc/oatcake/oatcake.css"&gt;</code></pre>
 
-<p>There are hundreds of these but I couldn't find a really good one
-that I liked, so Oatcake is my contribution to the genre. It has all the
-typographical features that I wanted, including
-<a href="#vertical-rhythm">vertical rhythm</a>,
-<a href="#figures">figures with captions</a>,
-<a href="#quotes-and-blockquotes">blockquotes with citations</a>,
-<a href="#note-boxes">note boxes</a> and <a href="#disclosure-boxes-details-and-summary">disclosure boxes</a>,
-<span class="badge">badges</span> and <span class="pill">pills</span>,
-<a href="#subtitles-and-lead-paragraphs">lead paragraphs and subtitles</a>, and more.
+<p>You don't need any CSS classes or any particular HTML structure: Oatcake is a
+drop-in stylesheet that styles the standard HTML elements directly, you can use
+it to style HTML straight from Markdown.</p>
 
-<p>You can throw a wide variety of different content and combinations of HTML
-elements at Oatcake and everything will look good: it handles all the
-edge-cases that I kept finding broken in other themes. Things like multiple
-levels of headings, nested lists and blockquotes, definition lists, headings
-that wrap onto multiple lines, headings inside blockquotes,
-inline elements within headings, inline images, embedded videos and
-iframes, etc.</p>
+<p>For more documentation and examples see <a href="https://github.com/seanh/oatcake">Oatcake's README on GitHub</a>.</p>
 
-<p>I recommend setting a line width of about 30-50em using the CSS
-<code>max-width</code> property on a container element like a
-<code>&lt;main&gt;</code>, an <code>&lt;article&gt;</code> or just a
-<code>&lt;div&gt;</code> that contains your content. Here's a complete
-starter page:</p>
+<p>There are loads of these typography stylesheets out there but I couldn't
+find one that was a great fit for my tastes and the type of content that I
+write, or that handled all the minutiae and edge-cases that I care about
+without issues.</p>
 
-<pre><code>&lt;!DOCTYPE html&gt;
-&lt;html lang="en"&gt;
-  &lt;head&gt;
-    &lt;meta charset="utf-8"&gt;
-    &lt;meta name="viewport" content="width=device-width, initial-scale=1"&gt;
-    &lt;title&gt;Page title&lt;/title&gt;
-    &lt;link rel="stylesheet" href="https://www.seanh.cc/oatcake/oatcake.css"&gt;
-  &lt;/head&gt;
-  &lt;body&gt;
-    &lt;main style="max-width:50em; margin:0 auto 0 auto; padding:0 .5em 0 .5em;"&gt;
-      &lt;h1&gt;Page title&lt;/h1&gt;
-      &lt;p&gt;Page content goes here...&lt;/p&gt;
-    &lt;/main&gt;
-  &lt;/body&gt;
-&lt;/html&gt;</code></pre>
+<p>Oatcake has lots of typographic features like vertical rhythm, figures and
+captions, blockquotes, note boxes, disclosure widgets, badges and pills,
+multiple levels of headings, subtitles and lead paragraphs,
+<code>&lt;kbd&gt;</code> and <code>&lt;samp&gt;</code> styles, and more.</p>
+
+<p>My pages tend to have a wide variety of content and different combinations
+of HTML elements. Oatcake carefully handles many situations that break most
+themes: things like nested lists, definition lists, multi-paragraph
+blockquotes, multi-line headings, headings with code and links in them,
+headings inside blockquotes, wrapping long words and wide code blocks, images
+and other media, etc.</p>
 
 <p>The rest of this page demonstrates and discusses Oatcake's features and
-design choices. Plus, I needed a comprehensive test page.</p>
+design decisions. Plus, I needed a comprehensive test page.</p>
 
 <style>.toc a { text-decoration: none; }</style>
 <div class="toc"></div>
