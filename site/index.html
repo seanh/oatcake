@@ -315,8 +315,11 @@ Although you might prefer to write it without nesting like this:
 
 <h2>Code blocks</h2>
 
-<p>Here's an inline code tag: <code>foobar()</code>.
-We've already seen what a multi-line code block looks like:</p>
+<p>You can create inline code spans with
+<a href="https://html.spec.whatwg.org/#the-code-element">the <code>&lt;code&gt;</code> element</a>:
+<code>foobar()</code>.
+To create a multi-line code block wrap a <code>&lt;code&gt;</code> in a
+<a href="https://html.spec.whatwg.org/#the-pre-element"><code>&lt;pre&gt;</code> element</a>:</p>
 
 <pre><code class="nohighlight">def test_validate_url_returns_an_http_url_unmodified():
     url = 'http://github.com/jimsmith'
@@ -341,12 +344,14 @@ fixes this by giving wide code blocks a horizontal scrollbar:</p>
 
 <h3>Representing variables with <code>&lt;var&gt;</code></h3>
 
-<p>Instead of <code>&lt;code&gt;</code>, you can also represent the names of variables by using
-<a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/var">the <code>&lt;var&gt;</code> tag</a>:</p>
+<p>Instead of <code>&lt;code&gt;</code>, you can also represent programming or
+mathematical variables with
+<a href="https://html.spec.whatwg.org/#the-var-element">the <code>&lt;var&gt;</code> element</a>.
+Here's an example from the HTML standard:</p>
 
-<blockquote>The variables <var>minSpeed</var> and <var>maxSpeed</var> control
-the minimum and maximum speed of the apparatus in revolutions per minute
-(RPM).</blockquote>
+<blockquote>If there are <var>n</var> pipes leading to the ice
+cream factory then I expect at <em>least</em> <var>n</var>
+flavors of ice cream to be available for purchase!</blockquote>
 
 <h2>Lists</h2>
 
