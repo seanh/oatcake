@@ -35,7 +35,7 @@ complete starter page:
     <title>Page title</title>
     <link rel="stylesheet" href="https://www.seanh.cc/oatcake/oatcake.css">
   </head>
-  <body style="max-width:50em; margin:0 auto 0 auto; padding:0 .5em 0 .5em;">
+  <body style="max-width:50em; margin:0 auto; padding:0 .5em;">
     <h1>Page title</h1>
     <p>Page content goes here...</p>
   </body>
