@@ -156,9 +156,9 @@ blockquote,
 p,
 ul,
 ol,
+dd,
 figure,
 pre,
-dd,
 details,
 .note {
   margin-bottom: var(--body-line-height);

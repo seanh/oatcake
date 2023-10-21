@@ -253,62 +253,92 @@ items. Here's what a list of <code>&lt;li&gt;&lt;p&gt;</code>'s looks like with 
 
 <h2>Definition lists</h2>
 
-<p>Here's what definition lists (<code>&lt;dl&gt;</code>'s) look like:</p>
+<p><a href="https://html.spec.whatwg.org/multipage/grouping-content.html#the-dl-element">The <code>&lt;dl&gt;</code> (definition list) element</a>
+represents:</p>
+
+<blockquote>&hellip;an association list consisting of zero or more name-value groups (a description list)</blockquote>
+
+<p>This could be a list of <q>&hellip;terms and definitions, metadata topics and values, questions and answers, or any other groups of name-value data.</q></p>
+
+<p>Within a <code>&lt;dl&gt;</code> you use pairs of <code>&lt;dt&gt;</code>'s
+for the names ("terms") and <code>&lt;dd&gt;</code>'s for the values
+("descriptions" or "definitions").
+You can have multiple <code>&lt;dt&gt;</code>'s in a row if an item has more than one name
+and/or multiple <code>&lt;dd&gt;</code>'s in a row if an item has more than one value.
+Here's some examples from the HTML standard:</p>
+
+<pre><code>&lt;dl&gt;
+ &lt;dt&gt; Authors
+ &lt;dd&gt; John
+ &lt;dd&gt; Luke
+ &lt;dt&gt; Editor
+ &lt;dd&gt; Frank
+&lt;/dl&gt;</code></pre>
+
+<pre><code>&lt;dl&gt;
+ &lt;dt lang="en-US"&gt;&lt;dfn&gt;color&lt;/dfn&gt;&lt;/dt&gt;
+ &lt;dt lang="en-GB"&gt;&lt;dfn&gt;colour&lt;/dfn&gt;&lt;/dt&gt;
+ &lt;dd&gt;A sensation which (in humans) derives from the ability of
+ the fine structure of the eye to distinguish three differently
+ filtered analyses of a view.&lt;/dd&gt;
+&lt;/dl&gt;</code></pre>
+
+<p>Notice the use of the <a href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-dfn-element"><code>&lt;dfn&gt;</code> element</a>
+to mark up the terms when a definition list is being used to define terms.
+Oatcake doesn't style <code>&lt;dfn&gt;</code>'s but they have semantic meaning.</p>
+
+<p>Here's what definition lists look like with Oatcake:</p>
 
 <dl>
-  <dt>Nullam non risus ullamcorper, ullamcorper elit id, pellentesque turpis.</dt>
-  <dd>Fusce varius magna a felis accumsan suscipit.</dd>
-  <dt>Sed in libero luctus mauris pretium ultrices.</dt>
-  <dd>Vestibulum bibendum nisl ut quam consectetur, vitae fringilla diam pulvinar.</dd>
+  <dt>Oatcake</dt>
+  <dd>Thin flat unleavened cake of baked oatmeal.</dd>
+  <dt>Oatmeal</dt>
+  <dd>Porridge made of rolled oats.</dd>
 </dl>
 
-<p>A definition can have multiple terms:</p>
+<p>Here's how items look with multiple terms, multiple descriptions, and both:</p>
 
 <dl>
-  <dt>Aenean porttitor risus vel justo molestie.</dt>
-  <dt>Et vulputate ipsum scelerisque.</dt>
-  <dd>Aliquam quis libero facilisis, egestas nulla sit amet, commodo eros.</dd>
+  <dt>Unleavened</dt>
+  <dt>Unraised</dt>
+  <dd>Made without leavening. Unleavened bread is often simple flour mixed with water.</dd>
+
+  <dt>Sow one's oats</dt>
+  <dd>Live promiscuously and self-indulgently.</dd>
+  <dd>To have a period of youthful exuberance; to act wildly, especially before marriage.</dd>
+
+  <dt>Wild oat</dt>
+  <dt>Avena fatua</dt>
+  <dd>Common in meadows and pastures.</dd>
+  <dd>Synonyms: wild oat grass.</dd>
 </dl>
 
-<p>Or multiple descriptions:</p>
+<p>The contents of a single <code>&lt;dd&gt;</code> can be wrapped in a
+<code>&lt;p&gt;</code> and a single <code>&lt;dd&gt;</code> can contain
+multiple <code>&lt;p&gt;</code>'s if it's a multi-paragraph description.
+Oatcake handles <code>&lt;dd&gt;</code>'s containing one or more
+<code>&lt;p&gt;</code>'s just fine and styles them the same as
+<code>&lt;dd&gt;</code>'s without <code>&lt;p&gt;</code>'s:</p>
 
 <dl>
-  <dt>Aenean porttitor risus vel justo molestie.</dt>
-  <dd>Aliquam quis libero facilisis, egestas nulla sit amet, commodo eros.</dd>
-  <dd>Aenean ut cursus est, et eleifend enim.</dd>
-</dl>
-
-<p>Or both:</p>
-
-<dl>
-  <dt>Aenean porttitor risus vel justo molestie.</dt>
-  <dt>Et vulputate ipsum scelerisque.</dt>
-  <dd>Aliquam quis libero facilisis, egestas nulla sit amet, commodo eros.</dd>
-  <dd>Aenean ut cursus est, et eleifend enim.</dd>
-</dl>
-
-<p>Some HTML generators will wrap the contents of <code>&lt;dd&gt;</code>'s in
-<code>&lt;p&gt;</code>'s. Oatcake handles that just fine, and they look the
-same as other definition lists:</p>
-
-<dl>
-  <dt>Nullam non risus ullamcorper, ullamcorper elit id, pellentesque
-  turpis.</dt>
+  <dt>Pancake</dt>
   <dd>
-    <p>Fusce varius magna a felis accumsan suscipit.</p>
+    <p>A flat cake of thin batter fried on both sides on a griddle.</p>
   </dd>
-  <dt>Sed in libero luctus mauris pretium ultrices.</dt>
+  <dt>Pancake turtle</dt>
   <dd>
-    <p>Vestibulum bibendum nisl ut quam consectetur, vitae fringilla diam
-    pulvinar.</p>
+    <p>Voracious aquatic turtle with a flat flexible shell covered by a leathery skin; can inflict painful bites.</p>
+    <p>Synonym: soft-shelled turtle.</p>
   </dd>
-  <dt>Aenean porttitor risus vel justo molestie.</dt>
-  <dt>Et vulputate ipsum scelerisque.</dt>
+  <dt>Tortoise</dt>
+  <dt>Tortoises</dt>
   <dd>
-    <p>Aliquam quis libero facilisis, egestas nulla sit amet, commodo eros.</p>
+    <p>Usually herbivorous land turtles having clawed elephant-like limbs</p>
   </dd>
   <dd>
-    <p>Aenean ut cursus est, et eleifend enim.</p>
+    <p>Etymology: Old English <i>tortuce</i>, from Old French <i>tortis</i> crooked, from
+    Latin <i>tortus</i> twisted, crooked, contorted, past participle of
+    <i>torquere</i>, <i>tortum</i>, to wind.</p>
   </dd>
 </dl>
 
