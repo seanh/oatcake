@@ -17,7 +17,7 @@ To add Oatcake to a page just add this link to your HTML file's
 <link rel="stylesheet" href="https://www.seanh.cc/oatcake/oatcake.css">
 ```
 
-You don't need any CSS classes or any particular structure: Oatcake is a
+You don't need any CSS classes or any particular HTML structure: Oatcake is a
 drop-in stylesheet that styles the standard HTML elements directly, you can use
 it to style HTML straight from Markdown.
 
