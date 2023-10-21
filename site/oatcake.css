@@ -248,6 +248,11 @@ mark {
   color: black;
 }
 
+mark samp,
+mark code {
+  background-color: inherit;
+}
+
 samp {
   background-color: var(--code-background-color);
   color: #444d56;
