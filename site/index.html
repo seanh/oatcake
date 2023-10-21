@@ -263,9 +263,23 @@ you can use, with links to the HTML standard:</p>
     <code>&lt;abbr&gt;</code> then in some browsers the abbreviation will get a
     dotted underline and the expansion will be shown in a tooltip on mouseover.
     For example this: <code>&lt;abbr title="Hypertext Markup
-    Language"&gt;HTML&lt;/abbr&gt;</code> renders like this: <abbr
-    title="Hypertext Markup Language">HTML</abbr>.
-  </p></li>
+    Language"&gt;HTML&lt;/abbr&gt;</code> renders like this:
+    <abbr title="Hypertext Markup Language">HTML</abbr>.</p>
+
+    <p>You can wrap an <code>&lt;abbr&gt;</code> in a <a href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-dfn-element"><code>&lt;dfn&gt;</code></a>
+    to mark it as the defining instance of its term.
+    Further instances of the same <code>&lt;abbr&gt;</code> can be linked to the
+    defining instance by wrapping them in <code>&lt;a&gt;</code>'s.
+    Like in this example from the HTML standard:</p>
+
+    <pre><code>&lt;p&gt;The &lt;dfn id=whatwg&gt;&lt;abbr title="Web Hypertext Application Technology Working Group"&gt;WHATWG&lt;/abbr&gt;&lt;/dfn&gt;
+is a loose unofficial collaboration of web browser manufacturers and
+interested parties who wish to develop new technologies designed to allow
+authors to write and deploy Applications over the World Wide Web.&lt;/p&gt;
+
+&lt;p&gt;The &lt;a href="#whatwg"&gt;&lt;abbr title="Web Hypertext Application Technology Working Group"&gt;WHATWG&lt;/abbr&gt;&lt;/a&gt;
+community does not have much representation from Asia.&lt;/p&gt;</code></pre>
+  </li>
 
 </ul>
 </details>
