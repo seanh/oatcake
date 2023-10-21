@@ -3,9 +3,6 @@ Oatcake
 
 A drop-in stylesheet that makes any HTML page's text attractive and readable,
 no CSS classes needed.
-Looks good without drawing attention to the design,
-lots of features and details,
-everything works great on mobile.
 
 Usage
 -----
