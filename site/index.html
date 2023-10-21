@@ -3,8 +3,15 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Oatcake: web typography</title>
+    <title>Oatcake: plain web typography</title>
     <link rel="stylesheet" href="oatcake.css">
+    <style>
+      @media (max-width: 24em) {
+        .not-below-24-em {
+          display: none;
+        }
+      }
+    </style>
   </head>
   <body>
 
@@ -17,7 +24,7 @@
 <main style="max-width:40em; margin:0 auto 0 auto; padding:0 .5em 0 .5em;">
 
 <hgroup>
-  <h1 class="notoc">Oatcake: web typography</h1>
+  <h1 class="notoc">Oatcake: <span class="not-below-24-em">plain</span> web typography</h1>
   <p class="lead">A drop-in stylesheet that makes any HTML page's text
   attractive and readable, no CSS classes needed.
   Looks good without drawing attention to the design,
