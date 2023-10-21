@@ -95,6 +95,181 @@ pleasant to read. You can turn on guide lines to see what I mean:</p>
 
 <p style="text-align:center;"><button class="pill" onclick="toggleLines();">Toggle Lines</button></p>
 
+<h2>Inline elements</h2>
+
+<p>
+All the usual inline elements work nicely, for example:
+<a href="http://example.com/">links</a>,
+<em>emphasised words</em>,
+<strong>words in bold</strong>,
+<del>struck through text</del>,
+<u>underlined text</u>,
+<mark>highlighted text</mark>,
+mid-word emphasis: un<em>frigging</em>believable, un<strong>frigging</strong>believable,
+<small>small text</small>,
+subscripts<sub>sub</sub> and superscripts<sup>sup</sup>,
+and abbreviations like <abbr title="Hyptertext Markup Language">HTML</abbr>.
+</p>
+
+<p>Superscripts can be used to create footnotes.<sup><a href="#footnote1" id="backref1">[1]</a></sup></p>
+
+<p>Mixing different inline elements together works too, for example
+here's <a href="http://example.com/" title="Title">a link with <strong>bold</strong> and <code>code()</code> in it</a>,
+an <a href="http://example.com/" title="Title"><strong>all bold link</strong></a>,
+and an <a href="http://example.com/" title="Title"><code>all_code_link()</code></a>.
+</p>
+
+<details>
+<summary>Inline HTML elements you can use</summary>
+<p>Here's a pocket guide to some of the more interesting inline HTML elements
+you can use, with links to the HTML standard:</p>
+
+<ul>
+  <li>
+    <p>
+      <a href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-u-element">The <code>&lt;mark&gt;</code> element</a>
+      is for denoting the <em>relevance</em> of a span of text to the current document
+      (as opposed to denoting <em>importance</em>, which is done with <code>&lt;strong&gt;</code>).
+      <code>&lt;mark&gt;</code>'s are styled with a background highlight:
+      <mark>this is some text marked as relevant using <code>&lt;mark&gt;</code></mark>.</p>
+
+      <p>More specifically, a <code>&lt;mark&gt;</code> represents:
+      <q>a run of text in one document marked or highlighted for reference purposes, due to its relevance in another context.</q>
+      For example you can use a <code>&lt;mark&gt;</code> in a quotation to
+      highlight text that wasn't highlighted in the original quote (but
+      is being highlighted now to bring attention to part of the quote).
+      Other examples given in the HTML standard are highlighting search string
+      matches and highlighting a bug in a code block (or more generally
+      highlighting part of a code block that is referred to from elsewhere in
+      the text).
+    </p>
+  </li>
+
+  <li>
+    <p><a href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-em-element">The <code>&lt;em&gt;</code> element</a>
+    is for stress emphasis which changes the meaning of the sentence,
+    whereas <a href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-i-element"><code>&lt;i&gt;</code></a>
+    is for <q>a span of text in an alternate voice or mood, or otherwise
+    offset from the normal prose in a manner indicating a different quality of
+    text, such as a taxonomic designation, a technical term, an idiomatic
+    phrase from another language, transliteration, a thought, or a ship name in
+    Western texts.</q></p>
+
+    <p>Both are styled in italics:</p>
+
+    <p><em>This is emphasised text with <code>&lt;em&gt;</code>.</em><br/>
+    <i>This is text in an alternative voice or mood with <code>&lt;i&gt;</code>.</i>
+    </p>
+
+    <p>A dream sequence is another example of <code>&lt;i&gt;</code> given in the HTML standard.</p>
+
+    <p>If some text is in an <code>&lt;i&gt;</code> because it's in a different language
+    than the main text you can use the <code>lang</code> attribute to give the language:</p>
+
+    <pre><code>&lt;p&gt;There is a certain &lt;i lang="fr"&gt;je ne sais quoi&lt;/i&gt; in the air.&lt;/p&gt;</code></pre>
+  </li>
+
+  <li>
+    <p><a href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-strong-element">The <code>&lt;strong&gt;</code> element</a>
+    is for strong importance, seriousness or urgency which doesn't change the meaning of the sentence but just distinguishes part of it,
+    whereas <a href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-b-element"><code>&lt;b&gt;</code></a>
+    <q>represents a span of text to which attention is being drawn for
+    utilitarian purposes without conveying any extra importance and with no
+    implication of an alternate voice or mood, such as key words in a
+    document abstract, product names in a review, actionable words in
+    interactive text-driven software, or an article lede.</q></p>
+
+    <p>Both are styled in bold:</p>
+
+    <p><strong>This is important text with <code>&lt;strong&gt;</code>.</strong><br/>
+    <b>This is text to which attention is being drawn for utilitarian purposes with<code>&lt;b&gt;</code>.</b>
+    </p>
+
+    <p>You should use <code>&lt;b&gt;</code> only as a last resort when no other element is more appropriate.
+    Use <code>&lt;h1&gt;</code> to <code>&lt;h6&gt;</code> for headings,
+    <code>&lt;em&gt;</code> for stress emphasis,
+    <code>&lt;strong&gt;</code> for importance,
+    and <code>&lt;mark&gt;</code> for highlighted or marked text.</p>
+  </li>
+
+  <li><p><a href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-small-element">The <code>&lt;small&gt;</code> element</a>
+    is for side comments and small print like disclaimers, caveats, legal
+    restrictions or copyrights, attribution, etc.
+    It's styled in small text: <small>this is some small text created with the <code>&lt;small&gt;</code> element</small>.
+    </p>
+
+    <p><code>&lt;small&gt;</code> is only for short runs of text,
+    use <a href="https://html.spec.whatwg.org/multipage/sections.html#the-aside-element"><code>&lt;aside&gt;</code></a>
+    for larger sidebars, pull quotes, groups of <code>&lt;nav&gt;</code> elements, etc.
+    Use <a href="https://html.spec.whatwg.org/multipage/sections.html#the-hgroup-element"><code>&lt;hgroup&gt;</code></a> for subheadings.
+    </p>
+
+  </li>
+
+  <li>
+    <p><a href="https://html.spec.whatwg.org/multipage/edits.html#the-del-element">The <code>&lt;del&gt;</code> element</a>
+    is for text that has been "removed" from the document like crossing-off the
+    completed items on a todo list, whereas
+    <a href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-s-element"><code>&lt;s&gt;</code></a>
+    is for text that's no longer accurate or relevant.
+    Both are styled with a strike-through:</p>
+
+    <p>
+    <del>This is text that's been struck through with <code>&ltdel&gt;</code> to remove it from the document.</del><br/>
+    <s>This is text that's been struck through with <code>&lts&gt;</code> to mark it as no longer accurate or relevant.</s>
+    </p>
+
+    <p>The <code>cite</code> attribute can be added to a
+    <code>&lt;del&gt;</code> to give the URL of a document that explains the
+    change, and a <code>datetime</code> attribute can be used to give the date
+    and time of the change.</p>
+  </li>
+
+  <li><p><a href="https://html.spec.whatwg.org/multipage/edits.html#the-ins-element">The <code>&lt;ins&gt;</code> element</a>
+    is for text that has been added to the document. It looks like this:
+    <ins>this is text that has been marked as added to the document with <code>&lt;ins&gt;</code></ins>.</p>
+
+    <p>As with
+    <code>&lt;del&gt;</code>, you can add a <code>cite</code> attribute to an
+    <code>&lt;ins&gt;</code> to give the URL of a document that explains the
+    change, and a <code>datetime</code> attribute to give the date and time of
+    the change.</p></li>
+
+  <li>
+    <p>
+      <a href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-u-element">The <code>&lt;u&gt;</code> element</a>
+      gives a span of text an <q>unarticulated, though explicitly rendered,
+      non-textual annotation, such as labeling the text as being a proper
+      name in Chinese text (a Chinese proper name mark), or labeling the text
+      as being misspelt.</q>
+      It's styled with an underline, the same as <code>&lt;ins&gt;</code>:
+      <u>this is text annotated with <code>&lt;u&gt;</code></u>.
+    </p>
+
+    <p>Like <code>&lt;b&gt;</code>, <code>&lt;u&gt;</code> is another last-resort element:
+    use <code>&lt;em&gt;</code> for stress emphasis,
+    <code>&lt;b&gt;</code> or <code>&lt;mark&gt;</code> to mark key words or phrases,
+    <code>&lt;cite&gt;</code> to mark book titles,
+    <code>&lt;i&gt;</code> for technical terms, taxonomic designations, transliterations, or thoughts.
+    <code>&lt;u&gt;</code>'s are discouraged where users might confuse them with hyperlinks
+    (<a href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-a-element"><code>&lt;a&gt;</code></a>)
+    which are conventionally rendered with an underline.
+    </p>
+  </li>
+
+  <li><p><a href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-abbr-element"><code>&lt;abbr&gt;</code> element</a>
+    is for abbreviations or acronyms. If you provide the expansion of the
+    acronym as the value of a <code>title</code> attribute on an
+    <code>&lt;abbr&gt;</code> then in some browsers the abbreviation will get a
+    dotted underline and the expansion will be shown in a tooltip on mouseover.
+    For example this: <code>&lt;abbr title="Hypertext Markup
+    Language"&gt;HTML&lt;/abbr&gt;</code> renders like this: <abbr
+    title="Hypertext Markup Language">HTML</abbr>.
+  </p></li>
+
+</ul>
+</details>
+
 <h2>Code blocks</h2>
 
 <p>Here's an inline code tag: <code>foobar()</code>.
@@ -129,23 +304,6 @@ fixes this by giving wide code blocks a horizontal scrollbar:</p>
 <blockquote>The variables <var>minSpeed</var> and <var>maxSpeed</var> control
 the minimum and maximum speed of the apparatus in revolutions per minute
 (RPM).</blockquote>
-
-
-<h2>Inline elements: links, italics, bold, code, etc</h2>
-
-<p>All the usual inline elements work nicely:
-<a href="http://example.com/">Links</a>.
-<em>Emphasised words</em>.
-<strong>Words in bold</strong>.
-<del>Struck through text</del>.
-<u>Underlined text</u>.
-<mark>Highlighted text</mark>.
-Mid-word emphasis: un<em>frigging</em>believable, un<strong>frigging</strong>believable.</p>
-
-<p>Mixing different inline elements together works too:
-here's <a href="http://example.com/" title="Title">a link with <strong>bold</strong> and <code>code()</code> in it</a>.
-An <a href="http://example.com/" title="Title"><strong>all bold link</strong></a>,
-and an <a href="http://example.com/" title="Title"><code>all_code_link()</code></a>.</p>
 
 <h2>Lists</h2>
 
@@ -976,19 +1134,6 @@ a figure is supposed to be a unit of content that:</p>
 is important to the meaning of the document then you should just use a standard
 <code>&lt;img&gt;</code>, <code>&lt;pre&gt;&lt;code&gt;</code>, or other
 content instead of a figure.</p>
-
-<h2>Small text, subscripts, and superscripts</h2>
-
-<p>The <code>&lt;small&gt;</code>, <code>&lt;sub&gt;</code> and
-<code>&lt;sup&gt;</code> elements are supported:</p>
-
-<p><small>Here's some small text.</small></p>
-
-<p>Here's some text with a subscript.<sub>subscript</sub></p>
-
-<p>Here's some text with a superscript.<sup>superscript</sup></p>
-
-<p>Superscripts can be used for footnotes.<sup><a href="#footnote1" id="backref1">[1]</a></sup></p>
 
 <h2>Input and output with <code>&lt;kbd&gt;</code> and <code>&lt;samp&gt;</code></h2>
 
