@@ -233,7 +233,19 @@ you can use, with links to the HTML standard:</p>
     <code>&lt;del&gt;</code>, you can add a <code>cite</code> attribute to an
     <code>&lt;ins&gt;</code> to give the URL of a document that explains the
     change, and a <code>datetime</code> attribute to give the date and time of
-    the change.</p></li>
+    the change.</p>
+
+    <p>You can represent items added to or removed from the list by
+    wrapping the contents of <code>&lt;li&gt;</code>'s in
+    <code>&lt;ins&gt;</code>'s or <code>&lt;del&gt;</code>'s:</p>
+
+    <ul>
+      <li>First list item</li>
+      <li><del>Removed list item</del></li>
+      <li><ins>Added list item</ins></li>
+      <li>Last list item</li>
+    </ul>
+  </li>
 
   <li>
     <p>
