@@ -385,21 +385,89 @@ flavors of ice cream to be available for purchase!</blockquote>
 
 <h2>Lists</h2>
 
-<p>Here's what a simple bullet point list looks like:</p>
+<p>Here's what a simple unordered list (<a href="https://html.spec.whatwg.org/multipage/grouping-content.html#the-ul-element"><code>&lt;ul&gt;</code></a>) looks like:</p>
 
 <ul>
   <li>Vivamus sit amet elit bibendum</li>
   <li>Aliquam ornare sapien ut nisl tristique</li>
   <li>Praesent aliquet erat eu felis</li>
-  <li>Mauris suscipit neque consectetur</li>
 </ul>
+
+<p>And an ordered list (<a href="https://html.spec.whatwg.org/multipage/grouping-content.html#the-ol-element"><code>&lt;ol&gt;</code></a>):</p>
+
+<ol>
+  <li>Vivamus sit amet elit bibendum</li>
+  <li>Aliquam ornare sapien ut nisl tristique</li>
+  <li>Praesent aliquet erat eu felis</li>
+</ol>
+
+<details>
+  <summary>Tips for HTML ordered lists</summary>
+
+<p>Did you know that you can reverse the order of the numbers in a numbered
+list by adding a <code>reversed</code> attribute to a
+<code>&lt;ol&gt;</code>? (<code>&lt;ol reversed&gt;</code>)</p>
+
+<ol reversed>
+  <li>Vivamus sit amet elit bibendum</li>
+  <li>Aliquam ornare sapien ut nisl tristique</li>
+  <li>Praesent aliquet erat eu felis</li>
+</ol>
+
+<p>Or you can change the list starting number by adding a <code>start="n"</code> attribute:</p>
+
+<ol start="4">
+  <li>Vivamus sit amet elit bibendum</li>
+  <li>Aliquam ornare sapien ut nisl tristique</li>
+  <li>Praesent aliquet erat eu felis</li>
+</ol>
+
+<p><code>reversed</code> and <code>start</code> can be used together on the same list:</p>
+
+<ol reversed start="10">
+  <li>Vivamus sit amet elit bibendum</li>
+  <li>Aliquam ornare sapien ut nisl tristique</li>
+  <li>Praesent aliquet erat eu felis</li>
+</ol>
+
+<p>You can change the type of list markers using the <code>type</code> attribute:
+<code>type="1"</code> for numbers (the default),
+<code>type="a"</code> for lower-case letters,
+<code>type="A"</code> for upper-case letters,
+<code>type="i"</code> for lower-case roman numerals,
+or <code>type="I"</code> for upper-case roman numerals:</p>
+
+<ol type="a">
+  <li>Vivamus sit amet elit bibendum</li>
+  <li>Aliquam ornare sapien ut nisl tristique</li>
+  <li>Praesent aliquet erat eu felis</li>
+</ol>
+
+<ol type="A">
+  <li>Vivamus sit amet elit bibendum</li>
+  <li>Aliquam ornare sapien ut nisl tristique</li>
+  <li>Praesent aliquet erat eu felis</li>
+</ol>
+
+<ol type="i">
+  <li>Vivamus sit amet elit bibendum</li>
+  <li>Aliquam ornare sapien ut nisl tristique</li>
+  <li>Praesent aliquet erat eu felis</li>
+</ol>
+
+<ol type="I">
+  <li>Vivamus sit amet elit bibendum</li>
+  <li>Aliquam ornare sapien ut nisl tristique</li>
+  <li>Praesent aliquet erat eu felis</li>
+</ol>
+</details>
 
 <h3>Nested lists</h3>
 
-<p>Themes often mess up nested lists: either erasing the
-nested structure by collapsing the indentation or just making it look bad.
-Oatcake doesn't mess it up and allows indentation to show the structure of your
-nested list:</p>
+<p>Themes often mess up nested lists: erasing the nested structure by
+collapsing the indentation, putting incorrect vertical space before or after a
+nested list, or otherwise making it look bad.  Oatcake doesn't mess it up and
+allows indentation to show the nested structure:</p>
 
 <ul>
   <li>Vivamus non arcu quis sem aliquam</li>
@@ -423,36 +491,10 @@ nested list:</p>
   <li>Maecenas volutpat est eget purus placerat</li>
 </ul>
 
-<h3>Block elements inside lists</h3>
-
-<p>Block elements like paragraphs, blockquotes, and code blocks inside
-lists are another common source of breakage that works fine with Oatcake.
-Here's a list with multi-paragraph list items mixed in with single-line ones:</p>
-
-<ol>
-  <li>
-    <p>This is a list item with a second paragraph:</p>
-
-    <p>Vestibulum enim wisi, viverra nec, fringilla in.</p>
-  </li>
-  <li>
-    <p>A list item with a blockquote:</p>
-
-    <blockquote>
-      <p>This is a blockquote inside a list item.</p>
-    </blockquote>
-  </li>
-  <li>
-    <p>A list item with a code block:</p>
-
-    <pre><code class="nohighlight">&lt;code goes here&gt;</code></pre>
-  </li>
-  <li>A normal list item to end the list.</li>
-</ol>
-
 <h3>Multi-line list items</h3>
 
-<p>Multi-line list items with wrapping work fine and mix well with single-line items:</p>
+<p>Some or all of the items in a list can wrap over multiple lines and it'll
+look fine:</p>
 
 <ul>
   <li>Vivamus sit amet elit bibendum.</li>
@@ -490,6 +532,82 @@ items. Here's what a list of <code>&lt;li&gt;&lt;p&gt;</code>'s looks like with 
     <p>Duis finibus commodo velit, ac aliquam nibh interdum vitae. Sed luctus vel
     dolor vel fringilla. Cras bibendum, turpis nec vestibulum vestibulum, augue
     sem ultricies urna, eu condimentum libero sapien eget nisi.</p>
+  </li>
+</ul>
+
+<p>Nested lists also work inside paragraph lists:</p>
+
+<ul>
+  <li>
+    <p>Here's a nested list inside a paragraph list item:</p>
+
+    <ol>
+      <li>First list item</li>
+      <li>Second list item</li>
+      <li>Third list item</li>
+    </ol>
+
+    <p>Praesent aliquet erat eu felis malesuada maximus.</p>
+  </li>
+  <li>
+    <p>A nested paragraph list inside a paragraph list item:</p>
+
+    <ul>
+      <li><p>First list item</p></li>
+      <li><p>Second list item</p></li>
+      <li><p>Third list item</p></li>
+    </ul>
+  </li>
+  <li>Phasellus congue tortor sed elementum placerat.</li>
+</ul>
+
+
+<h3>Other block elements inside lists</h3>
+
+<p>Other block elements like blockquotes, code blocks etc inside lists are
+another common source of breakage that works fine with Oatcake.:</p>
+
+<ol>
+  <li>
+    <p>A list item with a blockquote:</p>
+
+    <blockquote>
+      <p>This is a blockquote inside a list item.</p>
+    </blockquote>
+  </li>
+  <li>
+    <p>A list item with a code block:</p>
+
+    <pre><code class="nohighlight">&lt;code goes here&gt;</code></pre>
+  </li>
+  <li>
+    <p>A list item with a definition list in it:</p>
+    <dl>
+      <dt>Term</dt>
+      <dd>Description</dd>
+      <dt>Term</dt>
+      <dd>Description</dd>
+    </dl>
+  <li>A normal list item to end the list.</li>
+</ol>
+
+<h3>Images inside lists</h3>
+
+<p>Even images work in list items, either on their own or sharing the list item
+with paragraphs before or after the image:</p>
+
+<ul>
+  <li>
+    <img src="/images/bird.jpg"  alt="A photo of a bird" title="A photo of a bird" />
+  </li>
+  <li>
+    <p>This image of a fox is the second and last block item in this list item:</p>
+    <img src="/images/fox.jpg"  alt="A photo of a fox" title="A photo of a fox" />
+  </li>
+  <li>
+    <p>This image of an elephant is the second of three block items in this list item:</p>
+    <img src="/images/elephant.jpg"  alt="A photo of an elephant" title="A photo of an elephant" />
+    <p>This paragraph is still part of the same list item.</p>
   </li>
 </ul>
 
