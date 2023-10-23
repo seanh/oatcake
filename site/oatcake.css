@@ -164,6 +164,13 @@ details,
   margin-bottom: var(--body-line-height);
 }
 
+li ul:not(p~ul),
+li ol:not(p~ol),
+li dl:not(p~dl) {
+  margin-bottom: 0;
+}
+
+
 img,
 iframe,
 video {
@@ -314,12 +321,6 @@ blockquote *:last-child {
 
 ol li {
   margin-left: 30px;
-}
-
-li ul,
-li ol,
-li dl {
-  margin-bottom: 0;
 }
 
 dl {
