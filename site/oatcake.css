@@ -171,10 +171,15 @@ li dl:not(p~dl) {
 }
 
 
-img,
+img:not(li img:first-child),
 iframe,
 video {
   padding-top: var(--body-line-height);
+}
+
+img,
+iframe,
+video {
   margin-bottom: calc(var(--body-line-height) *2);
 }
 
