@@ -1185,11 +1185,9 @@ Oatcake will show the nested structure. A lot of themes get this wrong:</p>
 
 <hr />
 
-<h2>Disclosure boxes: <code>&lt;details&gt;</code> and <code>&lt;summary&gt;</code></h2>
+<h2>Disclosure widgets: <code>&lt;details&gt;</code> and <code>&lt;summary&gt;</code></h2>
 
-<p>You can create a disclosure widget, allowing some content to be hidden by
-closing the widget, by using <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/details">the <code>&lt;details&gt;</code> tag</a>.
-Oatcake uses the "pointer" cursor style when you hover over one:</p>
+<p>You can create a disclosure widget with the <a href="https://html.spec.whatwg.org/multipage/interactive-elements.html#the-details-element"><code>&lt;details&gt;</code> and <code>&lt;summary&gt;</code> elements</a>:
 
 <details>
   <summary>This is the summary</summary>
@@ -1201,9 +1199,10 @@ Oatcake uses the "pointer" cursor style when you hover over one:</p>
   </ol>
 </details>
 
-<p>Adding the <code>open</code> attribute to the <code>&lt;details&gt;</code> tag makes it already be open by default:</p>
+<p>Adding the <code>open</code> attribute to a <code>&lt;details&gt;</code>
+makes it already be open when the page loads:</p>
 
-<details open="">
+<details open>
   <summary>This is the summary</summary>
   <p>And here are the details:</p>
   <ol>
@@ -1213,20 +1212,21 @@ Oatcake uses the "pointer" cursor style when you hover over one:</p>
   </ol>
 </details>
 
-<p>A <code>&lt;details&gt;</code> with no <code>&lt;summary&gt;</code> just gets the word "Details" as its summary:</p>
+<p>You can nest disclosure widgets:</p>
 
 <details>
-  <p>And here are the details:</p>
-  <ol>
-    <li>Cash on hand: $500.00</li>
-    <li>Current invoice: $75.30</li>
-    <li>Due date: 5/6/19</li>
-  </ol>
+  <summary>Outer widget</summary>
+  <p>Details&hellip;</p>
+  <details>
+    <summary>Inner widget</summary>
+    <p>Details&hellip;</p>
+  </details>
 </details>
 
-<h3>Headings in disclosure boxes</h2>
+<h3>Headings in disclosure widgets</h2>
 
-<p>You can start the hidden contents of a disclosure box with a heading:</p>
+<p>Oatcake makes sure that headings don't have too much vertical space before
+them when they're used to start the hidden contents of a disclosure widget:</p>
 
 <details>
   <summary>A <code>&lt;details&gt;</code> starting with an <code>&lt;h2&gt;</code></summary>

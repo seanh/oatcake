@@ -632,7 +632,7 @@ details[open] {
   padding-bottom: 0;
 }
 
-details[open] summary {
+details[open] > summary {
   margin-bottom: var(--body-line-height);
   border-bottom-left-radius: 0;
   border-bottom-right-radius: 0;
