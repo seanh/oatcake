@@ -529,61 +529,6 @@ headings:</p>
   <h1 class="notoc noanchor">A heading with<sup>superscript</sup> and<sub>subscript</sub> and <small>small text</small> in it</h1>
 </div>
 
-<h3>Headings in blockquotes, notes and disclosure boxes</h3>
-
-<p>Another common bug is for headings to look bad when used within block
-elements like blockquotes, often by introducing weird-looking vertical spaces.
-Oatcake fixes this by styling headings that begin blockquotes with less
-vertical space above them:</p>
-
-<blockquote>
-  <h2 class="notoc noanchor">An <code>&lt;h2&gt;</code> in a <code>&lt;blockquote&gt;</code></h2>
-  <p>This is the body of the blockquote.</p>
-</blockquote>
-
-<blockquote>
-  <h3 class="notoc noanchor">An <code>&lt;h3&gt;</code> in a <code>&lt;blockquote&gt;</code></h3>
-  <p>This is the body of the blockquote.</p>
-</blockquote>
-
-<blockquote>
-  <h4 class="notoc noanchor">An <code>&lt;h4&gt;</code> in a <code>&lt;blockquote&gt;</code></h4>
-  <p>This is the body of the blockquote.</p>
-</blockquote>
-
-<p>The same vertical-space fix also applies to headings that start
-<a href="#note-boxes">note boxes</a>:</p>
-
-<div class="note">
-  <h2 class="notoc noanchor">An <code>&lt;h2&gt;</code> in a note</h2>
-  <p>This is the body of the note.</p>
-</div>
-
-<div class="note">
-  <h3 class="notoc noanchor">An <code>&lt;h3&gt;</code> in a note</h3>
-  <p>This is the body of the note.</p>
-</div>
-
-<div class="note">
-  <h4 class="notoc noanchor">An <code>&lt;h4&gt;</code> in a note</h4>
-  <p>This is the body of the note</p>
-</div>
-
-<p>And the same fix <em>also</em> applies to headings that start
-<a href="#disclosure-boxes-details-and-summary">disclosure boxes</a>,
-with and without <code>&lt;summary&gt;</code>'s:</p>
-
-<details>
-  <summary>A disclosure box with a summary</summary>
-  <h1 class="notoc noanchor">A first-level heading</h1>
-  <p>A paragraph.</p>
-</details>
-
-<details>
-  <h2 class="notoc noanchor">A disclosure box <i>without</i> a summary</h2>
-  <p>A paragraph.</p>
-</details>
-
 <h3>Multi-line headings</h3>
 
 <p>Sometimes a heading runs onto multiple lines, especially on small screens.
@@ -1279,6 +1224,28 @@ Oatcake uses the "pointer" cursor style when you hover over one:</p>
   </ol>
 </details>
 
+<h3>Headings in disclosure boxes</h2>
+
+<p>You can start the hidden contents of a disclosure box with a heading:</p>
+
+<details>
+  <summary>A <code>&lt;details&gt;</code> starting with an <code>&lt;h2&gt;</code></summary>
+  <h2><code>&lt;h2&gt;</code> heading</h2>
+  <p>Here are the details&hellip;</p>
+</details>
+
+<details>
+  <summary>A <code>&lt;details&gt;</code> starting with an <code>&lt;h3&gt;</code></summary>
+  <h3><code>&lt;h3&gt;</code> heading</h3>
+  <p>Here are the details&hellip;</p>
+</details>
+
+<details>
+  <summary>A <code>&lt;details&gt;</code> starting with an <code>&lt;h4&gt;</code></summary>
+  <h4><code>&lt;h4&gt;</code> heading</h4>
+  <p>Here are the details&hellip;</p>
+</details>
+
 <h2>Images</h2>
 
 <p>Images need a little more space above and below them than paragraphs do,
@@ -1527,6 +1494,26 @@ like other frameworks do. But documents with lots of different-coloured boxes
 would distract from both reading and writing (always having to choose which
 type of box to use) and would make it difficult to add support for dark mode
 and for different colour schemes.</p>
+
+<h4>Headings in note boxes</h4>
+
+<p>Note boxes can also have opening headings without too much vertical space:</p>
+
+<div class="note">
+  <h2 class="notoc noanchor">An <code>&lt;h2&gt;</code> in a note</h2>
+  <p>This is the body of the note.</p>
+</div>
+
+<div class="note">
+  <h3 class="notoc noanchor">An <code>&lt;h3&gt;</code> in a note</h3>
+  <p>This is the body of the note.</p>
+</div>
+
+<div class="note">
+  <h4 class="notoc noanchor">An <code>&lt;h4&gt;</code> in a note</h4>
+  <p>This is the body of the note</p>
+</div>
+
 
 <h3>Badges and pills</h3>
 
