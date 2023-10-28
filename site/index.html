@@ -102,6 +102,7 @@ pleasant to read. You can turn on guide lines to see what I mean:</p>
 <p>
 All the usual inline elements work nicely, for example:
 <a href="http://example.com/">links</a>,
+<code>code()</code>,
 <em>emphasised words</em>,
 <strong>words in bold</strong>,
 <del>struck through text</del>,
@@ -121,15 +122,63 @@ an <a href="http://example.com/" title="Title"><strong>all bold link</strong></a
 and an <a href="http://example.com/" title="Title"><code>all_code_link()</code></a>.
 </p>
 
-<details>
+<details open>
 <summary>Inline HTML elements you can use</summary>
 <p>Here's a pocket guide to some of the more interesting inline HTML elements
-you can use, with links to the HTML standard:</p>
+you can use with links to the HTML standard. These all work well with Oatcake:</p>
 
 <ul>
   <li>
     <p>
-      <a href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-u-element">The <code>&lt;mark&gt;</code> element</a>
+      <a href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-q-element">The <code>&lt;q&gt;</code> element</a>
+      is for inline quotations: <q>Whatever you lose, you've won. Whatever you win, you've lost.</q>
+    </p>
+
+    <p>
+      You don't have to type the quotation marks (&ldquo;&hellip;&rdquo;) yourself,
+      just use <code>&lt;q&gt;&hellip;&lt;/q&gt;</code> and the browser will add the quotation marks for you.
+    </p>
+
+    <p>You can nest <code>&lt;q&gt;</code>'s to represent nested quotations:
+    <q>The man said <q>Things that are impossible just take longer</q>. I disagreed with him.</q></p>
+
+    <p><code>&lt;q&gt;</code> is only for quoting another source.
+    If quotation marks are being used for another reason (for example to mark up sarcasm)
+    you should just type the quotation marks yourself. The HTML standard gives this example
+    of typing quotation marks directly when <code>&lt;q&gt;</code> would be inappropriate:</p>
+
+    <blockquote>The word "ineffable" could have been used to describe the disaster
+    resulting from the campaign's mismanagement.</blockquote>
+
+    <p>For block quotations see <a href="#blockquotes">blockquotes</a> below.</p>
+
+    <p>You can add a <code>cite</code> attribute to a <code>&lt;q&gt;</code>
+    to give the URL of the source being quoted, or you can use a
+    <a href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-cite-element"><code>&lt;cite&gt;</code> element</a>
+    somewhere outside of (but near to) the <code>&lt;q&gt;</code>, or both as
+    in this example from the HTML standard:
+    </p>
+
+    <pre><code>&lt;p&gt;The W3C page &lt;cite&gt;About W3C&lt;/cite&gt; says the W3C's
+mission is &lt;q cite="https://www.w3.org/Consortium/"&gt;To lead
+the World Wide Web to its full potential by developing
+protocols and guidelines that ensure long-term growth for the
+Web&lt;/q&gt;. I disagree with this mission.&lt;/p&gt;</code></pre>
+
+    <p><code>cite</code> and <code>&lt;cite&gt;</code> don't make the text look any different:
+    they're just for semantic markup.</p>
+
+    <p>You can use <code>&lt;cite&gt;</code> whenever you're mentioning the title of a work
+    and want to mark it up semantically as a citation,
+    even if you're not going to quote from it.
+    But <code>&lt;cite&gt;</code> shouldn't be used to mark up an author's name:
+    it's only for titles of works.
+    </p>
+  </li>
+
+  <li>
+    <p>
+      <a href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-mark-element">The <code>&lt;mark&gt;</code> element</a>
       is for denoting the <em>relevance</em> of a span of text to the current document
       (as opposed to denoting <em>importance</em>, which is done with <code>&lt;strong&gt;</code>).
       <code>&lt;mark&gt;</code>'s are styled with a background highlight:
@@ -298,611 +347,27 @@ authors to write and deploy Applications over the World Wide Web.&lt;/p&gt;
 &lt;p&gt;The &lt;a href="#whatwg"&gt;&lt;abbr title="Web Hypertext Application Technology Working Group"&gt;WHATWG&lt;/abbr&gt;&lt;/a&gt;
 community does not have much representation from Asia.&lt;/p&gt;</code></pre>
   </li>
+  <li>
+    <p>
+      <a href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-code-element">The <code>&lt;code&gt;</code> element</a>
+      is for inline code spans: fragments of code or strings, filenames,
+      computer programs, etc. This is what <code>`backticks`</code> do in
+      Markdown. See <a href="code-blocks">code blocks</a> below for multi-line code blocks.
+    </p>
+  </li>
+  <li>
+    <p>Instead of <code>&lt;code&gt;</code>, you can also use
+    <a href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-var-element"><code>&lt;var&gt;</code></a>
+    for programming, mathematical and prose variables, constants, symbols,
+    quantities, parameters and placeholders.
+    Here's an example from the HTML standard:</p>
 
+    <blockquote>If there are <var>n</var> pipes leading to the ice
+    cream factory then I expect at <em>least</em> <var>n</var>
+    flavors of ice cream to be available for purchase!</blockquote>
+  </li>
 </ul>
 </details>
-
-<h3>Input and output with <code>&lt;kbd&gt;</code> and <code>&lt;samp&gt;</code></h3>
-
-<p>Oatcake supports user input with <a href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-kbd-element">the <code>&lt;kbd&gt;</code> element</a>
-and sample output with <a href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-samp-element">the <code>&lt;samp&gt;</code> element</a>.</p>
-
-<p>To represent user input from a keyboard or any other text entry device wrap
-it in <code>&lt;kbd&gt;</code> tags: <kbd>help mycommand</kbd></p>
-
-<p>You can use nested <code>&lt;kbd&gt;</code>'s to represent multiple keystrokes that form a
-single input: <kbd><kbd>Ctrl</kbd> + <kbd>c</kbd></kbd>.
-Although you might prefer to write it without nesting like this:
-<kbd>Ctrl</kbd>&nbsp;+&nbsp;<kbd>c</kbd>.</p>
-
-<p>Up to two levels of nesting are supported:
-<kbd><kbd><kbd>Ctrl</kbd> + <kbd>b</kbd></kbd> <kbd><kbd>Shift</kbd> + <kbd>t</kbd></kbd></kbd>.</p>
-
-<p>To represent sample or quoted output from a computer program, wrap it in
-<code>&lt;samp&gt;</code> tags: <samp>Keyboard not found. Press F1 to continue</samp></p>
-
-<div class="note">
-  <h3 class="notoc noanchor">Tip: use non-breaking spaces between <code>&lt;kbd&gt;</code>'s</h3>
-
-  <p>Oatcake prevents browsers from wrapping a <code>&lt;kbd&gt;</code> (nested
-  or single) over multiple lines even if the <code>&lt;kbd&gt;</code> contains
-  multiple words separated by spaces, but if you're using a chain of separate
-  <code>&lt;kbd&gt;</code>'s (as in
-  <kbd>Ctrl</kbd>&nbsp;+&nbsp;<kbd>c</kbd>) you must use non-breaking spaces
-  (<code>&amp;nbsp;</code>) instead of normal spaces around the <code>+</code>
-  if you want to prevent line breaks from being inserted in-between the
-  <code>&lt;kbd&gt;</code>'s. Wrapping the whole sequence of
-  <code>&lt;kbd&gt;</code>'s in a <code>&lt;span style="white-space: nowrap;"&gt;</code>
-  should also work.</p>
-
-  <p>You can also use either technique if you don't want a
-  <code>&lt;code&gt;</code>,
-  <code>&lt;samp&gt;</code>,
-  <code>&lt;mark&gt;</code>,
-  etc to be wrapped (Oatcake doesn't prevent wrapping within these elements by
-  default because often you do what them to wrap, especially if they contain
-  long strings that might otherwise
-  <a href="#overflow">overflow the container</a>).</p>
-</div>
-
-<h2>Code blocks</h2>
-
-<p>You can create inline code spans with
-<a href="https://html.spec.whatwg.org/#the-code-element">the <code>&lt;code&gt;</code> element</a>:
-<code>foobar()</code>, which is what <code>`backticks`</code> do in Markdown.
-To create a multi-line code block wrap a <code>&lt;code&gt;</code> in a
-<a href="https://html.spec.whatwg.org/#the-pre-element"><code>&lt;pre&gt;</code> element</a>:</p>
-
-<pre><code class="nohighlight">def test_validate_url_returns_an_http_url_unmodified():
-    url = 'http://github.com/jimsmith'
-    validated_url = validate_url(url)
-    assert validated_url == 'http://github.com/jimsmith'
-</code></pre>
-
-<p>A common bug in themes is for long lines in code blocks to stretch out
-the width of the entire page and break the layout on mobile screens.  Oatcake
-fixes this by giving wide code blocks a horizontal scrollbar:</p>
-
-<pre><code class="nohighlight">def test_validate_url_returns_an_http_url_unmodified():
-    assert validate_url('http://github.com/jimsmith') == 'http://github.com/jimsmith'
-</code></pre>
-
-<p>You can use bold text in code blocks:</p>
-
-<pre><code class="nohighlight">def test_validate_url_returns_an_http_url_unmodified():
-    url = 'http://github.com/jimsmith'
-    validated_url = <strong>validate_url(url)</strong>
-    assert validated_url == 'http://github.com/jimsmith'</code></pre>
-
-<h3>Representing variables with <code>&lt;var&gt;</code></h3>
-
-<p>Instead of <code>&lt;code&gt;</code>, you can also represent programming or
-mathematical variables with
-<a href="https://html.spec.whatwg.org/#the-var-element">the <code>&lt;var&gt;</code> element</a>.
-Here's an example from the HTML standard:</p>
-
-<blockquote>If there are <var>n</var> pipes leading to the ice
-cream factory then I expect at <em>least</em> <var>n</var>
-flavors of ice cream to be available for purchase!</blockquote>
-
-<h2>Lists</h2>
-
-<p>Here's what a simple unordered list (<a href="https://html.spec.whatwg.org/multipage/grouping-content.html#the-ul-element"><code>&lt;ul&gt;</code></a>) looks like:</p>
-
-<ul>
-  <li>Vivamus sit amet elit bibendum</li>
-  <li>Aliquam ornare sapien ut nisl tristique</li>
-  <li>Praesent aliquet erat eu felis</li>
-</ul>
-
-<p>And an ordered list (<a href="https://html.spec.whatwg.org/multipage/grouping-content.html#the-ol-element"><code>&lt;ol&gt;</code></a>):</p>
-
-<ol>
-  <li>Vivamus sit amet elit bibendum</li>
-  <li>Aliquam ornare sapien ut nisl tristique</li>
-  <li>Praesent aliquet erat eu felis</li>
-</ol>
-
-<details>
-  <summary>Tips for HTML ordered lists</summary>
-
-<p>Did you know that you can reverse the order of the numbers in a numbered
-list by adding a <code>reversed</code> attribute to a
-<code>&lt;ol&gt;</code>? (<code>&lt;ol reversed&gt;</code>)</p>
-
-<ol reversed>
-  <li>Vivamus sit amet elit bibendum</li>
-  <li>Aliquam ornare sapien ut nisl tristique</li>
-  <li>Praesent aliquet erat eu felis</li>
-</ol>
-
-<p>Or you can change the list starting number by adding a <code>start="n"</code> attribute:</p>
-
-<ol start="4">
-  <li>Vivamus sit amet elit bibendum</li>
-  <li>Aliquam ornare sapien ut nisl tristique</li>
-  <li>Praesent aliquet erat eu felis</li>
-</ol>
-
-<p><code>reversed</code> and <code>start</code> can be used together on the same list:</p>
-
-<ol reversed start="10">
-  <li>Vivamus sit amet elit bibendum</li>
-  <li>Aliquam ornare sapien ut nisl tristique</li>
-  <li>Praesent aliquet erat eu felis</li>
-</ol>
-
-<p>You can change the type of list markers using the <code>type</code> attribute:
-<code>type="1"</code> for numbers (the default),
-<code>type="a"</code> for lower-case letters,
-<code>type="A"</code> for upper-case letters,
-<code>type="i"</code> for lower-case roman numerals,
-or <code>type="I"</code> for upper-case roman numerals:</p>
-
-<ol type="a">
-  <li>Vivamus sit amet elit bibendum</li>
-  <li>Aliquam ornare sapien ut nisl tristique</li>
-  <li>Praesent aliquet erat eu felis</li>
-</ol>
-
-<ol type="A">
-  <li>Vivamus sit amet elit bibendum</li>
-  <li>Aliquam ornare sapien ut nisl tristique</li>
-  <li>Praesent aliquet erat eu felis</li>
-</ol>
-
-<ol type="i">
-  <li>Vivamus sit amet elit bibendum</li>
-  <li>Aliquam ornare sapien ut nisl tristique</li>
-  <li>Praesent aliquet erat eu felis</li>
-</ol>
-
-<ol type="I">
-  <li>Vivamus sit amet elit bibendum</li>
-  <li>Aliquam ornare sapien ut nisl tristique</li>
-  <li>Praesent aliquet erat eu felis</li>
-</ol>
-</details>
-
-<h3>Nested lists</h3>
-
-<p>Themes often mess up nested lists: erasing the nested structure by
-collapsing the indentation, putting incorrect vertical space before or after a
-nested list, or otherwise making it look bad.  Oatcake doesn't mess it up and
-allows indentation to show the nested structure:</p>
-
-<ul>
-  <li>Vivamus non arcu quis sem aliquam</li>
-  <li>Quisque in quam tempor, finibus odio nec</li>
-  <li>Aenean lacinia augue vel orci efficitur</li>
-  <li>Mauris nec sem dapibus, convallis dolor eu
-    <ol>
-      <li>Ut quis neque ac lectus vestibulum</li>
-      <li>Fusce congue tortor blandit elit</li>
-      <li>Suspendisse porttitor justo at massa
-        <ul>
-          <li>Vestibulum a turpis non urna</li>
-          <li>Integer non orci a ex aliquam</li>
-          <li>Nullam sit amet turpis sit amet</li>
-        </ul>
-        <li>Cras nec nulla tincidunt</li>
-      </li>
-    </ol>
-  </li>
-  <li>Vivamus ullamcorper orci a leo pretium</li>
-  <li>Maecenas volutpat est eget purus placerat</li>
-</ul>
-
-<h3>Multi-line list items</h3>
-
-<p>Some or all of the items in a list can wrap over multiple lines and it'll
-look fine:</p>
-
-<ul>
-  <li>Vivamus sit amet elit bibendum.</li>
-  <li>Morbi tempor sit amet mi nec auctor. Nulla metus purus, pulvinar sed eros
-  non, ornare hendrerit lacus. Nullam rhoncus pretium turpis iaculis
-  sollicitudin. Mauris ligula velit, ullamcorper a luctus sed, gravida vitae
-  leo.</li>
-  <li>Praesent aliquet erat eu felis.</li>
-  <li>Duis finibus commodo velit, ac aliquam nibh interdum vitae. Sed luctus vel
-  dolor vel fringilla. Cras bibendum, turpis nec vestibulum vestibulum, augue
-  sem ultricies urna, eu condimentum libero sapien eget nisi.</li>
-</ul>
-
-<h3>Paragraph list items</h3>
-
-<p>If you leave blank lines between a list's items Markdown renders them as
-<code>&lt;li&gt;&lt;p&gt;</code>'s rather than just <code>&lt;li&gt;</code>'s,
-which results in the list being rendered with some vertical space between
-items. Here's what a list of <code>&lt;li&gt;&lt;p&gt;</code>'s looks like with Oatcake:</p>
-
-<ul>
-  <li>
-    <p>Vivamus sit amet elit bibendum, sollicitudin turpis vel, ullamcorper purus.</p>
-  </li>
-  <li>
-    <p>Morbi tempor sit amet mi nec auctor. Nulla metus purus, pulvinar sed eros
-    non, ornare hendrerit lacus. Nullam rhoncus pretium turpis iaculis
-    sollicitudin. Mauris ligula velit, ullamcorper a luctus sed, gravida vitae
-    leo.</p>
-  </li>
-  <li>
-    <p>Praesent aliquet erat eu felis malesuada maximus.</p>
-  </li>
-  <li>
-    <p>Duis finibus commodo velit, ac aliquam nibh interdum vitae. Sed luctus vel
-    dolor vel fringilla. Cras bibendum, turpis nec vestibulum vestibulum, augue
-    sem ultricies urna, eu condimentum libero sapien eget nisi.</p>
-  </li>
-</ul>
-
-<p>Nested lists also work inside paragraph lists:</p>
-
-<ul>
-  <li>
-    <p>Here's a nested list inside a paragraph list item:</p>
-
-    <ol>
-      <li>First list item</li>
-      <li>Second list item</li>
-      <li>Third list item</li>
-    </ol>
-
-    <p>Praesent aliquet erat eu felis malesuada maximus.</p>
-  </li>
-  <li>
-    <p>A nested paragraph list inside a paragraph list item:</p>
-
-    <ul>
-      <li><p>First list item</p></li>
-      <li><p>Second list item</p></li>
-      <li><p>Third list item</p></li>
-    </ul>
-  </li>
-  <li>Phasellus congue tortor sed elementum placerat.</li>
-</ul>
-
-
-<h3>Other block elements inside lists</h3>
-
-<p>Other block elements like blockquotes, code blocks etc inside lists are
-another common source of breakage that works fine with Oatcake.:</p>
-
-<ol>
-  <li>
-    <p>A list item with a blockquote:</p>
-
-    <blockquote>
-      <p>This is a blockquote inside a list item.</p>
-    </blockquote>
-  </li>
-  <li>
-    <p>A list item with a code block:</p>
-
-    <pre><code class="nohighlight">&lt;code goes here&gt;</code></pre>
-  </li>
-  <li>
-    <p>A list item with a definition list in it:</p>
-    <dl>
-      <dt>Term</dt>
-      <dd>Description</dd>
-      <dt>Term</dt>
-      <dd>Description</dd>
-    </dl>
-  <li>A normal list item to end the list.</li>
-</ol>
-
-<h3>Images inside lists</h3>
-
-<p>Even images work in list items, either on their own or sharing the list item
-with paragraphs before or after the image:</p>
-
-<ul>
-  <li>
-    <img src="/images/bird.jpg"  alt="A photo of a bird" title="A photo of a bird" />
-  </li>
-  <li>
-    <p>This image of a fox is the second and last block item in this list item:</p>
-    <img src="/images/fox.jpg"  alt="A photo of a fox" title="A photo of a fox" />
-  </li>
-  <li>
-    <p>This image of an elephant is the second of three block items in this list item:</p>
-    <img src="/images/elephant.jpg"  alt="A photo of an elephant" title="A photo of an elephant" />
-    <p>This paragraph is still part of the same list item.</p>
-  </li>
-</ul>
-
-<h2>Definition lists</h2>
-
-<p><a href="https://html.spec.whatwg.org/multipage/grouping-content.html#the-dl-element">The <code>&lt;dl&gt;</code> (definition list) element</a>
-represents:</p>
-
-<blockquote>&hellip;an association list consisting of zero or more name-value groups (a description list)</blockquote>
-
-<p>This could be a list of <q>&hellip;terms and definitions, metadata topics and values, questions and answers, or any other groups of name-value data.</q></p>
-
-<p>Within a <code>&lt;dl&gt;</code> you use pairs of <code>&lt;dt&gt;</code>'s
-for the names ("terms") and <code>&lt;dd&gt;</code>'s for the values
-("descriptions" or "definitions").
-You can have multiple <code>&lt;dt&gt;</code>'s in a row if an item has more than one name
-and/or multiple <code>&lt;dd&gt;</code>'s in a row if an item has more than one value.
-Here's some examples from the HTML standard:</p>
-
-<pre><code>&lt;dl&gt;
- &lt;dt&gt; Authors
- &lt;dd&gt; John
- &lt;dd&gt; Luke
- &lt;dt&gt; Editor
- &lt;dd&gt; Frank
-&lt;/dl&gt;</code></pre>
-
-<pre><code>&lt;dl&gt;
- &lt;dt lang="en-US"&gt;&lt;dfn&gt;color&lt;/dfn&gt;&lt;/dt&gt;
- &lt;dt lang="en-GB"&gt;&lt;dfn&gt;colour&lt;/dfn&gt;&lt;/dt&gt;
- &lt;dd&gt;A sensation which (in humans) derives from the ability of
- the fine structure of the eye to distinguish three differently
- filtered analyses of a view.&lt;/dd&gt;
-&lt;/dl&gt;</code></pre>
-
-<p>Notice the use of the <a href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-dfn-element"><code>&lt;dfn&gt;</code> element</a>
-to mark up the terms when a definition list is being used to define terms.
-Oatcake doesn't style <code>&lt;dfn&gt;</code>'s but they have semantic meaning.</p>
-
-<p>Here's what definition lists look like with Oatcake:</p>
-
-<dl>
-  <dt>Oatcake</dt>
-  <dd>Thin flat unleavened cake of baked oatmeal.</dd>
-  <dt>Oatmeal</dt>
-  <dd>Porridge made of rolled oats.</dd>
-</dl>
-
-<p>Here's how items look with multiple terms, multiple descriptions, and both:</p>
-
-<dl>
-  <dt>Unleavened</dt>
-  <dt>Unraised</dt>
-  <dd>Made without leavening. Unleavened bread is often simple flour mixed with water.</dd>
-
-  <dt>Sow one's wild oats</dt>
-  <dd>Live promiscuously and self-indulgently.</dd>
-  <dd>To have a period of youthful exuberance; to act wildly, especially before marriage.</dd>
-
-  <dt>Wild oat</dt>
-  <dt>Avena fatua</dt>
-  <dd>Common in meadows and pastures.</dd>
-  <dd>Synonyms: wild oat grass.</dd>
-</dl>
-
-<p>The contents of a single <code>&lt;dd&gt;</code> can be wrapped in a
-<code>&lt;p&gt;</code> and a single <code>&lt;dd&gt;</code> can contain
-multiple <code>&lt;p&gt;</code>'s if it's a multi-paragraph description.
-Oatcake handles <code>&lt;dd&gt;</code>'s containing one or more
-<code>&lt;p&gt;</code>'s just fine and styles them the same as
-<code>&lt;dd&gt;</code>'s without <code>&lt;p&gt;</code>'s:</p>
-
-<dl>
-  <dt>Pancake</dt>
-  <dd>
-    <p>A flat cake of thin batter fried on both sides on a griddle.</p>
-  </dd>
-  <dt>Pancake turtle</dt>
-  <dd>
-    <p>Voracious aquatic turtle with a flat flexible shell covered by a leathery skin; can inflict painful bites.</p>
-    <p>Synonym: soft-shelled turtle.</p>
-  </dd>
-  <dt>Tortoise</dt>
-  <dt>Tortoises</dt>
-  <dd>
-    <p>Usually herbivorous land turtles having clawed elephant-like limbs.</p>
-  </dd>
-  <dd>
-    <p>Etymology: Old English <i>tortuce</i>, from Old French <i>tortis</i> crooked, from
-    Latin <i>tortus</i> twisted, crooked, contorted, past participle of
-    <i>torquere</i>, <i>tortum</i>, to wind.</p>
-  </dd>
-</dl>
-
-<h2>Quotes and blockquotes</h2>
-
-<p>Here's an inline quote: <q>Ut fermentum turpis quis ligula sagittis</q>.
-And here's what a blockquote looks like:</p>
-
-<blockquote>
-  <p>Ut fermentum turpis quis ligula sagittis, a fringilla orci ultrices. Nam
-fringilla erat ac bibendum tristique. Morbi nec maximus augue. Donec in justo
-semper, convallis ante et, laoreet nibh. Vivamus suscipit eros tellus, vitae
-faucibus leo fermentum non. Cras luctus condimentum mauris sed placerat.
-Aliquam feugiat commodo elit, eu dapibus nisl placerat at.</p>
-</blockquote>
-
-<p>You can put a <code>&lt;footer&gt;</code> inside a blockquote to describe
-the quote's source:</p>
-
-<blockquote>
-  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.Integer posuere
-  erat a ante.</p>
-  <footer>Someone famous</footer>
-</blockquote>
-
-<p>A <code>&lt;cite&gt;</code> also works:</p>
-
-<blockquote>
-  <p>As my fellow HTML5 Doctor, Oli Studholme has showed, people seldom quote
-  exactly – so sacrosanctity of the quoted text isn’t a useful ideal – and in
-  print etc, citations almost always appear as part of the quotation – it’s
-  highly conventional.</p>
-
-  <cite>Bruce Lawson</cite>
-</blockquote>
-
-<p>Here's one where the <code>&lt;cite&gt;</code> contains a link, just to make
-sure that looks right:</p>
-
-<blockquote>
-  <p>As my fellow HTML5 Doctor, Oli Studholme has showed, people seldom quote
-  exactly – so sacrosanctity of the quoted text isn't a useful ideal – and in
-  print etc, citations almost always appear as part of the quotation – it's
-  highly conventional.</p>
-
-  <cite><a href="http://www.brucelawson.co.uk/2013/on-citing-quotations-again/">Bruce Lawson</a>, way back in 2013</cite>
-</blockquote>
-
-<p>You can nest blockquotes to an arbitrary depth and nothing will go wrong,
-Oatcake will show the structure of your nested blockquotes. A lot of themes get
-this wrong:</p>
-
-<blockquote>
-  <p>Fusce porta quam non varius viverra. Cras mi dui, hendrerit sollicitudin
-  neque sit amet, tempor laoreet elit. Vestibulum euismod nec justo at
-  bibendum.</p>
-
-  <blockquote>
-    <p>Vestibulum molestie nec massa et porta. Donec imperdiet pretium luctus.
-    Etiam in malesuada lacus. Suspendisse eget velit lacinia, hendrerit lorem
-    nec, pretium urna. Morbi tempor luctus sodales.</p>
-
-    <blockquote>
-      <p>Vestibulum molestie nec massa et porta. Donec imperdiet pretium
-      luctus.  Etiam in malesuada lacus. Suspendisse eget velit lacinia,
-      hendrerit lorem nec, pretium urna. Morbi tempor luctus sodales.</p>
-
-      <p>Vestibulum molestie nec massa et porta. Donec imperdiet pretium
-      luctus.  Etiam in malesuada lacus. Suspendisse eget velit lacinia,
-      hendrerit lorem nec, pretium urna. Morbi tempor luctus sodales.</p>
-    </blockquote>
-
-    <p>Vestibulum molestie nec massa et porta. Donec imperdiet pretium luctus.
-    Etiam in malesuada lacus. Suspendisse eget velit lacinia, hendrerit lorem
-    nec, pretium urna. Morbi tempor luctus sodales.</p>
-  </blockquote>
-
-  <p>Nam commodo felis at tortor tempor, sit amet vestibulum lorem gravida.
-  Suspendisse dignissim felis velit, vitae vehicula lorem gravida nec.</p>
-</blockquote>
-
-<p>Blockquotes can contain other block elements like headers, lists,
-code blocks, etc and nothing will look wrong:</p>
-
-<blockquote>
-  <h2 class="notoc noanchor">This is a header</h2>
-
-  <ol>
-    <li>This is the first list item.</li>
-    <li>This is the second list item.</li>
-  </ol>
-
-  <p>Here's some example code:</p>
-
-  <pre><code>return shell_exec("echo $input | $markdown_script");
-</code></pre>
-</blockquote>
-
-<h2>Horizontal rules</h2>
-
-<p>Here's an <code>&lt;hr /&gt;</code>:</p>
-
-<hr />
-
-
-<h2>Disclosure boxes: <code>&lt;details&gt;</code> and <code>&lt;summary&gt;</code></h2>
-
-<p>You can create a disclosure widget, allowing some content to be hidden by
-closing the widget, by using <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/details">the <code>&lt;details&gt;</code> tag</a>.
-Oatcake uses the "pointer" cursor style when you hover over one:</p>
-
-<details>
-  <summary>This is the summary</summary>
-  <p>And here are the details:</p>
-  <ol>
-    <li>Cash on hand: $500.00</li>
-    <li>Current invoice: $75.30</li>
-    <li>Due date: 5/6/19</li>
-  </ol>
-</details>
-
-<p>Adding the <code>open</code> attribute to the <code>&lt;details&gt;</code> tag makes it already be open by default:</p>
-
-<details open="">
-  <summary>This is the summary</summary>
-  <p>And here are the details:</p>
-  <ol>
-    <li>Cash on hand: $500.00</li>
-    <li>Current invoice: $75.30</li>
-    <li>Due date: 5/6/19</li>
-  </ol>
-</details>
-
-<p>A <code>&lt;details&gt;</code> with no <code>&lt;summary&gt;</code> just gets the word "Details" as its summary:</p>
-
-<details>
-  <p>And here are the details:</p>
-  <ol>
-    <li>Cash on hand: $500.00</li>
-    <li>Current invoice: $75.30</li>
-    <li>Due date: 5/6/19</li>
-  </ol>
-</details>
-
-<h2>Note boxes</h2>
-
-<p>You can create a "note" by adding the CSS class <code>note</code> to a paragraph:</p>
-
-<pre>&lt;p class="note"&gt;This is a paragraph that stands out as a note.&lt;/p&gt;</pre>
-
-<p>It'll look like this:</p>
-
-<p class="note">This is a paragraph that stands out as a note.</p>
-
-<p>A multi-line paragraph note will also work nicely:</p>
-
-<p class="note">Morbi sed facilisis nunc. Quisque dictum lectus vitae purus
-lobortis, dapibus malesuada sapien imperdiet. Vestibulum ante ipsum primis in
-faucibus orci luctus et ultrices posuere cubilia curae.</p>
-
-<p>You can also put the <code>note</code> class on an <code>&lt;ol&gt;</code>
-or <code>&lt;ul&gt;</code> to style a list as a note:
-
-<ul class="note">
-  <li>Aenean</li>
-  <li>Quis</li>
-  <li>Odio</li>
-  <li>Libero</li>
-</ul>
-
-<p>You can put multiple paragraphs and other arbitrary content (headings,
-blockquotes, lists, code blocks&hellip;) in a note by putting the
-<code>note</code> class on a containing <code>&lt;div&gt;</code>:</p>
-
-<div class="note">
-  <h3 class="notoc noanchor">This note has a heading</h3>
-
-  <blockquote>
-    <p>Duis efficitur justo semper mauris tempor:</p>
-    <ul>
-      <li>Eget hendrerit diam</li>
-      <li>Nunc feugiat congue dictum, <a href="">nullam auctor</a> in dui</li>
-      <li><strong>a tempus nunc elementum</strong></li>
-      <li>Pellentesque velit felis <code>bibendum</code> ac <kbd>quis</kbd> euismod</li>
-    </ul>
-  </blockquote>
-
-  <hr />
-
-  <pre><code>You can even put code blocks in notes.</code></pre>
-</div>
-
-<p><a href="https://html.spec.whatwg.org/multipage/sections.html#the-aside-element"><code>&lt;aside class="note"&gt;</code></a>
-would also work with the <code>note</code> class and has special meaning: it's
-for content that is separate from the main content of the page and not part of
-the main flow of the document.</p>
-
-<p>It would be easy to provide a variety of different colours for note boxes
-like other frameworks do. But documents with lots of different-coloured boxes
-would distract from both reading and writing (always having to choose which
-type of box to use) and would make it difficult to add support for dark mode
-and for different colour schemes.</p>
 
 <h2>Headings</h2>
 
@@ -1201,55 +666,537 @@ With Oatcake multi-line headings wrap well, this is a multi-line
   </h4>
 </div>
 
-<h2>Subtitles and lead paragraphs</h2>
+<h2 id="code-blocks">Code blocks</h2>
 
-<p>"Lead" paragraphs use a larger text style but not quite as large or bold as
-headings.  To create a lead paragraph just add <code>class="lead"</code> to a
-<code>&lt;p&gt;</code>.  For example this:</p>
+<p><a href="https://html.spec.whatwg.org/#the-code-element">The <code>&lt;code&gt;</code> element</a>
+(<code>`backticks`</code> in Markdown) can be used for inline code spans,
+or <a href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-var-element"><code>&lt;var&gt;</code></a>
+for programming, mathematical and prose variables, constants, symbols, quantities, parameters and placeholders.
+To create a multi-line code block wrap a <code>&lt;code&gt;</code> in a
+<a href="https://html.spec.whatwg.org/#the-pre-element"><code>&lt;pre&gt;</code> element</a>:</p>
 
-<pre><code>&lt;p class="lead"&gt;
-  This is a "lead" paragraph. It stands out more than other paragraphs. These
-  can be used anywhere in a document.
-&lt;/p&gt;</code></pre>
+<pre><code class="nohighlight">def test_validate_url_returns_an_http_url_unmodified():
+    url = 'http://github.com/jimsmith'
+    validated_url = validate_url(url)
+    assert validated_url == 'http://github.com/jimsmith'
+</code></pre>
 
-<p>will render like this:</p>
+<p>A common bug in themes is for long lines in code blocks to stretch out
+the width of the entire page and break the layout on mobile screens.  Oatcake
+fixes this by giving wide code blocks a horizontal scrollbar:</p>
 
-<p class="lead">
-  This is a "lead" paragraph. It stands out more than other paragraphs. These
-  can be used anywhere in a document.
-</p>
+<pre><code class="nohighlight">def test_validate_url_returns_an_http_url_unmodified():
+    assert validate_url('http://github.com/jimsmith') == 'http://github.com/jimsmith'
+</code></pre>
 
-<p>You can use a lead paragraph as a subtitle by putting it together with a
-heading in an <code>&lt;hgroup&gt;</code>. This:</p>
+<p>You can use bold text in code blocks:</p>
 
-<pre><code>&lt;hgroup&gt;
-  &lt;h1&gt;This is the heading&lt;/h1&gt;
-  &lt;p class="lead"&gt;This is the subtitle, it appears in large text beneath the heading.&lt;/p&gt;
-&lt;/hgroup&gt;</code></pre>
+<pre><code class="nohighlight">def test_validate_url_returns_an_http_url_unmodified():
+    url = 'http://github.com/jimsmith'
+    validated_url = <strong>validate_url(url)</strong>
+    assert validated_url == 'http://github.com/jimsmith'</code></pre>
 
-<p>will render like this:</p>
+<h2>Input and output with <code>&lt;kbd&gt;</code> and <code>&lt;samp&gt;</code></h2>
 
-<hgroup>
-  <h1 class="notoc noanchor">This is the heading</h1>
-  <p class="lead">This is the subtitle, it appears in large text beneath the heading.</p>
-</hgroup>
+<p>Oatcake supports user input with <a href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-kbd-element">the <code>&lt;kbd&gt;</code> element</a>
+and sample output with <a href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-samp-element">the <code>&lt;samp&gt;</code> element</a>.</p>
 
-<p>Inline elements like <code>&lt;code&gt;</code> and <code>&lt;samp&gt;</code>
-also work in subtitles and lead paragraphs:</p>
+<p>To represent user input from a keyboard or any other text entry device wrap
+it in <code>&lt;kbd&gt;</code> tags: <kbd>help mycommand</kbd></p>
 
-<p class="lead">
-  This is a <code>&lt;lead&gt;</code> paragraph
-  containing <em>emphasis</em>,
-  <code>&lt;code tags&gt;</code>,
-  some <samp>sample output</samp>,
-  a couple of <code>&lt;kbd&gt;</code>'s: <kbd>Ctrl</kbd>&nbsp;+&nbsp;<kbd>c</kbd>,
-  <u>underlined text</u>,
-  <mark>highlighted text</mark>,
-  <del>struck-through text</del>,
-  <a href="">a link</a>,
-  <a href=""><code>a code link</code></a>.
-  and even<sup>superscript</sup> and<sub>subscript</sub> and <small>small text</small> in it</h1>
-</p>
+<p>You can use nested <code>&lt;kbd&gt;</code>'s to represent multiple keystrokes that form a
+single input: <kbd><kbd>Ctrl</kbd> + <kbd>c</kbd></kbd>.
+Although you might prefer to write it without nesting like this:
+<kbd>Ctrl</kbd>&nbsp;+&nbsp;<kbd>c</kbd>.</p>
+
+<p>Up to two levels of nesting are supported:
+<kbd><kbd><kbd>Ctrl</kbd> + <kbd>b</kbd></kbd> <kbd><kbd>Shift</kbd> + <kbd>t</kbd></kbd></kbd>.</p>
+
+<p>To represent sample or quoted output from a computer program, wrap it in
+<code>&lt;samp&gt;</code> tags: <samp>Keyboard not found. Press F1 to continue</samp></p>
+
+<div class="note">
+  <h3 class="notoc noanchor">Tip: use non-breaking spaces between <code>&lt;kbd&gt;</code>'s</h3>
+
+  <p>Oatcake prevents browsers from wrapping a <code>&lt;kbd&gt;</code> (nested
+  or single) over multiple lines even if the <code>&lt;kbd&gt;</code> contains
+  multiple words separated by spaces, but if you're using a chain of separate
+  <code>&lt;kbd&gt;</code>'s (as in
+  <kbd>Ctrl</kbd>&nbsp;+&nbsp;<kbd>c</kbd>) you must use non-breaking spaces
+  (<code>&amp;nbsp;</code>) instead of normal spaces around the <code>+</code>
+  if you want to prevent line breaks from being inserted in-between the
+  <code>&lt;kbd&gt;</code>'s. Wrapping the whole sequence of
+  <code>&lt;kbd&gt;</code>'s in a <code>&lt;span style="white-space: nowrap;"&gt;</code>
+  should also work.</p>
+
+  <p>You can also use either technique if you don't want a
+  <code>&lt;code&gt;</code>,
+  <code>&lt;samp&gt;</code>,
+  <code>&lt;mark&gt;</code>,
+  etc to be wrapped (Oatcake doesn't prevent wrapping within these elements by
+  default because often you do what them to wrap, especially if they contain
+  long strings that might otherwise
+  <a href="#overflow">overflow the container</a>).</p>
+</div>
+
+
+<h2>Lists</h2>
+
+<p>Here's what a simple unordered list (<a href="https://html.spec.whatwg.org/multipage/grouping-content.html#the-ul-element"><code>&lt;ul&gt;</code></a>) looks like:</p>
+
+<ul>
+  <li>Vivamus sit amet elit bibendum</li>
+  <li>Aliquam ornare sapien ut nisl tristique</li>
+  <li>Praesent aliquet erat eu felis</li>
+</ul>
+
+<p>And an ordered list (<a href="https://html.spec.whatwg.org/multipage/grouping-content.html#the-ol-element"><code>&lt;ol&gt;</code></a>):</p>
+
+<ol>
+  <li>Vivamus sit amet elit bibendum</li>
+  <li>Aliquam ornare sapien ut nisl tristique</li>
+  <li>Praesent aliquet erat eu felis</li>
+</ol>
+
+<details>
+  <summary>Tips for HTML ordered lists</summary>
+
+<p>Did you know that you can reverse the order of the numbers in a numbered
+list by adding a <code>reversed</code> attribute to a
+<code>&lt;ol&gt;</code>? (<code>&lt;ol reversed&gt;</code>)</p>
+
+<ol reversed>
+  <li>Vivamus sit amet elit bibendum</li>
+  <li>Aliquam ornare sapien ut nisl tristique</li>
+  <li>Praesent aliquet erat eu felis</li>
+</ol>
+
+<p>Or you can change the list starting number by adding a <code>start="n"</code> attribute:</p>
+
+<ol start="4">
+  <li>Vivamus sit amet elit bibendum</li>
+  <li>Aliquam ornare sapien ut nisl tristique</li>
+  <li>Praesent aliquet erat eu felis</li>
+</ol>
+
+<p><code>reversed</code> and <code>start</code> can be used together on the same list:</p>
+
+<ol reversed start="10">
+  <li>Vivamus sit amet elit bibendum</li>
+  <li>Aliquam ornare sapien ut nisl tristique</li>
+  <li>Praesent aliquet erat eu felis</li>
+</ol>
+
+<p>You can change the type of list markers using the <code>type</code> attribute:
+<code>type="1"</code> for numbers (the default),
+<code>type="a"</code> for lower-case letters,
+<code>type="A"</code> for upper-case letters,
+<code>type="i"</code> for lower-case roman numerals,
+or <code>type="I"</code> for upper-case roman numerals:</p>
+
+<ol type="a">
+  <li>Vivamus sit amet elit bibendum</li>
+  <li>Aliquam ornare sapien ut nisl tristique</li>
+  <li>Praesent aliquet erat eu felis</li>
+</ol>
+
+<ol type="A">
+  <li>Vivamus sit amet elit bibendum</li>
+  <li>Aliquam ornare sapien ut nisl tristique</li>
+  <li>Praesent aliquet erat eu felis</li>
+</ol>
+
+<ol type="i">
+  <li>Vivamus sit amet elit bibendum</li>
+  <li>Aliquam ornare sapien ut nisl tristique</li>
+  <li>Praesent aliquet erat eu felis</li>
+</ol>
+
+<ol type="I">
+  <li>Vivamus sit amet elit bibendum</li>
+  <li>Aliquam ornare sapien ut nisl tristique</li>
+  <li>Praesent aliquet erat eu felis</li>
+</ol>
+</details>
+
+<h3>Nested lists</h3>
+
+<p>Themes often mess up nested lists: erasing the nested structure by
+collapsing the indentation, putting incorrect vertical space before or after a
+nested list, or otherwise making it look bad.  Oatcake doesn't mess it up and
+allows indentation to show the nested structure:</p>
+
+<ul>
+  <li>Vivamus non arcu quis sem aliquam</li>
+  <li>Quisque in quam tempor, finibus odio nec</li>
+  <li>Aenean lacinia augue vel orci efficitur</li>
+  <li>Mauris nec sem dapibus, convallis dolor eu
+    <ol>
+      <li>Ut quis neque ac lectus vestibulum</li>
+      <li>Fusce congue tortor blandit elit</li>
+      <li>Suspendisse porttitor justo at massa
+        <ul>
+          <li>Vestibulum a turpis non urna</li>
+          <li>Integer non orci a ex aliquam</li>
+          <li>Nullam sit amet turpis sit amet</li>
+        </ul>
+        <li>Cras nec nulla tincidunt</li>
+      </li>
+    </ol>
+  </li>
+  <li>Vivamus ullamcorper orci a leo pretium</li>
+  <li>Maecenas volutpat est eget purus placerat</li>
+</ul>
+
+<h3>Multi-line list items</h3>
+
+<p>Some or all of the items in a list can wrap over multiple lines and it'll
+look fine:</p>
+
+<ul>
+  <li>Vivamus sit amet elit bibendum.</li>
+  <li>Morbi tempor sit amet mi nec auctor. Nulla metus purus, pulvinar sed eros
+  non, ornare hendrerit lacus. Nullam rhoncus pretium turpis iaculis
+  sollicitudin. Mauris ligula velit, ullamcorper a luctus sed, gravida vitae
+  leo.</li>
+  <li>Praesent aliquet erat eu felis.</li>
+  <li>Duis finibus commodo velit, ac aliquam nibh interdum vitae. Sed luctus vel
+  dolor vel fringilla. Cras bibendum, turpis nec vestibulum vestibulum, augue
+  sem ultricies urna, eu condimentum libero sapien eget nisi.</li>
+</ul>
+
+<h3>Paragraph list items</h3>
+
+<p>If you leave blank lines between a list's items Markdown renders them as
+<code>&lt;li&gt;&lt;p&gt;</code>'s rather than just <code>&lt;li&gt;</code>'s,
+which results in the list being rendered with some vertical space between
+items. Here's what a list of <code>&lt;li&gt;&lt;p&gt;</code>'s looks like with Oatcake:</p>
+
+<ul>
+  <li>
+    <p>Vivamus sit amet elit bibendum, sollicitudin turpis vel, ullamcorper purus.</p>
+  </li>
+  <li>
+    <p>Morbi tempor sit amet mi nec auctor. Nulla metus purus, pulvinar sed eros
+    non, ornare hendrerit lacus. Nullam rhoncus pretium turpis iaculis
+    sollicitudin. Mauris ligula velit, ullamcorper a luctus sed, gravida vitae
+    leo.</p>
+  </li>
+  <li>
+    <p>Praesent aliquet erat eu felis malesuada maximus.</p>
+  </li>
+  <li>
+    <p>Duis finibus commodo velit, ac aliquam nibh interdum vitae. Sed luctus vel
+    dolor vel fringilla. Cras bibendum, turpis nec vestibulum vestibulum, augue
+    sem ultricies urna, eu condimentum libero sapien eget nisi.</p>
+  </li>
+</ul>
+
+<p>Nested lists also work inside paragraph lists:</p>
+
+<ul>
+  <li>
+    <p>Here's a nested list inside a paragraph list item:</p>
+
+    <ol>
+      <li>First list item</li>
+      <li>Second list item</li>
+      <li>Third list item</li>
+    </ol>
+
+    <p>Praesent aliquet erat eu felis malesuada maximus.</p>
+  </li>
+  <li>
+    <p>A nested paragraph list inside a paragraph list item:</p>
+
+    <ul>
+      <li><p>First list item</p></li>
+      <li><p>Second list item</p></li>
+      <li><p>Third list item</p></li>
+    </ul>
+  </li>
+  <li>Phasellus congue tortor sed elementum placerat.</li>
+</ul>
+
+
+<h3>Other block elements inside lists</h3>
+
+<p>Other block elements like blockquotes, code blocks etc inside lists are
+another common source of breakage that works fine with Oatcake.:</p>
+
+<ol>
+  <li>
+    <p>A list item with a blockquote:</p>
+
+    <blockquote>
+      <p>This is a blockquote inside a list item.</p>
+    </blockquote>
+  </li>
+  <li>
+    <p>A list item with a code block:</p>
+
+    <pre><code class="nohighlight">&lt;code goes here&gt;</code></pre>
+  </li>
+  <li>
+    <p>A list item with a definition list in it:</p>
+    <dl>
+      <dt>Term</dt>
+      <dd>Description</dd>
+      <dt>Term</dt>
+      <dd>Description</dd>
+    </dl>
+  <li>A normal list item to end the list.</li>
+</ol>
+
+<h4>Images inside lists</h4>
+
+<p>Even images work in list items, either on their own or sharing the list item
+with paragraphs before or after the image:</p>
+
+<ul>
+  <li>
+    <img src="/images/bird.jpg"  alt="A photo of a bird" title="A photo of a bird" />
+  </li>
+  <li>
+    <p>This image of a fox is the second and last block item in this list item:</p>
+    <img src="/images/fox.jpg"  alt="A photo of a fox" title="A photo of a fox" />
+  </li>
+  <li>
+    <p>This image of an elephant is the second of three block items in this list item:</p>
+    <img src="/images/elephant.jpg"  alt="A photo of an elephant" title="A photo of an elephant" />
+    <p>This paragraph is still part of the same list item.</p>
+  </li>
+</ul>
+
+<h2>Definition lists</h2>
+
+<p><a href="https://html.spec.whatwg.org/multipage/grouping-content.html#the-dl-element">The <code>&lt;dl&gt;</code> (definition list) element</a>
+represents:</p>
+
+<blockquote>&hellip;an association list consisting of zero or more name-value groups (a description list)</blockquote>
+
+<p>This could be a list of <q>&hellip;terms and definitions, metadata topics and values, questions and answers, or any other groups of name-value data.</q></p>
+
+<p>Within a <code>&lt;dl&gt;</code> you use pairs of <code>&lt;dt&gt;</code>'s
+for the names ("terms") and <code>&lt;dd&gt;</code>'s for the values
+("descriptions" or "definitions").
+You can have multiple <code>&lt;dt&gt;</code>'s in a row if an item has more than one name
+and/or multiple <code>&lt;dd&gt;</code>'s in a row if an item has more than one value.
+Here's some examples from the HTML standard:</p>
+
+<pre><code>&lt;dl&gt;
+ &lt;dt&gt; Authors
+ &lt;dd&gt; John
+ &lt;dd&gt; Luke
+ &lt;dt&gt; Editor
+ &lt;dd&gt; Frank
+&lt;/dl&gt;</code></pre>
+
+<pre><code>&lt;dl&gt;
+ &lt;dt lang="en-US"&gt;&lt;dfn&gt;color&lt;/dfn&gt;&lt;/dt&gt;
+ &lt;dt lang="en-GB"&gt;&lt;dfn&gt;colour&lt;/dfn&gt;&lt;/dt&gt;
+ &lt;dd&gt;A sensation which (in humans) derives from the ability of
+ the fine structure of the eye to distinguish three differently
+ filtered analyses of a view.&lt;/dd&gt;
+&lt;/dl&gt;</code></pre>
+
+<p>Notice the use of the <a href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-dfn-element"><code>&lt;dfn&gt;</code> element</a>
+to mark up the terms when a definition list is being used to define terms.
+Oatcake doesn't style <code>&lt;dfn&gt;</code>'s but they have semantic meaning.</p>
+
+<p>Here's what definition lists look like with Oatcake:</p>
+
+<dl>
+  <dt>Oatcake</dt>
+  <dd>Thin flat unleavened cake of baked oatmeal.</dd>
+  <dt>Oatmeal</dt>
+  <dd>Porridge made of rolled oats.</dd>
+</dl>
+
+<p>Here's how items look with multiple terms, multiple descriptions, and both:</p>
+
+<dl>
+  <dt>Unleavened</dt>
+  <dt>Unraised</dt>
+  <dd>Made without leavening. Unleavened bread is often simple flour mixed with water.</dd>
+
+  <dt>Sow one's wild oats</dt>
+  <dd>Live promiscuously and self-indulgently.</dd>
+  <dd>To have a period of youthful exuberance; to act wildly, especially before marriage.</dd>
+
+  <dt>Wild oat</dt>
+  <dt>Avena fatua</dt>
+  <dd>Common in meadows and pastures.</dd>
+  <dd>Synonyms: wild oat grass.</dd>
+</dl>
+
+<p>The contents of a single <code>&lt;dd&gt;</code> can be wrapped in a
+<code>&lt;p&gt;</code> and a single <code>&lt;dd&gt;</code> can contain
+multiple <code>&lt;p&gt;</code>'s if it's a multi-paragraph description.
+Oatcake handles <code>&lt;dd&gt;</code>'s containing one or more
+<code>&lt;p&gt;</code>'s just fine and styles them the same as
+<code>&lt;dd&gt;</code>'s without <code>&lt;p&gt;</code>'s:</p>
+
+<dl>
+  <dt>Pancake</dt>
+  <dd>
+    <p>A flat cake of thin batter fried on both sides on a griddle.</p>
+  </dd>
+  <dt>Pancake turtle</dt>
+  <dd>
+    <p>Voracious aquatic turtle with a flat flexible shell covered by a leathery skin; can inflict painful bites.</p>
+    <p>Synonym: soft-shelled turtle.</p>
+  </dd>
+  <dt>Tortoise</dt>
+  <dt>Tortoises</dt>
+  <dd>
+    <p>Usually herbivorous land turtles having clawed elephant-like limbs.</p>
+  </dd>
+  <dd>
+    <p>Etymology: Old English <i>tortuce</i>, from Old French <i>tortis</i> crooked, from
+    Latin <i>tortus</i> twisted, crooked, contorted, past participle of
+    <i>torquere</i>, <i>tortum</i>, to wind.</p>
+  </dd>
+</dl>
+
+<h2 id="blockquotes">Inline quotes, blockquotes and citations</h2>
+
+<p>Here's what a blockquote looks like:</p>
+
+<blockquote>
+  <p>Ut fermentum turpis quis ligula sagittis, a fringilla orci ultrices. Nam
+fringilla erat ac bibendum tristique. Morbi nec maximus augue. Donec in justo
+semper, convallis ante et, laoreet nibh. Vivamus suscipit eros tellus, vitae
+faucibus leo fermentum non. Cras luctus condimentum mauris sed placerat.
+Aliquam feugiat commodo elit, eu dapibus nisl placerat at.</p>
+</blockquote>
+
+<p>You can put a <code>&lt;footer&gt;</code> inside a blockquote to describe
+the quote's source:</p>
+
+<blockquote>
+  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.Integer posuere
+  erat a ante.</p>
+  <footer>Someone famous</footer>
+</blockquote>
+
+<p>A <code>&lt;cite&gt;</code> also works:</p>
+
+<blockquote>
+  <p>As my fellow HTML5 Doctor, Oli Studholme has showed, people seldom quote
+  exactly – so sacrosanctity of the quoted text isn’t a useful ideal – and in
+  print etc, citations almost always appear as part of the quotation – it’s
+  highly conventional.</p>
+
+  <cite>Bruce Lawson</cite>
+</blockquote>
+
+<p>Here's one where the <code>&lt;cite&gt;</code> contains a link, just to make
+sure that looks right:</p>
+
+<blockquote>
+  <p>As my fellow HTML5 Doctor, Oli Studholme has showed, people seldom quote
+  exactly – so sacrosanctity of the quoted text isn't a useful ideal – and in
+  print etc, citations almost always appear as part of the quotation – it's
+  highly conventional.</p>
+
+  <cite><a href="http://www.brucelawson.co.uk/2013/on-citing-quotations-again/">Bruce Lawson</a>, way back in 2013</cite>
+</blockquote>
+
+<p>You can nest blockquotes to an arbitrary depth and nothing will go wrong,
+Oatcake will show the structure of your nested blockquotes. A lot of themes get
+this wrong:</p>
+
+<blockquote>
+  <p>Fusce porta quam non varius viverra. Cras mi dui, hendrerit sollicitudin
+  neque sit amet, tempor laoreet elit. Vestibulum euismod nec justo at
+  bibendum.</p>
+
+  <blockquote>
+    <p>Vestibulum molestie nec massa et porta. Donec imperdiet pretium luctus.
+    Etiam in malesuada lacus. Suspendisse eget velit lacinia, hendrerit lorem
+    nec, pretium urna. Morbi tempor luctus sodales.</p>
+
+    <blockquote>
+      <p>Vestibulum molestie nec massa et porta. Donec imperdiet pretium
+      luctus.  Etiam in malesuada lacus. Suspendisse eget velit lacinia,
+      hendrerit lorem nec, pretium urna. Morbi tempor luctus sodales.</p>
+
+      <p>Vestibulum molestie nec massa et porta. Donec imperdiet pretium
+      luctus.  Etiam in malesuada lacus. Suspendisse eget velit lacinia,
+      hendrerit lorem nec, pretium urna. Morbi tempor luctus sodales.</p>
+    </blockquote>
+
+    <p>Vestibulum molestie nec massa et porta. Donec imperdiet pretium luctus.
+    Etiam in malesuada lacus. Suspendisse eget velit lacinia, hendrerit lorem
+    nec, pretium urna. Morbi tempor luctus sodales.</p>
+  </blockquote>
+
+  <p>Nam commodo felis at tortor tempor, sit amet vestibulum lorem gravida.
+  Suspendisse dignissim felis velit, vitae vehicula lorem gravida nec.</p>
+</blockquote>
+
+<p>Blockquotes can contain other block elements like headers, lists,
+code blocks, etc and nothing will look wrong:</p>
+
+<blockquote>
+  <h2 class="notoc noanchor">This is a header</h2>
+
+  <ol>
+    <li>This is the first list item.</li>
+    <li>This is the second list item.</li>
+  </ol>
+
+  <p>Here's some example code:</p>
+
+  <pre><code>return shell_exec("echo $input | $markdown_script");
+</code></pre>
+</blockquote>
+
+<h2>Horizontal rules</h2>
+
+<p>Here's an <code>&lt;hr /&gt;</code>:</p>
+
+<hr />
+
+<h2>Disclosure boxes: <code>&lt;details&gt;</code> and <code>&lt;summary&gt;</code></h2>
+
+<p>You can create a disclosure widget, allowing some content to be hidden by
+closing the widget, by using <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/details">the <code>&lt;details&gt;</code> tag</a>.
+Oatcake uses the "pointer" cursor style when you hover over one:</p>
+
+<details>
+  <summary>This is the summary</summary>
+  <p>And here are the details:</p>
+  <ol>
+    <li>Cash on hand: $500.00</li>
+    <li>Current invoice: $75.30</li>
+    <li>Due date: 5/6/19</li>
+  </ol>
+</details>
+
+<p>Adding the <code>open</code> attribute to the <code>&lt;details&gt;</code> tag makes it already be open by default:</p>
+
+<details open="">
+  <summary>This is the summary</summary>
+  <p>And here are the details:</p>
+  <ol>
+    <li>Cash on hand: $500.00</li>
+    <li>Current invoice: $75.30</li>
+    <li>Due date: 5/6/19</li>
+  </ol>
+</details>
+
+<p>A <code>&lt;details&gt;</code> with no <code>&lt;summary&gt;</code> just gets the word "Details" as its summary:</p>
+
+<details>
+  <p>And here are the details:</p>
+  <ol>
+    <li>Cash on hand: $500.00</li>
+    <li>Current invoice: $75.30</li>
+    <li>Due date: 5/6/19</li>
+  </ol>
+</details>
 
 <h2>Images</h2>
 
@@ -1333,44 +1280,6 @@ is important to the meaning of the document then you should just use a standard
 <code>&lt;img&gt;</code>, <code>&lt;pre&gt;&lt;code&gt;</code>, or other
 content instead of a figure.</p>
 
-<h2>Badges and pills</h2>
-
-<p>Oatcake provides badges and pills that you can use for tags and other UI
-elements, just create a <code>&lt;span&gt;</code> with the CSS class
-<code>badge</code> or <code>pill</code>:</p>
-
-<p><span class="badge">Badge</span> <span class="pill">Pill</span></p>
-
-<p>You can also put the <code>badge</code> or <code>pill</code> class on an
-<code>&lt;a&gt;</code> or <code>&ltbutton&gt;</code> to create a badge or pill
-with hover and focus states:</p>
-
-<p>
-  <a href="" class="badge">An <code>&lt;a&gt;</code> badge</a>
-  <a href="" class="pill">An <code>&lt;a&gt;</code> pill</a>
-  <button class="badge">A <code>&lt;button&gt;</code> badge</button>
-  <button class="pill">A <code>&lt;button&gt;</code> pill</button>
-</p>
-
-<p>Badges and pills can be used inside paragraphs (or list items, headings etc):</p>
-
-<h3 class="notoc noanchor" style="padding-top: 0;">Heading <span class="pill">Pill</span></h3>
-
-<p>This is a paragraph with an inline <span class="badge">badge</span> in
-it. As with <code>&lt;kbd&gt;</code>'s, if your badge or pill contains
-<span class="pill">more than one word</span> Oatcake prevents browsers from
-wrapping it over multiple lines.</p>
-
-<ul>
-  <li>First list item <span class="badge">23</span></li>
-  <li>Second list item <span class="pill">16</span></li>
-  <li>Third list item <span class="badge">32</span></li>
-</ul>
-
-<p>As with note boxes, it was tempting to add a variety of different colour
-choices for badges and pills but this would be distracting and would make it
-harder to add dark mode and multiple colour schemes.</p>
-
 <h2 id="overflow">Preventing really long words from overflowing</h2>
 
 <p>Long unbroken words or other strings (such as URLs) that are too long to fit
@@ -1409,12 +1318,160 @@ prevent these sorts of things from breaking the vertical rhythm, overflowing
 containers, and triggering horizontal scrollbars on mobile devices.
 Here's an <a href="media">example page with various embedded media</a>.</p>
 
-<h2>Footnotes</h2>
+<h2>CSS classes</h2>
+
+<h3>Subtitles and lead paragraphs</h3>
+
+<p>"Lead" paragraphs use a larger text style but not quite as large or bold as
+headings.  To create a lead paragraph just add <code>class="lead"</code> to a
+<code>&lt;p&gt;</code>.  For example this:</p>
+
+<pre><code>&lt;p class="lead"&gt;
+  This is a "lead" paragraph. It stands out more than other paragraphs. These
+  can be used anywhere in a document.
+&lt;/p&gt;</code></pre>
+
+<p>will render like this:</p>
+
+<p class="lead">
+  This is a "lead" paragraph. It stands out more than other paragraphs. These
+  can be used anywhere in a document.
+</p>
+
+<p>You can use a lead paragraph as a subtitle by putting it together with a
+heading in an <code>&lt;hgroup&gt;</code>. This:</p>
+
+<pre><code>&lt;hgroup&gt;
+  &lt;h1&gt;This is the heading&lt;/h1&gt;
+  &lt;p class="lead"&gt;This is the subtitle, it appears in large text beneath the heading.&lt;/p&gt;
+&lt;/hgroup&gt;</code></pre>
+
+<p>will render like this:</p>
+
+<hgroup>
+  <h1 class="notoc noanchor">This is the heading</h1>
+  <p class="lead">This is the subtitle, it appears in large text beneath the heading.</p>
+</hgroup>
+
+<p>Inline elements like <code>&lt;code&gt;</code> and <code>&lt;samp&gt;</code>
+also work in subtitles and lead paragraphs:</p>
+
+<p class="lead">
+  This is a <code>&lt;lead&gt;</code> paragraph
+  containing <em>emphasis</em>,
+  <code>&lt;code tags&gt;</code>,
+  some <samp>sample output</samp>,
+  a couple of <code>&lt;kbd&gt;</code>'s: <kbd>Ctrl</kbd>&nbsp;+&nbsp;<kbd>c</kbd>,
+  <u>underlined text</u>,
+  <mark>highlighted text</mark>,
+  <del>struck-through text</del>,
+  <a href="">a link</a>,
+  <a href=""><code>a code link</code></a>.
+  and even<sup>superscript</sup> and<sub>subscript</sub> and <small>small text</small> in it</h1>
+</p>
+
+<h3>Note boxes</h3>
+
+<p>You can create a "note" by adding the CSS class <code>note</code> to a paragraph:</p>
+
+<pre>&lt;p class="note"&gt;This is a paragraph that stands out as a note.&lt;/p&gt;</pre>
+
+<p>It'll look like this:</p>
+
+<p class="note">This is a paragraph that stands out as a note.</p>
+
+<p>A multi-line paragraph note will also work nicely:</p>
+
+<p class="note">Morbi sed facilisis nunc. Quisque dictum lectus vitae purus
+lobortis, dapibus malesuada sapien imperdiet. Vestibulum ante ipsum primis in
+faucibus orci luctus et ultrices posuere cubilia curae.</p>
+
+<p>You can also put the <code>note</code> class on an <code>&lt;ol&gt;</code>
+or <code>&lt;ul&gt;</code> to style a list as a note:
+
+<ul class="note">
+  <li>Aenean</li>
+  <li>Quis</li>
+  <li>Odio</li>
+  <li>Libero</li>
+</ul>
+
+<p>You can put multiple paragraphs and other arbitrary content (headings,
+blockquotes, lists, code blocks&hellip;) in a note by putting the
+<code>note</code> class on a containing <code>&lt;div&gt;</code>:</p>
+
+<div class="note">
+  <h3 class="notoc noanchor">This note has a heading</h3>
+
+  <blockquote>
+    <p>Duis efficitur justo semper mauris tempor:</p>
+    <ul>
+      <li>Eget hendrerit diam</li>
+      <li>Nunc feugiat congue dictum, <a href="">nullam auctor</a> in dui</li>
+      <li><strong>a tempus nunc elementum</strong></li>
+      <li>Pellentesque velit felis <code>bibendum</code> ac <kbd>quis</kbd> euismod</li>
+    </ul>
+  </blockquote>
+
+  <hr />
+
+  <pre><code>You can even put code blocks in notes.</code></pre>
+</div>
+
+<p><a href="https://html.spec.whatwg.org/multipage/sections.html#the-aside-element"><code>&lt;aside class="note"&gt;</code></a>
+would also work with the <code>note</code> class and has special meaning: it's
+for content that is separate from the main content of the page and not part of
+the main flow of the document.</p>
+
+<p>It would be easy to provide a variety of different colours for note boxes
+like other frameworks do. But documents with lots of different-coloured boxes
+would distract from both reading and writing (always having to choose which
+type of box to use) and would make it difficult to add support for dark mode
+and for different colour schemes.</p>
+
+<h3>Badges and pills</h3>
+
+<p>Oatcake provides badges and pills that you can use for tags and other UI
+elements, just create a <code>&lt;span&gt;</code> with the CSS class
+<code>badge</code> or <code>pill</code>:</p>
+
+<p><span class="badge">Badge</span> <span class="pill">Pill</span></p>
+
+<p>You can also put the <code>badge</code> or <code>pill</code> class on an
+<code>&lt;a&gt;</code> or <code>&ltbutton&gt;</code> to create a badge or pill
+with hover and focus states:</p>
+
+<p>
+  <a href="" class="badge">An <code>&lt;a&gt;</code> badge</a>
+  <a href="" class="pill">An <code>&lt;a&gt;</code> pill</a>
+  <button class="badge">A <code>&lt;button&gt;</code> badge</button>
+  <button class="pill">A <code>&lt;button&gt;</code> pill</button>
+</p>
+
+<p>Badges and pills can be used inside paragraphs (or list items, headings etc):</p>
+
+<h3 class="notoc noanchor" style="padding-top: 0;">Heading <span class="pill">Pill</span></h3>
+
+<p>This is a paragraph with an inline <span class="badge">badge</span> in
+it. As with <code>&lt;kbd&gt;</code>'s, if your badge or pill contains
+<span class="pill">more than one word</span> Oatcake prevents browsers from
+wrapping it over multiple lines.</p>
+
+<ul>
+  <li>First list item <span class="badge">23</span></li>
+  <li>Second list item <span class="pill">16</span></li>
+  <li>Third list item <span class="badge">32</span></li>
+</ul>
+
+<p>As with note boxes, it was tempting to add a variety of different colour
+choices for badges and pills but this would be distracting and would make it
+harder to add dark mode and multiple colour schemes.</p>
+
+<h2 class="notoc">Footnotes</h2>
 
 <ol>
   <li id="footnote1">This is an example footnote. <a href="#backref1">↩</a></li>
 </ol>
-
     </main>
     <script src="https://cdn.jsdelivr.net/npm/anchor-js/anchor.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.18.2/tocbot.min.js"></script>
