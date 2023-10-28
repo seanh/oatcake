@@ -114,91 +114,21 @@ subscripts<sub>sub</sub> and superscripts<sup>sup</sup>,
 and abbreviations like <abbr title="Hypertext Markup Language">HTML</abbr>.
 </p>
 
-<p>Superscripts can be used to create footnotes.<sup><a href="#footnote1" id="backref1">[1]</a></sup></p>
-
 <p>Mixing different inline elements together works too, for example
 here's <a href="http://example.com/" title="Title">a link with <strong>bold</strong> and <code>code()</code> in it</a>,
 an <a href="http://example.com/" title="Title"><strong>all bold link</strong></a>,
 and an <a href="http://example.com/" title="Title"><code>all_code_link()</code></a>.
 </p>
 
-<details open>
+<details>
 <summary>Inline HTML elements you can use</summary>
 <p>Here's a pocket guide to some of the more interesting inline HTML elements
 you can use with links to the HTML standard. These all work well with Oatcake:</p>
 
 <ul>
   <li>
-    <p>
-      <a href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-q-element">The <code>&lt;q&gt;</code> element</a>
-      is for inline quotations: <q>Whatever you lose, you've won. Whatever you win, you've lost.</q>
-    </p>
-
-    <p>
-      You don't have to type the quotation marks (&ldquo;&hellip;&rdquo;) yourself,
-      just use <code>&lt;q&gt;&hellip;&lt;/q&gt;</code> and the browser will add the quotation marks for you.
-    </p>
-
-    <p>You can nest <code>&lt;q&gt;</code>'s to represent nested quotations:
-    <q>The man said <q>Things that are impossible just take longer</q>. I disagreed with him.</q></p>
-
-    <p><code>&lt;q&gt;</code> is only for quoting another source.
-    If quotation marks are being used for another reason (for example to mark up sarcasm)
-    you should just type the quotation marks yourself. The HTML standard gives this example
-    of typing quotation marks directly when <code>&lt;q&gt;</code> would be inappropriate:</p>
-
-    <blockquote>The word "ineffable" could have been used to describe the disaster
-    resulting from the campaign's mismanagement.</blockquote>
-
-    <p>For block quotations see <a href="#blockquotes">blockquotes</a> below.</p>
-
-    <p>You can add a <code>cite</code> attribute to a <code>&lt;q&gt;</code>
-    to give the URL of the source being quoted, or you can use a
-    <a href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-cite-element"><code>&lt;cite&gt;</code> element</a>
-    somewhere outside of (but near to) the <code>&lt;q&gt;</code>, or both as
-    in this example from the HTML standard:
-    </p>
-
-    <pre><code>&lt;p&gt;The W3C page &lt;cite&gt;About W3C&lt;/cite&gt; says the W3C's
-mission is &lt;q cite="https://www.w3.org/Consortium/"&gt;To lead
-the World Wide Web to its full potential by developing
-protocols and guidelines that ensure long-term growth for the
-Web&lt;/q&gt;. I disagree with this mission.&lt;/p&gt;</code></pre>
-
-    <p><code>cite</code> and <code>&lt;cite&gt;</code> don't make the text look any different:
-    they're just for semantic markup.</p>
-
-    <p>You can use <code>&lt;cite&gt;</code> whenever you're mentioning the title of a work
-    and want to mark it up semantically as a citation,
-    even if you're not going to quote from it.
-    But <code>&lt;cite&gt;</code> shouldn't be used to mark up an author's name:
-    it's only for titles of works.
-    </p>
-  </li>
-
-  <li>
-    <p>
-      <a href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-mark-element">The <code>&lt;mark&gt;</code> element</a>
-      is for denoting the <em>relevance</em> of a span of text to the current document
-      (as opposed to denoting <em>importance</em>, which is done with <code>&lt;strong&gt;</code>).
-      <code>&lt;mark&gt;</code>'s are styled with a background highlight:
-      <mark>this is some text marked as relevant using <code>&lt;mark&gt;</code></mark>.</p>
-
-      <p>More specifically, a <code>&lt;mark&gt;</code> represents:
-      <q>a run of text in one document marked or highlighted for reference purposes, due to its relevance in another context.</q>
-      For example you can use a <code>&lt;mark&gt;</code> in a quotation to
-      highlight text that wasn't highlighted in the original quote (but
-      is being highlighted now to bring attention to part of the quote).
-      Other examples given in the HTML standard are highlighting search string
-      matches and highlighting a bug in a code block (or more generally
-      highlighting part of a code block that is referred to from elsewhere in
-      the text).
-    </p>
-  </li>
-
-  <li>
     <p><a href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-em-element">The <code>&lt;em&gt;</code> element</a>
-    is for stress emphasis which changes the meaning of the sentence.
+    is for stress emphasis.
     <code>&lt;em&gt;</code> is what <code>*single asterisks*</code> or <code>_single underscores_</code> do in Markdown.</p>
 
     <p>Not to be confused with <a href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-i-element"><code>&lt;i&gt;</code></a>
@@ -206,7 +136,8 @@ Web&lt;/q&gt;. I disagree with this mission.&lt;/p&gt;</code></pre>
     offset from the normal prose in a manner indicating a different quality of
     text, such as a taxonomic designation, a technical term, an idiomatic
     phrase from another language, transliteration, a thought, or a ship name in
-    Western texts.</q></p>
+    Western texts.</q> A dream sequence is another example of
+    <code>&lt;i&gt;</code> given in the HTML standard.</p>
 
     <p>Both are styled in italics:</p>
 
@@ -214,17 +145,15 @@ Web&lt;/q&gt;. I disagree with this mission.&lt;/p&gt;</code></pre>
     <i>This is text in an alternative voice or mood with <code>&lt;i&gt;</code>.</i>
     </p>
 
-    <p>A dream sequence is another example of <code>&lt;i&gt;</code> given in the HTML standard.</p>
-
     <p>If some text is in an <code>&lt;i&gt;</code> because it's in a different language
-    than the main text you can use the <code>lang</code> attribute to give the language:</p>
+    you can use the <code>lang</code> attribute to give the language:</p>
 
     <pre><code>&lt;p&gt;There is a certain &lt;i lang="fr"&gt;je ne sais quoi&lt;/i&gt; in the air.&lt;/p&gt;</code></pre>
   </li>
 
   <li>
     <p><a href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-strong-element">The <code>&lt;strong&gt;</code> element</a>
-    is for strong importance, seriousness or urgency which doesn't change the meaning of the sentence but just distinguishes part of it.
+    is for strong importance, seriousness or urgency.
     <code>&lt;strong&gt;</code> is what <code>**double asterisks**</code> or <code>__double underscores__</code> do in Markdown.</p>
 
     <p>Not to be confused with <a href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-b-element"><code>&lt;b&gt;</code></a>
@@ -262,6 +191,130 @@ Web&lt;/q&gt;. I disagree with this mission.&lt;/p&gt;</code></pre>
   </li>
 
   <li>
+    <p>
+      <a href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-q-element">The <code>&lt;q&gt;</code> element</a>
+      is for inline quotations: <q>Whatever you lose, you've won. Whatever you win, you've lost.</q>
+    </p>
+
+    <p>
+      You don't have to type the quotation marks (&ldquo;&hellip;&rdquo;) yourself,
+      just use <code>&lt;q&gt;&hellip;&lt;/q&gt;</code> and the browser will add the quotation marks for you.
+    </p>
+
+    <p>You can nest <code>&lt;q&gt;</code>'s to represent nested quotations:
+    <q>The man said <q>Things that are impossible just take longer</q>. I disagreed with him.</q></p>
+
+    <p><code>&lt;q&gt;</code> is only for quoting another source.
+    If quotation marks are being used for another reason (for example to mark up sarcasm)
+    you should just type the quotation marks yourself. The HTML standard gives this example
+    of typing quotation marks directly when <code>&lt;q&gt;</code> would be inappropriate:</p>
+
+    <blockquote>The word "ineffable" could have been used to describe the disaster
+    resulting from the campaign's mismanagement.</blockquote>
+
+    <p>For block quotations see the <a href="#blockquotes">section on blockquotes</a> below.</p>
+
+    <p>You can add a <code>cite</code> attribute to a <code>&lt;q&gt;</code> to
+    give the URL of the source being quoted for scripts to read,
+    and you can use a <a href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-cite-element"><code>&lt;cite&gt;</code> element</a>
+    before or after a <code>&lt;q&gt;</code> to mark up a citation for the quote.
+    See the <a href="#blockquotes">section on blockquotes</a> below for more about <code>cite</code> and <code>&lt;cite&gt;</code>.
+    </p>
+  </li>
+
+  <li><p><a href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-abbr-element">The <code>&lt;abbr&gt;</code> element</a>
+    is for abbreviations and acronyms. If you provide the expansion of the
+    abbreviation as the value of a <code>title</code> attribute on an
+    <code>&lt;abbr&gt;</code> then in some browsers the abbreviation will get a
+    dotted underline and the expansion will be shown in a tooltip on mouseover.
+    For example this: <code>&lt;abbr title="Hypertext Markup
+    Language"&gt;HTML&lt;/abbr&gt;</code> renders like this:
+    <abbr title="Hypertext Markup Language">HTML</abbr>.</p>
+  </li>
+
+  <li>
+    <p>
+      <a href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-code-element">The <code>&lt;code&gt;</code> element</a>
+      is for inline code spans: fragments of code or strings, filenames,
+      computer programs, etc. This is what <code>`backticks`</code> do in
+      Markdown. See <a href="#code-blocks">code blocks</a> below for multi-line code blocks.
+    </p>
+  </li>
+  <li>
+    <p>Instead of <code>&lt;code&gt;</code>, you can also use
+    <a href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-var-element"><code>&lt;var&gt;</code></a>
+    for programming, mathematical and prose variables, constants, symbols,
+    quantities, parameters and placeholders.
+    Here's an example from the HTML standard:</p>
+
+    <blockquote>If there are <var>n</var> pipes leading to the ice
+    cream factory then I expect at <em>least</em> <var>n</var>
+    flavors of ice cream to be available for purchase!</blockquote>
+  </li>
+
+  <li>
+    <p>The <a href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-samp-element"><code>&lt;samp&gt;</code> element</a>
+    represents output from a program
+    and <a href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-kbd-element"><code>&lt;kbd&gt;</code></a>
+    represents user input.
+    See the <a href="#kbd-and-samp">section on <code>&lt;kbd&gt;</code> and <code>&lt;samp&gt;</code></a> below for more.</p>
+  </li>
+
+  <li>
+    <p>The <a href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-sub-and-sup-elements"><code>&lt;sub&gt;</code> and <code>&lt;sup&gt;</code> elements</a>
+    are for <sub>subscript</sub> and <sup>superscript</sup>.</p>
+
+    <p>Superscripts can be used to create footnotes.<sup><a href="#footnote1" id="backref1">[1]</a></sup></p>
+
+    <p>The HTML standard gives some interesting examples of <code>&lt;sub&gt;</code> and <code>&lt;sup&gt;</code> used
+    with <code>&lt;var&gt;</code> for variables or mathematical expressions like
+    <var>x<sub><var>i</var></sub></var> or <var>c</var><sup>2</sup>.</p>
+  </li>
+
+  <li>
+    <p>
+      <a href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-u-element">The <code>&lt;u&gt;</code> element</a>
+      gives a span of text an <q>unarticulated, though explicitly rendered,
+      non-textual annotation, such as labeling the text as being a proper
+      name in Chinese text (a Chinese proper name mark), or labeling the text
+      as being misspelt.</q>
+      It's styled with an underline:
+      <u>this is text annotated with <code>&lt;u&gt;</code></u>.
+    </p>
+
+    <p>Like <code>&lt;b&gt;</code>, <code>&lt;u&gt;</code> is another last-resort element:
+    use <code>&lt;em&gt;</code> for stress emphasis,
+    <code>&lt;b&gt;</code> or <code>&lt;mark&gt;</code> to mark key words or phrases,
+    <code>&lt;cite&gt;</code> to mark book titles,
+    <code>&lt;i&gt;</code> for technical terms, taxonomic designations, transliterations, or thoughts.
+    <code>&lt;u&gt;</code>'s are also discouraged where users might confuse them with hyperlinks
+    (<a href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-a-element"><code>&lt;a&gt;</code></a>)
+    which are conventionally rendered with an underline.
+    </p>
+  </li>
+
+  <li>
+    <p>
+      <a href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-mark-element">The <code>&lt;mark&gt;</code> element</a>
+      is for denoting the <em>relevance</em> of a span of text to the current context
+      (as opposed to denoting <em>importance</em>, which is done with <code>&lt;strong&gt;</code>,
+      or <em>emphasis</em>, which is done with <code>&lt;em&gt;</code>).
+      <code>&lt;mark&gt;</code>'s are styled with a background highlight:
+      <mark>this is some text marked as relevant using <code>&lt;mark&gt;</code></mark>.</p>
+
+      <p>More specifically, a <code>&lt;mark&gt;</code> represents:
+      <q>a run of text in one document marked or highlighted for reference purposes, due to its relevance in another context.</q>
+      For example you can use a <code>&lt;mark&gt;</code> in a quotation to
+      highlight text that wasn't highlighted in the original quote but
+      is being highlighted now to bring attention to part of the quote.
+      Other examples given in the HTML standard are highlighting search string
+      matches and highlighting a bug in a code block (or more generally
+      highlighting part of a code block that is referred to from elsewhere in
+      the text).
+    </p>
+  </li>
+
+  <li>
     <p><a href="https://html.spec.whatwg.org/multipage/edits.html#the-del-element">The <code>&lt;del&gt;</code> element</a>
     is for text that has been "removed" from the document like crossing-off the
     completed items on a todo list, whereas
@@ -281,7 +334,7 @@ Web&lt;/q&gt;. I disagree with this mission.&lt;/p&gt;</code></pre>
   </li>
 
   <li><p><a href="https://html.spec.whatwg.org/multipage/edits.html#the-ins-element">The <code>&lt;ins&gt;</code> element</a>
-    is for text that has been added to the document. It looks like this:
+    is for text that has been added to the document. It's styled with an underline the same as <code>&lt;u&gt;</code>:
     <ins>this is text that has been marked as added to the document with <code>&lt;ins&gt;</code></ins>.</p>
 
     <p>As with
@@ -302,70 +355,6 @@ Web&lt;/q&gt;. I disagree with this mission.&lt;/p&gt;</code></pre>
     </ul>
   </li>
 
-  <li>
-    <p>
-      <a href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-u-element">The <code>&lt;u&gt;</code> element</a>
-      gives a span of text an <q>unarticulated, though explicitly rendered,
-      non-textual annotation, such as labeling the text as being a proper
-      name in Chinese text (a Chinese proper name mark), or labeling the text
-      as being misspelt.</q>
-      It's styled with an underline, the same as <code>&lt;ins&gt;</code>:
-      <u>this is text annotated with <code>&lt;u&gt;</code></u>.
-    </p>
-
-    <p>Like <code>&lt;b&gt;</code>, <code>&lt;u&gt;</code> is another last-resort element:
-    use <code>&lt;em&gt;</code> for stress emphasis,
-    <code>&lt;b&gt;</code> or <code>&lt;mark&gt;</code> to mark key words or phrases,
-    <code>&lt;cite&gt;</code> to mark book titles,
-    <code>&lt;i&gt;</code> for technical terms, taxonomic designations, transliterations, or thoughts.
-    <code>&lt;u&gt;</code>'s are discouraged where users might confuse them with hyperlinks
-    (<a href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-a-element"><code>&lt;a&gt;</code></a>)
-    which are conventionally rendered with an underline.
-    </p>
-  </li>
-
-  <li><p><a href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-abbr-element">The <code>&lt;abbr&gt;</code> element</a>
-    is for abbreviations or acronyms. If you provide the expansion of the
-    acronym as the value of a <code>title</code> attribute on an
-    <code>&lt;abbr&gt;</code> then in some browsers the abbreviation will get a
-    dotted underline and the expansion will be shown in a tooltip on mouseover.
-    For example this: <code>&lt;abbr title="Hypertext Markup
-    Language"&gt;HTML&lt;/abbr&gt;</code> renders like this:
-    <abbr title="Hypertext Markup Language">HTML</abbr>.</p>
-
-    <p>You can wrap an <code>&lt;abbr&gt;</code> in a <a href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-dfn-element"><code>&lt;dfn&gt;</code></a>
-    to mark it as the defining instance of its term.
-    Further instances of the same <code>&lt;abbr&gt;</code> can be linked to the
-    defining instance by wrapping them in <code>&lt;a&gt;</code>'s.
-    Like in this example from the HTML standard:</p>
-
-    <pre><code>&lt;p&gt;The &lt;dfn id=whatwg&gt;&lt;abbr title="Web Hypertext Application Technology Working Group"&gt;WHATWG&lt;/abbr&gt;&lt;/dfn&gt;
-is a loose unofficial collaboration of web browser manufacturers and
-interested parties who wish to develop new technologies designed to allow
-authors to write and deploy Applications over the World Wide Web.&lt;/p&gt;
-
-&lt;p&gt;The &lt;a href="#whatwg"&gt;&lt;abbr title="Web Hypertext Application Technology Working Group"&gt;WHATWG&lt;/abbr&gt;&lt;/a&gt;
-community does not have much representation from Asia.&lt;/p&gt;</code></pre>
-  </li>
-  <li>
-    <p>
-      <a href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-code-element">The <code>&lt;code&gt;</code> element</a>
-      is for inline code spans: fragments of code or strings, filenames,
-      computer programs, etc. This is what <code>`backticks`</code> do in
-      Markdown. See <a href="code-blocks">code blocks</a> below for multi-line code blocks.
-    </p>
-  </li>
-  <li>
-    <p>Instead of <code>&lt;code&gt;</code>, you can also use
-    <a href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-var-element"><code>&lt;var&gt;</code></a>
-    for programming, mathematical and prose variables, constants, symbols,
-    quantities, parameters and placeholders.
-    Here's an example from the HTML standard:</p>
-
-    <blockquote>If there are <var>n</var> pipes leading to the ice
-    cream factory then I expect at <em>least</em> <var>n</var>
-    flavors of ice cream to be available for purchase!</blockquote>
-  </li>
 </ul>
 </details>
 
@@ -670,8 +659,8 @@ With Oatcake multi-line headings wrap well, this is a multi-line
 
 <p><a href="https://html.spec.whatwg.org/#the-code-element">The <code>&lt;code&gt;</code> element</a>
 (<code>`backticks`</code> in Markdown) can be used for inline code spans,
-or <a href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-var-element"><code>&lt;var&gt;</code></a>
-for programming, mathematical and prose variables, constants, symbols, quantities, parameters and placeholders.
+and <a href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-var-element"><code>&lt;var&gt;</code></a>
+can be used for variables etc.
 To create a multi-line code block wrap a <code>&lt;code&gt;</code> in a
 <a href="https://html.spec.whatwg.org/#the-pre-element"><code>&lt;pre&gt;</code> element</a>:</p>
 
@@ -696,7 +685,7 @@ fixes this by giving wide code blocks a horizontal scrollbar:</p>
     validated_url = <strong>validate_url(url)</strong>
     assert validated_url == 'http://github.com/jimsmith'</code></pre>
 
-<h2>Input and output with <code>&lt;kbd&gt;</code> and <code>&lt;samp&gt;</code></h2>
+<h2 id="kbd-and-samp">Input and output with <code>&lt;kbd&gt;</code> and <code>&lt;samp&gt;</code></h2>
 
 <p>Oatcake supports user input with <a href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-kbd-element">the <code>&lt;kbd&gt;</code> element</a>
 and sample output with <a href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-samp-element">the <code>&lt;samp&gt;</code> element</a>.</p>
@@ -1092,6 +1081,21 @@ ac consequat.  Nullam ut iaculis tortor.</p></blockquote>
   <code>&lt;blockquote&gt;</code>'s also work):</p>
 
   <blockquote><p>[Jane] then said she liked [...] fish.</p></blockquote>
+
+  <p>You can use <a href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-mark-element"><code>&lt;mark&gt;</code>'s</a>
+  inside quotes to highlight something that wasn't highlighted in the original
+  quote:</p>
+
+  <blockquote>
+  Contrary to popular belief, Lorem Ipsum is not simply random text. It has
+  roots in a piece of classical Latin literature from 45 BC, making it
+  <mark>over 2000 years old</mark>. Richard McClintock, a Latin professor at
+  Hampden-Sydney College in Virginia, looked up one of the more obscure Latin
+  words, consectetur, from a Lorem Ipsum passage, and going through the cites of the
+  word in classical literature, discovered the undoubtable source. <mark>Lorem Ipsum
+  comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum"
+  (The Extremes of Good and Evil) by Cicero, written in 45 BC.</mark>
+  </blockquote>
 </details>
 
 <details>
