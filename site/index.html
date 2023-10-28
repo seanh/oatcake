@@ -1059,98 +1059,175 @@ Oatcake handles <code>&lt;dd&gt;</code>'s containing one or more
   </dd>
 </dl>
 
-<h2 id="blockquotes">Inline quotes, blockquotes and citations</h2>
+<h2 id="blockquotes">Blockquotes</h2>
 
-<p>Here's what a blockquote looks like:</p>
+<p>You can use <a href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-q-element"><code>&lt;q&gt;</code></a>
+for inline quotes. For multi-line or block quotes use <a href="https://html.spec.whatwg.org/multipage/grouping-content.html#the-blockquote-element"><code>&lt;blockquote&gt;</code></a>,
+which looks like this:</p>
+
+<blockquote>Ut fermentum turpis quis ligula sagittis, a fringilla orci
+ultrices. Nam fringilla erat ac bibendum tristique. Morbi nec maximus augue.
+Donec in justo semper, convallis ante et, laoreet nibh.</blockquote>
+
+<p>You can optionally wrap the contents of a <code>&lt;blockquote&gt;</code> in
+a <code>&lt;p&gt;</code>, it looks the same:</p>
+
+<blockquote></p>Maecenas eu purus in nibh pharetra gravida. Nullam consequat
+fringilla velit, nec maximus ex luctus quis. Maecenas tempor sollicitudin nisl
+ac consequat.  Nullam ut iaculis tortor.</p></blockquote>
+
+<details>
+  <summary>Blockquote usage tips</summary>
+
+  <p>You shouldn't put quotation marks (&ldquo;&hellip;&rdquo;) around the text
+  inside a blockquote: putting the text in a <code>&lt;blockquote&gt;</code> is
+  enough to show that it's a quotation, and the quotation marks aren't part of
+  the quote itself. You don't put quotation marks inside an inline
+  <code>&lt;q&gt;</code> either, just wrap the text in a <code>&lt;q&gt;</code>
+  and the browser will add the quotation marks for you.</p>
+
+  <p>In English it's traditional to use square brackets if abbreviating or
+  adding context to a block or inline quote, as in this example from the HTML
+  standard (which also handily demonstrates that one-liner
+  <code>&lt;blockquote&gt;</code>'s also work):</p>
+
+  <blockquote><p>[Jane] then said she liked [...] fish.</p></blockquote>
+</details>
+
+<details>
+  <summary>Attributions and citations</summary>
+
+<p>A <code>&lt;q&gt;</code> or <code>&lt;blockquote&gt;</code> represents text
+that is quoted from another source. You can add a <code>cite</code> attribute
+whose value is a URL for the source:</p>
+
+<pre><code>&lt;blockquote cite="https://quotes.example.org/s/sonnet130.html"&gt;</code></pre>
+
+<p><code>cite</code> attributes aren't visible in the rendered HTML,
+they're meant to be read by scripts.</p>
+
+<p>Any attribution for the quotation is supposed to go before or after the
+<code>&lt;q&gt;</code> or <code>&lt;blockquote&gt;</code>, not inside it,
+because the attribution isn't part of the quote itself. For example the
+attribution could go in a following <code>&lt;p&gt;</code>, as in this example
+from the HTML standard:</p>
 
 <blockquote>
-  <p>Ut fermentum turpis quis ligula sagittis, a fringilla orci ultrices. Nam
-fringilla erat ac bibendum tristique. Morbi nec maximus augue. Donec in justo
-semper, convallis ante et, laoreet nibh. Vivamus suscipit eros tellus, vitae
-faucibus leo fermentum non. Cras luctus condimentum mauris sed placerat.
-Aliquam feugiat commodo elit, eu dapibus nisl placerat at.</p>
+ <p>I contend that we are both atheists. I just believe in one fewer
+ god than you do. When you understand why you dismiss all the other
+ possible gods, you will understand why I dismiss yours.</p>
+</blockquote>
+<p>— Stephen Roberts</p>
+
+<p>If the attribution contains the title of a work you can wrap it in a
+<a href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-cite-element"><code>&lt;cite&gt;</code> element</a>,
+as in this example also from the HTML standard:</p>
+
+<pre><code>&lt;p&gt;His next piece was the aptly named &lt;cite&gt;Sonnet 130&lt;/cite&gt;:&lt;/p&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;My mistress' eyes are nothing like the sun,&lt;br&gt;
+  Coral is far more red, than her lips red,&lt;br&gt;
+  ...</code></pre>
+
+<p><code>&lt;cite&gt;</code> elements aren't styled any differently from normal
+text, they're semantic markup only.</p>
+
+<p>Only the title of the work should go inside the <code>&lt;cite&gt;</code>,
+not an entire phrase or sentence.</p>
+
+<p>You shouldn't wrap an author's name in a <code>&lt;cite&gt;</code> because
+it's not the title of a work.</p>
+
+<p><code>&lt;cite&gt;</code> can be used whenever you're mentioning the title
+of a work and want to mark it up semantically, even if you're not quoting from
+the work.</p>
+
+<p>You can put a <code>&lt;blockquote&gt;</code> in a
+<code>&lt;figure&gt;</code> and the attribution in the
+<code>&lt;figure&gt;</code>'s <code>&lt;figcaption&gt;</code>,
+see <a href="#figures">the section on figures</a> below for an example.</p>
+</details>
+
+<h3>Block elements inside blockquotes</h3>
+
+<p>Blockquotes can contain other block-level elements: multiple paragraphs,
+lists, code blocks, and even images:</p>
+
+<blockquote>
+  <p>Aliquam a faucibus dui. Donec a diam a odio dapibus varius. Nulla sagittis
+  in lacus in dictum. Aliquam eu purus non risus facilisis dapibus.</p>
+
+  <p>Praesent porttitor cursus diam, at porta massa suscipit nec. Duis eu leo
+  ut justo vestibulum pellentesque eget quis magna.</p>
+
+  <ul>
+    <li>First list item</li>
+    <li>Second list item</li>
+  </ul>
+
+  <img src="images/buffalo.jpg" alt="A photo of a buffalo" title="A photo of a buffalo" />
+
+  <pre><code>code block
+</code></pre>
 </blockquote>
 
-<p>You can put a <code>&lt;footer&gt;</code> inside a blockquote to describe
-the quote's source:</p>
+<h3>Headings in blockquotes</h3>
+
+<p>Sometimes a quoted section contains a heading. A lot of themes get this
+wrong, especially if the heading starts the blockquote, often by introducing a
+weirdly large vertical space at the top of the blockquote. Oatcake styles
+headings that begin blockquotes with less preceding vertical space than the
+heading would normally have:</p>
 
 <blockquote>
-  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.Integer posuere
-  erat a ante.</p>
-  <footer>Someone famous</footer>
+  <h2 class="notoc noanchor">An <code>&lt;h2&gt;</code> at the start of a <code>&lt;blockquote&gt;</code></h2>
+
+  <p>Pellentesque sit amet leo nec tortor condimentum vestibulum quis ut
+  sapien. Nulla a volutpat orci. Phasellus ac odio commodo, commodo erat ac,
+  porta turpis.</p>
+
+  <h3 class="notoc noanchor">An <code>&lt;h3&gt;</code> within a <code>&lt;blockquote&gt;</code></h3>
+
+  <p>Quisque auctor gravida massa sed tincidunt. Phasellus mollis turpis ac
+  nisi mollis, vel laoreet turpis malesuada. Suspendisse vehicula mollis
+  mauris, eu eleifend massa egestas varius.</p>
 </blockquote>
 
-<p>A <code>&lt;cite&gt;</code> also works:</p>
-
 <blockquote>
-  <p>As my fellow HTML5 Doctor, Oli Studholme has showed, people seldom quote
-  exactly – so sacrosanctity of the quoted text isn’t a useful ideal – and in
-  print etc, citations almost always appear as part of the quotation – it’s
-  highly conventional.</p>
+  <h3 class="notoc noanchor">An <code>&lt;h3&gt;</code> at the start of a <code>&lt;blockquote&gt;</code></h3>
 
-  <cite>Bruce Lawson</cite>
+  <p>This is the body of the blockquote</p>
 </blockquote>
 
-<p>Here's one where the <code>&lt;cite&gt;</code> contains a link, just to make
-sure that looks right:</p>
-
 <blockquote>
-  <p>As my fellow HTML5 Doctor, Oli Studholme has showed, people seldom quote
-  exactly – so sacrosanctity of the quoted text isn't a useful ideal – and in
-  print etc, citations almost always appear as part of the quotation – it's
-  highly conventional.</p>
+  <h4 class="notoc noanchor">An <code>&lt;h4&gt;</code> at the start of a <code>&lt;blockquote&gt;</code></h4>
 
-  <cite><a href="http://www.brucelawson.co.uk/2013/on-citing-quotations-again/">Bruce Lawson</a>, way back in 2013</cite>
+  <p>This is the body of the blockquote</p>
 </blockquote>
 
-<p>You can nest blockquotes to an arbitrary depth and nothing will go wrong,
-Oatcake will show the structure of your nested blockquotes. A lot of themes get
-this wrong:</p>
+<h3>Nested blockquotes</h3>
+
+<p>You can nest <code>&lt;blockquote&gt;</code>'s to an arbitrary depth and
+Oatcake will show the nested structure. A lot of themes get this wrong:</p>
 
 <blockquote>
-  <p>Fusce porta quam non varius viverra. Cras mi dui, hendrerit sollicitudin
-  neque sit amet, tempor laoreet elit. Vestibulum euismod nec justo at
-  bibendum.</p>
+  <p>Fusce porta quam non varius viverra.</p>
 
   <blockquote>
-    <p>Vestibulum molestie nec massa et porta. Donec imperdiet pretium luctus.
-    Etiam in malesuada lacus. Suspendisse eget velit lacinia, hendrerit lorem
-    nec, pretium urna. Morbi tempor luctus sodales.</p>
+    <p>Vestibulum molestie nec massa et porta.</p>
 
     <blockquote>
-      <p>Vestibulum molestie nec massa et porta. Donec imperdiet pretium
-      luctus.  Etiam in malesuada lacus. Suspendisse eget velit lacinia,
-      hendrerit lorem nec, pretium urna. Morbi tempor luctus sodales.</p>
+      <p>Donec imperdiet pretium luctus.</p>
 
-      <p>Vestibulum molestie nec massa et porta. Donec imperdiet pretium
-      luctus.  Etiam in malesuada lacus. Suspendisse eget velit lacinia,
-      hendrerit lorem nec, pretium urna. Morbi tempor luctus sodales.</p>
+      <p>Etiam in malesuada lacus. Suspendisse eget velit lacinia, hendrerit
+      lorem nec, pretium urna.</p>
     </blockquote>
 
-    <p>Vestibulum molestie nec massa et porta. Donec imperdiet pretium luctus.
-    Etiam in malesuada lacus. Suspendisse eget velit lacinia, hendrerit lorem
-    nec, pretium urna. Morbi tempor luctus sodales.</p>
+    <p>Morbi tempor luctus sodales. Vitae vehicula lorem gravida nec.</p>
   </blockquote>
 
   <p>Nam commodo felis at tortor tempor, sit amet vestibulum lorem gravida.
-  Suspendisse dignissim felis velit, vitae vehicula lorem gravida nec.</p>
-</blockquote>
-
-<p>Blockquotes can contain other block elements like headers, lists,
-code blocks, etc and nothing will look wrong:</p>
-
-<blockquote>
-  <h2 class="notoc noanchor">This is a header</h2>
-
-  <ol>
-    <li>This is the first list item.</li>
-    <li>This is the second list item.</li>
-  </ol>
-
-  <p>Here's some example code:</p>
-
-  <pre><code>return shell_exec("echo $input | $markdown_script");
-</code></pre>
+  Suspendisse dignissim felis velit.</p>
 </blockquote>
 
 <h2>Horizontal rules</h2>
@@ -1214,7 +1291,7 @@ the display width can complicate things. This page contains a snippet of
 JavaScript that fixes the sizes of images to the vertical rhythm.  But I
 recommend not worrying about it.</p>
 
-<h2>Figures</h2>
+<h2 id="figures">Figures</h2>
 
 <p>Oatcake has support for the <code>&lt;figure&gt;</code> element. For example
 you can put an image inside a figure like this:</p>
@@ -1249,6 +1326,24 @@ def logger
   @logger ||= LogAdapter.new(Stevenson.new, (ENV["JEKYLL_LOG_LEVEL"] || :info).to_sym)
 end</code></pre>
 <figcaption>A method from the Jekyll source code.</figcaption>
+</figure>
+
+<p>Here's an example from the HTML standard with a
+<code>&lt;blockquote&gt;</code> in a <code>&lt;figure&gt;</code> and the
+quote's attribution in the <code>&lt;figcaption&gt;</code>:</p>
+
+<figure>
+ <blockquote>
+  <p>The truth may be puzzling. It may take some work to grapple with.
+  It may be counterintuitive. It may contradict deeply held
+  prejudices. It may not be consonant with what we desperately want to
+  be true. But our preferences do not determine what's true. We have a
+  method, and that method helps us to reach not absolute truth, only
+  asymptotic approaches to the truth — never there, just closer
+  and closer, always finding vast new oceans of undiscovered
+  possibilities. Cleverly designed experiments are the key.</p>
+ </blockquote>
+ <figcaption>Carl Sagan, in "<cite>Wonder and Skepticism</cite>"</figcaption>
 </figure>
 
 <p>Multi-line captions work fine, as do inline styles within captions:</p>
