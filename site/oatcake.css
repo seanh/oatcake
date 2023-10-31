@@ -613,10 +613,11 @@ details {
 }
 
 details > summary {
+  border-top: 1px solid #aaaaaa;
   cursor: pointer;
   height: var(--body-line-height);
   background-color: var(--code-background-color);
-  margin-top: calc(-1 * calc(var(--body-line-height)));
+  margin-top: calc(-1 * calc(var(--body-line-height)) + 1px);
   margin-left: -13px;
   margin-right: -13px;
   padding: calc(0.5 * var(--body-line-height));
