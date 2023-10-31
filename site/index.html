@@ -1125,35 +1125,82 @@ JavaScript that fixes the sizes of images to the vertical rhythm.  But I
 recommend not worrying about it.</p>
 
 
-<h2 id="code-blocks">Code blocks</h2>
+<h2 id="code-blocks">Preformatted text and code blocks</h2>
 
-<p><a href="https://html.spec.whatwg.org/#the-code-element">The <code>&lt;code&gt;</code> element</a>
-(<code>`backticks`</code> in Markdown) can be used for inline code spans,
-and <a href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-var-element"><code>&lt;var&gt;</code></a>
-can be used for variables etc.
-To create a multi-line code block wrap a <code>&lt;code&gt;</code> in a
-<a href="https://html.spec.whatwg.org/#the-pre-element"><code>&lt;pre&gt;</code> element</a>:</p>
+<p>Preformatted text blocks
+(created with the <a href="https://html.spec.whatwg.org/multipage/grouping-content.html#the-pre-element"><code>&lt;pre&gt;</code></a> element)
+look like this in Oatcake:</p>
 
-<pre><code class="nohighlight">def test_validate_url_returns_an_http_url_unmodified():
-    url = 'http://github.com/jimsmith'
-    validated_url = validate_url(url)
-    assert validated_url == 'http://github.com/jimsmith'
-</code></pre>
+<pre><h4 class="notoc noanchor">Useful emptiness</h4>
+Heaven and earth aren't humane.
+
+To them the thousand things
+are straw dogs.
+
+Wise souls aren't humane.
+To them the thousand families
+are straw dogs.
+
+Heaven and earth
+act as a bellows:
+
+Empty yet structured,
+it moves, inexhaustibly giving.</pre>
+
+<p><em>Code</em> blocks can created with <code>&lt;pre&gt;&lt;code&gt;</code> tags.
+This is what indenting a block of text by four spaces or one tab does in Markdown
+(or "fenced code blocks" with <code>```</code> in many versions of Markdown).
+Oatcake gives code blocks a monospaced font:</p>
+
+<pre><code>#include &lt;stdio.h&gt;
+
+int main()
+{
+    printf("Hello World!\n");
+}</code></pre>
+
+<p>Oatcake also supports <code>&lt;pre&gt;&lt;samp&gt;</code> blocks. These
+have a different semantic meaning in HTML: they represent a block of computer
+<em>output</em>.  Oatcake styles <code>&lt;pre&gt;&lt;samp&gt;</code> the same
+as <code>&lt;pre&gt;&lt;code&gt;</code>:</p>
+
+<pre><samp>$ gcc -g -o helloworld -ansi helloworld.c
+$ gdb helloworld
+(gdb) run
+Hello World
+(gdb) quit</samp></pre>
+
+<p>You can use inline elements in preformatted, code and sample output blocks:
+bold, italics, underline, strikethrough, small text. Here's one with a
+bunch:</p>
+
+<pre><code><em>#include &lt;stdio.h&gt;</em>
+
+int <u>main()</u>
+{
+    /* Here's a code comment with<sub>subscript</sub> and.<sup>superscript</sup> */
+    /* <small>Here's a code comment in small text.</small> */
+    /* Here's an <q>inline quote</q> in a code block. */
+    <strong>printf</strong>(<del>"Hello World!\n"</del>);
+}</code></pre>
+
+<p>A useful application of inline elements in code blocks, from the HTML
+standard, is using <code>&lt;mark&gt;</code> to highlight part of the code,
+perhaps a part that is referred to from elsewhere in the text. For example
+here's a code block with a bug highlighted:</p>
+
+<pre><code>def whats_on_the_telly(<mark>penguin=[]</mark>):
+    penguin.append("property of the zoo")
+    return penguin</code></pre>
 
 <p>A common bug in themes is for long lines in code blocks to stretch out
-the width of the entire page and break the layout on mobile screens.  Oatcake
-fixes this by giving wide code blocks a horizontal scrollbar:</p>
+the width of the entire page which looks weird and breaks the layout on mobile
+screens. Oatcake fixes this by giving wide code blocks a horizontal
+scrollbar:</p>
 
 <pre><code class="nohighlight">def test_validate_url_returns_an_http_url_unmodified():
     assert validate_url('http://github.com/jimsmith') == 'http://github.com/jimsmith'
 </code></pre>
-
-<p>You can use bold text in code blocks:</p>
-
-<pre><code class="nohighlight">def test_validate_url_returns_an_http_url_unmodified():
-    url = 'http://github.com/jimsmith'
-    validated_url = <strong>validate_url(url)</strong>
-    assert validated_url == 'http://github.com/jimsmith'</code></pre>
 
 <h2 id="kbd-and-samp">Input and output with <code>&lt;kbd&gt;</code> and <code>&lt;samp&gt;</code></h2>
 
