@@ -600,80 +600,6 @@ With Oatcake multi-line headings wrap well, this is a multi-line
   </h4>
 </div>
 
-<h2 id="code-blocks">Code blocks</h2>
-
-<p><a href="https://html.spec.whatwg.org/#the-code-element">The <code>&lt;code&gt;</code> element</a>
-(<code>`backticks`</code> in Markdown) can be used for inline code spans,
-and <a href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-var-element"><code>&lt;var&gt;</code></a>
-can be used for variables etc.
-To create a multi-line code block wrap a <code>&lt;code&gt;</code> in a
-<a href="https://html.spec.whatwg.org/#the-pre-element"><code>&lt;pre&gt;</code> element</a>:</p>
-
-<pre><code class="nohighlight">def test_validate_url_returns_an_http_url_unmodified():
-    url = 'http://github.com/jimsmith'
-    validated_url = validate_url(url)
-    assert validated_url == 'http://github.com/jimsmith'
-</code></pre>
-
-<p>A common bug in themes is for long lines in code blocks to stretch out
-the width of the entire page and break the layout on mobile screens.  Oatcake
-fixes this by giving wide code blocks a horizontal scrollbar:</p>
-
-<pre><code class="nohighlight">def test_validate_url_returns_an_http_url_unmodified():
-    assert validate_url('http://github.com/jimsmith') == 'http://github.com/jimsmith'
-</code></pre>
-
-<p>You can use bold text in code blocks:</p>
-
-<pre><code class="nohighlight">def test_validate_url_returns_an_http_url_unmodified():
-    url = 'http://github.com/jimsmith'
-    validated_url = <strong>validate_url(url)</strong>
-    assert validated_url == 'http://github.com/jimsmith'</code></pre>
-
-<h2 id="kbd-and-samp">Input and output with <code>&lt;kbd&gt;</code> and <code>&lt;samp&gt;</code></h2>
-
-<p>Oatcake supports user input with <a href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-kbd-element">the <code>&lt;kbd&gt;</code> element</a>
-and sample output with <a href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-samp-element">the <code>&lt;samp&gt;</code> element</a>.</p>
-
-<p>To represent user input from a keyboard or any other text entry device wrap
-it in <code>&lt;kbd&gt;</code> tags: <kbd>help mycommand</kbd></p>
-
-<p>You can use nested <code>&lt;kbd&gt;</code>'s to represent multiple keystrokes that form a
-single input: <kbd><kbd>Ctrl</kbd> + <kbd>c</kbd></kbd>.
-Although you might prefer to write it without nesting like this:
-<kbd>Ctrl</kbd>&nbsp;+&nbsp;<kbd>c</kbd>.</p>
-
-<p>Up to two levels of nesting are supported:
-<kbd><kbd><kbd>Ctrl</kbd> + <kbd>b</kbd></kbd> <kbd><kbd>Shift</kbd> + <kbd>t</kbd></kbd></kbd>.</p>
-
-<p>To represent sample or quoted output from a computer program, wrap it in
-<code>&lt;samp&gt;</code> tags: <samp>Keyboard not found. Press F1 to continue</samp></p>
-
-<div class="note">
-  <h3 class="notoc noanchor">Tip: use non-breaking spaces between <code>&lt;kbd&gt;</code>'s</h3>
-
-  <p>Oatcake prevents browsers from wrapping a <code>&lt;kbd&gt;</code> (nested
-  or single) over multiple lines even if the <code>&lt;kbd&gt;</code> contains
-  multiple words separated by spaces, but if you're using a chain of separate
-  <code>&lt;kbd&gt;</code>'s (as in
-  <kbd>Ctrl</kbd>&nbsp;+&nbsp;<kbd>c</kbd>) you must use non-breaking spaces
-  (<code>&amp;nbsp;</code>) instead of normal spaces around the <code>+</code>
-  if you want to prevent line breaks from being inserted in-between the
-  <code>&lt;kbd&gt;</code>'s. Wrapping the whole sequence of
-  <code>&lt;kbd&gt;</code>'s in a <code>&lt;span style="white-space: nowrap;"&gt;</code>
-  should also work.</p>
-
-  <p>You can also use either technique if you don't want a
-  <code>&lt;code&gt;</code>,
-  <code>&lt;samp&gt;</code>,
-  <code>&lt;mark&gt;</code>,
-  etc to be wrapped (Oatcake doesn't prevent wrapping within these elements by
-  default because often you do what them to wrap, especially if they contain
-  long strings that might otherwise
-  <a href="#overflow">overflow the container</a>).</p>
-</div>
-
-
 <h2>Lists</h2>
 
 <p>Here's what a simple unordered list (<a href="https://html.spec.whatwg.org/multipage/grouping-content.html#the-ul-element"><code>&lt;ul&gt;</code></a>) looks like:</p>
@@ -902,6 +828,7 @@ with paragraphs before or after the image:</p>
   </li>
 </ul>
 
+
 <h2>Definition lists</h2>
 
 <p><a href="https://html.spec.whatwg.org/multipage/grouping-content.html#the-dl-element">The <code>&lt;dl&gt;</code> (definition list) element</a>
@@ -992,6 +919,7 @@ Oatcake handles <code>&lt;dd&gt;</code>'s containing one or more
     <i>torquere</i>, <i>tortum</i>, to wind.</p>
   </dd>
 </dl>
+
 
 <h2 id="blockquotes">Blockquotes</h2>
 
@@ -1180,6 +1108,97 @@ heading would normally have:</p>
 </blockquote>
 
 
+<h2>Images</h2>
+
+<p>Images need a little more space above and below them than paragraphs do,
+otherwise they feel cramped. Oatcake gives images just enough space&ndash;not too
+much, not too little, and sticking to the vertical rhythm. This works the same
+whether or not you wrap your <code>&lt;img&gt;</code>'s in
+<code>&lt;p&gt;</code>'s:</p>
+
+<img src="images/sand.jpg" alt="A photo of some sand" title="A photo of some sand" />
+
+<p>An image's height can upset the vertical rhythm unless you make sure your
+it's an even multiple of the line height, and browsers resizing images to fit
+the display width can complicate things. This page contains a snippet of
+JavaScript that fixes the sizes of images to the vertical rhythm.  But I
+recommend not worrying about it.</p>
+
+
+<h2 id="code-blocks">Code blocks</h2>
+
+<p><a href="https://html.spec.whatwg.org/#the-code-element">The <code>&lt;code&gt;</code> element</a>
+(<code>`backticks`</code> in Markdown) can be used for inline code spans,
+and <a href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-var-element"><code>&lt;var&gt;</code></a>
+can be used for variables etc.
+To create a multi-line code block wrap a <code>&lt;code&gt;</code> in a
+<a href="https://html.spec.whatwg.org/#the-pre-element"><code>&lt;pre&gt;</code> element</a>:</p>
+
+<pre><code class="nohighlight">def test_validate_url_returns_an_http_url_unmodified():
+    url = 'http://github.com/jimsmith'
+    validated_url = validate_url(url)
+    assert validated_url == 'http://github.com/jimsmith'
+</code></pre>
+
+<p>A common bug in themes is for long lines in code blocks to stretch out
+the width of the entire page and break the layout on mobile screens.  Oatcake
+fixes this by giving wide code blocks a horizontal scrollbar:</p>
+
+<pre><code class="nohighlight">def test_validate_url_returns_an_http_url_unmodified():
+    assert validate_url('http://github.com/jimsmith') == 'http://github.com/jimsmith'
+</code></pre>
+
+<p>You can use bold text in code blocks:</p>
+
+<pre><code class="nohighlight">def test_validate_url_returns_an_http_url_unmodified():
+    url = 'http://github.com/jimsmith'
+    validated_url = <strong>validate_url(url)</strong>
+    assert validated_url == 'http://github.com/jimsmith'</code></pre>
+
+<h2 id="kbd-and-samp">Input and output with <code>&lt;kbd&gt;</code> and <code>&lt;samp&gt;</code></h2>
+
+<p>Oatcake supports user input with <a href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-kbd-element">the <code>&lt;kbd&gt;</code> element</a>
+and sample output with <a href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-samp-element">the <code>&lt;samp&gt;</code> element</a>.</p>
+
+<p>To represent user input from a keyboard or any other text entry device wrap
+it in <code>&lt;kbd&gt;</code> tags: <kbd>help mycommand</kbd></p>
+
+<p>You can use nested <code>&lt;kbd&gt;</code>'s to represent multiple keystrokes that form a
+single input: <kbd><kbd>Ctrl</kbd> + <kbd>c</kbd></kbd>.
+Although you might prefer to write it without nesting like this:
+<kbd>Ctrl</kbd>&nbsp;+&nbsp;<kbd>c</kbd>.</p>
+
+<p>Up to two levels of nesting are supported:
+<kbd><kbd><kbd>Ctrl</kbd> + <kbd>b</kbd></kbd> <kbd><kbd>Shift</kbd> + <kbd>t</kbd></kbd></kbd>.</p>
+
+<p>To represent sample or quoted output from a computer program, wrap it in
+<code>&lt;samp&gt;</code> tags: <samp>Keyboard not found. Press F1 to continue</samp></p>
+
+<div class="note">
+  <h3 class="notoc noanchor">Tip: use non-breaking spaces between <code>&lt;kbd&gt;</code>'s</h3>
+
+  <p>Oatcake prevents browsers from wrapping a <code>&lt;kbd&gt;</code> (nested
+  or single) over multiple lines even if the <code>&lt;kbd&gt;</code> contains
+  multiple words separated by spaces, but if you're using a chain of separate
+  <code>&lt;kbd&gt;</code>'s (as in
+  <kbd>Ctrl</kbd>&nbsp;+&nbsp;<kbd>c</kbd>) you must use non-breaking spaces
+  (<code>&amp;nbsp;</code>) instead of normal spaces around the <code>+</code>
+  if you want to prevent line breaks from being inserted in-between the
+  <code>&lt;kbd&gt;</code>'s. Wrapping the whole sequence of
+  <code>&lt;kbd&gt;</code>'s in a <code>&lt;span style="white-space: nowrap;"&gt;</code>
+  should also work.</p>
+
+  <p>You can also use either technique if you don't want a
+  <code>&lt;code&gt;</code>,
+  <code>&lt;samp&gt;</code>,
+  <code>&lt;mark&gt;</code>,
+  etc to be wrapped (Oatcake doesn't prevent wrapping within these elements by
+  default because often you do what them to wrap, especially if they contain
+  long strings that might otherwise
+  <a href="#overflow">overflow the container</a>).</p>
+</div>
+
+
 <h2>Horizontal rules</h2>
 
 <p>The <a href="https://html.spec.whatwg.org/multipage/grouping-content.html#the-hr-element"><code>&lt;hr&gt;</code> element</a>
@@ -1248,22 +1267,6 @@ them when they're used to start the hidden contents of a disclosure widget:</p>
   <h4 class="notoc noanchor"><code>&lt;h4&gt;</code> heading</h4>
   <p>Here are the details&hellip;</p>
 </details>
-
-<h2>Images</h2>
-
-<p>Images need a little more space above and below them than paragraphs do,
-otherwise they feel cramped. Oatcake gives images just enough space&ndash;not too
-much, not too little, and sticking to the vertical rhythm. This works the same
-whether or not you wrap your <code>&lt;img&gt;</code>'s in
-<code>&lt;p&gt;</code>'s:</p>
-
-<img src="images/sand.jpg" alt="A photo of some sand" title="A photo of some sand" />
-
-<p>An image's height can upset the vertical rhythm unless you make sure your
-it's an even multiple of the line height, and browsers resizing images to fit
-the display width can complicate things. This page contains a snippet of
-JavaScript that fixes the sizes of images to the vertical rhythm.  But I
-recommend not worrying about it.</p>
 
 <h2 id="figures">Figures</h2>
 
