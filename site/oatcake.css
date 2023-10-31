@@ -632,6 +632,11 @@ details[open] > summary {
 
 pre {
   overflow: auto;
+  border-radius: 5px;
+  padding-top: var(--body-line-height);
+  padding-bottom: var(--body-line-height);
+  padding-left: calc(0.5 * var(--body-line-height));
+  padding-right: calc(0.5 * var(--body-line-height));
 }
 
 pre,
