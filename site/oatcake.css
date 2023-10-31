@@ -237,10 +237,6 @@ var {
   font-style: italic;
 }
 
-summary {
-  cursor: pointer;
-}
-
 .muted {
   color: var(--muted-color);
 }
@@ -320,7 +316,7 @@ blockquote footer cite:before {
   content: "";
 }
 
-blockquote *:last-child {
+blockquote>*:last-child {
   margin-bottom: 0;
 }
 
@@ -608,28 +604,23 @@ h6 kbd {
   padding-bottom: 0;
 }
 
-details, pre, summary {
-  border-radius: 5px;
-  padding: calc(1 * var(--body-line-height));
-}
-
-details {
-  margin-bottom: calc(var(--body-line-height) - 2px);
-}
-
-/* Make the entire area of a <details>, when closed, clickable to open. */
-details summary {
-  margin: calc(-1 * var(--body-line-height));
-  padding: calc(0.5 * var(--body-line-height));
-  background-color: var(--code-background-color);
-}
-
 details {
   border: 1px solid #aaaaaa;
+  padding-left: calc(0.5 * var(--body-line-height));
+  padding-right: calc(0.5 * var(--body-line-height));
+  padding-top: calc(var(--body-line-height) - 2px);
+  border-radius: 5px;
 }
 
-details[open] {
-  padding-bottom: 0;
+details > summary {
+  cursor: pointer;
+  height: var(--body-line-height);
+  background-color: var(--code-background-color);
+  margin-top: calc(-1 * calc(var(--body-line-height)));
+  margin-left: -13px;
+  margin-right: -13px;
+  padding: calc(0.5 * var(--body-line-height));
+  border-radius: 5px;
 }
 
 details[open] > summary {
