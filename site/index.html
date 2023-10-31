@@ -1232,16 +1232,20 @@ Although you might prefer to write it without nesting like this:
   <kbd>Ctrl</kbd>&nbsp;+&nbsp;<kbd>c</kbd>) you must use non-breaking spaces
   (<code>&amp;nbsp;</code>) instead of normal spaces around the <code>+</code>
   if you want to prevent line breaks from being inserted in-between the
-  <code>&lt;kbd&gt;</code>'s. Wrapping the whole sequence of
-  <code>&lt;kbd&gt;</code>'s in a <code>&lt;span style="white-space: nowrap;"&gt;</code>
-  should also work.</p>
+  <code>&lt;kbd&gt;</code>'s.</p>
+
+  <p>Wrapping the whole sequence of <code>&lt;kbd&gt;</code>'s in a
+  <code>&lt;span style="white-space: nowrap;"&gt;</code> should also work and
+  Oatcake provides a <code>nowrap</code> utility class for this so you can just
+  do <code>&lt;span class="nowrap"&gt;</code>.</p>
 
   <p>You can also use either technique if you don't want a
   <code>&lt;code&gt;</code>,
   <code>&lt;samp&gt;</code>,
   <code>&lt;mark&gt;</code>,
-  etc to be wrapped (Oatcake doesn't prevent wrapping within these elements by
-  default because often you do what them to wrap, especially if they contain
+  etc to be wrapped, for example: <code>&lt;code class="nowrap"&gt;</code>
+  (Oatcake doesn't prevent wrapping within these elements by
+  default because often you do want them to wrap, especially if they contain
   long strings that might otherwise
   <a href="#overflow">overflow the container</a>).</p>
 </div>
