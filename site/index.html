@@ -885,11 +885,6 @@ Oatcake doesn't style <code>&lt;dfn&gt;</code>'s but they have semantic meaning.
   <dt>Sow one's wild oats</dt>
   <dd>Live promiscuously and self-indulgently.</dd>
   <dd>To have a period of youthful exuberance; to act wildly, especially before marriage.</dd>
-
-  <dt>Wild oat</dt>
-  <dt>Avena fatua</dt>
-  <dd>Common in meadows and pastures.</dd>
-  <dd>Synonyms: wild oat grass.</dd>
 </dl>
 
 <p>The contents of a single <code>&lt;dd&gt;</code> can be wrapped in a
@@ -1498,8 +1493,8 @@ you, these use a horizontal scrollbar instead:
 <h3>Subtitles and lead paragraphs</h3>
 
 <p>"Lead" paragraphs use a larger text style but not quite as large or bold as
-headings.  To create a lead paragraph just add <code>class="lead"</code> to a
-<code>&lt;p&gt;</code>.  For example this:</p>
+headings. To create a lead paragraph just add <code>class="lead"</code> to a
+<code>&lt;p&gt;</code>. For example this:</p>
 
 <pre><code>&lt;p class="lead"&gt;
   This is a "lead" paragraph. It stands out more than other paragraphs. These
@@ -1544,6 +1539,57 @@ also work in subtitles and lead paragraphs:</p>
   <a href=""><code>a code link</code></a>.
   and even<sup>superscript</sup> and<sub>subscript</sub> and <small>small text</small> in it</h1>
 </p>
+
+<p>You can also add the <code>lead</code> class to other elements,
+for example a <code>&lt;blockquote&gt;</code>:</p>
+
+<blockquote class="lead">
+  <p>This is a "lead" blockquote.</p>
+  <p>These are created by adding the <code>lead</code>
+  class to a <code>&lt;blockquote&gt;</code> element like this:
+  <code>&lt;blockquote class="lead"&gt;</code></p>
+</blockquote>
+
+<p>Or add <code>lead</code> to a <code>&lt;ul&gt;</code> or <code>&lt;ol&gt;</code> to create a large-text list:</p>
+
+<ol reversed class="lead">
+  <li><p>Three&hellip;</p></li>
+  <li><p>Two&hellip;</p></li>
+  <li><p>One&hellip;</p></li>
+</ol>
+
+<p>Here's a definition list with the <code>lead</code> class:</p>
+
+<dl class="lead">
+  <dt>Wild oat</dt>
+  <dt>Avena fatua</dt>
+  <dd>Common in meadows and pastures.</dd>
+  <dd>Synonyms: wild oat grass.</dd>
+</dl>
+
+<p>You can add <code>lead</code> to a <code>&lt;pre&gt;</code> to create a
+large-text preformatted block:</p>
+
+<pre class="lead">Returning is the motion of the Tao.
+
+Yielding is the way of the Tao.
+
+The ten thousand things are born of being.
+
+Being is born of not being.</pre>
+
+<p>You can add <code>lead</code> to a disclosure widget's
+<code>&lt;summary&gt;</code> element to create one with a large label:</p>
+
+<details>
+  <summary class="lead">A large-text disclosure widget</summary>
+  <p>
+    Here are the details.
+    These would also be in large text if you put the <code>lead</code>
+    class on the <code>&lt;details&gt;</code> element or on the
+    <code>&lt;p&gt;</code>'s or other elements inside.
+  </p>
+</details>
 
 <h3>Note boxes</h3>
 
@@ -1592,6 +1638,8 @@ blockquotes, lists, code blocks, images&hellip;) in a note by putting the
   <p>An image:</p>
 
   <img src="media/oats.jpg" alt="A bowl of oats" title="A bowl of oats" />
+
+  <p class="lead">A lead paragraph.</p>
 
   <p>And an <code>&lt;hr&gt;</code> followed by a code block:</p>
 
@@ -1642,6 +1690,16 @@ and for different colour schemes.</p>
   <p>This is the body of the note</p>
 </div>
 
+<h3>Combining <code>lead</code> and <code>note</code></h3>
+
+<p>As well as using lead paragraphs <em>inside</em> a note box you can also
+apply the <code>lead</code> and <code>note</code> classes to the same element
+(say a <code>&lt;p&gt;</code>, <code>&lt;div&gt;</code> or <code>&lt;aside&gt;</code>)
+to create a note box with all-large text:</p>
+
+<p class="lead note">This is a "lead note" created by applying both the
+<code>lead</code> and the <code>note</code> classes to a <code>&lt;p&gt;</code>
+like this: <code>&lt;p class="lead note"&gt;</code></p>
 
 <h3>Badges and pills</h3>
 
