@@ -1148,13 +1148,14 @@ pages created with <a href="https://html.spec.whatwg.org/multipage/iframe-embed-
   <p>An image or video's height will upset the vertical rhythm unless it's an
   even multiple of Oatcake's line height of 24px. Correcting this isn't as
   simple as resizing the image or video file: on smaller displays browsers will
-  shrink an image or video's width and height to fit it into the available
-  screen width while maintaining its aspect ratio. If you force the element's
-  width and height with CSS then it'll overflow the screen width on smaller
-  screens (since the browser can no longer shrink the element) and cause a
-  horizontal scrollbar. If you force just the height and allow the width to
-  change then the browser will horizontally squash the video (changing its
-  aspect ratio) on smaller screens.</p>
+  shrink an image or video's width <em>and height</em> to fit it into the
+  available screen width while maintaining its aspect ratio, so the element's
+  height will no longer be a multiple of 24px. If you force the element's width
+  and height with CSS then it'll overflow the screen width on smaller screens
+  (since the browser can no longer shrink the element) and cause a horizontal
+  scrollbar. If you force just the height and allow the width to change then
+  the browser will horizontally squash the video (changing its aspect ratio) on
+  smaller screens.</p>
 
   <p>This page contains a snippet of JavaScript that you can copy that keeps
   the heights of images and videos snapped to the vertical rhythm while
