@@ -172,14 +172,16 @@ li dl:not(p~dl) {
 
 
 img:not(li img:first-child),
-iframe,
-video {
+iframe:not(li img:first-child),
+video:not(li img:first-child),
+audio:not(li img:first-child) {
   padding-top: var(--body-line-height);
 }
 
 img,
 iframe,
-video {
+video,
+audio {
   margin-bottom: calc(var(--body-line-height) *2);
 }
 
@@ -399,11 +401,16 @@ kbd kbd kbd {
   padding-bottom: 0;
 }
 
-img {
+img, iframe, video, audio {
   display: block;
   margin-left: auto;
   margin-right: auto;
   max-width: 100%;
+}
+
+audio {
+  width: 100%;
+  height: calc(2 * var(--body-line-height));
 }
 
 h1,

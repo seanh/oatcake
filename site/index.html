@@ -816,15 +816,15 @@ with paragraphs before or after the image:</p>
 
 <ul>
   <li>
-    <img src="/images/bird.jpg"  alt="A photo of a bird" title="A photo of a bird" />
+    <img src="media/bird.jpg"  alt="A photo of a bird" title="A photo of a bird" />
   </li>
   <li>
     <p>This image of a fox is the second and last block item in this list item:</p>
-    <img src="/images/fox.jpg"  alt="A photo of a fox" title="A photo of a fox" />
+    <img src="media/fox.jpg"  alt="A photo of a fox" title="A photo of a fox" />
   </li>
   <li>
     <p>This image of an elephant is the second of three block items in this list item:</p>
-    <img src="/images/elephant.jpg"  alt="A photo of an elephant" title="A photo of an elephant" />
+    <img src="media/elephant.jpg"  alt="A photo of an elephant" title="A photo of an elephant" />
     <p>This paragraph is still part of the same list item.</p>
   </li>
 </ul>
@@ -1043,7 +1043,7 @@ lists, code blocks, and even images:</p>
     <li>Second list item</li>
   </ul>
 
-  <img src="images/buffalo.jpg" alt="A photo of a buffalo" title="A photo of a buffalo" />
+  <img src="media/buffalo.jpg" alt="A photo of a buffalo" title="A photo of a buffalo" />
 
   <pre><code>code block
 </code></pre>
@@ -1109,22 +1109,71 @@ heading would normally have:</p>
 </blockquote>
 
 
-<h2>Images</h2>
+<h2>Embedded content: images, video, audio and iframes</h2>
 
 <p>Images need a little more space above and below them than paragraphs do,
 otherwise they feel cramped. Oatcake gives images just enough space&ndash;not too
-much, not too little, and sticking to the vertical rhythm. This works the same
-whether or not you wrap your <code>&lt;img&gt;</code>'s in
-<code>&lt;p&gt;</code>'s:</p>
+much, not too little, and sticking to the vertical rhythm:</p>
 
-<img src="images/sand.jpg" alt="A photo of some sand" title="A photo of some sand" />
+<img src="media/sand.jpg" alt="A photo of some sand" title="A photo of some sand" />
 
-<p>An image's height can upset the vertical rhythm unless you make sure your
-it's an even multiple of the line height, and browsers resizing images to fit
-the display width can complicate things. This page contains a snippet of
-JavaScript that fixes the sizes of images to the vertical rhythm.  But I
-recommend not worrying about it.</p>
+<p>It looks the same if your <code>&lt;img&gt;</code>'s are wrapped in
+<code>&lt;p&gt;</code>'s, this:</p>
 
+<pre><code>&lt;p&gt;
+  &lt;img src="media/sand.jpg" /&gt;
+&lt;/p&gt;</code></pre>
+
+<p>renders like this:</p>
+
+<p><img src="media/sand.jpg" alt="A photo of some sand" title="A photo of some sand" /></p>
+
+<p>The same extra little bit of vertical space is also applied to video players
+created using <a href="https://html.spec.whatwg.org/multipage/media.html#the-video-element">the <code>&lt;video&gt;</code> element</a>:</p>
+
+<video controls muted playsinline src="/media/train.mp4" poster="/media/train.png" /></video>
+
+<p>Oatcake also supports audio players with
+<a href="https://html.spec.whatwg.org/multipage/media.html#the-audio-element">the <code>&lt;audio&gt;</code> element</a>,
+again giving them a little more vertical space to breathe in, aligning them
+with the vertical rhythm and making sure that the player controls use all the
+horizontal width available for easier scrubbing:</p>
+
+<audio controls src="/media/apollo11.mp3"></audio>
+
+<p>Finally, the same extra vertical breathing room is also applied to embedded
+pages created with <a href="https://html.spec.whatwg.org/multipage/iframe-embed-object.html#the-iframe-element"><code>&lt;iframe&gt;</code></a>:</p>
+
+<iframe src="/iframe.html" style="width: 100%; height: 120px;"></iframe>
+
+<details>
+  <summary>Embedded media and vertical rhythm</summary>
+
+  <p>An image or video's height will upset the vertical rhythm unless it's an
+  even multiple of Oatcake's line height of 24px. Correcting this isn't as
+  simple as resizing the image or video file: on smaller displays browsers will
+  shrink an image or video's width and height to fit it into the available
+  screen width while maintaining its aspect ratio. If you force the element's
+  width and height with CSS then it'll overflow the screen width on smaller
+  screens (since the browser can no longer shrink the element) and cause a
+  horizontal scrollbar. If you force just the height and allow the width to
+  change then the browser will horizontally squash the video (changing its
+  aspect ratio) on smaller screens.</p>
+
+  <p>This page contains a snippet of JavaScript that you can copy that keeps
+  the heights of images and videos snapped to the vertical rhythm while
+  maintaining their original aspect ratio, regardless of the original file size
+  and even as the browser resizes the window. But I recommend just not worrying
+  about it.</p>
+
+  <p>If you don't want an <em>iframe</em> to upset the vertical rhythm you can
+  just use HTML or CSS to make its height a multiple of 24px. You can do this
+  with an HTML attribute like <code>height=168</code> or with some inline CSS:
+  <code>style="height: 168px;"</code>. Unlike with images and videos, browsers
+  don't shrink the heights of iframes to maintain the vertical rhythm when
+  shrinking their widths to fit them onto a smaller screen, so the JavaScript
+  vertical rhythm fix isn't needed for iframes.</p>
+</details>
 
 <h2 id="code-blocks">Preformatted text and code blocks</h2>
 
@@ -1337,21 +1386,21 @@ them when they're used to start the hidden contents of a disclosure widget:</p>
 you can put an image inside a figure like this:</p>
 
 <pre><code class="language-html">&lt;figure&gt;
-  &lt;img src="images/cow.jpg" alt="A photo of a cow."&gt;
+  &lt;img src="media/cow.jpg" alt="A photo of a cow."&gt;
 &lt;/figure&gt;</code></pre>
 
 <p>To include a caption with your figure use the <code>&lt;figcaption&gt;</code>
 tag:</p>
 
 <pre><code class="language-html">&lt;figure&gt;
-  &lt;img src="images/cow.jpg" alt="A photo of a cow."&gt;
+  &lt;img src="media/cow.jpg" alt="A photo of a cow."&gt;
   &lt;figcaption&gt;A photo of a cow.&lt;/figcaption&gt;
 &lt;/figure&gt;</code></pre>
 
 <p>That'll produce this output:</p>
 
 <figure>
-  <img src="images/cow.jpg" alt="A photo of a cow.">
+  <img src="media/cow.jpg" alt="A photo of a cow.">
   <figcaption>A photo of a cow.</figcaption>
 </figure>
 
@@ -1389,7 +1438,7 @@ quote's attribution in the <code>&lt;figcaption&gt;</code>:</p>
 <p>Multi-line captions work fine, as do inline styles within captions:</p>
 
 <figure>
-  <img src="images/houses.jpg" alt="A photo of some houses.">
+  <img src="media/houses.jpg" alt="A photo of some houses.">
   <figcaption>
     <strong>Laboris</strong> nisi ut aliquip ex ea
 commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
@@ -1443,15 +1492,6 @@ you, these use a horizontal scrollbar instead:
   spaces) so don't make these too long or they'll overflow their container and
   break the layout.</p>
 </div>
-
-<h2>Embedding media from other sites</h2>
-
-<p>Embedded media from other sites (YouTube videos, Google Slides
-presentations, and the like) should work nicely and get harmonious top and
-bottom margins, but without resorting to desperate measures it's difficult to
-prevent these sorts of things from breaking the vertical rhythm, overflowing
-containers, and triggering horizontal scrollbars on mobile devices.
-Here's an <a href="media">example page with various embedded media</a>.</p>
 
 <h2>CSS classes</h2>
 
@@ -1551,7 +1591,7 @@ blockquotes, lists, code blocks, images&hellip;) in a note by putting the
 
   <p>An image of a buffalo:</p>
 
-  <img src="images/buffalo.jpg" alt="A photo of a buffalo" title="A photo of a buffalo" />
+  <img src="media/buffalo.jpg" alt="A photo of a buffalo" title="A photo of a buffalo" />
 
   <p>And an <code>&lt;hr&gt;</code> followed by a code block:</p>
 
@@ -1684,17 +1724,19 @@ harder to add dark mode and multiple colour schemes.</p>
       });
     </script>
     <script>
-      function resizeImages() {
-        let images = document.getElementsByTagName('main')[0].getElementsByTagName('img');
+      function resizeMedia() {
+        let images = Array.prototype.slice.call(document.getElementsByTagName("img"), 0);
+        let videos = Array.prototype.slice.call(document.getElementsByTagName("video"), 0);
+        let media = images.concat(videos);
         let lineHeight = parseInt(getComputedStyle(document.documentElement).getPropertyValue('--body-line-height'));
-        for (let image of images) {
-          image.style.height = 'auto';
-          originalHeight = image.offsetHeight;
-          image.style.height = (lineHeight * Math.floor(originalHeight / lineHeight)) + 'px';
+        for (let element of media) {
+          element.style.height = 'auto';
+          originalHeight = element.offsetHeight;
+          element.style.height = (lineHeight * Math.floor(originalHeight / lineHeight)) + 'px';
         }
       }
-      window.addEventListener('load', resizeImages);
-      window.addEventListener('resize', resizeImages);
+      window.addEventListener('load', resizeMedia);
+      window.addEventListener('resize', resizeMedia);
     </script>
   </body>
 </html>
