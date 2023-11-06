@@ -1784,19 +1784,30 @@ harder to add dark mode and multiple colour schemes.</p>
       });
     </script>
     <script>
-      function resizeMedia() {
+      function adjustMediaSizes() {
         let images = Array.prototype.slice.call(document.getElementsByTagName("img"), 0);
         let videos = Array.prototype.slice.call(document.getElementsByTagName("video"), 0);
         let media = images.concat(videos);
+
         let lineHeight = parseInt(getComputedStyle(document.documentElement).getPropertyValue('--body-line-height'));
+
         for (let element of media) {
           element.style.height = 'auto';
-          originalHeight = element.offsetHeight;
-          element.style.height = (lineHeight * Math.floor(originalHeight / lineHeight)) + 'px';
+          element.style.width = 'auto';
+
+          let originalHeight = element.offsetHeight;
+          let originalWidth = element.offsetWidth;
+          let ratio = element.naturalWidth / element.naturalHeight;
+          let newHeight = lineHeight * Math.floor(originalHeight / lineHeight);
+          let newWidth = newHeight * ratio;
+
+          element.style.height = newHeight + 'px';
+          element.style.width = newWidth + 'px';
         }
       }
-      window.addEventListener('load', resizeMedia);
-      window.addEventListener('resize', resizeMedia);
+
+      window.addEventListener('load', adjustMediaSizes);
+      window.addEventListener('resize', adjustMediaSizes);
     </script>
   </body>
 </html>
