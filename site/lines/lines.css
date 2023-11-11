@@ -1,0 +1,26 @@
+.lines, .linesdouble {
+  background-size: var(--body-line-height);
+  background-position: left top;
+  background-repeat: repeat;
+}
+.lines {
+  background-image: url("lines.svg");
+}
+.linesdouble {
+  background-image: url("linesdouble.svg");
+}
+
+/* Remove horizontal scrollbars from <pre> when the guidelines are being shown
+ * because they upset the vertical rhythm. */
+.lines pre {
+  overflow-x: hidden;
+}
+
+/* Make <pre>'s transparent when the guidelines are being shown so that you can
+ * see the lines. */
+.lines pre,
+.lines pre code {
+  background-color: rgba(243, 243, 243, 0.7);
+}
+
+
