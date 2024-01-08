@@ -172,13 +172,15 @@ li dl:not(p~dl) {
 
 
 img:not(li img:first-child),
-iframe:not(li img:first-child),
-video:not(li img:first-child),
-audio:not(li img:first-child) {
+svg:not(li svg:first-child),
+iframe:not(li iframe:first-child),
+video:not(li video:first-child),
+audio:not(li audio:first-child) {
   padding-top: var(--body-line-height);
 }
 
 img,
+svg,
 iframe,
 video,
 audio {
@@ -381,7 +383,7 @@ kbd kbd kbd {
   padding-bottom: 0;
 }
 
-img, iframe, video, audio {
+img, svg, iframe, video, audio {
   display: block;
   margin-left: auto;
   margin-right: auto;
@@ -509,7 +511,8 @@ figure figcaption {
   text-align: center;
 }
 
-figure img + figcaption {
+figure img + figcaption,
+figure svg + figcaption {
   margin-top: calc(var(--body-line-height) * -1);
 }
 
