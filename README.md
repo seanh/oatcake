@@ -2,7 +2,7 @@ Oatcake
 =======
 
 A drop-in stylesheet that makes pages attractive and readable. Looks good
-without drawing attention to the design. Great on mobile.
+without drawing attention to the design. Works great on mobile.
 
 Hacking
 -------
