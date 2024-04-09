@@ -146,8 +146,8 @@ throwing off the rhythm.</p>
 <h2>Inline elements</h2>
 
 <p>
-All the usual inline elements work nicely, for example:
-<a href="http://example.com/">links</a>,
+All the usual inline elements work as you'd expect, for example:
+<a href="https://example.com/">links</a>,
 <code>code()</code>,
 <em>emphasised words</em>,
 <strong>words in bold</strong>,
@@ -160,60 +160,83 @@ subscripts<sub>sub</sub> and superscripts<sup>sup</sup>,
 and abbreviations like <abbr title="Hypertext Markup Language">HTML</abbr>.
 </p>
 
-<p>Mixing different inline elements together works too, for example
-here's <a href="http://example.com/" title="Title">a link with <strong>bold</strong> and <code>code()</code> in it</a>,
-an <a href="http://example.com/" title="Title"><strong>all bold link</strong></a>,
-and an <a href="http://example.com/" title="Title"><code>all_code_link()</code></a>.
+<p>Combinations of inline elements also work. These break in many themes. For example:
+<a href="https://example.com/" title="Title">a link with <strong>bold</strong> and <code>code()</code> in it</a>,
+an <a href="https://example.com/" title="Title"><strong>all bold link</strong></a>,
+an <a href="https://example.com/" title="Title"><code>all_code_link()</code></a>,
+<small>small text with <b>bold</b>, <i>italics</i> and <a href="https://example.com">links</a> and even <code>code</code> in it</small>,
+a <a href="https://example.com/" title="Title"><del>struck-through link</del></a>,
+a <a href="https://example.com/" title="Title"><mark>highlighted link</mark></a>.
 </p>
 
+<p>
+Links and various inline styles work in code spans (<code>&lt;code&gt;</code>) and
+<a href="#code-blocks">code blocks</a> (<code>&lt;pre&gt;&lt;code&gt;</code>)
+too, for example:
+</p>
+
+<pre><code><b>foobar</b> <b>=</b> <a href="https://docs.python.org/3/reference/expressions.html#lambda">lambda</a> <i><u>foo</u></i>, <u><i>bar</i></u><b>:</b> <mark>foo + bar</mark></code></pre>
+
 <details>
-<summary>Inline HTML elements you can use</summary>
+<summary>Tip: inline HTML elements you can use</summary>
 <p>Here's a pocket guide to some of the more interesting inline elements
-you can use with links to the HTML standard. These all work well with Oatcake:</p>
+you can use with Oatcake:</p>
 
 <ul>
   <li>
-    <p><a href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-em-element">The <code>&lt;em&gt;</code> element</a>
-    is for stress emphasis.
-    <code>&lt;em&gt;</code> is what <code>*single asterisks*</code> or <code>_single underscores_</code> do in Markdown.</p>
+    <p><a href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-em-element"><code>&lt;em&gt;</code></a>
+    puts text in italics: <em>this is emphasised text with <code>&lt;em&gt;</code>.</em></p>
+
+    <p><code>&lt;em&gt;</code> is what <code>*single asterisks*</code> or <code>_single underscores_</code> do in Markdown.
+    It's meant to be used for <em>stress emphasis</em>.</p>
 
     <p>Not to be confused with <a href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-i-element"><code>&lt;i&gt;</code></a>
-    which is for <q>a span of text in an alternate voice or mood, or otherwise
+    which the HTML standard says is for:</p>
+
+    <blockquote>
+    [&hellip;] a span of text in an alternate voice or mood, or otherwise
     offset from the normal prose in a manner indicating a different quality of
     text, such as a taxonomic designation, a technical term, an idiomatic
     phrase from another language, transliteration, a thought, or a ship name in
-    Western texts.</q> A dream sequence is another example of
-    <code>&lt;i&gt;</code> given in the HTML standard.</p>
+    Western texts.
+    </blockquote>
 
-    <p>Both are styled in italics:</p>
+    <p>Elsewhere the standard also mentions a dream sequence an example usage
+    for <code>&lt;i&gt;</code>.</p>
 
-    <p><em>This is emphasised text with <code>&lt;em&gt;</code>.</em><br/>
-    <i>This is text in an alternative voice or mood with <code>&lt;i&gt;</code>.</i>
-    </p>
+    <p><code>&lt;i&gt;</code> is also styled in italics so the difference
+    between <code>&lt;em&gt;</code> and <code>&lt;i&gt;</code>, at least with
+    Oatcake, is purely semantic:
+    <i>this is text in an alternative voice or mood with <code>&lt;i&gt;</code>.</i></p>
 
-    <p>If some text is in an <code>&lt;i&gt;</code> because it's in a different language
-    you can use the <code>lang</code> attribute to give the language:</p>
+    <p>If some text is in an <code>&lt;i&gt;</code> because it's in a different
+    language you can use the <code>lang</code> attribute to give the language.
+    This makes no visible difference, it's purely semantic:</p>
 
-    <pre><code>&lt;p&gt;There is a certain &lt;i lang="fr"&gt;je ne sais quoi&lt;/i&gt; in the air.&lt;/p&gt;</code></pre>
+    <pre><code>&lt;p&gt;There is a certain &lt;i lang="fr"&gt;je ne sais quoi&lt;/i&gt;
+in the air.&lt;/p&gt;</code></pre>
   </li>
 
   <li>
-    <p><a href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-strong-element">The <code>&lt;strong&gt;</code> element</a>
-    is for strong importance, seriousness or urgency.
-    <code>&lt;strong&gt;</code> is what <code>**double asterisks**</code> or <code>__double underscores__</code> do in Markdown.</p>
+    <p><a href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-strong-element"><code>&lt;strong&gt;</code></a>
+    makes text bold: <strong>this is important text with <code>&lt;strong&gt;</code>.</strong></p>
+
+    <p><code>&lt;strong&gt;</code> is what <code>**double asterisks**</code> or <code>__double underscores__</code> do in Markdown.
+    it's meant to be used for <q>strong importance, seriousness or urgency.</q></p>
 
     <p>Not to be confused with <a href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-b-element"><code>&lt;b&gt;</code></a>
-    which <q>represents a span of text to which attention is being drawn for
-    utilitarian purposes without conveying any extra importance and with no
-    implication of an alternate voice or mood, such as key words in a
-    document abstract, product names in a review, actionable words in
-    interactive text-driven software, or an article lede.</q></p>
+    which the HTML standard says:</p>
 
-    <p>Both are styled in bold:</p>
+    <blockquote>[&hellip;] represents a span of text to which attention is
+    being drawn for utilitarian purposes without conveying any extra importance
+    and with no implication of an alternate voice or mood, such as key words in
+    a document abstract, product names in a review, actionable words in
+    interactive text-driven software, or an article lede.</blockquote>
 
-    <p><strong>This is important text with <code>&lt;strong&gt;</code>.</strong><br/>
-    <b>This is text to which attention is being drawn for utilitarian purposes with<code>&lt;b&gt;</code>.</b>
-    </p>
+    <p><code>&lt;b&gt;</code> is also styled in bold so again the difference
+    between <code>&lt;strong&gt;</code> and <code>&lt;b&gt;</code>, at least with
+    Oatcake, is purely semantic:
+    <b>this is text to which attention is being drawn for utilitarian purposes with<code>&lt;b&gt;</code>.</b></p>
 
     <p>You should use <code>&lt;b&gt;</code> only as a last resort when no other element is more appropriate.
     Use <code>&lt;h1&gt;</code> to <code>&lt;h6&gt;</code> for headings,
@@ -222,24 +245,29 @@ you can use with links to the HTML standard. These all work well with Oatcake:</
     and <code>&lt;mark&gt;</code> for highlighted or marked text.</p>
   </li>
 
-  <li><p><a href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-small-element">The <code>&lt;small&gt;</code> element</a>
-    is for side comments and small print like disclaimers, caveats, legal
-    restrictions or copyrights, attribution, etc.
-    It's styled in small text: <small>this is some small text created with the <code>&lt;small&gt;</code> element</small>.
-    </p>
+  <li><p><a href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-small-element"><code>&lt;small&gt;</code></a> makes text smaller:
+    <small>this is some small text created with the <code>&lt;small&gt;</code> element</small>.</p>
 
-    <p><code>&lt;small&gt;</code> is only for short runs of text,
-    use <a href="https://html.spec.whatwg.org/multipage/sections.html#the-aside-element"><code>&lt;aside&gt;</code></a>
+    <p>According to the HTML spec <code>&lt;small&gt;</code> is meant for side
+    comments and small print like disclaimers, caveats, legal restrictions or
+    copyrights, attribution, etc.</p>
+
+    <p><code>&lt;small&gt;</code> is only for short runs of text.
+    Use <a href="https://html.spec.whatwg.org/multipage/sections.html#the-aside-element"><code>&lt;aside&gt;</code></a>
     for larger sidebars, pull quotes, groups of <code>&lt;nav&gt;</code> elements, etc.
-    Use <a href="https://html.spec.whatwg.org/multipage/sections.html#the-hgroup-element"><code>&lt;hgroup&gt;</code></a> for subheadings.
+    Use <a href="https://html.spec.whatwg.org/multipage/sections.html#the-hgroup-element"><code>&lt;hgroup&gt;</code></a> for subheadings
+    (see the <a href="#subheadings-and-lead-paragraphs">section on subheadings and lead paragraphs</a> below for an example).
     </p>
-
   </li>
 
   <li>
     <p>
-      <a href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-q-element">The <code>&lt;q&gt;</code> element</a>
+      <a href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-q-element"><code>&lt;q&gt;</code></a>
       is for inline quotations: <q>Whatever you lose, you've won. Whatever you win, you've lost.</q>
+    </p>
+
+    <p>
+      For multi-line or block quotations see the <a href="#blockquotes">section on block quotes</a> below.</p>
     </p>
 
     <p>
@@ -258,7 +286,12 @@ you can use with links to the HTML standard. These all work well with Oatcake:</
     <blockquote>The word "ineffable" could have been used to describe the disaster
     resulting from the campaign's mismanagement.</blockquote>
 
-    <p>For block quotations see the <a href="#blockquotes">section on block quotes</a> below.</p>
+    <p>If you want to manually type smart/curly quotes like
+    <code>&lt;q&gt;</code> does (where the opening and closing quotation marks
+    look different) rather than just straight quotes you can use
+    <code>&amp;ldquo;</code> for the left, opening quotation mark (&ldquo;)
+    and <code>&amp;rdquo;</code> for the right, closing quotation mark (&rdquo;).
+    For curly single-quotes use <code>&amp;lsquo;</code> (&lsquo;) and <code>&amp;rsquo;</code> (&rsquo;).</p>
 
     <p>You can add a <code>cite</code> attribute to a <code>&lt;q&gt;</code> to
     give the URL of the source being quoted for scripts to read,
@@ -268,7 +301,7 @@ you can use with links to the HTML standard. These all work well with Oatcake:</
     </p>
   </li>
 
-  <li><p><a href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-abbr-element">The <code>&lt;abbr&gt;</code> element</a>
+  <li><p><a href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-abbr-element"><code>&lt;abbr&gt;</code></a>
     is for abbreviations and acronyms. If you provide the expansion of the
     abbreviation as the value of a <code>title</code> attribute on an
     <code>&lt;abbr&gt;</code> then in some browsers the abbreviation will get a
@@ -280,10 +313,18 @@ you can use with links to the HTML standard. These all work well with Oatcake:</
 
   <li>
     <p>
-      <a href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-code-element">The <code>&lt;code&gt;</code> element</a>
-      is for inline code spans: fragments of code or strings, filenames,
-      computer programs, etc. This is what <code>`backticks`</code> do in
-      Markdown. See <a href="#code-blocks">code blocks</a> below for multi-line code blocks.
+      <a href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-code-element"><code>&lt;code&gt;</code></a>
+      puts text in a monospaced font: <code>this is monospaced text with &lt;code&gt;</code>.
+    </p>
+
+    <p>
+      <code>&lt;code&gt;</code> is what <code>`backticks`</code> do in Markdown.
+      It's meant for fragments of code or strings, filenames,
+      computer programs, etc.
+    </p>
+
+    <p>
+      See <a href="#code-blocks">code blocks</a> below for multi-line code blocks.
     </p>
   </li>
   <li>
@@ -299,7 +340,7 @@ you can use with links to the HTML standard. These all work well with Oatcake:</
   </li>
 
   <li>
-    <p>The <a href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-samp-element"><code>&lt;samp&gt;</code> element</a>
+    <p><a href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-samp-element"><code>&lt;samp&gt;</code></a>
     represents output from a program
     and <a href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-kbd-element"><code>&lt;kbd&gt;</code></a>
     represents user input.
@@ -307,7 +348,7 @@ you can use with links to the HTML standard. These all work well with Oatcake:</
   </li>
 
   <li>
-    <p>The <a href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-sub-and-sup-elements"><code>&lt;sub&gt;</code> and <code>&lt;sup&gt;</code> elements</a>
+    <p><a href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-sub-and-sup-elements"><code>&lt;sub&gt;</code> and <code>&lt;sup&gt;</code></a>
     are for <sub>subscript</sub> and <sup>superscript</sup>.</p>
 
     <p>Superscripts can be used to create footnotes.<sup><a href="#footnote1" id="backref1">[1]</a></sup></p>
@@ -319,13 +360,14 @@ you can use with links to the HTML standard. These all work well with Oatcake:</
 
   <li>
     <p>
-      <a href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-u-element">The <code>&lt;u&gt;</code> element</a>
-      gives a span of text an <q>unarticulated, though explicitly rendered,
-      non-textual annotation, such as labeling the text as being a proper
-      name in Chinese text (a Chinese proper name mark), or labeling the text
-      as being misspelt.</q>
-      It's styled with an underline:
-      <u>this is text annotated with <code>&lt;u&gt;</code></u>.
+      <a href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-u-element"><code>&lt;u&gt;</code></a>
+      underlines text: <u>this is underlined text with <code>&lt;u&gt;</code></u>.</p>
+
+    <p>
+      According to the HTML spec <code>&lt;u&gt;</code> is meant to be an
+      <q>unarticulated, though explicitly rendered, non-textual annotation,
+      such as labeling the text as being a proper name in Chinese text (a
+      Chinese proper name mark), or labeling the text as being misspelt.</q>
     </p>
 
     <p>Like <code>&lt;b&gt;</code>, <code>&lt;u&gt;</code> is another last-resort element:
@@ -341,12 +383,15 @@ you can use with links to the HTML standard. These all work well with Oatcake:</
 
   <li>
     <p>
-      <a href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-mark-element">The <code>&lt;mark&gt;</code> element</a>
+      <a href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-mark-element"><code>&lt;mark&gt;</code></a>
+      highlights text: <mark>this is some text highlighted with <code>&lt;mark&gt;</code>.</mark>
+    </p>
+
+    <p><code>&lt;mark&gt;</code>
       is for denoting the <em>relevance</em> of a span of text to the current context
       (as opposed to denoting <em>importance</em>, which is done with <code>&lt;strong&gt;</code>,
       or <em>emphasis</em>, which is done with <code>&lt;em&gt;</code>).
-      <code>&lt;mark&gt;</code>'s are styled with a background highlight:
-      <mark>this is some text marked as relevant using <code>&lt;mark&gt;</code></mark>.</p>
+    </p>
 
       <p>More specifically, a <code>&lt;mark&gt;</code> represents:
       <q>a run of text in one document marked or highlighted for reference purposes, due to its relevance in another context.</q>
@@ -361,15 +406,17 @@ you can use with links to the HTML standard. These all work well with Oatcake:</
   </li>
 
   <li>
-    <p><a href="https://html.spec.whatwg.org/multipage/edits.html#the-del-element">The <code>&lt;del&gt;</code> element</a>
-    is for text that has been "removed" from the document like crossing-off the
-    completed items on a todo list, whereas
-    <a href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-s-element"><code>&lt;s&gt;</code></a>
-    is for text that's no longer accurate or relevant.
-    Both are styled with a strike-through:</p>
+    <p><a href="https://html.spec.whatwg.org/multipage/edits.html#the-del-element"><code>&lt;del&gt;</code></a>
+    crosses out text: <del>this is text that's been struck-through with <code>&lt;del&gt;</code></del>.</p>
 
-    <p>
-    <del>This is text that's been struck through with <code>&ltdel&gt;</code> to remove it from the document.</del><br/>
+    <p><code>&lt;del&gt;</code> is for text that has been &ldquo;removed&rdquo; from the
+    document like crossing-off the completed items on a todo list.</p>
+
+    <p>Not to be confused with
+    <a href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-s-element"><code>&lt;s&gt;</code></a>,
+    which is for text that's <q>no longer accurate or no longer relevant</q>.
+    <code>&lt;s&gt;</code> is also styled with a strike-through so the difference between
+    <code>&lt;del&gt;</code> and <code>&lt;s&gt;</code>, at least in Oatcake, is purely semantic:
     <s>This is text that's been struck through with <code>&lts&gt;</code> to mark it as no longer accurate or relevant.</s>
     </p>
 
@@ -379,7 +426,7 @@ you can use with links to the HTML standard. These all work well with Oatcake:</
     and time of the change.</p>
   </li>
 
-  <li><p><a href="https://html.spec.whatwg.org/multipage/edits.html#the-ins-element">The <code>&lt;ins&gt;</code> element</a>
+  <li><p><a href="https://html.spec.whatwg.org/multipage/edits.html#the-ins-element"><code>&lt;ins&gt;</code></a>
     is for text that has been added to the document. It's styled with an underline the same as <code>&lt;u&gt;</code>:
     <ins>this is text that has been marked as added to the document with <code>&lt;ins&gt;</code></ins>.</p>
 
@@ -1251,7 +1298,7 @@ pages created with <a href="https://html.spec.whatwg.org/multipage/iframe-embed-
   JavaScript vertical rhythm fix isn't needed for iframes.</p>
 </details>
 
-<h2 id="code-blocks">Preformatted text and code blocks</h2>
+<h2>Preformatted text</h2>
 
 <p>Preformatted text blocks
 (created with the <a href="https://html.spec.whatwg.org/multipage/grouping-content.html#the-pre-element"><code>&lt;pre&gt;</code></a> element)
@@ -1273,7 +1320,9 @@ act as a bellows:
 Empty yet structured,
 it moves, inexhaustibly giving.</pre>
 
-<p><em>Code</em> blocks can created with <code>&lt;pre&gt;&lt;code&gt;</code> tags.
+<h2>Code blocks</h2>
+
+<p>Code blocks can created with <code>&lt;pre&gt;&lt;code&gt;</code> tags.
 This is what indenting a block of text by four spaces or one tab does in Markdown
 (or "fenced code blocks" with <code>```</code> in many versions of Markdown).
 Oatcake gives code blocks a monospaced font:</p>
@@ -1325,7 +1374,7 @@ screens. Oatcake fixes this by giving wide code blocks a horizontal
 scrollbar:</p>
 
 <pre><code class="nohighlight">def test_validate_url_returns_an_http_url_unmodified():
-    assert validate_url('http://github.com/jimsmith') == 'http://github.com/jimsmith'
+    assert validate_url('https://github.com/jimsmith') == 'https://github.com/jimsmith'
 </code></pre>
 
 <h2 id="kbd-and-samp">Input and output with <code>&lt;kbd&gt;</code> and <code>&lt;samp&gt;</code></h2>
@@ -1515,7 +1564,7 @@ officia deserunt mollit anim id est laborum.
 
 <h3>When to use figures</h3>
 
-<p>According to <a href="http://w3c.github.io/html-reference/figure.html">the HTML spec on <code>&lt;figure&gt;</code></a>
+<p>According to <a href="https://w3c.github.io/html-reference/figure.html">the HTML spec on <code>&lt;figure&gt;</code></a>
 a figure is supposed to be a unit of content that:</p>
 
 <blockquote>
