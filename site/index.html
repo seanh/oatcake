@@ -1251,6 +1251,59 @@ pages created with <a href="https://html.spec.whatwg.org/multipage/iframe-embed-
 
 <iframe src="iframe.html" style="width: 100%; height: 120px;"></iframe>
 
+<h2 id="kbd-and-samp">Input and output with <code>&lt;kbd&gt;</code> and <code>&lt;samp&gt;</code></h2>
+
+<p>Oatcake supports user input with <a href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-kbd-element"><code>&lt;kbd&gt;</code></a>
+and sample output with <a href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-samp-element"><code>&lt;samp&gt;</code></a>.</p>
+
+<p>To represent user input from a keyboard or any other text entry device wrap
+it in <code>&lt;kbd&gt;</code> tags: <kbd>help mycommand</kbd></p>
+
+<p>You can use nested <code>&lt;kbd&gt;</code>'s to represent multiple
+keystrokes that form a single input. Many themes try to show the nested
+structure visually but it doesn't work very well: there isn't enough space to
+make it look good.
+In Oatcake nested <code>&lt;kbd&gt;</code>'s are semantic only: they look the
+same as a single <code>&lt;kbd&gt;</code>.
+For example this:
+<code>&lt;kbd&gt;&lt;kbd&gt;Ctrl&lt;/kbd&gt; + &lt;kbd&gt;c&lt;/kbd&gt;&lt;/kbd&gt;</code>
+renders like this:
+<kbd><kbd>Ctrl</kbd> + <kbd>c</kbd></kbd>.
+You might prefer to write it as two separate (not nested)
+<code>&lt;kbd&gt;</code>'s, this is perfectly valid:
+<kbd>Ctrl</kbd>&nbsp;+&nbsp;<kbd>c</kbd>.</p>
+
+<p>To represent sample or quoted output from a computer program, wrap it in
+<code>&lt;samp&gt;</code> tags: <samp>Keyboard not found. Press F1 to continue</samp></p>
+
+<details>
+  <summary>Tip: use non-breaking spaces between <code>&lt;kbd&gt;</code>'s</summary>
+
+  <p>Oatcake prevents browsers from wrapping a <code>&lt;kbd&gt;</code> (nested
+  or single) over multiple lines even if the <code>&lt;kbd&gt;</code> contains
+  multiple words separated by spaces, but if you're using a chain of separate
+  <code>&lt;kbd&gt;</code>'s (as in
+  <kbd>Ctrl</kbd>&nbsp;+&nbsp;<kbd>c</kbd>) you must use non-breaking spaces
+  (<code>&amp;nbsp;</code>) instead of normal spaces around the <code>+</code>
+  if you want to prevent line breaks from being inserted in-between the
+  <code>&lt;kbd&gt;</code>'s.</p>
+
+  <p>Wrapping the whole sequence of <code>&lt;kbd&gt;</code>'s in a
+  <code>&lt;span style="white-space: nowrap;"&gt;</code> should also work and
+  Oatcake provides a <code>nowrap</code> utility class for this so you can just
+  do <code>&lt;span class="nowrap"&gt;</code>.</p>
+
+  <p>You can also use either technique if you don't want a
+  <code>&lt;code&gt;</code>,
+  <code>&lt;samp&gt;</code>,
+  <code>&lt;mark&gt;</code>,
+  etc to be wrapped, for example: <code>&lt;code class="nowrap"&gt;</code>
+  (Oatcake doesn't prevent wrapping within these elements by
+  default because often you do want them to wrap, especially if they contain
+  long strings that might otherwise
+  <a href="#overflow">overflow the container</a>).</p>
+</details>
+
 <h2>Preformatted text</h2>
 
 <p>Preformatted text blocks
@@ -1337,54 +1390,6 @@ scrollbar:</p>
 <pre><code class="nohighlight">def test_validate_url_returns_an_http_url_unmodified():
     assert validate_url('https://github.com/jimsmith') == 'https://github.com/jimsmith'
 </code></pre>
-
-<h2 id="kbd-and-samp">Input and output with <code>&lt;kbd&gt;</code> and <code>&lt;samp&gt;</code></h2>
-
-<p>Oatcake supports user input with <a href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-kbd-element">the <code>&lt;kbd&gt;</code> element</a>
-and sample output with <a href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-samp-element">the <code>&lt;samp&gt;</code> element</a>.</p>
-
-<p>To represent user input from a keyboard or any other text entry device wrap
-it in <code>&lt;kbd&gt;</code> tags: <kbd>help mycommand</kbd></p>
-
-<p>You can use nested <code>&lt;kbd&gt;</code>'s to represent multiple keystrokes that form a
-single input: <kbd><kbd>Ctrl</kbd> + <kbd>c</kbd></kbd>.
-Although you might prefer to write it without nesting like this:
-<kbd>Ctrl</kbd>&nbsp;+&nbsp;<kbd>c</kbd>.</p>
-
-<p>Up to two levels of nesting are supported:
-<kbd><kbd><kbd>Ctrl</kbd> + <kbd>b</kbd></kbd> <kbd><kbd>Shift</kbd> + <kbd>t</kbd></kbd></kbd>.</p>
-
-<p>To represent sample or quoted output from a computer program, wrap it in
-<code>&lt;samp&gt;</code> tags: <samp>Keyboard not found. Press F1 to continue</samp></p>
-
-<div class="note">
-  <h3 class="notoc noanchor">Tip: use non-breaking spaces between <code>&lt;kbd&gt;</code>'s</h3>
-
-  <p>Oatcake prevents browsers from wrapping a <code>&lt;kbd&gt;</code> (nested
-  or single) over multiple lines even if the <code>&lt;kbd&gt;</code> contains
-  multiple words separated by spaces, but if you're using a chain of separate
-  <code>&lt;kbd&gt;</code>'s (as in
-  <kbd>Ctrl</kbd>&nbsp;+&nbsp;<kbd>c</kbd>) you must use non-breaking spaces
-  (<code>&amp;nbsp;</code>) instead of normal spaces around the <code>+</code>
-  if you want to prevent line breaks from being inserted in-between the
-  <code>&lt;kbd&gt;</code>'s.</p>
-
-  <p>Wrapping the whole sequence of <code>&lt;kbd&gt;</code>'s in a
-  <code>&lt;span style="white-space: nowrap;"&gt;</code> should also work and
-  Oatcake provides a <code>nowrap</code> utility class for this so you can just
-  do <code>&lt;span class="nowrap"&gt;</code>.</p>
-
-  <p>You can also use either technique if you don't want a
-  <code>&lt;code&gt;</code>,
-  <code>&lt;samp&gt;</code>,
-  <code>&lt;mark&gt;</code>,
-  etc to be wrapped, for example: <code>&lt;code class="nowrap"&gt;</code>
-  (Oatcake doesn't prevent wrapping within these elements by
-  default because often you do want them to wrap, especially if they contain
-  long strings that might otherwise
-  <a href="#overflow">overflow the container</a>).</p>
-</div>
-
 
 <h2>Horizontal rules</h2>
 
