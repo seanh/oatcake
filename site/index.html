@@ -35,10 +35,10 @@
   both mobile and desktop.</p>
 </hgroup>
 
-<p>This is the homepage of <a href="https://github.com/seanh/oatcake">Oatcake</a>,
-my typography stylesheet. Possibly the world's most deadpan stylesheet, Oatcake
-aims to look good without being distracting or drawing attention to the design.
-Plain but pretty.</p>
+<p>This is the demo page for <a href="https://github.com/seanh/oatcake">Oatcake</a>,
+my universal typography stylesheet. Possibly the world's most deadpan
+stylesheet, Oatcake aims to look good without being distracting or drawing
+attention to the design.  Plain but pretty.</p>
 
 <ul>
   <li>
@@ -59,9 +59,9 @@ Plain but pretty.</p>
   </li>
   <li>
     <strong>All sorts of minutiae and edge cases.</strong>
-    Sweats details such as vertical rhythm, scrolling wide code blocks
+    Sweats details like vertical rhythm, scrolling wide code blocks
     and wrapping long words so they don't overflow the layout, making sure that
-    headings still look good if they wrap onto multiple lines, and so on.
+    headings still look good even if they wrap onto multiple lines, and so on.
   </li>
   <li>
     <strong>And a small grab bag of extra features.</strong>
@@ -193,8 +193,8 @@ you can use with Oatcake:</p>
     Western texts.
     </blockquote>
 
-    <p>Elsewhere the standard also mentions a dream sequence an example usage
-    for <code>&lt;i&gt;</code>.</p>
+    <p>(Elsewhere the standard also mentions a dream sequence an example usage
+    for <code>&lt;i&gt;</code>.)</p>
 
     <p><code>&lt;i&gt;</code> is also styled in italics so the difference
     between <code>&lt;em&gt;</code> and <code>&lt;i&gt;</code>, at least with
@@ -214,7 +214,7 @@ in the air.&lt;/p&gt;</code></pre>
     makes text bold: <strong>this is important text with <code>&lt;strong&gt;</code>.</strong></p>
 
     <p><code>&lt;strong&gt;</code> is what <code>**double asterisks**</code> or <code>__double underscores__</code> do in Markdown.
-    it's meant to be used for <q>strong importance, seriousness or urgency.</q></p>
+    It's meant to be used for <q>strong importance, seriousness or urgency.</q></p>
 
     <p>Not to be confused with <a href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-b-element"><code>&lt;b&gt;</code></a>
     which the HTML standard says:</p>
@@ -231,7 +231,7 @@ in the air.&lt;/p&gt;</code></pre>
     <b>this is text to which attention is being drawn for utilitarian purposes with<code>&lt;b&gt;</code>.</b></p>
 
     <p>You should use <code>&lt;b&gt;</code> only as a last resort when no other element is more appropriate.
-    Use <code>&lt;h1&gt;</code> to <code>&lt;h6&gt;</code> for headings,
+    Use <code>&lt;h1&gt;&ndash;&lt;h6&gt;</code> for headings,
     <code>&lt;em&gt;</code> for stress emphasis,
     <code>&lt;strong&gt;</code> for importance,
     and <code>&lt;mark&gt;</code> for highlighted or marked text.</p>
@@ -307,15 +307,9 @@ in the air.&lt;/p&gt;</code></pre>
     <p>
       <a href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-code-element"><code>&lt;code&gt;</code></a>
       puts text in a monospaced font: <code>this is monospaced text with &lt;code&gt;</code>.
-    </p>
-
-    <p>
       <code>&lt;code&gt;</code> is what <code>`backticks`</code> do in Markdown.
       It's meant for fragments of code or strings, filenames,
       computer programs, etc.
-    </p>
-
-    <p>
       See <a href="#code-blocks">code blocks</a> below for multi-line code blocks.
     </p>
   </li>
@@ -445,7 +439,7 @@ in the air.&lt;/p&gt;</code></pre>
 
 <h2>Headings</h2>
 
-<p>Here's what all six levels of HTML headings look like in Oatcake, <code>&lt;h1&gt;&ndash;&lt;h6&gt;</code>:
+<p>Here's what all six levels of HTML headings <code>&lt;h1&gt;&ndash;&lt;h6&gt;</code> look like with Oatcake:</p>
 
 <h1 class="notoc noanchor">Page title (level 1 heading)</h1>
 
@@ -488,7 +482,7 @@ resort to desperate measures to try to make all six levels visually distinct:
 distractions like overlarge font sizes, excessively heavy weights, ALL CAPS,
 underlines, centered text, too many font faces, too much indentation, etc.
 Most themes make <code>&lt;h1&gt;</code>'s too big for my taste (for the types
-of documents and titles that I tend to write, anyway),
+of documents and titles that I tend to write anyway),
 whilst subheadings in <em>smaller</em> fonts than the body text are common.</p>
 
 <p>Oatcake's opinion is that most pages shouldn't use more than three levels of
@@ -499,9 +493,9 @@ readers to orient themselves within the document.</p>
 levels of headings, using the smallest necessary increments in font size and
 space above and below to distinguish the three levels of headings from normal
 text and from each other. Sticking to just three visually distinct levels
-enables them to be distinct enough from each other without distractingly large
-text or margins, a different font or an excessively heavy font weight, centered
-text, underlines, etc.</p>
+enables them to be distinct enough from each other without having to use
+distractingly large text or margins, a different font or an excessively heavy
+font weight, centered text, underlines, etc.</p>
 
 <p>A common mistake is to vertically align headings closer to the paragraph
 above than to the one below, or evenly mid-way between them. Oatcake gives
@@ -917,9 +911,37 @@ with Oatcake:</p>
   <dd>Porridge made of rolled oats.</dd>
 </dl>
 
+<p>Definition lists can be lists of <q>&hellip;terms and definitions, metadata
+topics and values, questions and answers, or any other groups of name-value
+data.</q></p>
+
+<p>Within a <code>&lt;dl&gt;</code> you use pairs of <code>&lt;dt&gt;</code>'s
+for the names ("terms") and <code>&lt;dd&gt;</code>'s for the values
+("descriptions" or "definitions").
+You can have multiple <code>&lt;dt&gt;</code>'s in a row if an item has more than one name
+and/or multiple <code>&lt;dd&gt;</code>'s in a row if an item has more than one value.
+Here's some examples from the HTML standard:</p>
+
+<pre><code>&lt;dl&gt;
+ &lt;dt&gt; Authors
+ &lt;dd&gt; John
+ &lt;dd&gt; Luke
+ &lt;dt&gt; Editor
+ &lt;dd&gt; Frank
+&lt;/dl&gt;</code></pre>
+
+<pre><code>&lt;dl&gt;
+ &lt;dt lang="en-US"&gt;&lt;dfn&gt;color&lt;/dfn&gt;&lt;/dt&gt;
+ &lt;dt lang="en-GB"&gt;&lt;dfn&gt;colour&lt;/dfn&gt;&lt;/dt&gt;
+ &lt;dd&gt;A sensation which (in humans) derives from the ability of
+ the fine structure of the eye to distinguish three differently
+ filtered analyses of a view.&lt;/dd&gt;
+&lt;/dl&gt;</code></pre>
+
 <p>A definition list item can have multiple terms (multiple <code>&lt;dt&gt;</code>'s followed by a single <code>&lt;dd&gt;</code>),
 multiple descriptions (a single <code>&lt;dt&gt;</code> followed by multiple <code>&lt;dd&gt;</code>'s)
-or both (multiple <code>&lt;dt&gt;</code>'s followed by multiple <code>&lt;dd&gt;</code>'s):</p>
+or both (multiple <code>&lt;dt&gt;</code>'s followed by multiple <code>&lt;dd&gt;</code>'s),
+this will all work fine with Oatcake:</p>
 
 <dl>
   <dt>Unleavened</dt>
@@ -1003,6 +1025,8 @@ blocks, etc).</p>
   <q>liked</q> and <q>fish</q>):</p>
 
   <blockquote><p>[Jane] then said she liked [&hellip;] fish.</p></blockquote>
+
+  <p>(If you want to be fancy you can use an ellipsis&mdash;<code>&amp;hellip;</code>&mdash;instead of typing three dots).</p>
 
   <p>You can use <a href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-mark-element"><code>&lt;mark&gt;</code>'s</a>
   inside quotes to draw attention to something that wasn't highlighted in the original
@@ -1279,8 +1303,8 @@ You might prefer to write it as two separate (not nested)
 <details>
   <summary>Tip: use non-breaking spaces between <code>&lt;kbd&gt;</code>'s</summary>
 
-  <p>Oatcake prevents browsers from wrapping a <code>&lt;kbd&gt;</code> (nested
-  or single) over multiple lines even if the <code>&lt;kbd&gt;</code> contains
+  <p>Oatcake prevents browsers from wrapping a <code>&lt;kbd&gt;</code>
+  over multiple lines even if the <code>&lt;kbd&gt;</code> contains
   multiple words separated by spaces, but if you're using a chain of separate
   <code>&lt;kbd&gt;</code>'s (as in
   <kbd>Ctrl</kbd>&nbsp;+&nbsp;<kbd>c</kbd>) you must use non-breaking spaces
@@ -1362,16 +1386,16 @@ Hello World
 output blocks: bold, italics, underline, strikethrough, small text. Here's one
 with a bunch:</p>
 
-<pre><code><em>#include &lt;stdio.h&gt;</em>
+<pre><code><em><strong>#include &lt;stdio.h&gt;</strong></em>
 
-int <u>main()</u>
-{
-    /* Here's a code comment with<sub>subscript</sub> and.<sup>superscript</sup> */
+<strong>int main()
+{</strong>
+    <em>/* Here's a code comment with<sub>subscript</sub> and.<sup>superscript</sup> */
     /* <small>Here's a code comment in small text.</small> */
     /* Here's an <q>inline quote</q> in a code block. */
-    /* Here's a <a href="https://example.com">link.</a> */
-    <strong>printf</strong>(<del>"Hello World!\n"</del>);
-}</code></pre>
+    /* Here's a <a href="https://example.com">link.</a> */</em>
+    <u>printf</u>(<del>"Hello World!\n"</del>);
+<strong>}</strong></code></pre>
 
 <p>A useful application of inline elements in code blocks, from the HTML
 standard, is using <code>&lt;mark&gt;</code> to highlight part of the code,
@@ -1401,7 +1425,20 @@ is used for "thematic breaks" like a change of scene or topic. Here's what
 
 <h2>Disclosure widgets: <code>&lt;details&gt;</code> and <code>&lt;summary&gt;</code></h2>
 
-<p>We've already seen lots of these in this document&mdash;you can create a disclosure widget with <a href="https://html.spec.whatwg.org/multipage/interactive-elements.html#the-details-element"><code>&lt;details&gt;</code> and <code>&lt;summary&gt;</code></a>:
+<p>We've already seen lots of these in this document&mdash;you can create a disclosure widget with <a href="https://html.spec.whatwg.org/multipage/interactive-elements.html#the-details-element"><code>&lt;details&gt;</code> and <code>&lt;summary&gt;</code></a>.
+This:</p>
+
+<pre><code><strong>&lt;details&gt;</strong>
+  <strong>&lt;summary&gt;This is the summary&lt;/summary&gt;</strong>
+  &lt;p&gt;And here are the details:&lt;/p&gt;
+  &lt;ol&gt;
+    &lt;li&gt;Cash on hand: $500.00&lt;/li&gt;
+    &lt;li&gt;Current invoice: $75.30&lt;/li&gt;
+    &lt;li&gt;Due date: 5/6/19&lt;/li&gt;
+  &lt;/ol&gt;
+<strong>&lt;/details&gt;</strong></code></pre>
+
+<p>&hellip;renders like this:</p>
 
 <details>
   <summary>This is the summary</summary>
