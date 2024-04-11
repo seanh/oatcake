@@ -453,22 +453,63 @@ in the air.&lt;/p&gt;</code></pre>
 
 <h2>Headings</h2>
 
-<p>Headings are one of the hardest things to get right.
-HTML provides six levels of headings, far more than most documents need.
-Themes trying to make all six levels visually distinct results in distractions
-like overlarge font sizes, excessively heavy weights, ALL CAPS, underlines,
-centered text, too many font faces, too much indentation, etc.
-Most themes make <code>&lt;h1&gt;</code>'s too big for my taste (at least with
-the types of titles I tend to write).</p>
+<p>Here's what all six levels of HTML headings look like in Oatcake, <code>&lt;h1&gt;&ndash;&lt;h6&gt;</code>:
 
-<p>Most pages should use no more than three levels of headings anyway,
-preferably two. More levels are confusing and make it difficult for readers to
-use the headings to orient themselves within the document.</p>
+<h1 class="notoc noanchor">Page title (level 1 heading)</h1>
 
-<p>Oatcake focuses on providing three visually distinct levels of headings,
-using the smallest necessary increments in font size and space above and below
-to emphasise and distinguish headings without the design attracting too much
-attention.</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer
+malesuada, justo tincidunt mattis gravida, velit orci facilisis nibh, at
+hendrerit risus sem eu arcu.</p>
+
+<h2 class="notoc noanchor">Level 2 heading</h2>
+
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer
+malesuada, justo tincidunt mattis gravida, velit orci facilisis nibh, at
+hendrerit risus sem eu arcu.</p>
+
+<h3 class="notoc noanchor">Level 3 heading</h3>
+
+<p>Suspendisse vitae bibendum libero. In in lorem lacus. Proin pharetra neque
+venenatis, fringilla justo id, elementum magna. Maecenas vestibulum tortor
+urna, vel pharetra nisi commodo vel.</p>
+
+<h4 class="notoc noanchor">Level 4 heading</h4>
+
+<p>Suspendisse dignissim tempor ultricies. Phasellus in sollicitudin felis,
+eget fringilla quam. Vestibulum suscipit arcu dapibus placerat cursus.
+Suspendisse dignissim orci in nibh convallis, sit amet tempus dui
+tincidunt.</p>
+
+<h5 class="notoc noanchor">Level 5 heading</h5>
+
+<p>Suspendisse dignissim tempor ultricies. Phasellus in sollicitudin felis,
+eget fringilla quam. Vestibulum suscipit arcu dapibus placerat cursus.</p>
+
+<h6 class="notoc noanchor">Level 6 heading</h6>
+
+<p>Suspendisse dignissim tempor ultricies.</p>
+
+<p>Headings are one of the hardest things to get right and one of the parts of
+Oatcake that I'm most pleased with.
+HTML's six levels of headings is more than most documents need. Themes often
+resort to desperate measures to try to make all six levels visually distinct:
+distractions like overlarge font sizes, excessively heavy weights, ALL CAPS,
+underlines, centered text, too many font faces, too much indentation, etc.
+Most themes make <code>&lt;h1&gt;</code>'s too big for my taste (for the types
+of documents and titles that I tend to write, anyway),
+whilst subheadings in <em>smaller</em> fonts than the body text are common.</p>
+
+<p>Oatcake's opinion is that most pages shouldn't use more than three levels of
+headings, preferably two. More levels are confusing and make it difficult for
+readers to orient themselves within the document.</p>
+
+<p>So Oatcake deliberately restrains itself to just three visually distinct
+levels of headings, using the smallest necessary increments in font size and
+space above and below to distinguish the three levels of headings from normal
+text and from each other. Sticking to just three visually distinct levels
+enables them to be distinct enough from each other without distractingly large
+text or margins, a different font or an excessively heavy font weight, centered
+text, underlines, etc.</p>
 
 <p>A common mistake is to vertically align headings closer to the paragraph
 above than to the one below, or evenly mid-way between them. Oatcake gives
@@ -476,49 +517,12 @@ headings a little more vertical space above than below so they're visually
 related more with the text below (that belongs to the heading) than to the
 unrelated text above.</p>
 
-<p>Here's a demo of Oatcake's headings:</p>
-
-<div class="note">
-  <h1 class="notoc noanchor">Page title (level 1 heading)</h1>
-
-  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer
-  malesuada, justo tincidunt mattis gravida, velit orci facilisis nibh, at
-  hendrerit risus sem eu arcu.</p>
-
-  <h2 class="notoc noanchor">Level 2 heading</h2>
-
-  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer
-  malesuada, justo tincidunt mattis gravida, velit orci facilisis nibh, at
-  hendrerit risus sem eu arcu.</p>
-
-  <h3 class="notoc noanchor">Level 3 heading</h3>
-
-  <p>Suspendisse vitae bibendum libero. In in lorem lacus. Proin pharetra neque
-  venenatis, fringilla justo id, elementum magna. Maecenas vestibulum tortor
-  urna, vel pharetra nisi commodo vel.</p>
-
-  <h4 class="notoc noanchor">Level 4 heading</h4>
-
-  <p>Suspendisse dignissim tempor ultricies. Phasellus in sollicitudin felis,
-  eget fringilla quam. Vestibulum suscipit arcu dapibus placerat cursus.
-  Suspendisse dignissim orci in nibh convallis, sit amet tempus dui
-  tincidunt.</p>
-
-  <h5 class="notoc noanchor">Level 5 heading</h5>
-
-  <p>Suspendisse dignissim tempor ultricies. Phasellus in sollicitudin felis,
-  eget fringilla quam. Vestibulum suscipit arcu dapibus placerat cursus.</p>
-
-  <h6 class="notoc noanchor">Level 6 heading</h6>
-
-  <p>Suspendisse dignissim tempor ultricies.</p>
-</div>
-
-<p><code>&lt;h1&gt;</code>'s and <code>&lt;h2&gt;</code>'s look the same
-(other than a bit more vertical space above an <code>&lt;h1&gt;</code>). The
-intention is that pages will start with a single <code>&lt;h1&gt;</code> whose
-position at the top of the page makes it clear that it's the top-level title,
-and then <code>&lt;h2&gt;</code>'s will be used for any mid-document headings.</p>
+<p>Oatcake's <code>&lt;h1&gt;</code>'s and <code>&lt;h2&gt;</code>'s look the
+same (other than a bit more vertical space above an <code>&lt;h1&gt;</code>).
+The intention is that pages will start with a single <code>&lt;h1&gt;</code>
+whose position at the top of the page makes it clear that it's the top-level
+title, and then <code>&lt;h2&gt;</code>'s will be used for any mid-document
+headings.</p>
 
 <p>If you need sub-headings and sub-sub-headings use <code>&lt;h3&gt;</code>'s
 and <code>&lt;h4&gt;</code>'s.
@@ -526,71 +530,70 @@ and <code>&lt;h4&gt;</code>'s.
 <p>You can also use <code>&lt;h5&gt;</code>'s and <code>&lt;h6&gt;</code>'s but
 they look the same as <code>&lt;h4&gt;</code>'s.</p>
 
-<h3>Hierarchical headings</h3>
+<details>
+  <summary>Tip: hierarchical headings</summary>
 
-<p>It's better to use fewer levels of headings but if you really need several
-levels I recommend making the structure explicit by hierarchically numbering
-the headings as the HTML standard itself does with its own headings (you have
-to do this yourself, Oatcake won't do it for you):</p>
+<p>If you really need several levels of headings I recommend making the
+structure explicit by hierarchically numbering the headings as the HTML
+standard itself does (you have to do this yourself, Oatcake won't do it for
+you):</p>
 
-<div class="note">
-  <h1 class="notoc noanchor">Document title</h1>
+<h1 class="notoc noanchor">Document title</h1>
 
-  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer
-  malesuada, justo tincidunt mattis gravida, velit orci facilisis nibh, at
-  hendrerit risus sem eu arcu.</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer
+malesuada, justo tincidunt mattis gravida, velit orci facilisis nibh, at
+hendrerit risus sem eu arcu.</p>
 
-  <h2 class="notoc noanchor">1. Second-level heading</h2>
+<h2 class="notoc noanchor">1. Second-level heading</h2>
 
-  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer
-  malesuada, justo tincidunt mattis gravida, velit orci facilisis nibh, at
-  hendrerit risus sem eu arcu.</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer
+malesuada, justo tincidunt mattis gravida, velit orci facilisis nibh, at
+hendrerit risus sem eu arcu.</p>
 
-  <h3 class="notoc noanchor">1.1 Third-level heading</h3>
+<h3 class="notoc noanchor">1.1 Third-level heading</h3>
 
-  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer
-  malesuada, justo tincidunt mattis gravida, velit orci facilisis nibh, at
-  hendrerit risus sem eu arcu.</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer
+malesuada, justo tincidunt mattis gravida, velit orci facilisis nibh, at
+hendrerit risus sem eu arcu.</p>
 
-  <h3 class="notoc noanchor">1.2 Another third-level heading</h3>
+<h3 class="notoc noanchor">1.2 Another third-level heading</h3>
 
-  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer
-  malesuada, justo tincidunt mattis gravida, velit orci facilisis nibh, at
-  hendrerit risus sem eu arcu.</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer
+malesuada, justo tincidunt mattis gravida, velit orci facilisis nibh, at
+hendrerit risus sem eu arcu.</p>
 
-  <h4 class="notoc noanchor">1.2.1 Fourth-level heading</h4>
+<h4 class="notoc noanchor">1.2.1 Fourth-level heading</h4>
 
-  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer
-  malesuada, justo tincidunt mattis gravida, velit orci facilisis nibh, at
-  hendrerit risus sem eu arcu.</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer
+malesuada, justo tincidunt mattis gravida, velit orci facilisis nibh, at
+hendrerit risus sem eu arcu.</p>
 
-  <h4 class="notoc noanchor">1.2.2 Another fourth-level heading</h4>
+<h4 class="notoc noanchor">1.2.2 Another fourth-level heading</h4>
 
-  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer
-  malesuada, justo tincidunt mattis gravida, velit orci facilisis nibh, at
-  hendrerit risus sem eu arcu.</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer
+malesuada, justo tincidunt mattis gravida, velit orci facilisis nibh, at
+hendrerit risus sem eu arcu.</p>
 
-  <h3 class="notoc noanchor">1.3 Another third-level heading</h3>
+<h3 class="notoc noanchor">1.3 Another third-level heading</h3>
 
-  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer
-  malesuada, justo tincidunt mattis gravida, velit orci facilisis nibh, at
-  hendrerit risus sem eu arcu.</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer
+malesuada, justo tincidunt mattis gravida, velit orci facilisis nibh, at
+hendrerit risus sem eu arcu.</p>
 
-  <h2 class="notoc noanchor">2. Another second-level heading</h2>
+<h2 class="notoc noanchor">2. Another second-level heading</h2>
 
-  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer
-  malesuada, justo tincidunt mattis gravida, velit orci facilisis nibh, at
-  hendrerit risus sem eu arcu.</p>
-</div>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer
+malesuada, justo tincidunt mattis gravida, velit orci facilisis nibh, at
+hendrerit risus sem eu arcu.</p>
+</details>
 
 <h3>Stacked headings</h3>
 
-<p>Sometimes one immediately directly follows another heading, without any other
-text between them.  A common mistake when this happens is for the extra
-vertical space above and below headings to end up looking weird, creating large
-unnecessary gaps between the headings.  Oatcake fixes this by styling headings
-that immediately follow other headings with less vertical space than they would
-have otherwise:</p>
+<p>Sometimes one heading directly follows another heading, without any other
+text between them. Themes often mess this up by allowing the vertical space
+between stacked headings to look weird: large unnecessary gaps between the
+headings. Oatcake styles headings that immediately follow other headings with
+less vertical space than they would have otherwise:</p>
 
 <div class="note">
   <h1 class="notoc noanchor">First-level heading</h1>
@@ -631,69 +634,64 @@ have too much space between them or too little, often actually overlapping.
 With Oatcake multi-line headings wrap well, this is a multi-line
 <code>&lt;h2&gt;</code> heading:</p>
 
-<div class="note">
-  <h2 class="notoc noanchor">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore</h2>
-</div>
+<h2 class="notoc noanchor" style="padding-top:0;">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore</h2>
 
 <p>This is a multi-line <code>&lt;h3&gt;</code> heading:</p>
 
-<div class="note">
-  <h3 class="notoc noanchor">Lorem ipsum dolgor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam</h3>
-</div>
+<h3 class="notoc noanchor" style="padding-top:0;">Lorem ipsum dolgor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam</h3>
 
 <p>This is a multi-line <code>&lt;h4&gt;</code> heading:</p>
 
-<div class="note">
-  <h4 class="notoc noanchor">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco</h4>
-</div>
+<h4 class="notoc noanchor" style="padding-top:0;">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco</h4>
+
+<p></p>
 
 <p>Multi-line headings can even contain inline elements. This is where things
 go wrong in many themes:</p>
 
-<div class="note">
-  <h2 class="notoc noanchor">
-    This is a long multiline <code>&lt;h2&gt;</code> heading
-    containing <em>emphasis</em>,
-    <code>&lt;code tags&gt;</code>,
-    some <samp>sample output</samp>,
-    a couple of code>&lt;kbd&gt;</code>'s: <kbd>Ctrl</kbd>&nbsp;+&nbsp;<kbd>c</kbd>,
-    <u>underlined text</u>,
-    <mark>highlighted text</mark>,
-    <del>struck-through text</del>,
-    <a href="">a link</a>,
-    <a href=""><code>a code link</code></a>
-    and even<sup>superscript</sup> and<sub>subscript</sub> and <small>small text</small> in it</h1>
+<h2 class="notoc noanchor" style="padding-top:0;">
+This is a long multiline <code>&lt;h2&gt;</code> heading
+containing <em>emphasis</em>,
+<code>&lt;code tags&gt;</code>,
+some <samp>sample output</samp>,
+a couple of code>&lt;kbd&gt;</code>'s: <kbd>Ctrl</kbd>&nbsp;+&nbsp;<kbd>c</kbd>,
+<u>underlined text</u>,
+<mark>highlighted text</mark>,
+<del>struck-through text</del>,
+<a href="">a link</a>,
+<a href=""><code>a code link</code></a>
+and even<sup>superscript</sup> and<sub>subscript</sub> and <small>small text</small> in it</h1>
+</h2>
 
-  </h2>
+<h3 class="notoc noanchor">
+  This is a long multiline <code>&lt;h3&gt;</code> heading
+  containing <em>emphasis</em>,
+  <code>&lt;code tags&gt;</code>,
+  some <samp>sample output</samp>,
+  a couple of <code>&lt;kbd&gt;</code>'s: <kbd>Ctrl</kbd>&nbsp;+&nbsp;<kbd>c</kbd>,
+  <u>underlined text</u>,
+  <mark>highlighted text</mark>,
+  <del>struck-through text</del>,
+  <a href="">a link</a>,
+  <a href=""><code>a code link</code></a>
+  and even<sup>superscript</sup> and<sub>subscript</sub> and <small>small text</small> in it</h1>
+</h3>
 
-  <h3 class="notoc noanchor">
-    This is a long multiline <code>&lt;h3&gt;</code> heading
-    containing <em>emphasis</em>,
-    <code>&lt;code tags&gt;</code>,
-    some <samp>sample output</samp>,
-    a couple of <code>&lt;kbd&gt;</code>'s: <kbd>Ctrl</kbd>&nbsp;+&nbsp;<kbd>c</kbd>,
-    <u>underlined text</u>,
-    <mark>highlighted text</mark>,
-    <del>struck-through text</del>,
-    <a href="">a link</a>,
-    <a href=""><code>a code link</code></a>
-    and even<sup>superscript</sup> and<sub>subscript</sub> and <small>small text</small> in it</h1>
-  </h3>
+<h4 class="notoc noanchor">
+  This is a long multiline <code>&lt;h4&gt;</code> heading
+  containing <em>emphasis</em>,
+  <code>&lt;code tags&gt;</code>,
+  some <samp>sample output</samp>,
+  a couple of <code>&lt;kbd&gt;</code>'s: <kbd>Ctrl</kbd>&nbsp;+&nbsp;<kbd>c</kbd>,
+  <u>underlined text</u>,
+  <mark>highlighted text</mark>,
+  <del>struck-through text</del>,
+  <a href="">a link</a>,
+  <a href=""><code>a code link</code></a>
+  and even<sup>superscript</sup> and<sub>subscript</sub> and <small>small text</small> in it</h1>
+</h4>
 
-  <h4 class="notoc noanchor">
-    This is a long multiline <code>&lt;h4&gt;</code> heading
-    containing <em>emphasis</em>,
-    <code>&lt;code tags&gt;</code>,
-    some <samp>sample output</samp>,
-    a couple of <code>&lt;kbd&gt;</code>'s: <kbd>Ctrl</kbd>&nbsp;+&nbsp;<kbd>c</kbd>,
-    <u>underlined text</u>,
-    <mark>highlighted text</mark>,
-    <del>struck-through text</del>,
-    <a href="">a link</a>,
-    <a href=""><code>a code link</code></a>
-    and even<sup>superscript</sup> and<sub>subscript</sub> and <small>small text</small> in it</h1>
-  </h4>
-</div>
+<p></p>
 
 <h2>Lists</h2>
 
