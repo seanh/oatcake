@@ -915,41 +915,8 @@ common source of breakage that works fine with Oatcake:</p>
 
 <h2>Definition lists</h2>
 
-<p><a href="https://html.spec.whatwg.org/multipage/grouping-content.html#the-dl-element">The <code>&lt;dl&gt;</code> (definition list) element</a>
-represents:</p>
-
-<blockquote>&hellip;an association list consisting of zero or more name-value groups (a description list)</blockquote>
-
-<p>This could be a list of <q>&hellip;terms and definitions, metadata topics and values, questions and answers, or any other groups of name-value data.</q></p>
-
-<p>Within a <code>&lt;dl&gt;</code> you use pairs of <code>&lt;dt&gt;</code>'s
-for the names ("terms") and <code>&lt;dd&gt;</code>'s for the values
-("descriptions" or "definitions").
-You can have multiple <code>&lt;dt&gt;</code>'s in a row if an item has more than one name
-and/or multiple <code>&lt;dd&gt;</code>'s in a row if an item has more than one value.
-Here's some examples from the HTML standard:</p>
-
-<pre><code>&lt;dl&gt;
- &lt;dt&gt; Authors
- &lt;dd&gt; John
- &lt;dd&gt; Luke
- &lt;dt&gt; Editor
- &lt;dd&gt; Frank
-&lt;/dl&gt;</code></pre>
-
-<pre><code>&lt;dl&gt;
- &lt;dt lang="en-US"&gt;&lt;dfn&gt;color&lt;/dfn&gt;&lt;/dt&gt;
- &lt;dt lang="en-GB"&gt;&lt;dfn&gt;colour&lt;/dfn&gt;&lt;/dt&gt;
- &lt;dd&gt;A sensation which (in humans) derives from the ability of
- the fine structure of the eye to distinguish three differently
- filtered analyses of a view.&lt;/dd&gt;
-&lt;/dl&gt;</code></pre>
-
-<p>Notice the use of the <a href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-dfn-element"><code>&lt;dfn&gt;</code> element</a>
-to mark up the terms when a definition list is being used to define terms.
-Oatcake doesn't style <code>&lt;dfn&gt;</code>'s but they have semantic meaning.</p>
-
-<p>Here's what definition lists look like with Oatcake:</p>
+<p>Here's a definition list (<a href="https://html.spec.whatwg.org/multipage/grouping-content.html#the-dl-element"><code>&lt;dl&gt;</code></a>)
+with Oatcake:</p>
 
 <dl>
   <dt>Oatcake</dt>
@@ -958,7 +925,9 @@ Oatcake doesn't style <code>&lt;dfn&gt;</code>'s but they have semantic meaning.
   <dd>Porridge made of rolled oats.</dd>
 </dl>
 
-<p>Here's how items look with multiple terms, multiple descriptions, and both:</p>
+<p>A definition list item can have multiple terms (multiple <code>&lt;dt&gt;</code>'s followed by a single <code>&lt;dd&gt;</code>),
+multiple descriptions (a single <code>&lt;dt&gt;</code> followed by multiple <code>&lt;dd&gt;</code>'s)
+or both (multiple <code>&lt;dt&gt;</code>'s followed by multiple <code>&lt;dd&gt;</code>'s):</p>
 
 <dl>
   <dt>Unleavened</dt>
