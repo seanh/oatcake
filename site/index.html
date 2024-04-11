@@ -1196,36 +1196,6 @@ much, not too little, and sticking to the vertical rhythm:</p>
 
 <img src="media/oats.jpg" alt="A bowl of oats" title="A bowl of oats" />
 
-<p>It looks the same if your <code>&lt;img&gt;</code>'s are wrapped in
-<code>&lt;p&gt;</code>'s, this:</p>
-
-<pre><code>&lt;p&gt;
-  &lt;img src="media/oats.jpg" /&gt;
-&lt;/p&gt;</code></pre>
-
-<p>renders like this:</p>
-
-<p><img src="media/oats.jpg" alt="A bowl of oats" title="A bowl of oats" /></p>
-
-<p>The same extra little bit of vertical space is also applied to video players
-created using <a href="https://html.spec.whatwg.org/multipage/media.html#the-video-element">the <code>&lt;video&gt;</code> element</a>:</p>
-
-<video controls muted playsinline src="media/train.mp4" poster="media/train.png" /></video>
-
-<p>Oatcake also supports audio players with
-<a href="https://html.spec.whatwg.org/multipage/media.html#the-audio-element">the <code>&lt;audio&gt;</code> element</a>,
-again giving them a little more vertical space to breathe in, aligning them
-with the vertical rhythm and making sure that the player controls use all the
-horizontal width available for easier scrubbing:</p>
-
-<audio controls src="media/apollo11.mp3"></audio>
-
-<p>Finally, the same extra vertical breathing room is also applied to embedded
-pages created with <a href="https://html.spec.whatwg.org/multipage/iframe-embed-object.html#the-iframe-element"><code>&lt;iframe&gt;</code></a>
-(the border here is part of the document being iframed, not Oatcake's styling):</p>
-
-<iframe src="iframe.html" style="width: 100%; height: 120px;"></iframe>
-
 <details>
   <summary>Embedded media and vertical rhythm</summary>
 
@@ -1255,6 +1225,39 @@ pages created with <a href="https://html.spec.whatwg.org/multipage/iframe-embed-
   when shrinking their widths to fit them onto a smaller screen, so the
   JavaScript vertical rhythm fix isn't needed for iframes.</p>
 </details>
+
+<p>It looks the same if your <code>&lt;img&gt;</code>'s are wrapped in
+<code>&lt;p&gt;</code>'s, this:</p>
+
+<pre><code>&lt;p&gt;&lt;img src="media/oats.jpg" /&gt;&lt;/p&gt;</code></pre>
+
+<p>renders like this:</p>
+
+<p><img src="media/oats.jpg" alt="A bowl of oats" title="A bowl of oats" /></p>
+
+Multiple images in a row also works (with or without <code>&lt;p&gt;</code>'s):
+
+<img src="media/oats.jpg" alt="A bowl of oats" title="A bowl of oats" />
+<img src="media/oats.jpg" alt="A bowl of oats" title="A bowl of oats" />
+
+<p>The same extra little bit of vertical space is also applied to video players
+created using <a href="https://html.spec.whatwg.org/multipage/media.html#the-video-element"><code>&lt;video&gt;</code></a>:</p>
+
+<video controls muted playsinline src="media/train.mp4" poster="media/train.png" /></video>
+
+<p>Oatcake also supports audio players with
+<a href="https://html.spec.whatwg.org/multipage/media.html#the-audio-element"><code>&lt;audio&gt;</code></a>,
+again giving them a little more vertical space to breathe in, aligning them
+with the vertical rhythm and making sure that the player controls use all the
+horizontal width available for easier scrubbing:</p>
+
+<audio controls src="media/apollo11.mp3"></audio>
+
+<p>Finally, the same extra vertical breathing room is also applied to embedded
+pages created with <a href="https://html.spec.whatwg.org/multipage/iframe-embed-object.html#the-iframe-element"><code>&lt;iframe&gt;</code></a>
+(the border here is part of the document being iframed, not Oatcake's styling):</p>
+
+<iframe src="iframe.html" style="width: 100%; height: 120px;"></iframe>
 
 <h2>Preformatted text</h2>
 
