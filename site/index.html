@@ -711,11 +711,26 @@ and even<sup>superscript</sup> and<sub>subscript</sub> and <small>small text</sm
   <li>Praesent aliquet erat eu felis</li>
 </ol>
 
+<p>Some or all of the items in a list can wrap over multiple lines and it'll
+work nicely:</p>
+
+<ol>
+  <li>Vivamus sit amet elit bibendum.</li>
+  <li>Morbi tempor sit amet mi nec auctor. Nulla metus purus, pulvinar sed eros
+  non, ornare hendrerit lacus. Nullam rhoncus pretium turpis iaculis
+  sollicitudin. Mauris ligula velit, ullamcorper a luctus sed, gravida vitae
+  leo.</li>
+  <li>Praesent aliquet erat eu felis.</li>
+  <li>Duis finibus commodo velit, ac aliquam nibh interdum vitae. Sed luctus vel
+  dolor vel fringilla. Cras bibendum, turpis nec vestibulum vestibulum, augue
+  sem ultricies urna, eu condimentum libero sapien eget nisi.</li>
+</ol>
+
 <details>
-  <summary>Tips for HTML ordered lists</summary>
+  <summary>Tip: tricks with HTML ordered lists</summary>
 
 <p>Did you know that you can reverse the order of the numbers in a numbered
-list by adding a <code>reversed</code> attribute to a
+list by adding a <code>reversed</code> attribute to an
 <code>&lt;ol&gt;</code>? (<code>&lt;ol reversed&gt;</code>)</p>
 
 <ol reversed>
@@ -801,23 +816,6 @@ allows indentation to show the nested structure:</p>
   <li>Maecenas volutpat est eget purus placerat</li>
 </ul>
 
-<h3>Multi-line list items</h3>
-
-<p>Some or all of the items in a list can wrap over multiple lines and it'll
-look fine:</p>
-
-<ul>
-  <li>Vivamus sit amet elit bibendum.</li>
-  <li>Morbi tempor sit amet mi nec auctor. Nulla metus purus, pulvinar sed eros
-  non, ornare hendrerit lacus. Nullam rhoncus pretium turpis iaculis
-  sollicitudin. Mauris ligula velit, ullamcorper a luctus sed, gravida vitae
-  leo.</li>
-  <li>Praesent aliquet erat eu felis.</li>
-  <li>Duis finibus commodo velit, ac aliquam nibh interdum vitae. Sed luctus vel
-  dolor vel fringilla. Cras bibendum, turpis nec vestibulum vestibulum, augue
-  sem ultricies urna, eu condimentum libero sapien eget nisi.</li>
-</ul>
-
 <h3>Paragraph list items</h3>
 
 <p>If you leave blank lines between a list's items Markdown renders them as
@@ -845,7 +843,8 @@ items. Here's what a list of <code>&lt;li&gt;&lt;p&gt;</code>'s looks like with 
   </li>
 </ul>
 
-<p>Nested lists also work inside paragraph lists:</p>
+<p>Nested lists also work inside paragraph lists (a common source of bugs in other themes).
+The nested list can itself be a paragraph list, or not:</p>
 
 <ul>
   <li>
@@ -874,8 +873,8 @@ items. Here's what a list of <code>&lt;li&gt;&lt;p&gt;</code>'s looks like with 
 
 <h3>Other block elements inside lists</h3>
 
-<p>Other block elements like block quotes, code blocks etc inside lists are
-another common source of breakage that works fine with Oatcake.:</p>
+<p>Block elements like block quotes, code blocks, etc inside lists are another
+common source of breakage that works fine with Oatcake:</p>
 
 <ol>
   <li>
@@ -889,6 +888,19 @@ another common source of breakage that works fine with Oatcake.:</p>
     <p>A list item with a code block:</p>
 
     <pre><code class="nohighlight">&lt;code goes here&gt;</code></pre>
+
+    <p>And an image:</p>
+
+    <img src="media/oats.jpg"  alt="A bowl of oats" title="A bowl of oats" />
+
+    <p>And a note box and a disclosure widget:</p>
+
+    <div class="note">This is a note box.</div>
+
+    <details>
+      <summary>This is a disclosure widget</summary>
+      <p>These are the contents.</p>
+    </details>
   </li>
   <li>
     <p>A list item with a definition list in it:</p>
@@ -900,27 +912,6 @@ another common source of breakage that works fine with Oatcake.:</p>
     </dl>
   <li>A normal list item to end the list.</li>
 </ol>
-
-<h4>Images inside lists</h4>
-
-<p>Even images work in list items, either on their own or sharing the list item
-with paragraphs before or after the image:</p>
-
-<ul>
-  <li>
-    <img src="media/oats.jpg"  alt="A bowl of oats" title="A bowl of oats" />
-  </li>
-  <li>
-    <p>This image is the second and last block item in this list item:</p>
-    <img src="media/oats.jpg"  alt="A bowl of oats" title="A bowl of oats" />
-  </li>
-  <li>
-    <p>This image is the second of three block items in this list item:</p>
-    <img src="media/oats.jpg"  alt="A bowl of oats" title="A bowl of oats" />
-    <p>This paragraph is still part of the same list item.</p>
-  </li>
-</ul>
-
 
 <h2>Definition lists</h2>
 
