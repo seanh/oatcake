@@ -1061,7 +1061,7 @@ from the HTML standard:</p>
  all the other possible gods, you will understand why I
  dismiss yours.&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;&amp;mdash; Stephen Roberts&lt;/p&gt;</code></pre>
+<strong>&lt;p&gt;&amp;mdash; Stephen Roberts&lt;/p&gt;</strong></code></pre>
 
 <p>Alternatively you can put a <code>&lt;blockquote&gt;</code> in a
 <code>&lt;figure&gt;</code> and the attribution in the
@@ -1072,7 +1072,7 @@ see <a href="#figures">the section on figures</a> below for an example.</p>
 <a href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-cite-element"><code>&lt;cite&gt;</code> element</a>,
 as in this example also from the HTML standard:</p>
 
-<pre><code>&lt;p&gt;His next piece was the aptly named &lt;cite&gt;Sonnet 130&lt;/cite&gt;:&lt;/p&gt;
+<pre><code>&lt;p&gt;His next piece was the aptly named <strong>&lt;cite&gt;Sonnet 130&lt;/cite&gt;</strong>:&lt;/p&gt;
 &lt;blockquote&gt;
   &lt;p&gt;My mistress' eyes are nothing like the sun,&lt;br&gt;
   Coral is far more red, than her lips red,&lt;br&gt;
@@ -1094,7 +1094,7 @@ the work.</p>
 <p>You can add a <code>cite</code> attribute to a
 <code>&lt;blockquote&gt;</code> whose value is a URL for the quoted source:</p>
 
-<pre><code>&lt;blockquote cite="https://quotes.example.org/s/sonnet130.html"&gt;</code></pre>
+<pre><code>&lt;blockquote <strong>cite="https://quotes.example.org/s/sonnet130.html"&gt;</strong></code></pre>
 
 <p><code>cite</code> attributes aren't visible in the rendered HTML,
 they're meant to be read by scripts.</p>
@@ -1293,9 +1293,10 @@ For example this:
 <code>&lt;kbd&gt;&lt;kbd&gt;Ctrl&lt;/kbd&gt; + &lt;kbd&gt;c&lt;/kbd&gt;&lt;/kbd&gt;</code>
 renders like this:
 <kbd><kbd>Ctrl</kbd> + <kbd>c</kbd></kbd>.
-You might prefer to write it as two separate (not nested)
-<code>&lt;kbd&gt;</code>'s, this is perfectly valid:
-<kbd>Ctrl</kbd>&nbsp;+&nbsp;<kbd>c</kbd>.</p>
+You might prefer to write it as just a single <code>&lt;kbd&gt;</code>
+(<code>&lt;kbd&gt;Ctrl + c&lt;/kbd&gt;</code>)
+or as two separate (not nested) <code>&lt;kbd&gt;</code>'s:
+<kbd>Ctrl</kbd>&nbsp;+&nbsp;<kbd>c</kbd>. All three styles are valid.</p>
 
 <p>To represent sample or quoted output from a computer program, wrap it in
 <code>&lt;samp&gt;</code> tags: <samp>Keyboard not found. Press F1 to continue</samp></p>
@@ -1599,7 +1600,7 @@ you, these use a horizontal scrollbar instead:
 <h2>CSS classes</h2>
 
 <p>Oatcake mostly styles plain HTML, no CSS classes needed.
-But it also provides a handful of completely optional additions that can be used via CSS classes.
+But it also provides a handful of optional additions that can be used via CSS classes.
 These are things that I frequently find useful in documents, but that plain HTML lacks the elements for.
 I've tried to keep these simple and few.</p>
 
@@ -1609,7 +1610,7 @@ I've tried to keep these simple and few.</p>
 headings. To create a lead paragraph just add <code>class="lead"</code> to a
 <code>&lt;p&gt;</code>. For example this:</p>
 
-<pre><code>&lt;p class="lead"&gt;
+<pre><code>&lt;p <strong>class="lead"</strong>&gt;
   This is a "lead" paragraph. It stands out more than other paragraphs. These
   can be used anywhere in a document.
 &lt;/p&gt;</code></pre>
@@ -1624,10 +1625,10 @@ headings. To create a lead paragraph just add <code>class="lead"</code> to a
 <p>You can use a lead paragraph as a subheading by putting it together with a
 heading in an <a href="https://html.spec.whatwg.org/multipage/sections.html#the-hgroup-element"><code>&lt;hgroup&gt;</code></a>. This:</p>
 
-<pre><code>&lt;hgroup&gt;
+<pre><code><strong>&lt;hgroup&gt;</strong>
   &lt;h1&gt;This is the heading&lt;/h1&gt;
-  &lt;p class="lead"&gt;This is the subheading, it appears in large text beneath the heading.&lt;/p&gt;
-&lt;/hgroup&gt;</code></pre>
+  <strong>&lt;p class="lead"&gt;This is the subheading, it appears in large text beneath the heading.&lt;/p&gt;</strong>
+<strong>&lt;/hgroup&gt;</strong></code></pre>
 
 <p>will render like this:</p>
 
@@ -1708,7 +1709,7 @@ Being is born of not being.</pre>
 
 <p>You can create a "note" by adding the CSS class <code>note</code> to a paragraph:</p>
 
-<pre><code>&lt;p class="note"&gt;This is a paragraph that stands out as a note.&lt;/p&gt;</code></pre>
+<pre><code>&lt;p <strong>class="note"</strong>&gt;This is a paragraph that stands out as a note.&lt;/p&gt;</code></pre>
 
 <p>It'll look like this:</p>
 
