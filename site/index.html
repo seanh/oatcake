@@ -1545,21 +1545,26 @@ lines if necessary to prevent overflow.</p>
 <p>So will this really long URL in a <code>&lt;code&gt;</code> tag: <code>https://github.com/seanh/oatcake/commit/8675ffcb168b1d76d708c84a2821c20a3f99e86d</code>.</p>
 
 <p>Oatcake <em>doesn't</em> wrap long words inside preformatted text
-(<code>&lt;pre&gt;</code>) blocks -- you don't want your code being wrapped for
+(<code>&lt;pre&gt;</code>) blocks&mdash;you don't want your code being wrapped for
 you, these use a horizontal scrollbar instead:
 
 <pre><code>url = 'https://github.com/seanh/oatcake/commit/8675ffcb168b1d76d708c84a2821c20a3f99e86d'</code></pre>
 
-<div class="note">
-  <h4 class="notoc noanchor">Tip: avoid long text in a <code>&lt;kbd&gt;</code>, <code>&lt;badge&gt;</code> or <code>&lt;pill&gt;</code></h4>
+<details>
+  <summary>Tip: avoid long text in a <code>&lt;kbd&gt;</code>, <code>&lt;badge&gt;</code> or <code>&lt;pill&gt;</code></summary>
 
   <p>Oatcake's CSS prevents line-wrapping within a <code>&lt;kbd&gt;</code>,
   <code>&lt;badge&gt;</code> or <code>&lt;pill&gt;</code> (even if there are
   spaces) so don't make these too long or they'll overflow their container and
   break the layout.</p>
-</div>
+</details>
 
 <h2>CSS classes</h2>
+
+<p>Oatcake mostly styles plain HTML, no CSS classes needed.
+But it also provides a handful of completely optional additions that can be used via CSS classes.
+These are things that I frequently find useful in documents, but that plain HTML lacks the elements for.
+I've tried to keep these simple and few.</p>
 
 <h3>Subheadings and lead paragraphs</h3>
 
