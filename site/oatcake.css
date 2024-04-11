@@ -374,13 +374,8 @@ kbd {
 }
 
 kbd kbd {
-  padding-top: 2px;
-  padding-bottom: 2px;
-}
-
-kbd kbd kbd {
-  padding-top: 0;
-  padding-bottom: 0;
+  border: none;
+  padding: 0;
 }
 
 img, svg, iframe, video, audio {
