@@ -169,14 +169,6 @@ a <a href="https://example.com/" title="Title"><del>struck-through link</del></a
 a <a href="https://example.com/" title="Title"><mark>highlighted link</mark></a>.
 </p>
 
-<p>
-Links and various inline styles work in code spans (<code>&lt;code&gt;</code>) and
-<a href="#code-blocks">code blocks</a> (<code>&lt;pre&gt;&lt;code&gt;</code>)
-too, for example:
-</p>
-
-<pre><code><b>foobar</b> <b>=</b> <a href="https://docs.python.org/3/reference/expressions.html#lambda">lambda</a> <i><u>foo</u></i>, <u><i>bar</i></u><b>:</b> <mark>foo + bar</mark></code></pre>
-
 <details>
 <summary>Tip: inline HTML elements you can use</summary>
 <p>Here's a pocket guide to some of the more interesting inline elements
@@ -1306,9 +1298,9 @@ $ gdb helloworld
 Hello World
 (gdb) quit</samp></pre>
 
-<p>You can use inline elements in preformatted, code and sample output blocks:
-bold, italics, underline, strikethrough, small text. Here's one with a
-bunch:</p>
+<p>You can use links and other inline elements in preformatted, code and sample
+output blocks: bold, italics, underline, strikethrough, small text. Here's one
+with a bunch:</p>
 
 <pre><code><em>#include &lt;stdio.h&gt;</em>
 
@@ -1317,6 +1309,7 @@ int <u>main()</u>
     /* Here's a code comment with<sub>subscript</sub> and.<sup>superscript</sup> */
     /* <small>Here's a code comment in small text.</small> */
     /* Here's an <q>inline quote</q> in a code block. */
+    /* Here's a <a href="https://example.com">link.</a> */
     <strong>printf</strong>(<del>"Hello World!\n"</del>);
 }</code></pre>
 
