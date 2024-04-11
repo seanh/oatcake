@@ -1462,29 +1462,31 @@ them when they're used to start the hidden contents of a disclosure widget:</p>
 
 <h2 id="figures">Figures</h2>
 
-<p>Oatcake has support for the <code>&lt;figure&gt;</code> element. For example
-you can put an image inside a figure like this:</p>
+<p>Oatcake supports figures and captions with
+<a href="https://html.spec.whatwg.org/multipage/grouping-content.html#the-figure-element"><code>&lt;figure&gt;</code></a>
+and
+<a href="https://html.spec.whatwg.org/multipage/grouping-content.html#the-figcaption-element"><code>&lt;figcaption&gt;</code></a>.
+For example this:</p>
 
-<pre><code class="language-html">&lt;figure&gt;
-  &lt;img src="media/oats.jpg" alt="A bowl of oats"&gt;
-&lt;/figure&gt;</code></pre>
+<pre><code><strong>&lt;figure&gt;</strong>
+  &lt;img src="media/oats.jpg" alt="A bowl of oats" title="A bowl of oats"&gt;
+  <strong>&lt;figcaption&gt;</strong>A bowl of oats<strong>&lt;/figcaption&gt;</strong>
+<strong>&lt;/figure&gt;</strong></code></pre>
 
-<p>To include a caption with your figure use the <code>&lt;figcaption&gt;</code>
-tag:</p>
-
-<pre><code class="language-html">&lt;figure&gt;
-  &lt;img src="media/oats.jpg" alt="A bowl of oats"&gt;
-  &lt;figcaption&gt;A bowl of oats&lt;/figcaption&gt;
-&lt;/figure&gt;</code></pre>
-
-<p>That'll produce this output:</p>
+<p>&hellip;renders like this:</p>
 
 <figure>
   <img src="media/oats.jpg" alt="A bowl of oats" title="A bowl of oats">
   <figcaption>A bowl of oats</figcaption>
 </figure>
 
-<p>Figures aren’t just for images. You can put anything in a figure. For example
+<p>Captions can be used for additonal information about the figure content or
+its source.  Captions can also be used to give a figure a number so that the
+figure can be moved away from the primary content (e.g. to a dedicated figures
+section or appendix) and referred to from the primary content by its figure
+number.</p>
+
+<p>Figures aren't just for images. You can put anything in a figure. For example
 here’s a code figure:</p>
 
 <figure>
@@ -1527,22 +1529,6 @@ occaecat</a> cupidatat non proident, <em>sunt in culpa</em> qui
 officia deserunt mollit anim id est laborum.
   </figcaption>
 </figure>
-
-<h3>When to use figures</h3>
-
-<p>According to <a href="https://w3c.github.io/html-reference/figure.html">the HTML spec on <code>&lt;figure&gt;</code></a>
-a figure is supposed to be a unit of content that:</p>
-
-<blockquote>
-  <p>&hellip;is self-contained, that is typically referenced as a single
-  unit from the main flow of the document, and that can be moved away from the
-  main flow of the document without affecting the document's meaning.</p>
-</blockquote>
-
-<p>If the location of an image or other content within the document
-is important to the meaning of the document then you should just use a standard
-<code>&lt;img&gt;</code>, <code>&lt;pre&gt;&lt;code&gt;</code>, or other
-content instead of a figure.</p>
 
 <h2 id="overflow">Preventing really long words from overflowing</h2>
 
