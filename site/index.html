@@ -920,45 +920,54 @@ for the names ("terms") and <code>&lt;dd&gt;</code>'s for the values
 ("descriptions" or "definitions").
 You can have multiple <code>&lt;dt&gt;</code>'s in a row if an item has more than one name
 and/or multiple <code>&lt;dd&gt;</code>'s in a row if an item has more than one value.
-Here's some examples from the HTML standard:</p>
+Here's a couple of examples from the HTML standard, this:</p>
 
-<pre><code>&lt;dl&gt;
- &lt;dt&gt; Authors
- &lt;dd&gt; John
- &lt;dd&gt; Luke
- &lt;dt&gt; Editor
- &lt;dd&gt; Frank
-&lt;/dl&gt;</code></pre>
+<pre><code><strong>&lt;dl&gt;</strong>
+ <strong>&lt;dt&gt;</strong> Authors
+ <strong>&lt;dd&gt;</strong> John
+ <strong>&lt;dd&gt;</strong> Luke
+ <strong>&lt;dt&gt;</strong> Editor
+ <strong>&lt;dd&gt;</strong> Frank
+<strong>&lt;/dl&gt;</strong></code></pre>
 
-<pre><code>&lt;dl&gt;
- &lt;dt lang="en-US"&gt;&lt;dfn&gt;color&lt;/dfn&gt;&lt;/dt&gt;
- &lt;dt lang="en-GB"&gt;&lt;dfn&gt;colour&lt;/dfn&gt;&lt;/dt&gt;
- &lt;dd&gt;A sensation which (in humans) derives from the ability of
- the fine structure of the eye to distinguish three differently
- filtered analyses of a view.&lt;/dd&gt;
-&lt;/dl&gt;</code></pre>
-
-<p>A definition list item can have multiple terms (multiple <code>&lt;dt&gt;</code>'s followed by a single <code>&lt;dd&gt;</code>),
-multiple descriptions (a single <code>&lt;dt&gt;</code> followed by multiple <code>&lt;dd&gt;</code>'s)
-or both (multiple <code>&lt;dt&gt;</code>'s followed by multiple <code>&lt;dd&gt;</code>'s),
-this will all work fine with Oatcake:</p>
+<p>&hellip;renders like this:</p>
 
 <dl>
-  <dt>Unleavened</dt>
-  <dt>Unraised</dt>
-  <dd>Made without leavening. Unleavened bread is often simple flour mixed with water.</dd>
-
-  <dt>Sow one's wild oats</dt>
-  <dd>Live promiscuously and self-indulgently.</dd>
-  <dd>To have a period of youthful exuberance; to act wildly, especially before marriage.</dd>
+  <dt> Authors
+  <dd> John
+  <dd> Luke
+  <dt> Editor
+  <dd> Frank
 </dl>
 
-<p>The contents of a single <code>&lt;dd&gt;</code> can be wrapped in a
-<code>&lt;p&gt;</code> and a single <code>&lt;dd&gt;</code> can contain
-multiple <code>&lt;p&gt;</code>'s if it's a multi-paragraph description.
-Oatcake handles <code>&lt;dd&gt;</code>'s containing one or more
-<code>&lt;p&gt;</code>'s just fine and styles them the same as
-<code>&lt;dd&gt;</code>'s without <code>&lt;p&gt;</code>'s:</p>
+<p>Here's an example of multiple terms with a single definition:</p>
+
+<pre><code>&lt;<strong>dl&gt;</strong>
+ &lt;<strong>dt lang="en-US"&gt;</strong>&lt;dfn&gt;color&lt;/dfn&gt;<strong>&lt;/dt&gt;</strong>
+ &lt;<strong>dt lang="en-GB"&gt;</strong>&lt;dfn&gt;colour&lt;/dfn&gt;<strong>&lt;/dt&gt;</strong>
+ &lt;<strong>dd&gt;</strong>A sensation which (in humans) derives from the ability of
+ the fine structure of the eye to distinguish three differently
+ filtered analyses of a view.<strong>&lt;/dd&gt;</strong>
+<strong>&lt;/dl&gt;</strong></code></pre>
+
+<p>Note the use of <a href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-dfn-element"><code>&lt;dfn&gt;</code></a>
+to mark the word(s) being defined. <code>&lt;dfn&gt;</code> is purely semantic
+in Oatcake, it has no visible effect. Anyway, the whole example renders like
+this:</p>
+
+<dl>
+ <dt lang="en-US"><dfn>color</dfn></dt>
+ <dt lang="en-GB"><dfn>colour</dfn></dt>
+ <dd>A sensation which (in humans) derives from the ability of
+ the fine structure of the eye to distinguish three differently
+ filtered analyses of a view.</dd>
+</dl>
+
+<p>The contents of a <code>&lt;dd&gt;</code> can be wrapped in a
+<code>&lt;p&gt;</code> and a <code>&lt;dd&gt;</code> can contain multiple
+<code>&lt;p&gt;</code>'s if it's a multi-paragraph description.  Oatcake
+handles <code>&lt;dd&gt;</code>'s containing either a single or multiple
+<code>&lt;p&gt;</code>'s just fine:</p>
 
 <dl>
   <dt>Pancake</dt>
