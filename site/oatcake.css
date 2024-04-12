@@ -156,7 +156,6 @@ blockquote,
 p,
 ul,
 ol,
-dd,
 figure,
 pre,
 details,
@@ -330,10 +329,18 @@ ol li {
 
 dl {
   padding-left: 20px;
+  margin-bottom: var(--body-line-height);
 }
 
 dt {
   font-weight: var(--bold-font-weight);
+}
+
+/* We don't generally want a blank line between two <dd>'s that belong to the
+ * same <dt>, but we *do* want a blank line after the final <dd> before the
+ * next <dt>. */
+dd + dt {
+  margin-top: var(--body-line-height);
 }
 
 .lead {
