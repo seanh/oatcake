@@ -316,20 +316,6 @@ li blockquote {
   margin-left: 3px;
 }
 
-blockquote footer,
-blockquote cite {
-  color: var(--muted-color);
-}
-
-blockquote footer:before,
-blockquote cite:before {
-  content: "\2014 \00A0";
-}
-
-blockquote footer cite:before {
-  content: "";
-}
-
 blockquote>*:last-child {
   margin-bottom: 0;
 }
