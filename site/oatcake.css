@@ -1,35 +1,35 @@
 :root {
-  --body-background-color: white;
-  --body-color: #16171a;
-  --bold-color: #16171a;
-  --secondary-color: #888;
-  --code-background-color: rgba(175, 184, 193, 0.2);
-  --pre-code-background-color: rgb(243, 243, 243);
-  --code-color: inherit;
-  --pre-code-color: inherit;
+  --oatcake-body-background-color: white;
+  --oatcake-body-color: #16171a;
+  --oatcake-bold-color: #16171a;
+  --oatcake-secondary-color: #888;
+  --oatcake-code-background-color: rgba(175, 184, 193, 0.2);
+  --oatcake-pre-code-background-color: rgb(243, 243, 243);
+  --oatcake-code-color: inherit;
+  --oatcake-pre-code-color: inherit;
 
   /* This is the System UI font stack from https://modernfontstacks.com/ */
-  --body-font-family: system-ui, sans-serif;
+  --oatcake-body-font-family: system-ui, sans-serif;
 
   /* This is the Monospace Code font stack from https://modernfontstacks.com/ */
-  --code-font-family: ui-monospace, 'Cascadia Code', 'Source Code Pro', Menlo, Consolas, 'DejaVu Sans Mono', monospace;
+  --oatcake-code-font-family: ui-monospace, 'Cascadia Code', 'Source Code Pro', Menlo, Consolas, 'DejaVu Sans Mono', monospace;
 
   /* 400 corresponds to `font-weight: normal` in CSS and all fonts in Oatcake's
    * system font stacks have this weight. See:
    * https://github.com/system-fonts/modern-font-stacks?tab=readme-ov-file#css-font-stack. */
-  --normal-font-weight: 400;
+  --oatcake-normal-font-weight: 400;
 
   /* 700 corresponds to `font-weight: bold` in CSS and all fonts in Oatcake's
    * system font stacks have this weight. See:
    * https://github.com/system-fonts/modern-font-stacks?tab=readme-ov-file#css-font-stack. */
-  --bold-font-weight: 700;
+  --oatcake-bold-font-weight: 700;
 
-  --body-font-size: 16px;
+  --oatcake-body-font-size: 16px;
   /* This sets the vertical rhythm to 28px.
    * All sizes, margins, paddings, and borders must be added in multiples of 28px. */
-  --body-line-height: 24px;
+  --oatcake-body-line-height: 24px;
 
-  --small-font-size: 13px;
+  --oatcake-small-font-size: 13px;
 }
 
 /* http://meyerweb.com/eric/tools/css/reset/, v2.0 | 20110126, License: none (public domain) */
@@ -144,12 +144,12 @@ section {
 }
 
 body {
-  font-size: var(--body-font-size);
-  font-family: var(--body-font-family);
-  font-weight: var(--normal-font-weight);
-  background-color: var(--body-background-color);
-  color: var(--body-color);
-  line-height: var(--body-line-height);
+  font-size: var(--oatcake-body-font-size);
+  font-family: var(--oatcake-body-font-family);
+  font-weight: var(--oatcake-normal-font-weight);
+  background-color: var(--oatcake-body-background-color);
+  color: var(--oatcake-body-color);
+  line-height: var(--oatcake-body-line-height);
 }
 
 blockquote,
@@ -160,7 +160,7 @@ figure,
 pre,
 details,
 .note {
-  margin-bottom: var(--body-line-height);
+  margin-bottom: var(--oatcake-body-line-height);
 }
 
 li ul:not(p~ul),
@@ -175,7 +175,7 @@ svg:not(li svg:first-child),
 iframe:not(li iframe:first-child),
 video:not(li video:first-child),
 audio:not(li audio:first-child) {
-  padding-top: var(--body-line-height);
+  padding-top: var(--oatcake-body-line-height);
 }
 
 img,
@@ -183,7 +183,7 @@ svg,
 iframe,
 video,
 audio {
-  margin-bottom: calc(var(--body-line-height) *2);
+  margin-bottom: calc(var(--oatcake-body-line-height) *2);
 }
 
 /* Fix for list item bullets messing up the vertical rhythm. */
@@ -200,23 +200,23 @@ i {
 
 strong,
 b {
-  font-weight: var(--bold-font-weight);
-  color: var(--bold-color);
+  font-weight: var(--oatcake-bold-font-weight);
+  color: var(--oatcake-bold-color);
 }
 
 hr {
   background: transparent;
   border: 0;
-  border-top: 1px solid var(--secondary-color);
+  border-top: 1px solid var(--oatcake-secondary-color);
   margin-bottom: -1px;
-  padding-bottom: var(--body-line-height);
+  padding-bottom: var(--oatcake-body-line-height);
 }
 
 sup,
 sub {
   vertical-align: baseline;
   position: relative;
-  font-size: var(--small-font-size);
+  font-size: var(--oatcake-small-font-size);
   padding-left: .1em;
 }
 
@@ -232,7 +232,7 @@ sub {
 
 small,
 .small {
-  font-size: var(--small-font-size);
+  font-size: var(--oatcake-small-font-size);
   vertical-align: bottom; /* Prevent <small>'s from throwing off the vertical rhythm. */
 }
 
@@ -247,7 +247,7 @@ var {
 .secondary mark,
 .secondary code,
 .secondary samp {
-  color: var(--secondary-color);
+  color: var(--oatcake-secondary-color);
   background-color: inherit;
 }
 .secondary code,
@@ -276,10 +276,10 @@ mark code {
 }
 
 samp {
-  background-color: var(--code-background-color);
+  background-color: var(--oatcake-code-background-color);
   color: #444d56;
   line-height: 1rem;
-  font-family: var(--code-font-family);
+  font-family: var(--oatcake-code-font-family);
 }
 
 pre samp {
@@ -326,18 +326,18 @@ ol li {
 
 dl {
   padding-left: 20px;
-  margin-bottom: var(--body-line-height);
+  margin-bottom: var(--oatcake-body-line-height);
 }
 
 dt {
-  font-weight: var(--bold-font-weight);
+  font-weight: var(--oatcake-bold-font-weight);
 }
 
 /* We don't generally want a blank line between two <dd>'s that belong to the
  * same <dt>, but we *do* want a blank line after the final <dd> before the
  * next <dt>. */
 dd + dt {
-  margin-top: var(--body-line-height);
+  margin-top: var(--oatcake-body-line-height);
 }
 
 .lead {
@@ -358,7 +358,7 @@ dd + dt {
 h1+.lead,
 h2+.lead,
 h3+.lead {
-  margin-bottom: calc(var(--body-line-height) * 2);
+  margin-bottom: calc(var(--oatcake-body-line-height) * 2);
 }
 
 kbd {
@@ -367,14 +367,14 @@ kbd {
   border-bottom-color: #959da5;
   border-radius: 3px;
   color: #444d56;
-  font-family: var(--code-font-family);
+  font-family: var(--oatcake-code-font-family);
   font-size: 12px;
   padding-left: 5px;
   padding-right: 5px;
   padding-top: 3px;
   padding-bottom: 3px;
   vertical-align: top;
-  font-weight: var(--bold-font-weight);
+  font-weight: var(--oatcake-bold-font-weight);
 }
 
 kbd kbd {
@@ -391,7 +391,7 @@ img, svg, iframe, video, audio {
 
 audio {
   width: 100%;
-  height: calc(2 * var(--body-line-height));
+  height: calc(2 * var(--oatcake-body-line-height));
 }
 
 h1,
@@ -400,33 +400,33 @@ h3,
 h4,
 h5,
 h6 {
-  font-weight: var(--bold-font-weight);
+  font-weight: var(--oatcake-bold-font-weight);
 }
 
 h1,
 h2 {
-  padding-top: calc(var(--body-line-height) * 2);
+  padding-top: calc(var(--oatcake-body-line-height) * 2);
   font-size: 24px;
-  line-height: var(--body-line-height);
-  padding-bottom: var(--body-line-height);
+  line-height: var(--oatcake-body-line-height);
+  padding-bottom: var(--oatcake-body-line-height);
 }
 
 h2 {
-  padding-top: calc(var(--body-line-height) * 1);
+  padding-top: calc(var(--oatcake-body-line-height) * 1);
 }
 
 h3 {
-  padding-top: calc(var(--body-line-height) * 1);
+  padding-top: calc(var(--oatcake-body-line-height) * 1);
   font-size: 19px;
-  line-height: var(--body-line-height);
-  padding-bottom: var(--body-line-height);
+  line-height: var(--oatcake-body-line-height);
+  padding-bottom: var(--oatcake-body-line-height);
 }
 
 h4,
 h5,
 h6 {
-  font-size: var(--body-font-size);
-  line-height: var(--body-line-height);
+  font-size: var(--oatcake-body-font-size);
+  line-height: var(--oatcake-body-line-height);
   padding-bottom: 0;
 }
 
@@ -443,7 +443,7 @@ h5 + h6,
 h6 + h4,
 h6 + h5,
 h6 + h6 {
-  margin-top: var(--body-line-height);
+  margin-top: var(--oatcake-body-line-height);
 }
 
 blockquote h1:first-child,
@@ -512,12 +512,12 @@ figure figcaption {
 
 figure img + figcaption,
 figure svg + figcaption {
-  margin-top: calc(var(--body-line-height) * -1);
+  margin-top: calc(var(--oatcake-body-line-height) * -1);
 }
 
 figure figcaption,
 figure figcaption p {
-  color: var(--secondary-color);
+  color: var(--oatcake-secondary-color);
 }
 
 /* If a figure has a caption then make the vertical space below the caption
@@ -525,15 +525,15 @@ figure figcaption p {
    caption visibly closer to the figure that it belongs to than to whatever
    follows the figure. */
 figcaption {
-  padding-bottom: var(--body-line-height);
+  padding-bottom: var(--oatcake-body-line-height);
 }
 
 code {
-  background-color: var(--code-background-color);
-  color: var(--code-color);
+  background-color: var(--oatcake-code-background-color);
+  color: var(--oatcake-code-color);
   padding-left: 5px;
   padding-right: 5px;
-  font-family: var(--code-font-family);
+  font-family: var(--oatcake-code-font-family);
   border-radius: 3px;
   font-size: 16px;
   line-height: 18px;
@@ -555,7 +555,7 @@ h2 samp {
 /* I've no idea why but when I reduce the font-size of `<mark>`'s within
  * headings and lead paragraphs it offsets the vertical-rhythm unless I say
  * `line-height: 100%;`.
- * You'd think it'd mean the same thing but `line-height: var(--body-line-height);`
+ * You'd think it'd mean the same thing but `line-height: var(--oatcake-body-line-height);`
  * doesn't fix the rhtyhm.
  * This doesn't seem to be necessary when reducing the font-sizes of other
  * elements like <code>'s and <samp>'s in headings and lead paragraphs. */
@@ -595,25 +595,25 @@ h6 kbd {
 
 details {
   border: 1px solid #aaaaaa;
-  padding-left: calc(0.5 * var(--body-line-height));
-  padding-right: calc(0.5 * var(--body-line-height));
-  padding-top: calc(var(--body-line-height) - 2px);
+  padding-left: calc(0.5 * var(--oatcake-body-line-height));
+  padding-right: calc(0.5 * var(--oatcake-body-line-height));
+  padding-top: calc(var(--oatcake-body-line-height) - 2px);
   border-radius: 5px;
 }
 
 details > summary {
   cursor: pointer;
-  height: var(--body-line-height);
-  background-color: var(--code-background-color);
-  margin-top: calc(-1 * calc(var(--body-line-height)));
+  height: var(--oatcake-body-line-height);
+  background-color: var(--oatcake-code-background-color);
+  margin-top: calc(-1 * calc(var(--oatcake-body-line-height)));
   margin-left: -13px;
   margin-right: -13px;
-  padding: calc(0.5 * var(--body-line-height));
+  padding: calc(0.5 * var(--oatcake-body-line-height));
   border-radius: 5px;
 }
 
 details[open] > summary {
-  margin-bottom: var(--body-line-height);
+  margin-bottom: var(--oatcake-body-line-height);
   border-bottom-left-radius: 0;
   border-bottom-right-radius: 0;
 }
@@ -621,16 +621,16 @@ details[open] > summary {
 pre {
   overflow: auto;
   border-radius: 5px;
-  padding-top: var(--body-line-height);
-  padding-bottom: var(--body-line-height);
-  padding-left: calc(0.5 * var(--body-line-height));
-  padding-right: calc(0.5 * var(--body-line-height));
+  padding-top: var(--oatcake-body-line-height);
+  padding-bottom: var(--oatcake-body-line-height);
+  padding-left: calc(0.5 * var(--oatcake-body-line-height));
+  padding-right: calc(0.5 * var(--oatcake-body-line-height));
 }
 
 pre,
 pre code {
-  color: var(--pre-code-color);
-  background-color: var(--pre-code-background-color);
+  color: var(--oatcake-pre-code-color);
+  background-color: var(--oatcake-pre-code-background-color);
 }
 
 pre code {
@@ -654,14 +654,14 @@ pre code {
 .pill,
 .badge code,
 .pill code {
-  font-size: var(--small-font-size);
+  font-size: var(--oatcake-small-font-size);
   line-height: 1;
 }
 
 button.badge,
 button.pill {
   border-width: 0;
-  font-family: var(--body-font-family);
+  font-family: var(--oatcake-body-font-family);
   line-height: normal;
   cursor: pointer;
 }
@@ -720,11 +720,11 @@ a.pill:focus {
 
   border-radius: .25rem;
 
-  padding-top: calc(var(--body-line-height) - 1px);
-  padding-bottom: calc(var(--body-line-height) - 1px);
+  padding-top: calc(var(--oatcake-body-line-height) - 1px);
+  padding-bottom: calc(var(--oatcake-body-line-height) - 1px);
 
-  padding-left: calc(var(--body-line-height) * 0.5);
-  padding-right: calc(var(--body-line-height) * 0.5);
+  padding-left: calc(var(--oatcake-body-line-height) * 0.5);
+  padding-right: calc(var(--oatcake-body-line-height) * 0.5);
 }
 
 .note>*:last-child {

@@ -1,5 +1,5 @@
 .lines, .linesdouble {
-  background-size: var(--body-line-height);
+  background-size: var(--oatcake-body-line-height);
   background-position: left top;
   background-repeat: repeat;
 }

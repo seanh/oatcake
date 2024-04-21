@@ -1901,7 +1901,7 @@ harder to add dark mode and multiple colour schemes.</p>
         let videos = Array.prototype.slice.call(document.getElementsByTagName("video"), 0);
         let media = images.concat(videos);
 
-        let lineHeight = parseInt(getComputedStyle(document.documentElement).getPropertyValue('--body-line-height'));
+        let lineHeight = parseInt(getComputedStyle(document.documentElement).getPropertyValue('--oatcake-body-line-height'));
 
         for (let element of media) {
           if (element.classList.contains('noresize')) {
