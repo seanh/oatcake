@@ -2,7 +2,7 @@
   --body-background-color: white;
   --body-color: #16171a;
   --bold-color: #16171a;
-  --muted-color: #888;
+  --secondary-color: #888;
   --code-background-color: rgba(175, 184, 193, 0.2);
   --pre-code-background-color: rgb(243, 243, 243);
   --code-color: inherit;
@@ -207,7 +207,7 @@ b {
 hr {
   background: transparent;
   border: 0;
-  border-top: 1px solid var(--muted-color);
+  border-top: 1px solid var(--secondary-color);
   margin-bottom: -1px;
   padding-bottom: var(--body-line-height);
 }
@@ -240,8 +240,19 @@ var {
   font-style: italic;
 }
 
-.muted {
-  color: var(--muted-color);
+.secondary,
+.secondary a,
+.secondary strong,
+.secondary b,
+.secondary mark,
+.secondary code,
+.secondary samp {
+  color: var(--secondary-color);
+  background-color: inherit;
+}
+.secondary code,
+.secondary samp {
+  background-color: inherit;
 }
 
 /* If a single unbroken string (e.g. a URL) is too long to fit on one line then
@@ -520,7 +531,7 @@ figure svg + figcaption {
 
 figure figcaption,
 figure figcaption p {
-  color: var(--muted-color);
+  color: var(--secondary-color);
 }
 
 /* If a figure has a caption then make the vertical space below the caption
