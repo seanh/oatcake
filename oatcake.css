@@ -1,0 +1,759 @@
+:root {
+  --oatcake-body-background-color: white;
+  --oatcake-body-color: #16171a;
+  --oatcake-bold-color: #16171a;
+  --oatcake-secondary-color: #888;
+  --oatcake-code-background-color: rgba(175, 184, 193, 0.2);
+  --oatcake-pre-code-background-color: rgb(243, 243, 243);
+  --oatcake-code-color: inherit;
+  --oatcake-pre-code-color: inherit;
+
+  /* This is the System UI font stack from https://modernfontstacks.com/ */
+  --oatcake-body-font-family: system-ui, sans-serif;
+
+  /* This is the Monospace Code font stack from https://modernfontstacks.com/ */
+  --oatcake-code-font-family: ui-monospace, 'Cascadia Code', 'Source Code Pro', Menlo, Consolas, 'DejaVu Sans Mono', monospace;
+
+  /* 400 corresponds to `font-weight: normal` in CSS and all fonts in Oatcake's
+   * system font stacks have this weight. See:
+   * https://github.com/system-fonts/modern-font-stacks?tab=readme-ov-file#css-font-stack. */
+  --oatcake-normal-font-weight: 400;
+
+  /* 700 corresponds to `font-weight: bold` in CSS and all fonts in Oatcake's
+   * system font stacks have this weight. See:
+   * https://github.com/system-fonts/modern-font-stacks?tab=readme-ov-file#css-font-stack. */
+  --oatcake-bold-font-weight: 700;
+
+  --oatcake-body-font-size: 16px;
+  /* This sets the vertical rhythm to 28px.
+   * All sizes, margins, paddings, and borders must be added in multiples of 28px. */
+  --oatcake-body-line-height: 24px;
+
+  --oatcake-small-font-size: 13px;
+}
+
+/* http://meyerweb.com/eric/tools/css/reset/, v2.0 | 20110126, License: none (public domain) */
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video,
+hr {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+
+@media all and (max-width: 800px) {
+  .wide-only {
+    display: none !important;
+  }
+}
+
+body {
+  font-size: var(--oatcake-body-font-size);
+  font-family: var(--oatcake-body-font-family);
+  font-weight: var(--oatcake-normal-font-weight);
+  background-color: var(--oatcake-body-background-color);
+  color: var(--oatcake-body-color);
+  line-height: var(--oatcake-body-line-height);
+}
+
+blockquote,
+p,
+ul,
+ol,
+figure,
+pre,
+details,
+.note {
+  margin-bottom: var(--oatcake-body-line-height);
+}
+
+li ul:not(p~ul),
+li ol:not(p~ol),
+li dl:not(p~dl) {
+  margin-bottom: 0;
+}
+
+
+img:not(li img:first-child),
+svg:not(li svg:first-child),
+iframe:not(li iframe:first-child),
+video:not(li video:first-child),
+audio:not(li audio:first-child) {
+  padding-top: var(--oatcake-body-line-height);
+}
+
+img,
+svg,
+iframe,
+video,
+audio {
+  margin-bottom: calc(var(--oatcake-body-line-height) *2);
+}
+
+/* Fix for list item bullets messing up the vertical rhythm. */
+ul>li {
+  list-style-type: "•";
+  padding-inline-start: 1ch;
+  margin-left: 18px;
+}
+
+em,
+i {
+  font-style: italic;
+}
+
+strong,
+b {
+  font-weight: var(--oatcake-bold-font-weight);
+  color: var(--oatcake-bold-color);
+}
+
+hr {
+  background: transparent;
+  border: 0;
+  border-top: 1px solid var(--oatcake-secondary-color);
+  margin-bottom: -1px;
+  padding-bottom: var(--oatcake-body-line-height);
+}
+
+sup,
+sub {
+  vertical-align: baseline;
+  position: relative;
+  font-size: var(--oatcake-small-font-size);
+  padding-left: .1em;
+}
+
+sup,
+sub {
+  top: -0.4em;
+  line-height: 0;
+}
+
+sub {
+  top: 0.4em;
+}
+
+small,
+.small {
+  font-size: var(--oatcake-small-font-size);
+  vertical-align: bottom; /* Prevent <small>'s from throwing off the vertical rhythm. */
+}
+
+var {
+  font-style: italic;
+}
+
+.secondary,
+.secondary a,
+.secondary strong,
+.secondary b,
+.secondary mark,
+.secondary code,
+.secondary samp {
+  color: var(--oatcake-secondary-color);
+  background-color: inherit;
+}
+.secondary code,
+.secondary samp {
+  background-color: inherit;
+}
+
+/* If a single unbroken string (e.g. a URL) is too long to fit on one line then
+ * break it across lines rather than letting it overflow. */
+body {
+  overflow-wrap: break-word;
+}
+/* Don't break long words in <pre>'s: they have horizontal scrollbars instead. */
+pre {
+  overflow-wrap: normal;
+}
+
+mark {
+  background-color: yellow;
+  color: black;
+}
+
+mark samp,
+mark code {
+  background-color: inherit;
+}
+
+samp {
+  background-color: var(--oatcake-code-background-color);
+  color: #444d56;
+  line-height: 1rem;
+  font-family: var(--oatcake-code-font-family);
+}
+
+pre samp {
+  background-color: inherit;
+  color: inherit;
+}
+
+q {
+  quotes: "“""”""‘""’";
+}
+
+q:before {
+  content: open-quote;
+}
+
+q:after {
+  content: close-quote;
+}
+
+blockquote {
+  quotes: none;
+  border-left: 3px solid #2b90d9;
+  padding-left: 20px;
+}
+
+blockquote:before,
+blockquote:after {
+  content: '';
+  content: none;
+}
+
+blockquote blockquote,
+li blockquote {
+  margin-left: 3px;
+}
+
+blockquote>*:last-child {
+  margin-bottom: 0;
+}
+
+ol li {
+  margin-left: 30px;
+}
+
+dl {
+  padding-left: 20px;
+  margin-bottom: var(--oatcake-body-line-height);
+}
+
+dt {
+  font-weight: var(--oatcake-bold-font-weight);
+}
+
+/* We don't generally want a blank line between two <dd>'s that belong to the
+ * same <dt>, but we *do* want a blank line after the final <dd> before the
+ * next <dt>. */
+dd + dt {
+  margin-top: var(--oatcake-body-line-height);
+}
+
+.lead {
+  font-size: 1.3rem;
+}
+
+.lead code,
+.lead samp {
+  font-size: .8em;
+}
+
+.lead kbd {
+  font-size: 0.75em;
+  padding-top: 1px;
+  padding-bottom: 1px;
+}
+
+h1+.lead,
+h2+.lead,
+h3+.lead {
+  margin-bottom: calc(var(--oatcake-body-line-height) * 2);
+}
+
+kbd {
+  background-color: #fafbfc;
+  border: 1px solid #c6cbd1;
+  border-bottom-color: #959da5;
+  border-radius: 3px;
+  color: #444d56;
+  font-family: var(--oatcake-code-font-family);
+  font-size: 12px;
+  padding-left: 5px;
+  padding-right: 5px;
+  padding-top: 3px;
+  padding-bottom: 3px;
+  vertical-align: top;
+  font-weight: var(--oatcake-bold-font-weight);
+}
+
+kbd kbd {
+  border: none;
+  padding: 0;
+}
+
+img, svg, iframe, video, audio {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 100%;
+}
+
+audio {
+  width: 100%;
+  height: calc(2 * var(--oatcake-body-line-height));
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: var(--oatcake-bold-font-weight);
+}
+
+h1,
+h2 {
+  padding-top: calc(var(--oatcake-body-line-height) * 2);
+  font-size: 24px;
+  line-height: var(--oatcake-body-line-height);
+  padding-bottom: var(--oatcake-body-line-height);
+}
+
+h2 {
+  padding-top: calc(var(--oatcake-body-line-height) * 1);
+}
+
+h3 {
+  padding-top: calc(var(--oatcake-body-line-height) * 1);
+  font-size: 19px;
+  line-height: var(--oatcake-body-line-height);
+  padding-bottom: var(--oatcake-body-line-height);
+}
+
+h4,
+h5,
+h6 {
+  font-size: var(--oatcake-body-font-size);
+  line-height: var(--oatcake-body-line-height);
+  padding-bottom: 0;
+}
+
+/* Put one line of vertical space between <h4>'s, <h5>'s and <h6>'s that
+ * immediately follow each other.
+ * (Normally an <h4>, <h5> or <h6> doesn't have any vertical space below if
+ * before the following <p> or other element.) */
+h4 + h4,
+h4 + h5,
+h4 + h6,
+h5 + h4,
+h5 + h5,
+h5 + h6,
+h6 + h4,
+h6 + h5,
+h6 + h6 {
+  margin-top: var(--oatcake-body-line-height);
+}
+
+blockquote h1:first-child,
+blockquote h2:first-child,
+blockquote h3:first-child,
+.note h1:first-child,
+.note h2:first-child,
+.note h3:first-child,
+.note h4:first-child,
+.note h5:first-child,
+.note h6:first-child,
+h1+h1,
+h1+h2,
+h1+h3,
+h1+h4,
+h1+h5,
+h1+h6,
+h2+h1,
+h2+h2,
+h2+h3,
+h2+h4,
+h2+h5,
+h2+h6,
+h3+h1,
+h3+h2,
+h3+h3,
+h3+h4,
+h3+h5,
+h3+h6,
+h4+h1,
+h4+h2,
+h4+h3,
+h4+h4,
+h4+h5,
+h4+h6,
+h5+h1,
+h5+h2,
+h5+h3,
+h5+h4,
+h5+h5,
+h5+h6,
+h6+h1,
+h6+h2,
+h6+h3,
+h6+h4,
+h6+h5,
+h6+h6,
+details h1:first-child,
+details h2:first-child,
+details h3:first-child,
+details h4:first-child,
+details h5:first-child,
+details h6:first-child,
+details summary+h1,
+details summary+h2,
+details summary+h3,
+details summary+h4,
+details summary+h5,
+details summary+h6 {
+  padding-top: 0;
+}
+
+figure figcaption {
+  text-align: center;
+}
+
+figure img + figcaption,
+figure svg + figcaption {
+  margin-top: calc(var(--oatcake-body-line-height) * -1);
+}
+
+figure figcaption,
+figure figcaption p {
+  color: var(--oatcake-secondary-color);
+}
+
+/* If a figure has a caption then make the vertical space below the caption
+   be larger than the vertical space above the caption. This is to put the
+   caption visibly closer to the figure that it belongs to than to whatever
+   follows the figure. */
+figcaption {
+  padding-bottom: var(--oatcake-body-line-height);
+}
+
+code {
+  background-color: var(--oatcake-code-background-color);
+  color: var(--oatcake-code-color);
+  padding-left: 5px;
+  padding-right: 5px;
+  font-family: var(--oatcake-code-font-family);
+  border-radius: 3px;
+  font-size: 16px;
+  line-height: 18px;
+}
+
+a code {
+  background-color: inherit;
+  color: inherit;
+  padding: 0;
+}
+
+h1 code,
+h2 code,
+h1 samp,
+h2 samp {
+  font-size: .75em;
+}
+
+/* I've no idea why but when I reduce the font-size of `<mark>`'s within
+ * headings and lead paragraphs it offsets the vertical-rhythm unless I say
+ * `line-height: 100%;`.
+ * You'd think it'd mean the same thing but `line-height: var(--oatcake-body-line-height);`
+ * doesn't fix the rhtyhm.
+ * This doesn't seem to be necessary when reducing the font-sizes of other
+ * elements like <code>'s and <samp>'s in headings and lead paragraphs. */
+h1 mark,
+h2 mark,
+.lead mark {
+  font-size: .8em;
+  line-height: 100%;
+}
+
+h3 code,
+h4 code,
+h5 code,
+h6 code,
+h3 samp,
+h4 samp,
+h5 samp,
+h6 samp {
+  font-size: .85em;
+}
+
+h1 kbd,
+h2 kbd {
+  font-size: .55em;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+h3 kbd,
+h4 kbd,
+h5 kbd,
+h6 kbd {
+  font-size: .7em;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+details {
+  border: 1px solid #aaaaaa;
+  padding-left: calc(0.5 * var(--oatcake-body-line-height));
+  padding-right: calc(0.5 * var(--oatcake-body-line-height));
+  padding-top: calc(var(--oatcake-body-line-height) - 2px);
+  border-radius: 5px;
+}
+
+details > summary {
+  cursor: pointer;
+  height: var(--oatcake-body-line-height);
+  background-color: var(--oatcake-code-background-color);
+  margin-top: calc(-1 * calc(var(--oatcake-body-line-height)));
+  margin-left: -13px;
+  margin-right: -13px;
+  padding: calc(0.5 * var(--oatcake-body-line-height));
+  border-radius: 5px;
+}
+
+details[open] > summary {
+  margin-bottom: var(--oatcake-body-line-height);
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+pre {
+  overflow: auto;
+  border-radius: 5px;
+  padding-top: var(--oatcake-body-line-height);
+  padding-bottom: var(--oatcake-body-line-height);
+  padding-left: calc(0.5 * var(--oatcake-body-line-height));
+  padding-right: calc(0.5 * var(--oatcake-body-line-height));
+}
+
+pre,
+pre code {
+  color: var(--oatcake-pre-code-color);
+  background-color: var(--oatcake-pre-code-background-color);
+}
+
+pre code {
+  padding: 0;
+  white-space: pre;
+}
+
+.badge,
+.pill {
+  padding: .1rem .3rem;
+  font-weight: 700;
+  text-align: center;
+  vertical-align: baseline;
+  border-radius: .25rem;
+  transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+  /* Prevent badges and pills from offsetting the vertical rhythm in iOS Safari. */
+  margin-bottom: -.3rem;
+}
+
+.badge,
+.pill,
+.badge code,
+.pill code {
+  font-size: var(--oatcake-small-font-size);
+  line-height: 1;
+}
+
+button.badge,
+button.pill {
+  border-width: 0;
+  font-family: var(--oatcake-body-font-family);
+  line-height: normal;
+  cursor: pointer;
+}
+
+.badge code,
+.pill code {
+  background-color: inherit;
+  padding: 0;
+}
+
+.pill {
+  padding-right: .6em;
+  padding-left: .6em;
+  border-radius: 10rem;
+}
+
+.badge,
+.pill {
+  color: #fff;
+  background-color: #343a40;
+}
+
+a.badge,
+a.badge:focus,
+a.badge:hover,
+a.pill,
+a.pill:focus,
+a.pill:hover {
+  text-decoration: none;
+  border-bottom: none;
+}
+
+a.badge:focus,
+a.pill:focus {
+  outline: 0;
+}
+
+a.badge:focus,
+a.badge:hover,
+a.pill:focus,
+a.pill:hover {
+  color: #fff;
+  background-color: #1d2124;
+}
+
+a.badge:focus,
+a.pill:focus {
+  box-shadow: 0 0 0 .2rem rgba(52, 58, 64, .5);
+}
+
+.note {
+  background-color: LemonChiffon;
+  border-color: #d6d8db;
+
+  border: 1px solid transparent;
+
+  border-radius: .25rem;
+
+  padding-top: calc(var(--oatcake-body-line-height) - 1px);
+  padding-bottom: calc(var(--oatcake-body-line-height) - 1px);
+
+  padding-left: calc(var(--oatcake-body-line-height) * 0.5);
+  padding-right: calc(var(--oatcake-body-line-height) * 0.5);
+}
+
+.note>*:last-child {
+  margin-bottom: 0;
+}
+
+.note>h1:last-child,
+.note>h2:last-child,
+.note>h3:last-child {
+  padding-bottom: 0;
+}
+
+/* Prevent line wrapping within certain elements. This does mean that if you
+ * put really long text in one of these it will overflow. */
+.badge,
+.pill,
+.nowrap,
+kbd  {
+  white-space: nowrap;
+}
+
+img.border {
+  border: 1px solid rgb(243, 243, 243);
+}
+
+/* Tables of contents. */
+.toc a {
+  text-decoration: none;
+}
+.toc a:hover {
+  text-decoration: underline;
+}
