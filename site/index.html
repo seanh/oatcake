@@ -1308,7 +1308,13 @@ or as two separate (not nested) <code>&lt;kbd&gt;</code>'s:
 <kbd>Ctrl</kbd>&nbsp;+&nbsp;<kbd>c</kbd>. All three styles are valid.</p>
 
 <p>To represent sample or quoted output from a computer program, wrap it in
-<code>&lt;samp&gt;</code> tags: <samp>Keyboard not found. Press F1 to continue</samp></p>
+<code>&lt;samp&gt;</code> tags: <samp>Keyboard not found. Press F1 to continue</samp>.</p>
+
+<p>Oatcake styles <code>&lt;samp&gt;</code> the same as
+<code>&lt;code&gt;</code>, making the difference only semantic. I didn't
+think two different styles for these would be likely to clearly say "this is
+code" whereas "this is output" to the reader, and too many different styles
+would only be distracting and make more design work and CSS.</p>
 
 <details>
   <summary>Tip: use non-breaking spaces between <code>&lt;kbd&gt;</code>'s</summary>

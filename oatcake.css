@@ -275,18 +275,6 @@ mark code {
   background-color: inherit;
 }
 
-samp {
-  background-color: var(--oatcake-code-background-color);
-  color: #444d56;
-  line-height: 1rem;
-  font-family: var(--oatcake-code-font-family);
-}
-
-pre samp {
-  background-color: inherit;
-  color: inherit;
-}
-
 q {
   quotes: "“""”""‘""’";
 }
@@ -528,7 +516,8 @@ figcaption {
   padding-bottom: var(--oatcake-body-line-height);
 }
 
-code {
+code,
+samp {
   background-color: var(--oatcake-code-background-color);
   color: var(--oatcake-code-color);
   padding-left: 5px;
@@ -539,7 +528,8 @@ code {
   line-height: 18px;
 }
 
-a code {
+a code,
+a samp {
   background-color: inherit;
   color: inherit;
   padding: 0;
@@ -628,12 +618,14 @@ pre {
 }
 
 pre,
-pre code {
+pre code,
+pre samp {
   color: var(--oatcake-pre-code-color);
   background-color: var(--oatcake-pre-code-background-color);
 }
 
-pre code {
+pre code,
+pre samp {
   padding: 0;
   white-space: pre;
 }
@@ -653,7 +645,9 @@ pre code {
 .badge,
 .pill,
 .badge code,
-.pill code {
+.badge samp,
+.pill code,
+.pill samp {
   font-size: var(--oatcake-small-font-size);
   line-height: 1;
 }
@@ -667,7 +661,9 @@ button.pill {
 }
 
 .badge code,
-.pill code {
+.badge samp,
+.pill code,
+.pill samp {
   background-color: inherit;
   padding: 0;
 }
