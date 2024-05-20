@@ -586,6 +586,7 @@ code mark:first-child {
 a code,
 a samp,
 a mark {
+  color: inherit;
   padding: 0;
 }
 
