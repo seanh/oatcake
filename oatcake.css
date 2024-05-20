@@ -563,21 +563,6 @@ sup mark {
   line-height: inherit;
 }
 
-u code,
-u samp,
-u mark,
-ins code,
-ins samp,
-ins mark,
-s code,
-s samp,
-s mark,
-del code,
-del samp,
-del mark {
-  padding: 0;
-}
-
 code mark:first-child {
   margin-left: -5px;
   margin-right: -5px;
@@ -587,7 +572,6 @@ a code,
 a samp,
 a mark {
   color: inherit;
-  padding: 0;
 }
 
 h1 code,
