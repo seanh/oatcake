@@ -148,25 +148,16 @@ throwing off the rhythm.</p>
 <p>
 All the usual inline elements work as you'd expect, for example:
 <a href="https://example.com/">links</a>,
-<code>code()</code>,
-<em>emphasised words</em>,
-<strong>words in bold</strong>,
-<del>struck through text</del>,
-<u>underlined text</u>,
-<mark>highlighted text</mark>,
+<code>code()</code> and <samp>sample output</samp>,
+<em>emphasis</em>,
+<strong>bold</strong>,
+<del>strike-throughs</del>,
+<u>underlines</u>,
+<mark>highlights</mark>,
 mid-word emphasis: un<em>frigging</em>believable, un<strong>frigging</strong>believable,
 <small>small text</small>,
 subscripts<sub>sub</sub> and superscripts<sup>sup</sup>,
-and abbreviations like <abbr title="Hypertext Markup Language">HTML</abbr>.
-</p>
-
-<p>Combinations of inline elements also work. These break in many themes. For example:
-<a href="https://example.com/" title="Title">a link with <strong>bold</strong> and <code>code()</code> in it</a>,
-an <a href="https://example.com/" title="Title"><strong>all bold link</strong></a>,
-an <a href="https://example.com/" title="Title"><code>all_code_link()</code></a>,
-<small>small text with <b>bold</b>, <i>italics</i> and <a href="https://example.com">links</a> and even <code>code</code> in it</small>,
-a <a href="https://example.com/" title="Title"><del>struck-through link</del></a>,
-a <a href="https://example.com/" title="Title"><mark>highlighted link</mark></a>.
+and abbreviations like <abbr title="HyperText Markup Language">HTML</abbr>.
 </p>
 
 <details>
@@ -434,6 +425,130 @@ in the air.&lt;/p&gt;</code></pre>
     </ul>
   </li>
 
+</ul>
+</details>
+
+<details>
+  <summary>Combining inline elements</summary>
+
+<p>All sorts of combinations of inline elements also work. These break in many
+themes. After all, who would take the time to test them all? ;) Here's some
+examples:</p>
+
+<ul>
+  <li><em>Emphasised text can contain <strong>bold</strong>,
+      abbreviations like <abbr title="HyperText Markup Language">HTML</abbr>,
+      <code>code</code> and <samp>sample output</samp>,
+      subscripts<sub>sub</sub> and superscripts<sup>sup</sup>,
+      <u>underlines</u>,
+      <mark>highlights</mark>,
+      <a href="https://example.com">links</a>,
+      and <s>strike-throughs</s>.</em>
+  </li>
+  <li><strong>Bold text can contain <em>italics</em>,
+      abbreviations like <abbr title="HyperText Markup Language">HTML</abbr>,
+      <code>code</code> and <samp>sample output</samp>,
+      subscripts<sub>sub</sub> and superscripts<sup>sup</sup>,
+      <u>underlines</u>,
+      <mark>highlights</mark>,
+      <a href="https://example.com">links</a>,
+      <s>strike-throughs</s>.</strong>
+  </li>
+  <li>Abbreviations can contain
+      italics: <abbr title="HyperText Markup Language"><em>HTML</em></abbr>,
+      bold: <abbr title="HyperText Markup Language"><strong>HTML</strong></abbr>,
+      code: <abbr title="HyperText Markup Language"><code>HTML</code></abbr>
+      and sample output: <abbr title="HyperText Markup Language"><samp>HTML</samp></abbr>,
+      highlights: <abbr title="HyperText Markup Language"><mark>HTML</mark></abbr>,
+      links: <abbr title="HyperText Markup Language"><a href="https://example.com">HTML</a></abbr>,
+      and strike-throughs: <abbr title="HyperText Markup Language"><s>HTML</s></abbr>.
+  </li>
+  <li>Code spans can contain
+    <code><em>italics</em></code>,
+    <code><strong>bold</strong></code>,
+    abbreviations: <code><abbr title="HyperText Markup Language">HTML</abbr></code>,
+    <code>subscripts<sub>sub</sub></code> and <code>superscripts<sup>sup</sup></code>,
+    <code><u>underlines</u></code>,
+    <code><mark>highlights</mark></code>,
+    <code><a href="https://example.com">links</a></code>,
+    and <code><s>strike-throughs</s></code>.
+  </li>
+  <li>Superscripts can contain
+    italics,<sup><em>sup</em></sup>
+    bold,<sup><strong>sup</strong></sup>
+    abbreviations,<sup><abbr title="HyperText Markup Language">HTML</abbr></sup>
+    code,<sup><code>sup</code></sup>
+    underlines,<sup><u>sup</u></sup>
+    highlights,<sup><mark>sup</mark></sup>
+    links<sup><a href="https://example.com">sup</a></sup>
+    and strike-throughs.<sup><s>sup</s></sup>
+  </li>
+  <li>Subscripts can contain
+    italics,<sub><em>sub</em></sub>
+    bold,<sub><strong>sub</strong></sub>
+    abbreviations,<sub><abbr title="HyperText Markup Language">HTML</abbr></sub>
+    code,<sub><code>sub</code></sub>
+    underlines,<sub><u>sub</u></sub>
+    highlights,<sub><mark>sub</mark></sub>
+    links<sub><a href="https://example.com">sub</a></sub>
+    and strike-throughs.<sub><s>sub</s></sub>
+  </li>
+  <li><u>Underlined text can contain
+      <em>italics</em>,
+      <strong>bold</strong>,
+      <code>code</code>,
+      <mark>highlights</mark>,
+      <a href="https://example.com">links</a>,
+      and <s>strike-throughs</s>.</u>
+   </li>
+  <li><mark>Highlighted text can contain
+    <em>italics</em>,
+    <strong>bold</strong>,
+    abbreviations like <abbr title="HyperText Markup Language">HTML</abbr>,
+    <code>code</code>,
+    subscripts<sub>sub</sub> and superscripts<sup>sup</sup>,
+    <u>underlines</u>,
+    <a href="https://example.com">links</a>,
+    and <s>strike-throughs</s>.</mark>
+  </li>
+  <li><a href="https://example.com">Links can contain
+    <em>italics</em>,
+    <strong>bold</strong>,
+    <code>code</code>,
+    <mark>highlights</mark>,
+    and <s>strike-throughs</s>.</a>
+  </li>
+  <li><s>Struck-through text can contain
+    <strong>bold</strong>,
+    abbreviations like <abbr title="HyperText Markup Language">HTML</abbr>,
+    <code>code</code>,
+    subscripts<sub>sub</sub> and superscripts<sup>sup</sup>,
+    <u>underlines</u>,
+    <mark>highlights</mark>,
+    and <a href="https://example.com">links</a>.</s>
+  </li>
+  <li>
+    Keyboard input can contain
+    <kbd><em>italics</em></kbd>,
+    <kbd><strong>bold</strong></kbd>,
+    abbreviations like <kbd><abbr title="HyperText Markup Language">HTML</abbr></kbd>,
+    <kbd><code>code</code> and <samp>sample output</samp></kbd>,
+    <kbd>subscripts<sub>sub</sub></kbd> and <kbd>superscripts<sup>sup</sup></kbd>,
+    <kbd><u>underlines</u></kbd>,
+    <kbd><mark>highlights</mark></kbd>,
+    <kbd><a href="https://example.com">links</a></kbd>,
+    and <kbd><s>strike-throughs</s></kbd>.
+  </li>
+  <li><small>Small text can contain <strong>bold</strong>,
+      <em>italics</em>,
+      abbreviations like <abbr title="HyperText Markup Language">HTML</abbr>,
+      <code>code</code> and <samp>sample output</samp>,
+      subscripts<sub>sub</sub> and superscripts<sup>sup</sup>,
+      <u>underlines</u>,
+      <mark>highlights</mark>,
+      <a href="https://example.com">links</a>,
+      and <s>strike-throughs</s>.</small>
+  </li>
 </ul>
 </details>
 

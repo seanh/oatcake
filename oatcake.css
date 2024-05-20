@@ -204,6 +204,11 @@ b {
   color: var(--oatcake-bold-color);
 }
 
+a strong,
+a b {
+  color: inherit;
+}
+
 hr {
   background: transparent;
   border: 0;
@@ -273,6 +278,15 @@ mark {
 mark samp,
 mark code {
   background-color: inherit;
+  padding: 0;
+}
+
+kbd code,
+kbd samp {
+  background-color: inherit;
+  padding: 0;
+  font-size: inherit;
+  line-height: inherit;
 }
 
 q {
@@ -533,15 +547,45 @@ mark {
   line-height: 18px;
 }
 
+kbd code,
+kbd samp,
+kbd mark,
+small code,
+small samp,
+small mark,
+sub code,
+sub samp,
+sub mark,
+sup code,
+sup samp,
+sup mark {
+  font-size: inherit;
+  line-height: inherit;
+}
+
+u code,
+u samp,
+u mark,
+ins code,
+ins samp,
+ins mark,
+s code,
+s samp,
+s mark,
+del code,
+del samp,
+del mark {
+  padding: 0;
+}
+
 code mark:first-child {
   margin-left: -5px;
   margin-right: -5px;
 }
 
 a code,
-a samp {
-  background-color: inherit;
-  color: inherit;
+a samp,
+a mark {
   padding: 0;
 }
 
