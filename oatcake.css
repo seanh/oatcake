@@ -520,12 +520,22 @@ code,
 samp {
   background-color: var(--oatcake-code-background-color);
   color: var(--oatcake-code-color);
+  font-family: var(--oatcake-code-font-family);
+}
+
+code,
+samp,
+mark {
   padding-left: 5px;
   padding-right: 5px;
-  font-family: var(--oatcake-code-font-family);
   border-radius: 3px;
   font-size: 16px;
   line-height: 18px;
+}
+
+code mark:first-child {
+  margin-left: -5px;
+  margin-right: -5px;
 }
 
 a code,
@@ -625,7 +635,8 @@ pre samp {
 }
 
 pre code,
-pre samp {
+pre samp,
+pre mark {
   padding: 0;
   white-space: pre;
 }
