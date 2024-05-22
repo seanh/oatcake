@@ -156,8 +156,7 @@ All the usual inline elements work as you'd expect, for example:
 <mark>highlights</mark>,
 (even mid-word highlights: un<mark>frigging</mark>believable),
 <small>small text</small>,
-subscripts<sub>sub</sub> and superscripts<sup>sup</sup>,
-and abbreviations like <abbr title="HyperText Markup Language">HTML</abbr>.
+subscripts<sub>sub</sub> and superscripts<sup>sup</sup>.
 </p>
 
 <details>
@@ -285,13 +284,27 @@ in the air.&lt;/p&gt;</code></pre>
   </li>
 
   <li><p><a href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-abbr-element"><code>&lt;abbr&gt;</code></a>
-    is for abbreviations and acronyms. If you provide the expansion of the
-    abbreviation as the value of a <code>title</code> attribute on an
-    <code>&lt;abbr&gt;</code> then in some browsers the abbreviation will get a
-    dotted underline and the expansion will be shown in a tooltip on mouseover.
+    is for abbreviations and acronyms.</p>
+
+    <p>An <code>&lt;abbr&gt;</code> on its own is semantic only but
+    if you provide the expansion of the abbreviation as the value of a
+    <code>title</code> attribute on an <code>&lt;abbr&gt;</code> then in some
+    browsers the abbreviation will get a dotted underline and the expansion
+    will be shown in a tooltip on mouseover.
     For example this: <code>&lt;abbr title="HyperText Markup
     Language"&gt;HTML&lt;/abbr&gt;</code> renders like this:
     <abbr title="HyperText Markup Language">HTML</abbr>.</p>
+
+    <p>Mobile browsers don't have hover and tooltips,
+    so they don't underline <code>&lt;abbr&gt;</code>'s.
+    Neither do some desktop browsers.</p>
+
+    <p>Rather than using the <code>title</code> attribute
+    it's usually better to provide the expansion in normal text following the
+    <code>&lt;abbr&gt;</code> the first time a given abbreviation is used in a
+    document,
+    like this: <code>&lt;abbr&gt;HTML&lt;/abbr&gt; (HyperText Markup Language)</code>.
+    </p>
   </li>
 
   <li>
@@ -437,7 +450,6 @@ examples:</p>
 
 <ul>
   <li><em>Emphasised text can contain <strong>bold</strong>,
-      abbreviations like <abbr title="HyperText Markup Language">HTML</abbr>,
       <code>code</code> and <samp>sample output</samp>,
       subscripts<sub>sub</sub> and superscripts<sup>sup</sup>,
       <u>underlines</u>,
@@ -446,27 +458,16 @@ examples:</p>
       and <s>strike-throughs</s>.</em>
   </li>
   <li><strong>Bold text can contain <em>italics</em>,
-      abbreviations like <abbr title="HyperText Markup Language">HTML</abbr>,
       <code>code</code> and <samp>sample output</samp>,
       subscripts<sub>sub</sub> and superscripts<sup>sup</sup>,
       <u>underlines</u>,
       <mark>highlights</mark>,
-      <a href="https://example.com">links</a>,
-      <s>strike-throughs</s>.</strong>
-  </li>
-  <li>Abbreviations can contain
-      italics: <abbr title="HyperText Markup Language"><em>HTML</em></abbr>,
-      bold: <abbr title="HyperText Markup Language"><strong>HTML</strong></abbr>,
-      code: <abbr title="HyperText Markup Language"><code>HTML</code></abbr>
-      and sample output: <abbr title="HyperText Markup Language"><samp>HTML</samp></abbr>,
-      highlights: <abbr title="HyperText Markup Language"><mark>HTML</mark></abbr>,
-      links: <abbr title="HyperText Markup Language"><a href="https://example.com">HTML</a></abbr>,
-      and strike-throughs: <abbr title="HyperText Markup Language"><s>HTML</s></abbr>.
+      <a href="https://example.com">links</a>
+      and <s>strike-throughs</s>.</strong>
   </li>
   <li>Code spans can contain
     <code><em>italics</em></code>,
     <code><strong>bold</strong></code>,
-    abbreviations: <code><abbr title="HyperText Markup Language">HTML</abbr></code>,
     <code>subscripts<sub>sub</sub></code> and <code>superscripts<sup>sup</sup></code>,
     <code><u>underlines</u></code>,
     <code><mark>highlights</mark></code>,
@@ -476,7 +477,6 @@ examples:</p>
   <li>Superscripts can contain
     italics,<sup><em>sup</em></sup>
     bold,<sup><strong>sup</strong></sup>
-    abbreviations,<sup><abbr title="HyperText Markup Language">HTML</abbr></sup>
     code,<sup><code>sup</code></sup>
     underlines,<sup><u>sup</u></sup>
     highlights,<sup><mark>sup</mark></sup>
@@ -486,7 +486,6 @@ examples:</p>
   <li>Subscripts can contain
     italics,<sub><em>sub</em></sub>
     bold,<sub><strong>sub</strong></sub>
-    abbreviations,<sub><abbr title="HyperText Markup Language">HTML</abbr></sub>
     code,<sub><code>sub</code></sub>
     underlines,<sub><u>sub</u></sub>
     highlights,<sub><mark>sub</mark></sub>
@@ -504,7 +503,6 @@ examples:</p>
   <li><mark>Highlighted text can contain
     <em>italics</em>,
     <strong>bold</strong>,
-    abbreviations like <abbr title="HyperText Markup Language">HTML</abbr>,
     <code>code</code>,
     subscripts<sub>sub</sub> and superscripts<sup>sup</sup>,
     <u>underlines</u>,
@@ -520,7 +518,6 @@ examples:</p>
   </li>
   <li><s>Struck-through text can contain
     <strong>bold</strong>,
-    abbreviations like <abbr title="HyperText Markup Language">HTML</abbr>,
     <code>code</code>,
     subscripts<sub>sub</sub> and superscripts<sup>sup</sup>,
     <u>underlines</u>,
@@ -531,7 +528,6 @@ examples:</p>
     Keyboard input can contain
     <kbd><em>italics</em></kbd>,
     <kbd><strong>bold</strong></kbd>,
-    abbreviations like <kbd><abbr title="HyperText Markup Language">HTML</abbr></kbd>,
     <kbd><code>code</code> and <samp>sample output</samp></kbd>,
     <kbd>subscripts<sub>sub</sub></kbd> and <kbd>superscripts<sup>sup</sup></kbd>,
     <kbd><u>underlines</u></kbd>,
@@ -541,7 +537,6 @@ examples:</p>
   </li>
   <li><small>Small text can contain <strong>bold</strong>,
       <em>italics</em>,
-      abbreviations like <abbr title="HyperText Markup Language">HTML</abbr>,
       <code>code</code> and <samp>sample output</samp>,
       subscripts<sub>sub</sub> and superscripts<sup>sup</sup>,
       <u>underlines</u>,
