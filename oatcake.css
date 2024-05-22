@@ -270,6 +270,11 @@ pre {
   overflow-wrap: normal;
 }
 
+summary {
+  overflow: auto;
+  white-space: nowrap;
+}
+
 mark {
   background-color: yellow;
   color: black;
