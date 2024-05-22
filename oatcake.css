@@ -538,8 +538,7 @@ samp {
 }
 
 code,
-samp,
-mark {
+samp {
   padding-left: 5px;
   padding-right: 5px;
   border-radius: 3px;
@@ -549,16 +548,12 @@ mark {
 
 kbd code,
 kbd samp,
-kbd mark,
 small code,
 small samp,
-small mark,
 sub code,
 sub samp,
-sub mark,
 sup code,
-sup samp,
-sup mark {
+sup samp {
   font-size: inherit;
   line-height: inherit;
 }
@@ -664,8 +659,7 @@ pre samp {
 }
 
 pre code,
-pre samp,
-pre mark {
+pre samp {
   padding: 0;
   white-space: pre;
 }
