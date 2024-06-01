@@ -7,6 +7,15 @@
   --oatcake-pre-code-background-color: rgb(243, 243, 243);
   --oatcake-code-color: inherit;
   --oatcake-pre-code-color: inherit;
+  --oatcake-highlight-color: black;
+  --oatcake-highlight-background-color: LemonChiffon;
+  --oatcake-kbd-color: #444d56;
+  --oatcake-kbd-background-color: #fafbfc;
+  --oatcake-kbd-border-color: #c6cbd1;
+  --oatcake-kbd-border-bottom-color: #959dat;
+  --oatcake-badge-color: #fff;
+  --oatcake-badge-background-color: #343a40;
+  --oatcake-badge-focus-border-color: rgba(52, 58, 64, .5);
 
   /* This is the System UI font stack from https://modernfontstacks.com/ */
   --oatcake-body-font-family: system-ui, sans-serif;
@@ -276,8 +285,8 @@ summary {
 }
 
 mark {
-  background-color: yellow;
-  color: black;
+  background-color: var(--oatcake-highlight-background-color);
+  color: var(--oatcake-highlight-color);
 }
 
 mark samp,
@@ -369,11 +378,11 @@ h3+.lead {
 }
 
 kbd {
-  background-color: #fafbfc;
-  border: 1px solid #c6cbd1;
-  border-bottom-color: #959da5;
+  background-color: var(--oatcake-kbd-background-color);
+  border: 1px solid var(--oatcake-kbd-border-color);
+  border-bottom-color: var(--oatcake-kbd-border-bottom-color);
   border-radius: 3px;
-  color: #444d56;
+  color: var(--oatcake-kbd-color);
   font-family: var(--oatcake-code-font-family);
   font-size: 12px;
   padding-left: 5px;
@@ -715,8 +724,8 @@ button.pill {
 
 .badge,
 .pill {
-  color: #fff;
-  background-color: #343a40;
+  color: var(--oatcake-badge-color);
+  background-color: var(--oatcake-badge-background-color);
 }
 
 a.badge,
@@ -735,28 +744,17 @@ a.pill:focus {
 }
 
 a.badge:focus,
-a.badge:hover,
-a.pill:focus,
-a.pill:hover {
-  color: #fff;
-  background-color: #1d2124;
-}
-
-a.badge:focus,
 a.pill:focus {
-  box-shadow: 0 0 0 .2rem rgba(52, 58, 64, .5);
+  box-shadow: 0 0 0 .2rem var(--oatcake-badge-focus-border-color);
 }
 
 .note {
-  background-color: LemonChiffon;
-  border-color: #d6d8db;
-
-  border: 1px solid transparent;
+  background-color: var(--oatcake-highlight-background-color);
 
   border-radius: .25rem;
 
-  padding-top: calc(var(--oatcake-body-line-height) - 1px);
-  padding-bottom: calc(var(--oatcake-body-line-height) - 1px);
+  padding-top: var(--oatcake-body-line-height);
+  padding-bottom: var(--oatcake-body-line-height);
 
   padding-left: calc(var(--oatcake-body-line-height) * 0.5);
   padding-right: calc(var(--oatcake-body-line-height) * 0.5);
