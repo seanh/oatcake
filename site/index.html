@@ -2183,6 +2183,22 @@ wrapping it over multiple lines.</p>
   <li>Third list item <span class="badge">32</span></li>
 </ul>
 
+<p>Here's a use of pills used to annotate lines in a code block:</p>
+
+<pre><code>class MyError(Exception): <span class="pill">1</span>
+    def __init__(self, status_code, reason):
+        super().__init__(status_code, reason) <span class="pill">2</span>
+        self.status_code = status_code
+        self.reason = reason</code></pre>
+
+<p><span class="pill">1</span> In Python, all custom exception classes should
+inherit from the built-in <code>Exception</code> class (or one of its
+subclasses).</p>
+
+<p><span class="pill">2</span> When inheriting from <code>Exception</code>,
+if you've written your own <code>__init__()</code> method,
+you should always call <code>super().__init__()</code>.</p>
+
 <p>As with note boxes, it was tempting to add a variety of different colour
 choices for badges and pills but this would be distracting and would make it
 harder to add dark mode and multiple colour schemes.</p>
