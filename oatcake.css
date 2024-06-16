@@ -779,7 +779,7 @@ kbd  {
 }
 
 img.border {
-  border: 1px solid rgb(233, 233, 233);
+  border: 1px solid var(--oatcake-secondary-color);
   margin-bottom: -2px; /* Prevent the border from offsetting the vertical rhythm. */
   border-radius: 5px;
 }
