@@ -10,7 +10,6 @@
   --oatcake-highlight-color: black;
   --oatcake-highlight-background-color: LemonChiffon;
   --oatcake-note-background-color: aliceblue;
-  --oatcake-note-border: 1px solid lightskyblue;
   --oatcake-kbd-color: #444d56;
   --oatcake-kbd-background-color: #fafbfc;
   --oatcake-kbd-border-color: #c6cbd1;
@@ -223,7 +222,8 @@ a b {
 hr {
   background: transparent;
   border: 0;
-  border-inline-top: 1px solid var(--oatcake-secondary-color);
+  border-top: 1px solid var(--oatcake-secondary-color);
+  margin-bottom: -1px;
   padding-bottom: var(--oatcake-body-line-height);
 }
 
@@ -631,10 +631,10 @@ h6 kbd {
 }
 
 details {
-  border-inline: 1px solid #aaaaaa;
+  border: 1px solid #aaaaaa;
   padding-left: calc(0.5 * var(--oatcake-body-line-height));
   padding-right: calc(0.5 * var(--oatcake-body-line-height));
-  padding-top: var(--oatcake-body-line-height);
+  padding-top: calc(var(--oatcake-body-line-height) - 2px);
   border-radius: 5px;
 }
 
@@ -749,7 +749,6 @@ a.pill:focus {
 
 .note {
   background-color: var(--oatcake-note-background-color);
-  border-inline: var(--oatcake-note-border);
 
   border-radius: .25rem;
 
@@ -780,7 +779,8 @@ kbd  {
 }
 
 img.border {
-  border-inline: 1px solid rgb(233, 233, 233);
+  border: 1px solid rgb(233, 233, 233);
+  margin-bottom: -2px; /* Prevent the border from offsetting the vertical rhythm. */
   border-radius: 5px;
 }
 
