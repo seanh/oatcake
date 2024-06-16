@@ -574,11 +574,6 @@ sup samp {
   line-height: inherit;
 }
 
-code mark:first-child {
-  margin-left: -5px;
-  margin-right: -5px;
-}
-
 a code,
 a samp,
 a mark {
