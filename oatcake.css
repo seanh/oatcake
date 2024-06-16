@@ -614,20 +614,9 @@ h2 mark,
   line-height: 100%;
 }
 
-h3 code,
-h4 code,
-h5 code,
-h6 code,
-h3 samp,
-h4 samp,
-h5 samp,
-h6 samp {
-  font-size: .85em;
-}
-
 h1 kbd,
 h2 kbd {
-  font-size: .55em;
+  font-size: .85em;
   padding-top: 0;
   padding-bottom: 0;
 }
@@ -636,7 +625,7 @@ h3 kbd,
 h4 kbd,
 h5 kbd,
 h6 kbd {
-  font-size: .7em;
+  font-size: inherit;
   padding-top: 0;
   padding-bottom: 0;
 }
