@@ -12,6 +12,9 @@
           display: none;
         }
       }
+      body.alternativeFonts {
+        --oatcake-body-font-family: ui-rounded, 'Hiragino Maru Gothic ProN', Quicksand, Comfortaa, Manjari, 'Arial Rounded MT', 'Arial Rounded MT Bold', Calibri, source-sans-pro, sans-serif;
+      }
     </style>
     <link rel="apple-touch-icon" sizes="180x180" href="media/favicons/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="media/favicons/favicon-32x32.png">
@@ -126,9 +129,51 @@ default interface font from the user's OS.</p>
 fonts adapted to today's screens), and feels native to the user's system
 (nothing too distinctive).</p>
 
-
 <p>Code blocks have a font stack based on the <code>ui-monospace</code>
 font-family which selects the operating system's default monospaced font.</p>
+
+<details>
+  <summary>Customising the fonts</summary>
+
+<p>You can customise the fonts by setting some CSS variables in your own custom
+stylesheet that follows <code>oatcake.css</code>:</p>
+
+<pre><code>&lt;style&gt;
+  :root {
+    --oatcake-body-font-family: 'ui-rounded, source-sans-pro, sans-serif';
+    --oatcake-code-font-family: '"Nimbus Mono PS", "Courier New", monospace';
+  }
+&lt;/style&gt;</code></pre>
+
+<p>For example click this button to change this page to a "rounded sans" font stack:</p>
+
+<p style="text-align:center;"><button class="pill fonts"></button></p>
+
+<p>Here's the full list of font variables you can change:</p>
+
+<dl>
+  <dt><code>--oatcake-body-font-family</code></dt>
+  <dd>The <code>font-family</code> for the main <code>&lt;body&gt;</code> font</dd>
+
+  <dt><code>--oatcake-body-font-size</code></dt>
+  <dd>The <code>font-size</code> for the main <code>&lt;body&gt;</code> font</dd>
+
+  <dt><code>--oatcake-body-line-height</code></dt>
+  <dd>The <code>line-height</code> for the main <code>&lt;body&gt;</code> font</dd>
+
+  <dt><code>--oatcake-body-font-weight</code></dt>
+  <dd>The <code>font-weight</code> for the main <code>&lt;body&gt;</code> font</dd>
+
+  <dt><code>--oatcake-bold-font-weight</code></dt>
+  <dd>The <code>font-weight</code> for bold text and headings</dd>
+
+  <dt><code>--oatcake-small-font-size</code></dt>
+  <dd>The <code>font-size</code> for <code>&lt;small&gt;</code> elements</dd>
+
+  <dt><code>--oatcake-code-font-family</code></dt>
+  <dd>The <code>font-family</code> for code spans, preformatted code blocks, etc</dd>
+</dl>
+</details>
 
 <h2>Colours</h2>
 
@@ -136,6 +181,78 @@ font-family which selects the operating system's default monospaced font.</p>
 be noticed: black text on a white background, and the browser's default purple
 and underline for <a href="https://example.com">links</a>.
 Code and preformatted text blocks have a typical light-grey background.</p>
+
+<details>
+  <summary>Customising the colours</summary>
+
+<p>As with the fonts, you can customise Oatcake's colours by setting some CSS
+variables in your own custom stylesheet that follows <code>oatcake.css</code>:</p>
+
+<pre><code>&lt;style&gt;
+  :root {
+    --oatcake-body-background-color: black;
+    --oatcake-body-color: white;
+  }
+&lt;/style&gt;</code></pre>
+
+<p>Here's the full list of colour variables you can change:</p>
+
+<dl>
+  <dt><code>--oatcake-body-background-color</code></dt>
+  <dd>The <code>background-color</code> of the main <code>&lt;body&gt;</code></dd>
+
+  <dt><code>--oatcake-body-color</code></dt>
+  <dd>The foreground <code>color</code> of the main <code>&lt;body&gt;</code> text</dd>
+
+  <dt><code>--oatcake-bold-color</code></dt>
+  <dd>The <code>color</code> of bold text</dd>
+
+  <dt><code>--oatcake-secondary-color</code></dt>
+  <dd>The <code>color</code> of <a href="#secondary-text">secondary text</a></dd>
+
+  <dt><code>--oatcake-code-background-color</code></dt>
+  <dd>The <code>background-color</code> of <code>&lt;code&gt;</code> spans</dd>
+
+  <dt><code>--oatcake-code-color</code></dt>
+  <dd>The foreground <code>color</code> of <code>&lt;code&gt;</code> spans</dd>
+
+  <dt><code>--oatcake-pre-code-background-color</code></dt>
+  <dd>The <code>background-color</code> of preformatted text blocks</dd>
+
+  <dt><code>--oatcake-pre-code-color</code></dt>
+  <dd>The foreground <code>color</code> of preformatted text blocks</dd>
+
+  <dt><code>--oatcake-highlight-background-color</code></dt>
+  <dd>The <code>background-color</code> of highlighted text</dd>
+
+  <dt><code>--oatcake-highlight-color</code></dt>
+  <dd>The foreground <code>color</code> of highlighted text</dd>
+
+  <dt><code>--oatcake-note-background-color</code></dt>
+  <dd>The <code>background-color</code> of <a href="#note-boxes">note boxes</a></dd>
+
+  <dt><code>--oatcake-kbd-background-color</code></dt>
+  <dd>The <code>background-color</code> of <a href="#kbd-and-samp"><code>&lt;kbd&gt;</code> elements</a></dd>
+
+  <dt><code>--oatcake-kbd-color</code></dt>
+  <dd>The foreground <code>color</code> of <a href="#kbd-and-samp"><code>&lt;kbd&gt;</code> elements</a></dd>
+
+  <dt><code>--oatcake-kbd-border-color</code></dt>
+  <dd>The <code>border-color</code> of <a href="#kbd-and-samp"><code>&lt;kbd&gt;</code> elements</a></dd>
+
+  <dt><code>--oatcake-kbd-border-bottom-color</code></dt>
+  <dd>The <code>border-bottom-color</code> of <a href="#kbd-and-samp"><code>&lt;kbd&gt;</code> elements</a></dd>
+
+  <dt><code>--oatcake-badge-background-color</code></dt>
+  <dd>The <code>background-color</code> of <a href="#badges-and-pills">badges and pills</a></dd>
+
+  <dt><code>--oatcake-badge-color</code></dt>
+  <dd>The foreground <code>color</code> of <a href="#badges-and-pills">badges and pills</a></dd>
+
+  <dt><code>--oatcake-badge-focus-border-color</code></dt>
+  <dd>The focus border colour for link badges</dd>
+</dl>
+</details>
 
 <h2>Vertical rhythm</h2>
 
@@ -2087,6 +2204,7 @@ harder to add dark mode and multiple colour schemes.</p>
       });
     </script>
     <script src="lines/lines.js"></script>
+    <script src="toggle-fonts.js"></script>
     <script>
       function adjustMediaSizes() {
         let images = Array.prototype.slice.call(document.getElementsByTagName("img"), 0);

@@ -27,7 +27,7 @@
   /* 400 corresponds to `font-weight: normal` in CSS and all fonts in Oatcake's
    * system font stacks have this weight. See:
    * https://github.com/system-fonts/modern-font-stacks?tab=readme-ov-file#css-font-stack. */
-  --oatcake-normal-font-weight: 400;
+  --oatcake-body-font-weight: 400;
 
   /* 700 corresponds to `font-weight: bold` in CSS and all fonts in Oatcake's
    * system font stacks have this weight. See:
@@ -156,7 +156,7 @@ section {
 body {
   font-size: var(--oatcake-body-font-size);
   font-family: var(--oatcake-body-font-family);
-  font-weight: var(--oatcake-normal-font-weight);
+  font-weight: var(--oatcake-body-font-weight);
   background-color: var(--oatcake-body-background-color);
   color: var(--oatcake-body-color);
   line-height: var(--oatcake-body-line-height);
