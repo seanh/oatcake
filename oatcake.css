@@ -781,7 +781,8 @@ kbd  {
 }
 
 img.border {
-  border: 1px solid rgb(243, 243, 243);
+  border: 1px solid rgb(233, 233, 233);
+  border-radius: 5px;
 }
 
 /* Tables of contents. */
