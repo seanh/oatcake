@@ -585,9 +585,18 @@ a mark {
 
 h1 code,
 h2 code,
+h3 code,
+h4 code,
+h5 code,
+h6 code,
 h1 samp,
-h2 samp {
-  font-size: .75em;
+h2 samp,
+h3 samp,
+h4 samp,
+h5 samp,
+h6 samp {
+  background-color: inherit;
+  font-size: inherit;
 }
 
 /* I've no idea why but when I reduce the font-size of `<mark>`'s within
