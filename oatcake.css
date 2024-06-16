@@ -185,7 +185,7 @@ svg:not(li svg:first-child),
 iframe:not(li iframe:first-child),
 video:not(li video:first-child),
 audio:not(li audio:first-child) {
-  padding-top: var(--oatcake-body-line-height);
+  margin-top: var(--oatcake-body-line-height);
 }
 
 img,
@@ -782,6 +782,10 @@ img.border {
   border: 1px solid rgb(233, 233, 233);
   margin-bottom: -2px; /* Prevent the border from offsetting the vertical rhythm. */
   border-radius: 5px;
+}
+
+img.rounded {
+  border-radius: 10px;
 }
 
 /* Tables of contents. */
