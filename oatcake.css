@@ -9,6 +9,8 @@
   --oatcake-pre-code-color: inherit;
   --oatcake-highlight-color: black;
   --oatcake-highlight-background-color: LemonChiffon;
+  --oatcake-note-background-color: aliceblue;
+  --oatcake-note-border: 1px solid lightskyblue;
   --oatcake-kbd-color: #444d56;
   --oatcake-kbd-background-color: #fafbfc;
   --oatcake-kbd-border-color: #c6cbd1;
@@ -747,7 +749,8 @@ a.pill:focus {
 }
 
 .note {
-  background-color: var(--oatcake-highlight-background-color);
+  background-color: var(--oatcake-note-background-color);
+  border: var(--oatcake-note-border);
 
   border-radius: .25rem;
 
