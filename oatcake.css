@@ -626,8 +626,14 @@ h6 kbd {
   padding-bottom: 0;
 }
 
+details,
+summary {
+  border: 1px solid var(--oatcake-pre-code-border-color);
+}
+summary {
+  border-bottom: none;
+}
 details {
-  border: 1px solid #aaaaaa;
   padding-left: calc(0.5 * var(--oatcake-body-line-height));
   padding-right: calc(0.5 * var(--oatcake-body-line-height));
   padding-top: calc(var(--oatcake-body-line-height) - 2px);
@@ -637,7 +643,7 @@ details {
 details > summary {
   cursor: pointer;
   height: var(--oatcake-body-line-height);
-  background-color: var(--oatcake-code-background-color);
+  background-color: var(--oatcake-pre-code-background-color);
   margin-top: calc(-1 * calc(var(--oatcake-body-line-height)));
   margin-left: -13px;
   margin-right: -13px;
@@ -646,6 +652,7 @@ details > summary {
 }
 
 details[open] > summary {
+  border-bottom: 1px solid var(--oatcake-pre-code-border-color);
   margin-bottom: var(--oatcake-body-line-height);
   border-bottom-left-radius: 0;
   border-bottom-right-radius: 0;
