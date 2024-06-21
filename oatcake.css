@@ -4,23 +4,22 @@
   --oatcake-bold-color: #16171a;
   --oatcake-secondary-color: #888;
   --oatcake-code-background-color: rgba(175, 184, 193, 0.2);
-  --oatcake-pre-code-background-color: rgb(248, 249, 250);
-  --oatcake-pre-code-border-color: #dee2e6;
   --oatcake-code-color: inherit;
-  --oatcake-pre-code-color: inherit;
+  --oatcake-pre-background-color: rgb(248, 249, 250);
+  --oatcake-pre-border-color: #dee2e6;
+  --oatcake-pre-color: inherit;
   --oatcake-highlight-background-color: LemonChiffon;
   --oatcake-note-background-color: rgb(255, 243, 205);
-  --oatcake-note-highlight-background-color: rgb(207, 244, 252);
   --oatcake-note-border-color: #ffe69c;
+  --oatcake-note-highlight-background-color: rgb(207, 244, 252);
   --oatcake-kbd-color: #444d56;
   --oatcake-kbd-background-color: #fafbfc;
   --oatcake-kbd-border-color: #c6cbd1;
   --oatcake-kbd-border-bottom-color: #959dat;
-  --oatcake-badge-color: #fff;
   --oatcake-badge-background-color: #343a40;
+  --oatcake-badge-color: #fff;
   --oatcake-badge-focus-border-color: rgba(52, 58, 64, .5);
   --oatcake-blockquote-border-color: #2b90d9;
-  --oatcake-border-radius: 7px;
 
   /* This is the System UI font stack from https://modernfontstacks.com/ */
   --oatcake-body-font-family: system-ui, sans-serif;
@@ -44,6 +43,8 @@
   --oatcake-body-line-height: 24px;
 
   --oatcake-small-font-size: 13px;
+
+  --oatcake-border-radius: 7px;
 }
 
 /* http://meyerweb.com/eric/tools/css/reset/, v2.0 | 20110126, License: none (public domain) */
@@ -226,7 +227,7 @@ a b {
 hr {
   background: transparent;
   border: 0;
-  border-top: 1px solid var(--oatcake-pre-code-border-color);
+  border-top: 1px solid var(--oatcake-pre-border-color);
   margin-bottom: -1px;
   padding-bottom: var(--oatcake-body-line-height);
 }
@@ -630,7 +631,7 @@ h6 kbd {
 
 details,
 summary {
-  border: 1px solid var(--oatcake-pre-code-border-color);
+  border: 1px solid var(--oatcake-pre-border-color);
 }
 summary {
   border-bottom: none;
@@ -645,7 +646,7 @@ details {
 details > summary {
   cursor: pointer;
   height: var(--oatcake-body-line-height);
-  background-color: var(--oatcake-pre-code-background-color);
+  background-color: var(--oatcake-pre-background-color);
   margin-top: calc(-1 * calc(var(--oatcake-body-line-height)));
   margin-left: -13px;
   margin-right: -13px;
@@ -654,7 +655,7 @@ details > summary {
 }
 
 details[open] > summary {
-  border-bottom: 1px solid var(--oatcake-pre-code-border-color);
+  border-bottom: 1px solid var(--oatcake-pre-border-color);
   margin-bottom: var(--oatcake-body-line-height);
   border-bottom-left-radius: 0;
   border-bottom-right-radius: 0;
@@ -670,14 +671,14 @@ pre {
 }
 
 pre {
-  border: 1px solid var(--oatcake-pre-code-border-color);
+  border: 1px solid var(--oatcake-pre-border-color);
 }
 
 pre,
 pre code,
 pre samp {
-  color: var(--oatcake-pre-code-color);
-  background-color: var(--oatcake-pre-code-background-color);
+  color: var(--oatcake-pre-color);
+  background-color: var(--oatcake-pre-background-color);
 }
 
 pre code,
@@ -793,7 +794,7 @@ kbd  {
 }
 
 img.border {
-  border: 1px solid var(--oatcake-pre-code-border-color);
+  border: 1px solid var(--oatcake-pre-border-color);
   margin-bottom: -2px; /* Prevent the border from offsetting the vertical rhythm. */
   border-radius: var(--oatcake-border-radius);
 }
