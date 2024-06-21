@@ -19,6 +19,7 @@
   --oatcake-badge-color: #fff;
   --oatcake-badge-background-color: #343a40;
   --oatcake-badge-focus-border-color: rgba(52, 58, 64, .5);
+  --oatcake-border-radius: 7px;
 
   /* This is the System UI font stack from https://modernfontstacks.com/ */
   --oatcake-body-font-family: system-ui, sans-serif;
@@ -637,7 +638,7 @@ details {
   padding-left: calc(0.5 * var(--oatcake-body-line-height));
   padding-right: calc(0.5 * var(--oatcake-body-line-height));
   padding-top: calc(var(--oatcake-body-line-height) - 2px);
-  border-radius: 5px;
+  border-radius: var(--oatcake-border-radius);
 }
 
 details > summary {
@@ -648,7 +649,7 @@ details > summary {
   margin-left: -13px;
   margin-right: -13px;
   padding: calc(0.5 * var(--oatcake-body-line-height));
-  border-radius: 5px;
+  border-radius: var(--oatcake-border-radius);
 }
 
 details[open] > summary {
@@ -660,7 +661,7 @@ details[open] > summary {
 
 pre {
   overflow: auto;
-  border-radius: 5px;
+  border-radius: var(--oatcake-border-radius);
   padding-top: var(--oatcake-body-line-height);
   padding-bottom: var(--oatcake-body-line-height);
   padding-left: calc(0.5 * var(--oatcake-body-line-height));
@@ -758,7 +759,7 @@ a.pill:focus {
   background-color: var(--oatcake-note-background-color);
   border: 1px solid var(--oatcake-note-border-color);
 
-  border-radius: .25rem;
+  border-radius: var(--oatcake-border-radius);
 
   padding-top: var(--oatcake-body-line-height);
   padding-bottom: calc(var(--oatcake-body-line-height) - 2px);
@@ -793,11 +794,11 @@ kbd  {
 img.border {
   border: 1px solid var(--oatcake-secondary-color);
   margin-bottom: -2px; /* Prevent the border from offsetting the vertical rhythm. */
-  border-radius: 5px;
+  border-radius: var(--oatcake-border-radius);
 }
 
 img.rounded {
-  border-radius: 10px;
+  border-radius: var(--oatcake-border-radius);
 }
 
 /* Tables of contents. */
