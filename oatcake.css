@@ -384,7 +384,7 @@ kbd {
   background-color: var(--oatcake-kbd-background-color);
   border: 1px solid var(--oatcake-kbd-border-color);
   border-bottom-color: var(--oatcake-kbd-border-bottom-color);
-  border-radius: 3px;
+  border-radius: 5px;
   color: var(--oatcake-kbd-color);
   font-family: var(--oatcake-code-font-family);
   font-size: 12px;
@@ -558,7 +558,7 @@ code,
 samp {
   padding-left: 5px;
   padding-right: 5px;
-  border-radius: 3px;
+  border-radius: 5px;
   font-size: 16px;
   line-height: 18px;
 }
