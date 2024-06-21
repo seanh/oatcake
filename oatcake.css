@@ -19,6 +19,7 @@
   --oatcake-badge-color: #fff;
   --oatcake-badge-background-color: #343a40;
   --oatcake-badge-focus-border-color: rgba(52, 58, 64, .5);
+  --oatcake-blockquote-border-color: #2b90d9;
   --oatcake-border-radius: 7px;
 
   /* This is the System UI font stack from https://modernfontstacks.com/ */
@@ -320,7 +321,7 @@ q:after {
 
 blockquote {
   quotes: none;
-  border-left: 3px solid #2b90d9;
+  border-left: 3px solid var(--oatcake-blockquote-border-color);
   padding-left: 20px;
 }
 
