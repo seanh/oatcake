@@ -7,7 +7,6 @@
   --oatcake-pre-code-background-color: rgb(243, 243, 243);
   --oatcake-code-color: inherit;
   --oatcake-pre-code-color: inherit;
-  --oatcake-highlight-color: black;
   --oatcake-highlight-background-color: LemonChiffon;
   --oatcake-note-background-color: rgb(255, 243, 205);
   --oatcake-note-highlight-background-color: rgb(207, 244, 252);
@@ -289,7 +288,6 @@ summary {
 
 mark {
   background-color: var(--oatcake-highlight-background-color);
-  color: var(--oatcake-highlight-color);
 }
 
 mark samp,
