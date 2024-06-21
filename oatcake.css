@@ -691,7 +691,7 @@ pre samp {
   font-weight: 700;
   text-align: center;
   vertical-align: baseline;
-  border-radius: .25rem;
+  border-radius: 5px;
   transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
   /* Prevent badges and pills from offsetting the vertical rhythm in iOS Safari. */
   margin-bottom: -.3rem;
