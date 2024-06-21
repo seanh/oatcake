@@ -630,20 +630,19 @@ h6 kbd {
 }
 
 details,
-summary {
+details > summary {
   border: 1px solid var(--oatcake-pre-border-color);
 }
-summary {
-  border-bottom: none;
-}
+
 details {
   padding-left: calc(0.5 * var(--oatcake-body-line-height));
   padding-right: calc(0.5 * var(--oatcake-body-line-height));
-  padding-top: calc(var(--oatcake-body-line-height) - 2px);
+  padding-top: calc(var(--oatcake-body-line-height) - 3px);
   border-radius: var(--oatcake-border-radius);
 }
 
 details > summary {
+  border-bottom: none;
   cursor: pointer;
   height: var(--oatcake-body-line-height);
   background-color: var(--oatcake-pre-background-color);
@@ -655,7 +654,6 @@ details > summary {
 }
 
 details[open] > summary {
-  border-bottom: 1px solid var(--oatcake-pre-border-color);
   margin-bottom: var(--oatcake-body-line-height);
   border-bottom-left-radius: 0;
   border-bottom-right-radius: 0;
