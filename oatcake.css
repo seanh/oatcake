@@ -668,10 +668,8 @@ pre {
   padding-bottom: var(--oatcake-body-line-height);
   padding-left: calc(0.5 * var(--oatcake-body-line-height));
   padding-right: calc(0.5 * var(--oatcake-body-line-height));
-}
-
-pre {
   border: 1px solid var(--oatcake-pre-border-color);
+  padding-bottom: calc(var(--oatcake-body-line-height) - 2px);
 }
 
 pre,
