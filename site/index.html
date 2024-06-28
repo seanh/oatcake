@@ -13,7 +13,7 @@
         }
       }
       body.alternativeFonts {
-        --oatcake-font-family: ui-rounded, 'Hiragino Maru Gothic ProN', Quicksand, Comfortaa, Manjari, 'Arial Rounded MT', 'Arial Rounded MT Bold', Calibri, source-sans-pro, sans-serif;
+        --oatcake-font-family: 'Segoe Print', 'Bradley Hand', Chilanka, TSCu_Comic, casual, cursive;
       }
       .annotation {
         display: flex;
@@ -168,9 +168,9 @@ on those elements, for example:</p>
   }
 &lt;/style&gt;</code></pre>
 
-<p>For example click this button to change this page to a "rounded sans" font stack:</p>
+<p>For example click this button to change this page to a handwritten font stack:</p>
 
-<p style="text-align:center;"><button class="pill fonts"></button></p>
+<p style="text-align:center;"><button id="toggleFonts" class="pill"></button></p>
 
 <p>Here's the full list of font variables you can change:</p>
 
@@ -2380,7 +2380,22 @@ wrapping it over multiple lines.</p>
       });
     </script>
     <script src="lines/lines.js"></script>
-    <script src="toggle-fonts.js"></script>
+    <script>
+      function toggleFonts(event) {
+        if (document.body.classList.contains('alternativeFonts')) {
+          document.body.classList.remove('alternativeFonts');
+          event.target.textContent = 'Customise Fonts';
+        } else {
+          document.body.classList.add('alternativeFonts');
+          event.target.textContent = 'Reset to Default Fonts';
+        }
+      }
+      document.addEventListener("DOMContentLoaded", function() {
+        const button = document.querySelector('#toggleFonts');
+        button.textContent = 'Customise Fonts';
+        button.addEventListener('click', toggleFonts);
+      });
+    </script>
     <script>
       function adjustMediaSizes() {
         let images = Array.prototype.slice.call(document.getElementsByTagName("img"), 0);
