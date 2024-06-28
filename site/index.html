@@ -2047,6 +2047,13 @@ It looks like this:</p>
 
 <p class="note">This is a paragraph that stands out as a note.</p>
 
+<p><code>&lt;aside class="note"&gt;note text&lt;/aside&gt;</code> also works and
+<a href="https://html.spec.whatwg.org/multipage/sections.html#the-aside-element"><code>&lt;aside&gt;</code></a>
+has semantic meaning in HTML: it's for content that is separate from the main
+content of the page and not part of the main flow of the document:</p>
+
+<aside class="note">This is an aside note.</aside>
+
 <p>A multi-line paragraph note will also work nicely:</p>
 
 <p class="note">Morbi sed facilisis nunc. Quisque dictum lectus vitae purus
@@ -2125,8 +2132,8 @@ like this: <code>&lt;p class="lead note"&gt;</code></p>
 
 <p>You can put multiple paragraphs and other arbitrary content (headings,
 block quotes, lists, code blocks, images&hellip;) in a note by putting the
-<code>note</code> class on a containing <code>&lt;div&gt;</code>.
-For example a note that starts with a lead paragraph then continues:</p>
+<code>note</code> class on a containing <code>&lt;div&gt;</code> or <code>&lt;aside&gt;</code>.
+Here's some examples:</p>
 
 <div class="note">
   <p class="lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit.
@@ -2139,13 +2146,6 @@ For example a note that starts with a lead paragraph then continues:</p>
   <p>In egestas vel enim non interdum. Curabitur sed nisi scelerisque, suscipit
   velit in, ornare velit. Praesent laoreet bibendum ipsum nec elementum.</p>
 </div>
-
-<p><code>&lt;aside class="note"&gt;</code> would also work and
-<a href="https://html.spec.whatwg.org/multipage/sections.html#the-aside-element"><code>&lt;aside&gt;</code></a>
-has semantic meaning in HTML: it's for content that is separate from the main
-content of the page and not part of the main flow of the document.</p>
-
-<p>Here's some more examples of things you can do with <code>&lt;div&gt;</code> or <code>&lt;aside&gt;</code> notes&hellip;</p>
 
 <p><code>&lt;h4&gt;</code> headings work well in notes:</p>
 
