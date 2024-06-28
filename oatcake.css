@@ -9,9 +9,6 @@
   --oatcake-pre-border-color: #dee2e6;
   --oatcake-pre-color: inherit;
   --oatcake-highlight-background-color: LemonChiffon;
-  --oatcake-note-background-color: rgb(255, 243, 205);
-  --oatcake-note-border-color: #ffe69c;
-  --oatcake-note-highlight-background-color: rgb(207, 244, 252);
   --oatcake-kbd-color: #444d56;
   --oatcake-kbd-background-color: #fafbfc;
   --oatcake-kbd-border-color: #c6cbd1;
@@ -760,8 +757,8 @@ button.pill:focus {
 }
 
 .note {
-  background-color: var(--oatcake-note-background-color);
-  border: 1px solid var(--oatcake-note-border-color);
+  background-color: var(--oatcake-pre-background-color);
+  border: 1px solid var(--oatcake-pre-border-color);
 
   border-radius: var(--oatcake-border-radius);
 
@@ -770,10 +767,6 @@ button.pill:focus {
 
   padding-left: calc(var(--oatcake-body-line-height) * 0.5);
   padding-right: calc(var(--oatcake-body-line-height) * 0.5);
-}
-
-.note mark {
-  background-color: var(--oatcake-note-highlight-background-color);
 }
 
 .note>*:last-child {
