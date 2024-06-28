@@ -662,7 +662,6 @@ pre {
   overflow: auto;
   border-radius: var(--oatcake-border-radius);
   padding-top: var(--oatcake-body-line-height);
-  padding-bottom: var(--oatcake-body-line-height);
   padding-left: calc(0.5 * var(--oatcake-body-line-height));
   padding-right: calc(0.5 * var(--oatcake-body-line-height));
   border: 1px solid var(--oatcake-pre-border-color);
