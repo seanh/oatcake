@@ -646,8 +646,8 @@ details > summary {
   height: var(--oatcake-body-line-height);
   background-color: var(--oatcake-pre-background-color);
   margin-top: calc(-1 * calc(var(--oatcake-body-line-height)));
-  margin-left: -13px;
-  margin-right: -13px;
+  margin-left: calc(-0.5 * var(--oatcake-body-line-height) - 1px);
+  margin-right: calc(-0.5 * var(--oatcake-body-line-height) - 1px);
   padding: calc(0.5 * var(--oatcake-body-line-height));
   border-radius: var(--oatcake-border-radius);
 }
