@@ -2164,9 +2164,11 @@ like this: <code>&lt;p class="lead note"&gt;</code></p>
 
 <h3>Badges and pills</h3>
 
-<p>Oatcake provides badges and pills that you can use for tags and other UI
-elements, just create a <code>&lt;span&gt;</code> with the CSS class
-<code>badge</code> or <code>pill</code>:</p>
+<p>Oatcake provides badges and pills that you can use for things like counts,
+labels and tags. Just add the CSS class <code>badge</code> or <code>pill</code>
+to a <code>&lt;span&gt;</code>, like this:
+<code class="nowrap">&lt;span class="badge"&gt;Badge text&lt;/span&gt;</code> or
+<code class="nowrap">&lt;span class="pill"&gt;Pill text&lt;/span&gt;</code>:</p>
 
 <p><span class="badge">Badge</span> <span class="pill">Pill</span></p>
 
@@ -2196,7 +2198,7 @@ wrapping it over multiple lines.</p>
   <li>Third list item <span class="badge">32</span></li>
 </ul>
 
-<p>Here's a use of pills used to annotate lines in a code block:</p>
+<p>Here's an example use of pills, to annotate lines in a code block:</p>
 
 <pre><code>class MyError(Exception): <span class="pill">1</span>
     def __init__(self, status_code, reason):
@@ -2219,7 +2221,7 @@ wrapping it over multiple lines.</p>
 
 <p>As with note boxes, it was tempting to add a variety of different colour
 choices for badges and pills but this would be distracting and would make it
-harder to add dark mode and multiple colour schemes.</p>
+harder to add dark mode and multiple colour schemes in future.</p>
 
 <h2 class="notoc">Footnotes</h2>
 
