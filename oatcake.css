@@ -18,8 +18,8 @@
   --oatcake-kbd-border-bottom-color: #959dat;
   --oatcake-badge-background-color: #343a40;
   --oatcake-badge-color: #fff;
-  --oatcake-badge-focus-border-color: rgba(52, 58, 64, .5);
   --oatcake-blockquote-border-color: #2b90d9;
+  --oatcake-badge-focus-border-color: #2b90d9;
 
   /* This is the System UI font stack from https://modernfontstacks.com/ */
   --oatcake-body-font-family: system-ui, sans-serif;
@@ -744,12 +744,16 @@ a.pill:hover {
 }
 
 a.badge:focus,
-a.pill:focus {
+a.pill:focus,
+button.badge:focus,
+button.pill:focus {
   outline: 0;
 }
 
 a.badge:focus,
-a.pill:focus {
+a.pill:focus,
+button.badge:focus,
+button.pill:focus {
   box-shadow: 0 0 0 .2rem var(--oatcake-badge-focus-border-color);
 }
 
