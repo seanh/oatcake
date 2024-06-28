@@ -13,7 +13,7 @@
         }
       }
       body.alternativeFonts {
-        --oatcake-body-font-family: ui-rounded, 'Hiragino Maru Gothic ProN', Quicksand, Comfortaa, Manjari, 'Arial Rounded MT', 'Arial Rounded MT Bold', Calibri, source-sans-pro, sans-serif;
+        --oatcake-font-family: ui-rounded, 'Hiragino Maru Gothic ProN', Quicksand, Comfortaa, Manjari, 'Arial Rounded MT', 'Arial Rounded MT Bold', Calibri, source-sans-pro, sans-serif;
       }
       .annotation {
         display: flex;
@@ -153,8 +153,18 @@ stylesheet that follows <code>oatcake.css</code>:</p>
 
 <pre><code>&lt;style&gt;
   :root {
-    --oatcake-body-font-family: 'ui-rounded, source-sans-pro, sans-serif';
-    --oatcake-code-font-family: '"Nimbus Mono PS", "Courier New", monospace';
+    --oatcake-font-family: 'ui-rounded, source-sans-pro, sans-serif';
+    --oatcake-monospaced-font-family: '"Nimbus Mono PS", "Courier New", monospace';
+  }
+&lt;/style&gt;</code></pre>
+
+<p>Or to change the fonts only within certain elements set the variables only
+on those elements, for example:</p>
+
+<pre><code>&lt;style&gt;
+  #myElement {
+    --oatcake-font-family: 'ui-rounded, source-sans-pro, sans-serif';
+    --oatcake-monospaced-font-family: '"Nimbus Mono PS", "Courier New", monospace';
   }
 &lt;/style&gt;</code></pre>
 
@@ -165,26 +175,20 @@ stylesheet that follows <code>oatcake.css</code>:</p>
 <p>Here's the full list of font variables you can change:</p>
 
 <dl>
-  <dt><code>--oatcake-body-font-family</code></dt>
-  <dd>The <code>font-family</code> for the main <code>&lt;body&gt;</code> font</dd>
+  <dt><code>--oatcake-font-family</code></dt>
+  <dd>The <code>font-family</code> for the main <code>&lt;body&gt;</code> text</dd>
 
-  <dt><code>--oatcake-body-font-size</code></dt>
-  <dd>The <code>font-size</code> for the main <code>&lt;body&gt;</code> font</dd>
+  <dt><code>--oatcake-font-size</code></dt>
+  <dd>The <code>font-size</code> for the main <code>&lt;body&gt;</code> text</dd>
 
-  <dt><code>--oatcake-body-line-height</code></dt>
-  <dd>The <code>line-height</code> for the main <code>&lt;body&gt;</code> font</dd>
-
-  <dt><code>--oatcake-body-font-weight</code></dt>
-  <dd>The <code>font-weight</code> for the main <code>&lt;body&gt;</code> font</dd>
-
-  <dt><code>--oatcake-bold-font-weight</code></dt>
-  <dd>The <code>font-weight</code> for bold text and headings</dd>
+  <dt><code>--oatcake-line-height</code></dt>
+  <dd>The <code>line-height</code> for the main <code>&lt;body&gt;</code> text</dd>
 
   <dt><code>--oatcake-small-font-size</code></dt>
-  <dd>The <code>font-size</code> for <code>&lt;small&gt;</code> elements</dd>
+  <dd>The <code>font-size</code> for small text: <code>&lt;small&gt;</code> elements, the CSS class <code>small</code>, subscripts (<code>&lt;sub&gt;</code>) and superscripts (<code>&lt;sup&gt;</code>), <a href="#badges-and-pills">badges and pills</a></dd>
 
-  <dt><code>--oatcake-code-font-family</code></dt>
-  <dd>The <code>font-family</code> for code spans, preformatted code blocks, etc</dd>
+  <dt><code>--oatcake-monospaced-font-family</code></dt>
+  <dd>The <code>font-family</code> for monospaced text</dd>
 </dl>
 </details>
 
@@ -210,6 +214,7 @@ variables in your own custom stylesheet that follows <code>oatcake.css</code>:</
 
 <p>Or to change the colours only within certain elements set the variables only
 on those elements, for example:</p>
+
 <pre><code>&lt;style&gt;
   #myElement {
     --oatcake-background-color: black;
@@ -2382,7 +2387,7 @@ wrapping it over multiple lines.</p>
         let videos = Array.prototype.slice.call(document.getElementsByTagName("video"), 0);
         let media = images.concat(videos);
 
-        let lineHeight = parseInt(getComputedStyle(document.documentElement).getPropertyValue('--oatcake-body-line-height'));
+        let lineHeight = parseInt(getComputedStyle(document.documentElement).getPropertyValue('--oatcake-line-height'));
 
         for (let element of media) {
           if (element.classList.contains('noresize')) {
