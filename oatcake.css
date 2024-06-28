@@ -190,7 +190,7 @@ svg:not(li svg:first-child),
 iframe:not(li iframe:first-child),
 video:not(li video:first-child),
 audio:not(li audio:first-child) {
-  margin-top: var(--oatcake-body-line-height);
+  margin-top: calc(2 * var(--oatcake-body-line-height));
 }
 
 img,
