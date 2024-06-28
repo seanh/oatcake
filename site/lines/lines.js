@@ -1,26 +1,38 @@
+function setButtonsText(textContent) {
+  document.querySelectorAll('button.lines').forEach(function(button) {
+    button.textContent = textContent;
+  })
+}
+
 function toggleLines(event) {
   if (document.body.classList.contains('lines')) {
     document.body.classList.add('linesdouble');
     document.body.classList.remove('lines');
-    event.target.textContent = 'Hide Lines';
+    setButtonsText('Hide Lines');
   } else if (document.body.classList.contains('linesdouble')) {
     document.body.classList.remove('linesdouble');
-    event.target.textContent = 'Show Lines';
+    setButtonsText('Show Lines');
   } else {
     document.body.classList.add('lines');
-    event.target.textContent = 'Show Double Lines';
+    setButtonsText('Show Double Lines');
   }
 }
+
 document.addEventListener("DOMContentLoaded", function() {
   const params = new URLSearchParams(window.location.search);
+  let textContent = 'Show Lines';
+
   if (params.has('lines')) {
     document.body.classList.add('lines');
+    textContent = 'Show Double Lines';
   } else if (params.has('linesdouble')) {
     document.body.classList.add('linesdouble');
+    textContent = 'Hide Lines';
   }
 
+  setButtonsText(textContent);
+
   document.querySelectorAll('button.lines').forEach(function(button) {
-    button.textContent = 'Show Lines';
     button.addEventListener('click', toggleLines);
   })
 });
