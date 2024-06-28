@@ -595,8 +595,10 @@ h3 samp,
 h4 samp,
 h5 samp,
 h6 samp {
+  color: inherit;
   background-color: inherit;
   font-size: inherit;
+  padding: 0;
 }
 
 /* I've no idea why but when I reduce the font-size of `<mark>`'s within
