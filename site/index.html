@@ -2107,8 +2107,6 @@ own CSS classes to do so. For example:</p>
 
 <h4>Creative ways to use note boxes</h4>
 
-<p>Here's a few things you can do with note boxes&hellip;</p>
-
 <p>You can put the <code>note</code> class directly on an <code>&lt;ol&gt;</code>
 or <code>&lt;ul&gt;</code> to style a list as a note:
 
@@ -2128,7 +2126,7 @@ like this: <code>&lt;p class="lead note"&gt;</code></p>
 <p>You can put multiple paragraphs and other arbitrary content (headings,
 block quotes, lists, code blocks, images&hellip;) in a note by putting the
 <code>note</code> class on a containing <code>&lt;div&gt;</code>.
-For example a note that starts with a lead paragraph:</p>
+For example a note that starts with a lead paragraph then continues:</p>
 
 <div class="note">
   <p class="lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit.
@@ -2136,17 +2134,18 @@ For example a note that starts with a lead paragraph:</p>
   lectus id rutrum.</p>
 
   <p>Pellentesque non lacus vel quam lobortis tincidunt. In dignissim arcu eu
-  purus porta finibus. Quisque bibendum erat nec porttitor tincidunt. In
-  egestas vel enim non interdum. Curabitur sed nisi scelerisque, suscipit velit
-  in, ornare velit. Praesent laoreet bibendum ipsum nec elementum.</p>
+  purus porta finibus. Quisque bibendum erat nec porttitor tincidunt.</p>
+
+  <p>In egestas vel enim non interdum. Curabitur sed nisi scelerisque, suscipit
+  velit in, ornare velit. Praesent laoreet bibendum ipsum nec elementum.</p>
 </div>
 
-<p><a href="https://html.spec.whatwg.org/multipage/sections.html#the-aside-element"><code>&lt;aside class="note"&gt;</code></a>
-would also work and has semantic meaning: it's for content that is
-separate from the main content of the page and not part of the main flow of the
-document.</p>
+<p><code>&lt;aside class="note"&gt;</code> would also work and
+<a href="https://html.spec.whatwg.org/multipage/sections.html#the-aside-element"><code>&lt;aside&gt;</code></a>
+has semantic meaning in HTML: it's for content that is separate from the main
+content of the page and not part of the main flow of the document.</p>
 
-<p>Here's some examples of things you can do with <code>&lt;div&gt;</code> or <code>&lt;aside&gt;</code> notes&hellip;</p>
+<p>Here's some more examples of things you can do with <code>&lt;div&gt;</code> or <code>&lt;aside&gt;</code> notes&hellip;</p>
 
 <p><code>&lt;h4&gt;</code> headings work well in notes:</p>
 
@@ -2193,9 +2192,17 @@ note into segments:</p>
 </div>
 
 <div class="note">
-  <p>Or an image:</p>
+  <p>An image in a note block:</p>
 
   <img src="media/oats.jpg" alt="A bowl of oats" title="A bowl of oats" />
+
+  <p>Of course videos also work:</p>
+
+  <video controls muted playsinline src="media/train.mp4" poster="media/train.png" /></video>
+
+  <p>And audio:</p>
+
+  <audio controls src="media/apollo11.mp3"></audio>
 </div>
 
 <div class="note">
