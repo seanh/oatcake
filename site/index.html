@@ -23,6 +23,11 @@
         background-color: rgb(248, 215, 218);
         border-color: #f1aeb5;
       }
+      .primary.badge,
+      .primary.pill {
+        --oatcake-badge-background-color: rgb(13, 110, 253);
+        --oatcake-badge-color: white;
+      }
     </style>
     <link rel="apple-touch-icon" sizes="180x180" href="media/favicons/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="media/favicons/favicon-32x32.png">
@@ -2284,6 +2289,34 @@ with hover and focus states:</p>
   <button class="pill">A <code>&lt;button&gt;</code> pill</button>
 </p>
 
+<p>As with note boxes, it would be easy to add a variety of different colour
+choices for badges and pills but this would be distracting and would make it
+harder to add dark mode and multiple colour schemes in future.</p>
+
+<p>If you do want to make badges and pills in more interesting colours you can
+add your own CSS classes to do so.  For example:</p>
+
+<pre><code>&lt;style&gt;
+  .primary.badge,
+  .primary.pill {
+    --oatcake-badge-background-color: rgb(13, 110, 253);
+    --oatcake-badge-color: white;
+  }
+&lt;/style&gt;</code></pre>
+
+<p>Now this:</p>
+
+<pre><code>&lt;span class="primary badge"&gt;Primary Badge&lt;/span&gt;
+&lt;span class="primary pill"&gt;Primary Pill&lt;/span&gt;</code></pre>
+
+<p>&hellip;will render like this:</p>
+
+<p>
+  <span class="primary badge">Primary Badge</span>
+  <span class="primary pill">Primary Pill</span>
+</p>
+
+
 <p>Badges and pills can be used inside paragraphs (or list items, headings etc):</p>
 
 <h3 class="noanchor" style="padding-top: 0;">Heading <span class="pill">Pill</span></h3>
@@ -2319,10 +2352,6 @@ wrapping it over multiple lines.</p>
   <code>__init__()</code> method, you should always call
   <code>super().__init__()</code>.</p>
 </div>
-
-<p>As with note boxes, it was tempting to add a variety of different colour
-choices for badges and pills but this would be distracting and would make it
-harder to add dark mode and multiple colour schemes in future.</p>
 
 <h2 class="notoc">Footnotes</h2>
 
