@@ -20,8 +20,8 @@
         gap: .5em;
       }
       .warning.note {
-        --oatcake-pre-background-color: rgb(248, 215, 218);
-        --oatcake-pre-border-color: #f1aeb5;
+        --oatcake-block-background-color: rgb(248, 215, 218);
+        --oatcake-border-color: #f1aeb5;
       }
       .primary.badge,
       .primary.pill {
@@ -203,43 +203,43 @@ variables in your own custom stylesheet that follows <code>oatcake.css</code>:</
 
 <pre><code>&lt;style&gt;
   :root {
-    --oatcake-body-background-color: black;
-    --oatcake-body-color: white;
+    --oatcake-background-color: black;
+    --oatcake-color: white;
+  }
+&lt;/style&gt;</code></pre>
+
+<p>Or to change the colours only within certain elements set the variables only
+on those elements, for example:</p>
+<pre><code>&lt;style&gt;
+  #myElement {
+    --oatcake-background-color: black;
+    --oatcake-color: white;
   }
 &lt;/style&gt;</code></pre>
 
 <p>Here's the full list of colour variables you can change:</p>
 
 <dl>
-  <dt><code>--oatcake-body-background-color</code></dt>
-  <dd>The <code>background-color</code> of the main <code>&lt;body&gt;</code></dd>
+  <dt><code>--oatcake-background-color</code></dt>
+  <dd>The <code>background-color</code> of the page <code>&lt;body&gt;</code></dd>
 
-  <dt><code>--oatcake-body-color</code></dt>
-  <dd>The foreground <code>color</code> of the main <code>&lt;body&gt;</code> text</dd>
-
-  <dt><code>--oatcake-bold-color</code></dt>
-  <dd>The <code>color</code> of bold text</dd>
+  <dt><code>--oatcake-color</code></dt>
+  <dd>The foreground <code>color</code> of the page <code>&lt;body&gt;</code> text</dd>
 
   <dt><code>--oatcake-secondary-color</code></dt>
-  <dd>The <code>color</code> of <a href="#secondary-text">secondary text</a></dd>
+  <dd>The foreground <code>color</code> of <a href="#secondary-text">secondary text</a> and <a href="#figures">figure captions</a></dd>
 
   <dt><code>--oatcake-code-background-color</code></dt>
-  <dd>The <code>background-color</code> of <code>&lt;code&gt;</code> spans</dd>
+  <dd>The <code>background-color</code> of inline <code>&lt;code&gt;</code> and <code>&lt;samp&gt;</code> elements</dd>
 
-  <dt><code>--oatcake-code-color</code></dt>
-  <dd>The foreground <code>color</code> of <code>&lt;code&gt;</code> spans</dd>
+  <dt><code>--oatcake-block-background-color</code></dt>
+  <dd>The <code>background-color</code> of <a href="#preformatted-text">preformatted text blocks</a>, <a href="#code-blocks">code blocks</a>, <a href="#disclosure-widgets-details-and-summary">disclosure  widgets</a> and <a href="#note-boxes">note boxes</a></dd>
 
-  <dt><code>--oatcake-pre-background-color</code></dt>
-  <dd>The <code>background-color</code> of preformatted text blocks, code blocks, disclosure  widgets and note boxes</dd>
-
-  <dt><code>--oatcake-pre-border-color</code></dt>
-  <dd>The <code>border-color</code> of preformatted text blocks, code blocks, disclosure  widgets and note boxes</dd>
-
-  <dt><code>--oatcake-pre-color</code></dt>
-  <dd>The foreground <code>color</code> of preformatted text blocks, code blocks, disclosure  widgets and note boxes</dd>
+  <dt><code>--oatcake-border-color</code></dt>
+  <dd>The <code>border-color</code> of <a href="#preformatted-text">preformatted text blocks</a>, <a href="#code-blocks">code blocks</a>, <a href="#disclosure-widgets-details-and-summary">disclosure  widgets</a>, <a href="#note-boxes">note boxes</a>, <a href="#images">images</a>, <a href="#videos">videos</a> and <a href="#horizontal-rules">horizontal rules</a></dd>
 
   <dt><code>--oatcake-highlight-background-color</code></dt>
-  <dd>The <code>background-color</code> of highlighted text</dd>
+  <dd>The <code>background-color</code> of highlighted text (<code>&lt;mark&gt;</code> elements)</dd>
 
   <dt><code>--oatcake-kbd-background-color</code></dt>
   <dd>The <code>background-color</code> of <a href="#kbd-and-samp"><code>&lt;kbd&gt;</code> elements</a></dd>
@@ -260,10 +260,10 @@ variables in your own custom stylesheet that follows <code>oatcake.css</code>:</
   <dd>The foreground <code>color</code> of <a href="#badges-and-pills">badges and pills</a></dd>
 
   <dt><code>--oatcake-badge-focus-border-color</code></dt>
-  <dd>The focus border colour for link badges</dd>
+  <dd>The focus border colour of <a href="#badges-and-pills">badges and pills</a></dd>
 
   <dt><code>--oatcake-blockquote-border-color</code></dt>
-  <dd>The color of the borders to the left of <a href="#blockquotes">block quotes</a></dd>
+  <dd>The colour of the borders to the left of <a href="#blockquotes">block quotes</a></dd>
 </dl>
 </details>
 
@@ -2081,7 +2081,7 @@ help:</p>
 beginning a note with a label can help convey its semantics.
 </p>
 
-<h4>Note box colors</h4>
+<h4>Note box colours</h4>
 
 <p>In-line with Oatcake's consistent and unshowy attitude note boxes are styled the same as
 <a href="#preformatted-text">preformatted text blocks</a>,
@@ -2101,8 +2101,8 @@ own CSS classes to do so. For example:</p>
 
 <pre><code>&lt;style&gt;
   .warning.note {
-    --oatcake-pre-background-color: rgb(248, 215, 218);
-    --oatcake-pre-border-color: #f1aeb5;
+    --oatcake-block-background-color: rgb(248, 215, 218);
+    --oatcake-border-color: #f1aeb5;
   }
 &lt;/style&gt;</code></pre>
 
