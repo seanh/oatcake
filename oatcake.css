@@ -795,13 +795,14 @@ kbd  {
   white-space: nowrap;
 }
 
-img.border {
+img.border,
+video.border {
   border: 1px solid var(--oatcake-pre-border-color);
   margin-bottom: calc(var(--oatcake-body-line-height) * 2 - 2px); /* Prevent the border from offsetting the vertical rhythm. */
   border-radius: var(--oatcake-border-radius);
 }
 
-img.rounded {
+.rounded {
   border-radius: var(--oatcake-border-radius);
 }
 
