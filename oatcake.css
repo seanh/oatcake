@@ -797,7 +797,7 @@ kbd  {
 
 img.border {
   border: 1px solid var(--oatcake-pre-border-color);
-  margin-bottom: -2px; /* Prevent the border from offsetting the vertical rhythm. */
+  margin-bottom: calc(var(--oatcake-body-line-height) * 2 - 2px); /* Prevent the border from offsetting the vertical rhythm. */
   border-radius: var(--oatcake-border-radius);
 }
 
