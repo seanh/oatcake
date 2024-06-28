@@ -15,6 +15,10 @@
       body.alternativeFonts {
         --oatcake-body-font-family: ui-rounded, 'Hiragino Maru Gothic ProN', Quicksand, Comfortaa, Manjari, 'Arial Rounded MT', 'Arial Rounded MT Bold', Calibri, source-sans-pro, sans-serif;
       }
+      .annotation {
+        display: flex;
+        gap: .5em;
+      }
     </style>
     <link rel="apple-touch-icon" sizes="180x180" href="media/favicons/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="media/favicons/favicon-32x32.png">
@@ -2200,13 +2204,18 @@ wrapping it over multiple lines.</p>
         self.status_code = status_code
         self.reason = reason</code></pre>
 
-<p><span class="pill">1</span> In Python, all custom exception classes should
-inherit from the built-in <code>Exception</code> class (or one of its
-subclasses).</p>
+<div class="annotation">
+  <div><span class="pill">1</span></div>
+  <p>In Python, all custom exception classes should inherit from the built-in
+  <code>Exception</code> class (or one of its subclasses).</p>
+</div>
 
-<p><span class="pill">2</span> When inheriting from <code>Exception</code>,
-if you've written your own <code>__init__()</code> method,
-you should always call <code>super().__init__()</code>.</p>
+<div class="annotation">
+  <div><span class="pill">2</span></div>
+  <p>When inheriting from <code>Exception</code>, if you've written your own
+  <code>__init__()</code> method, you should always call
+  <code>super().__init__()</code>.</p>
+</div>
 
 <p>As with note boxes, it was tempting to add a variety of different colour
 choices for badges and pills but this would be distracting and would make it
