@@ -27,6 +27,15 @@
         --oatcake-badge-background-color: rgb(13, 110, 253);
         --oatcake-badge-color: white;
       }
+      samp.custom {
+        border: 1px dashed #999;
+      }
+      pre.custom code {
+        font-weight: bold;
+      }
+      pre.custom samp {
+        color: #999;
+      }
     </style>
     <link rel="apple-touch-icon" sizes="180x180" href="media/favicons/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="media/favicons/favicon-32x32.png">
@@ -1608,6 +1617,21 @@ think two different styles for these would be likely to clearly say "this is
 code" whereas "this is output" to the reader, and too many different styles
 would only be distracting and make more design work and CSS.</p>
 
+<details>
+  <summary>How to make <code>&lt;samp&gt;</code> and <code>&lt;code&gt;</code> look different</summary>
+
+<p>If you want <code>&lt;samp&gt;</code>'s and <code>&lt;code&gt;</code>'s to look different
+you can easily get that by adding a little custom CSS on top of Oatcake. For example:</p>
+
+<pre><code>&lt;style&gt;
+  samp {
+    border: 1px dashed #999;
+  }
+&lt;/style&gt;</code></pre>
+
+<p>Now <code>&lt;samp&gt;sample output&lt;/samp&gt;</code> renders like this: <samp class="custom">sample output</samp></p>
+</details>
+
 <h2 id="kbd">User input with <code>&lt;kbd&gt;</code></h2>
 
 <p>To represent user input from a keyboard or any other text entry device wrap
@@ -1745,6 +1769,28 @@ except for the <code>&lt;kbd&gt;</code>.</p>
 
 <pre><samp>&gt; </samp><code>console.log(2.3 + 2.4)</code> <kbd>Enter</kbd>
 <samp>4.699999999999999</samp></pre>
+
+<details>
+  <summary>How to make <code>&lt;samp&gt;</code> and <code>&lt;code&gt;</code> look different in preformatted blocks</summary>
+
+  <p>If you want <code>&lt;samp&gt;</code>'s and <code>&lt;code&gt;</code>'s to look different
+  in a preformatted text block you can easily get that by adding a little custom CSS on top of Oatcake.
+  For example:</p>
+
+<pre><code>&lt;style&gt;
+  pre code {
+    font-weight: bold;
+  }
+  pre samp {
+    color: #999;
+  }
+&lt;style&gt;</code></pre>
+
+<p>Now the previous example will render like this:</p>
+
+<pre class="custom"><samp>&gt; </samp><code>console.log(2.3 + 2.4)</code> <kbd>Enter</kbd>
+<samp>4.699999999999999</samp></pre>
+</details>
 
 <h2>Other inline elements in preformatted, code and sample output blocks</h2>
 
