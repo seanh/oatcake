@@ -1757,6 +1757,14 @@ it in <a href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#
   <a href="#overflow">overflow the container</a>).</p>
 </details>
 
+<details>
+  <summary>Tip: avoid long <code>&lt;kbd&gt;</code>'s</summary>
+
+  <p>Oatcake's CSS prevents line-wrapping within a <code>&lt;kbd&gt;</code>
+  (even if there are spaces) so don't make <code>&lt;kbd&gt;</code>'s too long
+  or they'll overflow their container and break the layout.</p>
+</details>
+
 <h2>Preformatted text</h2>
 
 <p>Preformatted text blocks
@@ -2084,14 +2092,6 @@ lines if necessary to prevent overflow.</p>
 you, these use a horizontal scrollbar instead:
 
 <pre><code>url = 'https://github.com/seanh/oatcake/commit/8675ffcb168b1d76d708c84a2821c20a3f99e86d'</code></pre>
-
-<details>
-  <summary>Tip: avoid long text in a <code>&lt;kbd&gt;</code> or <code>&lt;span class="badge"&gt;</code></summary>
-
-  <p>Oatcake's CSS prevents line-wrapping within a <code>&lt;kbd&gt;</code> or
-  <code>&lt;span class="badge"&gt;</code> (even if there are spaces) so don't make these too
-  long or they'll overflow their container and break the layout.</p>
-</details>
 
 <h2>CSS classes</h2>
 
@@ -2481,7 +2481,7 @@ with hover and focus states:</p>
 
 <p>As with <code>&lt;kbd&gt;</code>'s, if your badge contains
 <span class="badge">more than one word</span> Oatcake prevents browsers from
-wrapping it over multiple lines.</p>
+wrapping it over multiple lines (so don't make badges too long).</p>
 
 <h4>Badge colours</h4>
 
