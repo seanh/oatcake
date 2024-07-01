@@ -1569,9 +1569,20 @@ horizontal width available for easier scrubbing:</p>
 
 <p>Finally, the same extra vertical breathing room is also applied to embedded
 pages created with <a href="https://html.spec.whatwg.org/multipage/iframe-embed-object.html#the-iframe-element"><code>&lt;iframe&gt;</code></a>
-(the border here is part of the document being iframed, not Oatcake's styling):</p>
+(the background color here is part of the embedded page, not Oatcake's styling):</p>
 
 <iframe src="iframe.html" style="width: 100%; height: 120px;"></iframe>
+
+<p>As with images and videos you can add the CSS class <code>rounded</code> to an iframe to give it rounded corners:</p>
+
+<iframe class="rounded" src="iframe.html" style="width: 100%; height: 120px;"></iframe>
+
+<p>Or you can add the CSS class <code>border</code> to an iframe to give it a
+border, which might be useful if the embedded page has the same background
+colour as the parent page and you want to show where the edges of the embedded
+page are:</p>
+
+<iframe class="border" src="iframe_white.html" style="width: 100%; height: 120px;"></iframe>
 
 <h2 id="kbd-and-samp">Input and output with <code>&lt;kbd&gt;</code> and <code>&lt;samp&gt;</code></h2>
 

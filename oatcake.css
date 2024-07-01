@@ -740,6 +740,7 @@ kbd  {
   white-space: nowrap;
 }
 
+iframe.border,
 img.border,
 video.border {
   border: 1px solid var(--oatcake-border-color);
