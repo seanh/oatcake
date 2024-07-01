@@ -1730,6 +1730,14 @@ it in <a href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#
 <p>All three ways are equally valid.</p>
 
 <details>
+  <summary>Tip: avoid long <code>&lt;kbd&gt;</code>'s</summary>
+
+  <p>Oatcake's CSS prevents line-wrapping within a <code>&lt;kbd&gt;</code>
+  (even if there are spaces) so don't make <code>&lt;kbd&gt;</code>'s too long
+  or they'll overflow their container and break the layout.</p>
+</details>
+
+<details>
   <summary>Tip: use non-breaking spaces between <code>&lt;kbd&gt;</code>'s</summary>
 
   <p>Oatcake prevents browsers from wrapping a <code>&lt;kbd&gt;</code>
@@ -1755,14 +1763,6 @@ it in <a href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#
   default because often you do want them to wrap, especially if they contain
   long strings that might otherwise
   <a href="#overflow">overflow the container</a>).</p>
-</details>
-
-<details>
-  <summary>Tip: avoid long <code>&lt;kbd&gt;</code>'s</summary>
-
-  <p>Oatcake's CSS prevents line-wrapping within a <code>&lt;kbd&gt;</code>
-  (even if there are spaces) so don't make <code>&lt;kbd&gt;</code>'s too long
-  or they'll overflow their container and break the layout.</p>
 </details>
 
 <h2>Preformatted text</h2>
