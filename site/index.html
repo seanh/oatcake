@@ -1670,10 +1670,15 @@ int main()
     printf("Hello World!\n");
 }</code></pre>
 
+<h2>Sample output blocks</h2>
+
 <p>Oatcake also supports <code>&lt;pre&gt;&lt;samp&gt;</code> blocks. These
 have a different semantic meaning in HTML: they represent a block of computer
-<em>output</em>.  Oatcake styles <code>&lt;pre&gt;&lt;samp&gt;</code> the same
-as <code>&lt;pre&gt;&lt;code&gt;</code>:</p>
+<em>output</em> rather than input code.
+Again trying to avoid having too many different visual styles Oatcake styles
+<code>&lt;pre&gt;&lt;samp&gt;</code> the same as
+<code>&lt;pre&gt;&lt;code&gt;</code>, letting the difference be semantic
+only:</p>
 
 <pre><samp>$ gcc -g -o helloworld -ansi helloworld.c
 $ gdb helloworld
@@ -1681,12 +1686,22 @@ $ gdb helloworld
 Hello World
 (gdb) quit</samp></pre>
 
+<h2>Combining <code>&lt;pre&gt;</code>, <code>&lt;code&gt;</code>, <code>&lt;samp&gt;</code> and <code>&lt;kbd&gt;</code></h2>
+
 <p><code>&lt;code&gt;</code>, <code>&lt;samp&gt;</code> and
 <code>&lt;kbd&gt;</code> can be mixed together in a single
-<code>&lt;pre&gt;</code>, with different semantic meanings:</p>
+<code>&lt;pre&gt;</code> block, with different semantic meanings.
+For example here the prompt output by the terminal (<code>&gt; </code>) is a <code>&lt;samp&gt;</code>,
+the code entered by the user (<code>console.log(2.3 + 2.4)</code>) is a <code>&lt;code&gt;</code> element,
+the <kbd>Enter</kbd> key clicked by the user to submit the code is a <code>&lt;kbd&gt;</code>,
+and finally the result output by the terminal (<samp>4.699999999999999</samp>) is another <code>&lt;samp&gt;</code>.
+<code>&lt;code&gt;</code> and <code>&lt;samp&gt;</code> look the same in Oatcake so the difference is mostly only semantic,
+except for the <code>&lt;kbd&gt;</code>.</p>
 
-<pre><code>&gt; console.log(2.3 + 2.4)</code> <kbd>Enter</kbd>
+<pre><samp>&gt; </samp><code>console.log(2.3 + 2.4)</code> <kbd>Enter</kbd>
 <samp>4.699999999999999</samp></pre>
+
+<h2>Other inline elements in preformatted, code and sample output blocks</h2>
 
 <p>You can use links and other inline elements in preformatted, code and sample
 output blocks: bold, italics, underline, strikethrough, small text. Here's one
