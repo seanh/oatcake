@@ -1596,13 +1596,22 @@ page are:</p>
 
 <iframe class="border" src="iframe_white.html" style="width: 100%; height: 120px;"></iframe>
 
-<h2 id="kbd-and-samp">Input and output with <code>&lt;kbd&gt;</code> and <code>&lt;samp&gt;</code></h2>
+<h2>Sample output with <code>&lt;samp&gt;</code></h2>
 
-<p>Oatcake supports user input with <a href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-kbd-element"><code>&lt;kbd&gt;</code></a>
-and sample output with <a href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-samp-element"><code>&lt;samp&gt;</code></a>.</p>
+To represent sample output from a program wrap it in
+<a href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-samp-element"><code>&lt;samp&gt;</code></a> tags:
+<samp>Keyboard not found. Press F1 to continue</samp>.</p>
+
+<p>Oatcake styles <code>&lt;samp&gt;</code> the same as
+<code>&lt;code&gt;</code>, making the difference only semantic. I didn't
+think two different styles for these would be likely to clearly say "this is
+code" whereas "this is output" to the reader, and too many different styles
+would only be distracting and make more design work and CSS.</p>
+
+<h2 id="kbd">User input with <code>&lt;kbd&gt;</code></h2>
 
 <p>To represent user input from a keyboard or any other text entry device wrap
-it in <code>&lt;kbd&gt;</code> tags: <kbd>help mycommand</kbd></p>
+it in <a href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-kbd-element"><code>&lt;kbd&gt;</code></a> tags: <kbd>help mycommand</kbd></p>
 
 <p>You can use nested <code>&lt;kbd&gt;</code>'s to represent multiple
 keystrokes that form a single input. Many themes try to show the nested
@@ -1618,15 +1627,6 @@ You might prefer to write it as just a single <code>&lt;kbd&gt;</code>
 (<code>&lt;kbd&gt;Ctrl + c&lt;/kbd&gt;</code>)
 or as two separate (not nested) <code>&lt;kbd&gt;</code>'s:
 <kbd>Ctrl</kbd>&nbsp;+&nbsp;<kbd>c</kbd>. All three styles are valid.</p>
-
-<p>To represent sample or quoted output from a computer program, wrap it in
-<code>&lt;samp&gt;</code> tags: <samp>Keyboard not found. Press F1 to continue</samp>.</p>
-
-<p>Oatcake styles <code>&lt;samp&gt;</code> the same as
-<code>&lt;code&gt;</code>, making the difference only semantic. I didn't
-think two different styles for these would be likely to clearly say "this is
-code" whereas "this is output" to the reader, and too many different styles
-would only be distracting and make more design work and CSS.</p>
 
 <details>
   <summary>Tip: use non-breaking spaces between <code>&lt;kbd&gt;</code>'s</summary>
