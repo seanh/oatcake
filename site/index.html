@@ -23,8 +23,7 @@
         --oatcake-block-background-color: rgb(248, 215, 218);
         --oatcake-border-color: #f1aeb5;
       }
-      .primary.badge,
-      .primary.pill {
+      .primary.badge {
         --oatcake-badge-background-color: rgb(13, 110, 253);
         --oatcake-badge-color: white;
       }
@@ -39,7 +38,7 @@
   <img style="margin: 0; padding: 0;" width="149" height="149" src="https://github.blog/wp-content/uploads/2008/12/forkme_right_darkblue_121621.png?resize=149%2C149" alt="Fork me on GitHub" data-recalc-dims="1">
 </a>
 
-<button class="pill wide-only lines" style="display:block; position:fixed; bottom:10px; right:10px;"></button>
+<button class="badge wide-only lines" style="display:block; position:fixed; bottom:10px; right:10px;"></button>
 
 <main style="max-width:40em; margin:0 auto 0 auto; padding:0 .5em 0 .5em;">
 
@@ -82,7 +81,7 @@ attention to the design.  Plain but pretty.</p>
   <li>
     <strong>And a small grab bag of extra features.</strong>
     A few bells and whistles like subheadings, lead paragraphs, secondary text,
-    note boxes, badges and pills.
+    note boxes, and badges.
   </li>
 </ul>
 
@@ -170,7 +169,7 @@ on those elements, for example:</p>
 
 <p>For example click this button to change this page to a handwritten font stack:</p>
 
-<p style="text-align:center;"><button id="toggleFonts" class="pill"></button></p>
+<p style="text-align:center;"><button id="toggleFonts" class="badge"></button></p>
 
 <p>Here's the full list of font variables you can change:</p>
 
@@ -185,7 +184,7 @@ on those elements, for example:</p>
   <dd>The <code>line-height</code> for the main <code>&lt;body&gt;</code> text</dd>
 
   <dt><code>--oatcake-small-font-size</code></dt>
-  <dd>The <code>font-size</code> for small text: <code>&lt;small&gt;</code> elements, the CSS class <code>small</code>, subscripts (<code>&lt;sub&gt;</code>) and superscripts (<code>&lt;sup&gt;</code>), <a href="#badges-and-pills">badges and pills</a></dd>
+  <dd>The <code>font-size</code> for small text: <code>&lt;small&gt;</code> elements, the CSS class <code>small</code>, subscripts (<code>&lt;sub&gt;</code>) and superscripts (<code>&lt;sup&gt;</code>), and <a href="#badges">badges</a></dd>
 
   <dt><code>--oatcake-monospaced-font-family</code></dt>
   <dd>The <code>font-family</code> for monospaced text</dd>
@@ -259,13 +258,13 @@ on those elements, for example:</p>
   <dd>The <code>border-bottom-color</code> of <a href="#kbd-and-samp"><code>&lt;kbd&gt;</code> elements</a></dd>
 
   <dt><code>--oatcake-badge-background-color</code></dt>
-  <dd>The <code>background-color</code> of <a href="#badges-and-pills">badges and pills</a></dd>
+  <dd>The <code>background-color</code> of <a href="#badges">badges</a></dd>
 
   <dt><code>--oatcake-badge-color</code></dt>
-  <dd>The foreground <code>color</code> of <a href="#badges-and-pills">badges and pills</a></dd>
+  <dd>The foreground <code>color</code> of <a href="#badges">badges</a></dd>
 
   <dt><code>--oatcake-badge-focus-border-color</code></dt>
-  <dd>The focus border colour of <a href="#badges-and-pills">badges and pills</a></dd>
+  <dd>The focus border colour of <a href="#badges">badges</a></dd>
 </dl>
 </details>
 
@@ -278,7 +277,7 @@ harmonious and pleasant to read. It's surprisingly difficult to get this
 comprehensively right, without some HTML element or combination of elements
 throwing off the rhythm.</p>
 
-<p style="text-align:center;"><button class="pill lines"></button></p>
+<p style="text-align:center;"><button class="badges lines"></button></p>
 
 <h2>Inline elements</h2>
 
@@ -1917,12 +1916,11 @@ you, these use a horizontal scrollbar instead:
 <pre><code>url = 'https://github.com/seanh/oatcake/commit/8675ffcb168b1d76d708c84a2821c20a3f99e86d'</code></pre>
 
 <details>
-  <summary>Tip: avoid long text in a <code>&lt;kbd&gt;</code>, <code>&lt;badge&gt;</code> or <code>&lt;pill&gt;</code></summary>
+  <summary>Tip: avoid long text in a <code>&lt;kbd&gt;</code> or <code>&lt;span class="badge"&gt;</code></summary>
 
-  <p>Oatcake's CSS prevents line-wrapping within a <code>&lt;kbd&gt;</code>,
-  <code>&lt;badge&gt;</code> or <code>&lt;pill&gt;</code> (even if there are
-  spaces) so don't make these too long or they'll overflow their container and
-  break the layout.</p>
+  <p>Oatcake's CSS prevents line-wrapping within a <code>&lt;kbd&gt;</code> or
+  <code>&lt;span class="badge"&gt;</code> (even if there are spaces) so don't make these too
+  long or they'll overflow their container and break the layout.</p>
 </details>
 
 <h2>CSS classes</h2>
@@ -2270,37 +2268,39 @@ the vertical spacing is right for headings in note boxes:</p>
   <p>This is the body of the note</p>
 </div>
 
-<h3>Badges and pills</h3>
+<h3>Badges</h3>
 
-<p>Oatcake provides badges and pills that you can use for things like counts,
-labels and tags. Just add the CSS class <code>badge</code> or <code>pill</code>
+<p>Oatcake provides badges that you can use for things like counts,
+labels and tags. Just add the CSS class <code>badge</code>
 to a <code>&lt;span&gt;</code>, like this:
-<code>&lt;span class="badge"&gt;Badge text&lt;/span&gt;</code> or
-<code>&lt;span class="pill"&gt;Pill text&lt;/span&gt;</code>:</p>
+<code>&lt;span class="badge"&gt;Badge text&lt;/span&gt;</code>:</p>
 
-<p><span class="badge">Badge</span> <span class="pill">Pill</span></p>
+<p><span class="badge">Badge</span>
 
-<p>You can also put the <code>badge</code> or <code>pill</code> class on an
-<code>&lt;a&gt;</code> or <code>&ltbutton&gt;</code> to create a badge or pill
+<p>You can also put the <code>badge</code> class on an
+<code>&lt;a&gt;</code> or <code>&ltbutton&gt;</code> to create a badge
 with hover and focus states:</p>
 
 <p>
   <a href="" class="badge">An <code>&lt;a&gt;</code> badge</a>
-  <a href="" class="pill">An <code>&lt;a&gt;</code> pill</a>
   <button class="badge">A <code>&lt;button&gt;</code> badge</button>
-  <button class="pill">A <code>&lt;button&gt;</code> pill</button>
 </p>
 
-<p>As with note boxes, it would be easy to add a variety of different colour
-choices for badges and pills but this would be distracting and would make it
+<p>As with <code>&lt;kbd&gt;</code>'s, if your badge contains
+<span class="badge">more than one word</span> Oatcake prevents browsers from
+wrapping it over multiple lines.</p>
+
+<h4>Badge colours</h4>
+
+<p>As with note boxes, it was tempting to add a variety of different colour
+choices for badges but this would be distracting and would make it
 harder to add dark mode and multiple colour schemes in future.</p>
 
-<p>If you do want to make badges and pills in more interesting colours you can
+<p>If you do want to make badges in more interesting colours you can
 add your own CSS classes to do so.  For example:</p>
 
 <pre><code>&lt;style&gt;
-  .primary.badge,
-  .primary.pill {
+  .primary.badge {
     --oatcake-badge-background-color: rgb(13, 110, 253);
     --oatcake-badge-color: white;
   }
@@ -2308,48 +2308,49 @@ add your own CSS classes to do so.  For example:</p>
 
 <p>Now this:</p>
 
-<pre><code>&lt;span class="primary badge"&gt;Primary Badge&lt;/span&gt;
-&lt;span class="primary pill"&gt;Primary Pill&lt;/span&gt;</code></pre>
+<pre><code>&lt;span class="primary badge"&gt;Primary Badge&lt;/span&gt;</code></pre>
 
 <p>&hellip;will render like this:</p>
 
 <p>
   <span class="primary badge">Primary Badge</span>
-  <span class="primary pill">Primary Pill</span>
 </p>
 
+<h4>Creative ways to use badges</h4>
 
-<p>Badges and pills can be used inside paragraphs (or list items, headings etc):</p>
+<p>Badges can be used in headings:</p>
 
-<h3 class="noanchor" style="padding-top: 0;">Heading <span class="pill">Pill</span></h3>
+<h3 class="noanchor" style="padding-top: 0;">Heading <span class="badge">New</span></h3>
+
+<p>Badges can be used inline in paragraphs:</p>
 
 <p>This is a paragraph with an inline <span class="badge">badge</span> in
-it. As with <code>&lt;kbd&gt;</code>'s, if your badge or pill contains
-<span class="pill">more than one word</span> Oatcake prevents browsers from
-wrapping it over multiple lines.</p>
+it.</p>
+
+<p>Badges can be used in list items:</p>
 
 <ul>
-  <li>First list item <span class="badge">23</span></li>
-  <li>Second list item <span class="pill">16</span></li>
-  <li>Third list item <span class="badge">32</span></li>
+  <li>Dinosaurs <span class="badge">23</span></li>
+  <li>Sea creatures <span class="badge">16</span></li>
+  <li>Giant birds <span class="badge">32</span></li>
 </ul>
 
-<p>Here's an example use of pills, to annotate lines in a code block:</p>
+<p>Badges can be used in code blocks, for example to annotate lines:</p>
 
-<pre><code>class MyError(Exception): <span class="pill">1</span>
+<pre><code>class MyError(Exception): <span class="badge">1</span>
     def __init__(self, status_code, reason):
-        super().__init__(status_code, reason) <span class="pill">2</span>
+        super().__init__(status_code, reason) <span class="badge">2</span>
         self.status_code = status_code
         self.reason = reason</code></pre>
 
 <div class="annotation">
-  <div><span class="pill">1</span></div>
+  <div><span class="badge">1</span></div>
   <p>In Python, all custom exception classes should inherit from the built-in
   <code>Exception</code> class (or one of its subclasses).</p>
 </div>
 
 <div class="annotation">
-  <div><span class="pill">2</span></div>
+  <div><span class="badge">2</span></div>
   <p>When inheriting from <code>Exception</code>, if you've written your own
   <code>__init__()</code> method, you should always call
   <code>super().__init__()</code>.</p>

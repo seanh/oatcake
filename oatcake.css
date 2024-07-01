@@ -657,76 +657,55 @@ pre samp {
   white-space: pre;
 }
 
-.badge,
-.pill {
-  padding: .1rem .3rem;
+.badge {
+  color: var(--oatcake-badge-color);
+  background-color: var(--oatcake-badge-background-color);
+  padding-top: .1rem;
+  padding-bottom: .1rem;
+  padding-left: .6em;
+  padding-right: .6em;
   font-weight: 700;
   text-align: center;
   vertical-align: baseline;
-  border-radius: 5px;
+  border-radius: 10rem;
   transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
-  /* Prevent badges and pills from offsetting the vertical rhythm in iOS Safari. */
+  /* Prevent badges from offsetting the vertical rhythm in iOS Safari. */
   margin-bottom: -.3rem;
 }
 
 .badge,
-.pill,
 .badge code,
-.badge samp,
-.pill code,
-.pill samp {
+.badge samp {
   font-size: var(--oatcake-small-font-size);
   line-height: 1;
 }
 
-button.badge,
-button.pill {
+.badge code,
+.badge samp {
+  background-color: inherit;
+  padding: 0;
+}
+
+button.badge {
   border-width: 0;
   line-height: normal;
   cursor: pointer;
 }
 
-.badge code,
-.badge samp,
-.pill code,
-.pill samp {
-  background-color: inherit;
-  padding: 0;
-}
-
-.pill {
-  padding-right: .6em;
-  padding-left: .6em;
-  border-radius: 10rem;
-}
-
-.badge,
-.pill {
-  color: var(--oatcake-badge-color);
-  background-color: var(--oatcake-badge-background-color);
-}
-
 a.badge,
 a.badge:focus,
-a.badge:hover,
-a.pill,
-a.pill:focus,
-a.pill:hover {
+a.badge:hover {
   text-decoration: none;
   border-bottom: none;
 }
 
 a.badge:focus,
-a.pill:focus,
-button.badge:focus,
-button.pill:focus {
+button.badge:focus {
   outline: 0;
 }
 
 a.badge:focus,
-a.pill:focus,
-button.badge:focus,
-button.pill:focus {
+button.badge:focus {
   box-shadow: 0 0 0 .2rem var(--oatcake-badge-focus-border-color);
 }
 
@@ -756,7 +735,6 @@ button.pill:focus {
 /* Prevent line wrapping within certain elements. This does mean that if you
  * put really long text in one of these it will overflow. */
 .badge,
-.pill,
 .nowrap,
 kbd  {
   white-space: nowrap;
