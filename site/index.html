@@ -404,13 +404,6 @@ in the air.&lt;/p&gt;</code></pre>
     <blockquote>The word "ineffable" could have been used to describe the disaster
     resulting from the campaign's mismanagement.</blockquote>
 
-    <p>If you want to manually type smart/curly quotes like
-    <code>&lt;q&gt;</code> does (where the opening and closing quotation marks
-    look different) rather than just straight quotes you can use
-    <code>&amp;ldquo;</code> for the left, opening quotation mark (&ldquo;)
-    and <code>&amp;rdquo;</code> for the right, closing quotation mark (&rdquo;).
-    For curly single-quotes use <code>&amp;lsquo;</code> (&lsquo;) and <code>&amp;rsquo;</code> (&rsquo;).</p>
-
     <p>You can add a <code>cite</code> attribute to a <code>&lt;q&gt;</code> to
     give the URL of the source being quoted for scripts to read,
     and you can use a <a href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-cite-element"><code>&lt;cite&gt;</code> element</a>
@@ -682,6 +675,92 @@ examples:</p>
     </p>
   </li>
 </ul>
+</details>
+
+<details>
+  <summary>Tip: quotes, ellipses and dashes</summary>
+
+  <p>As well as its inline elements HTML also provides a few handy special characters
+  for doing different types of quotes, dots and dashes:</p>
+
+  <ul>
+    <li>
+      <p>You can use <code>&amp;lsquo;</code> and <code>&amp;rsquo;</code>
+      to do fancy left and right single quotes instead of straight ones.
+      <code>&amp;lsquo;fancy single quotes&amp;rsquo;</code> renders like this:
+      &lsquo;fancy single quotes.&rsquo;</p>
+
+      <p><code>&amp;ldquo;</code> and <code>&amp;rdquo;</code> do
+      &ldquo;fancy left and right double quotes.&rdquo;</p>
+
+      <p>These are HTML <i>named character references</i> and there's a
+      <a href="https://html.spec.whatwg.org/multipage/named-characters.html">complete list of all the character reference names support by HTML</a>
+      in the HTML spec.
+      </p>
+    </li>
+    <li>
+      <p><code>&amp;hellip;</code> renders an ellipsis: &hellip;
+      Ellipses are used to show when something has been left out, for example when
+      you've omitted some words from a quote:</p>
+
+      <blockquote>Hamlet asked whether it was &ldquo;nobler &hellip; to suffer
+        the slings and arrows of outrageous fortune or to take arms against a
+        sea of troubles.&rdquo;</blockquote>
+    </li>
+    <li>
+      <p><code>&amp;ndash;</code> renders an en-dash, which is slightly longer than a normal hyphen: &ndash;</p>
+
+      <p>En-dashes are used to indicate spans of time or ranges of numbers:
+      July 9&ndash;August 17, or pp. 37&ndash;59.</p>
+
+      <p>You shouldn't put spaces before or after en-dashes.</p>
+
+      <p>You can also combine words using en-dashes to indicate conflict, connection or direction,
+      like in these examples from <a href="https://www.thepunctuationguide.com/en-dash.html">The Punctuation Guide</a>:</p>
+
+      <blockquote>
+        The liberal&ndash;conservative debate never ends.<br/>
+        The Perth&ndash;Dubai&ndash;Boston flight takes more than a day.<br/>
+        There is a north&ndash;south railway in the same area as the highway that runs east&ndash;west.
+      </blockquote>
+    </li>
+    <li>
+      <p><code>&amp;mdash;</code> renders an em-dash, which is longer than an en-dash: &mdash;</p>
+
+      <p>Em-dashes create a strong break in the structure of a sentence, more
+      emphatic than a comma or colon, and drawing attention to the information
+      rather than suggesting that the information is unnecessary like
+      parentheses do. For example (from <a href="https://getitwriteonline.com/en-dashes-em-dashes/">Get It Write</a>):</p>
+
+      <blockquote>We bought pencils, rulers, notebook paper, pens, and
+      folders&mdash;all of which were on sale, of course&mdash;for our clients
+      to use in the courtroom.</blockquote>
+
+      <p>Like with en-dashes, you shouldn’t put spaces before or after em-dashes.</p>
+
+      <p>You can also use just one em-dash, instead of opening and closing
+      ones, if the contained text is at the end of the sentence
+      (from <a href="https://www.thepunctuationguide.com/em-dash.html">The Punctuation Guide</a>):</p>
+
+      <blockquote>After months of deliberation, the jurors reached a unanimous verdict&mdash;guilty.</blockquote>
+
+      <p>Another use for em-dashes is when you can't use a comma to separate a
+      parts of a sentence because the parts themselves contain commas,
+      like in this <a href="https://www.grammarly.com/blog/dash/">example from Grammarly</a>:</p>
+
+      <blockquote>After a split second of hesitation, the second baseman leaped for the ball&mdash;or, rather, limped for it.</blockquote>
+
+      <p>Finally, em-dashes can also be used to indicate missing parts of a word
+      (example from <a href="https://www.thepunctuationguide.com/em-dash.html">The Punctuation Guide</a>):</p>
+
+      <blockquote>Mr. J&mdash; &mdash; testified that the defendant yelled, “Die, a&mdash;&mdash; before pulling the trigger.</blockquote>
+    </li>
+    <li>
+      <p>When all you need to do is separate compound words like
+      well-being and advanced-level you can just use a normal hyphen (-),
+      no special character needed.</p>
+    </li>
+  </ul>
 </details>
 
 <h2>Headings</h2>
