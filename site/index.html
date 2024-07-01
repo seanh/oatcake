@@ -20,12 +20,12 @@
         gap: .5em;
       }
       .warning.note {
-        --oatcake-block-background-color: rgb(248, 215, 218);
-        --oatcake-border-color: #f1aeb5;
+        background-color: rgb(248, 215, 218);
+        border-color: #f1aeb5;
       }
       .primary.badge {
-        --oatcake-badge-background-color: rgb(13, 110, 253);
-        --oatcake-badge-color: white;
+        background-color: rgb(13, 110, 253);
+        color: white;
       }
       samp.custom {
         border: 1px dashed #999;
@@ -318,7 +318,8 @@ you can use with Oatcake:</p>
     It's meant to be used for <em>stress emphasis</em>.</p>
 
     <p>Not to be confused with <a href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-i-element"><code>&lt;i&gt;</code></a>
-    which the HTML standard says is for:</p>
+    which also puts text in italics but which the HTML standard gives a
+    different semantic meaning to:</p>
 
     <blockquote>
     [&hellip;] a span of text in an alternate voice or mood, or otherwise
@@ -330,11 +331,6 @@ you can use with Oatcake:</p>
 
     <p>(Elsewhere the standard also mentions a dream sequence an example usage
     for <code>&lt;i&gt;</code>.)</p>
-
-    <p><code>&lt;i&gt;</code> is also styled in italics so the difference
-    between <code>&lt;em&gt;</code> and <code>&lt;i&gt;</code>, at least with
-    Oatcake, is purely semantic:
-    <i>this is text in an alternative voice or mood with <code>&lt;i&gt;</code>.</i></p>
 
     <p>If some text is in an <code>&lt;i&gt;</code> because it's in a different
     language you can use the <code>lang</code> attribute to give the language.
@@ -352,7 +348,7 @@ in the air.&lt;/p&gt;</code></pre>
     It's meant to be used for <q>strong importance, seriousness or urgency.</q></p>
 
     <p>Not to be confused with <a href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-b-element"><code>&lt;b&gt;</code></a>
-    which the HTML standard says:</p>
+    which also makes text bold but which the HTML standard gives a different semantic meaning to:</p>
 
     <blockquote>[&hellip;] represents a span of text to which attention is
     being drawn for utilitarian purposes without conveying any extra importance
@@ -360,16 +356,11 @@ in the air.&lt;/p&gt;</code></pre>
     a document abstract, product names in a review, actionable words in
     interactive text-driven software, or an article lede.</blockquote>
 
-    <p><code>&lt;b&gt;</code> is also styled in bold so again the difference
-    between <code>&lt;strong&gt;</code> and <code>&lt;b&gt;</code>, at least with
-    Oatcake, is purely semantic:
-    <b>this is text to which attention is being drawn for utilitarian purposes with<code>&lt;b&gt;</code>.</b></p>
-
     <p>You should use <code>&lt;b&gt;</code> only as a last resort when no other element is more appropriate.
     Use <code>&lt;h1&gt;&ndash;&lt;h6&gt;</code> for headings,
     <code>&lt;em&gt;</code> for stress emphasis,
     <code>&lt;strong&gt;</code> for importance,
-    and <code>&lt;mark&gt;</code> for highlighted or marked text.</p>
+    and <code>&lt;mark&gt;</code> (see below) for highlighted or marked text.</p>
   </li>
 
   <li><p><a href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-small-element"><code>&lt;small&gt;</code></a> makes text smaller:
@@ -511,7 +502,7 @@ in the air.&lt;/p&gt;</code></pre>
       <q>a run of text in one document marked or highlighted for reference purposes, due to its relevance in another context.</q>
       For example you can use a <code>&lt;mark&gt;</code> in a quotation to
       highlight text that wasn't highlighted in the original quote but
-      is being highlighted now to bring attention to part of the quote.
+      is being highlighted now to bring attention to that part of the quote.
       Other examples given in the HTML standard are highlighting search string
       matches and highlighting a bug in a code block (or more generally
       highlighting part of a code block that is referred to from elsewhere in
@@ -521,18 +512,15 @@ in the air.&lt;/p&gt;</code></pre>
 
   <li>
     <p><a href="https://html.spec.whatwg.org/multipage/edits.html#the-del-element"><code>&lt;del&gt;</code></a>
-    crosses out text: <del>this is text that's been struck-through with <code>&lt;del&gt;</code></del>.</p>
+    strikes through text: <del>this is text that's been struck-through with <code>&lt;del&gt;</code></del>.</p>
 
     <p><code>&lt;del&gt;</code> is for text that has been &ldquo;removed&rdquo; from the
     document like crossing-off the completed items on a todo list.</p>
 
     <p>Not to be confused with
-    <a href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-s-element"><code>&lt;s&gt;</code></a>,
-    which is for text that's <q>no longer accurate or no longer relevant</q>.
-    <code>&lt;s&gt;</code> is also styled with a strike-through so the difference between
-    <code>&lt;del&gt;</code> and <code>&lt;s&gt;</code>, at least in Oatcake, is purely semantic:
-    <s>This is text that's been struck through with <code>&lts&gt;</code> to mark it as no longer accurate or relevant.</s>
-    </p>
+    <a href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-s-element"><code>&lt;s&gt;</code></a>
+    which also strikes through text but which the HTML standard says is for text that's
+    <q>no longer accurate or no longer relevant.</q></p>
 
     <p>The <code>cite</code> attribute can be added to a
     <code>&lt;del&gt;</code> to give the URL of a document that explains the
@@ -739,7 +727,7 @@ eget fringilla quam. Vestibulum suscipit arcu dapibus placerat cursus.</p>
 
 <p>Headings are one of the hardest things to get right and one of the parts of
 Oatcake that I'm most pleased with.
-HTML's six levels of headings is more than most documents need. Themes often
+HTML's six levels of headings are more than most documents need. Themes often
 resort to desperate measures to try to make all six levels visually distinct:
 distractions like overlarge font sizes, excessively heavy weights, ALL CAPS,
 underlines, centered text, too many font faces, too much indentation, etc.
@@ -753,30 +741,29 @@ readers to orient themselves within the document.</p>
 
 <p>So Oatcake deliberately restrains itself to just three visually distinct
 levels of headings, using the smallest necessary increments in font size and
-space above and below to distinguish the three levels of headings from normal
-text and from each other. Sticking to just three visually distinct levels
-enables them to be distinct enough from each other without having to use
-distractingly large text or margins, a different font or an excessively heavy
-font weight, centered text, underlines, etc.</p>
+space above and below to distinguish the three levels of headings from each
+other. Sticking to just three visually distinct levels enables them to be
+distinct enough from each other without resorting to desperate measures.</p>
 
-<p>A common mistake is to vertically align headings closer to the paragraph
-above than to the one below, or evenly mid-way between them. Oatcake gives
-headings a little more vertical space above than below so they're visually
-related more with the text below (that belongs to the heading) than to the
-unrelated text above.</p>
-
-<p>Oatcake's <code>&lt;h1&gt;</code>'s and <code>&lt;h2&gt;</code>'s look the
-same (other than a bit more vertical space above an <code>&lt;h1&gt;</code>).
+<p>Oatcake's <code>&lt;h1&gt;</code>'s and <code>&lt;h2&gt;</code>'s are the same size
+(other than a bit more vertical space above an <code>&lt;h1&gt;</code>).
 The intention is that pages will start with a single <code>&lt;h1&gt;</code>
 whose position at the top of the page makes it clear that it's the top-level
 title, and then <code>&lt;h2&gt;</code>'s will be used for any mid-document
-headings.</p>
+headings.
+This prevents <code>&lt;h1&gt;</code>'s from having to be too large.</p>
 
 <p>If you need sub-headings and sub-sub-headings use <code>&lt;h3&gt;</code>'s
 and <code>&lt;h4&gt;</code>'s.
 
 <p>You can also use <code>&lt;h5&gt;</code>'s and <code>&lt;h6&gt;</code>'s but
 they look the same as <code>&lt;h4&gt;</code>'s.</p>
+
+<p>Finally, a common mistake is to vertically align headings closer to the
+paragraph above than to the one below, or evenly mid-way between them. Oatcake
+gives headings a little more vertical space above than below so they're
+visually related more with the text below (that belongs to the heading) than to
+the unrelated text above.</p>
 
 <details>
   <summary>Tip: hierarchical headings</summary>
@@ -786,7 +773,7 @@ structure explicit by hierarchically numbering the headings as the HTML
 standard itself does (you have to do this yourself, Oatcake won't do it for
 you):</p>
 
-<h1 class="noanchor">Document title</h1>
+<h1 class="noanchor">Document title (first-level heading)</h1>
 
 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer
 malesuada, justo tincidunt mattis gravida, velit orci facilisis nibh, at
@@ -804,25 +791,31 @@ hendrerit risus sem eu arcu.</p>
 malesuada, justo tincidunt mattis gravida, velit orci facilisis nibh, at
 hendrerit risus sem eu arcu.</p>
 
+<h4 class="noanchor">1.1.1 Fourth-level heading</h4>
+
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer
+malesuada, justo tincidunt mattis gravida, velit orci facilisis nibh, at
+hendrerit risus sem eu arcu.</p>
+
+<h4 class="noanchor">1.1.1.1 Fifth-level heading</h4>
+
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer
+malesuada, justo tincidunt mattis gravida, velit orci facilisis nibh, at
+hendrerit risus sem eu arcu.</p>
+
+<h4 class="noanchor">1.1.1.2 Another fifth-level heading</h4>
+
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer
+malesuada, justo tincidunt mattis gravida, velit orci facilisis nibh, at
+hendrerit risus sem eu arcu.</p>
+
+<h4 class="noanchor">1.1.2 Another fourth-level heading</h4>
+
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer
+malesuada, justo tincidunt mattis gravida, velit orci facilisis nibh, at
+hendrerit risus sem eu arcu.</p>
+
 <h3 class="noanchor">1.2 Another third-level heading</h3>
-
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer
-malesuada, justo tincidunt mattis gravida, velit orci facilisis nibh, at
-hendrerit risus sem eu arcu.</p>
-
-<h4 class="noanchor">1.2.1 Fourth-level heading</h4>
-
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer
-malesuada, justo tincidunt mattis gravida, velit orci facilisis nibh, at
-hendrerit risus sem eu arcu.</p>
-
-<h4 class="noanchor">1.2.2 Another fourth-level heading</h4>
-
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer
-malesuada, justo tincidunt mattis gravida, velit orci facilisis nibh, at
-hendrerit risus sem eu arcu.</p>
-
-<h3 class="noanchor">1.3 Another third-level heading</h3>
 
 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer
 malesuada, justo tincidunt mattis gravida, velit orci facilisis nibh, at
@@ -1140,15 +1133,6 @@ common source of breakage that works fine with Oatcake:</p>
     <p>And an image:</p>
 
     <img src="media/oats.jpg"  alt="A bowl of oats" title="A bowl of oats" />
-
-    <p>And a note box and a disclosure widget:</p>
-
-    <div class="note">This is a note box.</div>
-
-    <details>
-      <summary>This is a disclosure widget</summary>
-      <p>These are the contents.</p>
-    </details>
   </li>
   <li>
     <p>A list item with a definition list in it:</p>
@@ -1275,12 +1259,10 @@ ultrices. Nam fringilla erat ac bibendum tristique. Morbi nec maximus augue.
 
 <p>Many themes style <code>&lt;blockquote&gt;</code>'s in italics but this is
 problematic when the quoted text itself contains italics.
-Another common choice is to use a different font for block quotes, but too many
-fonts can be distracting.
+Another common choice is to use a different font for block quotes, that
+can be distracting.
 So Oatcake styles block quotes by indenting them, with a left border to make
-sure it's clear where the block quote starts and ends (particularly helpful
-when a block quote contains other block-level elements like images, lists, code
-blocks, etc).</p>
+sure it's clear where the block quote starts and ends.</p>
 
 <details>
   <summary>Tip: don't put quotation marks inside quotes or block quotes</summary>
@@ -1433,19 +1415,6 @@ starts and ends:</p>
 
   <pre><code>code block
 </code></pre>
-
-  <p>You can even put a <a href="#disclosure-widgets-details-and-summary">disclosure widget</a>
-  inside a block quote:</p>
-
-  <details>
-    <summary>This is the summary</summary>
-    <p>Here are the details&hellip;</p>
-  </details>
-
-  <p>Or put a <a href="#note-boxes">note box</a> inside a block quote:</p>
-
-  <div class="note">This is a note box inside a block quote.</div>
-
 </blockquote>
 
 <h3>Headings in block quotes</h3>
@@ -1934,7 +1903,7 @@ them when they're used to start the hidden contents of a disclosure widget:</p>
   <p>Here are the details&hellip;</p>
 </details>
 
-<h2 id="figures">Figures</h2>
+<h2 id="figures">Figures and figure captions</h2>
 
 <p>Oatcake supports figures and captions with
 <a href="https://html.spec.whatwg.org/multipage/grouping-content.html#the-figure-element"><code>&lt;figure&gt;</code></a>
@@ -1970,7 +1939,7 @@ here’s a code figure:</p>
 def logger
   @logger ||= LogAdapter.new(Stevenson.new, (ENV["JEKYLL_LOG_LEVEL"] || :info).to_sym)
 end</code></pre>
-<figcaption>A method from the Jekyll source code.</figcaption>
+<figcaption>A method from the Jekyll source code</figcaption>
 </figure>
 
 <p>Here's an example from the HTML standard with a
@@ -1991,16 +1960,16 @@ quote's attribution in the <code>&lt;figcaption&gt;</code>:</p>
  <figcaption>Carl Sagan, in "<cite>Wonder and Skepticism</cite>"</figcaption>
 </figure>
 
-<p>Multi-line captions work fine, as do inline styles within captions:</p>
+<p>Multi-line captions work fine, as do inline elements within captions:</p>
 
 <figure>
   <img src="media/oats.jpg" alt="A bowl of oats" title="A bowl of oats">
   <figcaption>
     <strong>Laboris</strong> nisi ut aliquip ex ea
-commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-velit <code>esse cillum dolore</code> eu fugiat nulla pariatur. <a href="https://example.com">Excepteur sint
-occaecat</a> cupidatat non proident, <em>sunt in culpa</em> qui
-officia deserunt mollit anim id est laborum.
+    commodo <em>consequat</em>. Duis aute irure dolor in reprehenderit in voluptate
+    velit <code>esse cillum dolore</code> eu fugiat <samp>nulla pariatur</samp>. <a href="https://example.com">Excepteur sint
+    occaecat</a> cupidatat <u>non proident</u>, <em>sunt in culpa</em> qui
+    <del>officia</del> <mark>deserunt mollit anim id est laborum.</mark>
   </figcaption>
 </figure>
 
@@ -2036,8 +2005,14 @@ you, these use a horizontal scrollbar instead:
 
 <p>Oatcake mostly styles plain HTML, no CSS classes needed.
 But I bent this rule for a handful of optional extras that're used by adding
-CSS classes to your HTML.
-These are things that I frequently find useful in documents, but that plain
+CSS classes to your HTML.</p>
+
+<p>We've already seen the utility classes <code>small</code> (for small text, the same as the <code>&lt;small&gt;</code> element),
+<code>rounded</code> (for adding rounded corners to images, videos and iframes),
+<code>border</code> (for adding borders to images, videos and iframes),
+and <code>nowrap</code> (for preventing the browser from wrapping the text within an element).</p>
+
+<p>Below are a few more. These are things that I frequently find useful in documents, but that plain
 HTML lacks the elements for.</p>
 
 <h3>Subheadings and lead paragraphs</h3>
@@ -2143,13 +2118,26 @@ Being is born of not being.</pre>
 
 <h3>Secondary text</h3>
 
-<p>You can put text in a dimmed colour by adding the CSS class <code>"secondary"</code>
+<p>You can put text in a dimmed colour by adding the CSS class <code>secondary</code>
 to any element. For example:
 <code>&lt;p class="secondary"&gt;dimmed text&lt;/p&gt;</code>.
-This can be used for metadata such as the date of a post.
+Secondary text is meant for metadata like authorship, publication dates, tags, copyright notices, that sort of thing.
 It looks like this:</p>
 
 <p class="secondary"><strong>Posted:</strong> Wed 14 August 2019 &middot; <strong>Tags:</strong> <a href="#secondary-text">HTML</a>, <a href="#secondary-text">CSS</a></p>
+
+<p>All the inline elements also work as you'd expect in secondary text:
+<span class="secondary">
+  <strong>bold</strong>,
+  <em>italics</em>,
+  <code>code</code>,
+  <samp>sample output</samp>,
+  <u>underlines</u>,
+  <mark>highlights</mark>,
+  <del>strike-throughs</del>,
+  and <a href="https://example.com">links</a>.
+</span>
+</p>
 
 <h3>Note boxes</h3>
 
@@ -2201,17 +2189,17 @@ or collapsible.
 
 <p>It was tempting to provide a variety of different colours for note boxes
 like other frameworks do. But documents with lots of different-coloured boxes
-would distract from both reading and writing (always having to choose which
-type of box to use) and would make it harder to add support for dark mode and
-for different colour schemes in future.</p>
+would distract from both reading and writing (always having to remember all the
+different types of boxes and choose which one to use) and would make it harder
+to add support for dark mode and for different colour schemes in future.</p>
 
 <p>If you do want to make notes in more interesting colours you can add your
 own CSS classes to do so. For example:</p>
 
 <pre><code>&lt;style&gt;
   .warning.note {
-    --oatcake-block-background-color: rgb(248, 215, 218);
-    --oatcake-border-color: #f1aeb5;
+    background-color: rgb(248, 215, 218);
+    border-color: #f1aeb5;
   }
 &lt;/style&gt;</code></pre>
 
@@ -2410,8 +2398,8 @@ add your own CSS classes to do so.  For example:</p>
 
 <pre><code>&lt;style&gt;
   .primary.badge {
-    --oatcake-badge-background-color: rgb(13, 110, 253);
-    --oatcake-badge-color: white;
+    background-color: rgb(13, 110, 253);
+    color: white;
   }
 &lt;/style&gt;</code></pre>
 
