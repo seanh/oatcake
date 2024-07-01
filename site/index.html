@@ -1793,6 +1793,16 @@ int main()
     printf("Hello World!\n");
 }</code></pre>
 
+<p>A common bug in themes is for long lines in code blocks to stretch out
+the width of the entire page which looks weird and breaks the layout on mobile
+screens. Oatcake fixes this by giving wide code blocks a horizontal
+scrollbar:</p>
+
+<pre><code class="nohighlight">def test_validate_url_returns_an_http_url_unmodified():
+    assert validate_url('https://github.com/jimsmith') == 'https://github.com/jimsmith'
+</code></pre>
+
+
 <h2>Sample output blocks</h2>
 
 <p>Oatcake also supports <code>&lt;pre&gt;&lt;samp&gt;</code> blocks. These
@@ -1875,15 +1885,6 @@ here's a code block with a bug highlighted:</p>
 <pre><code>def whats_on_the_telly(<mark>penguin=[]</mark>):
     penguin.append("property of the zoo")
     return penguin</code></pre>
-
-<p>A common bug in themes is for long lines in code blocks to stretch out
-the width of the entire page which looks weird and breaks the layout on mobile
-screens. Oatcake fixes this by giving wide code blocks a horizontal
-scrollbar:</p>
-
-<pre><code class="nohighlight">def test_validate_url_returns_an_http_url_unmodified():
-    assert validate_url('https://github.com/jimsmith') == 'https://github.com/jimsmith'
-</code></pre>
 
 <h2>Horizontal rules</h2>
 
