@@ -801,30 +801,10 @@ eget fringilla quam. Vestibulum suscipit arcu dapibus placerat cursus.</p>
 
 <p>Suspendisse dignissim tempor ultricies.</p>
 
-<p>Headings are one of the hardest things to get right and one of the parts of
-Oatcake that I'm most pleased with.
-HTML's six levels of headings are more than most documents need. Themes often
-resort to desperate measures to try to make all six levels visually distinct:
-distractions like overlarge font sizes, excessively heavy weights, ALL CAPS,
-underlines, centered text, too many font faces, too much indentation, etc.
-Most themes make <code>&lt;h1&gt;</code>'s too big for my taste (for the types
-of documents and titles that I tend to write anyway),
-whilst subheadings in <em>smaller</em> fonts than the body text are common.</p>
-
-<p>Oatcake's opinion is that most pages shouldn't use more than three levels of
-headings, preferably two. More levels are confusing and make it difficult for
-readers to orient themselves within the document.</p>
-
-<p>So Oatcake deliberately restrains itself to just three visually distinct
-levels of headings, using the smallest necessary increments in font size and
-space above and below to distinguish the three levels of headings from each
-other. Sticking to just three visually distinct levels enables them to be
-distinct enough from each other without resorting to desperate measures.</p>
-
 <p>Oatcake's <code>&lt;h1&gt;</code>'s and <code>&lt;h2&gt;</code>'s are the same size
 (other than a bit more vertical space above an <code>&lt;h1&gt;</code>).
-The intention is that pages will start with a single <code>&lt;h1&gt;</code>
-whose position at the top of the page makes it clear that it's the top-level
+The intention is that documents will start with a single <code>&lt;h1&gt;</code>
+whose position at the top of the document makes it clear that it's the top-level
 title, and then <code>&lt;h2&gt;</code>'s will be used for any mid-document
 headings.
 This prevents <code>&lt;h1&gt;</code>'s from having to be too large.</p>
@@ -835,11 +815,37 @@ and <code>&lt;h4&gt;</code>'s.
 <p>You can also use <code>&lt;h5&gt;</code>'s and <code>&lt;h6&gt;</code>'s but
 they look the same as <code>&lt;h4&gt;</code>'s.</p>
 
-<p>Finally, a common mistake is to vertically align headings closer to the
-paragraph above than to the one below, or evenly mid-way between them. Oatcake
-gives headings a little more vertical space above than below so they're
-visually related more with the text below (that belongs to the heading) than to
-the unrelated text above.</p>
+<details>
+  <summary>Design notes: headings</summary>
+
+  <p>Headings are one of the hardest things to get right and one of the parts
+  of Oatcake that I'm most pleased with.
+  HTML's six levels of headings are more than most documents need. Themes often
+  resort to desperate measures to try to make all six levels visually distinct:
+  distractions like overlarge font sizes, excessively heavy weights, ALL CAPS,
+  underlines, centered text, too many font faces, too much indentation, etc.
+  Most themes make <code>&lt;h1&gt;</code>'s too big for my taste (for the types
+  of documents and titles that I tend to write anyway),
+  meanwhile subheadings often come in <em>smaller</em> fonts than the main body text.</p>
+
+  <p>Oatcake's opinion is that most pages shouldn't use more than three levels
+  of headings, preferably two. More levels are confusing and make it difficult
+  for readers to orient themselves within the document.</p>
+
+  <p>So Oatcake deliberately restrains itself to just three visually distinct
+  levels of headings, using the smallest necessary increments in font size and
+  space above and below to distinguish the three levels of headings from each
+  other. Sticking to just three visually distinct levels enables them to be
+  distinct enough from each other without resorting to desperate measures.</p>
+
+  <hr/>
+
+  <p>A common mistake is to vertically align headings closer to the paragraph
+  above than to the one below, or evenly mid-way between them. Oatcake gives
+  headings a little more vertical space above than below so they're visually
+  related more with the text below (that belongs to the heading) than to the
+  unrelated text above.</p>
+</details>
 
 <details>
   <summary>Tip: hierarchical headings</summary>
@@ -1333,12 +1339,17 @@ a <code>&lt;p&gt;</code>, it looks the same:</p>
 ultrices. Nam fringilla erat ac bibendum tristique. Morbi nec maximus augue.
 </p></blockquote>
 
-<p>Many themes style <code>&lt;blockquote&gt;</code>'s in italics but this is
-problematic when the quoted text itself contains italics.
-Another common choice is to use a different font for block quotes, that
-can be distracting.
-So Oatcake styles block quotes by indenting them, with a left border to make
-sure it's clear where the block quote starts and ends.</p>
+<details>
+  <summary>Design notes: block quotes</summary>
+
+  <p>Many themes style <code>&lt;blockquote&gt;</code>'s in italics but this is
+  problematic when the quoted text itself contains italics.
+  Another common choice is to use a different font for block quotes, that
+  can be distracting.
+  So Oatcake styles block quotes with a left border to indicate where the block
+  quote starts and ends and indentation, which both makes space for the left
+  border and makes nested block quotes work well.</p>
+</details>
 
 <details>
   <summary>Tip: don't put quotation marks inside quotes or block quotes</summary>
