@@ -1274,16 +1274,20 @@ when a block quote contains other block-level elements like images, lists, code
 blocks, etc).</p>
 
 <details>
-  <summary>Tip: correct block quote usage</summary>
+  <summary>Tip: don't put quotation marks inside quotes or block quotes</summary>
 
   <p>You shouldn't put quotation marks around the text
   inside a block quote: putting the text in a <code>&lt;blockquote&gt;</code> is
   enough to show that it's a quotation, and the quotation marks aren't part of
-  the quote itself.</p>
+  the quoted text.</p>
 
   <p>You don't put quotation marks inside an inline <code>&lt;q&gt;</code>
   either, just wrap the text in a <code>&lt;q&gt;</code> and the browser will
   add the quotation marks for you.</p>
+</details>
+
+<details>
+  <summary>Tip: how to mark up abbreviations and additions to quotes and block quotes</summary>
 
   <p>In English it's traditional to use square brackets if abbreviating or
   adding context to a block or inline quote, as in this example from the HTML
@@ -1293,6 +1297,10 @@ blocks, etc).</p>
   <blockquote><p>[Jane] then said she liked [&hellip;] fish.</p></blockquote>
 
   <p>(If you want to be fancy you can use an ellipsis&mdash;<code>&amp;hellip;</code>&mdash;instead of typing three dots).</p>
+</details>
+
+<details>
+  <summary>Tip: highlights in quotes and block quotes</summary>
 
   <p>You can use <a href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-mark-element"><code>&lt;mark&gt;</code>'s</a>
   inside quotes to draw attention to something that wasn't highlighted in the original
@@ -1317,7 +1325,7 @@ blocks, etc).</p>
 
 <p>Any attribution for the quotation is supposed to go before or after the
 <code>&lt;q&gt;</code> or <code>&lt;blockquote&gt;</code>, not inside it,
-because the attribution isn't part of the quote itself. For example the
+because the attribution isn't part of the quoted text. For example the
 attribution could go in a following <code>&lt;p&gt;</code>, as in this example
 from the HTML standard:</p>
 
