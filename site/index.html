@@ -1613,20 +1613,38 @@ would only be distracting and make more design work and CSS.</p>
 <p>To represent user input from a keyboard or any other text entry device wrap
 it in <a href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-kbd-element"><code>&lt;kbd&gt;</code></a> tags: <kbd>help mycommand</kbd></p>
 
-<p>You can use nested <code>&lt;kbd&gt;</code>'s to represent multiple
-keystrokes that form a single input. Many themes try to show the nested
-structure visually but it doesn't work very well: there isn't enough space to
-make it look good.
-In Oatcake nested <code>&lt;kbd&gt;</code>'s are semantic only: they look the
-same as a single <code>&lt;kbd&gt;</code>.
-For example this:
-<code>&lt;kbd&gt;&lt;kbd&gt;Ctrl&lt;/kbd&gt; + &lt;kbd&gt;c&lt;/kbd&gt;&lt;/kbd&gt;</code>
-renders like this:
-<kbd><kbd>Ctrl</kbd> + <kbd>c</kbd></kbd>.
-You might prefer to write it as just a single <code>&lt;kbd&gt;</code>
-(<code>&lt;kbd&gt;Ctrl + c&lt;/kbd&gt;</code>)
-or as two separate (not nested) <code>&lt;kbd&gt;</code>'s:
-<kbd>Ctrl</kbd>&nbsp;+&nbsp;<kbd>c</kbd>. All three styles are valid.</p>
+<p>There are three different ways to represent multiple keystrokes that form a single input:</p>
+
+<ol>
+  <li>
+    <p>You can just write the whole sequence as a single <code>&lt;kbd&gt;</code>. This:</p>
+
+    <pre><code>&lt;kbd&gt;Ctrl + c&lt;/kbd&gt;</code></pre>
+
+    <p>&hellip;will render like this: <kbd>Ctrl + c</kbd></p>
+  </li>
+  <li>
+    <p>Alternatively you can wrap each keystroke in its own separate <code>&lt;kbd&gt;</code>. This:</p>
+
+    <pre><code>&lt;kbd&gt;Ctrl&lt;/kbd&gt; + &lt;kbd&gt;c&lt;/kbd&gt;</code></pre>
+
+    <p>&hellip;will render like this: <kbd>Ctrl</kbd> + <kbd>c</kbd></p>
+  </li>
+  <li>
+    <p>Finally, you can use an outer <code>&lt;kbd&gt;</code> containing nested
+    <code>&lt;kbd&gt;</code>'s for each of the individual keystrokes.
+    Many themes try to show the nested structure visually but it doesn't work
+    very well: there isn't enough space to make it look good. In Oatcake
+    nested <code>&lt;kbd&gt;</code>'s are semantic only: they look the same as
+    a single <code>&lt;kbd&gt;</code>. This:</p>
+
+    <pre><code>&lt;kbd&gt;&lt;kbd&gt;Ctrl&lt;/kbd&gt; + &lt;kbd&gt;c&lt/kbd&gt;&lt;/kbd&gt;</code></pre>
+
+    <p>&hellip;will render like this: <kbd><kbd>Ctrl</kbd> + <kbd>c</kbd></kbd></p>
+  </li>
+</ol>
+
+<p>All three ways are equally valid.</p>
 
 <details>
   <summary>Tip: use non-breaking spaces between <code>&lt;kbd&gt;</code>'s</summary>
