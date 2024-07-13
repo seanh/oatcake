@@ -1,0 +1,13 @@
+name: CI
+on:
+  push:
+  workflow_dispatch:
+jobs:
+  CSS_Minify:
+    name: CSS Minify
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: npm clean-install
+      - run: node_modules/.bin/lightningcss --minify oatcake.css --output-file oatcake.min.css
+      - run: git status
