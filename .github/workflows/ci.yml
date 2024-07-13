@@ -12,6 +12,8 @@ jobs:
         run: npm clean-install
       - name: Check formatting
         run: make checkformatting
+      - name: Validate
+        run: make validate
       - name: Check minification
         run: |
           make minify
