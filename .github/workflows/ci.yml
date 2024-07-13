@@ -3,11 +3,12 @@ on:
   push:
   workflow_dispatch:
 jobs:
-  CSS_Minify:
-    name: CSS Minify
+  Minify_CSS:
+    name: Minify CSS
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout repo
+        uses: actions/checkout@v4
       - name: Install NPM dependencies
         run: npm clean-install
       - name: Minify CSS
