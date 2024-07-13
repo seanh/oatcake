@@ -11,10 +11,9 @@ jobs:
         uses: actions/checkout@v4
       - name: Install NPM dependencies
         run: npm clean-install
-      - name: Minify CSS
-        run: node_modules/.bin/lightningcss --minify oatcake.css --output-file oatcake.min.css
-      - name: Check that oatcake.min.css is up to date
+      - name: Check that minified CSS is up to date
         run: |
+          node_modules/.bin/lightningcss --minify oatcake.css --output-file oatcake.min.css
           if [[ -n "$(git status --porcelain oatcake.min.css)" ]]; then
             echo "oatcake.min.css is out of date"
             exit 1
