@@ -80,6 +80,7 @@
     </a>
 
     <button
+      type="button"
       class="badge wide-only lines"
       style="display: block; position: fixed; bottom: 10px; right: 10px"
     ></button>
@@ -87,8 +88,12 @@
     <main
       style="max-width: 40em; margin: 0 auto 0 auto; padding: 0 0.5em 0 0.5em"
     >
+      <img
+        alt="Oatcake banner image"
+        src="media/oatcake.png"
+        class="noresize"
+      />
       <hgroup>
-        <img src="media/oatcake.png" class="noresize" />
         <h1 class="noanchor">Oatcake: Plain Web Typography</h1>
         <p class="lead">
           A drop-in CSS stylesheet that makes pages attractive and readable.
@@ -242,7 +247,7 @@
         </p>
 
         <p style="text-align: center">
-          <button id="toggleFonts" class="badge"></button>
+          <button type="button" id="toggleFonts" class="badge"></button>
         </p>
 
         <p>Here's the full list of font variables you can change:</p>
@@ -428,7 +433,9 @@
         or combination of elements throwing off the rhythm.
       </p>
 
-      <p style="text-align: center"><button class="badge lines"></button></p>
+      <p style="text-align: center">
+        <button type="button" class="badge lines"></button>
+      </p>
 
       <h2>Inline elements</h2>
 
@@ -2422,7 +2429,11 @@ in the air.&lt;/p&gt;</code></pre>
         styling):
       </p>
 
-      <iframe src="iframe.html" style="width: 100%; height: 120px"></iframe>
+      <iframe
+        title="example embedded page"
+        src="iframe.html"
+        style="width: 100%; height: 120px"
+      ></iframe>
 
       <p>
         As with images and videos you can add the CSS class
@@ -2430,6 +2441,7 @@ in the air.&lt;/p&gt;</code></pre>
       </p>
 
       <iframe
+        title="example embedded page"
         class="rounded"
         src="iframe.html"
         style="width: 100%; height: 120px"
@@ -2443,6 +2455,7 @@ in the air.&lt;/p&gt;</code></pre>
       </p>
 
       <iframe
+        title="example embedded page"
         class="border"
         src="iframe_white.html"
         style="width: 100%; height: 120px"
@@ -2540,7 +2553,7 @@ in the air.&lt;/p&gt;</code></pre>
             only: they look the same as a single <code>&lt;kbd&gt;</code>. This:
           </p>
 
-          <pre><code>&lt;kbd&gt;&lt;kbd&gt;Ctrl&lt;/kbd&gt; + &lt;kbd&gt;c&lt/kbd&gt;&lt;/kbd&gt;</code></pre>
+          <pre><code>&lt;kbd&gt;&lt;kbd&gt;Ctrl&lt;/kbd&gt; + &lt;kbd&gt;c&lt;/kbd&gt;&lt;/kbd&gt;</code></pre>
 
           <p>
             &hellip;will render like this:
@@ -2609,7 +2622,7 @@ in the air.&lt;/p&gt;</code></pre>
         element) look like this in Oatcake:
       </p>
 
-      <pre><h4 class="noanchor">Useful emptiness</h4>
+      <pre>
 Heaven and earth aren't humane.
 
 To them the thousand things
@@ -2623,7 +2636,8 @@ Heaven and earth
 act as a bellows:
 
 Empty yet structured,
-it moves, inexhaustibly giving.</pre>
+it moves, inexhaustibly giving.</pre
+      >
 
       <h2>Code blocks</h2>
 
@@ -3534,13 +3548,15 @@ end tell</code></pre>
 
       <p>
         You can also put the <code>badge</code> class on an
-        <code>&lt;a&gt;</code> or <code>&ltbutton&gt;</code> to create a badge
+        <code>&lt;a&gt;</code> or <code>&lt;button&gt;</code> to create a badge
         with hover and focus states:
       </p>
 
       <p>
         <a href="" class="badge">An <code>&lt;a&gt;</code> badge</a>
-        <button class="badge">A <code>&lt;button&gt;</code> badge</button>
+        <button type="button" class="badge">
+          A <code>&lt;button&gt;</code> badge
+        </button>
       </p>
 
       <p>

@@ -8,6 +8,8 @@ help:
 	@echo "    Format the code nicely."
 	@echo "make checkformatting"
 	@echo "    Check that the code is formatted nicely."
+	@echo "make validate"
+	@echo "    Check that the code is valid."
 	@echo "make help"
 	@echo "    Show this help message."
 
@@ -26,3 +28,7 @@ format:
 .PHONY: checkformatting
 checkformatting:
 	npx prettier --check .
+
+.PHONY: validate
+validate:
+	npx html-validate .
