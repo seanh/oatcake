@@ -3,17 +3,18 @@ on:
   push:
   workflow_dispatch:
 jobs:
-  Minify_CSS:
-    name: Minify CSS
+  CI:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repo
         uses: actions/checkout@v4
       - name: Install NPM dependencies
         run: npm clean-install
-      - name: Check that minified CSS is up to date
+      - name: Check formatting
+        run: make checkformatting
+      - name: Check minification
         run: |
-          node_modules/.bin/lightningcss --minify oatcake.css --output-file oatcake.min.css
+          make minify
           if [[ -n "$(git status --porcelain oatcake.min.css)" ]]; then
             echo "oatcake.min.css is out of date"
             exit 1
