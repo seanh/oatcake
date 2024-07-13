@@ -19,7 +19,8 @@
   /* The line-height sets the vertical rhythm. All sizes, margins, paddings, and borders must be added in multiples of this line height. */
   --oatcake-line-height: 24px;
   /* This is the Monospace Code font stack from https://modernfontstacks.com/ */
-  --oatcake-monospaced-font-family: ui-monospace, 'Cascadia Code', 'Source Code Pro', Menlo, Consolas, 'DejaVu Sans Mono', monospace;
+  --oatcake-monospaced-font-family: ui-monospace, "Cascadia Code",
+    "Source Code Pro", Menlo, Consolas, "DejaVu Sans Mono", monospace;
   --oatcake-small-font-size: 13px;
   --oatcake-border-radius: 7px;
 }
@@ -154,12 +155,11 @@ details,
   margin-bottom: var(--oatcake-line-height);
 }
 
-li ul:not(p~ul),
-li ol:not(p~ol),
-li dl:not(p~dl) {
+li ul:not(p ~ ul),
+li ol:not(p ~ ol),
+li dl:not(p ~ dl) {
   margin-bottom: 0;
 }
-
 
 img:not(li img:first-child),
 svg:not(li svg:first-child),
@@ -174,11 +174,11 @@ svg,
 iframe,
 video,
 audio {
-  margin-bottom: calc(var(--oatcake-line-height) *2);
+  margin-bottom: calc(var(--oatcake-line-height) * 2);
 }
 
 /* Fix for list item bullets messing up the vertical rhythm. */
-ul>li {
+ul > li {
   list-style-type: "•";
   padding-inline-start: 1ch;
   margin-left: 18px;
@@ -212,7 +212,7 @@ sub {
   vertical-align: baseline;
   position: relative;
   font-size: var(--oatcake-small-font-size);
-  padding-left: .1em;
+  padding-left: 0.1em;
 }
 
 sup,
@@ -284,7 +284,7 @@ kbd samp {
 }
 
 q {
-  quotes: "“""”""‘""’";
+  quotes: "“" "”" "‘" "’";
 }
 
 q:before {
@@ -303,7 +303,7 @@ blockquote {
 
 blockquote:before,
 blockquote:after {
-  content: '';
+  content: "";
   content: none;
 }
 
@@ -312,7 +312,7 @@ li blockquote {
   margin-left: 3px;
 }
 
-blockquote>*:last-child {
+blockquote > *:last-child {
   margin-bottom: 0;
 }
 
@@ -342,7 +342,7 @@ dd + dt {
 
 .lead code,
 .lead samp {
-  font-size: .8em;
+  font-size: 0.8em;
 }
 
 .lead kbd {
@@ -351,9 +351,9 @@ dd + dt {
   padding-bottom: 1px;
 }
 
-h1+.lead,
-h2+.lead,
-h3+.lead {
+h1 + .lead,
+h2 + .lead,
+h3 + .lead {
   margin-bottom: calc(var(--oatcake-line-height) * 2);
 }
 
@@ -378,7 +378,11 @@ kbd kbd {
   padding: 0;
 }
 
-img, svg, iframe, video, audio {
+img,
+svg,
+iframe,
+video,
+audio {
   display: block;
   margin-left: auto;
   margin-right: auto;
@@ -451,54 +455,54 @@ blockquote h3:first-child,
 .note h4:first-child,
 .note h5:first-child,
 .note h6:first-child,
-h1+h1,
-h1+h2,
-h1+h3,
-h1+h4,
-h1+h5,
-h1+h6,
-h2+h1,
-h2+h2,
-h2+h3,
-h2+h4,
-h2+h5,
-h2+h6,
-h3+h1,
-h3+h2,
-h3+h3,
-h3+h4,
-h3+h5,
-h3+h6,
-h4+h1,
-h4+h2,
-h4+h3,
-h4+h4,
-h4+h5,
-h4+h6,
-h5+h1,
-h5+h2,
-h5+h3,
-h5+h4,
-h5+h5,
-h5+h6,
-h6+h1,
-h6+h2,
-h6+h3,
-h6+h4,
-h6+h5,
-h6+h6,
+h1 + h1,
+h1 + h2,
+h1 + h3,
+h1 + h4,
+h1 + h5,
+h1 + h6,
+h2 + h1,
+h2 + h2,
+h2 + h3,
+h2 + h4,
+h2 + h5,
+h2 + h6,
+h3 + h1,
+h3 + h2,
+h3 + h3,
+h3 + h4,
+h3 + h5,
+h3 + h6,
+h4 + h1,
+h4 + h2,
+h4 + h3,
+h4 + h4,
+h4 + h5,
+h4 + h6,
+h5 + h1,
+h5 + h2,
+h5 + h3,
+h5 + h4,
+h5 + h5,
+h5 + h6,
+h6 + h1,
+h6 + h2,
+h6 + h3,
+h6 + h4,
+h6 + h5,
+h6 + h6,
 details h1:first-child,
 details h2:first-child,
 details h3:first-child,
 details h4:first-child,
 details h5:first-child,
 details h6:first-child,
-details summary+h1,
-details summary+h2,
-details summary+h3,
-details summary+h4,
-details summary+h5,
-details summary+h6 {
+details summary + h1,
+details summary + h2,
+details summary + h3,
+details summary + h4,
+details summary + h5,
+details summary + h6 {
   padding-top: 0;
 }
 
@@ -585,13 +589,13 @@ h6 samp {
 h1 mark,
 h2 mark,
 .lead mark {
-  font-size: .8em;
+  font-size: 0.8em;
   line-height: 100%;
 }
 
 h1 kbd,
 h2 kbd {
-  font-size: .85em;
+  font-size: 0.85em;
   padding-top: 0;
   padding-bottom: 0;
 }
@@ -660,17 +664,21 @@ pre samp {
 .badge {
   color: var(--oatcake-badge-color);
   background-color: var(--oatcake-badge-background-color);
-  padding-top: .1rem;
-  padding-bottom: .1rem;
-  padding-left: .6em;
-  padding-right: .6em;
+  padding-top: 0.1rem;
+  padding-bottom: 0.1rem;
+  padding-left: 0.6em;
+  padding-right: 0.6em;
   font-weight: 700;
   text-align: center;
   vertical-align: baseline;
   border-radius: 10rem;
-  transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+  transition:
+    color 0.15s ease-in-out,
+    background-color 0.15s ease-in-out,
+    border-color 0.15s ease-in-out,
+    box-shadow 0.15s ease-in-out;
   /* Prevent badges from offsetting the vertical rhythm in iOS Safari. */
-  margin-bottom: -.3rem;
+  margin-bottom: -0.3rem;
 }
 
 .badge,
@@ -706,7 +714,7 @@ button.badge:focus {
 
 a.badge:focus,
 button.badge:focus {
-  box-shadow: 0 0 0 .2rem var(--oatcake-badge-focus-border-color);
+  box-shadow: 0 0 0 0.2rem var(--oatcake-badge-focus-border-color);
 }
 
 .note {
@@ -722,13 +730,13 @@ button.badge:focus {
   padding-right: calc(var(--oatcake-line-height) * 0.5);
 }
 
-.note>*:last-child {
+.note > *:last-child {
   margin-bottom: 0;
 }
 
-.note>h1:last-child,
-.note>h2:last-child,
-.note>h3:last-child {
+.note > h1:last-child,
+.note > h2:last-child,
+.note > h3:last-child {
   padding-bottom: 0;
 }
 
@@ -736,7 +744,7 @@ button.badge:focus {
  * put really long text in one of these it will overflow. */
 .badge,
 .nowrap,
-kbd  {
+kbd {
   white-space: nowrap;
 }
 
@@ -744,7 +752,9 @@ iframe.border,
 img.border,
 video.border {
   border: 1px solid var(--oatcake-border-color);
-  margin-bottom: calc(var(--oatcake-line-height) * 2 - 2px); /* Prevent the border from offsetting the vertical rhythm. */
+  margin-bottom: calc(
+    var(--oatcake-line-height) * 2 - 2px
+  ); /* Prevent the border from offsetting the vertical rhythm. */
   border-radius: var(--oatcake-border-radius);
 }
 

@@ -7,7 +7,7 @@ jobs:
   Deploy:
     uses: seanh/ghp-static/.github/workflows/static.yml@main
     with:
-      path: 'site/'
+      path: "site/"
     permissions:
       contents: read
       pages: write

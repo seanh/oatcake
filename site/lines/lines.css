@@ -1,4 +1,5 @@
-.lines, .linesdouble {
+.lines,
+.linesdouble {
   background-size: var(--oatcake-body-line-height);
   background-position: left top;
   background-repeat: repeat;
@@ -22,5 +23,3 @@
 .lines pre code {
   background-color: rgba(243, 243, 243, 0.7);
 }
-
-
