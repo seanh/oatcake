@@ -10,4 +10,8 @@ jobs:
       - uses: actions/checkout@v4
       - run: npm clean-install
       - run: node_modules/.bin/lightningcss --minify oatcake.css --output-file oatcake.min.css
-      - run: git status
+      - run: |
+          if [[ -n "$(git status --porcelain oatcake.min.css)" ]]; then
+            echo "oatcake.min.css is out of date"
+            exit 1
+          fi
