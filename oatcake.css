@@ -633,6 +633,11 @@ details > summary {
   border-radius: var(--oatcake-border-radius);
 }
 
+details summary > * {
+  display: inline;
+  line-height: var(--oatcake-line-height);
+}
+
 details[open] > summary {
   margin-bottom: var(--oatcake-line-height);
   border-bottom-left-radius: 0;
