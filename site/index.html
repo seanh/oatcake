@@ -2826,6 +2826,30 @@ int main()
       </details>
 
       <p>
+        You can omit the <code>&lt;summary&gt;</code> and the browser will
+        insert the word &ldquo;details&rdquo; as the summary. This:
+        <code>&lt;details&gt;Hidden details.&lt;/details&gt;</code>, renders
+        like this:
+      </p>
+
+      <details>Hidden details.</details>
+
+      <details>
+        <summary>Material</summary>
+        The picture frame is made of solid oak wood.
+      </details>
+
+      <p>
+        The <code>&lt;summary&gt;</code> is required: a
+        <code>&lt;details&gt;</code> without a <code>&lt;summary&gt;</code> is
+        invalid HTML and Oatcake doesn't support it.
+      </p>
+
+      <details>
+        <summary><h2>Heading in summary</h2></summary>
+      </details>
+
+      <p>
         Adding the <code>open</code> attribute to a
         <code>&lt;details&gt;</code> makes it already be open when the page
         loads:
