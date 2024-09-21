@@ -2794,36 +2794,73 @@ int main()
 
       <p>
         We've already seen lots of these in this document&mdash;you can create a
-        disclosure widget with
+        collapsible disclosure widget with
         <a
           href="https://html.spec.whatwg.org/multipage/interactive-elements.html#the-details-element"
           ><code>&lt;details&gt;</code> and <code>&lt;summary&gt;</code></a
-        >. Oatcake deliberately gives disclosure widgets a similar style to
-        preformatted text and other blocks, with the same background color,
-        border and padding. This:
+        >. To avoid distracting readers with too many different visual styles, Oatcake
+        styles disclosure widgets similarly to preformatted text and other
+        blocks: the same background color, border and padding. The difference is
+        that instead of being preformatted or monospaced, disclosure widgets are
+        collapsible. This example from the HTML standard:
       </p>
 
-      <pre><code><strong>&lt;details&gt;</strong>
-  <strong>&lt;summary&gt;This is the summary&lt;/summary&gt;</strong>
-  &lt;p&gt;And here are the details:&lt;/p&gt;
-  &lt;ol&gt;
-    &lt;li&gt;Cash on hand: $500.00&lt;/li&gt;
-    &lt;li&gt;Current invoice: $75.30&lt;/li&gt;
-    &lt;li&gt;Due date: 5/6/19&lt;/li&gt;
-  &lt;/ol&gt;
-<strong>&lt;/details&gt;</strong></code></pre>
+      <pre><code><b>&lt;details&gt;</b>
+  <b>&lt;summary&gt;</b>Material<b>&lt;/summary&gt;</b>
+  The picture frame is made of solid oak wood.
+<b>&lt;/details&gt;</b></code></pre>
 
       <p>&hellip;renders like this:</p>
 
       <details>
-        <summary>This is the summary</summary>
-        <p>And here are the details:</p>
-        <ol>
-          <li>Cash on hand: $500.00</li>
-          <li>Current invoice: $75.30</li>
-          <li>Due date: 5/6/19</li>
-        </ol>
+        <summary>Material</summary>
+        The picture frame is made of solid oak wood.
       </details>
+
+      <p>You can also wrap the contents in a <code>&lt;p&gt;</code>, it looks the same. This:</p>
+
+      <pre><code>&lt;details&gt;
+  &lt;summary&gt;Size&lt;/summary&gt;
+  <b>&lt;p&gt;</b>The picture frame fits a photo 40cm tall and 30cm wide.
+  The frame is 45cm tall, 35cm wide, and 2cm thick.<b>&lt;/p&gt;</b>
+&lt;/details&gt;</code></pre>
+
+      <p>&hellip;renders like this:</p>
+
+      <details>
+        <summary>Size</summary>
+        <p>The picture frame fits a photo 40cm tall and 30cm wide.
+        The frame is 45cm tall, 35cm wide, and 2cm thick.</p>
+      </details>
+
+      <p>A disclosure widget can also contain multiple block-level elements:
+      <code>&lt;p&gt;</code>'s,
+      <code>&lt;blockquotes&gt;</code>'s,
+      lists,
+      code blocks,
+      images,
+      whatever.</p>
+
+      <details>
+        <summary>A disclosure widget containing various block-level elements.</summary>
+
+        <p>Nunc eu consequat velit. Vivamus ipsum elit, lobortis in nulla ut, luctus condimentum felis.</p>
+
+        <blockquote>Quisque bibendum suscipit metus, eget vehicula est
+          facilisis eu. Vestibulum pellentesque tellus eget tristique
+          tincidunt. Ut iaculis ipsum at felis volutpat, sit amet semper orci
+          maximus. Donec non gravida nibh. Mauris consectetur dapibus arcu ac
+          aliquam. Etiam egestas suscipit nisi, vitae vestibulum elit viverra
+          vitae.</blockquote>
+
+        <ol>
+          <li>
+
+        <p>Suspendisse sodales pharetra ultricies. Mauris tempus nec turpis ac blandit.</p>
+
+        <p>Vivamus vitae blandit neque. Mauris quis consequat metus. Nunc vitae massa egestas dui egestas malesuada.</p>
+      </details>
+
 
       <p>
         You can omit the <code>&lt;summary&gt;</code> and the browser will

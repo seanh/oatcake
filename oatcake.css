@@ -633,9 +633,17 @@ details > summary {
   border-radius: var(--oatcake-border-radius);
 }
 
-details summary > * {
+details > summary > * {
   display: inline;
   line-height: var(--oatcake-line-height);
+}
+
+details[open] {
+  padding-bottom: var(--oatcake-line-height);
+}
+
+details[open] :not(summary):last-child {
+  margin-bottom: 0;
 }
 
 details[open] > summary {
