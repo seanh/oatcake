@@ -2,6 +2,6 @@
   "devDependencies": {
     "html-validate": "^8.24.2",
     "lightningcss-cli": "^1.27.0",
-    "prettier": "^3.3.3"
+    "prettier": "^3.4.1"
   }
 }
