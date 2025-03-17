@@ -19,8 +19,9 @@
   /* The line-height sets the vertical rhythm. All sizes, margins, paddings, and borders must be added in multiples of this line height. */
   --oatcake-line-height: 24px;
   /* This is the Monospace Code font stack from https://modernfontstacks.com/ */
-  --oatcake-monospaced-font-family: ui-monospace, "Cascadia Code",
-    "Source Code Pro", Menlo, Consolas, "DejaVu Sans Mono", monospace;
+  --oatcake-monospaced-font-family:
+    ui-monospace, "Cascadia Code", "Source Code Pro", Menlo, Consolas,
+    "DejaVu Sans Mono", monospace;
   --oatcake-small-font-size: 13px;
   --oatcake-border-radius: 7px;
 }
