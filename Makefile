@@ -19,7 +19,7 @@ dev:
 
 .PHONY: minify
 minify:
-	npx lightningcss --minify oatcake.css --output-file oatcake.min.css
+	npx lightningcss-cli --minify oatcake.css --output-file oatcake.min.css
 
 .PHONY: format
 format:
