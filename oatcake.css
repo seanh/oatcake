@@ -402,32 +402,32 @@ h4,
 h5,
 h6 {
   font-weight: bold;
+  line-height: var(--oatcake-line-height);
 }
 
-h1,
-h2 {
+h1 {
   padding-top: calc(var(--oatcake-line-height) * 2);
   font-size: 24px;
-  line-height: var(--oatcake-line-height);
   padding-bottom: var(--oatcake-line-height);
 }
 
 h2 {
-  padding-top: calc(var(--oatcake-line-height) * 1);
+  padding-top: var(--oatcake-line-height);
+  font-size: 19px;
+  padding-bottom: var(--oatcake-line-height);
 }
 
 h3 {
-  padding-top: calc(var(--oatcake-line-height) * 1);
-  font-size: 19px;
-  line-height: var(--oatcake-line-height);
+  padding-top: var(--oatcake-line-height);
+  font-size: var(--oatcake-font-size);
   padding-bottom: var(--oatcake-line-height);
 }
 
 h4,
 h5,
 h6 {
+  padding-top: 0;
   font-size: var(--oatcake-font-size);
-  line-height: var(--oatcake-line-height);
   padding-bottom: 0;
 }
 

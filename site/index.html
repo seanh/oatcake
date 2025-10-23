@@ -1223,11 +1223,15 @@ in the air.&lt;/p&gt;</code></pre>
       <h2>Headings</h2>
 
       <p>
-        Here's what all six levels of HTML headings
-        <code>&lt;h1&gt;&ndash;&lt;h6&gt;</code> look like with Oatcake:
+        Oatcake uses both the font-size and the amount of vertical space above
+        and below to provide four visually distinct levels of headings:
+        <code>&lt;h1&gt;</code>, <code>&lt;h2&gt;</code>,
+        <code>&lt;h3&gt;</code> and <code>&lt;h4&gt;</code>. You can also use
+        <code>&lt;h5&gt;</code>'s and <code>&lt;h6&gt;</code>'s but they look
+        the same as <code>&lt;h4&gt;</code>'s:
       </p>
 
-      <h1 class="noanchor">Page title (level 1 heading)</h1>
+      <h1 class="noanchor">Level 1 heading</h1>
 
       <p>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer
@@ -1271,26 +1275,6 @@ in the air.&lt;/p&gt;</code></pre>
 
       <p>Suspendisse dignissim tempor ultricies.</p>
 
-      <p>
-        Oatcake's <code>&lt;h1&gt;</code>'s and <code>&lt;h2&gt;</code>'s are
-        the same size (other than a bit more vertical space above an
-        <code>&lt;h1&gt;</code>). The intention is that documents will start
-        with a single <code>&lt;h1&gt;</code> whose position at the top of the
-        document makes it clear that it's the top-level title, and then
-        <code>&lt;h2&gt;</code>'s will be used for any mid-document headings.
-        This prevents <code>&lt;h1&gt;</code>'s from having to be too large.
-      </p>
-
-      <p>
-        If you need sub-headings and sub-sub-headings use
-        <code>&lt;h3&gt;</code>'s and <code>&lt;h4&gt;</code>'s.
-      </p>
-
-      <p>
-        You can also use <code>&lt;h5&gt;</code>'s and <code>&lt;h6&gt;</code>'s
-        but they look the same as <code>&lt;h4&gt;</code>'s.
-      </p>
-
       <details>
         <summary>Design notes: headings</summary>
 
@@ -1308,16 +1292,16 @@ in the air.&lt;/p&gt;</code></pre>
         </p>
 
         <p>
-          Oatcake's opinion is that most pages shouldn't use more than three
-          levels of headings, preferably two. More levels are confusing and make
-          it difficult for readers to orient themselves within the document.
+          Oatcake's opinion is that most pages shouldn't use more than four
+          levels of headings. More levels are confusing and make it difficult
+          for readers to orient themselves within the document.
         </p>
 
         <p>
-          So Oatcake deliberately restrains itself to just three visually
+          So Oatcake deliberately restrains itself to just four visually
           distinct levels of headings, using the smallest necessary increments
-          in font size and space above and below to distinguish the three levels
-          of headings from each other. Sticking to just three visually distinct
+          in font size and space above and below to distinguish the four levels
+          of headings from each other. Sticking to just four visually distinct
           levels enables them to be distinct enough from each other without
           resorting to desperate measures.
         </p>
@@ -1327,9 +1311,9 @@ in the air.&lt;/p&gt;</code></pre>
         <p>
           A common mistake is to vertically align headings closer to the
           paragraph above than to the one below, or evenly mid-way between them.
-          Oatcake gives headings a little more vertical space above than below
-          so they're visually related more with the text below (that belongs to
-          the heading) than to the unrelated text above.
+          Oatcake gives all levels of headings a little more vertical space
+          above than below so they're visually related more with the text below
+          (that belongs to the heading) than to the unrelated text above.
         </p>
       </details>
 
