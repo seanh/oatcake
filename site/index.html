@@ -2265,6 +2265,48 @@ in the air.&lt;/p&gt;</code></pre>
 
       <img src="media/oats.jpg" alt="A bowl of oats" title="A bowl of oats" />
 
+      <p>
+        It looks the same if your <code>&lt;img&gt;</code>'s are wrapped in
+        <code>&lt;p&gt;</code>'s, this:
+      </p>
+
+      <pre><code>&lt;p&gt;&lt;img src="media/oats.jpg"&gt;&lt;/p&gt;</code></pre>
+
+      <p>renders like this:</p>
+
+      <p>
+        <img src="media/oats.jpg" alt="A bowl of oats" title="A bowl of oats" />
+      </p>
+
+      <p>
+        Oatcake also gives images rounded corners. This looks nicer and it's
+        consistent with other elements that get rounded corners in Oatcake, all
+        with the same border radius. If you want to remove these just add
+        <code>border-radius: 0</code> to the <code>&lt;img&gt;</code>'s CSS, for
+        example for a single image:
+      </p>
+
+      <pre><code>&lt;img style="border-radius: 0;" src="&hellip;" alt="&hellip;"&gt;</code></pre>
+
+      <p>
+        Or to turn off rounded corners for all images add this to your site's
+        CSS:
+      </p>
+
+      <pre><code>img {
+  border-radius: 0;
+}</code></pre>
+
+      <p>
+        Sometimes you want to add a border to an image, for example if the
+        background colour of the image is the same as the background colour of
+        your site and you want to show where the edges of the image are. You can
+        add a border by adding the CSS class <code>border</code> to an image -
+        <code>&lt;img class="border" src="&hellip;" alt="&hellip;"&gt;</code>:
+      </p>
+
+      <img class="border" src="media/bowl.jpg" alt="A bowl of oats" />
+
       <details>
         <summary>Embedded media and vertical rhythm</summary>
 
@@ -2303,42 +2345,11 @@ in the air.&lt;/p&gt;</code></pre>
         </p>
       </details>
 
-      <p>
-        It looks the same if your <code>&lt;img&gt;</code>'s are wrapped in
-        <code>&lt;p&gt;</code>'s, this:
-      </p>
-
-      <pre><code>&lt;p&gt;&lt;img src="media/oats.jpg"&gt;&lt;/p&gt;</code></pre>
-
-      <p>renders like this:</p>
-
-      <p>
-        <img src="media/oats.jpg" alt="A bowl of oats" title="A bowl of oats" />
-      </p>
-
-      <p>
-        You can make an image's corners rounded by adding the CSS class
-        <code>rounded</code> to the image -
-        <code>&lt;img class="rounded" src="&hellip;" alt="&hellip;"&gt;</code>:
-      </p>
-
-      <img class="rounded" src="media/oats.jpg" alt="A bowl of oats" />
-
-      <p>
-        Sometimes you want to add a border to an image, for example if the
-        background colour of the image is the same as the background colour of
-        your site and you want to show where the edges of the image are. You can
-        add a border by adding the CSS class <code>border</code> to an image -
-        <code>&lt;img class="border" src="&hellip;" alt="&hellip;"&gt;</code>:
-      </p>
-
-      <img class="border" src="media/bowl.jpg" alt="A bowl of oats" />
-
       <h2>Videos</h2>
 
       <p>
-        The same extra little bit of vertical space is also applied to video
-        players created using
+        The same extra little bit of vertical space and rounded corners are also
+        applied to video players created using
         <a
           href="https://html.spec.whatwg.org/multipage/media.html#the-video-element"
           ><code>&lt;video&gt;</code></a
@@ -2354,23 +2365,8 @@ in the air.&lt;/p&gt;</code></pre>
       ></video>
 
       <p>
-        As with images, you can also make a video's corners rounded by adding
-        the CSS class <code>rounded</code> to the video -
-        <code>&lt;video class="rounded" src="&hellip;"&gt;</code>:
-      </p>
-
-      <video
-        class="rounded"
-        controls
-        muted
-        playsinline
-        src="media/train.mp4"
-        poster="media/train.png"
-      ></video>
-
-      <p>
-        Also as with images you can add a border to a video by adding the CSS
-        class <code>border</code> to the video -
+        As with images you can add a border to a video by adding the CSS class
+        <code>border</code> to the video -
         <code>&lt;video class="border" src="&hellip;"&gt;</code>, useful if the
         background colour of the video is similar to the background colour of
         your site and you want to show where the edges of the video are:
@@ -2401,8 +2397,8 @@ in the air.&lt;/p&gt;</code></pre>
       <h2>iframes</h2>
 
       <p>
-        Finally, the same extra vertical breathing room is also applied to
-        embedded pages created with
+        Finally, the same extra vertical breathing room and rounded corners are
+        also applied to embedded pages created with
         <a
           href="https://html.spec.whatwg.org/multipage/iframe-embed-object.html#the-iframe-element"
           ><code>&lt;iframe&gt;</code></a
@@ -2419,21 +2415,9 @@ in the air.&lt;/p&gt;</code></pre>
 
       <p>
         As with images and videos you can add the CSS class
-        <code>rounded</code> to an iframe to give it rounded corners:
-      </p>
-
-      <iframe
-        title="example embedded page"
-        class="rounded"
-        src="iframe.html"
-        style="width: 100%; height: 120px"
-      ></iframe>
-
-      <p>
-        Or you can add the CSS class <code>border</code> to an iframe to give it
-        a border, which might be useful if the embedded page has the same
-        background colour as the parent page and you want to show where the
-        edges of the embedded page are:
+        <code>border</code> to an iframe to give it a border, which might be
+        useful if the embedded page has the same background colour as the parent
+        page and you want to show where the edges of the embedded page are:
       </p>
 
       <iframe
@@ -3036,10 +3020,9 @@ end</code></pre>
       <p>
         We've already seen the utility classes <code>small</code> (for small
         text, the same as the <code>&lt;small&gt;</code> element),
-        <code>rounded</code> (for adding rounded corners to images, videos and
-        iframes), <code>border</code> (for adding borders to images, videos and
-        iframes), and <code>nowrap</code> (for preventing the browser from
-        wrapping the text within an element).
+        <code>border</code> (for adding borders to images, videos and iframes),
+        and <code>nowrap</code> (for preventing the browser from wrapping the
+        text within an element).
       </p>
 
       <p>
@@ -3426,17 +3409,11 @@ Being is born of not being.</pre
       <div class="note">
         <p>An image in a note block:</p>
 
-        <img
-          class="rounded"
-          src="media/oats.jpg"
-          alt="A bowl of oats"
-          title="A bowl of oats"
-        />
+        <img src="media/oats.jpg" alt="A bowl of oats" title="A bowl of oats" />
 
         <p>Of course videos also work:</p>
 
         <video
-          class="rounded"
           controls
           muted
           playsinline
