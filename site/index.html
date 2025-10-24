@@ -2761,37 +2761,106 @@ int main()
       </h2>
 
       <p>
-        We've already seen lots of these in this document&mdash;you can create a
-        disclosure widget with
+        I've already used lots of these throughout this document&mdash;you can
+        create collapsible disclosure widgets with
         <a
           href="https://html.spec.whatwg.org/multipage/interactive-elements.html#the-details-element"
           ><code>&lt;details&gt;</code> and <code>&lt;summary&gt;</code></a
-        >. Oatcake deliberately gives disclosure widgets a similar style to
-        preformatted text and other blocks, with the same background color,
-        border and padding. This:
+        >.
+      </p>
+
+      <p>
+        To avoid distracting readers with too many different visual styles
+        Oatcake styles disclosure widgets similarly to preformatted text, code
+        and note boxes: the same background color, border, rounded corners, and
+        padding. The difference is that instead of being preformatted or
+        monospaced disclosure widgets are collapsible.
+      </p>
+
+      <p>
+        To create a disclosure widget you use a
+        <code>&lt;details&gt;</code> element containing a
+        <code>&lt;summary&gt;</code> followed by some content. For example this:
       </p>
 
       <pre><code><strong>&lt;details&gt;</strong>
-  <strong>&lt;summary&gt;This is the summary&lt;/summary&gt;</strong>
-  &lt;p&gt;And here are the details:&lt;/p&gt;
-  &lt;ol&gt;
-    &lt;li&gt;Cash on hand: $500.00&lt;/li&gt;
-    &lt;li&gt;Current invoice: $75.30&lt;/li&gt;
-    &lt;li&gt;Due date: 5/6/19&lt;/li&gt;
-  &lt;/ol&gt;
+  <strong>&lt;summary&gt;</strong>Material<strong>&lt;/summary&gt;</strong>
+  &lt;p&gt;The picture frame is made of solid oak wood.&lt;/p&gt;
 <strong>&lt;/details&gt;</strong></code></pre>
 
       <p>&hellip;renders like this:</p>
 
       <details>
-        <summary>This is the summary</summary>
-        <p>And here are the details:</p>
-        <ol>
-          <li>Cash on hand: $500.00</li>
-          <li>Current invoice: $75.30</li>
-          <li>Due date: 5/6/19</li>
-        </ol>
+        <summary>Material</summary>
+        <p>The picture frame is made of solid oak wood.</p>
       </details>
+
+      <p>You click on the disclosure widget to show or hide its contents.</p>
+
+      <p>
+        If your <code>&lt;details&gt;</code> only contains a single paragraph
+        you can omit the <code>&lt;p&gt;</code> and it'll look the same. This:
+      </p>
+
+      <pre><code>&lt;details&gt;
+  &lt;summary&gt;Material&lt;/summary&gt;
+  <strong>The picture frame is made of solid oak wood.</strong>
+&lt;/details&gt;</code></pre>
+
+      <p>&hellip;renders like this:</p>
+
+      <details>
+        <summary>Material</summary>
+        The picture frame is made of solid oak wood.
+      </details>
+
+      <p>
+        Disclosure widgets can contain multiple elements:
+        <code>&lt;p&gt;</code>'s, <code>&lt;blockquotes&gt;</code>'s, lists,
+        code blocks, images, whatever:
+      </p>
+
+      <details>
+        <summary>A disclosure widget containing various elements.</summary>
+
+        <p>
+          Nunc eu consequat velit. Vivamus ipsum elit, lobortis in nulla ut,
+          luctus condimentum felis.
+        </p>
+
+        <blockquote>
+          Quisque bibendum suscipit metus, eget vehicula est facilisis eu.
+          Vestibulum pellentesque tellus eget tristique tincidunt. Ut iaculis
+          ipsum at felis volutpat, sit amet semper orci maximus. Donec non
+          gravida nibh. Mauris consectetur dapibus arcu ac aliquam. Etiam
+          egestas suscipit nisi, vitae vestibulum elit viverra vitae.
+        </blockquote>
+
+        <p>
+          Suspendisse sodales pharetra ultricies. Mauris tempus nec turpis ac
+          blandit.
+        </p>
+
+        <p>
+          Vivamus vitae blandit neque. Mauris quis consequat metus. Nunc vitae
+          massa egestas dui egestas malesuada.
+        </p>
+      </details>
+
+      <p>You can even nest disclosure widgets:</p>
+
+      <details>
+        <summary>Outer widget</summary>
+        <p>Details&hellip;</p>
+        <details>
+          <summary>Inner widget</summary>
+          <p>Details&hellip;</p>
+        </details>
+      </details>
+
+      <h3>
+        Pre-opened disclosure widgets with the <code>open</code> attribute
+      </h3>
 
       <p>
         Adding the <code>open</code> attribute to a
@@ -2809,15 +2878,44 @@ int main()
         </ol>
       </details>
 
-      <p>You can nest disclosure widgets:</p>
+      <h3>Mutually-exclusive disclosure widgets with <code>name</code></h3>
 
-      <details>
-        <summary>Outer widget</summary>
-        <p>Details&hellip;</p>
-        <details>
-          <summary>Inner widget</summary>
-          <p>Details&hellip;</p>
-        </details>
+      <p>
+        You can create a mutually-exclusive group of disclosure widgets by
+        giving them all the same <code>name</code> attribute. Only one
+        disclosure widget with the same <code>name</code> can be open at the
+        same time. If the user opens one of the named group of widgets it'll
+        close any others that're already open. For example this:
+      </p>
+
+      <pre><code>&lt;details <strong>name="test"</strong>&gt;
+  &lt;summary&gt;This is the first disclosure widget&lt;/summary&gt;
+  These are the first details.
+&lt;/details&gt;
+&lt;details <strong>name="test"</strong>&gt;
+  &lt;summary&gt;This is the second disclosure widget&lt;/summary&gt;
+  These are the second details.
+&lt;/details&gt;
+&lt;details <strong>name="test"</strong>&gt;
+  &lt;summary&gt;This is the third disclosure widget&lt;/summary&gt;
+  These are the third details.
+&lt;/details&gt;</code></pre>
+
+      <p>&hellip;creates these:</p>
+
+      <details name="test">
+        <summary>This is the first disclosure widget</summary>
+        These are the first details.
+      </details>
+
+      <details name="test">
+        <summary>This is the second disclosure widget</summary>
+        These are the second details.
+      </details>
+
+      <details name="test">
+        <summary>This is the third disclosure widget</summary>
+        These are the third details.
       </details>
 
       <h3>Headings in disclosure widgets</h3>
@@ -2886,6 +2984,45 @@ int main()
         <h4 class="noanchor"><code>&lt;h4&gt;</code> heading</h4>
         <p>Here are the details&hellip;</p>
       </details>
+
+      <h3>Disclosure widgets with no <code>&lt;summary&gt;</code></h3>
+
+      <p>
+        The HTML standard requires that a <code>&lt;details&gt;</code> must have
+        a <code>&lt;summary&gt;</code> as its first child. Nonetheless, you can
+        use a <code>&lt;details&gt;</code> without a
+        <code>&lt;summary&gt;</code> and browsers will render it, inserting the
+        word <q>Details</q> in place of the summary.
+      </p>
+
+      <p>
+        Oatcake makes disclosure widgets without <code>&lt;summary&gt;</code>'s
+        look as good as possible. This:
+      </p>
+
+      <pre><code>&lt;details&gt;
+  &lt;p&gt;This is a disclosure widget with no summary.&lt;/p&gt;
+&lt;/details&gt;</code></pre>
+
+      <p>&hellip;renders like this:</p>
+
+      <!-- [html-validate-disable-next element-required-content] -->
+      <details><p>This is a disclosure widget with no summary.</p></details>
+
+      <p>
+        You can be even lazier and omit the <code>&lt;p&gt;</code> as well. In
+        this case Oatcake does the best it can but it's not possible to get the
+        vertical spacing quite right. This:
+      </p>
+
+      <pre><code>&lt;details&gt;
+  This is a disclosure widget with no summary.
+&lt;/details&gt;</code></pre>
+
+      <p>&hellip;renders like this:</p>
+
+      <!-- [html-validate-disable-next element-required-content] -->
+      <details>This is a disclosure widget with no summary.</details>
 
       <h2 id="figures">Figures and figure captions</h2>
 

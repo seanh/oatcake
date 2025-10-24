@@ -611,34 +611,68 @@ h6 kbd {
   padding-bottom: 0;
 }
 
+/*
+ * ============================================================================
+ * DISCLOSURE WIDGETS
+ * ============================================================================
+ */
+
 details,
-details > summary {
+summary {
   border: 1px solid var(--oatcake-border-color);
+  border-radius: var(--oatcake-border-radius);
+  padding-top: var(--oatcake-line-height);
+  padding-bottom: var(--oatcake-line-height);
+  padding-left: calc(0.5 * var(--oatcake-line-height));
+  padding-right: calc(0.5 * var(--oatcake-line-height));
 }
 
 details {
-  padding-left: calc(0.5 * var(--oatcake-line-height));
-  padding-right: calc(0.5 * var(--oatcake-line-height));
-  padding-top: calc(var(--oatcake-line-height) - 3px);
-  border-radius: var(--oatcake-border-radius);
+  /* Avoid breaking the vertical rhythm by subtracting 2px of vertical space to
+     account for the 2px of borders around <details> elements
+     (1px top and 1px bottom). */
+  margin-top: -2px;
 }
 
 details > summary {
-  border-bottom: none;
-  cursor: pointer;
-  height: var(--oatcake-line-height);
   background-color: var(--oatcake-block-background-color);
-  margin-top: calc(-1 * calc(var(--oatcake-line-height)));
+  cursor: pointer;
+  margin-top: calc(-1 * calc(var(--oatcake-line-height)) - 1px);
   margin-left: calc(-0.5 * var(--oatcake-line-height) - 1px);
   margin-right: calc(-0.5 * var(--oatcake-line-height) - 1px);
-  padding: calc(0.5 * var(--oatcake-line-height));
-  border-radius: var(--oatcake-border-radius);
+}
+
+details:not([open]) > summary {
+  /* Align the <summary>'s bottom border with the bottom border of the containing <details>. */
+  margin-bottom: -1px;
 }
 
 details[open] > summary {
   margin-bottom: var(--oatcake-line-height);
+  border-bottom: none;
   border-bottom-left-radius: 0;
   border-bottom-right-radius: 0;
+}
+
+details[open] :first-child:not(summary) {
+  /* When a details has no <summary> put some whitespace between the top of the
+     <details> and the first child-element within.
+     Unfortunately this only works if the <details> contents is made up of child
+     elements (e.g. <p>'s) rather than just text content. */
+  margin-top: var(--oatcake-line-height);
+}
+
+details:not([open]):has(summary) {
+  /* A closed <details> with a <summary> doesn't need any padding bottom because
+     the <summary> has padding bottom. */
+  padding-bottom: 0;
+}
+
+details[open]:has(:not(summary)) {
+  /* An open <details> with any non-<summary> child elements doesn't need any
+   padding bottom because it's assumed that the last child element inside
+   the <details> will have its own padding-bottom or margin-bottom. */
+  padding-bottom: 0;
 }
 
 pre {
