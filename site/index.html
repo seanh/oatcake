@@ -3024,6 +3024,27 @@ int main()
       <!-- [html-validate-disable-next element-required-content] -->
       <details>This is a disclosure widget with no summary.</details>
 
+      <p>
+        It's also invalid to have a <code>&lt;summary&gt;</code> that isn't the
+        first child of the <code>&lt;details&gt;</code> but again browsers will
+        render it. Oatcake makes sure this works as well. This:
+      </p>
+
+      <pre><code>&lt;details&gt;
+  &lt;p&gt;Velocity: 12m/s&lt;/p&gt;
+  &lt;p&gt;Direction: North&lt;/p&gt;
+  <strong>&lt;summary&gt;</strong>Automated Status: Operational<strong>&lt;/summary&gt;</strong>
+&lt;/details&gt;</code></pre>
+
+      <p>&hellip;renders like this:</p>
+
+      <details>
+        <p>Velocity: 12m/s</p>
+        <p>Direction: North</p>
+        <!-- [html-validate-disable-next element-permitted-order] -->
+        <summary>Automated Status: Operational</summary>
+      </details>
+
       <h2 id="figures">Figures and figure captions</h2>
 
       <p>
