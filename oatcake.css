@@ -675,6 +675,10 @@ details[open]:has(:not(summary)) {
   padding-bottom: 0;
 }
 
+details:not(:has(summary)) {
+  background-color: var(--oatcake-block-background-color);
+}
+
 pre {
   overflow: auto;
   border-radius: var(--oatcake-border-radius);
