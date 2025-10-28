@@ -162,6 +162,12 @@ li dl:not(p ~ dl) {
   margin-bottom: 0;
 }
 
+abbr[title] {
+  text-decoration: underline dotted;
+  text-decoration-skip-ink: none;
+  cursor: help;
+}
+
 img:not(li img:first-child),
 svg:not(li svg:first-child),
 iframe:not(li iframe:first-child),
