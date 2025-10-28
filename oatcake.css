@@ -519,7 +519,10 @@ figure figcaption {
 }
 
 figure img + figcaption,
-figure svg + figcaption {
+figure svg + figcaption,
+figure iframe + figcaption,
+figure video + figcaption,
+figure audio + figcaption {
   margin-top: calc(var(--oatcake-line-height) * -1);
 }
 
