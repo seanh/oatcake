@@ -40,6 +40,18 @@
       pre.custom samp {
         color: var(--oatcake-secondary-color);
       }
+      .example {
+        margin-left: 2em;
+        margin-bottom: var(--oatcake-line-height);
+      }
+      .example:not(.padding) h1:first-child,
+      .example:not(.padding) h2:first-child,
+      .example:not(.padding) h3:first-child,
+      .example:not(.padding) h4:first-child,
+      .example:not(.padding) h5:first-child,
+      .example:not(.padding) h6:first-child {
+        padding-top: 0;
+      }
     </style>
     <link
       rel="apple-touch-icon"
@@ -1219,6 +1231,7 @@ in the air.&lt;/p&gt;</code></pre>
       <h2>Headings</h2>
 
       <p>
+        Here's what all six levels of HTML headings look like in Oatcake.
         Oatcake uses both the font-size and the amount of vertical space above
         and below to provide four visually distinct levels of headings:
         <code>&lt;h1&gt;</code>, <code>&lt;h2&gt;</code>,
@@ -1227,79 +1240,87 @@ in the air.&lt;/p&gt;</code></pre>
         the same as <code>&lt;h4&gt;</code>'s:
       </p>
 
-      <h1 class="noanchor">Level 1 heading</h1>
+      <div
+        class="example padding"
+        style="margin-bottom: calc(2 * var(--oatcake-line-height))"
+      >
+        <h1 class="noanchor">Level 1 heading</h1>
 
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer
-        malesuada, justo tincidunt mattis gravida, velit orci facilisis nibh, at
-        hendrerit risus sem eu arcu.
-      </p>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer
+          malesuada, justo tincidunt mattis gravida, velit orci facilisis nibh,
+          at hendrerit risus sem eu arcu.
+        </p>
 
-      <h2 class="noanchor">Level 2 heading</h2>
+        <h2 class="noanchor">Level 2 heading</h2>
 
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer
-        malesuada, justo tincidunt mattis gravida, velit orci facilisis nibh, at
-        hendrerit risus sem eu arcu.
-      </p>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer
+          malesuada, justo tincidunt mattis gravida, velit orci facilisis nibh,
+          at hendrerit risus sem eu arcu.
+        </p>
 
-      <h3 class="noanchor">Level 3 heading</h3>
+        <h3 class="noanchor">Level 3 heading</h3>
 
-      <p>
-        Suspendisse vitae bibendum libero. In in lorem lacus. Proin pharetra
-        neque venenatis, fringilla justo id, elementum magna. Maecenas
-        vestibulum tortor urna, vel pharetra nisi commodo vel.
-      </p>
+        <p>
+          Suspendisse vitae bibendum libero. In in lorem lacus. Proin pharetra
+          neque venenatis, fringilla justo id, elementum magna. Maecenas
+          vestibulum tortor urna, vel pharetra nisi commodo vel.
+        </p>
 
-      <h4 class="noanchor">Level 4 heading</h4>
+        <h4 class="noanchor">Level 4 heading</h4>
 
-      <p>
-        Suspendisse dignissim tempor ultricies. Phasellus in sollicitudin felis,
-        eget fringilla quam. Vestibulum suscipit arcu dapibus placerat cursus.
-        Suspendisse dignissim orci in nibh convallis, sit amet tempus dui
-        tincidunt.
-      </p>
+        <p>
+          Suspendisse dignissim tempor ultricies. Phasellus in sollicitudin
+          felis, eget fringilla quam. Vestibulum suscipit arcu dapibus placerat
+          cursus. Suspendisse dignissim orci in nibh convallis, sit amet tempus
+          dui tincidunt.
+        </p>
 
-      <h5 class="noanchor">Level 5 heading</h5>
+        <h5 class="noanchor">Level 5 heading</h5>
 
-      <p>
-        Suspendisse dignissim tempor ultricies. Phasellus in sollicitudin felis,
-        eget fringilla quam. Vestibulum suscipit arcu dapibus placerat cursus.
-      </p>
+        <p>
+          Suspendisse dignissim tempor ultricies. Phasellus in sollicitudin
+          felis, eget fringilla quam. Vestibulum suscipit arcu dapibus placerat
+          cursus.
+        </p>
 
-      <h6 class="noanchor">Level 6 heading</h6>
+        <h6 class="noanchor">Level 6 heading</h6>
 
-      <p>Suspendisse dignissim tempor ultricies.</p>
+        <p>Suspendisse dignissim tempor ultricies.</p>
+      </div>
 
       <details>
         <summary>Design notes: headings</summary>
 
         <p>
           Headings are one of the hardest things to get right and one of the
-          parts of Oatcake that I'm most happy with. HTML's six levels of
-          headings are more than most documents need. Themes often resort to
-          desperate measures to try to make all six levels visually distinct:
-          distractions like overlarge font sizes, excessively heavy weights, ALL
-          CAPS, underlines, centered text, too many font faces, too much
-          indentation, etc. Most themes make <code>&lt;h1&gt;</code>'s too big
-          for my taste (for the types of documents and titles that I tend to
-          write anyway), meanwhile subheadings often come in
-          <em>smaller</em> fonts than the main body text.
+          parts of Oatcake that I'm most happy with.
+        </p>
+        <p>
+          HTML's six levels of headings are more than most documents need.
+          Themes often resort to desperate measures to try to make all six
+          levels visually distinct: distractions like overlarge font sizes,
+          excessively heavy weights, ALL CAPS, underlines, centered text, too
+          many font faces, too much indentation, etc. Most themes make
+          <code>&lt;h1&gt;</code>'s too big for my taste, meanwhile subheadings
+          often come in <em>smaller</em> fonts than the main body text.
         </p>
 
         <p>
           Oatcake's opinion is that most pages shouldn't use more than four
-          levels of headings. More levels are confusing and make it difficult
-          for readers to orient themselves within the document.
+          levels of headings, ideally not more than three. More levels are
+          confusing and make it difficult for readers to orient themselves
+          within the document.
         </p>
 
         <p>
           So Oatcake deliberately restrains itself to just four visually
           distinct levels of headings, using the smallest necessary increments
           in font size and space above and below to distinguish the four levels
-          of headings from each other. Sticking to just four visually distinct
-          levels enables them to be distinct enough from each other without
-          resorting to desperate measures.
+          from each other. Sticking to just four levels enables them to be
+          distinct enough from each other without resorting to desperate
+          measures.
         </p>
 
         <hr />
@@ -1407,7 +1428,7 @@ in the air.&lt;/p&gt;</code></pre>
         otherwise:
       </p>
 
-      <div style="margin-bottom: var(--oatcake-line-height)">
+      <div class="example">
         <h1 class="noanchor">First-level heading</h1>
         <h2 class="noanchor">Second-level heading</h2>
         <h3 class="noanchor">Third-level heading</h3>
@@ -1419,17 +1440,13 @@ in the air.&lt;/p&gt;</code></pre>
       <h3>Inline elements in headings</h3>
 
       <p>
-        A lot of themes break or look weird if you try to use emphasis, code,
-        etc in a heading. Oatcake makes sure that common inline elements work in
-        headings:
+        A lot of themes break or look weird if you try to use emphasis,
+        <code>&lt;kbd&gt;</code>, etc in a heading. Oatcake makes sure that
+        common inline elements work in headings:
       </p>
 
-      <div style="margin-bottom: var(--oatcake-line-height)">
+      <div class="example">
         <h1 class="noanchor">A heading with <em>italics</em> in it</h1>
-        <h2 class="noanchor">A heading with <code>code()</code> in it</h2>
-        <h2 class="noanchor">
-          A heading with <samp>sample output</samp> in it
-        </h2>
         <h2 class="noanchor">A heading with a <kbd>kbd</kbd> in it</h2>
         <h2 class="noanchor">A heading with <u>underlined text</u> in it</h2>
         <h2 class="noanchor">
@@ -1438,18 +1455,120 @@ in the air.&lt;/p&gt;</code></pre>
         <h2 class="noanchor">A heading with <del>deleted text</del> in it</h2>
         <h2 class="noanchor">A heading with <a href="">a link</a> in it</h2>
         <h2 class="noanchor">
-          A heading with <a href=""><code>code link</code></a> in it
-        </h2>
-        <h2 class="noanchor">
           A heading with mid-word em<em>phas</em>is in it
         </h2>
-        <h3 class="noanchor"><code>an_all_code_heading()</code></h3>
-        <h1 class="noanchor"><code>code()</code> at the start of a heading</h1>
         <h1 class="noanchor">
           A heading with<sup>superscript</sup> and<sub>subscript</sub> and
           <small>small text</small> in it
         </h1>
       </div>
+
+      <h3><code>&lt;code&gt;</code> elements in headings</h3>
+
+      <p>
+        <code>&lt;code&gt;</code> elements in headings get a monospaced font but
+        this can be quite subtle and hard to notice so Oatcake also surrounds
+        the code in backticks:
+      </p>
+
+      <div class="example">
+        <h1 class="noanchor">
+          This is an <code>&lt;h1&gt;</code> heading with <code>code</code> in
+          it
+        </h1>
+        <h2 class="noanchor">
+          This is an <code>&lt;h2&gt;</code> heading with <code>code</code> in
+          it
+        </h2>
+        <h3 class="noanchor">
+          This is an <code>&lt;h3&gt;</code> heading with <code>code</code> in
+          it
+        </h3>
+        <h4 class="noanchor">
+          This is an <code>&lt;h4&gt;</code> heading with <code>code</code> in
+          it
+        </h4>
+        <h5 class="noanchor">
+          This is an <code>&lt;h5&gt;</code> heading with <code>code</code> in
+          it
+        </h5>
+        <h6 class="noanchor">
+          This is an <code>&lt;h6&gt;</code> heading with <code>code</code> in
+          it
+        </h6>
+      </div>
+
+      <p>
+        This also works with sample output (the
+        <code>&lt;samp&gt;</code> element):
+      </p>
+
+      <div class="example">
+        <h1 class="noanchor">
+          A heading with <samp>sample output</samp> in it
+        </h1>
+        <h2 class="noanchor">
+          A heading with <samp>sample output</samp> in it
+        </h2>
+        <h3 class="noanchor">
+          A heading with <samp>sample output</samp> in it
+        </h3>
+        <h4 class="noanchor">
+          A heading with <samp>sample output</samp> in it
+        </h4>
+        <h5 class="noanchor">
+          A heading with <samp>sample output</samp> in it
+        </h5>
+        <h6 class="noanchor">
+          A heading with <samp>sample output</samp> in it
+        </h6>
+      </div>
+
+      <p>
+        This also works well when the <code>&lt;code&gt;</code> is at the
+        beginning or end of the heading or if a heading is entirely code (some
+        common ways of styling <code>&lt;h4&gt;</code> would break these):
+      </p>
+      <div class="example">
+        <h4 class="noanchor">
+          <code>&lt;h4&gt;</code> at the start of a heading
+        </h4>
+        <h4 class="noanchor">
+          A heading with <code>&lt;h4&gt;</code> at the end:
+          <code>&lt;h4&gt;</code>
+        </h4>
+        <h4 class="noanchor"><code>An all &lt;code&gt; heading</code></h4>
+      </div>
+
+      <h3>Bold in headings</h3>
+
+      <p>
+        <code>&lt;strong&gt;</code>'s and <code>&lt;b&gt;</code>'s in headings
+        wouldn't be visible because headings are already bold, so Oatcake
+        surrounds them with <b>*</b>'s so you can still indicate importance
+        within headings:
+      </p>
+
+      <div class="example">
+        <h1 class="noanchor">
+          This is a heading with <strong>bold</strong> in it
+        </h1>
+        <h2 class="noanchor">This is a heading with <b>bold</b> in it</h2>
+        <h3 class="noanchor">
+          This is a heading with <strong>bold</strong> in it
+        </h3>
+        <h4 class="noanchor">This is a heading with <b>bold</b> in it</h4>
+        <h5 class="noanchor">
+          This is a heading with <strong>bold</strong> in it
+        </h5>
+        <h6 class="noanchor">This is a heading with <b>bold</b> in it</h6>
+      </div>
+
+      <p>
+        (Alternatively you could just use <code>&lt;em&gt;</code> but this has a
+        slightly different semantic meaning in HTML: it's for
+        <em>emphasis</em> rather than <strong>importance</strong>).
+      </p>
 
       <h3>Headings that wrap onto multiple lines</h3>
 
@@ -1461,71 +1580,82 @@ in the air.&lt;/p&gt;</code></pre>
         is a multi-line <code>&lt;h2&gt;</code> heading:
       </p>
 
-      <h2 class="noanchor" style="padding-top: 0">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-        tempor incididunt ut labore
-      </h2>
+      <div class="example">
+        <h2 class="noanchor" style="padding-top: 0">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+          eiusmod tempor incididunt ut labore
+        </h2>
+      </div>
 
       <p>This is a multi-line <code>&lt;h3&gt;</code> heading:</p>
 
-      <h3 class="noanchor" style="padding-top: 0">
-        Lorem ipsum dolgor sit amet, consectetur adipiscing elit, sed do eiusmod
-        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-        veniam
-      </h3>
+      <div class="example">
+        <h3 class="noanchor" style="padding-top: 0">
+          Lorem ipsum dolgor sit amet, consectetur adipiscing elit, sed do
+          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+          minim veniam
+        </h3>
+      </div>
 
       <p>This is a multi-line <code>&lt;h4&gt;</code> heading:</p>
 
-      <h4 class="noanchor" style="padding-top: 0">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-        veniam, quis nostrud exercitation ullamco
-      </h4>
-
-      <p></p>
+      <div class="example">
+        <h4 class="noanchor" style="padding-top: 0">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+          minim veniam, quis nostrud exercitation ullamco
+        </h4>
+      </div>
 
       <p>
         Multi-line headings can even contain inline elements. This is where
         things go wrong in many themes:
       </p>
 
-      <h2 class="noanchor" style="padding-top: 0">
-        This is a long multi-line <code>&lt;h2&gt;</code> heading containing
-        <em>emphasis</em>, <code>&lt;code tags&gt;</code>, some
-        <samp>sample output</samp>, a couple of <code>&lt;kbd&gt;</code>'s:
-        <kbd>Ctrl</kbd>&nbsp;+&nbsp;<kbd>c</kbd>, <u>underlined text</u>,
-        <mark>highlighted text</mark>, <del>struck-through text</del>,
-        <a href="">a link</a>,
-        <a href=""><code>a code link</code></a>
-        and even<sup>superscript</sup> and<sub>subscript</sub> and
-        <small>small text</small> in it
-      </h2>
+      <div class="example">
+        <h2 class="noanchor" style="padding-top: 0">
+          This is a long multi-line <code>&lt;h2&gt;</code> heading containing
+          <em>emphasis</em>, <code>&lt;code tags&gt;</code>, some
+          <samp>sample output</samp>, a couple of <code>&lt;kbd&gt;</code>'s:
+          <kbd>Ctrl</kbd>&nbsp;+&nbsp;<kbd>c</kbd>, <u>underlined text</u>,
+          <mark>highlighted text</mark>, <del>struck-through text</del>,
+          <a href="">a link</a>, <strong><a href="">a bold link</a></strong
+          >,
+          <a href=""><code>a code link</code></a>
+          and even<sup>superscript</sup> and<sub>subscript</sub> and
+          <small>small text</small> in it
+        </h2>
+      </div>
 
-      <h3 class="noanchor">
-        This is a long multi-line <code>&lt;h3&gt;</code> heading containing
-        <em>emphasis</em>, <code>&lt;code tags&gt;</code>, some
-        <samp>sample output</samp>, a couple of <code>&lt;kbd&gt;</code>'s:
-        <kbd>Ctrl</kbd>&nbsp;+&nbsp;<kbd>c</kbd>, <u>underlined text</u>,
-        <mark>highlighted text</mark>, <del>struck-through text</del>,
-        <a href="">a link</a>,
-        <a href=""><code>a code link</code></a>
-        and even<sup>superscript</sup> and<sub>subscript</sub> and
-        <small>small text</small> in it
-      </h3>
+      <div class="example">
+        <h3 class="noanchor">
+          This is a long multi-line <code>&lt;h3&gt;</code> heading containing
+          <em>emphasis</em>, <code>&lt;code tags&gt;</code>, some
+          <samp>sample output</samp>, a couple of <code>&lt;kbd&gt;</code>'s:
+          <kbd>Ctrl</kbd>&nbsp;+&nbsp;<kbd>c</kbd>, <u>underlined text</u>,
+          <mark>highlighted text</mark>, <del>struck-through text</del>,
+          <a href="">a link</a>, <strong><a href="">a bold link</a></strong
+          >,
+          <a href=""><code>a code link</code></a>
+          and even<sup>superscript</sup> and<sub>subscript</sub> and
+          <small>small text</small> in it
+        </h3>
+      </div>
 
-      <h4 class="noanchor">
-        This is a long multi-line <code>&lt;h4&gt;</code> heading containing
-        <em>emphasis</em>, <code>&lt;code tags&gt;</code>, some
-        <samp>sample output</samp>, a couple of <code>&lt;kbd&gt;</code>'s:
-        <kbd>Ctrl</kbd>&nbsp;+&nbsp;<kbd>c</kbd>, <u>underlined text</u>,
-        <mark>highlighted text</mark>, <del>struck-through text</del>,
-        <a href="">a link</a>,
-        <a href=""><code>a code link</code></a>
-        and even<sup>superscript</sup> and<sub>subscript</sub> and
-        <small>small text</small> in it
-      </h4>
-
-      <p></p>
+      <div class="example">
+        <h4 class="noanchor">
+          This is a long multi-line <code>&lt;h4&gt;</code> heading containing
+          <em>emphasis</em>, <code>&lt;code tags&gt;</code>, some
+          <samp>sample output</samp>, a couple of <code>&lt;kbd&gt;</code>'s:
+          <kbd>Ctrl</kbd>&nbsp;+&nbsp;<kbd>c</kbd>, <u>underlined text</u>,
+          <mark>highlighted text</mark>, <del>struck-through text</del>,
+          <a href="">a link</a>, <strong><a href="">a bold link</a></strong
+          >,
+          <a href=""><code>a code link</code></a>
+          and even<sup>superscript</sup> and<sub>subscript</sub> and
+          <small>small text</small> in it
+        </h4>
+      </div>
 
       <h2>Lists</h2>
 
