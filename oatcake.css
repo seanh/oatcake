@@ -618,7 +618,7 @@ h6 kbd {
  */
 
 details,
-summary {
+details > summary {
   border: 1px solid var(--oatcake-border-color);
   border-radius: var(--oatcake-border-radius);
   padding-top: var(--oatcake-line-height);
@@ -654,7 +654,11 @@ details[open] > summary {
   border-bottom-right-radius: 0;
 }
 
-details[open] :first-child:not(summary) {
+details:not(:has(> summary)) {
+  background-color: var(--oatcake-block-background-color);
+}
+
+details[open]:not(:has(> summary)) :first-child {
   /* When a details has no <summary> put some whitespace between the top of the
      <details> and the first child-element within.
      Unfortunately this only works if the <details> contents is made up of child
@@ -662,21 +666,44 @@ details[open] :first-child:not(summary) {
   margin-top: var(--oatcake-line-height);
 }
 
-details:not([open]):has(summary) {
+details:not([open]):has(> summary) {
   /* A closed <details> with a <summary> doesn't need any padding bottom because
      the <summary> has padding bottom. */
   padding-bottom: 0;
 }
 
-details[open]:has(:not(summary)) {
+details[open]:has(> :not(summary)) {
   /* An open <details> with any non-<summary> child elements doesn't need any
    padding bottom because it's assumed that the last child element inside
    the <details> will have its own padding-bottom or margin-bottom. */
   padding-bottom: 0;
 }
 
-details:not(:has(summary)) {
-  background-color: var(--oatcake-block-background-color);
+/* Fix headings in summaries. */
+details > summary h1,
+details > summary h2,
+details > summary h3,
+details > summary h4,
+details > summary h5,
+details > summary h6 {
+  display: inline-block;
+  padding: 0;
+}
+
+details > summary:has(h1) {
+  /* I have no idea why but the contents of <summary> elements that contain
+     <h1>'s are ending up 27px high even though the heading is only 24px high.
+     Correct it by removing 3px from the <summary>'s padding-bottom. This seems
+     to work across browsers. */
+  padding-bottom: calc(var(--oatcake-line-height) - 3px);
+}
+
+details > summary:has(h2) {
+  /* I have no idea why but the contents of <summary> elements that contain
+     <h2>'s are ending up 25px high even though the heading is only 24px high.
+     Correct it by removing 1px from the <summary>'s padding-bottom. This seems
+     to work across browsers. */
+  padding-bottom: calc(var(--oatcake-line-height) - 1px);
 }
 
 pre {
