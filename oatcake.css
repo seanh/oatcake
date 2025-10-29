@@ -765,8 +765,8 @@
 
     .faint code,
     .faint samp,
-    .muted code,
-    .muted samp {
+    .secondary code,
+    .secondary samp {
       background-color: inherit;
     }
 
