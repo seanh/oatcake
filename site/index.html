@@ -3484,10 +3484,10 @@ end</code></pre>
         documents, but that plain HTML lacks the elements for.
       </p>
 
-      <h3>Subheadings and lead paragraphs</h3>
+      <h3>Lead paragraphs and subheadings</h3>
 
       <p>
-        "Lead" paragraphs use a larger text style but not quite as large or bold
+        "Lead" paragraphs use a larger font-size but not quite as big and bold
         as headings. To create a lead paragraph just add
         <code>class="lead"</code> to a <code>&lt;p&gt;</code>. For example this:
       </p>
@@ -3505,8 +3505,10 @@ end</code></pre>
       </p>
 
       <p>
-        You can use a lead paragraph as a subheading by putting it together with
-        a heading in an
+        Lead paragraphs use the same font-size as
+        <code>&lt;h2&gt;</code> headings, so they can be used as subheadings by
+        putting them together with an <code>&lt;h1&gt;</code> or
+        <code>&lt;h2&gt;</code> in an
         <a
           href="https://html.spec.whatwg.org/multipage/sections.html#the-hgroup-element"
           ><code>&lt;hgroup&gt;</code></a
@@ -3520,10 +3522,22 @@ end</code></pre>
 
       <p>will render like this:</p>
 
-      <hgroup>
+      <hgroup class="example">
         <h1 class="noanchor">This is the heading</h1>
         <p class="lead">
           This is the subheading, it appears in large text beneath the heading.
+        </p>
+      </hgroup>
+
+      <p>
+        And here's an <code>&lt;h2&gt;</code> with a lead paragraph as a
+        subheading:
+      </p>
+
+      <hgroup class="example">
+        <h2 class="noanchor">This is an <code>&lt;h2&gt;</code> heading</h2>
+        <p class="lead">
+          This is a <code>&lt;p class="lead"&gt;</code> acting as a subheading.
         </p>
       </hgroup>
 

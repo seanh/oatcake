@@ -453,7 +453,7 @@
   /* Lead paragraphs. */
   @layer elements {
     .lead {
-      font-size: 1.3rem;
+      font-size: 19px; /* The same size as an <h2> heading, so lead paragraphs can be used as subheadings for <h1>'s or <h2>'s. */
     }
 
     .lead code,
