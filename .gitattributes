@@ -1,1 +1,11 @@
+.gitattributes export-ignore
+.github/ export-ignore
+.gitignore export-ignore
+.htmlvalidate.json export-ignore
+.prettierignore export-ignore
 Makefile export-ignore
+README.md export-ignore
+oatcake.css export-ignore
+package-lock.json export-ignore
+package.json export-ignore
+site/ export-ignore
