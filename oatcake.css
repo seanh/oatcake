@@ -416,7 +416,7 @@
   /* Block quotes. */
   @layer elements {
     blockquote {
-      border-left: 3px solid var(--ok-color-border);
+      border-left: 2px solid var(--ok-color-border);
       padding-left: 20px;
       quotes: none;
     }
