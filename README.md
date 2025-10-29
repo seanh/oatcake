@@ -1,3 +1,5 @@
+[![](https://data.jsdelivr.com/v1/package/gh/seanh/oatcake/badge)](https://www.jsdelivr.com/package/gh/seanh/oatcake)
+
 # Oatcake
 
 A drop-in CSS stylesheet that makes pages attractive and readable. Looks good
