@@ -12,9 +12,6 @@
           display: none;
         }
       }
-      .toc a {
-        text-decoration: none;
-      }
       body.alternativeFonts {
         --oatcake-font-family:
           "Segoe Print", "Bradley Hand", Chilanka, TSCu_Comic, casual, cursive;
@@ -51,6 +48,11 @@
       .example:not(.padding) h5:first-child,
       .example:not(.padding) h6:first-child {
         padding-top: 0;
+      }
+      @media all and (max-width: 800px) {
+        .wide-only {
+          display: none !important;
+        }
       }
     </style>
     <link
