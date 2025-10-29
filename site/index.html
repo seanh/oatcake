@@ -20,11 +20,11 @@
         display: flex;
         gap: 0.5em;
       }
-      .warning.note {
+      .warning.ok-note {
         background-color: rgb(248, 215, 218);
         border-color: #f1aeb5;
       }
-      .primary.badge {
+      .primary.ok-badge {
         background-color: rgb(13, 110, 253);
         color: white;
       }
@@ -98,7 +98,7 @@
 
     <button
       type="button"
-      class="badge wide-only lines"
+      class="ok-badge wide-only lines"
       style="display: block; position: fixed; bottom: 10px; right: 10px"
     ></button>
 
@@ -112,7 +112,7 @@
       />
       <hgroup>
         <h1 class="noanchor">Oatcake: Plain Web Typography</h1>
-        <p class="lead">
+        <p class="ok-lead">
           A drop-in CSS stylesheet that makes pages attractive and readable.
           Looks good without drawing attention to the design. Works great on
           both mobile and desktop.
@@ -286,7 +286,7 @@
         </p>
 
         <p style="text-align: center">
-          <button type="button" id="toggleFonts" class="badge"></button>
+          <button type="button" id="toggleFonts" class="ok-badge"></button>
         </p>
 
         <p>Here's the full list of font variables you can change:</p>
@@ -314,7 +314,7 @@
           <dd>
             The <code>font-size</code> for small text:
             <code>&lt;small&gt;</code> elements, the CSS class
-            <code>small</code>, subscripts (<code>&lt;sub&gt;</code>) and
+            <code>ok-small</code>, subscripts (<code>&lt;sub&gt;</code>) and
             superscripts (<code>&lt;sup&gt;</code>), and
             <a href="#badges">badges</a>.
           </dd>
@@ -445,7 +445,7 @@
       </p>
 
       <p style="text-align: center">
-        <button type="button" class="badge lines"></button>
+        <button type="button" class="ok-badge lines"></button>
       </p>
 
       <h2>Inline elements</h2>
@@ -607,9 +607,9 @@ in the air.&lt;/p&gt;</code></pre>
             </p>
 
             <p>
-              Oatcake also provides a CSS class <code>small</code> that you can
-              use as an alternative way to make text small, for example:
-              <code>&lt;div class="small"&gt;</code>
+              Oatcake also provides a CSS class <code>ok-small</code> that you
+              can use as an alternative way to make text small, for example:
+              <code>&lt;div class="ok-small"&gt;</code>
             </p>
           </li>
 
@@ -2428,11 +2428,13 @@ in the air.&lt;/p&gt;</code></pre>
         Sometimes you want to add a border to an image, for example if the
         background colour of the image is the same as the background colour of
         your site and you want to show where the edges of the image are. You can
-        add a border by adding the CSS class <code>border</code> to an image -
-        <code>&lt;img class="border" src="&hellip;" alt="&hellip;"&gt;</code>:
+        add a border by adding the CSS class <code>ok-border</code> to an image
+        -
+        <code>&lt;img class="ok-border" src="&hellip;" alt="&hellip;"&gt;</code
+        >:
       </p>
 
-      <img class="border" src="media/bowl.jpg" alt="A bowl of oats" />
+      <img class="ok-border" src="media/bowl.jpg" alt="A bowl of oats" />
 
       <details>
         <summary>Embedded media and vertical rhythm</summary>
@@ -2493,14 +2495,14 @@ in the air.&lt;/p&gt;</code></pre>
 
       <p>
         As with images you can add a border to a video by adding the CSS class
-        <code>border</code> to the video -
-        <code>&lt;video class="border" src="&hellip;"&gt;</code>, useful if the
-        background colour of the video is similar to the background colour of
-        your site and you want to show where the edges of the video are:
+        <code>ok-border</code> to the video -
+        <code>&lt;video class="ok-border" src="&hellip;"&gt;</code>, useful if
+        the background colour of the video is similar to the background colour
+        of your site and you want to show where the edges of the video are:
       </p>
 
       <video
-        class="border"
+        class="ok-border"
         controls
         muted
         playsinline
@@ -2542,14 +2544,14 @@ in the air.&lt;/p&gt;</code></pre>
 
       <p>
         As with images and videos you can add the CSS class
-        <code>border</code> to an iframe to give it a border, which might be
+        <code>ok-border</code> to an iframe to give it a border, which might be
         useful if the embedded page has the same background colour as the parent
         page and you want to show where the edges of the embedded page are:
       </p>
 
       <iframe
         title="example embedded page"
-        class="border"
+        class="ok-border"
         src="iframe_white.html"
         style="width: 100%; height: 120px"
       ></iframe>
@@ -2688,15 +2690,15 @@ in the air.&lt;/p&gt;</code></pre>
         <p>
           Wrapping the whole sequence of <code>&lt;kbd&gt;</code>'s in a
           <code>&lt;span style="white-space: nowrap;"&gt;</code> should also
-          work and Oatcake provides a <code>nowrap</code> utility class for this
-          so you can just do <code>&lt;span class="nowrap"&gt;</code>.
+          work and Oatcake provides a <code>ok-nowrap</code> utility class for
+          this so you can just do <code>&lt;span class="ok-nowrap"&gt;</code>.
         </p>
 
         <p>
           You can also use either technique if you don't want a
           <code>&lt;code&gt;</code>, <code>&lt;samp&gt;</code>,
           <code>&lt;mark&gt;</code>, etc to be wrapped, for example:
-          <code>&lt;code class="nowrap"&gt;</code>
+          <code>&lt;code class="ok-nowrap"&gt;</code>
           (Oatcake doesn't prevent wrapping within these elements by default
           because often you do want them to wrap, especially if they contain
           long strings that might otherwise
@@ -3444,11 +3446,11 @@ end</code></pre>
       </p>
 
       <p>
-        We've already seen the utility classes <code>small</code> (for small
+        We've already seen the utility classes <code>ok-small</code> (for small
         text, the same as the <code>&lt;small&gt;</code> element),
-        <code>border</code> (for adding borders to images, videos and iframes),
-        and <code>nowrap</code> (for preventing the browser from wrapping the
-        text within an element).
+        <code>ok-border</code> (for adding borders to images, videos and
+        iframes), and <code>ok-nowrap</code> (for preventing the browser from
+        wrapping the text within an element).
       </p>
 
       <p>
@@ -3461,17 +3463,18 @@ end</code></pre>
       <p>
         "Lead" paragraphs use a larger font-size but not quite as big and bold
         as headings. To create a lead paragraph just add
-        <code>class="lead"</code> to a <code>&lt;p&gt;</code>. For example this:
+        <code>class="ok-lead"</code> to a <code>&lt;p&gt;</code>. For example
+        this:
       </p>
 
-      <pre><code>&lt;p <strong>class="lead"</strong>&gt;
+      <pre><code>&lt;p <strong>class="ok-lead"</strong>&gt;
   This is a "lead" paragraph. It stands out more than other paragraphs. These
   can be used anywhere in a document.
 &lt;/p&gt;</code></pre>
 
       <p>will render like this:</p>
 
-      <p class="lead">
+      <p class="ok-lead">
         This is a "lead" paragraph. It stands out more than other paragraphs.
         These can be used anywhere in a document.
       </p>
@@ -3489,14 +3492,14 @@ end</code></pre>
 
       <pre><code><strong>&lt;hgroup&gt;</strong>
   &lt;h1&gt;This is the heading&lt;/h1&gt;
-  <strong>&lt;p class="lead"&gt;This is the subheading, it appears in large text beneath the heading.&lt;/p&gt;</strong>
+  <strong>&lt;p class="ok-lead"&gt;This is the subheading, it appears in large text beneath the heading.&lt;/p&gt;</strong>
 <strong>&lt;/hgroup&gt;</strong></code></pre>
 
       <p>will render like this:</p>
 
       <hgroup class="example">
         <h1 class="noanchor">This is the heading</h1>
-        <p class="lead">
+        <p class="ok-lead">
           This is the subheading, it appears in large text beneath the heading.
         </p>
       </hgroup>
@@ -3508,8 +3511,9 @@ end</code></pre>
 
       <hgroup class="example">
         <h2 class="noanchor">This is an <code>&lt;h2&gt;</code> heading</h2>
-        <p class="lead">
-          This is a <code>&lt;p class="lead"&gt;</code> acting as a subheading.
+        <p class="ok-lead">
+          This is a <code>&lt;p class="ok-lead"&gt;</code> acting as a
+          subheading.
         </p>
       </hgroup>
 
@@ -3518,8 +3522,8 @@ end</code></pre>
         <code>&lt;samp&gt;</code> also work in subheadings and lead paragraphs:
       </p>
 
-      <p class="lead">
-        This is a <code>&lt;lead&gt;</code> paragraph containing
+      <p class="ok-lead">
+        This is a paragraph containing
         <em>emphasis</em>, <code>&lt;code tags&gt;</code>, some
         <samp>sample output</samp>, a couple of <code>&lt;kbd&gt;</code>'s:
         <kbd>Ctrl</kbd>&nbsp;+&nbsp;<kbd>c</kbd>, <u>underlined text</u>,
@@ -3532,33 +3536,33 @@ end</code></pre>
       <h4>Creative ways to use lead paragraphs</h4>
 
       <p>
-        You can also add the <code>lead</code> class to other elements, for
+        You can also add the <code>ok-lead</code> class to other elements, for
         example a <code>&lt;blockquote&gt;</code>:
       </p>
 
-      <blockquote class="lead">
+      <blockquote class="ok-lead">
         <p>This is a "lead" block quote.</p>
         <p>
-          These are created by adding the <code>lead</code> class to a
+          These are created by adding the <code>ok-lead</code> class to a
           <code>&lt;blockquote&gt;</code> element like this:
-          <code>&lt;blockquote class="lead"&gt;</code>
+          <code>&lt;blockquote class="ok-lead"&gt;</code>
         </p>
       </blockquote>
 
       <p>
-        Or add <code>lead</code> to a <code>&lt;ul&gt;</code> or
+        Or add <code>ok-lead</code> to a <code>&lt;ul&gt;</code> or
         <code>&lt;ol&gt;</code> to create a large-text list:
       </p>
 
-      <ol reversed class="lead">
+      <ol reversed class="ok-lead">
         <li><p>Three&hellip;</p></li>
         <li><p>Two&hellip;</p></li>
         <li><p>One&hellip;</p></li>
       </ol>
 
-      <p>Here's a definition list with the <code>lead</code> class:</p>
+      <p>Here's a definition list with the <code>ok-lead</code> class:</p>
 
-      <dl class="lead">
+      <dl class="ok-lead">
         <dt>Wild oat</dt>
         <dt>Avena fatua</dt>
         <dd>Common in meadows and pastures.</dd>
@@ -3566,11 +3570,11 @@ end</code></pre>
       </dl>
 
       <p>
-        You can add <code>lead</code> to a <code>&lt;pre&gt;</code> to create a
-        large-text preformatted block:
+        You can add <code>ok-lead</code> to a <code>&lt;pre&gt;</code> to create
+        a large-text preformatted block:
       </p>
 
-      <pre class="lead">
+      <pre class="ok-lead">
 Returning is the motion of the Tao.
 
 Yielding is the way of the Tao.
@@ -3581,16 +3585,16 @@ Being is born of not being.</pre
       >
 
       <p>
-        You can add <code>lead</code> to a disclosure widget's
+        You can add <code>ok-lead</code> to a disclosure widget's
         <code>&lt;summary&gt;</code> element to create one with a large label:
       </p>
 
       <details>
-        <summary class="lead">A large-text disclosure widget</summary>
+        <summary class="ok-lead">A large-text disclosure widget</summary>
         <p>
           Here are the details. These would also be in large text if you put the
-          <code>lead</code> class on the <code>&lt;details&gt;</code> element or
-          on the <code>&lt;p&gt;</code>'s or other elements inside.
+          <code>ok-lead</code> class on the <code>&lt;details&gt;</code> element
+          or on the <code>&lt;p&gt;</code>'s or other elements inside.
         </p>
       </details>
 
@@ -3598,14 +3602,14 @@ Being is born of not being.</pre
 
       <p>
         You can put text in a muted colour by adding the CSS class
-        <code>secondary</code>
+        <code>ok-secondary</code>
         to any element. For example:
-        <code>&lt;p class="secondary"&gt;muted text&lt;/p&gt;</code>. Secondary
-        text is meant for metadata like authorship, publication dates, tags,
-        copyright notices, that sort of thing. It looks like this:
+        <code>&lt;p class="ok-secondary"&gt;muted text&lt;/p&gt;</code>.
+        Secondary text is meant for metadata like authorship, publication dates,
+        tags, copyright notices, that sort of thing. It looks like this:
       </p>
 
-      <p class="secondary">
+      <p class="ok-secondary">
         <strong>Posted:</strong> Wed 14 August 2019 &middot;
         <strong>Tags:</strong> <a href="#">HTML</a>,
         <a href="#">CSS</a>
@@ -3613,7 +3617,7 @@ Being is born of not being.</pre
 
       <p>
         All the inline elements also work as you'd expect in secondary text:
-        <span class="secondary">
+        <span class="ok-secondary">
           <strong>bold</strong>, <em>italics</em>, <code>code</code>,
           <samp>sample output</samp>, <u>underlines</u>,
           <mark>highlights</mark>, <del>strike-throughs</del>, and
@@ -3624,18 +3628,18 @@ Being is born of not being.</pre
       <h3>Note boxes</h3>
 
       <p>
-        You can create a note box by adding the CSS class <code>note</code> to a
-        paragraph:
+        You can create a note box by adding the CSS class
+        <code>ok-note</code> to a paragraph:
       </p>
 
-      <pre><code>&lt;p <strong>class="note"</strong>&gt;This is a paragraph that stands out as a note.&lt;/p&gt;</code></pre>
+      <pre><code>&lt;p <strong>class="ok-note"</strong>&gt;This is a paragraph that stands out as a note.&lt;/p&gt;</code></pre>
 
       <p>It'll look like this:</p>
 
-      <p class="note">This is a paragraph that stands out as a note.</p>
+      <p class="ok-note">This is a paragraph that stands out as a note.</p>
 
       <p>
-        <code>&lt;aside class="note"&gt;note text&lt;/aside&gt;</code> also
+        <code>&lt;aside class="ok-note"&gt;note text&lt;/aside&gt;</code> also
         works and
         <a
           href="https://html.spec.whatwg.org/multipage/sections.html#the-aside-element"
@@ -3645,11 +3649,11 @@ Being is born of not being.</pre
         main content of the page and not part of the main flow of the document:
       </p>
 
-      <aside class="note">This is an aside note.</aside>
+      <aside class="ok-note">This is an aside note.</aside>
 
       <p>A multi-line note will also work nicely:</p>
 
-      <p class="note">
+      <p class="ok-note">
         Morbi sed facilisis nunc. Quisque dictum lectus vitae purus lobortis,
         dapibus malesuada sapien imperdiet. Vestibulum ante ipsum primis in
         faucibus orci luctus et ultrices posuere cubilia curae.
@@ -3672,7 +3676,7 @@ Being is born of not being.</pre
         can help:
       </p>
 
-      <p class="note">
+      <p class="ok-note">
         <strong>Hint:</strong>
         beginning a note with a label can help convey its semantics.
       </p>
@@ -3703,7 +3707,7 @@ Being is born of not being.</pre
       </p>
 
       <pre><code>&lt;style&gt;
-  .warning.note {
+  .warning.ok-note {
     background-color: rgb(248, 215, 218);
     border-color: #f1aeb5;
   }
@@ -3718,19 +3722,19 @@ Being is born of not being.</pre
 
       <p>&hellip;will render like this:</p>
 
-      <p class="warning note">
+      <p class="warning ok-note">
         <strong>Warning!</strong> Too many note boxes can overwhelm the reader.
       </p>
 
       <h4>Creative ways to use note boxes</h4>
 
       <p>
-        You can put the <code>note</code> class directly on an
+        You can put the <code>ok-note</code> class directly on an
         <code>&lt;ol&gt;</code> or <code>&lt;ul&gt;</code> to style a list as a
         note:
       </p>
 
-      <ul class="note">
+      <ul class="ok-note">
         <li>Aenean</li>
         <li>Quis</li>
         <li>Odio</li>
@@ -3739,25 +3743,27 @@ Being is born of not being.</pre
 
       <p>
         You can use
-        <code><a href="#subheadings-and-lead-paragraphs">lead</a></code> and
-        <code>note</code> together:
+        <code><a href="#subheadings-and-lead-paragraphs">ok-lead</a></code> and
+        <code>ok-note</code> together:
       </p>
 
-      <p class="lead note">
-        This is a "lead note" created by applying both the <code>lead</code> and
-        the <code>note</code> classes to a <code>&lt;p&gt;</code> like this:
-        <code>&lt;p class="lead note"&gt;</code>
+      <p class="ok-lead ok-note">
+        This is a "lead note" created by applying both the
+        <code>ok-lead</code> and the <code>ok-note</code> classes to a
+        <code>&lt;p&gt;</code> like this:
+        <code>&lt;p class="ok-lead ok-note"&gt;</code>
       </p>
 
       <p>
         You can put multiple paragraphs and other arbitrary content (headings,
         block quotes, lists, code blocks, images&hellip;) in a note by putting
-        the <code>note</code> class on a containing <code>&lt;div&gt;</code> or
-        <code>&lt;aside&gt;</code>. Here's some examples:
+        the <code>ok-note</code> class on a containing
+        <code>&lt;div&gt;</code> or <code>&lt;aside&gt;</code>. Here's some
+        examples:
       </p>
 
-      <div class="note">
-        <p class="lead">
+      <div class="ok-note">
+        <p class="ok-lead">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris
           aliquam justo erat, sed consequat sem commodo nec. Aenean blandit non
           lectus id rutrum.
@@ -3777,7 +3783,7 @@ Being is born of not being.</pre
 
       <p><code>&lt;h4&gt;</code> headings work well in notes:</p>
 
-      <div class="note">
+      <div class="ok-note">
         <h4 class="noanchor">Note</h4>
         <p>
           Sed porta at quam id lacinia. Pellentesque sem odio, dignissim et
@@ -3788,7 +3794,7 @@ Being is born of not being.</pre
 
       <p>So do <code>&lt;h3&gt;</code>'s:</p>
 
-      <div class="note">
+      <div class="ok-note">
         <h3 class="noanchor">Important</h3>
         <p>
           Sed porta at quam id lacinia. Pellentesque sem odio, dignissim et
@@ -3807,7 +3813,7 @@ Being is born of not being.</pre
         note into segments:
       </p>
 
-      <div class="note">
+      <div class="ok-note">
         <h3 class="noanchor">Tip</h3>
 
         <p>
@@ -3823,7 +3829,7 @@ Being is born of not being.</pre
         </p>
       </div>
 
-      <div class="note">
+      <div class="ok-note">
         <p>
           You can put a block quote in a note box. All the inline elements also
           work:
@@ -3846,7 +3852,7 @@ Being is born of not being.</pre
         </blockquote>
       </div>
 
-      <div class="note">
+      <div class="ok-note">
         <p>An image in a note block:</p>
 
         <img src="media/oats.jpg" alt="A bowl of oats" title="A bowl of oats" />
@@ -3866,7 +3872,7 @@ Being is born of not being.</pre
         <audio controls src="media/apollo11.mp3"></audio>
       </div>
 
-      <div class="note">
+      <div class="ok-note">
         <p>You can even put code blocks in notes:</p>
 
         <pre><code>tell application "Foo"
@@ -3874,7 +3880,7 @@ Being is born of not being.</pre
 end tell</code></pre>
       </div>
 
-      <div class="note">
+      <div class="ok-note">
         <p>Even disclosure widgets work inside note boxes:</p>
 
         <details>
@@ -3890,7 +3896,7 @@ end tell</code></pre>
         that the vertical spacing is right for headings in note boxes:
       </p>
 
-      <div class="note">
+      <div class="ok-note">
         <h1 class="noanchor">An <code>&lt;h1&gt;</code> in a note</h1>
 
         <p>
@@ -3919,17 +3925,17 @@ end tell</code></pre>
         </p>
       </div>
 
-      <div class="note">
+      <div class="ok-note">
         <h2 class="noanchor">An <code>&lt;h2&gt;</code> in a note</h2>
         <p>This is the body of the note.</p>
       </div>
 
-      <div class="note">
+      <div class="ok-note">
         <h3 class="noanchor">An <code>&lt;h3&gt;</code> in a note</h3>
         <p>This is the body of the note.</p>
       </div>
 
-      <div class="note">
+      <div class="ok-note">
         <h4 class="noanchor">An <code>&lt;h4&gt;</code> in a note</h4>
         <p>This is the body of the note</p>
       </div>
@@ -3938,30 +3944,31 @@ end tell</code></pre>
 
       <p>
         Oatcake provides badges that you can use for things like counts, labels
-        and tags. Just add the CSS class <code>badge</code> to a
+        and tags. Just add the CSS class <code>ok-badge</code> to a
         <code>&lt;span&gt;</code>, like this:
-        <code>&lt;span class="badge"&gt;Badge text&lt;/span&gt;</code>:
+        <code>&lt;span class="ok-badge"&gt;Badge text&lt;/span&gt;</code>:
       </p>
 
-      <p><span class="badge">Badge</span></p>
+      <p><span class="ok-badge">Badge</span></p>
 
       <p>
-        You can also put the <code>badge</code> class on an
+        You can also put the <code>ok-badge</code> class on an
         <code>&lt;a&gt;</code> or <code>&lt;button&gt;</code> to create a badge
         with hover and focus states:
       </p>
 
       <p>
-        <a href="" class="badge">An <code>&lt;a&gt;</code> badge</a>
-        <button type="button" class="badge">
+        <a href="" class="ok-badge">An <code>&lt;a&gt;</code> badge</a>
+        <button type="button" class="ok-badge">
           A <code>&lt;button&gt;</code> badge
         </button>
       </p>
 
       <p>
         As with <code>&lt;kbd&gt;</code>'s, if your badge contains
-        <span class="badge">more than one word</span> Oatcake prevents browsers
-        from wrapping it over multiple lines (so don't make badges too long).
+        <span class="ok-badge">more than one word</span> Oatcake prevents
+        browsers from wrapping it over multiple lines (so don't make badges too
+        long).
       </p>
 
       <h4>Badge colours</h4>
@@ -3978,7 +3985,7 @@ end tell</code></pre>
       </p>
 
       <pre><code>&lt;style&gt;
-  .primary.badge {
+  .primary.ok-badge {
     background-color: rgb(13, 110, 253);
     color: white;
   }
@@ -3986,12 +3993,12 @@ end tell</code></pre>
 
       <p>Now this:</p>
 
-      <pre><code>&lt;span class="primary badge"&gt;Primary Badge&lt;/span&gt;</code></pre>
+      <pre><code>&lt;span class="primary ok-badge"&gt;Primary Badge&lt;/span&gt;</code></pre>
 
       <p>&hellip;will render like this:</p>
 
       <p>
-        <span class="primary badge">Primary Badge</span>
+        <span class="primary ok-badge">Primary Badge</span>
       </p>
 
       <h4>Creative ways to use badges</h4>
@@ -3999,34 +4006,34 @@ end tell</code></pre>
       <p>Badges can be used in headings:</p>
 
       <h3 class="noanchor" style="padding-top: 0">
-        Heading <span class="badge">New</span>
+        Heading <span class="ok-badge">New</span>
       </h3>
 
       <p>Badges can be used inline in paragraphs:</p>
 
       <p>
-        This is a paragraph with an inline <span class="badge">badge</span> in
-        it.
+        This is a paragraph with an inline
+        <span class="ok-badge">badge</span> in it.
       </p>
 
       <p>Badges can be used in list items:</p>
 
       <ul>
-        <li>Dinosaurs <span class="badge">23</span></li>
-        <li>Sea creatures <span class="badge">16</span></li>
-        <li>Giant birds <span class="badge">32</span></li>
+        <li>Dinosaurs <span class="ok-badge">23</span></li>
+        <li>Sea creatures <span class="ok-badge">16</span></li>
+        <li>Giant birds <span class="ok-badge">32</span></li>
       </ul>
 
       <p>Badges can be used in code blocks, for example to annotate lines:</p>
 
-      <pre><code>class MyError(Exception): <span class="badge">1</span>
+      <pre><code>class MyError(Exception): <span class="ok-badge">1</span>
     def __init__(self, status_code, reason):
-        super().__init__(status_code, reason) <span class="badge">2</span>
+        super().__init__(status_code, reason) <span class="ok-badge">2</span>
         self.status_code = status_code
         self.reason = reason</code></pre>
 
       <div class="annotation">
-        <div><span class="badge">1</span></div>
+        <div><span class="ok-badge">1</span></div>
         <p>
           In Python, all custom exception classes should inherit from the
           built-in <code>Exception</code> class (or one of its subclasses).
@@ -4034,7 +4041,7 @@ end tell</code></pre>
       </div>
 
       <div class="annotation">
-        <div><span class="badge">2</span></div>
+        <div><span class="ok-badge">2</span></div>
         <p>
           When inheriting from <code>Exception</code>, if you've written your
           own <code>__init__()</code> method, you should always call

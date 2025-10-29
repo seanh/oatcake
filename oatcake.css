@@ -140,7 +140,7 @@
       line-height: var(--ok-line-height);
     }
 
-    .note,
+    .ok-note,
     blockquote,
     details,
     dl,
@@ -206,8 +206,8 @@
 
     /* Prevent line wrapping within certain elements. This does mean that if you
      * put really long text in one of these it will overflow. */
-    .badge,
-    .nowrap,
+    .ok-badge,
+    .ok-nowrap,
     h1 b,
     h1 code,
     h1 samp,
@@ -297,9 +297,9 @@
     }
 
     /* Add the CSS class "border" to put a border around your iframe, image or video. */
-    iframe.border,
-    img.border,
-    video.border {
+    iframe.ok-border,
+    img.ok-border,
+    video.ok-border {
       border-radius: var(--ok-border-radius);
       border: 1px solid var(--ok-color-border);
       margin-bottom: calc(
@@ -342,7 +342,7 @@
 
   /* Small text. */
   @layer elements {
-    .small,
+    .ok-small,
     small {
       font-size: var(--ok-font-size-small);
       vertical-align: bottom; /* Prevent <small>'s from throwing off the vertical rhythm. */
@@ -358,18 +358,18 @@
 
   /* Secondary text. */
   @layer elements {
-    .secondary a,
-    .secondary b,
-    .secondary code,
-    .secondary mark,
-    .secondary samp,
-    .secondary strong,
-    .secondary {
+    .ok-secondary a,
+    .ok-secondary b,
+    .ok-secondary code,
+    .ok-secondary mark,
+    .ok-secondary samp,
+    .ok-secondary strong,
+    .ok-secondary {
       background-color: inherit;
       color: var(--ok-color-fg-2);
     }
 
-    .faint {
+    .ok-faint {
       color: var(--ok-color-fg-3);
     }
   }
@@ -464,16 +464,16 @@
 
   /* Lead paragraphs. */
   @layer elements {
-    .lead {
+    .ok-lead {
       font-size: 19px; /* The same size as an <h2> heading, so lead paragraphs can be used as subheadings for <h1>'s or <h2>'s. */
     }
 
-    .lead code,
-    .lead samp {
+    .ok-lead code,
+    .ok-lead samp {
       font-size: 0.8em;
     }
 
-    .lead kbd {
+    .ok-lead kbd {
       font-size: 0.75em;
       padding-bottom: 1px;
       padding-top: 1px;
@@ -538,12 +538,12 @@
        example when the heading is the first child element of something like a
        blockquote, note, or disclosure widget, or when the heading immediately
        follows another heading. */
-    .note h1:first-child,
-    .note h2:first-child,
-    .note h3:first-child,
-    .note h4:first-child,
-    .note h5:first-child,
-    .note h6:first-child,
+    .ok-note h1:first-child,
+    .ok-note h2:first-child,
+    .ok-note h3:first-child,
+    .ok-note h4:first-child,
+    .ok-note h5:first-child,
+    .ok-note h6:first-child,
     blockquote h1:first-child,
     blockquote h2:first-child,
     blockquote h3:first-child,
@@ -682,7 +682,7 @@
      * doesn't fix the rhtyhm.
      * This doesn't seem to be necessary when reducing the font-sizes of other
      * elements like <code>'s and <samp>'s in headings and lead paragraphs. */
-    .lead mark,
+    .ok-lead mark,
     h1 mark,
     h2 mark {
       font-size: 0.8em;
@@ -752,8 +752,8 @@
       padding: 0;
     }
 
-    .small code,
-    .small samp,
+    .ok-small code,
+    .ok-small samp,
     small code,
     small samp,
     sub code,
@@ -763,10 +763,10 @@
       line-height: inherit;
     }
 
-    .faint code,
-    .faint samp,
-    .secondary code,
-    .secondary samp {
+    .ok-faint code,
+    .ok-faint samp,
+    .ok-secondary code,
+    .ok-secondary samp {
       background-color: inherit;
     }
 
@@ -903,7 +903,7 @@
 
   /* Badges. */
   @layer elements {
-    .badge {
+    .ok-badge {
       background-color: var(--ok-color-fg);
       border-radius: 10rem;
       font-weight: 700;
@@ -921,53 +921,53 @@
       vertical-align: baseline;
     }
 
-    .badge,
-    .badge code,
-    .badge samp {
+    .ok-badge,
+    .ok-badge code,
+    .ok-badge samp {
       font-size: var(--ok-font-size-small);
       line-height: 1;
     }
 
-    .badge code,
-    .badge samp {
+    .ok-badge code,
+    .ok-badge samp {
       background-color: inherit;
       padding: 0;
     }
 
-    button.badge {
+    button.ok-badge {
       border-width: 0;
       cursor: pointer;
       line-height: normal;
     }
 
-    .badge,
-    a.badge,
-    a.badge:focus,
-    a.badge:hover {
+    .ok-badge,
+    a.ok-badge,
+    a.ok-badge:focus,
+    a.ok-badge:hover {
       color: var(--ok-color-bg);
     }
 
-    a.badge,
-    a.badge:focus,
-    a.badge:hover {
+    a.ok-badge,
+    a.ok-badge:focus,
+    a.ok-badge:hover {
       border-bottom: none;
       text-decoration: none;
     }
 
-    a.badge:focus,
-    button.badge:focus {
+    a.ok-badge:focus,
+    button.ok-badge:focus {
       outline: 0;
     }
 
-    a.badge:focus,
-    button.badge:focus {
+    a.ok-badge:focus,
+    button.ok-badge:focus {
       box-shadow: 0 0 0 0.2rem var(--ok-color-link-fg);
     }
   }
 
   /* Note boxes. */
   @layer elements {
-    .note {
+    .ok-note {
       background-color: var(--ok-color-bg-2);
       border-radius: var(--ok-border-radius);
       border: 1px solid var(--ok-color-border);
@@ -977,13 +977,13 @@
       padding-top: var(--ok-line-height);
     }
 
-    .note > *:last-child {
+    .ok-note > *:last-child {
       margin-bottom: 0;
     }
 
-    .note > h1:last-child,
-    .note > h2:last-child,
-    .note > h3:last-child {
+    .ok-note > h1:last-child,
+    .ok-note > h2:last-child,
+    .ok-note > h3:last-child {
       padding-bottom: 0;
     }
   }
