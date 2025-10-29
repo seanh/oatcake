@@ -13,7 +13,7 @@
         }
       }
       body.alternativeFonts {
-        --oatcake-font-family:
+        --ok-font-family:
           "Segoe Print", "Bradley Hand", Chilanka, TSCu_Comic, casual, cursive;
       }
       .annotation {
@@ -35,11 +35,11 @@
         font-weight: bold;
       }
       pre.custom samp {
-        color: var(--oatcake-secondary-color);
+        color: var(--ok-color-fg-2);
       }
       .example {
         margin-left: 2em;
-        margin-bottom: var(--oatcake-line-height);
+        margin-bottom: var(--ok-line-height);
       }
       .example:not(.padding) h1:first-child,
       .example:not(.padding) h2:first-child,
@@ -145,7 +145,7 @@
         <li>
           <strong>And a small grab bag of extra features.</strong>
           A few bells and whistles like subheadings, lead paragraphs, secondary
-          text, note boxes, and badges.
+          (muted) text, note boxes, and badges.
         </li>
       </ul>
 
@@ -197,7 +197,7 @@
         <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/@layer"
           >CSS layer</a
         >
-        so it's rules won't interfere with your own: any custom rules that you
+        so its rules won't interfere with your own: any custom rules that you
         add will override Oatcake's, regardless of specificity.
       </p>
 
@@ -263,8 +263,8 @@
 
         <pre><code>&lt;style&gt;
   :root {
-    --oatcake-font-family: 'ui-rounded, source-sans-pro, sans-serif';
-    --oatcake-monospaced-font-family: '"Nimbus Mono PS", "Courier New", monospace';
+    --ok-font-family: 'ui-rounded, source-sans-pro, sans-serif';
+    --ok-font-family-mono: '"Nimbus Mono PS", "Courier New", monospace';
   }
 &lt;/style&gt;</code></pre>
 
@@ -275,8 +275,8 @@
 
         <pre><code>&lt;style&gt;
   #myElement {
-    --oatcake-font-family: 'ui-rounded, source-sans-pro, sans-serif';
-    --oatcake-monospaced-font-family: '"Nimbus Mono PS", "Courier New", monospace';
+    --ok-font-family: 'ui-rounded, source-sans-pro, sans-serif';
+    --ok-font-family-mono: '"Nimbus Mono PS", "Courier New", monospace';
   }
 &lt;/style&gt;</code></pre>
 
@@ -292,25 +292,25 @@
         <p>Here's the full list of font variables you can change:</p>
 
         <dl>
-          <dt><code>--oatcake-font-family</code></dt>
+          <dt><code>--ok-font-family</code></dt>
           <dd>
             The <code>font-family</code> for the main
             <code>&lt;body&gt;</code> text.
           </dd>
 
-          <dt><code>--oatcake-font-size</code></dt>
+          <dt><code>--ok-font-size</code></dt>
           <dd>
             The <code>font-size</code> for the main
             <code>&lt;body&gt;</code> text.
           </dd>
 
-          <dt><code>--oatcake-line-height</code></dt>
+          <dt><code>--ok-line-height</code></dt>
           <dd>
             The <code>line-height</code> for the main
             <code>&lt;body&gt;</code> text.
           </dd>
 
-          <dt><code>--oatcake-small-font-size</code></dt>
+          <dt><code>--ok-font-size-small</code></dt>
           <dd>
             The <code>font-size</code> for small text:
             <code>&lt;small&gt;</code> elements, the CSS class
@@ -319,7 +319,7 @@
             <a href="#badges">badges</a>.
           </dd>
 
-          <dt><code>--oatcake-monospaced-font-family</code></dt>
+          <dt><code>--ok-font-family-mono</code></dt>
           <dd>The <code>font-family</code> for monospaced text.</dd>
         </dl>
       </details>
@@ -328,10 +328,10 @@
 
       <p>
         Like its fonts, Oatcake's colours are also chosen to be readable and not
-        to be noticed: black text on a white background, and the browser's
-        default purple and underline for
+        to be noticed: black text on a white background, and a typical purple
+        and underline for
         <a href="https://example.com">links</a>. Code and preformatted text
-        blocks have a typical light-grey background.
+        blocks have the common light-grey background.
       </p>
 
       <details>
@@ -345,8 +345,8 @@
 
         <pre><code>&lt;style&gt;
   :root {
-    --oatcake-background-color: black;
-    --oatcake-color: white;
+    --ok-color-bg: black;
+    --ok-color-fg: white;
   }
 &lt;/style&gt;</code></pre>
 
@@ -357,40 +357,21 @@
 
         <pre><code>&lt;style&gt;
   #myElement {
-    --oatcake-background-color: black;
-    --oatcake-color: white;
+    --ok-color-bg: black;
+    --ok-color-fg: white;
   }
 &lt;/style&gt;</code></pre>
 
         <p>Here's the full list of colour variables you can change:</p>
 
         <dl>
-          <dt><code>--oatcake-background-color</code></dt>
+          <dt><code>--ok-color-bg</code></dt>
           <dd>
             The <code>background-color</code> of the page
             <code>&lt;body&gt;</code>.
           </dd>
 
-          <dt><code>--oatcake-color</code></dt>
-          <dd>
-            The foreground <code>color</code> of the page
-            <code>&lt;body&gt;</code> text.
-          </dd>
-
-          <dt><code>--oatcake-secondary-color</code></dt>
-          <dd>
-            The foreground <code>color</code> of
-            <a href="#secondary-text">secondary text</a> and
-            <a href="#figures">figure captions</a>.
-          </dd>
-
-          <dt><code>--oatcake-code-background-color</code></dt>
-          <dd>
-            The <code>background-color</code> of inline
-            <code>&lt;code&gt;</code> and <code>&lt;samp&gt;</code> elements.
-          </dd>
-
-          <dt><code>--oatcake-block-background-color</code></dt>
+          <dt><code>--ok-color-bg-2</code></dt>
           <dd>
             The <code>background-color</code> of
             <a href="#preformatted-text">preformatted text blocks</a>,
@@ -401,7 +382,26 @@
             and <a href="#note-boxes">note boxes</a>.
           </dd>
 
-          <dt><code>--oatcake-border-color</code></dt>
+          <dt><code>--ok-color-bg-3</code></dt>
+          <dd>
+            The <code>background-color</code> of inline
+            <code>&lt;code&gt;</code> and <code>&lt;samp&gt;</code> elements.
+          </dd>
+
+          <dt><code>--ok-color-fg</code></dt>
+          <dd>
+            The foreground <code>color</code> of the page
+            <code>&lt;body&gt;</code> text.
+          </dd>
+
+          <dt><code>--ok-color-fg-2</code></dt>
+          <dd>
+            The foreground <code>color</code> of
+            <a href="#secondary-text">secondary text</a> and
+            <a href="#figures">figure captions</a>.
+          </dd>
+
+          <dt><code>--ok-color-border</code></dt>
           <dd>
             The <code>border-color</code> of
             <a href="#blockquotes">block quotes</a>,
@@ -414,7 +414,7 @@
             <a href="#horizontal-rules">horizontal rules</a>.
           </dd>
 
-          <dt><code>--oatcake-highlight-background-color</code></dt>
+          <dt><code>--ok-color-highlight-bg</code></dt>
           <dd>
             The <code>background-color</code> of highlighted text (<code
               >&lt;mark&gt;</code
@@ -422,42 +422,14 @@
             elements).
           </dd>
 
-          <dt><code>--oatcake-kbd-background-color</code></dt>
+          <dt><code>--ok-color-link-fg</code></dt>
           <dd>
-            The <code>background-color</code> of
-            <a href="#kbd"><code>&lt;kbd&gt;</code> elements</a>.
+            The foreground <code>color</code> of links (<code>&lt;a&gt;</code>
+            elements).
           </dd>
 
-          <dt><code>--oatcake-kbd-color</code></dt>
-          <dd>
-            The foreground <code>color</code> of
-            <a href="#kbd"><code>&lt;kbd&gt;</code> elements</a>.
-          </dd>
-
-          <dt><code>--oatcake-kbd-border-color</code></dt>
-          <dd>
-            The <code>border-color</code> of
-            <a href="#kbd"><code>&lt;kbd&gt;</code> elements</a>.
-          </dd>
-
-          <dt><code>--oatcake-kbd-border-bottom-color</code></dt>
-          <dd>
-            The <code>border-bottom-color</code> of
-            <a href="#kbd"><code>&lt;kbd&gt;</code> elements</a>.
-          </dd>
-
-          <dt><code>--oatcake-badge-background-color</code></dt>
-          <dd>
-            The <code>background-color</code> of <a href="#badges">badges</a>.
-          </dd>
-
-          <dt><code>--oatcake-badge-color</code></dt>
-          <dd>
-            The foreground <code>color</code> of <a href="#badges">badges</a>.
-          </dd>
-
-          <dt><code>--oatcake-badge-focus-border-color</code></dt>
-          <dd>The focus border colour of <a href="#badges">badges</a>.</dd>
+          <dt><code>--ok-color-link-visited-fg</code></dt>
+          <dd>The foreground <code>color</code> of visited links.</dd>
         </dl>
       </details>
 
@@ -1271,7 +1243,7 @@ in the air.&lt;/p&gt;</code></pre>
 
       <div
         class="example padding"
-        style="margin-bottom: calc(2 * var(--oatcake-line-height))"
+        style="margin-bottom: calc(2 * var(--ok-line-height))"
       >
         <h1 class="noanchor">Level 1 heading</h1>
 
@@ -2853,7 +2825,7 @@ int main()
     font-weight: bold;
   }
   pre samp {
-    color: var(--oatcake-secondary-color);
+    color: var(--ok-color-fg-2);
   }
 &lt;style&gt;</code></pre>
 
@@ -3625,18 +3597,18 @@ Being is born of not being.</pre
       <h3>Secondary text</h3>
 
       <p>
-        You can put text in a dimmed colour by adding the CSS class
+        You can put text in a muted colour by adding the CSS class
         <code>secondary</code>
         to any element. For example:
-        <code>&lt;p class="secondary"&gt;dimmed text&lt;/p&gt;</code>. Secondary
+        <code>&lt;p class="secondary"&gt;muted text&lt;/p&gt;</code>. Secondary
         text is meant for metadata like authorship, publication dates, tags,
         copyright notices, that sort of thing. It looks like this:
       </p>
 
       <p class="secondary">
         <strong>Posted:</strong> Wed 14 August 2019 &middot;
-        <strong>Tags:</strong> <a href="#secondary-text">HTML</a>,
-        <a href="#secondary-text">CSS</a>
+        <strong>Tags:</strong> <a href="#">HTML</a>,
+        <a href="#">CSS</a>
       </p>
 
       <p>
@@ -4126,7 +4098,7 @@ end tell</code></pre>
 
         let lineHeight = parseInt(
           getComputedStyle(document.documentElement).getPropertyValue(
-            "--oatcake-line-height",
+            "--ok-line-height",
           ),
         );
 
