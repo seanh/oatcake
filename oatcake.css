@@ -2,29 +2,27 @@
   @layer reset, base, elements;
 
   :root {
-    --oatcake-background-color: white;
-    --oatcake-badge-background-color: #343a40;
-    --oatcake-badge-color: #fff;
-    --oatcake-badge-focus-border-color: #2b90d9;
-    --oatcake-block-background-color: rgb(248, 249, 250);
-    --oatcake-border-color: #dee2e6;
-    --oatcake-border-radius: 7px;
-    --oatcake-code-background-color: rgba(175, 184, 193, 0.2);
-    --oatcake-color: #16171a;
-    --oatcake-font-family:
-      system-ui, sans-serif; /* This is the System UI font stack from https://modernfontstacks.com/ */
-    --oatcake-font-size: 16px;
-    --oatcake-highlight-background-color: LemonChiffon;
-    --oatcake-kbd-background-color: #fafbfc;
-    --oatcake-kbd-border-bottom-color: rgb(68, 77, 86);
-    --oatcake-kbd-border-color: #c6cbd1;
-    --oatcake-kbd-color: #444d56;
-    --oatcake-line-height: 24px; /* The line-height sets the vertical rhythm. All sizes, margins, paddings, and borders must be added in multiples of this line height. */
-    --oatcake-monospaced-font-family:
+    --ok-border-radius: 7px;
+    --ok-color-bg-2: rgb(248, 249, 250);
+    --ok-color-bg-3: rgba(175, 184, 193, 0.2);
+    --ok-color-bg: white;
+    --ok-color-border: #dee2e6;
+    --ok-color-fg-2: rgb(111, 110, 105);
+    --ok-color-fg-3: rgb(183, 181, 172);
+    --ok-color-fg: rgb(16, 15, 15);
+    --ok-color-highlight-bg: LemonChiffon;
+    --ok-color-kbd-bg: #fafbfc;
+    --ok-color-kbd-border-bottom: rgb(68, 77, 86);
+    --ok-color-link-fg: rgb(115, 94, 181);
+    --ok-color-link-visited-fg: rgb(79, 54, 133);
+    --ok-font-family-mono:
       ui-monospace, "Cascadia Code", "Source Code Pro", Menlo, Consolas,
       "DejaVu Sans Mono", monospace; /* This is the Monospace Code font stack from https://modernfontstacks.com/ */
-    --oatcake-secondary-color: #888;
-    --oatcake-small-font-size: 13px;
+    --ok-font-family:
+      system-ui, sans-serif; /* This is the System UI font stack from https://modernfontstacks.com/ */
+    --ok-font-size-small: 13px;
+    --ok-font-size: 16px;
+    --ok-line-height: 24px; /* The line-height sets the vertical rhythm. All sizes, margins, paddings, and borders must be added in multiples of this line height. */
   }
 
   @layer reset {
@@ -137,9 +135,9 @@
   /* Fonts, font-sizes and vertical rhythm (line-heights, margins and padding). */
   @layer base {
     body {
-      font-family: var(--oatcake-font-family);
-      font-size: var(--oatcake-font-size);
-      line-height: var(--oatcake-line-height);
+      font-family: var(--ok-font-family);
+      font-size: var(--ok-font-size);
+      line-height: var(--ok-line-height);
     }
 
     .note,
@@ -151,7 +149,7 @@
     p,
     pre,
     ul {
-      margin-bottom: var(--oatcake-line-height);
+      margin-bottom: var(--ok-line-height);
     }
 
     /* Nested lists fix. */
@@ -174,22 +172,22 @@
     img:not(li img:first-child),
     svg:not(li svg:first-child),
     video:not(li video:first-child) {
-      margin-top: calc(2 * var(--oatcake-line-height));
+      margin-top: calc(2 * var(--ok-line-height));
     }
     audio,
     iframe,
     img,
     svg,
     video {
-      margin-bottom: calc(var(--oatcake-line-height) * 2);
+      margin-bottom: calc(var(--ok-line-height) * 2);
     }
   }
 
   /* Base colors. */
   @layer base {
     body {
-      background-color: var(--oatcake-background-color);
-      color: var(--oatcake-color);
+      background-color: var(--ok-color-bg);
+      color: var(--ok-color-fg);
     }
   }
 
@@ -239,6 +237,17 @@
     }
   }
 
+  /* Links. */
+  @layer elements {
+    a {
+      color: var(--ok-color-link-fg);
+    }
+    a:hover,
+    a:visited {
+      color: var(--ok-color-link-visited-fg);
+    }
+  }
+
   /* Bold and italics. */
   @layer elements {
     em,
@@ -255,7 +264,7 @@
   /* Highlights (the <mark> element). */
   @layer elements {
     mark {
-      background-color: var(--oatcake-highlight-background-color);
+      background-color: var(--ok-color-highlight-bg);
     }
   }
 
@@ -275,7 +284,7 @@
     img,
     svg,
     video {
-      border-radius: var(--oatcake-border-radius);
+      border-radius: var(--ok-border-radius);
       display: block;
       margin-left: auto;
       margin-right: auto;
@@ -283,7 +292,7 @@
     }
 
     audio {
-      height: calc(2 * var(--oatcake-line-height));
+      height: calc(2 * var(--ok-line-height));
       width: 100%;
     }
 
@@ -291,10 +300,10 @@
     iframe.border,
     img.border,
     video.border {
-      border-radius: var(--oatcake-border-radius);
-      border: 1px solid var(--oatcake-border-color);
+      border-radius: var(--ok-border-radius);
+      border: 1px solid var(--ok-color-border);
       margin-bottom: calc(
-        var(--oatcake-line-height) * 2 - 2px
+        var(--ok-line-height) * 2 - 2px
       ); /* Prevent the border from offsetting the vertical rhythm. */
     }
   }
@@ -304,9 +313,9 @@
     hr {
       background: transparent;
       border: 0;
-      border-top: 1px solid var(--oatcake-border-color);
+      border-top: 1px solid var(--ok-color-border);
       margin-bottom: calc(
-        var(--oatcake-line-height) - 1px
+        var(--ok-line-height) - 1px
       ); /* Fix the vertical rhythm breakage introduced by the border-top. */
     }
   }
@@ -315,7 +324,7 @@
   @layer elements {
     sub,
     sup {
-      font-size: var(--oatcake-small-font-size);
+      font-size: var(--ok-font-size-small);
       line-height: 0;
       padding-left: 0.1em;
       position: relative;
@@ -335,7 +344,7 @@
   @layer elements {
     .small,
     small {
-      font-size: var(--oatcake-small-font-size);
+      font-size: var(--ok-font-size-small);
       vertical-align: bottom; /* Prevent <small>'s from throwing off the vertical rhythm. */
     }
   }
@@ -347,7 +356,7 @@
     }
   }
 
-  /* Secondary text (i.e. muted or faint text). */
+  /* Secondary text. */
   @layer elements {
     .secondary a,
     .secondary b,
@@ -357,19 +366,22 @@
     .secondary strong,
     .secondary {
       background-color: inherit;
-      color: var(--oatcake-secondary-color);
+      color: var(--ok-color-fg-2);
+    }
+
+    .faint {
+      color: var(--ok-color-fg-3);
     }
   }
 
   /* <kbd> */
   @layer elements {
     kbd {
-      background-color: var(--oatcake-kbd-background-color);
-      border-bottom-color: var(--oatcake-kbd-border-bottom-color);
+      background-color: var(--ok-color-kbd-bg);
       border-radius: 5px;
-      border: 1px solid var(--oatcake-kbd-border-color);
-      color: var(--oatcake-kbd-color);
-      font-family: var(--oatcake-monospaced-font-family);
+      border: 1px solid var(--ok-color-border);
+      border-bottom-color: var(--ok-color-kbd-border-bottom);
+      font-family: var(--ok-font-family-mono);
       font-size: 12px;
       font-weight: bold;
       padding-bottom: 3px;
@@ -404,7 +416,7 @@
   /* Block quotes. */
   @layer elements {
     blockquote {
-      border-left: 3px solid var(--oatcake-border-color);
+      border-left: 3px solid var(--ok-color-border);
       padding-left: 20px;
       quotes: none;
     }
@@ -446,7 +458,7 @@
      * same <dt>, but we *do* want a blank line after the final <dd> before the
      * next <dt>. */
     dd + dt {
-      margin-top: var(--oatcake-line-height);
+      margin-top: var(--ok-line-height);
     }
   }
 
@@ -477,31 +489,31 @@
     h5,
     h6 {
       font-weight: bold;
-      line-height: var(--oatcake-line-height);
+      line-height: var(--ok-line-height);
     }
 
     h1 {
       font-size: 24px;
-      padding-bottom: var(--oatcake-line-height);
-      padding-top: calc(var(--oatcake-line-height) * 2);
+      padding-bottom: var(--ok-line-height);
+      padding-top: calc(var(--ok-line-height) * 2);
     }
 
     h2 {
       font-size: 19px;
-      padding-bottom: var(--oatcake-line-height);
-      padding-top: var(--oatcake-line-height);
+      padding-bottom: var(--ok-line-height);
+      padding-top: var(--ok-line-height);
     }
 
     h3 {
-      font-size: var(--oatcake-font-size);
-      padding-bottom: var(--oatcake-line-height);
-      padding-top: var(--oatcake-line-height);
+      font-size: var(--ok-font-size);
+      padding-bottom: var(--ok-line-height);
+      padding-top: var(--ok-line-height);
     }
 
     h4,
     h5,
     h6 {
-      font-size: var(--oatcake-font-size);
+      font-size: var(--ok-font-size);
       padding-bottom: 0;
       padding-top: 0;
     }
@@ -519,7 +531,7 @@
     h6 + h4,
     h6 + h5,
     h6 + h6 {
-      margin-top: var(--oatcake-line-height);
+      margin-top: var(--ok-line-height);
     }
 
     /* At lot of the time you don't want any padding-top before a heading, for
@@ -666,7 +678,7 @@
     /* I've no idea why but when I reduce the font-size of `<mark>`'s within
      * headings and lead paragraphs it offsets the vertical-rhythm unless I say
      * `line-height: 100%;`.
-     * You'd think it'd mean the same thing but `line-height: var(--oatcake-line-height);`
+     * You'd think it'd mean the same thing but `line-height: var(--ok-line-height);`
      * doesn't fix the rhtyhm.
      * This doesn't seem to be necessary when reducing the font-sizes of other
      * elements like <code>'s and <samp>'s in headings and lead paragraphs. */
@@ -697,7 +709,7 @@
   /* Figures and captions. */
   @layer elements {
     figure figcaption {
-      color: var(--oatcake-secondary-color);
+      color: var(--ok-color-fg-2);
       text-align: center;
     }
 
@@ -710,7 +722,7 @@
     figure img + figcaption,
     figure svg + figcaption,
     figure video + figcaption {
-      margin-top: calc(var(--oatcake-line-height) * -1);
+      margin-top: calc(var(--ok-line-height) * -1);
     }
 
     /* If a figure has a caption then make the vertical space below the caption
@@ -718,7 +730,7 @@
        caption visibly closer to the figure that it belongs to than to whatever
        follows the figure. */
     figcaption {
-      padding-bottom: var(--oatcake-line-height);
+      padding-bottom: var(--ok-line-height);
     }
   }
 
@@ -726,9 +738,9 @@
   @layer elements {
     code,
     samp {
-      background-color: var(--oatcake-code-background-color);
+      background-color: var(--ok-color-bg-3);
       border-radius: 5px;
-      font-family: var(--oatcake-monospaced-font-family);
+      font-family: var(--ok-font-family-mono);
       line-height: 18px;
       padding-left: 5px;
       padding-right: 5px;
@@ -751,8 +763,10 @@
       line-height: inherit;
     }
 
-    .secondary code,
-    .secondary samp {
+    .faint code,
+    .faint samp,
+    .muted code,
+    .muted samp {
       background-color: inherit;
     }
 
@@ -768,12 +782,12 @@
   @layer elements {
     details,
     details > summary {
-      border-radius: var(--oatcake-border-radius);
-      border: 1px solid var(--oatcake-border-color);
-      padding-bottom: var(--oatcake-line-height);
-      padding-left: calc(0.5 * var(--oatcake-line-height));
-      padding-right: calc(0.5 * var(--oatcake-line-height));
-      padding-top: var(--oatcake-line-height);
+      border-radius: var(--ok-border-radius);
+      border: 1px solid var(--ok-color-border);
+      padding-bottom: var(--ok-line-height);
+      padding-left: calc(0.5 * var(--ok-line-height));
+      padding-right: calc(0.5 * var(--ok-line-height));
+      padding-top: var(--ok-line-height);
     }
 
     details {
@@ -784,11 +798,11 @@
     }
 
     details > summary {
-      background-color: var(--oatcake-block-background-color);
+      background-color: var(--ok-color-bg-2);
       cursor: pointer;
-      margin-left: calc(-0.5 * var(--oatcake-line-height) - 1px);
-      margin-right: calc(-0.5 * var(--oatcake-line-height) - 1px);
-      margin-top: calc(-1 * calc(var(--oatcake-line-height)) - 1px);
+      margin-left: calc(-0.5 * var(--ok-line-height) - 1px);
+      margin-right: calc(-0.5 * var(--ok-line-height) - 1px);
+      margin-top: calc(-1 * calc(var(--ok-line-height)) - 1px);
     }
 
     /* Give long text in <summary>'s a horizontal scrollbar instead of letting it overflow. */
@@ -806,11 +820,11 @@
       border-bottom-left-radius: 0;
       border-bottom-right-radius: 0;
       border-bottom: none;
-      margin-bottom: var(--oatcake-line-height);
+      margin-bottom: var(--ok-line-height);
     }
 
     details:not(:has(> summary)) {
-      background-color: var(--oatcake-block-background-color);
+      background-color: var(--ok-color-bg-2);
     }
 
     details[open]:not(:has(> summary)) *:first-child {
@@ -818,7 +832,7 @@
          <details> and the first child-element within.
          Unfortunately this only works if the <details> contents is made up of child
          elements (e.g. <p>'s) rather than just text content. */
-      margin-top: var(--oatcake-line-height);
+      margin-top: var(--ok-line-height);
     }
 
     details:not([open]):has(> summary) {
@@ -850,7 +864,7 @@
          <h1>'s are ending up 27px high even though the heading is only 24px high.
          Correct it by removing 3px from the <summary>'s padding-bottom. This seems
          to work across browsers. */
-      padding-bottom: calc(var(--oatcake-line-height) - 3px);
+      padding-bottom: calc(var(--ok-line-height) - 3px);
     }
 
     details > summary:has(h2) {
@@ -858,26 +872,26 @@
          <h2>'s are ending up 25px high even though the heading is only 24px high.
          Correct it by removing 1px from the <summary>'s padding-bottom. This seems
          to work across browsers. */
-      padding-bottom: calc(var(--oatcake-line-height) - 1px);
+      padding-bottom: calc(var(--ok-line-height) - 1px);
     }
   }
 
   /* Preformatted text blocks (including multiline code and sample output blocks). */
   @layer elements {
     pre {
-      border-radius: var(--oatcake-border-radius);
-      border: 1px solid var(--oatcake-border-color);
+      border-radius: var(--ok-border-radius);
+      border: 1px solid var(--ok-color-border);
       overflow: auto;
-      padding-bottom: calc(var(--oatcake-line-height) - 2px);
-      padding-left: calc(0.5 * var(--oatcake-line-height));
-      padding-right: calc(0.5 * var(--oatcake-line-height));
-      padding-top: var(--oatcake-line-height);
+      padding-bottom: calc(var(--ok-line-height) - 2px);
+      padding-left: calc(0.5 * var(--ok-line-height));
+      padding-right: calc(0.5 * var(--ok-line-height));
+      padding-top: var(--ok-line-height);
     }
 
     pre,
     pre code,
     pre samp {
-      background-color: var(--oatcake-block-background-color);
+      background-color: var(--ok-color-bg-2);
     }
 
     pre code,
@@ -890,9 +904,8 @@
   /* Badges. */
   @layer elements {
     .badge {
-      background-color: var(--oatcake-badge-background-color);
+      background-color: var(--ok-color-fg);
       border-radius: 10rem;
-      color: var(--oatcake-badge-color);
       font-weight: 700;
       margin-bottom: -0.3rem; /* Prevent badges from offsetting the vertical rhythm in iOS Safari. */
       padding-bottom: 0.1rem;
@@ -911,7 +924,7 @@
     .badge,
     .badge code,
     .badge samp {
-      font-size: var(--oatcake-small-font-size);
+      font-size: var(--ok-font-size-small);
       line-height: 1;
     }
 
@@ -925,6 +938,13 @@
       border-width: 0;
       cursor: pointer;
       line-height: normal;
+    }
+
+    .badge,
+    a.badge,
+    a.badge:focus,
+    a.badge:hover {
+      color: var(--ok-color-bg);
     }
 
     a.badge,
@@ -941,20 +961,20 @@
 
     a.badge:focus,
     button.badge:focus {
-      box-shadow: 0 0 0 0.2rem var(--oatcake-badge-focus-border-color);
+      box-shadow: 0 0 0 0.2rem var(--ok-color-link-fg);
     }
   }
 
   /* Note boxes. */
   @layer elements {
     .note {
-      background-color: var(--oatcake-block-background-color);
-      border-radius: var(--oatcake-border-radius);
-      border: 1px solid var(--oatcake-border-color);
-      padding-bottom: calc(var(--oatcake-line-height) - 2px);
-      padding-left: calc(var(--oatcake-line-height) * 0.5);
-      padding-right: calc(var(--oatcake-line-height) * 0.5);
-      padding-top: var(--oatcake-line-height);
+      background-color: var(--ok-color-bg-2);
+      border-radius: var(--ok-border-radius);
+      border: 1px solid var(--ok-color-border);
+      padding-bottom: calc(var(--ok-line-height) - 2px);
+      padding-left: calc(var(--ok-line-height) * 0.5);
+      padding-right: calc(var(--ok-line-height) * 0.5);
+      padding-top: var(--ok-line-height);
     }
 
     .note > *:last-child {
