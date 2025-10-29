@@ -2,6 +2,8 @@
 help:
 	@echo "make dev"
 	@echo "    Run the dev server at http://localhost:8001/."
+	@echo "make minify"
+	@echo "    Update the minified CSS file."
 	@echo "make format"
 	@echo "    Format the code nicely."
 	@echo "make checkformatting"
@@ -14,6 +16,10 @@ help:
 .PHONY: dev
 dev:
 	python3 -m http.server --directory site 8001
+
+.PHONY: minify
+minify:
+	npx lightningcss-cli --minify oatcake.css --output-file oatcake.min.css
 
 .PHONY: format
 format:
