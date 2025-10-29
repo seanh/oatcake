@@ -2897,14 +2897,6 @@ int main()
       </p>
 
       <p>
-        To avoid distracting readers with too many different visual styles
-        Oatcake styles disclosure widgets similarly to preformatted text, code
-        and note boxes: the same background color, border, rounded corners, and
-        padding. The difference is that instead of being preformatted or
-        monospaced disclosure widgets are collapsible.
-      </p>
-
-      <p>
         To create a disclosure widget you use a
         <code>&lt;details&gt;</code> element containing a
         <code>&lt;summary&gt;</code> followed by some content. For example this:
@@ -2921,8 +2913,6 @@ int main()
         <summary>Material</summary>
         <p>The picture frame is made of solid oak wood.</p>
       </details>
-
-      <p>You click on the disclosure widget to show or hide its contents.</p>
 
       <p>
         If your <code>&lt;details&gt;</code> only contains a single paragraph
@@ -2983,6 +2973,25 @@ int main()
           <summary>Inner widget</summary>
           <p>Details&hellip;</p>
         </details>
+      </details>
+
+      <details>
+        <summary><b>Design notes:</b> disclosure widgets</summary>
+
+        <p>
+          To avoid distracting readers with too many different visual styles
+          Oatcake styles disclosure widgets similarly to preformatted text, code
+          and note boxes: the same background color, border, rounded corners,
+          and padding. The difference is that instead of being preformatted or
+          monospaced disclosure widgets are collapsible.
+        </p>
+
+        <p>
+          For usability Oatcake gives a nice big click-target for opening and
+          closing disclosure widgets (indicated by the background color) and
+          also changes the cursor to a "help" cursor when it's over this target
+          area.
+        </p>
       </details>
 
       <h3>
