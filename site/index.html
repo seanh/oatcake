@@ -328,10 +328,14 @@
 
       <p>
         Like its fonts, Oatcake's colours are also chosen to be readable and not
-        to be noticed: black text on a white background, and a typical purple
-        and underline for
-        <a href="https://example.com">links</a>. Code and preformatted text
-        blocks have the common light-grey background.
+        to be noticed: black text on a white background, and the standard bright
+        blue and underlined links (dark purple for visited links, the exact
+        colors are those
+        <a
+          href="https://html.spec.whatwg.org/multipage/rendering.html#phrasing-content-3"
+          >suggested in the HTML standard</a
+        >). Code and preformatted text blocks have a typical light-grey
+        background.
       </p>
 
       <details>
@@ -430,6 +434,13 @@
 
           <dt><code>--ok-color-link-visited-fg</code></dt>
           <dd>The foreground <code>color</code> of visited links.</dd>
+
+          <dt><code>--ok-color-link-active-fg</code></dt>
+          <dd>
+            The foreground <code>color</code> of links while they're being
+            clicked on or otherwise activated, provides visual feedback that the
+            link was clicked.
+          </dd>
         </dl>
       </details>
 
