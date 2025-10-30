@@ -2820,9 +2820,7 @@ it moves, inexhaustibly giving.</pre
         Code blocks can be created with
         <code>&lt;pre&gt;&lt;code&gt;</code> tags. This is what indenting a
         block of text by four spaces or one tab does in Markdown (or "fenced
-        code blocks" with <code>```</code> in many versions of Markdown).
-        Oatcake aims to do more with fewer visual styles, so code blocks look
-        the same as preformatted text blocks but with a monospaced font:
+        code blocks" with <code>```</code> in many versions of Markdown):
       </p>
 
       <pre><code>#include &lt;stdio.h&gt;
@@ -2831,6 +2829,16 @@ int main()
 {
     printf("Hello World!\n");
 }</code></pre>
+
+      <details>
+        <summary><b>Design notes:</b> code blocks</summary>
+        <p>
+          Oatcake aims to do more with fewer visual styles, so code blocks look
+          the same as preformatted text blocks but with a monospaced font. This
+          is less distracting for readers and writers and also makes Oatcake
+          easier to maintain.
+        </p>
+      </details>
 
       <details>
         <summary>
@@ -2871,12 +2879,11 @@ int main()
 
         <p>
           As with inline <code>&lt;code&gt;</code> and
-          <code>&lt;samp&gt;</code> elements Oatcake styles
-          <code>&lt;pre&gt;&lt;samp&gt;</code> the same as
-          <code>&lt;pre&gt;&lt;code&gt;</code>, letting the difference be
-          semantic only. This is to avoid having too many distracting visual
-          styles and because there's no obvious way to visually indicate the
-          semantic difference between "code" and "output".
+          <code>&lt;samp&gt;</code> elements Oatcake styles sample output blocks
+          the same as code blocks, letting the difference be semantic only. This
+          is to avoid having too many distracting visual styles and because
+          there's no obvious way to visually indicate the semantic difference
+          between "code" and "output".
         </p>
       </details>
 
