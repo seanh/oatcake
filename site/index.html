@@ -2852,12 +2852,8 @@ int main()
 
       <p>
         Oatcake also supports <code>&lt;pre&gt;&lt;samp&gt;</code> blocks. These
-        have a different semantic meaning in HTML: they represent a block of
-        computer <em>output</em> rather than input code. Again trying to avoid
-        having too many different visual styles Oatcake styles
-        <code>&lt;pre&gt;&lt;samp&gt;</code> the same as
-        <code>&lt;pre&gt;&lt;code&gt;</code>, letting the difference be semantic
-        only:
+        have a different semantic meaning in HTML&mdash;they represent a block
+        of computer <em>output</em> rather than input code:
       </p>
 
       <pre><samp> _________________________________
@@ -2869,6 +2865,20 @@ int main()
             (__)\       )\/\
                 ||----w |
                 ||     ||</samp></pre>
+
+      <details>
+        <summary><b>Design notes:</b> sample output blocks</summary>
+
+        <p>
+          As with inline <code>&lt;code&gt;</code> and
+          <code>&lt;samp&gt;</code> elements Oatcake styles
+          <code>&lt;pre&gt;&lt;samp&gt;</code> the same as
+          <code>&lt;pre&gt;&lt;code&gt;</code>, letting the difference be
+          semantic only. This is to avoid having too many distracting visual
+          styles and because there's no obvious way to visually indicate the
+          semantic difference between "code" and "output".
+        </p>
+      </details>
 
       <details>
         <summary>
