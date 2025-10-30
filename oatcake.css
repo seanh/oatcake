@@ -13,8 +13,9 @@
     --ok-color-highlight-bg: LemonChiffon;
     --ok-color-kbd-bg: #fafbfc;
     --ok-color-kbd-border-bottom: rgb(68, 77, 86);
-    --ok-color-link-fg: rgb(115, 94, 181);
-    --ok-color-link-visited-fg: rgb(79, 54, 133);
+    --ok-color-link-fg: #0000ee;
+    --ok-color-link-visited-fg: #551a8b;
+    --ok-color-link-active-fg: #ff0000;
     --ok-font-family-mono:
       ui-monospace, "Cascadia Code", "Source Code Pro", Menlo, Consolas,
       "DejaVu Sans Mono", monospace; /* This is the Monospace Code font stack from https://modernfontstacks.com/ */
@@ -239,22 +240,71 @@
 
   /* Links. */
   @layer elements {
-    a {
+    /* These are the link colors suggested in the HTML standard:
+       https://html.spec.whatwg.org/multipage/rendering.html#phrasing-content-3 */
+    :link {
       color: var(--ok-color-link-fg);
     }
-    a:hover,
-    a:visited {
+    :visited {
       color: var(--ok-color-link-visited-fg);
+    }
+
+    :link:active,
+    :visited:active {
+      color: var(--ok-color-link-active-fg);
+    }
+
+    :link,
+    :visited {
+      text-decoration: underline;
+      cursor: pointer;
+    }
+  }
+
+  /* Underlines and strikethroughts. */
+  @layer elements {
+    /* These are the suggested underlined elements from the HTML standard:
+       https://html.spec.whatwg.org/multipage/rendering.html#phrasing-content-3 */
+    ins,
+    u {
+      text-decoration: underline;
+    }
+
+    /* These are the suggested struck-through elements from the HTML standard:
+       https://html.spec.whatwg.org/multipage/rendering.html#phrasing-content-3 */
+    del,
+    s,
+    strike {
+      text-decoration: line-through;
+    }
+  }
+
+  /* Monospace. */
+  @layer elements {
+    /* These are the suggested monospaced elements from the HTML standard:
+       https://html.spec.whatwg.org/multipage/rendering.html#phrasing-content-3 */
+    code,
+    kbd,
+    samp,
+    tt {
+      font-family: var(--ok-font-family-mono);
     }
   }
 
   /* Bold and italics. */
   @layer elements {
+    /* These are the suggested italic elements from the HTML standard:
+       https://html.spec.whatwg.org/multipage/rendering.html#phrasing-content-3 */
+    cite,
+    dfn,
     em,
-    i {
+    i,
+    var {
       font-style: italic;
     }
 
+    /* These are the suggested bold elements from the HTML standard:
+       https://html.spec.whatwg.org/multipage/rendering.html#phrasing-content-3 */
     b,
     strong {
       font-weight: bold;
@@ -270,10 +320,11 @@
 
   /* Abbreviations. */
   @layer elements {
-    abbr[title] {
+    abbr[title],
+    acronym[title] {
       cursor: help;
       text-decoration-skip-ink: none;
-      text-decoration: underline dotted;
+      text-decoration: dotted underline;
     }
   }
 
@@ -381,7 +432,6 @@
       border-radius: 5px;
       border: 1px solid var(--ok-color-border);
       border-bottom-color: var(--ok-color-kbd-border-bottom);
-      font-family: var(--ok-font-family-mono);
       font-size: 12px;
       font-weight: bold;
       padding-bottom: 3px;
@@ -740,7 +790,6 @@
     samp {
       background-color: var(--ok-color-bg-3);
       border-radius: 5px;
-      font-family: var(--ok-font-family-mono);
       line-height: 18px;
       padding-left: 5px;
       padding-right: 5px;
