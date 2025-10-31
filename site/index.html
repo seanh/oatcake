@@ -20,7 +20,7 @@
         display: flex;
         gap: 0.5em;
       }
-      .warning.note {
+      aside.warning {
         background-color: rgb(248, 215, 218);
         border-color: #f1aeb5;
       }
@@ -154,7 +154,7 @@
         <li>
           <strong>And a small grab bag of extra features.</strong>
           A few bells and whistles like subheadings, lead paragraphs, secondary
-          (muted) text, note boxes, and badges.
+          (muted) text, and badges.
         </li>
       </ul>
 
@@ -376,7 +376,7 @@
             <a href="#disclosure-widgets-details-and-summary"
               >disclosure widgets</a
             >
-            and <a href="#note-boxes">note boxes</a>.
+            and <a href="#asides">asides</a>.
           </dd>
 
           <dt><code>--ok-color-bg-3</code></dt>
@@ -406,8 +406,8 @@
             <a href="#code-blocks">code blocks</a>,
             <a href="#disclosure-widgets-details-and-summary"
               >disclosure widgets</a
-            >, <a href="#note-boxes">note boxes</a>,
-            <a href="#images">images</a>, <a href="#videos">videos</a> and
+            >, <a href="#asides">asides</a>, <a href="#images">images</a>,
+            <a href="#videos">videos</a> and
             <a href="#horizontal-rules">horizontal rules</a>.
           </dd>
 
@@ -3026,8 +3026,8 @@ int main()
         <p>
           To avoid distracting readers with too many different visual styles
           Oatcake styles disclosure widgets similarly to preformatted text, code
-          and note boxes: the same background color, border, rounded corners,
-          and padding. The difference is that instead of being preformatted or
+          and asides: the same background color, border, rounded corners, and
+          padding. The difference is that instead of being preformatted or
           monospaced disclosure widgets are collapsible.
         </p>
 
@@ -3568,6 +3568,382 @@ end</code></pre>
         </figure>
       </details>
 
+      <h2 id="asides">Asides</h2>
+
+      <p>
+        You can create pull-quotes and call-out boxes with
+        <code>&lt;aside&gt;</code>. This:
+      </p>
+
+      <pre><code>&lt;aside&gt;
+  People ask me what I do for fun when I'm not at work.
+  But I'm paid to do my hobby, so I never know what to answer.
+&lt;/aside&gt;</code></pre>
+
+      <p>&hellip;renders like this:</p>
+
+      <aside>
+        People ask me what I do for fun when I'm not at work. But I'm paid to do
+        my hobby, so I never know what to answer.
+      </aside>
+
+      <details>
+        <summary><b>Design notes:</b> asides</summary>
+
+        <p>
+          In-line with Oatcake's consistently unshowy nature asides are styled
+          the same as
+          <a href="#preformatted-text">preformatted text blocks</a>,
+          <a href="#code-blocks">code blocks</a>, and
+          <a href="#disclosure-widgets-details-and-summary"
+            >disclosure widgets</a
+          >. The difference is that an aside's contents aren't preformatted,
+          monospaced, or collapsible. It's just a box!
+        </p>
+      </details>
+
+      <details>
+        <summary><b>Usage:</b> asides</summary>
+
+        <p>
+          The HTML standard says that asides are for
+          <q
+            >content that is tangentially related to the content around the
+            <code>aside</code> element, and which could be considered separate
+            from that content</q
+          >. MDN defines them as for content that is
+          <q>only indirectly related to the document's main content.</q>
+        </p>
+
+        <p>
+          The HTML standard mentions
+          <q>typographical effects like pull quotes</q> as an example use-case
+          for asides. These can be achieved by putting a
+          <code>&lt;q&gt;</code> or <code>&lt;blockquote&gt;</code> in an
+          <code>&lt;aside&gt;</code>. Here's the example that the standard
+          gives:
+        </p>
+
+        <blockquote>
+          <p>
+            He later joined a large company, continuing on the same work.
+            <q
+              >I love my job. People ask me what I do for fun when I'm not at
+              work. But I'm paid to do my hobby, so I never know what to answer.
+              Some people wonder what they would do if they didn't have to
+              work... but I know what I would do, because I was unemployed for a
+              year, and I filled that time doing exactly what I do now.</q
+            >
+          </p>
+
+          <aside>
+            <q
+              >People ask me what I do for fun when I'm not at work. But I'm
+              paid to do my hobby, so I never know what to answer.</q
+            >
+          </aside>
+
+          <p>
+            Of course his work — or should that be hobby? — isn't his only
+            passion. He also enjoys other pleasures.
+          </p>
+        </blockquote>
+
+        <p>
+          MDN gives two examples of asides used for
+          <q>call-out boxes</q> containing facts related to the main content:
+        </p>
+
+        <blockquote>
+          <p>
+            Salamanders are a group of amphibians with a lizard-like appearance,
+            including short legs and a tail in both larval and adult forms.
+          </p>
+
+          <aside>
+            <p>
+              The Rough-skinned Newt defends itself with a deadly neurotoxin.
+            </p>
+          </aside>
+
+          <p>
+            Several species of salamander inhabit the temperate rainforest of
+            the Pacific Northwest, including the Ensatina, the Northwestern
+            Salamander and the Rough-skinned Newt. Most salamanders are
+            nocturnal, and hunt for insects, worms and other small creatures.
+          </p>
+        </blockquote>
+        <blockquote>
+          <p>
+            The Disney movie <cite>The Little Mermaid</cite> was first released
+            to theatres in 1989.
+          </p>
+          <aside>
+            <p>The movie earned $87 million during its initial release.</p>
+          </aside>
+          <p>More info about the movie…</p>
+        </blockquote>
+
+        <p>
+          The HTML standard gives a similar fact-box example with an
+          <code>&lt;aside&gt;</code> containing an <code>&lt;h2&gt;</code> and a
+          <code>&lt;p&gt;</code>&mdash;<q
+            >background material on Switzerland in a much longer news story on
+            Europe</q
+          >:
+        </p>
+
+        <aside>
+          <h2 class="noanchor">Switzerland</h2>
+          <p>
+            Switzerland, a land-locked country in the middle of geographic
+            Europe, has not joined the geopolitical European Union, though it is
+            a signatory to a number of European treaties.
+          </p>
+        </aside>
+
+        <p>See also:</p>
+
+        <ul>
+          <li>
+            <a
+              href="https://html.spec.whatwg.org/multipage/sections.html#the-aside-element"
+              ><code>&lt;aside&gt;</code> in the HTML standard</a
+            >
+          </li>
+          <li>
+            <a
+              href="https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/aside"
+              ><code>&lt;aside&gt;</code> on MDN</a
+            >
+          </li>
+        </ul>
+      </details>
+
+      <details>
+        <summary><b>Tip:</b> begin an aside with a text label</summary>
+        <p>
+          Don't rely on the CSS to convey the meaning of an aside, the contents
+          should make the semantics clear. Beginning an aside with a label in
+          bold can help:
+        </p>
+
+        <aside>
+          <strong>Hint:</strong>
+          beginning an aside with a label can help convey its semantics.
+        </aside>
+      </details>
+
+      <details>
+        <summary><b>Customization:</b> aside colors</summary>
+
+        <p>
+          It was tempting to provide a variety of different colours for asides
+          like other frameworks do. But documents with lots of
+          different-coloured boxes would distract from both reading and writing
+          (always having to remember all the different types of boxes and choose
+          which one to use) and would make it harder to add support for dark
+          mode and for different colour schemes in future.
+        </p>
+
+        <p>
+          If you do want to make asides in more interesting colours you can add
+          your own CSS classes to do so. For example:
+        </p>
+
+        <pre><code>&lt;style&gt;
+  aside.warning {
+    background-color: rgb(248, 215, 218);
+    border-color: #f1aeb5;
+  }
+&lt;/style&gt;</code></pre>
+
+        <p>Now this:</p>
+
+        <pre><code>&lt;aside class="<strong>warning</strong>"&gt;
+  &lt;strong&gt;Warning!&lt;/strong&gt;
+  Too many asides can overwhelm the reader.
+&lt;/aside&gt;</code></pre>
+
+        <p>&hellip;will render like this:</p>
+
+        <aside class="warning">
+          <strong>Warning!</strong> Too many asides can overwhelm the reader.
+        </aside>
+      </details>
+
+      <details>
+        <summary><b>Edge case:</b> headings in asides</summary>
+
+        <p>
+          Like with block quotes and disclosure widgets, Oatcake also makes sure
+          that the vertical spacing is right for headings in asides:
+        </p>
+
+        <aside>
+          <h1 class="noanchor">An <code>&lt;h1&gt;</code> in an aside</h1>
+
+          <p>
+            Curabitur neque tortor, sollicitudin non tincidunt et, feugiat sit
+            amet quam.
+          </p>
+
+          <h2 class="noanchor">An <code>&lt;h2&gt;</code> in an aside</h2>
+
+          <p>
+            Aliquam erat volutpat. Curabitur fringilla arcu velit, non rutrum
+            massa dapibus sed.
+          </p>
+
+          <h3 class="noanchor">An <code>&lt;h3&gt;</code> in an aside</h3>
+
+          <p>
+            Phasellus vehicula risus mauris, sagittis commodo nisi vulputate eu.
+          </p>
+
+          <h4 class="noanchor">An <code>&lt;h4&gt;</code> in an aside</h4>
+
+          <p>
+            Phasellus id diam turpis. Donec in enim suscipit, aliquet turpis
+            nec, vulputate nisi.
+          </p>
+        </aside>
+
+        <aside>
+          <h2 class="noanchor">An <code>&lt;h2&gt;</code> in an aside</h2>
+          <p>This is the body of the aside.</p>
+        </aside>
+
+        <aside>
+          <h3 class="noanchor">An <code>&lt;h3&gt;</code> in an aside</h3>
+          <p>This is the body of the aside.</p>
+        </aside>
+
+        <aside>
+          <h4 class="noanchor">An <code>&lt;h4&gt;</code> in an aside</h4>
+          <p>This is the body of the aside</p>
+        </aside>
+      </details>
+
+      <details>
+        <summary><b>Test cases:</b> asides</summary>
+
+        <p>
+          You can put multiple paragraphs and other arbitrary content (headings,
+          block quotes, lists, code blocks, images&hellip;) in an aside. Here's
+          some examples:
+        </p>
+
+        <aside>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris
+            aliquam justo erat, sed consequat sem commodo nec. Aenean blandit
+            non lectus id rutrum.
+          </p>
+
+          <p>
+            Pellentesque non lacus vel quam lobortis tincidunt. In dignissim
+            arcu eu purus porta finibus. Quisque bibendum erat nec porttitor
+            tincidunt.
+          </p>
+
+          <p>
+            In egestas vel enim non interdum. Curabitur sed nisi scelerisque,
+            suscipit velit in, ornare velit. Praesent laoreet bibendum ipsum nec
+            elementum.
+          </p>
+        </aside>
+
+        <p>
+          You can use a <a href="#horizontal-rules">horizontal rule</a> to split
+          an aside into segments:
+        </p>
+
+        <aside>
+          <h3 class="noanchor">Tip</h3>
+
+          <p>
+            Sed porta at quam id lacinia. Pellentesque sem odio, dignissim et
+            ultrices at, pharetra id magna. Praesent auctor bibendum ante non
+            faucibus.
+          </p>
+
+          <hr />
+
+          <p>
+            Proin tortor libero, lobortis id nulla eget, laoreet malesuada arcu.
+          </p>
+        </aside>
+
+        <aside>
+          <p>
+            You can put a block quote in an aside. All the inline elements also
+            work:
+          </p>
+
+          <blockquote>
+            <p>Duis efficitur justo semper mauris tempor:</p>
+            <ul>
+              <li>Eget hendrerit diam</li>
+              <li>
+                Nunc <mark>feugiat congue dictum</mark>,
+                <a href="">nullam auctor</a> in dui
+              </li>
+              <li><strong>a tempus nunc elementum</strong></li>
+              <li>
+                Pellentesque velit felis <code>bibendum</code> ac
+                <kbd>quis</kbd> euismod
+              </li>
+            </ul>
+          </blockquote>
+        </aside>
+
+        <aside>
+          <p>An image in an aside:</p>
+
+          <img
+            src="media/oats.jpg"
+            alt="A bowl of oats"
+            title="A bowl of oats"
+          />
+        </aside>
+
+        <aside>
+          <p>Of course videos also work:</p>
+
+          <video
+            controls
+            muted
+            playsinline
+            src="media/train.mp4"
+            poster="media/train.png"
+          ></video>
+        </aside>
+
+        <aside>
+          <p>And audio:</p>
+
+          <audio controls src="media/apollo11.mp3"></audio>
+        </aside>
+
+        <aside>
+          <p>You can even put code blocks in asides:</p>
+
+          <pre><code>tell application "Foo"
+    beep
+end tell</code></pre>
+        </aside>
+
+        <aside>
+          <p>Even disclosure widgets work in asides:</p>
+
+          <details>
+            <summary>This is the summary</summary>
+            <p>Here are the details&hellip;</p>
+          </details>
+        </aside>
+      </details>
+
       <h2 id="overflow">Preventing really long words from overflowing</h2>
 
       <p>
@@ -3805,347 +4181,6 @@ Being is born of not being.</pre
         </span>
       </p>
 
-      <h2>Note boxes</h2>
-
-      <p>
-        You can create a note box by adding the CSS class <code>note</code> to a
-        paragraph:
-      </p>
-
-      <pre><code>&lt;p <strong>class="note"</strong>&gt;
-  Morbi sed facilisis nunc. Quisque dictum lectus vitae purus lobortis,
-  dapibus malesuada sapien imperdiet. Vestibulum ante ipsum primis in
-  faucibus orci luctus et ultrices posuere cubilia curae.
-&lt;/p&gt;</code></pre>
-
-      <p>It'll look like this:</p>
-
-      <p class="note">
-        Morbi sed facilisis nunc. Quisque dictum lectus vitae purus lobortis,
-        dapibus malesuada sapien imperdiet. Vestibulum ante ipsum primis in
-        faucibus orci luctus et ultrices posuere cubilia curae.
-      </p>
-
-      <details>
-        <summary><b>Design notes:</b> note boxes</summary>
-        <p>
-          In-line with Oatcake's consistently unshowy nature note boxes are
-          styled the same as
-          <a href="#preformatted-text">preformatted text blocks</a>,
-          <a href="#code-blocks">code blocks</a>, and
-          <a href="#disclosure-widgets-details-and-summary"
-            >disclosure widgets</a
-          >. The difference is that a note box's contents aren't preformatted,
-          monospaced, or collapsible. It's just a box!
-        </p>
-
-        <p>
-          Oatcake doesn't attach any particular semantics to note boxes. You can
-          use them for things like alerts, warnings, asides, important
-          information, tips, or just to draw attention to something.
-        </p>
-      </details>
-
-      <details>
-        <summary>
-          <b>Tip:</b> wrap multiple elements in a note box with
-          <code>&lt;div class="note"&gt;</code>
-        </summary>
-
-        <p>
-          You can put multiple paragraphs and other arbitrary content (headings,
-          block quotes, lists, code blocks, images&hellip;) in a note by putting
-          the <code>note</code> class on a containing
-          <code>&lt;div&gt;</code> or <code>&lt;aside&gt;</code>. Here's some
-          examples:
-        </p>
-
-        <div class="note">
-          <p class="lead">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris
-            aliquam justo erat, sed consequat sem commodo nec. Aenean blandit
-            non lectus id rutrum.
-          </p>
-
-          <p>
-            Pellentesque non lacus vel quam lobortis tincidunt. In dignissim
-            arcu eu purus porta finibus. Quisque bibendum erat nec porttitor
-            tincidunt.
-          </p>
-
-          <p>
-            In egestas vel enim non interdum. Curabitur sed nisi scelerisque,
-            suscipit velit in, ornare velit. Praesent laoreet bibendum ipsum nec
-            elementum.
-          </p>
-        </div>
-        <p>
-          You can use a <a href="#horizontal-rules">horizontal rule</a> to split
-          a note into segments:
-        </p>
-
-        <div class="note">
-          <h3 class="noanchor">Tip</h3>
-
-          <p>
-            Sed porta at quam id lacinia. Pellentesque sem odio, dignissim et
-            ultrices at, pharetra id magna. Praesent auctor bibendum ante non
-            faucibus.
-          </p>
-
-          <hr />
-
-          <p>
-            Proin tortor libero, lobortis id nulla eget, laoreet malesuada arcu.
-          </p>
-        </div>
-
-        <div class="note">
-          <p>
-            You can put a block quote in a note box. All the inline elements
-            also work:
-          </p>
-
-          <blockquote>
-            <p>Duis efficitur justo semper mauris tempor:</p>
-            <ul>
-              <li>Eget hendrerit diam</li>
-              <li>
-                Nunc <mark>feugiat congue dictum</mark>,
-                <a href="">nullam auctor</a> in dui
-              </li>
-              <li><strong>a tempus nunc elementum</strong></li>
-              <li>
-                Pellentesque velit felis <code>bibendum</code> ac
-                <kbd>quis</kbd> euismod
-              </li>
-            </ul>
-          </blockquote>
-        </div>
-
-        <div class="note">
-          <p>An image in a note block:</p>
-
-          <img
-            src="media/oats.jpg"
-            alt="A bowl of oats"
-            title="A bowl of oats"
-          />
-        </div>
-
-        <div class="note">
-          <p>Of course videos also work:</p>
-
-          <video
-            controls
-            muted
-            playsinline
-            src="media/train.mp4"
-            poster="media/train.png"
-          ></video>
-        </div>
-
-        <div class="note">
-          <p>And audio:</p>
-
-          <audio controls src="media/apollo11.mp3"></audio>
-        </div>
-
-        <div class="note">
-          <p>You can even put code blocks in notes:</p>
-
-          <pre><code>tell application "Foo"
-    beep
-end tell</code></pre>
-        </div>
-
-        <div class="note">
-          <p>Even disclosure widgets work inside note boxes:</p>
-
-          <details>
-            <summary>This is the summary</summary>
-            <p>Here are the details&hellip;</p>
-          </details>
-        </div>
-      </details>
-
-      <details>
-        <summary>
-          <b>Tip:</b> you can also use <code>&lt;aside&gt;</code> with
-          <code>note</code>
-        </summary>
-
-        <p>
-          Instead of <code>&lt;p&gt;</code> or <code>&lt;div&gt;</code>,
-          <code>&lt;aside class="note"&gt;note text&lt;/aside&gt;</code> also
-          works and
-          <a
-            href="https://html.spec.whatwg.org/multipage/sections.html#the-aside-element"
-            ><code>&lt;aside&gt;</code></a
-          >
-          has semantic meaning in HTML: it's for content that is separate from
-          the main content of the page and not part of the main flow of the
-          document.
-        </p>
-
-        <p>
-          Like <code>&lt;div&gt;</code> notes, <code>&lt;aside&gt;</code> notes
-          can also contain multiple paragraphs and other block elements.
-        </p>
-        <aside class="note">This is an aside note.</aside>
-      </details>
-
-      <details>
-        <summary><b>Tip:</b> put <code>note</code> on a list</summary>
-
-        <p>
-          You can put the <code>note</code> class directly on an
-          <code>&lt;ol&gt;</code> or <code>&lt;ul&gt;</code> to style a list as
-          a note:
-        </p>
-
-        <ul class="note">
-          <li>Aenean</li>
-          <li>Quis</li>
-          <li>Odio</li>
-          <li>Libero</li>
-        </ul>
-      </details>
-
-      <details>
-        <summary>
-          <b>Tip:</b> use <code>lead</code> and <code>note</code> together
-        </summary>
-
-        <p>
-          You can use
-          <code><a href="#lead-paragraphs">lead</a></code> and
-          <code>note</code> together:
-        </p>
-
-        <p class="lead note">
-          This is a "lead note" created by applying both the
-          <code>lead</code> and the <code>note</code> classes to a
-          <code>&lt;p&gt;</code> like this:
-          <code>&lt;p class="lead note"&gt;</code>
-        </p>
-      </details>
-
-      <details>
-        <summary><b>Tip:</b> begin a note box with a text label</summary>
-        <p>
-          Don't rely on the CSS to convey the meaning of a note box, the
-          contents should make the semantics clear. Beginning a note with a
-          label in bold can help:
-        </p>
-
-        <p class="note">
-          <strong>Hint:</strong>
-          beginning a note with a label can help convey its semantics.
-        </p>
-      </details>
-
-      <details>
-        <summary><b>Tip:</b> don't overuse note boxes</summary>
-        <p>
-          It's best not to overuse note boxes as they can overload the reader,
-          try to stick to no more than one or two per article. The present
-          article excepted!
-        </p>
-      </details>
-
-      <details>
-        <summary><b>Customization:</b> note box colors</summary>
-
-        <p>
-          It was tempting to provide a variety of different colours for note
-          boxes like other frameworks do. But documents with lots of
-          different-coloured boxes would distract from both reading and writing
-          (always having to remember all the different types of boxes and choose
-          which one to use) and would make it harder to add support for dark
-          mode and for different colour schemes in future.
-        </p>
-
-        <p>
-          If you do want to make notes in more interesting colours you can add
-          your own CSS classes to do so. For example:
-        </p>
-
-        <pre><code>&lt;style&gt;
-  .warning.note {
-    background-color: rgb(248, 215, 218);
-    border-color: #f1aeb5;
-  }
-&lt;/style&gt;</code></pre>
-
-        <p>Now this:</p>
-
-        <pre><code>&lt;p class="<strong>warning note</strong>"&gt;
-  &lt;strong&gt;Warning!&lt;/strong&gt;
-  Too many note boxes can overwhelm the reader.
-&lt;/p&gt;</code></pre>
-
-        <p>&hellip;will render like this:</p>
-
-        <p class="warning note">
-          <strong>Warning!</strong> Too many note boxes can overwhelm the
-          reader.
-        </p>
-      </details>
-
-      <details>
-        <summary><b>Edge case:</b> headings in note boxes</summary>
-
-        <p>
-          Like with block quotes and disclosure widgets, Oatcake also makes sure
-          that the vertical spacing is right for headings in note boxes:
-        </p>
-
-        <div class="note">
-          <h1 class="noanchor">An <code>&lt;h1&gt;</code> in a note</h1>
-
-          <p>
-            Curabitur neque tortor, sollicitudin non tincidunt et, feugiat sit
-            amet quam.
-          </p>
-
-          <h2 class="noanchor">An <code>&lt;h2&gt;</code> in a note</h2>
-
-          <p>
-            Aliquam erat volutpat. Curabitur fringilla arcu velit, non rutrum
-            massa dapibus sed.
-          </p>
-
-          <h3 class="noanchor">An <code>&lt;h3&gt;</code> in a note</h3>
-
-          <p>
-            Phasellus vehicula risus mauris, sagittis commodo nisi vulputate eu.
-          </p>
-
-          <h4 class="noanchor">An <code>&lt;h4&gt;</code> in a note</h4>
-
-          <p>
-            Phasellus id diam turpis. Donec in enim suscipit, aliquet turpis
-            nec, vulputate nisi.
-          </p>
-        </div>
-
-        <div class="note">
-          <h2 class="noanchor">An <code>&lt;h2&gt;</code> in a note</h2>
-          <p>This is the body of the note.</p>
-        </div>
-
-        <div class="note">
-          <h3 class="noanchor">An <code>&lt;h3&gt;</code> in a note</h3>
-          <p>This is the body of the note.</p>
-        </div>
-
-        <div class="note">
-          <h4 class="noanchor">An <code>&lt;h4&gt;</code> in a note</h4>
-          <p>This is the body of the note</p>
-        </div>
-      </details>
-
       <h2>Badges</h2>
 
       <p>
@@ -4230,9 +4265,9 @@ end tell</code></pre>
         <summary><b>Customization:</b> badge colors</summary>
 
         <p>
-          As with note boxes, it was tempting to add a variety of different
-          colour choices for badges but this would be distracting and would make
-          it harder to add dark mode and multiple colour schemes in future.
+          As with asides, it was tempting to add a variety of different colour
+          choices for badges but this would be distracting and would make it
+          harder to add dark mode and multiple colour schemes in future.
         </p>
 
         <p>
