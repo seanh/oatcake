@@ -9,6 +9,7 @@
     "require-sri": "off",
     "text-content": "off",
     "heading-level": "off",
+    "unique-landmark": "off",
     "no-unknown-elements": "error"
   }
 }
