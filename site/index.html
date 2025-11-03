@@ -24,10 +24,6 @@
         background-color: rgb(248, 215, 218);
         border-color: #f1aeb5;
       }
-      .primary.badge {
-        background-color: rgb(13, 110, 253);
-        color: white;
-      }
       samp.custom {
         border: 1px dashed #999;
       }
@@ -53,6 +49,35 @@
         .wide-only {
           display: none !important;
         }
+      }
+
+      button {
+        background-color: var(--ok-color-fg);
+        color: var(--ok-color-bg);
+        border-radius: 10rem;
+        font-weight: 700;
+        margin-bottom: -0.3rem;
+        /* Prevent buttons from offsetting the vertical rhythm in iOS Safari. */
+        padding-bottom: 0.1rem;
+        padding-left: 0.6em;
+        padding-right: 0.6em;
+        padding-top: 0.1rem;
+        text-align: center;
+        transition:
+          background-color 0.15s ease-in-out,
+          border-color 0.15s ease-in-out,
+          box-shadow 0.15s ease-in-out,
+          color 0.15s ease-in-out;
+        vertical-align: baseline;
+        font-size: var(--ok-font-size-small);
+        border-width: 0;
+        cursor: pointer;
+        line-height: normal;
+      }
+
+      button:focus {
+        outline: 0;
+        box-shadow: 0 0 0 0.2rem var(--ok-color-link-fg);
       }
     </style>
     <link
@@ -98,7 +123,7 @@
 
     <button
       type="button"
-      class="badge wide-only lines"
+      class="wide-only lines"
       style="display: block; position: fixed; bottom: 10px; right: 10px"
     ></button>
 
@@ -153,8 +178,8 @@
         </li>
         <li>
           <strong>And a small grab bag of extra features.</strong>
-          A few bells and whistles like subheadings, lead paragraphs, secondary
-          (muted) text, and badges.
+          A few bells and whistles like subheadings, lead paragraphs, and
+          secondary (muted) text.
         </li>
       </ul>
 
@@ -279,7 +304,7 @@
         </p>
 
         <p style="text-align: center">
-          <button type="button" id="toggleFonts" class="badge"></button>
+          <button type="button" id="toggleFonts"></button>
         </p>
 
         <p>Here's the full list of font variables you can change:</p>
@@ -308,8 +333,7 @@
             The <code>font-size</code> for small text:
             <code>&lt;small&gt;</code> elements, the CSS class
             <code>small</code>, subscripts (<code>&lt;sub&gt;</code>) and
-            superscripts (<code>&lt;sup&gt;</code>), and
-            <a href="#badges">badges</a>.
+            superscripts (<code>&lt;sup&gt;</code>).
           </dd>
 
           <dt><code>--ok-font-family-mono</code></dt>
@@ -451,7 +475,7 @@
       </p>
 
       <p style="text-align: center">
-        <button type="button" class="badge lines"></button>
+        <button type="button" class="lines"></button>
       </p>
 
       <h2>Inline elements</h2>
@@ -3977,12 +4001,12 @@ end tell</code></pre>
 
       <p>
         Oatcake also prevents wrapping within certain elements:
-        <a href="#kbd"><code>&lt;kbd&gt;</code>'s</a>,
-        <a href="#badges">badges</a>, any element with the CSS class
-        <code>nowrap</code>, and within headings: <code>&lt;code&gt;</code>,
-        <code>&lt;samp&gt;</code>, <code>&lt;strong&gt;</code> and
-        <code>&lt;b&gt;</code>. To avoid horizontal scrollbars don't put
-        anything too long in any of these elements.
+        <a href="#kbd"><code>&lt;kbd&gt;</code>'s</a>, any element with the CSS
+        class <code>nowrap</code>, and within headings:
+        <code>&lt;code&gt;</code>, <code>&lt;samp&gt;</code>,
+        <code>&lt;strong&gt;</code> and <code>&lt;b&gt;</code>. To avoid
+        horizontal scrollbars don't put anything too long in any of these
+        elements.
       </p>
 
       <h2>CSS classes</h2>
@@ -4180,118 +4204,6 @@ Being is born of not being.</pre
           <a href="https://example.com">links</a>.
         </span>
       </p>
-
-      <h2>Badges</h2>
-
-      <p>
-        Oatcake provides badges that you can use for things like counts, labels
-        and tags. Just add the CSS class <code>badge</code> to a
-        <code>&lt;span&gt;</code>, like this:
-        <code>&lt;span class="badge"&gt;Badge text&lt;/span&gt;</code>:
-      </p>
-
-      <p><span class="badge">Badge</span></p>
-
-      <p>
-        As with <code>&lt;kbd&gt;</code>'s, if your badge contains
-        <span class="badge">more than one word</span> Oatcake prevents browsers
-        from wrapping it over multiple lines (so don't make badges too long).
-      </p>
-
-      <details>
-        <summary><b>Tip:</b> creative ways to use badges</summary>
-
-        <p>
-          You can put the <code>badge</code> class on an
-          <code>&lt;a&gt;</code> or <code>&lt;button&gt;</code> to create a
-          badge with hover and focus states:
-        </p>
-
-        <p>
-          <a href="" class="badge">An <code>&lt;a&gt;</code> badge</a>
-          <button type="button" class="badge">
-            A <code>&lt;button&gt;</code> badge
-          </button>
-        </p>
-
-        <p>Badges can be used in headings:</p>
-
-        <h3 class="noanchor" style="padding-top: 0">
-          Heading <span class="badge">New</span>
-        </h3>
-
-        <p>Badges can be used inline in paragraphs:</p>
-
-        <p>
-          This is a paragraph with an inline <span class="badge">badge</span> in
-          it.
-        </p>
-
-        <p>Badges can be used in list items:</p>
-
-        <ul>
-          <li>Dinosaurs <span class="badge">23</span></li>
-          <li>Sea creatures <span class="badge">16</span></li>
-          <li>Giant birds <span class="badge">32</span></li>
-        </ul>
-
-        <p>Badges can be used in code blocks, for example to annotate lines:</p>
-
-        <pre><code>class MyError(Exception): <span class="badge">1</span>
-    def __init__(self, status_code, reason):
-        super().__init__(status_code, reason) <span class="badge">2</span>
-        self.status_code = status_code
-        self.reason = reason</code></pre>
-
-        <div class="annotation">
-          <div><span class="badge">1</span></div>
-          <p>
-            In Python, all custom exception classes should inherit from the
-            built-in <code>Exception</code> class (or one of its subclasses).
-          </p>
-        </div>
-
-        <div class="annotation">
-          <div><span class="badge">2</span></div>
-          <p>
-            When inheriting from <code>Exception</code>, if you've written your
-            own <code>__init__()</code> method, you should always call
-            <code>super().__init__()</code>.
-          </p>
-        </div>
-      </details>
-
-      <details>
-        <summary><b>Customization:</b> badge colors</summary>
-
-        <p>
-          As with asides, it was tempting to add a variety of different colour
-          choices for badges but this would be distracting and would make it
-          harder to add dark mode and multiple colour schemes in future.
-        </p>
-
-        <p>
-          If you do want to make badges in more interesting colours you can add
-          your own CSS classes to do so. For example:
-        </p>
-
-        <pre><code>&lt;style&gt;
-  .primary.badge {
-    background-color: rgb(13, 110, 253);
-    color: white;
-  }
-&lt;/style&gt;</code></pre>
-
-        <p>Now this:</p>
-
-        <pre><code>&lt;span class="primary badge"&gt;Primary Badge&lt;/span&gt;</code></pre>
-
-        <p>&hellip;will render like this:</p>
-
-        <p>
-          <span class="primary badge">Primary Badge</span>
-        </p>
-      </details>
 
       <h2 class="notoc">Footnotes</h2>
 
