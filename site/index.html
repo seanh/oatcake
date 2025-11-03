@@ -176,10 +176,6 @@
           >
           so your own rules will override Oatcake's regardless of specificity.
         </li>
-        <li>
-          <strong>And a small grab bag of extra features.</strong>
-          A few bells and whistles like subheadings and secondary (muted) text.
-        </li>
       </ul>
 
       <h2 class="notoc">Adding Oatcake to your HTML pages</h2>
@@ -417,8 +413,8 @@
           <dt><code>--ok-color-fg-2</code></dt>
           <dd>
             The foreground <code>color</code> of
-            <a href="#secondary-text">secondary text</a> and
-            <a href="#figures">figure captions</a>.
+            <a href="#figures">figure captions</a> and
+            <a href="#footers">footers</a>.
           </dd>
 
           <dt><code>--ok-color-border</code></dt>
@@ -4153,53 +4149,70 @@ end tell</code></pre>
         elements.
       </p>
 
-      <h2>CSS classes</h2>
+      <h2>Footers</h2>
 
       <p>
-        Oatcake is mostly "classless": it styles standard HTML elements, no CSS
-        classes needed. But I bent this rule for a handful of optional extras
-        that're used by adding CSS classes to your HTML.
+        Oatcake styles <code>&lt;footer&gt;</code> elements with text in a muted
+        color. This:
       </p>
 
-      <p>
-        We've already seen the utility classes <code>small</code> (for small
-        text, the same as the <code>&lt;small&gt;</code> element),
-        <code>border</code> (for adding borders to images, videos and iframes),
-        and <code>nowrap</code> (for preventing the browser from wrapping the
-        text within an element).
-      </p>
+      <pre><code><mark>&lt;footer&gt;</mark>
+  &lt;strong&gt;Posted:&lt;/strong&gt; Wed 14 August 2019 &middot;
+  &lt;strong&gt;Tags:&lt;/strong&gt; &lt;a href="#"&gt;HTML&lt;/a&gt;,
+  &lt;a href="#"&gt;CSS&lt;/a&gt;
+<mark>&lt;/footer&gt;</mark></code></pre>
 
-      <p>
-        Below are a few more. These are things that I frequently find useful in
-        documents, but that plain HTML lacks the elements for.
-      </p>
+      <p>&hellip;renders like this:</p>
 
-      <h2>Secondary text</h2>
-
-      <p>
-        You can put text in a muted colour by adding the CSS class
-        <code>secondary</code>
-        to any element. For example:
-        <code>&lt;p class="secondary"&gt;muted text&lt;/p&gt;</code>. Secondary
-        text is meant for metadata like authorship, publication dates, tags,
-        copyright notices, that sort of thing. It looks like this:
-      </p>
-
-      <p class="secondary">
+      <footer>
         <strong>Posted:</strong> Wed 14 August 2019 &middot;
         <strong>Tags:</strong> <a href="#">HTML</a>,
         <a href="#">CSS</a>
-      </p>
+      </footer>
 
-      <p>
-        All the inline elements also work as you'd expect in secondary text:
-        <span class="secondary">
-          <strong>bold</strong>, <em>italics</em>, <code>code</code>,
-          <samp>sample output</samp>, <u>underlines</u>,
-          <mark>highlights</mark>, <del>strike-throughs</del>, and
-          <a href="https://example.com">links</a>.
-        </span>
-      </p>
+      <p>All the inline elements also work as you'd expect in footers:</p>
+
+      <footer>
+        <strong>Bold</strong>, <em>italics</em>, <code>code</code>,
+        <samp>sample output</samp>, <u>underlines</u>, <mark>highlights</mark>,
+        <del>strike-throughs</del>, and <a href="https://example.com">links</a>,
+        abbreviations: <abbr title="HyperText Markup Language">HTML</abbr>,
+        <small>small text</small>, etc.
+      </footer>
+
+      <details>
+        <summary><b>Usage:</b> footers</summary>
+
+        <p>
+          A <code>&lt;footer&gt;</code> represents a footer for its nearest
+          containing <code>&lt;article&gt;</code>, <code>&lt;aside&gt;</code>,
+          <code>&lt;nav&gt;</code>, <code>&lt;section&gt;</code> or
+          <code>&lt;body&gt;</code>. The HTML standard describes footers as
+          typically containing information about the author, links to related
+          documents, copyright data, etc. Examples given in the standard include
+          navigation links, publication dates, author credits and contact
+          information, links for editing, deleting and renaming an article, etc.
+        </p>
+
+        <p>Footers <em>don't</em> need to be at the end of a section.</p>
+
+        <p>See also:</p>
+
+        <ul>
+          <li>
+            <a
+              href="https://html.spec.whatwg.org/multipage/sections.html#the-footer-element"
+              ><code>&lt;footer&gt;</code> in the HTML standard</a
+            >
+          </li>
+          <li>
+            <a
+              href="https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/footer"
+              ><code>&lt;footer&gt;</code> on MDN</a
+            >
+          </li>
+        </ul>
+      </details>
 
       <h2 class="notoc">Footnotes</h2>
 

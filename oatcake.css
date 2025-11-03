@@ -147,6 +147,7 @@
     details,
     dl,
     figure,
+    footer,
     ol,
     p,
     pre,
@@ -408,21 +409,16 @@
     }
   }
 
-  /* Secondary text. */
+  /* Footers. */
   @layer elements {
-    .secondary a,
-    .secondary b,
-    .secondary code,
-    .secondary mark,
-    .secondary samp,
-    .secondary strong,
-    .secondary {
+    footer a,
+    footer b,
+    footer code,
+    footer mark,
+    footer samp,
+    footer strong,
+    footer {
       color: var(--ok-color-fg-2);
-    }
-
-    .secondary code,
-    .secondary samp {
-      background-color: inherit;
     }
 
     .faint {
@@ -820,8 +816,8 @@
 
     .faint code,
     .faint samp,
-    .secondary code,
-    .secondary samp {
+    footer code,
+    footer samp {
       background-color: inherit;
     }
 
