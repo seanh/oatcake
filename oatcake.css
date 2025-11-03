@@ -210,7 +210,6 @@
 
     /* Prevent line wrapping within certain elements. This does mean that if you
      * put really long text in one of these it will overflow. */
-    .nowrap,
     h1 b,
     h1 code,
     h1 samp,
