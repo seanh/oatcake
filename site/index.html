@@ -2933,16 +2933,14 @@ in the air.&lt;/p&gt;</code></pre>
 
         <p>
           Wrapping the whole sequence of <code>&lt;kbd&gt;</code>'s in a
-          <code>&lt;span style="white-space: nowrap;"&gt;</code> should also
-          work and Oatcake provides a <code>nowrap</code> utility class for this
-          so you can just do <code>&lt;span class="nowrap"&gt;</code>.
+          <code>&lt;span style="white-space: nowrap;"&gt;</code> also works.
         </p>
 
         <p>
           You can also use either technique if you don't want a
           <code>&lt;code&gt;</code>, <code>&lt;samp&gt;</code>,
           <code>&lt;mark&gt;</code>, etc to be wrapped, for example:
-          <code>&lt;code class="nowrap"&gt;</code>
+          <code>&lt;code style="white-space: nowrap;"&gt;</code>
           (Oatcake doesn't prevent wrapping within these elements by default
           because often you do want them to wrap, especially if they contain
           long strings that might otherwise
@@ -4141,8 +4139,7 @@ end tell</code></pre>
 
       <p>
         Oatcake also prevents wrapping within certain elements:
-        <a href="#kbd"><code>&lt;kbd&gt;</code>'s</a>, any element with the CSS
-        class <code>nowrap</code>, and within headings:
+        <a href="#kbd"><code>&lt;kbd&gt;</code>'s</a>, and within headings:
         <code>&lt;code&gt;</code>, <code>&lt;samp&gt;</code>,
         <code>&lt;strong&gt;</code> and <code>&lt;b&gt;</code>. To avoid
         horizontal scrollbars don't put anything too long in any of these
