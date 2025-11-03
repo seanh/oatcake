@@ -735,7 +735,7 @@
      * headings it offsets the vertical-rhythm unless I say `line-height:
      * 100%;`.
      * You'd think it'd mean the same thing but `line-height: var(--ok-line-height);`
-     * doesn't fix the rhtyhm.
+     * doesn't fix the rhythm.
      * This doesn't seem to be necessary when reducing the font-sizes of other
      * elements like <code>'s and <samp>'s in headings and subheadings. */
     hgroup > :is(h1, h2) ~ p mark,
