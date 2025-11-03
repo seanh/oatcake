@@ -517,19 +517,17 @@
     }
   }
 
-  /* Lead paragraphs. */
+  /* Subheadings. */
   @layer elements {
-    .lead {
-      font-size: 19px;
-      /* The same size as an <h2> heading, so lead paragraphs can be used as subheadings for <h1>'s or <h2>'s. */
+    hgroup > :is(h1, h2) ~ p {
+      font-size: 19px; /* The same size as an <h2> heading, so subheadings can be used with <h1>'s or <h2>'s. */
     }
 
-    .lead code,
-    .lead samp {
+    hgroup > :is(h1, h2) ~ p :is(code, samp) {
       font-size: 0.8em;
     }
 
-    .lead kbd {
+    hgroup > :is(h1, h2) ~ p kbd {
       font-size: 0.75em;
       padding-bottom: 1px;
       padding-top: 1px;
@@ -734,13 +732,13 @@
     }
 
     /* I've no idea why but when I reduce the font-size of `<mark>`'s within
-     * headings and lead paragraphs it offsets the vertical-rhythm unless I say
-     * `line-height: 100%;`.
+     * headings it offsets the vertical-rhythm unless I say `line-height:
+     * 100%;`.
      * You'd think it'd mean the same thing but `line-height: var(--ok-line-height);`
      * doesn't fix the rhtyhm.
      * This doesn't seem to be necessary when reducing the font-sizes of other
-     * elements like <code>'s and <samp>'s in headings and lead paragraphs. */
-    .lead mark,
+     * elements like <code>'s and <samp>'s in headings and subheadings. */
+    hgroup > :is(h1, h2) ~ p mark,
     h1 mark,
     h2 mark {
       font-size: 0.8em;

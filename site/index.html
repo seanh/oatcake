@@ -137,7 +137,7 @@
       />
       <hgroup>
         <h1 class="noanchor">Oatcake: Plain Web Typography</h1>
-        <p class="lead">
+        <p>
           A drop-in CSS stylesheet that makes pages attractive and readable.
           Looks good without drawing attention to the design. Works great on
           both mobile and desktop.
@@ -178,8 +178,7 @@
         </li>
         <li>
           <strong>And a small grab bag of extra features.</strong>
-          A few bells and whistles like subheadings, lead paragraphs, and
-          secondary (muted) text.
+          A few bells and whistles like subheadings and secondary (muted) text.
         </li>
       </ul>
 
@@ -633,9 +632,7 @@ in the air.&lt;/p&gt;</code></pre>
                 ><code>&lt;hgroup&gt;</code></a
               >
               for subheadings (see the
-              <a href="#subheadings"
-                >section on subheadings and lead paragraphs</a
-              >
+              <a href="#subheadings">section on subheadings</a>
               below for an example).
             </p>
 
@@ -1708,6 +1705,153 @@ in the air.&lt;/p&gt;</code></pre>
             <small>small text</small> in it
           </h4>
         </div>
+      </details>
+
+      <h2>Subheadings</h2>
+
+      <p>
+        You can add a subheading to an <code>&lt;h1&gt;</code> or
+        <code>&lt;h2&gt;</code> heading&mdash;just wrap the
+        <code>&lt;h1&gt;</code> or <code>&lt;h2&gt;</code> in an
+        <code>&lt;hgroup&gt;</code> along with the subheading in a
+        <code>&lt;p&gt;</code>. Oatcake will detect this particular combination
+        of elements and style the <code>&lt;p&gt;</code> as a
+        subheading&mdash;with larger text but not quite as big and bold as the
+        <code>&lt;h1&gt;</code> or <code>&lt;h2&gt;</code> heading itself. This
+        example from MDN uses a <code>&lt;p&gt;</code> to give an alternative
+        title:
+      </p>
+
+      <pre><code><mark>&lt;hgroup&gt;</mark>
+  &lt;h1 class="noanchor"&gt;Frankenstein&lt;/h1&gt;
+  <mark>&lt;p&gt;Or: The Modern Prometheus&lt;/p&gt;</mark>
+<mark>&lt;/hgroup&gt;</mark>
+
+&lt;p&gt;
+  Victor Frankenstein, a Swiss scientist, has a great ambition: to create
+  intelligent life. But when his creature first stirs, he realizes he has made a
+  monster. A monster which, abandoned by his master and shunned by everyone who
+  sees it, follows Dr Frankenstein to the very ends of the earth.
+&lt;/p&gt;</code></pre>
+
+      <p>&hellip;in Oatcake it renders like this:</p>
+
+      <div class="example">
+        <hgroup>
+          <h1 class="noanchor">Frankenstein</h1>
+          <p>Or: The Modern Prometheus</p>
+        </hgroup>
+
+        <p>
+          Victor Frankenstein, a Swiss scientist, has a great ambition: to
+          create intelligent life. But when his creature first stirs, he
+          realizes he has made a monster. A monster which, abandoned by his
+          master and shunned by everyone who sees it, follows Dr Frankenstein to
+          the very ends of the earth.
+        </p>
+      </div>
+
+      <p>
+        Here's what an <code>&lt;h2&gt;</code> with a subheading looks like,
+        using an example from the HTML standard that uses the
+        <code>&lt;p&gt;</code> for a subtitle:
+      </p>
+
+      <div class="example">
+        <hgroup>
+          <h2 class="noanchor">The reality dysfunction</h2>
+          <p>Space is not the only void</p>
+        </hgroup>
+
+        <p>
+          This is the next paragraph that follows the
+          <code>&lt;hgroup&gt;</code>&hellip;
+        </p>
+      </div>
+
+      <p>
+        Subheadings can be as long as you want, even multiple
+        <code>&lt;p&gt;</code>'s:
+      </p>
+
+      <div class="example">
+        <hgroup>
+          <h1 class="noanchor">Lorem ipsum dolor sit amet</h1>
+          <p>
+            Consectetur adipiscing elit. Nam interdum, mi et iaculis laoreet,
+            erat felis accumsan lorem, in cursus sem sem vitae quam. Integer
+            aliquam ullamcorper feugiat.
+          </p>
+          <p>
+            Sed tellus velit, ultrices eu fermentum tincidunt, auctor maximus
+            diam. Cras in erat nec elit aliquet auctor. Vivamus imperdiet nisl
+            nec porttitor consequat.
+          </p>
+        </hgroup>
+
+        <p>
+          This is the next paragraph that follows the
+          <code>&lt;hgroup&gt;</code>&hellip;
+        </p>
+      </div>
+
+      <details>
+        <summary><b>Usage:</b> <code>&lt;hgroup&gt;</code></summary>
+
+        <p>
+          The HTML standard and MDN define <code>&lt;hgroup&gt;</code> as a
+          container for an <code>&lt;h1&gt;</code>&ndash;<code>&lt;h6&gt;</code>
+          heading followed by one or more <code>&lt;p&gt;</code>'s representing
+          a subheading, alternative title or tagline. We've seen examples of a
+          subheading and an alternative title, here's a third example from MDN
+          that uses the <code>&lt;p&gt;</code> as a tagline containing related
+          or secondary content:
+        </p>
+
+        <hgroup class="example">
+          <h1 class="noanchor">HTML: Living Standard</h1>
+          <p>Last Updated 12 July 2022</p>
+        </hgroup>
+
+        <p>See also:</p>
+
+        <ul>
+          <li>
+            <a
+              href="https://html.spec.whatwg.org/multipage/sections.html#the-hgroup-element"
+              ><code>&lt;hgroup&gt;</code> in the HTML standard</a
+            >
+          </li>
+          <li>
+            <a
+              href="https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/hgroup"
+              ><code>&lt;hgroup&gt;</code> on MDN</a
+            >
+          </li>
+        </ul>
+      </details>
+
+      <details>
+        <summary><b>Edge case:</b> inline elements in subheadings</summary>
+
+        <p>
+          Inline elements like <code>&lt;code&gt;</code> and
+          <code>&lt;samp&gt;</code> also work in subheadings:
+        </p>
+
+        <hgroup class="example">
+          <h1 class="noanchor">Aenean lacinia porta ullamcorper</h1>
+          <p>
+            This is a subheading containing
+            <em>emphasis</em>, <code>&lt;code tags&gt;</code>, some
+            <samp>sample output</samp>, a couple of <code>&lt;kbd&gt;</code>'s:
+            <kbd>Ctrl</kbd>&nbsp;+&nbsp;<kbd>c</kbd>, <u>underlined text</u>,
+            <mark>highlighted text</mark>, <del>struck-through text</del>,
+            <a href="">a link</a>, <a href=""><code>a code link</code></a
+            >. and even<sup>superscript</sup> and<sub>subscript</sub> and
+            <small>small text</small>.
+          </p>
+        </hgroup>
       </details>
 
       <h2>Lists</h2>
@@ -4029,154 +4173,6 @@ end tell</code></pre>
         Below are a few more. These are things that I frequently find useful in
         documents, but that plain HTML lacks the elements for.
       </p>
-
-      <h2>Lead paragraphs</h2>
-
-      <p>
-        "Lead" paragraphs use a larger font-size but not quite as big and bold
-        as headings. To create a lead paragraph just add
-        <code>class="lead"</code> to a <code>&lt;p&gt;</code>. For example this:
-      </p>
-
-      <pre><code>&lt;p <strong>class="lead"</strong>&gt;
-  This is a "lead" paragraph. It stands out more than other paragraphs. These
-  can be used anywhere in a document.
-&lt;/p&gt;</code></pre>
-
-      <p>will render like this:</p>
-
-      <p class="lead">
-        This is a "lead" paragraph. It stands out more than other paragraphs.
-        These can be used anywhere in a document.
-      </p>
-
-      <details>
-        <summary><b>Tip:</b> using lead paragraphs as subheadings</summary>
-        <p>
-          Lead paragraphs use the same font-size as
-          <code>&lt;h2&gt;</code> headings, so they can be used as subheadings
-          by putting them together with an <code>&lt;h1&gt;</code> or
-          <code>&lt;h2&gt;</code> in an
-          <a
-            href="https://html.spec.whatwg.org/multipage/sections.html#the-hgroup-element"
-            ><code>&lt;hgroup&gt;</code></a
-          >. This:
-        </p>
-
-        <pre><code><strong>&lt;hgroup&gt;</strong>
-  &lt;h1&gt;This is the heading&lt;/h1&gt;
-  <strong>&lt;p class="lead"&gt;This is the subheading, it appears in large text beneath the heading.&lt;/p&gt;</strong>
-<strong>&lt;/hgroup&gt;</strong></code></pre>
-
-        <p>will render like this:</p>
-
-        <hgroup class="example">
-          <h1 class="noanchor">This is the heading</h1>
-          <p class="lead">
-            This is the subheading, it appears in large text beneath the
-            heading.
-          </p>
-        </hgroup>
-
-        <p>
-          And here's an <code>&lt;h2&gt;</code> with a lead paragraph as a
-          subheading:
-        </p>
-
-        <hgroup class="example">
-          <h2 class="noanchor">This is an <code>&lt;h2&gt;</code> heading</h2>
-          <p class="lead">This is a lead paragraph acting as a subheading.</p>
-        </hgroup>
-      </details>
-
-      <details>
-        <summary>
-          <b>Tip:</b> putting the <code>lead</code> class on other elements
-        </summary>
-
-        <p>
-          You can add the <code>lead</code> class to other elements besides
-          <code>&lt;p&gt;</code>, for example a <code>&lt;blockquote&gt;</code>:
-        </p>
-
-        <blockquote class="lead">
-          <p>This is a "lead" block quote.</p>
-          <p>
-            These are created by adding the <code>lead</code> class to a
-            <code>&lt;blockquote&gt;</code> element like this:
-            <code>&lt;blockquote class="lead"&gt;</code>
-          </p>
-        </blockquote>
-
-        <p>
-          Or add <code>lead</code> to a <code>&lt;ul&gt;</code> or
-          <code>&lt;ol&gt;</code> to create a large-text list:
-        </p>
-
-        <ol reversed class="lead">
-          <li><p>Three&hellip;</p></li>
-          <li><p>Two&hellip;</p></li>
-          <li><p>One&hellip;</p></li>
-        </ol>
-
-        <p>Here's a definition list with the <code>lead</code> class:</p>
-
-        <dl class="lead">
-          <dt>Wild oat</dt>
-          <dt>Avena fatua</dt>
-          <dd>Common in meadows and pastures.</dd>
-          <dd>Synonyms: wild oat grass.</dd>
-        </dl>
-
-        <p>
-          You can add <code>lead</code> to a <code>&lt;pre&gt;</code> to create
-          a large-text preformatted block:
-        </p>
-
-        <pre class="lead">
-Returning is the motion of the Tao.
-
-Yielding is the way of the Tao.
-
-The ten thousand things are born of being.
-
-Being is born of not being.</pre
-        >
-
-        <p>
-          You can add <code>lead</code> to a disclosure widget's
-          <code>&lt;summary&gt;</code> element to create one with a large label:
-        </p>
-
-        <details>
-          <summary class="lead">A large-text disclosure widget</summary>
-          <p>
-            Here are the details. These would also be in large text if you put
-            the
-            <code>lead</code> class on the <code>&lt;details&gt;</code> element
-            or on the <code>&lt;p&gt;</code>'s or other elements inside.
-          </p>
-        </details>
-      </details>
-      <details>
-        <summary><b>Edge case:</b> inline elements in lead paragraphs</summary>
-        <p>
-          Inline elements like <code>&lt;code&gt;</code> and
-          <code>&lt;samp&gt;</code> also work in subheadings and lead
-          paragraphs:
-        </p>
-
-        <p class="lead">
-          This is a <code>&lt;lead&gt;</code> paragraph containing
-          <em>emphasis</em>, <code>&lt;code tags&gt;</code>, some
-          <samp>sample output</samp>, a couple of <code>&lt;kbd&gt;</code>'s:
-          <kbd>Ctrl</kbd>&nbsp;+&nbsp;<kbd>c</kbd>, <u>underlined text</u>,
-          <mark>highlighted text</mark>, <del>struck-through text</del>,
-          <a href="">a link</a>, <a href=""><code>a code link</code></a
-          >. and even<sup>superscript</sup> and<sub>subscript</sub> and
-          <small>small text</small> in it
-        </p>
-      </details>
 
       <h2>Secondary text</h2>
 
