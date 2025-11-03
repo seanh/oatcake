@@ -209,7 +209,6 @@
 
     /* Prevent line wrapping within certain elements. This does mean that if you
      * put really long text in one of these it will overflow. */
-    .badge,
     .nowrap,
     h1 b,
     h1 code,
@@ -956,71 +955,6 @@
     pre samp {
       padding: 0;
       white-space: pre;
-    }
-  }
-
-  /* Badges. */
-  @layer elements {
-    .badge {
-      background-color: var(--ok-color-fg);
-      border-radius: 10rem;
-      font-weight: 700;
-      margin-bottom: -0.3rem;
-      /* Prevent badges from offsetting the vertical rhythm in iOS Safari. */
-      padding-bottom: 0.1rem;
-      padding-left: 0.6em;
-      padding-right: 0.6em;
-      padding-top: 0.1rem;
-      text-align: center;
-      transition:
-        background-color 0.15s ease-in-out,
-        border-color 0.15s ease-in-out,
-        box-shadow 0.15s ease-in-out,
-        color 0.15s ease-in-out;
-      vertical-align: baseline;
-    }
-
-    .badge,
-    .badge code,
-    .badge samp {
-      font-size: var(--ok-font-size-small);
-      line-height: 1;
-    }
-
-    .badge code,
-    .badge samp {
-      background-color: inherit;
-      padding: 0;
-    }
-
-    button.badge {
-      border-width: 0;
-      cursor: pointer;
-      line-height: normal;
-    }
-
-    .badge,
-    a.badge,
-    a.badge:focus,
-    a.badge:hover {
-      color: var(--ok-color-bg);
-    }
-
-    a.badge,
-    a.badge:focus,
-    a.badge:hover {
-      border-bottom: none;
-      text-decoration: none;
-    }
-
-    a.badge:focus,
-    button.badge:focus {
-      outline: 0;
-    }
-
-    a.badge:focus,
-    button.badge:focus {
-      box-shadow: 0 0 0 0.2rem var(--ok-color-link-fg);
     }
   }
 
