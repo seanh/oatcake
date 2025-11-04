@@ -349,14 +349,11 @@
       width: 100%;
     }
 
-    /* Add the CSS class "border" to put a border around your iframe, image or video. */
-    iframe.border,
-    img.border,
-    video.border {
-      border-radius: var(--ok-border-radius);
+    iframe,
+    img,
+    video {
       border: 1px solid var(--ok-color-border);
-      margin-bottom: calc(var(--ok-line-height) * 2 - 2px);
-      /* Prevent the border from offsetting the vertical rhythm. */
+      box-sizing: border-box; /* Prevent the border from offsetting the rhythm. */
     }
   }
 

@@ -112,7 +112,7 @@
       "
     >
       <img
-        style="margin: 0; padding: 0"
+        style="margin: 0; padding: 0; border: none"
         width="149"
         height="149"
         src="https://github.blog/wp-content/uploads/2008/12/forkme_right_darkblue_121621.png?resize=149%2C149"
@@ -134,6 +134,7 @@
         alt="Oatcake banner image"
         src="media/oatcake.png"
         class="noresize"
+        style="border: none"
       />
       <hgroup>
         <h1 class="noanchor">Oatcake: Plain Web Typography</h1>
@@ -426,7 +427,7 @@
             <a href="#disclosure-widgets-details-and-summary"
               >disclosure widgets</a
             >, <a href="#asides">asides</a>, <a href="#images">images</a>,
-            <a href="#videos">videos</a> and
+            <a href="#videos">videos</a>, <a href="#iframes">iframes</a> and
             <a href="#horizontal-rules">horizontal rules</a>.
           </dd>
 
@@ -2596,49 +2597,59 @@ in the air.&lt;/p&gt;</code></pre>
         Images need a little more space above and below them than paragraphs do,
         otherwise they feel cramped. Oatcake gives images just enough
         space&ndash;not too much, not too little, and sticking to the vertical
-        rhythm. Images also get rounded corners: it looks nicer and it's
-        consistent with other elements that get rounded corners in Oatcake, all
-        with the same border radius:
+        rhythm. Images also get a very subtle border and rounded corners: it
+        looks nicer and it's consistent with other elements that get the same
+        borders and rounded corners in Oatcake:
       </p>
 
       <img src="media/oats.jpg" alt="A bowl of oats" title="A bowl of oats" />
 
-      <p>
-        It looks the same if your <code>&lt;img&gt;</code> is wrapped in a
-        <code>&lt;p&gt;</code>. This:
-      </p>
-
-      <pre><code>&lt;p&gt;&lt;img src="media/oats.jpg"&gt;&lt;/p&gt;</code></pre>
-
-      <p>renders like this:</p>
-
-      <p>
-        <img src="media/oats.jpg" alt="A bowl of oats" title="A bowl of oats" />
-      </p>
-
-      <p>
-        Sometimes you want to add a border to an image, for example if the
-        background colour of the image is the same as the background colour of
-        your site and you want to show where the edges of the image are. You can
-        add a border by adding the CSS class <code>border</code> to an image -
-        <code>&lt;img class="border" src="&hellip;" alt="&hellip;"&gt;</code>:
-      </p>
-
-      <img class="border" src="media/bowl.jpg" alt="A bowl of oats" />
-
       <details>
-        <summary><b>Customization:</b> removing rounded corners</summary>
+        <summary><b>Customization:</b> removing borders from images</summary>
+
         <p>
-          If you want to remove the rounded corners from images add
-          <code>border-radius: 0</code> to the <code>&lt;img&gt;</code>'s CSS,
-          for example for a single image:
+          You can remove the border from an image by adding the CSS
+          <code>border: none;</code>. For example this:
         </p>
 
-        <pre><code>&lt;img style="border-radius: 0;" src="&hellip;" alt="&hellip;"&gt;</code></pre>
+        <pre><code>&lt;img <mark>style="border: none;"</mark> src="&hellip;" alt="&hellip;" /&gt;</code></pre>
+
+        <p>&hellip;renders like this:</p>
+
+        <img style="border: none" src="media/bowl.jpg" alt="A bowl of oats" />
 
         <p>
-          Or to turn off rounded corners for all images add this to your site's
-          CSS:
+          To turn off borders for all images add this to your site's stylesheet:
+        </p>
+
+        <pre><code>img {
+  border: none;
+}</code></pre>
+      </details>
+
+      <details>
+        <summary>
+          <b>Customization:</b> removing rounded corners from images
+        </summary>
+        <p>
+          If you want to remove the rounded corners from images add
+          <code>border-radius: 0;</code> to the <code>&lt;img&gt;</code>'s CSS.
+          This:
+        </p>
+
+        <pre><code>&lt;img <mark>style="border-radius: 0;"</mark> src="&hellip;" alt="&hellip;" /&gt;</code></pre>
+
+        <p>&hellip;renders like this:</p>
+
+        <img
+          style="border-radius: 0"
+          src="media/oats.jpg"
+          alt="A bowl of oats"
+        />
+
+        <p>
+          To turn off rounded corners for all images add this to your site's
+          stylesheet:
         </p>
 
         <pre><code>img {
@@ -2684,11 +2695,32 @@ in the air.&lt;/p&gt;</code></pre>
         </p>
       </details>
 
+      <details>
+        <summary><b>Edge case:</b> paragraph images</summary>
+
+        <p>
+          It looks the same if your <code>&lt;img&gt;</code> is wrapped in a
+          <code>&lt;p&gt;</code>. This:
+        </p>
+
+        <pre><code>&lt;p&gt;&lt;img src="media/oats.jpg" /&gt;&lt;/p&gt;</code></pre>
+
+        <p>renders like this:</p>
+
+        <p>
+          <img
+            src="media/oats.jpg"
+            alt="A bowl of oats"
+            title="A bowl of oats"
+          />
+        </p>
+      </details>
+
       <h2>Videos</h2>
 
       <p>
-        The same extra little bit of vertical space and rounded corners are also
-        applied to video players created using
+        The same extra little bit of vertical space, borders and rounded corners
+        are also applied to video players created using
         <a
           href="https://html.spec.whatwg.org/multipage/media.html#the-video-element"
           ><code>&lt;video&gt;</code></a
@@ -2703,21 +2735,67 @@ in the air.&lt;/p&gt;</code></pre>
         poster="media/train.png"
       ></video>
 
-      <p>
-        As with images you can add a border to a video by adding the CSS class
-        <code>border</code> to the video -
-        <code>&lt;video class="border" src="&hellip;"&gt;</code>, useful if the
-        background colour of the video is similar to the background colour of
-        your site and you want to show where the edges of the video are:
-      </p>
+      <details>
+        <summary><b>Customization:</b> removing borders from videos</summary>
 
-      <video
-        class="border"
-        controls
-        muted
-        playsinline
-        src="media/white.mp4"
-      ></video>
+        <p>
+          As with images you can remove the border from a video by adding the
+          CSS <code>border: none;</code>. This:
+        </p>
+
+        <pre><code>&lt;video <mark>style="border: none;"</mark> src="&hellip;"&gt;&lt;/video&gt;</code></pre>
+
+        <p>&hellip;renders like this:</p>
+
+        <video
+          style="border: none"
+          controls
+          muted
+          playsinline
+          src="media/white.mp4"
+        ></video>
+
+        <p>
+          To turn off borders for all videos add this to your site's stylesheet:
+        </p>
+
+        <pre><code>video {
+  border: none;
+}</code></pre>
+      </details>
+
+      <details>
+        <summary>
+          <b>Customization:</b> removing rounded corners from videos
+        </summary>
+        <p>
+          To remove the rounded corners from a video add
+          <code>border-radius: 0;</code> to the <code>&lt;video&gt;</code>'s
+          CSS. This:
+        </p>
+
+        <pre><code>&lt;video <mark>style="border-radius: 0;"</mark> src="&hellip;"&gt;&lt;/video&gt;</code></pre>
+
+        <p>&hellip;renders like this:</p>
+
+        <video
+          style="border-radius: 0"
+          controls
+          muted
+          playsinline
+          src="media/train.mp4"
+          poster="media/train.png"
+        ></video>
+
+        <p>
+          To turn off rounded corners for all videos add this to your site's
+          stylesheet:
+        </p>
+
+        <pre><code>video {
+  border-radius: 0;
+}</code></pre>
+      </details>
 
       <h2>Audio</h2>
 
@@ -2736,14 +2814,12 @@ in the air.&lt;/p&gt;</code></pre>
       <h2>iframes</h2>
 
       <p>
-        Finally, the same extra vertical breathing room and rounded corners are
-        also applied to embedded pages created with
+        Finally, the same extra vertical breathing room, borders and rounded
+        corners are also applied to embedded pages created with
         <a
           href="https://html.spec.whatwg.org/multipage/iframe-embed-object.html#the-iframe-element"
           ><code>&lt;iframe&gt;</code></a
-        >
-        (the background color here is part of the embedded page, not Oatcake's
-        styling):
+        >:
       </p>
 
       <iframe
@@ -2752,19 +2828,63 @@ in the air.&lt;/p&gt;</code></pre>
         style="width: 100%; height: 120px"
       ></iframe>
 
-      <p>
-        As with images and videos you can add the CSS class
-        <code>border</code> to an iframe to give it a border, which might be
-        useful if the embedded page has the same background colour as the parent
-        page and you want to show where the edges of the embedded page are:
-      </p>
+      <details>
+        <summary><b>Customization:</b> removing borders from iframes</summary>
 
-      <iframe
-        title="example embedded page"
-        class="border"
-        src="iframe_white.html"
-        style="width: 100%; height: 120px"
-      ></iframe>
+        <p>
+          As with images and videos you can remove the border from an iframe by
+          adding the CSS <code>border: none;</code>. This:
+        </p>
+
+        <pre><code>&lt;iframe <mark>style="border: none;"</mark> src="&hellip;"&gt;&lt;/iframe&gt;</code></pre>
+
+        <p>&hellip;renders like this:</p>
+
+        <iframe
+          style="border: none; width: 100%; height: 120px"
+          title="example embedded page"
+          src="iframe.html"
+        ></iframe>
+
+        <p>
+          To turn off borders for all iframes add this to your site's
+          stylesheet:
+        </p>
+
+        <pre><code>iframe {
+  border: none;
+}</code></pre>
+      </details>
+
+      <details>
+        <summary>
+          <b>Customization:</b> removing rounded corners from iframes
+        </summary>
+        <p>
+          To remove the rounded corners from an iframe add
+          <code>border-radius: 0;</code> to the <code>&lt;iframe&gt;</code>'s
+          CSS. This:
+        </p>
+
+        <pre><code>&lt;iframe <mark>style="border-radius: 0;"</mark> src="&hellip;"&gt;&lt;/iframe&gt;</code></pre>
+
+        <p>&hellip;renders like this:</p>
+
+        <iframe
+          style="border-radius: 0; width: 100%; height: 120px"
+          title="example embedded page"
+          src="iframe.html"
+        ></iframe>
+
+        <p>
+          To turn off rounded corners for all iframes add this to your site's
+          stylesheet:
+        </p>
+
+        <pre><code>iframe {
+  border-radius: 0;
+}</code></pre>
+      </details>
 
       <h2>
         <code>&lt;code&gt;</code> and <code>&lt;samp&gt;</code> (sample output)
