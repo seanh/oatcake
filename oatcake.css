@@ -393,7 +393,6 @@
 
   /* Small text. */
   @layer elements {
-    .small,
     small {
       font-size: var(--ok-font-size-small);
       vertical-align: bottom;
@@ -802,8 +801,6 @@
       padding: 0;
     }
 
-    .small code,
-    .small samp,
     small code,
     small samp,
     sub code,
