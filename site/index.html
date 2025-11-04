@@ -16,6 +16,16 @@
         --ok-font-family:
           "Segoe Print", "Bradley Hand", Chilanka, TSCu_Comic, casual, cursive;
       }
+      body.dark_mode {
+        --ok-color-bg: rgb(31, 41, 55);
+        --ok-color-bg-2: rgb(1, 22, 39);
+        --ok-color-bg-3: rgb(58, 58, 58);
+        --ok-color-fg: white;
+        --ok-color-fg-2: #dddddd;
+        --ok-color-border: rgb(55, 65, 81);
+        --ok-color-link-fg: rgb(129, 142, 174);
+        --ok-color-link-visited-fg: rgb(129, 142, 174);
+      }
       .annotation {
         display: flex;
         gap: 0.5em;
@@ -378,6 +388,15 @@
     --ok-color-fg: white;
   }
 &lt;/style&gt;</code></pre>
+
+        <p>
+          For example click this button to change this page to a dark mode color
+          theme:
+        </p>
+
+        <p style="text-align: center">
+          <button type="button" id="toggleColors"></button>
+        </p>
 
         <p>Here's the full list of colour variables you can change:</p>
 
@@ -4365,6 +4384,22 @@ end tell</code></pre>
         const button = document.querySelector("#toggleFonts");
         button.textContent = "Customise Fonts";
         button.addEventListener("click", toggleFonts);
+      });
+    </script>
+    <script>
+      function toggleColors(event) {
+        if (document.body.classList.contains("dark_mode")) {
+          document.body.classList.remove("dark_mode");
+          event.target.textContent = "Dark Mode";
+        } else {
+          document.body.classList.add("dark_mode");
+          event.target.textContent = "Light Mode";
+        }
+      }
+      document.addEventListener("DOMContentLoaded", function () {
+        const button = document.querySelector("#toggleColors");
+        button.textContent = "Dark Mode";
+        button.addEventListener("click", toggleColors);
       });
     </script>
     <script>
