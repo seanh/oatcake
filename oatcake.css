@@ -418,10 +418,6 @@
     footer {
       color: var(--ok-color-fg-2);
     }
-
-    .faint {
-      color: var(--ok-color-fg-3);
-    }
   }
 
   /* <kbd> */
@@ -810,8 +806,6 @@
       line-height: inherit;
     }
 
-    .faint code,
-    .faint samp,
     footer code,
     footer samp {
       background-color: inherit;
