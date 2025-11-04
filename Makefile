@@ -34,5 +34,6 @@ validate:
 	npx html-validate .
 
 .PHONY: spell
+spell: additional_args?=
 spell:
-	@DICPATH=hunspell hunspell -H -d en_US -r -p hunspell/personal.dict site/index.html
+	@DICPATH=hunspell hunspell -H -d en_US -r -p hunspell/personal.dict $(additional_args) site/index.html
