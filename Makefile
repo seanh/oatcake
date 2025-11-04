@@ -32,3 +32,7 @@ checkformatting:
 .PHONY: validate
 validate:
 	npx html-validate .
+
+.PHONY: spell
+spell:
+	@DICPATH=hunspell hunspell -H -d en_US -r -p hunspell/personal.dict site/index.html
