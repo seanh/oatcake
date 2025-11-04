@@ -1,0 +1,19 @@
+[language-server.harper-ls.config.harper-ls]
+# Stop Harper from disabling itself on the index.html file.
+maxFileLength = 1000000
+
+[language-server.harper-ls.config.harper-ls.linters]
+# Disable various Harper rules that're getting a lot of false-positives in the
+# index.html file.
+SpellCheck = false
+AnA = false
+SentenceCapitalization = false
+UnclosedQuotes = false
+WrongQuotes = false
+CommaFixes = false
+ItsPossessive = false
+Dashes = false
+CapitalizePersonalPronouns = false
+QuoteSpacing = false
+NounCountability = false
+ToDoHyphen = false
