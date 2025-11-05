@@ -4,28 +4,30 @@
   :host,
   :root {
     --ok-border-radius: 7px;
-    --ok-color-bg-2: rgb(248, 249, 250);
-    --ok-color-bg-3: rgba(175, 184, 193, 0.2);
     --ok-color-bg: white;
+    --ok-color-block-bg: rgb(248, 249, 250);
+    --ok-color-block-fg: rgb(16, 15, 15);
     --ok-color-border: #dee2e6;
-    --ok-color-fg-2: #888;
+    --ok-color-code-bg: rgba(175, 184, 193, 0.2);
+    --ok-color-code-fg: rgb(16, 15, 15);
     --ok-color-fg: rgb(16, 15, 15);
     --ok-color-highlight-bg: LemonChiffon;
+    --ok-color-highlight-fg: rgb(16, 15, 15);
     --ok-color-kbd-bg: #fafbfc;
     --ok-color-kbd-border-bottom: rgb(68, 77, 86);
+    --ok-color-kbd-fg: rgb(16, 15, 15);
+    --ok-color-link-active-fg: #ff0000;
     --ok-color-link-fg: #0000ee;
     --ok-color-link-visited-fg: #551a8b;
-    --ok-color-link-active-fg: #ff0000;
+    --ok-color-muted-fg: #888;
     --ok-font-family-mono:
       ui-monospace, "Cascadia Code", "Source Code Pro", Menlo, Consolas,
-      "DejaVu Sans Mono", monospace;
-    /* This is the Monospace Code font stack from https://modernfontstacks.com/ */
-    --ok-font-family: system-ui, sans-serif;
-    /* This is the System UI font stack from https://modernfontstacks.com/ */
+      "DejaVu Sans Mono", monospace; /* This is the Monospace Code font stack from https://modernfontstacks.com/ */
+    --ok-font-family:
+      system-ui, sans-serif; /* This is the System UI font stack from https://modernfontstacks.com/ */
     --ok-font-size-small: 13px;
     --ok-font-size: 16px;
-    --ok-line-height: 24px;
-    /* The line-height sets the vertical rhythm. All sizes, margins, paddings, and borders must be added in multiples of this line height. */
+    --ok-line-height: 24px; /* The line-height sets the vertical rhythm. All sizes, margins, paddings, and borders must be added in multiples of this line height. */
   }
 
   @layer reset {
@@ -321,6 +323,7 @@
   @layer elements {
     mark {
       background-color: var(--ok-color-highlight-bg);
+      color: var(--ok-color-highlight-fg);
     }
   }
 
@@ -417,7 +420,7 @@
     footer samp,
     footer strong,
     footer {
-      color: var(--ok-color-fg-2);
+      color: var(--ok-color-muted-fg);
     }
   }
 
@@ -428,6 +431,7 @@
       border-radius: 5px;
       border: 1px solid var(--ok-color-border);
       border-bottom-color: var(--ok-color-kbd-border-bottom);
+      color: var(--ok-color-kbd-fg);
       font-size: 12px;
       font-weight: bold;
       padding-bottom: 3px;
@@ -735,7 +739,7 @@
   /* Figures and captions. */
   @layer elements {
     figure figcaption {
-      color: var(--ok-color-fg-2);
+      color: var(--ok-color-muted-fg);
       text-align: center;
     }
 
@@ -764,8 +768,9 @@
   @layer elements {
     code,
     samp {
-      background-color: var(--ok-color-bg-3);
+      background-color: var(--ok-color-code-bg);
       border-radius: 5px;
+      color: var(--ok-color-code-fg);
       line-height: 18px;
       padding-left: 5px;
       padding-right: 5px;
@@ -819,7 +824,8 @@
     }
 
     details > summary {
-      background-color: var(--ok-color-bg-2);
+      background-color: var(--ok-color-block-bg);
+      color: var(--ok-color-block-fg);
       cursor: pointer;
       margin-left: calc(-0.5 * var(--ok-line-height) - 1px);
       margin-right: calc(-0.5 * var(--ok-line-height) - 1px);
@@ -845,7 +851,8 @@
     }
 
     details:not(:has(> summary)) {
-      background-color: var(--ok-color-bg-2);
+      background-color: var(--ok-color-block-bg);
+      color: var(--ok-color-block-fg);
     }
 
     details[open]:not(:has(> summary)) *:first-child {
@@ -912,7 +919,8 @@
     pre,
     pre code,
     pre samp {
-      background-color: var(--ok-color-bg-2);
+      background-color: var(--ok-color-block-bg);
+      color: var(--ok-color-block-fg);
     }
 
     pre code,
@@ -925,7 +933,8 @@
   /* Asides. */
   @layer elements {
     aside {
-      background-color: var(--ok-color-bg-2);
+      background-color: var(--ok-color-block-bg);
+      color: var(--ok-color-block-fg);
       border-radius: var(--ok-border-radius);
       border: 1px solid var(--ok-color-border);
       padding-bottom: calc(var(--ok-line-height) - 2px);

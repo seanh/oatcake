@@ -18,10 +18,12 @@
       }
       body.dark_mode {
         --ok-color-bg: rgb(31, 41, 55);
-        --ok-color-bg-2: rgb(1, 22, 39);
-        --ok-color-bg-3: rgb(58, 58, 58);
+        --ok-color-block-bg: rgb(1, 22, 39);
+        --ok-color-block-fg: white;
+        --ok-color-code-bg: rgb(58, 58, 58);
+        --ok-color-code-fg: white;
         --ok-color-fg: white;
-        --ok-color-fg-2: #dddddd;
+        --ok-color-muted-fg: #dddddd;
         --ok-color-border: rgb(55, 65, 81);
         --ok-color-link-fg: rgb(129, 142, 174);
         --ok-color-link-visited-fg: rgb(129, 142, 174);
@@ -41,7 +43,7 @@
         font-weight: bold;
       }
       pre.custom samp {
-        color: var(--ok-color-fg-2);
+        color: var(--ok-color-muted-fg);
       }
       .example {
         margin-left: 2em;
@@ -429,12 +431,9 @@
 
         <dl>
           <dt><code>--ok-color-bg</code></dt>
-          <dd>
-            The <code>background-color</code> of the page
-            <code>&lt;body&gt;</code>.
-          </dd>
+          <dd>The primary background color.</dd>
 
-          <dt><code>--ok-color-bg-2</code></dt>
+          <dt><code>--ok-color-block-bg</code></dt>
           <dd>
             The <code>background-color</code> of
             <a href="#preformatted-text">preformatted text blocks</a>,
@@ -445,19 +444,25 @@
             and <a href="#asides">asides</a>.
           </dd>
 
-          <dt><code>--ok-color-bg-3</code></dt>
+          <dt><code>--ok-color-block-fg</code></dt>
+          <dd>The foreground <code>color</code> of blocks.</dd>
+
+          <dt><code>--ok-color-code-bg</code></dt>
           <dd>
             The <code>background-color</code> of inline
             <code>&lt;code&gt;</code> and <code>&lt;samp&gt;</code> elements.
           </dd>
 
-          <dt><code>--ok-color-fg</code></dt>
+          <dt><code>--ok-color-code-fg</code></dt>
           <dd>
-            The foreground <code>color</code> of the page
-            <code>&lt;body&gt;</code> text.
+            The foreground <code>color</code> of inline
+            <code>&lt;code&gt;</code>'s and <code>&lt;samp&gt;</code>'s.
           </dd>
 
-          <dt><code>--ok-color-fg-2</code></dt>
+          <dt><code>--ok-color-fg</code></dt>
+          <dd>The primary foreground <code>color</code>.</dd>
+
+          <dt><code>--ok-color-muted-fg</code></dt>
           <dd>
             The foreground <code>color</code> of
             <a href="#figures">figure captions</a> and
@@ -485,11 +490,11 @@
             elements).
           </dd>
 
+          <dt><code>--ok-color-highlight-fg</code></dt>
+          <dd>The foreground <code>color</code> of highlighted text.</dd>
+
           <dt><code>--ok-color-link-fg</code></dt>
-          <dd>
-            The foreground <code>color</code> of links (<code>&lt;a&gt;</code>
-            elements).
-          </dd>
+          <dd>The foreground <code>color</code> of links.</dd>
 
           <dt><code>--ok-color-link-visited-fg</code></dt>
           <dd>The foreground <code>color</code> of visited links.</dd>
@@ -497,7 +502,7 @@
           <dt><code>--ok-color-link-active-fg</code></dt>
           <dd>
             The foreground <code>color</code> of links while they're being
-            clicked on or otherwise activated, provides visual feedback that the
+            clicked on or otherwise activated. Provides visual feedback that the
             link was clicked.
           </dd>
         </dl>
@@ -3266,7 +3271,7 @@ int main()
     font-weight: bold;
   }
   pre samp {
-    color: var(--ok-color-fg-2);
+    color: var(--ok-color-muted-fg);
   }
 &lt;style&gt;</code></pre>
 
