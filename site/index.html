@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Oatcake: Plain Web Typography</title>
     <link rel="stylesheet" href="oatcake.min.css" />
+    <link rel="stylesheet" href="gh-fork-ribbon.css" />
     <link rel="stylesheet" href="lines/lines.css" />
     <style>
       @media (max-width: 24em) {
@@ -91,6 +92,10 @@
         outline: 0;
         box-shadow: 0 0 0 0.2rem var(--ok-color-link-fg);
       }
+
+      .github-fork-ribbon:before {
+        background-color: #333;
+      }
     </style>
     <link
       rel="apple-touch-icon"
@@ -112,34 +117,12 @@
   </head>
   <body>
     <a
+      class="github-fork-ribbon"
       href="https://github.com/seanh/oatcake"
-      class="wide-only"
-      style="
-        display: block;
-        position: absolute;
-        top: 0;
-        right: 0;
-        text-decoration: none;
-        border: none;
-      "
+      data-ribbon="Fork me on GitHub"
+      title="Oatcake's GitHub repo"
+      >Fork me on GitHub</a
     >
-      <img
-        class="noresize"
-        style="
-          height: 48px;
-          margin-top: var(--ok-line-height);
-          margin-right: var(--ok-line-height);
-          margin-bottom: 0;
-          margin-left: 0;
-          padding: 0;
-          border: none;
-        "
-        src="media/github-mark.svg"
-        alt="Fork me on GitHub"
-        title="Fork me on GitHub"
-        data-recalc-dims="1"
-      />
-    </a>
 
     <main
       style="max-width: 40em; margin: 0 auto 0 auto; padding: 0 0.5em 0 0.5em"
