@@ -131,11 +131,21 @@
       />
     </a>
 
-    <button
-      type="button"
-      class="wide-only lines"
-      style="display: block; position: fixed; bottom: 10px; right: 10px"
-    ></button>
+    <div style="display: block; position: fixed; bottom: 10px; right: 10px">
+      <button
+        type="button"
+        class="wide-only lines"
+        title="Show typographical rhythm debugging lines"
+      ></button>
+      <button
+        type="button"
+        class="wide-only"
+        id="expandAll"
+        title="Open all disclosure widgets"
+      >
+        Expand All
+      </button>
+    </div>
 
     <main
       style="max-width: 40em; margin: 0 auto 0 auto; padding: 0 0.5em 0 0.5em"
@@ -469,7 +479,11 @@
       </p>
 
       <p style="text-align: center">
-        <button type="button" class="lines"></button>
+        <button
+          type="button"
+          class="lines"
+          title="Show typographical rhythm debugging lines"
+        ></button>
       </p>
 
       <h2>Inline elements</h2>
@@ -4355,6 +4369,24 @@ end tell</code></pre>
       });
     </script>
     <script src="lines/lines.js"></script>
+    <script>
+      const expandAllBtn = document.getElementById("expandAll");
+      let isExpanded = false;
+
+      expandAllBtn.addEventListener("click", function () {
+        const allDetails = document.querySelectorAll("details");
+        isExpanded = !isExpanded;
+
+        allDetails.forEach((detail) => {
+          detail.open = isExpanded;
+        });
+
+        expandAllBtn.textContent = isExpanded ? "Collapse All" : "Expand All";
+        expandAllBtn.title = isExpanded
+          ? "Close all disclosure widgets"
+          : "Open all disclosure widgets";
+      });
+    </script>
     <script>
       function toggleFonts(event) {
         if (document.body.classList.contains("alternativeFonts")) {
