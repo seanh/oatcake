@@ -545,34 +545,13 @@
       padding-top: calc(var(--ok-line-height) * 2);
     }
 
-    h3 {
-      font-size: var(--ok-font-size);
-      padding-bottom: var(--ok-line-height);
-      padding-top: var(--ok-line-height);
-    }
-
+    h3,
     h4,
     h5,
     h6 {
       font-size: var(--ok-font-size);
-      padding-bottom: 0;
-      padding-top: 0;
-    }
-
-    /* Put one line of vertical space between <h4>'s, <h5>'s and <h6>'s that
-     * immediately follow each other.
-     * (Normally an <h4>, <h5> or <h6> doesn't have any vertical space below it
-     * before the following <p> or other element.) */
-    h4 + h4,
-    h4 + h5,
-    h4 + h6,
-    h5 + h4,
-    h5 + h5,
-    h5 + h6,
-    h6 + h4,
-    h6 + h5,
-    h6 + h6 {
-      margin-top: var(--ok-line-height);
+      padding-bottom: var(--ok-line-height);
+      padding-top: var(--ok-line-height);
     }
 
     /* At lot of the time you don't want any padding-top before a heading, for
