@@ -2221,13 +2221,13 @@ in the air.&lt;/p&gt;</code></pre>
           Here's a couple of examples from the HTML standard, this:
         </p>
 
-        <pre><code><strong>&lt;dl&gt;</strong>
- <strong>&lt;dt&gt;</strong> Authors
- <strong>&lt;dd&gt;</strong> John
- <strong>&lt;dd&gt;</strong> Luke
- <strong>&lt;dt&gt;</strong> Editor
- <strong>&lt;dd&gt;</strong> Frank
-<strong>&lt;/dl&gt;</strong></code></pre>
+        <pre><code><b>&lt;dl&gt;</b>
+ <b>&lt;dt&gt;</b> Authors
+ <b>&lt;dd&gt;</b> John
+ <b>&lt;dd&gt;</b> Luke
+ <b>&lt;dt&gt;</b> Editor
+ <b>&lt;dd&gt;</b> Frank
+<b>&lt;/dl&gt;</b></code></pre>
 
         <p>&hellip;renders like this:</p>
 
@@ -2241,13 +2241,13 @@ in the air.&lt;/p&gt;</code></pre>
 
         <p>Here's an example of multiple terms with a single definition:</p>
 
-        <pre><code>&lt;<strong>dl&gt;</strong>
- &lt;<strong>dt lang="en-US"&gt;</strong>&lt;dfn&gt;color&lt;/dfn&gt;<strong>&lt;/dt&gt;</strong>
- &lt;<strong>dt lang="en-GB"&gt;</strong>&lt;dfn&gt;colour&lt;/dfn&gt;<strong>&lt;/dt&gt;</strong>
- &lt;<strong>dd&gt;</strong>A sensation which (in humans) derives from the ability of
+        <pre><code>&lt;dl&gt;
+ <mark>&lt;dt lang="en-US"&gt;&lt;dfn&gt;color&lt;/dfn&gt;&lt;/dt&gt;
+ &lt;dt lang="en-GB"&gt;&lt;dfn&gt;colour&lt;/dfn&gt;&lt;/dt&gt;</mark>
+ &lt;dd&gt;A sensation which (in humans) derives from the ability of
  the fine structure of the eye to distinguish three differently
- filtered analyses of a view.<strong>&lt;/dd&gt;</strong>
-<strong>&lt;/dl&gt;</strong></code></pre>
+ filtered analyses of a view.&lt;/dd&gt;
+&lt;/dl&gt;</code></pre>
 
         <p>
           Note the use of
@@ -2452,7 +2452,7 @@ in the air.&lt;/p&gt;</code></pre>
  all the other possible gods, you will understand why I
  dismiss yours.&lt;/p&gt;
 &lt;/blockquote&gt;
-<strong>&lt;p&gt;&amp;mdash; Stephen Roberts&lt;/p&gt;</strong></code></pre>
+<mark>&lt;p&gt;&amp;mdash; Stephen Roberts&lt;/p&gt;</mark></code></pre>
 
         <p>
           Alternatively, you can put a <code>&lt;blockquote&gt;</code> in a
@@ -2469,7 +2469,7 @@ in the air.&lt;/p&gt;</code></pre>
           >, as in this example also from the HTML standard:
         </p>
 
-        <pre><code>&lt;p&gt;His next piece was the aptly named <strong>&lt;cite&gt;Sonnet 130&lt;/cite&gt;</strong>:&lt;/p&gt;
+        <pre><code>&lt;p&gt;His next piece was the aptly named <mark>&lt;cite&gt;Sonnet 130&lt;/cite&gt;</mark>:&lt;/p&gt;
 &lt;blockquote&gt;
   &lt;p&gt;My mistress' eyes are nothing like the sun,&lt;br&gt;
   Coral is far more red, than her lips red,&lt;br&gt;
@@ -2502,7 +2502,7 @@ in the air.&lt;/p&gt;</code></pre>
           source:
         </p>
 
-        <pre><code>&lt;blockquote <strong>cite="https://quotes.example.org/s/sonnet130.html"&gt;</strong></code></pre>
+        <pre><code>&lt;blockquote <mark>cite="https://quotes.example.org/s/sonnet130.html"</mark>&gt;</code></pre>
 
         <p>
           <code>cite</code> attributes aren't visible in the rendered HTML,
@@ -3345,10 +3345,10 @@ int main()
         this:
       </p>
 
-      <pre><code><strong>&lt;details&gt;</strong>
-  <strong>&lt;summary&gt;</strong>Material<strong>&lt;/summary&gt;</strong>
+      <pre><code><mark>&lt;details&gt;</mark>
+  <mark>&lt;summary&gt;</mark>Material<mark>&lt;/summary&gt;</mark>
   &lt;p&gt;The picture frame is made of solid oak wood.&lt;/p&gt;
-<strong>&lt;/details&gt;</strong></code></pre>
+<mark>&lt;/details&gt;</mark></code></pre>
 
       <p>&hellip;renders like this:</p>
 
@@ -3455,15 +3455,15 @@ int main()
           close any others that're already open. For example, this:
         </p>
 
-        <pre><code>&lt;details <strong>name="test"</strong>&gt;
+        <pre><code>&lt;details <mark>name="test"</mark>&gt;
   &lt;summary&gt;This is the first disclosure widget&lt;/summary&gt;
   These are the first details.
 &lt;/details&gt;
-&lt;details <strong>name="test"</strong>&gt;
+&lt;details <mark>name="test"</mark>&gt;
   &lt;summary&gt;This is the second disclosure widget&lt;/summary&gt;
   These are the second details.
 &lt;/details&gt;
-&lt;details <strong>name="test"</strong>&gt;
+&lt;details <mark>name="test"</mark>&gt;
   &lt;summary&gt;This is the third disclosure widget&lt;/summary&gt;
   These are the third details.
 &lt;/details&gt;</code></pre>
@@ -3498,7 +3498,7 @@ int main()
 
         <pre><code>&lt;details&gt;
   &lt;summary&gt;Material&lt;/summary&gt;
-  <strong>The picture frame is made of solid oak wood.</strong>
+  <mark>The picture frame is made of solid oak wood.</mark>
 &lt;/details&gt;</code></pre>
 
         <p>&hellip;renders like this:</p>
@@ -3770,7 +3770,7 @@ int main()
         <pre><code>&lt;details&gt;
   &lt;p&gt;Velocity: 12m/s&lt;/p&gt;
   &lt;p&gt;Direction: North&lt;/p&gt;
-  <strong>&lt;summary&gt;</strong>Automated Status: Operational<strong>&lt;/summary&gt;</strong>
+  <mark>&lt;summary&gt;</mark>Automated Status: Operational<mark>&lt;/summary&gt;</mark>
 &lt;/details&gt;</code></pre>
 
         <p>&hellip;renders like this:</p>
@@ -3798,10 +3798,10 @@ int main()
         >. For example, this:
       </p>
 
-      <pre><code><strong>&lt;figure&gt;</strong>
+      <pre><code><mark>&lt;figure&gt;</mark>
   &lt;img src="media/oats.jpg" alt="A bowl of oats" title="A bowl of oats"&gt;
-  <strong>&lt;figcaption&gt;</strong>A bowl of oats<strong>&lt;/figcaption&gt;</strong>
-<strong>&lt;/figure&gt;</strong></code></pre>
+  <mark>&lt;figcaption&gt;</mark>A bowl of oats<mark>&lt;/figcaption&gt;</mark>
+<mark>&lt;/figure&gt;</mark></code></pre>
 
       <p>&hellip;renders like this:</p>
 
@@ -4099,7 +4099,7 @@ end</code></pre>
 
         <p>Now this:</p>
 
-        <pre><code>&lt;aside class="<strong>warning</strong>"&gt;
+        <pre><code>&lt;aside class="<mark>warning</mark>"&gt;
   &lt;strong&gt;Warning!&lt;/strong&gt;
   Too many asides can overwhelm the reader.
 &lt;/aside&gt;</code></pre>
