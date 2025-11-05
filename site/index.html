@@ -1254,12 +1254,12 @@ in the air.&lt;/p&gt;</code></pre>
 
       <p>
         Oatcake uses both the font-size and the amount of vertical space above
-        and below to provide four visually distinct levels of headings:
-        <code>&lt;h1&gt;</code>, <code>&lt;h2&gt;</code>,
-        <code>&lt;h3&gt;</code> and <code>&lt;h4&gt;</code>. You can also use
-        <code>&lt;h5&gt;</code>'s and <code>&lt;h6&gt;</code>'s but they look
-        the same as <code>&lt;h4&gt;</code>'s. Here's what all six headings look
-        like:
+        and below to provide three visually distinct levels of headings:
+        <code>&lt;h1&gt;</code>, <code>&lt;h2&gt;</code>, and
+        <code>&lt;h3&gt;</code>. While you can also use
+        <code>&lt;h4&gt;</code>'s, <code>&lt;h5&gt;</code>'s and
+        <code>&lt;h6&gt;</code>'s, they look identical to
+        <code>&lt;h3&gt;</code>'s. Here's what all six headings look like:
       </p>
 
       <div
@@ -1322,28 +1322,38 @@ in the air.&lt;/p&gt;</code></pre>
         <p>
           HTML's six levels of headings are more than most documents need.
           Themes often resort to desperate measures to try to make all six
-          levels visually distinct: distractions like overlarge font sizes,
-          excessively heavy weights, ALL CAPS, underlines, centered text, too
-          many font faces, too much indentation, etc. Most themes make
+          levels visually distinct: bottom-of-the-barrel tactics like overlarge
+          font sizes, excessively heavy weights, ALL CAPS, underlines, centered
+          text, too many font faces, too much indentation, etc. Most themes make
           <code>&lt;h1&gt;</code>'s too big for my taste, meanwhile subheadings
           often come in <em>smaller</em> fonts than the main body text.
         </p>
 
         <p>
-          Oatcake's opinion is that most pages shouldn't use more than four
-          levels of headings, ideally not more than three. More levels are
-          confusing and make it difficult for readers to orient themselves
-          within the document.
+          Just because HTML has six levels of headings doesn't mean you should
+          use them all. Oatcake is opinionated about this and thinks that most
+          pages shouldn't use more than three levels of headings, ideally not
+          more than two: a single <code>&lt;h1&gt;</code> page title then
+          <code>&lt;h2&gt;</code>'s to break up the document into sections
+          and&mdash;only if really necessary&mdash;<code>&lt;h3&gt;</code>'s for
+          subsections. More levels are confusing and make it difficult for
+          readers to orient themselves within the document.
         </p>
 
         <p>
-          By restraining itself to just four levels&mdash;using the smallest
-          necessary increments in font size and space above and below to
-          distinguish the levels from each other&mdash;Oatcake is able to make
-          the levels distinct without resorting to desperate measures.
+          By restraining itself to just three visually distinct
+          levels&mdash;using the smallest necessary increments in font size and
+          space above and below to distinguish the levels from each
+          other&mdash;Oatcake is able to make the levels distinct without
+          gimmicks.
         </p>
 
-        <hr />
+        <p>
+          If you really do need to use more than three levels you can try
+          hierarchically numbering your headings, see below.
+        </p>
+
+        <h3 class="noanchor">Vertical alignment of headings</h3>
 
         <p>
           A common mistake is to vertically align headings closer to the
@@ -1388,7 +1398,7 @@ in the air.&lt;/p&gt;</code></pre>
           at hendrerit risus sem eu arcu.
         </p>
 
-        <h4 class="noanchor">1.1.1 Fourth-level heading</h4>
+        <h4 class="noanchor">1.1.a Fourth-level heading</h4>
 
         <p>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer
@@ -1396,7 +1406,7 @@ in the air.&lt;/p&gt;</code></pre>
           at hendrerit risus sem eu arcu.
         </p>
 
-        <h4 class="noanchor">1.1.1.1 Fifth-level heading</h4>
+        <h4 class="noanchor">1.1.a.i Fifth-level heading</h4>
 
         <p>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer
@@ -1404,7 +1414,7 @@ in the air.&lt;/p&gt;</code></pre>
           at hendrerit risus sem eu arcu.
         </p>
 
-        <h4 class="noanchor">1.1.1.2 Another fifth-level heading</h4>
+        <h4 class="noanchor">1.1.a.ii Another fifth-level heading</h4>
 
         <p>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer
@@ -1412,7 +1422,7 @@ in the air.&lt;/p&gt;</code></pre>
           at hendrerit risus sem eu arcu.
         </p>
 
-        <h4 class="noanchor">1.1.2 Another fourth-level heading</h4>
+        <h4 class="noanchor">1.1.b Another fourth-level heading</h4>
 
         <p>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer
