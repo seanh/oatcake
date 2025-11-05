@@ -1,6 +1,7 @@
 @layer oatcake {
   @layer reset, base, elements;
 
+  :host,
   :root {
     --ok-border-radius: 7px;
     --ok-color-bg-2: rgb(248, 249, 250);
@@ -136,6 +137,7 @@
 
   /* Fonts, font-sizes and vertical rhythm (line-heights, margins and padding). */
   @layer base {
+    :host,
     body {
       font-family: var(--ok-font-family);
       font-size: var(--ok-font-size);
@@ -189,6 +191,7 @@
 
   /* Base colors. */
   @layer base {
+    :host,
     body {
       background-color: var(--ok-color-bg);
       color: var(--ok-color-fg);
@@ -199,6 +202,7 @@
   @layer base {
     /* If a single unbroken string (e.g. a URL) is too long to fit on one line then
      * break it across lines rather than letting it overflow. */
+    :host,
     body {
       overflow-wrap: break-word;
     }

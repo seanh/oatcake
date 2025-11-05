@@ -239,6 +239,43 @@
 &lt;/html&gt;</code></pre>
       </details>
 
+      <details>
+        <summary><b>Tip:</b> applying Oatcake to only part of a page</summary>
+
+        <p>
+          You might want to apply Oatcake to only part of your HTML page. For
+          example maybe you're using <code>&lt;aside&gt;</code> for a site-wide
+          sidebar and <code>&lt;footer&gt;</code> for a site-wide footer and
+          don't want Oatcake's <code>&lt;aside&gt;</code> and
+          <code>&lt;footer&gt;</code> styles to affect those, but you
+          <em>do</em> want to apply Oatcake to the page's main content.
+        </p>
+
+        <p>
+          You can apply Oatcake to only part of a page by loading it in a
+          <a
+            href="https://developer.mozilla.org/en-US/docs/Web/API/Web_components/Using_shadow_DOM"
+            >Shadow DOM</a
+          >. Here's an example:
+        </p>
+
+        <pre><code>&lt;div&gt;
+  &lt;template shadowrootmode="open"&gt;
+    &lt;link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/seanh/oatcake@1.0.0-alpha.2/oatcake.min.css" /&gt;
+
+    &lt;p&gt;Oatcake's styles will be applied to everything within the "template" element.&lt;/p&gt;
+  &lt;/template&gt;
+&lt;/div&gt;</code></pre>
+
+        <p>
+          Any other CSS or JavaScript that you want to work within the
+          <code>&lt;template&gt;</code> element will need to be loaded within it
+          as well: the content inside the <code>&lt;template&gt;</code> is
+          isolated from <em>any</em> JavaScript or CSS running in the outer
+          page.
+        </p>
+      </details>
+
       <h2>Fonts</h2>
 
       <p>
