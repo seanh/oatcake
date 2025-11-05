@@ -141,29 +141,6 @@
       />
     </a>
 
-    <div
-      style="
-        display: block;
-        position: fixed;
-        bottom: var(--ok-line-height);
-        right: var(--ok-line-height);
-      "
-    >
-      <button
-        type="button"
-        class="wide-only lines"
-        title="Show typographical rhythm debugging lines"
-      ></button>
-      <button
-        type="button"
-        class="wide-only"
-        id="expandAll"
-        title="Open all disclosure widgets"
-      >
-        Expand All
-      </button>
-    </div>
-
     <main
       style="max-width: 40em; margin: 0 auto 0 auto; padding: 0 0.5em 0 0.5em"
     >
@@ -4425,23 +4402,16 @@ end tell</code></pre>
     </script>
     <script src="lines/lines.js"></script>
     <script>
-      const expandAllBtn = document.getElementById("expandAll");
-      let isExpanded = false;
-
-      expandAllBtn.addEventListener("click", function () {
-        const allDetails = document.querySelectorAll("details");
-        isExpanded = !isExpanded;
-
-        allDetails.forEach((detail) => {
-          detail.open = isExpanded;
-        });
-
-        expandAllBtn.textContent = isExpanded ? "Collapse All" : "Expand All";
-        expandAllBtn.title = isExpanded
-          ? "Close all disclosure widgets"
-          : "Open all disclosure widgets";
+      document.addEventListener("DOMContentLoaded", function () {
+        const params = new URLSearchParams(window.location.search);
+        if (params.has("expand")) {
+          document.querySelectorAll("details").forEach((detail) => {
+            detail.open = true;
+          });
+        }
       });
     </script>
+
     <script>
       function toggleFonts(event) {
         if (document.body.classList.contains("alternativeFonts")) {
