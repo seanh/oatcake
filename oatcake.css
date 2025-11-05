@@ -542,7 +542,7 @@
     h2 {
       font-size: 19px;
       padding-bottom: var(--ok-line-height);
-      padding-top: var(--ok-line-height);
+      padding-top: calc(var(--ok-line-height) * 2);
     }
 
     h3 {
