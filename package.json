@@ -1,4 +1,10 @@
 {
+  "name": "oatcake",
+  "author": "Sean Hammond (https://seanh.cc)",
+  "description": "A drop-in CSS stylesheet that makes pages attractive and readable.",
+  "license": "MIT",
+  "homepage": "https://www.seanh.cc/oatcake/",
+  "bugs": "https://github.com/seanh/oatcake/issues",
   "devDependencies": {
     "html-validate": "^10.2.1",
     "lightningcss-cli": "^1.30.2",
