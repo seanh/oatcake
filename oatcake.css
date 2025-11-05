@@ -492,6 +492,10 @@
     ol li {
       margin-left: 30px;
     }
+
+    li::marker {
+      color: var(--ok-color-muted-fg);
+    }
   }
 
   /* Description lists. */
@@ -836,6 +840,10 @@
     details > summary {
       overflow: auto;
       white-space: nowrap;
+    }
+
+    details > summary::marker {
+      color: var(--ok-color-muted-fg);
     }
 
     details:not([open]) > summary {
