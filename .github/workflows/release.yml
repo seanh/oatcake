@@ -3,7 +3,7 @@ on:
   release:
     types: [published]
 jobs:
-  publish:
+  Release:
     runs-on: ubuntu-latest
     permissions:
       contents: read
@@ -18,3 +18,5 @@ jobs:
         run: npm install -g npm@latest
       - name: Publish package
         run: bin/release.sh ${{ github.event.release.tag_name }}
+        env:
+          GH_TOKEN: ${{ github.token }}
