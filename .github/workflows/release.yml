@@ -16,5 +16,5 @@ jobs:
           registry-url: "https://registry.npmjs.org"
       - name: Update npm
         run: npm install -g npm@latest
-      - run: npm --no-git-tag-version version ${{ github.event.release.tag_name }}
-      - run: npm publish --tag latest
+      - name: Publish package
+        run: bin/release.sh ${{ github.event.release.tag_name }}
