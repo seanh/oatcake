@@ -1,3 +1,4 @@
+![NPM Version](https://img.shields.io/npm/v/oatcake)
 [![](https://data.jsdelivr.com/v1/package/npm/oatcake/badge)](https://www.jsdelivr.com/package/npm/oatcake)
 
 # Oatcake
