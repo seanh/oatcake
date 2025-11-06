@@ -16,5 +16,3 @@ jobs:
           registry-url: "https://registry.npmjs.org"
       - run: npm --no-git-tag-version version ${{ github.event.release.tag_name }}
       - run: npm publish --provenance
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
