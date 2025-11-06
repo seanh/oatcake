@@ -16,5 +16,6 @@
   },
   "files": [
     "oatcake.min.css"
-  ]
+  ],
+  "jsdelivr": "oatcake.min.css"
 }
