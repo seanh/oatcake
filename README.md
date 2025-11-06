@@ -1,4 +1,4 @@
-[![](https://data.jsdelivr.com/v1/package/gh/seanh/oatcake/badge)](https://www.jsdelivr.com/package/gh/seanh/oatcake)
+[![](https://data.jsdelivr.com/v1/package/npm/oatcake/badge)](https://www.jsdelivr.com/package/npm/oatcake)
 
 # Oatcake
 
