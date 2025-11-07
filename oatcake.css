@@ -178,7 +178,8 @@
     iframe:not(li iframe:first-child),
     img:not(li img:first-child),
     svg:not(li svg:first-child),
-    video:not(li video:first-child) {
+    video:not(li video:first-child),
+    figure:not(li figure:first-child) {
       margin-top: calc(2 * var(--ok-line-height));
     }
 
@@ -186,7 +187,8 @@
     iframe,
     img,
     svg,
-    video {
+    video,
+    figure {
       margin-bottom: calc(var(--ok-line-height) * 2);
     }
   }
@@ -744,7 +746,19 @@
   @layer elements {
     figure figcaption {
       color: var(--ok-color-muted-fg);
+      margin-bottom: var(--ok-line-height);
       text-align: center;
+    }
+
+    /* Images, videos, iframe and audio normally have two lines of top margin
+       but we only want one line of margin between a <figcaption> in a figure
+       and the image, video, iframe or audio player that follows it. */
+    figure figcaption + audio,
+    figure figcaption + iframe,
+    figure figcaption + img,
+    figure figcaption + svg,
+    figure figcaption + video {
+      margin-top: var(--ok-line-height);
     }
 
     /* Images, videos, iframe and audio normally have two lines of bottom margin
@@ -757,14 +771,6 @@
     figure svg + figcaption,
     figure video + figcaption {
       margin-top: calc(var(--ok-line-height) * -1);
-    }
-
-    /* If a figure has a caption then make the vertical space below the caption
-       be larger than the vertical space above the caption. This is to put the
-       caption visibly closer to the figure that it belongs to than to whatever
-       follows the figure. */
-    figcaption {
-      padding-bottom: var(--ok-line-height);
     }
   }
 
@@ -780,9 +786,15 @@
       padding-right: 5px;
     }
 
+    a code,
+    a samp,
+    kbd code,
+    kbd samp,
     mark code,
     mark samp {
       background-color: inherit;
+      color: inherit;
+      line-height: inherit;
       padding: 0;
     }
 
@@ -798,13 +810,6 @@
     footer code,
     footer samp {
       background-color: inherit;
-    }
-
-    kbd code,
-    kbd samp {
-      background-color: inherit;
-      line-height: inherit;
-      padding: 0;
     }
   }
 
@@ -909,6 +914,10 @@
          Correct it by removing 1px from the <summary>'s padding-bottom. This seems
          to work across browsers. */
       padding-bottom: calc(var(--ok-line-height) - 1px);
+    }
+
+    details > *:last-child {
+      margin-bottom: var(--ok-line-height);
     }
   }
 
