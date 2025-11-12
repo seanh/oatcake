@@ -99,6 +99,10 @@
       u.spelling {
         text-decoration: red wavy underline;
       }
+      .banner {
+        border: none;
+        margin-top: calc(3 * var(--ok-line-height));
+      }
     </style>
     <link
       rel="apple-touch-icon"
@@ -130,14 +134,32 @@
     <main
       style="max-width: 40em; margin: 0 auto 0 auto; padding: 0 0.5em 0 0.5em"
     >
-      <img
-        alt="Oatcake banner image"
-        src="media/oatcake.svg"
-        width="301"
-        height="240"
-        class="noresize"
-        style="border: none; margin-top: var(--ok-line-height)"
-      />
+      <script>
+        (function () {
+          const images = [
+            { filename: "shovel.svg", height: 240 },
+            { filename: "oatcakes.svg", height: 240 },
+            { filename: "oatmilk.svg", height: 240 },
+          ];
+          const chosenImage = images[Math.floor(Math.random() * images.length)];
+          const img = document.createElement("img");
+          img.src = `media/${chosenImage.filename}`;
+          img.height = chosenImage.height;
+          img.alt = "Oatcake banner image";
+          img.className = "noresize banner";
+          document.currentScript.parentNode.appendChild(img);
+        })();
+      </script>
+
+      <noscript>
+        <img
+          alt="Oatcake banner image"
+          src="media/shovel.svg"
+          height="240"
+          class="noresize banner"
+        />
+      </noscript>
+
       <hgroup>
         <h1 class="noanchor">Oatcake: Plain Web Typography</h1>
         <p>
