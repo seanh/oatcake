@@ -2307,16 +2307,27 @@ disagree with this mission.&lt;/p&gt;</code></pre>
           >
           heading and one or more <code>&lt;p&gt;</code>'s representing a
           subheading, alternative title or tagline. The <code>&lt;p&gt;</code>'s
-          can come before and/or after the heading. We've seen examples of a
-          subheading and an alternative title, here's a third example from MDN
-          that uses the <code>&lt;p&gt;</code> as a tagline containing related
-          or secondary content:
+          can come before and/or after the heading.
         </p>
 
-        <hgroup class="example">
-          <h1 class="noanchor">HTML: Living Standard</h1>
-          <p>Last Updated 12 July 2022</p>
-        </hgroup>
+        <p>
+          We've seen examples of a subheading and an alternative title, here's a
+          third example from MDN that uses the <code>&lt;p&gt;</code> as a
+          tagline containing related or secondary content. I've changed the
+          example to put the tagline <em>before</em> the heading:
+        </p>
+
+        <div class="example">
+          <hgroup>
+            <p>Last Updated 12 July 2022</p>
+            <h1 class="noanchor">HTML: Living Standard</h1>
+          </hgroup>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris et
+            facilisis purus. Cras molestie tortor velit, interdum fringilla diam
+            ornare vel. Nam quis venenatis nibh.
+          </p>
+        </div>
 
         <h3 class="notoc"><b>Edge case:</b> multi-paragraph subheadings</h3>
 
