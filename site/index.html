@@ -142,37 +142,46 @@
         class="noresize banner"
       />
 
+      <p style="text-align: center">
+        <a href="https://github.com/seanh/oatcake">Source Code</a> &sdot;
+        <a href="https://github.com/seanh/oatcake/issues">Issues</a> &sdot;
+        <a href="https://github.com/seanh/oatcake/discussions">Discussions</a>
+      </p>
+
       <hgroup>
         <h1 class="noanchor">Oatcake: Plain Web Typography</h1>
         <p>
           A drop-in CSS stylesheet that makes pages attractive and readable.
-          Looks good without drawing attention to the design. Works great on
-          both mobile and desktop.
+          Looks good without drawing attention to the design. Great on mobile
+          and desktop.
         </p>
       </hgroup>
 
       <p>
-        <strong>Oatcake</strong> is my universal typography theme. Possibly the
-        world's most deadpan stylesheet, Oatcake aims to look good without being
-        distracting or drawing too much attention to itself. Plain but pretty.
+        This page is styled with <strong>Oatcake</strong>, my universal
+        typography theme. Possibly the world's most deadpan stylesheet, Oatcake
+        aims to look good without being distracting or drawing too much
+        attention to itself. Plain but pretty.
       </p>
 
       <ul>
         <li>
-          <strong>Styles ordinary HTML.</strong>
-          No CSS classes or JavaScript needed.
+          <strong>Styles HTML elements directly.</strong>
+          No CSS classes or JavaScript needed, you can style HTML straight from
+          Markdown. As a side-benefit, every component comes with a semantic
+          definition and usage advice from the HTML Standard and MDN.
         </li>
         <li>
           <strong>Does lots with little.</strong>
           Oatcake doesn't have loads of CSS and JavaScript components but it
-          styles a lot of HTML's standard elements and its styles are flexible
-          enough to be combined in lots of creative ways.
+          styles many of HTML's standard elements and does so flexibly enough
+          that they can be combined in creative ways.
         </li>
 
         <li>
           <strong>Handles all sorts of minutiae and edge cases.</strong>
           Sweats details like nested lists and block quotes, stacked headings,
-          vertical rhythm, preventing horizontal overflows, etc.
+          vertical rhythm, horizontal overflows, etc.
         </li>
         <li>
           <strong>Use alone or as a base layer.</strong>
@@ -200,7 +209,7 @@
         file's <code>&lt;head&gt;</code>:
       </p>
 
-      <pre><code>&lt;link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/oatcake@1.0.0-alpha.17"&gt;</code></pre>
+      <pre><code>&lt;link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/oatcake"&gt;</code></pre>
       <p>
         That's it! If all you want is a simple page like this one just add a
         little CSS layout of your own (<code>max-width</code>,
@@ -219,13 +228,26 @@
     &lt;meta charset="utf-8"&gt;
     &lt;meta name="viewport" content="width=device-width, initial-scale=1"&gt;
     &lt;title&gt;Page title&lt;/title&gt;
-    &lt;link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/oatcake@1.0.0-alpha.17"&gt;
+    &lt;link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/oatcake"&gt;
   &lt;/head&gt;
   &lt;body style="max-width:50em; margin:0 auto; padding:0 .5em;"&gt;
     &lt;h1&gt;Page Title&lt;/h1&gt;
     &lt;p&gt;Page content goes here&hellip;&lt;/p&gt;
   &lt;/body&gt;
 &lt;/html&gt;</code></pre>
+      </details>
+
+      <details>
+        <summary><b>Tip:</b> pin your Oatcake version</summary>
+
+        <p>
+          It's a good idea to pin to a specific version of Oatcake so that
+          changes in new releases don't affect your site without you updating
+          your version number. Just add <code>@X.Y.Z</code> to the end of the
+          Oatcake URL:
+        </p>
+
+        <pre><code>&lt;link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/oatcake<mark>@X.Y.Z</mark>"&gt;</code></pre>
       </details>
 
       <details>
@@ -250,7 +272,7 @@
 
         <pre><code>&lt;div&gt;
   &lt;template shadowrootmode="open"&gt;
-    &lt;link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/oatcake@1.0.0-alpha.17" /&gt;
+    &lt;link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/oatcake" /&gt;
 
     &lt;p&gt;Oatcake's styles will be applied to everything within the "template" element.&lt;/p&gt;
   &lt;/template&gt;
