@@ -4,9 +4,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Oatcake: Plain Web Typography</title>
-    <link rel="preload" as="image" href="/media/shovel.svg" />
     <link rel="preload" as="image" href="/media/oatcakes.svg" />
-    <link rel="preload" as="image" href="/media/oatmilk.svg" />
     <link rel="stylesheet" href="oatcake.min.css" />
     <link rel="stylesheet" href="gh-fork-ribbon.css" />
     <link rel="stylesheet" href="lines/lines.css" />
@@ -137,31 +135,12 @@
     <main
       style="max-width: 40em; margin: 0 auto 0 auto; padding: 0 0.5em 0 0.5em"
     >
-      <script>
-        (function () {
-          const images = [
-            { filename: "shovel.svg", height: 240 },
-            { filename: "oatcakes.svg", height: 240 },
-            { filename: "oatmilk.svg", height: 240 },
-          ];
-          const chosenImage = images[Math.floor(Math.random() * images.length)];
-          const img = document.createElement("img");
-          img.src = `media/${chosenImage.filename}`;
-          img.height = chosenImage.height;
-          img.alt = "Oatcake banner image";
-          img.className = "noresize banner";
-          document.currentScript.parentNode.appendChild(img);
-        })();
-      </script>
-
-      <noscript>
-        <img
-          alt="Oatcake banner image"
-          src="media/shovel.svg"
-          height="240"
-          class="noresize banner"
-        />
-      </noscript>
+      <img
+        alt="Oatcake banner image"
+        src="media/oatcakes.svg"
+        height="240"
+        class="noresize banner"
+      />
 
       <hgroup>
         <h1 class="noanchor">Oatcake: Plain Web Typography</h1>
