@@ -265,7 +265,7 @@
         </p>
       </details>
 
-      <h2>Fonts</h2>
+      <h2 id="fonts">Fonts</h2>
 
       <p>
         Oatcake uses a
@@ -363,7 +363,7 @@
         </dl>
       </details>
 
-      <h2>Colors</h2>
+      <h2 id="colors">Colors</h2>
 
       <p>
         By default Oatcake uses black text on a white background, and the
@@ -443,10 +443,10 @@
           <dt><code>--ok-color-block-bg</code></dt>
           <dd>
             The <code>background-color</code> of
-            <a href="#preformatted-text">preformatted text blocks</a>,
-            <a href="#code-blocks">code blocks</a>,
-            <a href="#disclosure-widgets">disclosure widgets</a>
-            and <a href="#asides">asides</a>.
+            <a href="#pre">preformatted text blocks</a>,
+            <a href="#pre-code">code blocks</a>,
+            <a href="#details">disclosure widgets</a>
+            and <a href="#aside">asides</a>.
           </dd>
 
           <dt><code>--ok-color-block-fg</code></dt>
@@ -470,22 +470,22 @@
           <dt><code>--ok-color-muted-fg</code></dt>
           <dd>
             The foreground <code>color</code> of
-            <a href="#figures">figure captions</a>,
-            <a href="#footers">footers</a>, and
+            <a href="#figure">figure captions</a>,
+            <a href="#footer">footers</a>, and
             <a href="#lists">list item</a> and
-            <a href="#disclosure-widgets">disclosure widget</a> markers.
+            <a href="#details">disclosure widget</a> markers.
           </dd>
 
           <dt><code>--ok-color-border</code></dt>
           <dd>
             The <code>border-color</code> of
-            <a href="#blockquotes">block quotes</a>,
-            <a href="#preformatted-text">preformatted text blocks</a>,
-            <a href="#code-blocks">code blocks</a>,
-            <a href="#disclosure-widgets">disclosure widgets</a>,
-            <a href="#asides">asides</a>, <a href="#images">images</a>,
-            <a href="#videos">videos</a>, <a href="#iframes">iframes</a> and
-            <a href="#horizontal-rules">horizontal rules</a>.
+            <a href="#blockquote">block quotes</a>,
+            <a href="#pre">preformatted text blocks</a>,
+            <a href="#pre-code">code blocks</a>,
+            <a href="#details">disclosure widgets</a>,
+            <a href="#aside">asides</a>, <a href="#img">images</a>,
+            <a href="#video">videos</a>, <a href="#iframe">iframes</a> and
+            <a href="#hr">horizontal rules</a>.
           </dd>
 
           <dt><code>--ok-color-highlight-bg</code></dt>
@@ -514,7 +514,7 @@
         </dl>
       </details>
 
-      <h2>Rhythm</h2>
+      <h2 id="rhythm">Rhythm</h2>
 
       <p>
         Oatcake picks a comfortable body <code>line-height</code> and sets all
@@ -534,7 +534,7 @@
         ></button>
       </p>
 
-      <h2>Inline elements</h2>
+      <h2 id="inline-elements">Inline elements</h2>
 
       <p>
         All of HTML's inline elements work as you'd expect:
@@ -565,7 +565,7 @@
           wrap them in <code>&lt;code&gt;</code> tags:
           <code>this is code</code>. This is what <code>`backticks`</code> do in
           Markdown. For multi-line code blocks see
-          <a href="#code-blocks">code blocks</a>.
+          <a href="#pre-code">code blocks</a>.
         </p>
 
         <p>
@@ -573,7 +573,7 @@
           <code>&lt;samp&gt;</code>
           tags: <samp>Keyboard not found. Press F1 to continue</samp>. For
           multi-line sample output see
-          <a href="#sample-output-blocks">sample output blocks</a>.
+          <a href="#pre-samp">sample output blocks</a>.
         </p>
 
         <aside>
@@ -800,7 +800,7 @@
           (RPM).
         </blockquote>
 
-        <h3 class="notoc">
+        <h3 class="notoc" id="mark">
           The <code>&lt;mark&gt;</code> element: highlighting for relevance
         </h3>
 
@@ -896,7 +896,7 @@ end.</code></pre>
           >) can be used to mark up the defining instance of a term. You wrap a
           term in <code>&lt;dfn&gt;</code> and then the definition of that term
           should be in the same paragraph,
-          <a href="#description-lists">description list group</a>, or
+          <a href="#dl">description list group</a>, or
           <code>&lt;section&gt;</code> as the <code>&lt;dfn&gt;</code>. Oatcake
           styles <code>&lt;dfn&gt;</code>'s in italics. Here's an example from
           MDN:
@@ -942,7 +942,7 @@ end.</code></pre>
         <pre><code>&lt;p&gt;The &lt;dfn <mark>title="Garage Door Opener"</mark>&gt;GDO&lt;/dfn&gt; is a device
 that allows off-world teams to open the iris.&lt;/p&gt;</code></pre>
 
-        <h3 class="notoc">
+        <h3 class="notoc" id="abbr">
           The <code>&lt;abbr&gt;</code> element: abbreviations and acronyms
         </h3>
 
@@ -1018,7 +1018,7 @@ separate. This is called "separation of concerns."</code></pre>
   ever built.
 &lt;/p&gt;</code></pre>
 
-        <h3 class="notoc">
+        <h3 class="notoc" id="strong">
           The <code>&lt;strong&gt;</code> element: importance
         </h3>
 
@@ -1082,7 +1082,7 @@ separate. This is called "separation of concerns."</code></pre>
           </ul>
         </blockquote>
 
-        <h3 class="notoc">
+        <h3 class="notoc" id="b">
           The <code>&lt;b&gt;</code> element: bring attention to
         </h3>
 
@@ -1156,7 +1156,7 @@ separate. This is called "separation of concerns."</code></pre>
           </li>
         </ul>
 
-        <h3 class="notoc">
+        <h3 class="notoc" id="em">
           The <code>&lt;em&gt;</code> element: stress emphasis
         </h3>
 
@@ -1208,7 +1208,7 @@ separate. This is called "separation of concerns."</code></pre>
           <p><em>Cats are cute animals!</em></p>
         </blockquote>
 
-        <h3 class="notoc">
+        <h3 class="notoc" id="i">
           The <code>&lt;i&gt;</code> element: alternate voice
         </h3>
 
@@ -1326,7 +1326,7 @@ in the air.&lt;/p&gt;</code></pre>
           </li>
         </ul>
 
-        <h3 class="notoc">
+        <h3 class="notoc" id="q">
           The <code>&lt;q&gt;</code> element: inline quotations
         </h3>
 
@@ -1342,7 +1342,7 @@ in the air.&lt;/p&gt;</code></pre>
           >) is for inline quotations:
           <q>Whatever you lose, you've won. Whatever you win, you've lost.</q>
           For long or multi-paragraph quotations use
-          <a href="#blockquotes"><code>&lt;blockquote&gt;</code></a> instead.
+          <a href="#blockquote"><code>&lt;blockquote&gt;</code></a> instead.
           Notes on <code>&lt;q&gt;</code>:
         </p>
 
@@ -1405,7 +1405,7 @@ disagree with this mission.&lt;/p&gt;</code></pre>
           </li>
         </ul>
 
-        <h3 class="notoc">
+        <h3 class="notoc" id="small">
           The <code>&lt;small&gt;</code> element: side-comments and small print
         </h3>
 
@@ -1449,7 +1449,7 @@ disagree with this mission.&lt;/p&gt;</code></pre>
           </p>
         </blockquote>
 
-        <h3 class="notoc">
+        <h3 class="notoc" id="sub-and-sup">
           The <code>&lt;sub&gt;</code> and <code>&lt;sup&gt;</code> elements:
           subscript and superscript
         </h3>
@@ -1509,7 +1509,7 @@ disagree with this mission.&lt;/p&gt;</code></pre>
           ><sup>2</sup>. The teacher looked pleased.
         </blockquote>
 
-        <h3 class="notoc">
+        <h3 class="notoc" id="ins-and-del">
           The <code>&lt;ins&gt;</code> and <code>&lt;del&gt;</code> elements:
           insertions and deletions
         </h3>
@@ -1573,7 +1573,7 @@ disagree with this mission.&lt;/p&gt;</code></pre>
           won't be rendered either: it's also just for scripts.)
         </p>
 
-        <h3 class="notoc">
+        <h3 class="notoc" id="s">
           The <code>&lt;s&gt;</code> element: no longer accurate or relevant
         </h3>
 
@@ -1612,7 +1612,7 @@ disagree with this mission.&lt;/p&gt;</code></pre>
           <p>SOLD OUT!</p>
         </blockquote>
 
-        <h3 class="notoc">
+        <h3 class="notoc" id="u">
           The <code>&lt;u&gt;</code> element: spelling mistakes
         </h3>
 
@@ -1805,7 +1805,7 @@ disagree with this mission.&lt;/p&gt;</code></pre>
         </ul>
       </details>
 
-      <h2>Headings</h2>
+      <h2 id="headings">Headings</h2>
 
       <p>
         Oatcake uses both the font-size and the amount of vertical space above
@@ -2224,7 +2224,7 @@ disagree with this mission.&lt;/p&gt;</code></pre>
         </div>
       </details>
 
-      <h2>Subheadings</h2>
+      <h2 id="hgroup">Subheadings</h2>
 
       <p>
         You can add a subheading to an <code>&lt;h1&gt;</code> or
@@ -2380,7 +2380,7 @@ disagree with this mission.&lt;/p&gt;</code></pre>
         </hgroup>
       </details>
 
-      <h2>Lists</h2>
+      <h2 id="lists">Lists</h2>
 
       <p>This simple unordered list with <code>&lt;ul&gt;</code>:</p>
 
@@ -2665,7 +2665,7 @@ disagree with this mission.&lt;/p&gt;</code></pre>
         </ol>
       </details>
 
-      <h2>Description lists</h2>
+      <h2 id="dl">Description lists</h2>
 
       <p>
         You create a description list with
@@ -2801,7 +2801,7 @@ disagree with this mission.&lt;/p&gt;</code></pre>
         </dl>
       </details>
 
-      <h2 id="blockquotes">Block quotes</h2>
+      <h2 id="blockquote">Block quotes</h2>
 
       <p>
         Here's what a
@@ -2889,7 +2889,7 @@ disagree with this mission.&lt;/p&gt;</code></pre>
           Alternatively, you can put a <code>&lt;blockquote&gt;</code> in a
           <code>&lt;figure&gt;</code> and the attribution in the
           <code>&lt;figure&gt;</code>'s <code>&lt;figcaption&gt;</code>, see
-          <a href="#figures">the section on figures</a> for an example.
+          <a href="#figure">the section on figures</a> for an example.
         </p>
 
         <h3 class="notoc">
@@ -3077,7 +3077,7 @@ disagree with this mission.&lt;/p&gt;</code></pre>
         </blockquote>
       </details>
 
-      <h2>Images</h2>
+      <h2 id="img">Images</h2>
 
       <p>
         Images need a little more space above and below them than paragraphs do,
@@ -3200,7 +3200,7 @@ disagree with this mission.&lt;/p&gt;</code></pre>
         </p>
       </details>
 
-      <h2>Videos</h2>
+      <h2 id="video">Videos</h2>
 
       <p>
         The same extra little bit of vertical space, borders and rounded corners
@@ -3279,7 +3279,7 @@ disagree with this mission.&lt;/p&gt;</code></pre>
 }</code></pre>
       </details>
 
-      <h2>Audio</h2>
+      <h2 id="audio">Audio</h2>
 
       <p>
         Oatcake also supports audio players with
@@ -3291,7 +3291,7 @@ disagree with this mission.&lt;/p&gt;</code></pre>
 
       <audio controls src="media/apollo11.mp3"></audio>
 
-      <h2>iframes</h2>
+      <h2 id="iframe">iframes</h2>
 
       <p>
         Finally, the same extra vertical breathing room, borders and rounded
@@ -3364,7 +3364,7 @@ disagree with this mission.&lt;/p&gt;</code></pre>
 }</code></pre>
       </details>
 
-      <h2 id="figures">Figures and captions</h2>
+      <h2 id="figure">Figures and captions</h2>
 
       <p>
         Oatcake supports figures and captions with
@@ -3515,7 +3515,7 @@ interface API declaration.&lt;/p&gt;
         </figure>
       </details>
 
-      <h2>Preformatted text</h2>
+      <h2 id="pre">Preformatted text</h2>
 
       <p>
         Preformatted text blocks (created with the
@@ -3540,7 +3540,7 @@ Empty yet structured,
 it moves, inexhaustibly giving.</pre
       >
 
-      <h2>Code blocks</h2>
+      <h2 id="pre-code">Code blocks</h2>
 
       <p>
         A code block can be created by wrapping the entire contents of a
@@ -3603,7 +3603,7 @@ int main()
 </code></pre>
       </details>
 
-      <h2>Sample output blocks</h2>
+      <h2 id="pre-samp">Sample output blocks</h2>
 
       <p>
         Oatcake also supports sample output blocks created by wrapping the
@@ -3686,7 +3686,7 @@ int main()
 <samp>4.699999999999999</samp></pre>
       </details>
 
-      <h2>Disclosure widgets</h2>
+      <h2 id="details">Disclosure widgets</h2>
 
       <p>
         I've already used these extensively in a desperate attempt to control
@@ -4121,7 +4121,7 @@ int main()
         </details>
       </details>
 
-      <h2 id="asides">Asides</h2>
+      <h2 id="aside">Asides</h2>
 
       <p>
         You can create pull-quotes and call-out boxes with
@@ -4148,11 +4148,11 @@ int main()
         <p>
           In-line with Oatcake's consistently unshowy nature asides are styled
           the same as
-          <a href="#preformatted-text">preformatted text blocks</a>,
-          <a href="#code-blocks">code blocks</a>, and
-          <a href="#disclosure-widgets">disclosure widgets</a>. The difference
-          is that an aside's contents aren't preformatted, monospaced, or
-          collapsible. It's just a box!
+          <a href="#pre">preformatted text blocks</a>,
+          <a href="#pre-code">code blocks</a>, and
+          <a href="#details">disclosure widgets</a>. The difference is that an
+          aside's contents aren't preformatted, monospaced, or collapsible. It's
+          just a box!
         </p>
 
         <h3 class="notoc">Usage</h3>
@@ -4390,8 +4390,8 @@ int main()
         </aside>
 
         <p>
-          You can use a <a href="#horizontal-rules">horizontal rule</a> to split
-          an aside into segments:
+          You can use a <a href="#hr">horizontal rule</a> to split an aside into
+          segments:
         </p>
 
         <aside>
@@ -4479,7 +4479,7 @@ end tell</code></pre>
         </aside>
       </details>
 
-      <h2>Footers</h2>
+      <h2 id="footer">Footers</h2>
 
       <p>
         Oatcake styles <code>&lt;footer&gt;</code> elements with text in a muted
@@ -4534,7 +4534,7 @@ end tell</code></pre>
         <p>Footers <em>don't</em> need to be at the end of a section.</p>
       </details>
 
-      <h2>Horizontal rules</h2>
+      <h2 id="hr">Horizontal rules</h2>
 
       <p>
         Finally, here's what an <code>&lt;hr&gt;</code> (a horizontal rule
