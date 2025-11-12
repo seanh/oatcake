@@ -680,37 +680,6 @@
       /* This prevents link underlines from going under the ::before and ::after content. */
     }
 
-    /* Surround <b> and <strong> elements in headings with stars (they would be
-       invisible otherwise since headings are already bold). */
-    h1 b::after,
-    h1 b::before,
-    h1 strong::after,
-    h1 strong::before,
-    h2 b::after,
-    h2 b::before,
-    h2 strong::after,
-    h2 strong::before,
-    h3 b::after,
-    h3 b::before,
-    h3 strong::after,
-    h3 strong::before,
-    h4 b::after,
-    h4 b::before,
-    h4 strong::after,
-    h4 strong::before,
-    h5 b::after,
-    h5 b::before,
-    h5 strong::after,
-    h5 strong::before,
-    h6 b::after,
-    h6 b::before,
-    h6 strong::after,
-    h6 strong::before {
-      content: "*";
-      display: inline-block;
-      /* This prevents link underlines from going under the ::before and ::after content. */
-    }
-
     /* I've no idea why but when I reduce the font-size of `<mark>`'s within
      * headings it offsets the vertical-rhythm unless I say `line-height:
      * 100%;`.
