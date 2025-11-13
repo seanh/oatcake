@@ -179,8 +179,7 @@
         <h1 class="noanchor">Oatcake: Plain Web Typography</h1>
         <p>
           A drop-in CSS stylesheet that makes pages attractive and readable.
-          Looks good without drawing attention to the design. Great on mobile
-          and desktop.
+          Looks good without drawing attention. Great on mobile and desktop.
         </p>
       </hgroup>
 
@@ -204,9 +203,9 @@
         </li>
         <li>
           <strong>Does lots with little.</strong>
-          Oatcake doesn't have loads of CSS and JavaScript components but it
-          styles many of HTML's standard elements and does so flexibly enough
-          that they can be combined in creative ways.
+          Oatcake doesn't have loads of custom components but it styles many of
+          HTML's standard elements and does so flexibly enough that they can be
+          combined in creative ways.
         </li>
 
         <li>
@@ -494,6 +493,7 @@
             The <code>background-color</code> of
             <a href="#pre">preformatted text blocks</a>,
             <a href="#pre-code">code blocks</a>,
+            <a href="#pre-samp">sample output blocks</a>,
             <a href="#details">disclosure widgets</a>
             and <a href="#aside">asides</a>.
           </dd>
@@ -531,6 +531,7 @@
             <a href="#blockquote">block quotes</a>,
             <a href="#pre">preformatted text blocks</a>,
             <a href="#pre-code">code blocks</a>,
+            <a href="#pre-samp">sample output blocks</a>,
             <a href="#details">disclosure widgets</a>,
             <a href="#aside">asides</a>, <a href="#img">images</a>,
             <a href="#video">videos</a>, <a href="#iframe">iframes</a> and
@@ -604,7 +605,7 @@
           Oatcake supports and the HTML Standard's advice for using them.
         </p>
 
-        <h3 id="code-and-samp" class="noanchor">
+        <h3 id="code-and-samp" class="notoc">
           The <code>&lt;code&gt;</code> and <code>&lt;samp&gt;</code> elements:
           code and sample output
         </h3>
@@ -618,7 +619,8 @@
           <a
             href="https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/code"
             >MDN</a
-          >): <code>this is code</code>. This is what
+          >). This: <code>&lt;code&gt;this is code&lt;/code&gt;</code>, renders
+          like this: <code>this is code</code>. This is what
           <code>`backticks`</code> do in Markdown. For multi-line code blocks
           see <a href="#pre-code">code blocks</a>.
         </p>
@@ -633,18 +635,14 @@
           <a
             href="https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/samp"
             >MDN</a
-          >): <samp>Keyboard not found. Press F1 to continue</samp>. For
-          multi-line sample output see
-          <a href="#pre-samp">sample output blocks</a>.
+          >). This:
+          <code
+            >&lt;samp&gt;Keyboard not found. Press F1 to
+            continue&lt;/samp&gt;</code
+          >, renders like this:
+          <samp>Keyboard not found. Press F1 to continue</samp>. For multi-line
+          sample output see <a href="#pre-samp">sample output blocks</a>.
         </p>
-
-        <aside>
-          For the <em>name</em> of a computer program you can also use
-          <a href="#cite"><code>&lt;cite&gt;</code></a> instead of
-          <code>&lt;code&gt;</code>. For <em>variables</em>, you can use
-          <a href="#var"><code>&lt;var&gt;</code></a> instead of
-          <code>&lt;code&gt;</code>.
-        </aside>
 
         <h3 class="notoc">Design notes</h3>
 
@@ -693,9 +691,12 @@
           <a
             href="https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/kbd"
             >MDN</a
-          >): <kbd>Ctrl</kbd>&nbsp;+&nbsp;<kbd>Alt</kbd>&nbsp;+&nbsp;<kbd
-            >Del</kbd
-          >
+          >). This:
+          <code
+            >&lt;kbd&gt;Ctrl&lt;/kbd&gt; + &lt;kbd&gt;Alt&lt;/kbd&gt; +
+            &lt;kbd&gt;Del&lt;/kbd&gt;</code
+          >, renders like this:
+          <kbd>Ctrl</kbd>&nbsp;+&nbsp;<kbd>Alt</kbd>&nbsp;+&nbsp;<kbd>Del</kbd>
         </p>
 
         <h3 class="notoc"><b>Tip:</b> representing multiple keystrokes</h3>
@@ -1187,7 +1188,8 @@ separate. This is called "separation of concerns."</code></pre>
           To make something bold for purely stylistic (rather than utilitarian)
           purposes use CSS (<code>font-weight: bold</code>), for importance use
           <code>&lt;strong&gt;</code>, for alternate voice or mood use
-          <code>&lt;i&gt;</code>, if no other element applies then fall back to
+          <code>&lt;i&gt;</code>. If none of these apply and you still want to
+          bring attention to some text by making it bold then fall back to
           <code>&lt;b&gt;</code>.
         </p>
 
@@ -1324,9 +1326,12 @@ separate. This is called "separation of concerns."</code></pre>
           >), use <code>&lt;em&gt;</code> for stress emphasis, use
           <code>&lt;dfn&gt;</code> to mark the defining instance of a term, use
           <code>&lt;cite&gt;</code> for the titles of works, use
-          <code>&lt;var&gt;</code> for variables. If none of these apply and you
-          still want to make something italic for some semantic or readability
-          purpose then fall back to <code>&lt;i&gt;</code>.
+          <code>&lt;var&gt;</code> for variables, use
+          <code>&lt;strong&gt;</code> for importance and use
+          <code>&lt;b&gt;</code> to bring attention to something. If none of
+          these apply and you still want to make something italic to indicate a
+          different voice/mood/mode/quality/semantics from the surrounding text
+          then fall back to <code>&lt;i&gt;</code>.
         </p>
 
         <p>Some examples from the HTML Standard and MDN:</p>
@@ -1460,6 +1465,20 @@ in the air.&lt;/p&gt;</code></pre>
             <pre><code>&lt;p&gt;The word "ineffable" could have been used to
 describe the disaster resulting from the campaign's
 mismanagement.&lt;/p&gt;</code></pre>
+          </li>
+          <li>
+            <p>
+              When typing quotation marks manually, if you want to be fancy you
+              can use <code>&amp;ldquo;</code> for the opening quote and
+              <code>&amp;rdquo;</code> for the closing quote. This creates curly
+              left and right quotes like <code>&lt;q&gt;</code> does. This:
+              <code>&amp;ldquo;ineffable&amp;rdquo;</code> renders like this:
+              &ldquo;ineffable&rdquo;.
+            </p>
+            <p>
+              Use <code>&amp;lsquo;</code> and <code>&amp;rsquo;</code> for
+              fancy single quotes.
+            </p>
           </li>
           <li>
             <p>
@@ -2231,13 +2250,23 @@ disagree with this mission.&lt;/p&gt;</code></pre>
           screens. Many themes fail to account for this and the multiple lines
           of a heading either have too much space between them or too little,
           often actually overlapping. With Oatcake multi-line headings wrap
-          well, this is a multi-line <code>&lt;h2&gt;</code> heading:
+          well, this is a multi-line <code>&lt;h1&gt;</code> heading:
         </p>
 
         <div class="example">
-          <h2 class="noanchor" style="padding-top: 0">
+          <h1 class="noanchor" style="padding-top: 0">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
             eiusmod tempor incididunt ut labore
+          </h1>
+        </div>
+
+        <p>This is a multi-line <code>&lt;h2&gt;</code> heading:</p>
+
+        <div class="example">
+          <h2 class="noanchor" style="padding-top: 0">
+            Lorem ipsum dolgor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+            ad minim veniam
           </h2>
         </div>
 
@@ -2245,20 +2274,10 @@ disagree with this mission.&lt;/p&gt;</code></pre>
 
         <div class="example">
           <h3 class="noanchor" style="padding-top: 0">
-            Lorem ipsum dolgor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam
-          </h3>
-        </div>
-
-        <p>This is a multi-line <code>&lt;h4&gt;</code> heading:</p>
-
-        <div class="example">
-          <h4 class="noanchor" style="padding-top: 0">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
             eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
             ad minim veniam, quis nostrud exercitation ullamco
-          </h4>
+          </h3>
         </div>
 
         <p>
@@ -2267,7 +2286,22 @@ disagree with this mission.&lt;/p&gt;</code></pre>
         </p>
 
         <div class="example">
-          <h2 class="noanchor" style="padding-top: 0">
+          <h1 class="noanchor" style="padding-top: 0">
+            This is a long multi-line <code>&lt;h1&gt;</code> heading containing
+            <em>emphasis</em>, <code>&lt;code tags&gt;</code>, some
+            <samp>sample output</samp>, a couple of <code>&lt;kbd&gt;</code>'s:
+            <kbd>Ctrl</kbd>&nbsp;+&nbsp;<kbd>c</kbd>, <u>underlined text</u>,
+            <mark>highlighted text</mark>, <del>struck-through text</del>,
+            <a href="">a link</a>, <strong><a href="">a bold link</a></strong
+            >,
+            <a href=""><code>a code link</code></a>
+            and even<sup>superscript</sup> and<sub>subscript</sub> and
+            <small>small text</small> in it
+          </h1>
+        </div>
+
+        <div class="example">
+          <h2 class="noanchor">
             This is a long multi-line <code>&lt;h2&gt;</code> heading containing
             <em>emphasis</em>, <code>&lt;code tags&gt;</code>, some
             <samp>sample output</samp>, a couple of <code>&lt;kbd&gt;</code>'s:
@@ -2294,21 +2328,6 @@ disagree with this mission.&lt;/p&gt;</code></pre>
             and even<sup>superscript</sup> and<sub>subscript</sub> and
             <small>small text</small> in it
           </h3>
-        </div>
-
-        <div class="example">
-          <h4 class="noanchor">
-            This is a long multi-line <code>&lt;h4&gt;</code> heading containing
-            <em>emphasis</em>, <code>&lt;code tags&gt;</code>, some
-            <samp>sample output</samp>, a couple of <code>&lt;kbd&gt;</code>'s:
-            <kbd>Ctrl</kbd>&nbsp;+&nbsp;<kbd>c</kbd>, <u>underlined text</u>,
-            <mark>highlighted text</mark>, <del>struck-through text</del>,
-            <a href="">a link</a>, <strong><a href="">a bold link</a></strong
-            >,
-            <a href=""><code>a code link</code></a>
-            and even<sup>superscript</sup> and<sub>subscript</sub> and
-            <small>small text</small> in it
-          </h4>
         </div>
       </details>
 
@@ -3126,15 +3145,6 @@ disagree with this mission.&lt;/p&gt;</code></pre>
           </h3>
 
           <p>Quisque auctor gravida massa sed tincidunt.</p>
-
-          <h4 class="noanchor">
-            An <code>&lt;h4&gt;</code> within a <code>&lt;blockquote&gt;</code>
-          </h4>
-
-          <p>
-            Quisque auctor gravida massa sed tincidunt. Phasellus mollis turpis
-            ac nisi mollis, vel laoreet turpis malesuada.
-          </p>
         </blockquote>
 
         <blockquote>
@@ -3153,15 +3163,6 @@ disagree with this mission.&lt;/p&gt;</code></pre>
           </h3>
 
           <p>Phasellus mollis turpis ac.</p>
-        </blockquote>
-
-        <blockquote>
-          <h4 class="noanchor">
-            An <code>&lt;h4&gt;</code> at the start of a
-            <code>&lt;blockquote&gt;</code>
-          </h4>
-
-          <p>Quisque auctor gravida massa sed tincidunt.</p>
         </blockquote>
       </details>
 
@@ -3231,42 +3232,6 @@ disagree with this mission.&lt;/p&gt;</code></pre>
         <pre><code>img {
   border-radius: 0;
 }</code></pre>
-
-        <h3 class="notoc"><b>Tip:</b> embedded media and vertical rhythm</h3>
-
-        <p>
-          An image or video's height will upset the vertical rhythm unless it's
-          an even multiple of Oatcake's line height of 24px. Correcting this
-          isn't as simple as resizing the image or video file: on smaller
-          displays browsers will shrink an image or video's width
-          <em>and height</em> to fit it into the available screen width while
-          maintaining its aspect ratio, so the element's height will no longer
-          be a multiple of 24px. If you force the element's width and height
-          with CSS then it'll overflow the screen width on smaller screens
-          (since the browser can no longer shrink the element) and cause a
-          horizontal scrollbar. If you force just the height and allow the width
-          to change then the browser will horizontally squash the video
-          (changing its aspect ratio) on smaller screens.
-        </p>
-
-        <p>
-          This page contains a snippet of JavaScript that you can copy that
-          keeps the heights of images and videos snapped to the vertical rhythm
-          while maintaining their original aspect ratio, regardless of the
-          original file size and even as the browser resizes the window.
-          Alternatively, just don't worry about it!
-        </p>
-
-        <p>
-          If you don't want an <em>iframe</em> to upset the vertical rhythm you
-          can just use HTML or CSS to make its height a multiple of 24px. You
-          can do this with an HTML attribute like <code>height="168"</code> or
-          with some inline CSS: <code>style="height:168px;"</code>. Unlike with
-          images and videos, browsers don't shrink the heights of iframes to
-          maintain the element's aspect ratio when shrinking their widths to fit
-          them onto a smaller screen, so the JavaScript vertical rhythm fix
-          isn't needed for iframes.
-        </p>
 
         <h3 class="notoc"><b>Edge case:</b> paragraph images</h3>
 
@@ -3525,6 +3490,77 @@ interface API declaration.&lt;/p&gt;
  undefined initSelfDestruct();
 }&lt;/code&gt;&lt;/pre&gt;
 &lt;/figure&gt;</code></pre>
+
+        <h3 class="notoc"><b>Tip:</b> left-aligned captions</h3>
+
+        <p>
+          Oatcake center-aligns figure captions by default. If you want to
+          left-align a caption add
+          <code>style="text-align:left;"</code> to the
+          <code>&lt;figcaption&gt;</code>. This:
+        </p>
+
+        <pre><code>&lt;figure&gt;
+&lt;img src="media/oats.jpg" alt="A bowl of oats" title="A bowl of oats"&gt;
+<mark>&lt;figcaption style="text-align:left;"&gt;</mark>
+  Lorem ipsum dolor sit amet [&hellip;] Mauris rutrum aliquet libero
+  vel tempor.
+&lt;/figcaption&gt;
+&lt;/figure&gt;</code></pre>
+
+        <p>&hellip;renders like this:</p>
+
+        <figure>
+          <img
+            src="media/oats.jpg"
+            alt="A bowl of oats"
+            title="A bowl of oats"
+          />
+          <figcaption style="text-align: left">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc
+            convallis sollicitudin lectus, quis egestas felis vehicula ut. Duis
+            at cursus nisi, non tincidunt nibh. Mauris rutrum aliquet libero vel
+            tempor.
+          </figcaption>
+        </figure>
+
+        <p>
+          If you want to left-align all figure captions add this to your site's
+          CSS:
+        </p>
+
+        <pre><code>figcaption {
+  text-align: left;
+}</code></pre>
+
+        <h3 class="notoc"><b>Tip:</b> small text captions</h3>
+
+        <p>
+          Small text can work well for figure captions: wrap the contents of the
+          <code>&lt;figcaption&gt;</code> in a <code>&lt;small&gt;</code>. This:
+        </p>
+
+        <pre><code>&lt;figure&gt;
+  &lt;img src="media/oats.jpg" alt="A bowl of oats" title="A bowl of oats"&gt;
+  &lt;figcaption&gt;
+    &lt;small&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit.&lt;/small&gt;
+  &lt;/figcaption&gt;
+&lt;/figure&gt;</code></pre>
+
+        <p>&hellip;renders like this:</p>
+
+        <figure>
+          <img
+            src="media/oats.jpg"
+            alt="A bowl of oats"
+            title="A bowl of oats"
+          />
+          <figcaption>
+            <small
+              >Lorem ipsum dolor sit amet, consectetur adipiscing elit.</small
+            >
+          </figcaption>
+        </figure>
 
         <h3 class="notoc"><b>Tip:</b> creative ways to use figures</h3>
 
@@ -3918,6 +3954,54 @@ int main()
           These are the third details.
         </details>
 
+        <h3 class="notoc"><b>Tip:</b> small text in disclosure widgets</h3>
+
+        <p>
+          Small text can work well in disclosure widgets&mdash;wrap the contents
+          of a <code>&lt;details&gt;</code> element in
+          <code>&lt;small&gt;</code>:
+        </p>
+
+        <details>
+          <summary>License</summary>
+          <p><small>MIT License</small></p>
+
+          <p><small>Copyright (c) 2023 Sean Hammond</small></p>
+
+          <p>
+            <small
+              >Permission is hereby granted, free of charge, to any person
+              obtaining a copy of this software and associated documentation
+              files (the "Software"), to deal in the Software without
+              restriction, including without limitation the rights to use, copy,
+              modify, merge, publish, distribute, sublicense, and/or sell copies
+              of the Software, and to permit persons to whom the Software is
+              furnished to do so, subject to the following conditions:</small
+            >
+          </p>
+
+          <p>
+            <small
+              >The above copyright notice and this permission notice shall be
+              included in all copies or substantial portions of the
+              Software.</small
+            >
+          </p>
+
+          <p>
+            <small
+              >THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+              EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+              MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+              NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT
+              HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
+              WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+              OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
+              DEALINGS IN THE SOFTWARE.</small
+            >
+          </p>
+        </details>
+
         <h3 class="notoc">
           <b>Edge case:</b> raw text nodes in disclosure widgets
         </h3>
@@ -3954,9 +4038,9 @@ int main()
         <h3 class="notoc"><b>Edge case:</b> headings in disclosure widgets</h3>
 
         <p>
-          Oatcake makes sure that headings don't have too much vertical space
-          before them when they're used to start the hidden contents of a
-          disclosure widget:
+          Like it does with block quotes, Oatcake also makes sure that headings
+          don't have too much vertical space before them when they're used to
+          start the hidden contents of a disclosure widget:
         </p>
 
         <details>
@@ -3982,13 +4066,6 @@ int main()
           <h3 class="noanchor"><code>&lt;h3&gt;</code> heading</h3>
 
           <p>Sed sit amet velit mattis, ultricies nisi ut, lobortis lacus.</p>
-
-          <h4 class="noanchor"><code>&lt;h4&gt;</code> heading</h4>
-
-          <p>
-            Aliquam luctus elit a urna molestie, eget fermentum magna vehicula.
-            Fusce sit amet orci et arcu fringilla pulvinar a ac nulla.
-          </p>
         </details>
 
         <details>
@@ -4006,15 +4083,6 @@ int main()
             <code>&lt;h3&gt;</code>
           </summary>
           <h3 class="noanchor"><code>&lt;h3&gt;</code> heading</h3>
-          <p>Here are the details&hellip;</p>
-        </details>
-
-        <details>
-          <summary>
-            A <code>&lt;details&gt;</code> starting with an
-            <code>&lt;h4&gt;</code>
-          </summary>
-          <h4 class="noanchor"><code>&lt;h4&gt;</code> heading</h4>
           <p>Here are the details&hellip;</p>
         </details>
 
@@ -4054,33 +4122,6 @@ int main()
           </summary>
           <p>These are the hidden details.</p>
         </details>
-        <details>
-          <summary>
-            <h4 class="noanchor">
-              This is an <code>&lt;h4&gt;</code> heading in a
-              <code>&lt;summary&gt;</code>
-            </h4>
-          </summary>
-          <p>These are the hidden details.</p>
-        </details>
-        <details>
-          <summary>
-            <h5 class="noanchor">
-              This is an <code>&lt;h5&gt;</code> heading in a
-              <code>&lt;summary&gt;</code>
-            </h5>
-          </summary>
-          <p>These are the hidden details.</p>
-        </details>
-        <details>
-          <summary>
-            <h6 class="noanchor">
-              This is an <code>&lt;h6&gt;</code> heading in a
-              <code>&lt;summary&gt;</code>
-            </h6>
-          </summary>
-          <p>These are the hidden details.</p>
-        </details>
 
         <p>
           This also works if the hidden details is just a raw text node (i.e.
@@ -4114,33 +4155,7 @@ int main()
           </summary>
           This is a raw text node.
         </details>
-        <details>
-          <summary>
-            <h4 class="noanchor">
-              This is an <code>&lt;h4&gt;</code> heading in a
-              <code>&lt;summary&gt;</code>
-            </h4>
-          </summary>
-          This is a raw text node.
-        </details>
-        <details>
-          <summary>
-            <h5 class="noanchor">
-              This is an <code>&lt;h5&gt;</code> heading in a
-              <code>&lt;summary&gt;</code>
-            </h5>
-          </summary>
-          This is a raw text node.
-        </details>
-        <details>
-          <summary>
-            <h6 class="noanchor">
-              This is an <code>&lt;h6&gt;</code> heading in a
-              <code>&lt;summary&gt;</code>
-            </h6>
-          </summary>
-          This is a raw text node.
-        </details>
+
         <h3 class="notoc">
           <b>Edge case:</b> disclosure widgets with no
           <code>&lt;summary&gt;</code>
@@ -4425,13 +4440,6 @@ int main()
           <p>
             Phasellus vehicula risus mauris, sagittis commodo nisi vulputate eu.
           </p>
-
-          <h4 class="noanchor">An <code>&lt;h4&gt;</code> in an aside</h4>
-
-          <p>
-            Phasellus id diam turpis. Donec in enim suscipit, aliquet turpis
-            nec, vulputate nisi.
-          </p>
         </aside>
 
         <aside>
@@ -4442,11 +4450,6 @@ int main()
         <aside>
           <h3 class="noanchor">An <code>&lt;h3&gt;</code> in an aside</h3>
           <p>This is the body of the aside.</p>
-        </aside>
-
-        <aside>
-          <h4 class="noanchor">An <code>&lt;h4&gt;</code> in an aside</h4>
-          <p>This is the body of the aside</p>
         </aside>
 
         <h3 class="notoc">More test cases</h3>
@@ -4775,6 +4778,37 @@ end tell</code></pre>
       });
     </script>
     <script>
+      /*
+      An image or video's height will upset the vertical rhythm unless it's an
+      even multiple of Oatcake's line height of 24px.
+
+      Correcting this isn't as simple as resizing the image or video file: on
+      smaller displays browsers will shrink an image or video's width **and
+      height** to fit it into the available screen width while maintaining
+      its aspect ratio, so the element's height will no longer be a multiple
+      of 24px.
+
+      If you force the element's width and height with CSS then it'll overflow
+      the screen width on smaller screens (since the browser can no longer
+      shrink the element) and cause a horizontal scrollbar.
+
+      If you force just the height and allow the width to change then the
+      browser will horizontally squash the video (changing its aspect ratio) on
+      smaller screens.
+
+      This bit of JavaScript keeps the heights of images and videos snapped
+      to the vertical rhythm while maintaining their original aspect ratio,
+      regardless of the original file size and even as the browser resizes the
+      window.
+
+      If you don't want an _iframe_ to upset the vertical rhythm you can just
+      use HTML or CSS to make its height a multiple of 24px. You can do this
+      with an HTML attribute like `height="168"` or with some inline CSS:
+      `style="height:168px;"`. Unlike with images and videos, browsers don't
+      shrink the heights of iframes to maintain the element's aspect ratio
+      when shrinking their widths to fit them onto a smaller screen, so the
+      JavaScript vertical rhythm fix isn't needed for iframes.
+      */
       function adjustMediaSizes() {
         let images = Array.prototype.slice.call(
           document.getElementsByTagName("img"),
