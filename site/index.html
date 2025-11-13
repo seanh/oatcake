@@ -1083,7 +1083,7 @@ separate. This is called "separation of concerns."</code></pre>
 
         <p>
           <code>&lt;strong&gt;</code> isn't a generic "bold" element (use CSS
-          for that: <code>font-weight: bold;</code>).
+          for that: <code>font-weight: bold</code>).
           <code>&lt;strong&gt;</code> is meant to be used to mark something as
           <strong>important</strong>. Examples from the HTML Standard and MDN:
         </p>
@@ -1104,16 +1104,6 @@ separate. This is called "separation of concerns."</code></pre>
           plenty of butter.
         </blockquote>
         <blockquote>
-          <strong>Warning.</strong> This dungeon is dangerous.
-          <strong>Avoid the ducks.</strong> Take any gold you find.
-          <strong
-            ><strong>Do not take any of the diamonds</strong>, they are
-            explosive and
-            <strong>will destroy anything within ten meters.</strong></strong
-          >
-          You have been warned.
-        </blockquote>
-        <blockquote>
           <p>Welcome to Remy, the reminder system.</p>
           <p>Your tasks for today:</p>
           <ul>
@@ -1124,6 +1114,25 @@ separate. This is called "separation of concerns."</code></pre>
             <li><p>Do the laundry.</p></li>
           </ul>
         </blockquote>
+        <blockquote>
+          <strong>Warning.</strong> This dungeon is dangerous.
+          <strong>Avoid the ducks.</strong> Take any gold you find.
+          <strong
+            ><strong>Do not take any of the diamonds</strong>, they are
+            explosive and
+            <strong>will destroy anything within ten meters.</strong></strong
+          >
+          You have been warned.
+        </blockquote>
+
+        <p>
+          As you can see in that last example: you can nest
+          <code>&lt;strong&gt;</code>'s to indicate increasing levels of
+          importance. Oatcake styles nested <code>&lt;strong&gt;</code>'s even
+          bolder:
+          <strong>bold and <strong>bolder</strong></strong>
+          (whether this is visible may depend on your browser and font).
+        </p>
 
         <h3 class="notoc" id="b">
           The <code>&lt;b&gt;</code> element: bring attention to
@@ -1149,7 +1158,7 @@ separate. This is called "separation of concerns."</code></pre>
 
         <p>
           To make something bold for purely stylistic (rather than utilitarian)
-          purposes use CSS (<code>font-weight: bold;</code>), for importance use
+          purposes use CSS (<code>font-weight: bold</code>), for importance use
           <code>&lt;strong&gt;</code>, for alternate voice or mood use
           <code>&lt;i&gt;</code>, if no other element applies then fall back to
           <code>&lt;b&gt;</code>.
@@ -1220,7 +1229,7 @@ separate. This is called "separation of concerns."</code></pre>
 
         <p>
           <code>&lt;em&gt;</code> isn't a generic "italics" element (use CSS for
-          that: <code>font-style: italic;</code>): <code>&lt;em&gt;</code> is
+          that: <code>font-style: italic</code>): <code>&lt;em&gt;</code> is
           meant to be used for
           <strong
             >stress emphasis that changes the meaning of the sentence</strong
@@ -1250,6 +1259,15 @@ separate. This is called "separation of concerns."</code></pre>
         <blockquote>
           <p><em>Cats are cute animals!</em></p>
         </blockquote>
+
+        <p>
+          As with <code>&lt;strong&gt;</code>, the standard says that nesting
+          <code>&lt;em&gt;</code>'s indicates increasing levels of stress.
+          Unlike with <code>&lt;strong&gt;</code>, nesting
+          <code>&lt;em&gt;</code>'s makes no visible difference (you can't make
+          text even more italic): <em>italic and <em>italicer</em></em
+          >.
+        </p>
 
         <h3 class="notoc" id="i">
           The <code>&lt;i&gt;</code> element: alternate voice
