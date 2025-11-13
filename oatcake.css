@@ -218,30 +218,18 @@
 
     /* Prevent line wrapping within certain elements. This does mean that if you
      * put really long text in one of these it will overflow. */
-    h1 b,
     h1 code,
     h1 samp,
-    h1 strong,
-    h2 b,
     h2 code,
     h2 samp,
-    h2 strong,
-    h3 b,
     h3 code,
     h3 samp,
-    h3 strong,
-    h4 b,
     h4 code,
     h4 samp,
-    h4 strong,
-    h5 b,
     h5 code,
     h5 samp,
-    h5 strong,
-    h6 b,
     h6 code,
     h6 samp,
-    h6 strong,
     kbd {
       white-space: nowrap;
     }
