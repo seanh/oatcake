@@ -5,7 +5,9 @@ on:
   workflow_dispatch:
 jobs:
   Minify:
-    - run: make minify
+    runs-on: ubuntu-latest
+    steps:
+      - run: make minify
   Deploy:
     uses: seanh/ghp-static/.github/workflows/static.yml@main
     with:
