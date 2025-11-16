@@ -4,6 +4,8 @@ on:
     branches: ["main"]
   workflow_dispatch:
 jobs:
+  Minify:
+    run: make minify
   Deploy:
     uses: seanh/ghp-static/.github/workflows/static.yml@main
     with:
