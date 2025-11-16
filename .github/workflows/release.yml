@@ -16,6 +16,10 @@ jobs:
           registry-url: "https://registry.npmjs.org"
       - name: Update npm
         run: npm install -g npm@latest
+      - name: Minify CSS
+        run: |
+          make minify
+          mv site/oatcake.min.css .
       - name: Publish package
         run: bin/release.sh "${{ github.event.release.tag_name }}"
         env:

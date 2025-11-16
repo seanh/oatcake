@@ -19,9 +19,4 @@ jobs:
       - name: Validate
         run: make validate
       - name: Check minification
-        run: |
-          make minify
-          if [[ -n "$(git status --porcelain oatcake.min.css)" ]]; then
-            echo "oatcake.min.css is out of date"
-            exit 1
-          fi
+        run: make minify
