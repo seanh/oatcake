@@ -13,13 +13,13 @@ help:
 	@echo "make help"
 	@echo "    Show this help message."
 
-.PHONY: dev
-dev:
-	python3 -m http.server --directory site 8001
-
 .PHONY: minify
 minify:
-	npx lightningcss-cli --minify oatcake.css --output-file oatcake.min.css
+	bin/minify.sh
+
+.PHONY: dev
+dev:
+	honcho start
 
 .PHONY: format
 format:
