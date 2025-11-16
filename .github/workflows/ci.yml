@@ -17,4 +17,4 @@ jobs:
       - name: Validate
         run: make validate
       - name: Check minification
-        run: make minify
+        run: make css

@@ -18,7 +18,7 @@ jobs:
         run: npm install -g npm@latest
       - name: Minify CSS
         run: |
-          make minify
+          make css
           mv site/oatcake.min.css .
       - name: Publish package
         run: bin/release.sh "${{ github.event.release.tag_name }}"
