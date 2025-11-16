@@ -1,18 +1,27 @@
-name: Deploy static files to GitHub Pages
+name: Deploy demo site
 on:
   push:
-    branches: ["main"]
+    branches: [$default-branch]
   workflow_dispatch:
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
 jobs:
-  Minify:
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v5
       - run: make minify
-  Deploy:
-    uses: seanh/ghp-static/.github/workflows/static.yml@main
-    with:
-      path: "site/"
-    permissions:
-      contents: read
-      pages: write
-      id-token: write
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v5
+        with:
+          path: "site"
+      - uses: actions/deploy-pages@v4
+        id: deployment
