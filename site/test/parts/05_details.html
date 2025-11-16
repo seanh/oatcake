@@ -1,5 +1,16 @@
 <h2>Disclosure widgets</h2>
 
+<h3>Nested disclosure widgets</h3>
+
+<details>
+  <summary>Outer widget</summary>
+  <p>Details&hellip;</p>
+  <details>
+    <summary>Inner widget</summary>
+    <p>Details&hellip;</p>
+  </details>
+</details>
+
 <h3>Headings in disclosure widgets</h3>
 
 <p>
@@ -220,4 +231,137 @@
     <figcaption>A bowl of oats</figcaption>
     <img src="../media/oats.jpg" alt="A bowl of oats" title="A bowl of oats" />
   </figure>
+</details>
+<h3 class="notoc"><b>Edge case:</b> headings in disclosure widget summaries</h3>
+
+<p>
+  You can also use headings as disclosure widget summaries. Here's a quick test:
+</p>
+
+<details>
+  <summary>
+    <h1 class="noanchor">
+      This is an <code>&lt;h1&gt;</code> heading in a
+      <code>&lt;summary&gt;</code>
+    </h1>
+  </summary>
+  <p>These are the hidden details.</p>
+</details>
+<details>
+  <summary>
+    <h2 class="noanchor">
+      This is an <code>&lt;h2&gt;</code> heading in a
+      <code>&lt;summary&gt;</code>
+    </h2>
+  </summary>
+  <p>These are the hidden details.</p>
+</details>
+<details>
+  <summary>
+    <h3 class="noanchor">
+      This is an <code>&lt;h3&gt;</code> heading in a
+      <code>&lt;summary&gt;</code>
+    </h3>
+  </summary>
+  <p>These are the hidden details.</p>
+</details>
+
+<p>
+  This also works if the hidden details is just a raw text node (i.e.
+  <em>not</em> wrapped in <code>&lt;p&gt;</code> or any other element):
+</p>
+
+<details>
+  <summary>
+    <h1 class="noanchor">
+      This is an <code>&lt;h1&gt;</code> heading in a
+      <code>&lt;summary&gt;</code>
+    </h1>
+  </summary>
+  This is a raw text node.
+</details>
+<details>
+  <summary>
+    <h2 class="noanchor">
+      This is an <code>&lt;h2&gt;</code> heading in a
+      <code>&lt;summary&gt;</code>
+    </h2>
+  </summary>
+  This is a raw text node.
+</details>
+<details>
+  <summary>
+    <h3 class="noanchor">
+      This is an <code>&lt;h3&gt;</code> heading in a
+      <code>&lt;summary&gt;</code>
+    </h3>
+  </summary>
+  This is a raw text node.
+</details>
+
+<h3 class="notoc">
+  <b>Edge case:</b> disclosure widgets with no
+  <code>&lt;summary&gt;</code>
+</h3>
+
+<p>
+  The HTML standard requires that a <code>&lt;details&gt;</code> must have a
+  <code>&lt;summary&gt;</code> as its first child. Nonetheless, you can use a
+  <code>&lt;details&gt;</code> without a <code>&lt;summary&gt;</code> and
+  browsers will render it, inserting the word <q>Details</q> in place of the
+  summary.
+</p>
+
+<p>
+  Oatcake makes disclosure widgets without
+  <code>&lt;summary&gt;</code>'s look as good as possible. This:
+</p>
+
+<pre><code>&lt;details&gt;
+  &lt;p&gt;This is a disclosure widget with no summary.&lt;/p&gt;
+&lt;/details&gt;</code></pre>
+
+<p>&hellip;renders like this:</p>
+
+<!-- [html-validate-disable-next element-required-content] -->
+<details><p>This is a disclosure widget with no summary.</p></details>
+
+<p>
+  You can be even lazier and omit the <code>&lt;p&gt;</code> as well. In this
+  case Oatcake does the best it can but it's not possible to get the vertical
+  spacing quite right. This:
+</p>
+
+<pre><code>&lt;details&gt;
+  This is a disclosure widget with no summary.
+&lt;/details&gt;</code></pre>
+
+<p>&hellip;renders like this:</p>
+
+<!-- [html-validate-disable-next element-required-content] -->
+<details>This is a disclosure widget with no summary.</details>
+
+<h3 class="notoc">
+  <b>Edge case:</b> <code>&lt;summary&gt;</code> not first child of
+  <code>&lt;details&gt;</code>
+</h3>
+<p>
+  It's also invalid to have a <code>&lt;summary&gt;</code> that isn't the first
+  child of the <code>&lt;details&gt;</code> but again browsers will render it.
+  Oatcake makes sure this works as well. This:
+</p>
+
+<pre><code>&lt;details&gt;
+  &lt;p&gt;Velocity: 12m/s&lt;/p&gt;
+  &lt;p&gt;Direction: North&lt;/p&gt;
+  <mark>&lt;summary&gt;Automated Status: Operational&lt;/summary&gt;</mark>
+&lt;/details&gt;</code></pre>
+
+<p>&hellip;renders like this:</p>
+
+<details>
+  <p>Velocity: 12m/s</p>
+  <p>Direction: North</p>
+  <!-- [html-validate-disable-next element-permitted-order] -->
+  <summary>Automated Status: Operational</summary>
 </details>
