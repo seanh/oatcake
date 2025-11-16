@@ -12,8 +12,6 @@ jobs:
         run: sudo apt-get install --yes hunspell
       - name: Check spelling
         run: bin/spellcheck.sh
-      - name: Install NPM dependencies
-        run: npm clean-install
       - name: Check formatting
         run: make checkformatting
       - name: Validate
