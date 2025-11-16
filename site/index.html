@@ -597,6 +597,31 @@
         and keyboard input: <kbd>Ctrl</kbd> + <kbd>c</kbd>.
       </p>
 
+      <p>
+        The inline element styles are chosen so that they can be combined in
+        many ways. For example you can combine two <code>&lt;strong&gt;</code>'s
+        to make <strong><strong>extra bold</strong></strong
+        >. You can also combine <strong><em>bold and italic</em></strong
+        >; code spans can be <code><em>italic</em></code
+        >, <code><strong>bold</strong></code
+        >, <code><s>struck-through</s></code> or
+        <code>high<mark>light</mark>ed</code>; links can be
+        <a href=""><em>italic</em></a
+        >, <a href=""><strong>bold</strong></a
+        >, <a href=""><s>struck-through</s></a> or
+        <a href=""><mark>highlighted</mark></a
+        >; even <code>&lt;kbd&gt;</code>'s can contain italics, highlights or
+        strikethroughs: <kbd><em>Ctrl</em> + <mark>Alt</mark> + <s>Del</s></kbd
+        >; you can put a <code><a href="">link</a> in a code span</code> or in a
+        <code>&lt;kbd&gt;</code>: <kbd><a href="">Super</a></kbd
+        >; small text can contain
+        <small
+          ><b>bold</b>, <i>italics</i>, <code>code</code>,
+          <mark>highlights</mark>, <a href="">links</a> and
+          <s>strikethroughs</s></small
+        >, etc.
+      </p>
+
       <details>
         <summary><b>Details:</b> inline elements</summary>
 
@@ -1775,141 +1800,6 @@ disagree with this mission.&lt;/p&gt;</code></pre>
             This is an example footnote. <a href="#backref1">↩</a>
           </li>
         </ol>
-
-        <h3 class="notoc">Combining inline elements</h3>
-
-        <p>
-          All sorts of combinations of inline elements also work. These break in
-          many themes. After all, who would take the time to test them all? ;)
-          Here's some examples:
-        </p>
-
-        <ul>
-          <li>
-            <em
-              >Emphasized text can contain <strong>bold</strong>,
-              <code>code</code> and <samp>sample output</samp>, subscripts<sub
-                >sub</sub
-              >
-              and superscripts<sup>sup</sup>, <u>underlines</u>,
-              <mark>highlights</mark>, <a href="https://example.com">links</a>,
-              and <s>strikethroughs</s>.</em
-            >
-          </li>
-          <li>
-            <strong
-              >Bold text can contain <em>italics</em>, <code>code</code> and
-              <samp>sample output</samp>, subscripts<sub>sub</sub> and
-              superscripts,<sup>sup</sup> <u>underlines</u>,
-              <mark>highlights</mark>,
-              <a href="https://example.com">links</a>
-              and <s>strikethroughs</s>.</strong
-            >
-          </li>
-          <li>
-            Code spans can contain <code><em>italics</em></code
-            >, <code><strong>bold</strong></code
-            >, <code>subscripts<sub>sub</sub></code> and
-            <code>superscripts,<sup>sup</sup></code>
-            <code><u>underlines</u></code
-            >, <code><mark>highlights</mark></code
-            >, <code><a href="https://example.com">links</a></code
-            >, and <code><s>strikethroughs</s></code
-            >.
-          </li>
-          <li>
-            Superscripts can contain italics,<sup><em>sup</em></sup> bold,<sup
-              ><strong>sup</strong></sup
-            >
-            code,<sup><code>sup</code></sup> underlines,<sup><u>sup</u></sup>
-            highlights,<sup><mark>sup</mark></sup> links<sup
-              ><a href="https://example.com">sup</a></sup
-            >
-            and strikethroughs.<sup><s>sup</s></sup>
-          </li>
-          <li>
-            Subscripts can contain italics,<sub><em>sub</em></sub> bold,<sub
-              ><strong>sub</strong></sub
-            >
-            code,<sub><code>sub</code></sub> underlines,<sub><u>sub</u></sub>
-            highlights,<sub><mark>sub</mark></sub> links<sub
-              ><a href="https://example.com">sub</a></sub
-            >
-            and strikethroughs.<sub><s>sub</s></sub>
-          </li>
-          <li>
-            <u
-              >Underlined text can contain <em>italics</em>,
-              <strong>bold</strong>, <code>code</code>, <mark>highlights</mark>,
-              <a href="https://example.com">links</a>, and
-              <s>strikethroughs</s>.</u
-            >
-          </li>
-          <li>
-            <mark
-              >Highlighted text can contain <em>italics</em>,
-              <strong>bold</strong>, <code>code</code>, subscripts<sub>sub</sub>
-              and superscripts,<sup>sup</sup> <u>underlines</u>,
-              <a href="https://example.com">links</a>, and
-              <s>strikethroughs</s>.</mark
-            >
-          </li>
-          <li>
-            <a href="https://example.com"
-              >Links can contain <em>italics</em>, <strong>bold</strong>,
-              <code>code</code>, <mark>highlights</mark>, and
-              <s>strikethroughs</s>.</a
-            >
-          </li>
-          <li>
-            <s
-              >Struck-through text can contain <strong>bold</strong>,
-              <code>code</code>, subscripts<sub>sub</sub> and superscripts,<sup
-                >sup</sup
-              >
-              <u>underlines</u>, <mark>highlights</mark>, and
-              <a href="https://example.com">links</a>.</s
-            >
-          </li>
-          <li>
-            Keyboard input can contain
-            <kbd><em>italics</em></kbd
-            >, <kbd><strong>bold</strong></kbd
-            >, <kbd>subscripts<sub>sub</sub></kbd> and
-            <kbd>superscripts,<sup>sup</sup></kbd> <kbd><u>underlines</u></kbd
-            >, <kbd><mark>highlights</mark></kbd
-            >, <kbd><a href="https://example.com">links</a></kbd
-            >, and <kbd><s>strikethroughs</s></kbd
-            >.
-          </li>
-          <li>
-            <small
-              >Small text can contain <strong>bold</strong>, <em>italics</em>,
-              <code>code</code> and <samp>sample output</samp>, subscripts<sub
-                >sub</sub
-              >
-              and superscripts,<sup>sup</sup> <u>underlines</u>,
-              <mark>highlights</mark>, <a href="https://example.com">links</a>,
-              and <s>strikethroughs</s>.</small
-            >
-          </li>
-          <li>
-            <p>
-              Many combinations of more than two elements also work. For
-              example, here's a small text, bold, italic, highlighted,
-              struck-through link:
-              <small
-                ><strong
-                  ><em
-                    ><s
-                      ><a href="https://example.com"><mark>foobar</mark></a></s
-                    ></em
-                  ></strong
-                ></small
-              >.
-            </p>
-          </li>
-        </ul>
       </details>
 
       <h2 id="headings">Headings</h2>
@@ -2164,84 +2054,27 @@ disagree with this mission.&lt;/p&gt;</code></pre>
         </h3>
 
         <p>
-          <code>&lt;code&gt;</code> elements in headings get a monospaced font
-          but this can be quite subtle so Oatcake also surrounds the code in
-          backticks:
+          <code>&lt;code&gt;</code> and <code>&lt;samp&gt;</code> elements in
+          headings get a monospaced font but this can be quite subtle so Oatcake
+          also surrounds the code in backticks:
         </p>
 
         <div class="example">
           <h1 class="noanchor">
-            This is an <code>&lt;h1&gt;</code> heading with <code>code</code> in
-            it
+            An &lt;h1&gt; with <code>code</code> and <samp>sample output</samp>
           </h1>
           <h2 class="noanchor">
-            This is an <code>&lt;h2&gt;</code> heading with <code>code</code> in
-            it
+            An &lt;h2&gt; with <code>code</code> and <samp>sample output</samp>
           </h2>
           <h3 class="noanchor">
-            This is an <code>&lt;h3&gt;</code> heading with <code>code</code> in
-            it
+            An &lt;h3&gt; with <code>code</code> and <samp>sample output</samp>
           </h3>
-          <h4 class="noanchor">
-            This is an <code>&lt;h4&gt;</code> heading with <code>code</code> in
-            it
-          </h4>
-          <h5 class="noanchor">
-            This is an <code>&lt;h5&gt;</code> heading with <code>code</code> in
-            it
-          </h5>
-          <h6 class="noanchor">
-            This is an <code>&lt;h6&gt;</code> heading with <code>code</code> in
-            it
-          </h6>
         </div>
 
         <p>
           Oatcake also prevents line-wrapping within a
           <code>&lt;code&gt;</code> in a heading: it looks bad.
         </p>
-
-        <p>
-          This also works with sample output (the
-          <code>&lt;samp&gt;</code> element):
-        </p>
-
-        <div class="example">
-          <h1 class="noanchor">
-            A heading with <samp>sample output</samp> in it
-          </h1>
-          <h2 class="noanchor">
-            A heading with <samp>sample output</samp> in it
-          </h2>
-          <h3 class="noanchor">
-            A heading with <samp>sample output</samp> in it
-          </h3>
-          <h4 class="noanchor">
-            A heading with <samp>sample output</samp> in it
-          </h4>
-          <h5 class="noanchor">
-            A heading with <samp>sample output</samp> in it
-          </h5>
-          <h6 class="noanchor">
-            A heading with <samp>sample output</samp> in it
-          </h6>
-        </div>
-
-        <p>
-          This also works well when the <code>&lt;code&gt;</code> is at the
-          beginning or end of the heading or if a heading is entirely code (some
-          common ways of styling <code>&lt;code&gt;</code> would break these):
-        </p>
-        <div class="example">
-          <h4 class="noanchor">
-            <code>&lt;code&gt;</code> at the start of a heading
-          </h4>
-          <h4 class="noanchor">
-            A heading with <code>&lt;code4&gt;</code> at the end:
-            <code>&lt;code4&gt;</code>
-          </h4>
-          <h4 class="noanchor"><code>An all &lt;code&gt; heading</code></h4>
-        </div>
 
         <h3 class="notoc"><b>Edge case:</b> headings that wrap</h3>
 
@@ -2287,46 +2120,46 @@ disagree with this mission.&lt;/p&gt;</code></pre>
 
         <div class="example">
           <h1 class="noanchor" style="padding-top: 0">
-            This is a long multi-line <code>&lt;h1&gt;</code> heading containing
-            <em>emphasis</em>, <code>&lt;code tags&gt;</code>, some
-            <samp>sample output</samp>, a couple of <code>&lt;kbd&gt;</code>'s:
+            This is a long multi-line &lt;h1&gt; heading containing
+            <em>emphasis</em>, <code>&lt;code&gt;</code>, a couple of
+            <code>&lt;kbd&gt;</code>'s:
             <kbd>Ctrl</kbd>&nbsp;+&nbsp;<kbd>c</kbd>, <u>underlined text</u>,
             <mark>highlighted text</mark>, <del>struck-through text</del>,
             <a href="">a link</a>, <strong><a href="">a bold link</a></strong
             >,
             <a href=""><code>a code link</code></a>
             and even<sup>superscript</sup> and<sub>subscript</sub> and
-            <small>small text</small> in it
+            <small>small text</small>
           </h1>
         </div>
 
         <div class="example">
           <h2 class="noanchor">
-            This is a long multi-line <code>&lt;h2&gt;</code> heading containing
-            <em>emphasis</em>, <code>&lt;code tags&gt;</code>, some
-            <samp>sample output</samp>, a couple of <code>&lt;kbd&gt;</code>'s:
+            This is a long multi-line &lt;h2&gt; heading containing
+            <em>emphasis</em>, <code>&lt;code&gt;</code>, a couple of
+            <code>&lt;kbd&gt;</code>'s:
             <kbd>Ctrl</kbd>&nbsp;+&nbsp;<kbd>c</kbd>, <u>underlined text</u>,
             <mark>highlighted text</mark>, <del>struck-through text</del>,
             <a href="">a link</a>, <strong><a href="">a bold link</a></strong
             >,
             <a href=""><code>a code link</code></a>
             and even<sup>superscript</sup> and<sub>subscript</sub> and
-            <small>small text</small> in it
+            <small>small text</small>
           </h2>
         </div>
 
         <div class="example">
           <h3 class="noanchor">
-            This is a long multi-line <code>&lt;h3&gt;</code> heading containing
-            <em>emphasis</em>, <code>&lt;code tags&gt;</code>, some
-            <samp>sample output</samp>, a couple of <code>&lt;kbd&gt;</code>'s:
+            This is a long multi-line &lt;h3&gt; heading containing
+            <em>emphasis</em>, <code>&lt;code&gt;</code>, a couple of
+            <code>&lt;kbd&gt;</code>'s:
             <kbd>Ctrl</kbd>&nbsp;+&nbsp;<kbd>c</kbd>, <u>underlined text</u>,
             <mark>highlighted text</mark>, <del>struck-through text</del>,
             <a href="">a link</a>, <strong><a href="">a bold link</a></strong
             >,
             <a href=""><code>a code link</code></a>
             and even<sup>superscript</sup> and<sub>subscript</sub> and
-            <small>small text</small> in it
+            <small>small text</small>
           </h3>
         </div>
       </details>
@@ -2476,12 +2309,12 @@ disagree with this mission.&lt;/p&gt;</code></pre>
           <h1 class="noanchor">Aenean lacinia porta ullamcorper</h1>
           <p>
             This is a subheading containing
-            <em>emphasis</em>, <code>&lt;code tags&gt;</code>, some
-            <samp>sample output</samp>, a couple of <code>&lt;kbd&gt;</code>'s:
+            <em>italics</em>, <strong>bold</strong>, <code>&lt;code&gt;</code>,
+            a couple of <code>&lt;kbd&gt;</code>'s:
             <kbd>Ctrl</kbd>&nbsp;+&nbsp;<kbd>c</kbd>, <u>underlined text</u>,
             <mark>highlighted text</mark>, <del>struck-through text</del>,
             <a href="">a link</a>, <a href=""><code>a code link</code></a
-            >. and even<sup>superscript</sup> and<sub>subscript</sub> and
+            >, and even<sup>superscript</sup> and<sub>subscript</sub> and
             <small>small text</small>.
           </p>
         </hgroup>
@@ -2917,9 +2750,22 @@ disagree with this mission.&lt;/p&gt;</code></pre>
 
       <blockquote>
         Ut fermentum turpis quis ligula sagittis, a fringilla orci ultrices. Nam
-        fringilla erat ac bibendum tristique. Morbi nec maximus augue. Donec in
-        justo semper, convallis ante et, laoreet nibh.
+        fringilla erat ac bibendum tristique. Morbi nec maximus augue.
       </blockquote>
+
+      <p>
+        You can optionally wrap the contents of a
+        <code>&lt;blockquote&gt;</code> in a <code>&lt;p&gt;</code>, it looks
+        the same:
+      </p>
+
+      <blockquote>
+        <p>
+          Ut fermentum turpis quis ligula sagittis, a fringilla orci ultrices.
+          Nam fringilla erat ac bibendum tristique. Morbi nec maximus augue.
+        </p>
+      </blockquote>
+
       <details>
         <summary><b>Details:</b> block quotes</summary>
 
@@ -2937,8 +2783,7 @@ disagree with this mission.&lt;/p&gt;</code></pre>
           recognizable style for block quotes, it makes block quotes distinct
           from any other element in Oatcake, it works well with nested block
           quotes (see below), and the left border makes it extra clear where the
-          block quote starts and ends which is helpful with long block quotes
-          (see below).
+          block quote starts and ends which is helpful with long block quotes.
         </p>
 
         <h3 class="notoc">
@@ -3026,21 +2871,6 @@ disagree with this mission.&lt;/p&gt;</code></pre>
 
         <pre><code>&lt;blockquote <mark>cite="https://quotes.example.org/s/sonnet130.html"</mark>&gt;</code></pre>
 
-        <h3 class="notoc"><b>Edge case:</b> paragraphs in block quotes</h3>
-
-        <p>
-          You can optionally wrap the contents of a
-          <code>&lt;blockquote&gt;</code> in a <code>&lt;p&gt;</code>, it looks
-          the same:
-        </p>
-
-        <blockquote>
-          <p>
-            Ut fermentum turpis quis ligula sagittis, a fringilla orci ultrices.
-            Nam fringilla erat ac bibendum tristique. Morbi nec maximus augue.
-          </p>
-        </blockquote>
-
         <h3 class="notoc"><b>Edge case:</b> nested block quotes</h3>
 
         <p>
@@ -3074,95 +2904,6 @@ disagree with this mission.&lt;/p&gt;</code></pre>
             Nam commodo felis at tortor tempor, sit amet vestibulum lorem
             gravida. Suspendisse dignissim felis velit.
           </p>
-        </blockquote>
-
-        <h3 class="notoc"><b>Edge case:</b> block elements in block quotes</h3>
-
-        <p>
-          Block quotes can contain other block-level elements: multiple
-          paragraphs, lists, code blocks, and even images. This is where the
-          left border becomes particularly useful to make it clear where the
-          block quote starts and ends:
-        </p>
-
-        <blockquote>
-          <p>
-            Aliquam a faucibus dui. Donec a diam a odio dapibus varius. Nulla
-            sagittis in lacus in dictum. Aliquam eu purus non risus facilisis
-            dapibus.
-          </p>
-
-          <p>
-            Praesent porttitor cursus diam, at porta massa suscipit nec. Duis eu
-            leo ut justo vestibulum pellentesque eget quis magna.
-          </p>
-
-          <ul>
-            <li>First list item</li>
-            <li>Second list item</li>
-          </ul>
-
-          <img
-            src="media/oats.jpg"
-            alt="A bowl of oats"
-            title="A bowl of oats"
-          />
-
-          <pre><code>code block
-</code></pre>
-        </blockquote>
-
-        <h3 class="notoc"><b>Edge case:</b> headings in block quotes</h3>
-
-        <p>
-          Sometimes a quoted section contains a heading. A lot of themes get
-          this wrong, especially if the heading starts the block quote, often by
-          introducing a weirdly large vertical space at the top of the block
-          quote. Oatcake styles headings that begin block quotes without the
-          preceding vertical space that the heading would normally have:
-        </p>
-
-        <blockquote>
-          <h1 class="noanchor">
-            An <code>&lt;h1&gt;</code> at the start of a
-            <code>&lt;blockquote&gt;</code>
-          </h1>
-
-          <p>
-            Pellentesque sit amet leo nec tortor condimentum vestibulum quis ut
-            sapien. Nulla a volutpat orci. Phasellus ac odio commodo, commodo
-            erat ac, porta turpis.
-          </p>
-
-          <h2 class="noanchor">
-            An <code>&lt;h2&gt;</code> within a <code>&lt;blockquote&gt;</code>
-          </h2>
-
-          <p>Phasellus ac odio commodo, commodo erat ac, porta turpis.</p>
-
-          <h3 class="noanchor">
-            An <code>&lt;h3&gt;</code> within a <code>&lt;blockquote&gt;</code>
-          </h3>
-
-          <p>Quisque auctor gravida massa sed tincidunt.</p>
-        </blockquote>
-
-        <blockquote>
-          <h2 class="noanchor">
-            An <code>&lt;h2&gt;</code> at the start of a
-            <code>&lt;blockquote&gt;</code>
-          </h2>
-
-          <p>Phasellus mollis turpis ac.</p>
-        </blockquote>
-
-        <blockquote>
-          <h3 class="noanchor">
-            An <code>&lt;h3&gt;</code> at the start of a
-            <code>&lt;blockquote&gt;</code>
-          </h3>
-
-          <p>Phasellus mollis turpis ac.</p>
         </blockquote>
       </details>
 
@@ -3232,25 +2973,6 @@ disagree with this mission.&lt;/p&gt;</code></pre>
         <pre><code>img {
   border-radius: 0;
 }</code></pre>
-
-        <h3 class="notoc"><b>Edge case:</b> paragraph images</h3>
-
-        <p>
-          It looks the same if your <code>&lt;img&gt;</code> is wrapped in a
-          <code>&lt;p&gt;</code>. This:
-        </p>
-
-        <pre><code>&lt;p&gt;&lt;img src="media/oats.jpg" /&gt;&lt;/p&gt;</code></pre>
-
-        <p>renders like this:</p>
-
-        <p>
-          <img
-            src="media/oats.jpg"
-            alt="A bowl of oats"
-            title="A bowl of oats"
-          />
-        </p>
       </details>
 
       <h2 id="video">Videos</h2>
@@ -3598,11 +3320,9 @@ interface API declaration.&lt;/p&gt;
           </blockquote>
         </figure>
 
-        <h3 class="notoc"><b>Edge case:</b> multi-line captions</h3>
+        <h3 class="notoc"><b>Edge case:</b> inline elements in captions</h3>
 
-        <p>
-          Multi-line captions work fine, as do inline elements within captions:
-        </p>
+        <p>All the inline elements work in captions:</p>
 
         <figure>
           <img
@@ -3613,29 +3333,12 @@ interface API declaration.&lt;/p&gt;
           <figcaption>
             <strong>Laboris</strong> nisi ut aliquip ex ea commodo
             <em>consequat</em>. Duis aute irure dolor in reprehenderit in
-            voluptate velit <code>esse cillum dolore</code> eu fugiat
-            <samp>nulla pariatur</samp>.
+            voluptate velit <code>esse cillum dolore</code> eu fugiat nulla
+            pariatur.
             <a href="https://example.com">Excepteur sint occaecat</a> cupidatat
             <u>non proident</u>, <em>sunt in culpa</em> qui <del>officia</del>
             <mark>deserunt mollit anim id est laborum.</mark>
           </figcaption>
-        </figure>
-
-        <h3 class="notoc">More test cases</h3>
-        <figure>
-          <video
-            controls
-            muted
-            playsinline
-            src="media/train.mp4"
-            poster="media/train.png"
-          ></video>
-          <figcaption>This is a figure containing a video</figcaption>
-        </figure>
-
-        <figure>
-          <audio controls src="media/apollo11.mp3"></audio>
-          <figcaption>This is a figure containing an audio player</figcaption>
         </figure>
       </details>
 
@@ -3852,45 +3555,6 @@ int main()
         </p>
 
         <h3 class="notoc">
-          <b>Tip:</b> you can use multiple block elements in one disclosure
-          widget
-        </h3>
-
-        <p>
-          Disclosure widgets can be as long as you want and contain multiple
-          elements:
-          <code>&lt;p&gt;</code>'s, <code>&lt;blockquotes&gt;</code>'s, lists,
-          code blocks, images, whatever:
-        </p>
-
-        <details>
-          <summary>A disclosure widget containing various elements.</summary>
-
-          <p>
-            Nunc eu consequat velit. Vivamus ipsum elit, lobortis in nulla ut,
-            luctus condimentum felis.
-          </p>
-
-          <blockquote>
-            Quisque bibendum suscipit metus, eget vehicula est facilisis eu.
-            Vestibulum pellentesque tellus eget tristique tincidunt. Ut iaculis
-            ipsum at felis volutpat, sit amet semper orci maximus. Donec non
-            gravida nibh. Mauris consectetur dapibus arcu ac aliquam. Etiam
-            egestas suscipit nisi, vitae vestibulum elit viverra vitae.
-          </blockquote>
-
-          <p>
-            Suspendisse sodales pharetra ultricies. Mauris tempus nec turpis ac
-            blandit.
-          </p>
-
-          <p>
-            Vivamus vitae blandit neque. Mauris quis consequat metus. Nunc vitae
-            massa egestas dui egestas malesuada.
-          </p>
-        </details>
-
-        <h3 class="notoc">
           <b>Tip:</b> pre-opened disclosure widgets with the
           <code>open</code> attribute
         </h3>
@@ -3954,54 +3618,6 @@ int main()
           These are the third details.
         </details>
 
-        <h3 class="notoc"><b>Tip:</b> small text in disclosure widgets</h3>
-
-        <p>
-          Small text can work well in disclosure widgets&mdash;wrap the contents
-          of a <code>&lt;details&gt;</code> element in
-          <code>&lt;small&gt;</code>:
-        </p>
-
-        <details>
-          <summary>License</summary>
-          <p><small>MIT License</small></p>
-
-          <p><small>Copyright (c) 2023 Sean Hammond</small></p>
-
-          <p>
-            <small
-              >Permission is hereby granted, free of charge, to any person
-              obtaining a copy of this software and associated documentation
-              files (the "Software"), to deal in the Software without
-              restriction, including without limitation the rights to use, copy,
-              modify, merge, publish, distribute, sublicense, and/or sell copies
-              of the Software, and to permit persons to whom the Software is
-              furnished to do so, subject to the following conditions:</small
-            >
-          </p>
-
-          <p>
-            <small
-              >The above copyright notice and this permission notice shall be
-              included in all copies or substantial portions of the
-              Software.</small
-            >
-          </p>
-
-          <p>
-            <small
-              >THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
-              EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
-              MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
-              NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT
-              HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
-              WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-              OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
-              DEALINGS IN THE SOFTWARE.</small
-            >
-          </p>
-        </details>
-
         <h3 class="notoc">
           <b>Edge case:</b> raw text nodes in disclosure widgets
         </h3>
@@ -4021,206 +3637,6 @@ int main()
         <details>
           <summary>Material</summary>
           The picture frame is made of solid oak wood.
-        </details>
-
-        <h3 class="notoc"><b>Edge case:</b> nested disclosure widgets</h3>
-        <p>You can nest disclosure widgets:</p>
-
-        <details>
-          <summary>Outer widget</summary>
-          <p>Details&hellip;</p>
-          <details>
-            <summary>Inner widget</summary>
-            <p>Details&hellip;</p>
-          </details>
-        </details>
-
-        <h3 class="notoc"><b>Edge case:</b> headings in disclosure widgets</h3>
-
-        <p>
-          Like it does with block quotes, Oatcake also makes sure that headings
-          don't have too much vertical space before them when they're used to
-          start the hidden contents of a disclosure widget:
-        </p>
-
-        <details>
-          <summary>
-            A <code>&lt;details&gt;</code> starting with an
-            <code>&lt;h1&gt;</code>
-          </summary>
-          <h1 class="noanchor"><code>&lt;h1&gt;</code> heading</h1>
-
-          <p>
-            Nam sodales magna nec leo blandit convallis. Vivamus interdum leo
-            nec ligula laoreet elementum. Phasellus ut odio tortor. Nam semper
-            tincidunt varius.
-          </p>
-
-          <h2 class="noanchor"><code>&lt;h2&gt;</code> heading</h2>
-
-          <p>
-            Nullam quis arcu id erat suscipit tincidunt. Vestibulum viverra
-            laoreet elit ac tempor.
-          </p>
-
-          <h3 class="noanchor"><code>&lt;h3&gt;</code> heading</h3>
-
-          <p>Sed sit amet velit mattis, ultricies nisi ut, lobortis lacus.</p>
-        </details>
-
-        <details>
-          <summary>
-            A <code>&lt;details&gt;</code> starting with an
-            <code>&lt;h2&gt;</code>
-          </summary>
-          <h2 class="noanchor"><code>&lt;h2&gt;</code> heading</h2>
-          <p>Here are the details&hellip;</p>
-        </details>
-
-        <details>
-          <summary>
-            A <code>&lt;details&gt;</code> starting with an
-            <code>&lt;h3&gt;</code>
-          </summary>
-          <h3 class="noanchor"><code>&lt;h3&gt;</code> heading</h3>
-          <p>Here are the details&hellip;</p>
-        </details>
-
-        <h3 class="notoc">
-          <b>Edge case:</b> headings in disclosure widget summaries
-        </h3>
-
-        <p>
-          You can also use headings as disclosure widget summaries. Here's a
-          quick test:
-        </p>
-
-        <details>
-          <summary>
-            <h1 class="noanchor">
-              This is an <code>&lt;h1&gt;</code> heading in a
-              <code>&lt;summary&gt;</code>
-            </h1>
-          </summary>
-          <p>These are the hidden details.</p>
-        </details>
-        <details>
-          <summary>
-            <h2 class="noanchor">
-              This is an <code>&lt;h2&gt;</code> heading in a
-              <code>&lt;summary&gt;</code>
-            </h2>
-          </summary>
-          <p>These are the hidden details.</p>
-        </details>
-        <details>
-          <summary>
-            <h3 class="noanchor">
-              This is an <code>&lt;h3&gt;</code> heading in a
-              <code>&lt;summary&gt;</code>
-            </h3>
-          </summary>
-          <p>These are the hidden details.</p>
-        </details>
-
-        <p>
-          This also works if the hidden details is just a raw text node (i.e.
-          <em>not</em> wrapped in <code>&lt;p&gt;</code> or any other element):
-        </p>
-
-        <details>
-          <summary>
-            <h1 class="noanchor">
-              This is an <code>&lt;h1&gt;</code> heading in a
-              <code>&lt;summary&gt;</code>
-            </h1>
-          </summary>
-          This is a raw text node.
-        </details>
-        <details>
-          <summary>
-            <h2 class="noanchor">
-              This is an <code>&lt;h2&gt;</code> heading in a
-              <code>&lt;summary&gt;</code>
-            </h2>
-          </summary>
-          This is a raw text node.
-        </details>
-        <details>
-          <summary>
-            <h3 class="noanchor">
-              This is an <code>&lt;h3&gt;</code> heading in a
-              <code>&lt;summary&gt;</code>
-            </h3>
-          </summary>
-          This is a raw text node.
-        </details>
-
-        <h3 class="notoc">
-          <b>Edge case:</b> disclosure widgets with no
-          <code>&lt;summary&gt;</code>
-        </h3>
-
-        <p>
-          The HTML standard requires that a <code>&lt;details&gt;</code> must
-          have a <code>&lt;summary&gt;</code> as its first child. Nonetheless,
-          you can use a <code>&lt;details&gt;</code> without a
-          <code>&lt;summary&gt;</code> and browsers will render it, inserting
-          the word <q>Details</q> in place of the summary.
-        </p>
-
-        <p>
-          Oatcake makes disclosure widgets without
-          <code>&lt;summary&gt;</code>'s look as good as possible. This:
-        </p>
-
-        <pre><code>&lt;details&gt;
-  &lt;p&gt;This is a disclosure widget with no summary.&lt;/p&gt;
-&lt;/details&gt;</code></pre>
-
-        <p>&hellip;renders like this:</p>
-
-        <!-- [html-validate-disable-next element-required-content] -->
-        <details><p>This is a disclosure widget with no summary.</p></details>
-
-        <p>
-          You can be even lazier and omit the <code>&lt;p&gt;</code> as well. In
-          this case Oatcake does the best it can but it's not possible to get
-          the vertical spacing quite right. This:
-        </p>
-
-        <pre><code>&lt;details&gt;
-  This is a disclosure widget with no summary.
-&lt;/details&gt;</code></pre>
-
-        <p>&hellip;renders like this:</p>
-
-        <!-- [html-validate-disable-next element-required-content] -->
-        <details>This is a disclosure widget with no summary.</details>
-
-        <h3 class="notoc">
-          <b>Edge case:</b> <code>&lt;summary&gt;</code> not first child of
-          <code>&lt;details&gt;</code>
-        </h3>
-        <p>
-          It's also invalid to have a <code>&lt;summary&gt;</code> that isn't
-          the first child of the <code>&lt;details&gt;</code> but again browsers
-          will render it. Oatcake makes sure this works as well. This:
-        </p>
-
-        <pre><code>&lt;details&gt;
-  &lt;p&gt;Velocity: 12m/s&lt;/p&gt;
-  &lt;p&gt;Direction: North&lt;/p&gt;
-  <mark>&lt;summary&gt;Automated Status: Operational&lt;/summary&gt;</mark>
-&lt;/details&gt;</code></pre>
-
-        <p>&hellip;renders like this:</p>
-
-        <details>
-          <p>Velocity: 12m/s</p>
-          <p>Direction: North</p>
-          <!-- [html-validate-disable-next element-permitted-order] -->
-          <summary>Automated Status: Operational</summary>
         </details>
       </details>
 
@@ -4377,6 +3793,27 @@ int main()
           beginning an aside with a label can help convey its semantics.
         </aside>
 
+        <h3 class="notoc">
+          <b>Tip:</b> you can use an <code>&lt;hr&gt;</code> to split an aside
+          into segments
+        </h3>
+
+        <aside>
+          <h3 class="noanchor">Tip</h3>
+
+          <p>
+            Sed porta at quam id lacinia. Pellentesque sem odio, dignissim et
+            ultrices at, pharetra id magna. Praesent auctor bibendum ante non
+            faucibus.
+          </p>
+
+          <hr />
+
+          <p>
+            Proin tortor libero, lobortis id nulla eget, laoreet malesuada arcu.
+          </p>
+        </aside>
+
         <h3 class="notoc"><b>Customization:</b> aside colors</h3>
 
         <p>
@@ -4412,162 +3849,6 @@ int main()
         <aside class="warning">
           <strong>Warning!</strong> Too many asides can overwhelm the reader.
         </aside>
-
-        <h3 class="notoc"><b>Edge case:</b> headings in asides</h3>
-
-        <p>
-          Like with block quotes and disclosure widgets, Oatcake also makes sure
-          that the vertical spacing is right for headings in asides:
-        </p>
-
-        <aside>
-          <h1 class="noanchor">An <code>&lt;h1&gt;</code> in an aside</h1>
-
-          <p>
-            Curabitur neque tortor, sollicitudin non tincidunt et, feugiat sit
-            amet quam.
-          </p>
-
-          <h2 class="noanchor">An <code>&lt;h2&gt;</code> in an aside</h2>
-
-          <p>
-            Aliquam erat volutpat. Curabitur fringilla arcu velit, non rutrum
-            massa dapibus sed.
-          </p>
-
-          <h3 class="noanchor">An <code>&lt;h3&gt;</code> in an aside</h3>
-
-          <p>
-            Phasellus vehicula risus mauris, sagittis commodo nisi vulputate eu.
-          </p>
-        </aside>
-
-        <aside>
-          <h2 class="noanchor">An <code>&lt;h2&gt;</code> in an aside</h2>
-          <p>This is the body of the aside.</p>
-        </aside>
-
-        <aside>
-          <h3 class="noanchor">An <code>&lt;h3&gt;</code> in an aside</h3>
-          <p>This is the body of the aside.</p>
-        </aside>
-
-        <h3 class="notoc">More test cases</h3>
-
-        <p>
-          You can put multiple paragraphs and other arbitrary content (headings,
-          block quotes, lists, code blocks, images&hellip;) in an aside. Here's
-          some examples:
-        </p>
-
-        <aside>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris
-            aliquam justo erat, sed consequat sem commodo nec. Aenean blandit
-            non lectus id rutrum.
-          </p>
-
-          <p>
-            Pellentesque non lacus vel quam lobortis tincidunt. In dignissim
-            arcu eu purus porta finibus. Quisque bibendum erat nec porttitor
-            tincidunt.
-          </p>
-
-          <p>
-            In egestas vel enim non interdum. Curabitur sed nisi scelerisque,
-            suscipit velit in, ornare velit. Praesent laoreet bibendum ipsum nec
-            elementum.
-          </p>
-        </aside>
-
-        <p>
-          You can use a <a href="#hr">horizontal rule</a> to split an aside into
-          segments:
-        </p>
-
-        <aside>
-          <h3 class="noanchor">Tip</h3>
-
-          <p>
-            Sed porta at quam id lacinia. Pellentesque sem odio, dignissim et
-            ultrices at, pharetra id magna. Praesent auctor bibendum ante non
-            faucibus.
-          </p>
-
-          <hr />
-
-          <p>
-            Proin tortor libero, lobortis id nulla eget, laoreet malesuada arcu.
-          </p>
-        </aside>
-
-        <aside>
-          <p>
-            You can put a block quote in an aside. All the inline elements also
-            work:
-          </p>
-
-          <blockquote>
-            <p>Duis efficitur justo semper mauris tempor:</p>
-            <ul>
-              <li>Eget hendrerit diam</li>
-              <li>
-                Nunc <mark>feugiat congue dictum</mark>,
-                <a href="">nullam auctor</a> in dui
-              </li>
-              <li><strong>a tempus nunc elementum</strong></li>
-              <li>
-                Pellentesque velit felis <code>bibendum</code> ac
-                <kbd>quis</kbd> euismod
-              </li>
-            </ul>
-          </blockquote>
-        </aside>
-
-        <aside>
-          <p>An image in an aside:</p>
-
-          <img
-            src="media/oats.jpg"
-            alt="A bowl of oats"
-            title="A bowl of oats"
-          />
-        </aside>
-
-        <aside>
-          <p>Of course videos also work:</p>
-
-          <video
-            controls
-            muted
-            playsinline
-            src="media/train.mp4"
-            poster="media/train.png"
-          ></video>
-        </aside>
-
-        <aside>
-          <p>And audio:</p>
-
-          <audio controls src="media/apollo11.mp3"></audio>
-        </aside>
-
-        <aside>
-          <p>You can even put code blocks in asides:</p>
-
-          <pre><code>tell application "Foo"
-    beep
-end tell</code></pre>
-        </aside>
-
-        <aside>
-          <p>Even disclosure widgets work in asides:</p>
-
-          <details>
-            <summary>This is the summary</summary>
-            <p>Here are the details&hellip;</p>
-          </details>
-        </aside>
       </details>
 
       <h2 id="table">Tables</h2>
@@ -4602,9 +3883,9 @@ end tell</code></pre>
 
       <footer>
         <strong>Bold</strong>, <em>italics</em>, <code>code</code>,
-        <samp>sample output</samp>, <u>underlines</u>, <mark>highlights</mark>,
-        <del>strikethroughs</del>, and <a href="https://example.com">links</a>,
-        abbreviations: <abbr title="HyperText Markup Language">HTML</abbr>,
+        <u>underlines</u>, <mark>highlights</mark>, <del>strikethroughs</del>,
+        and <a href="https://example.com">links</a>, abbreviations:
+        <abbr title="HyperText Markup Language">HTML</abbr>,
         <small>small text</small>, etc.
       </footer>
 
