@@ -185,7 +185,8 @@
       </hgroup>
 
       <p>
-        This page is styled with <strong>Oatcake</strong>, my universal
+        This page is styled with
+        <a href="https://github.com/seanh/oatcake">Oatcake</a>, my universal
         typography theme. Possibly the world's most deadpan stylesheet, Oatcake
         aims to look good without being distracting or drawing too much
         attention to itself. Plain but pretty.
@@ -193,26 +194,31 @@
 
       <ul>
         <li>
-          <strong>Just one little CSS file.</strong> ~2.5KB minified and
+          <strong>Just one little CSS file.</strong> &lt;2.5KB minified and
           compressed.
         </li>
         <li>
-          <strong>Styles HTML elements directly.</strong>
-          No CSS classes or JavaScript needed, you can style HTML straight from
-          Markdown. As a side-benefit, every component comes with a semantic
-          definition and usage advice from the HTML Standard and MDN.
+          <strong>Styles ordinary HTML elements directly.</strong>
+          No CSS classes or JavaScript, you can style HTML straight from
+          Markdown.
         </li>
         <li>
           <strong>Does lots with little.</strong>
-          Oatcake doesn't have loads of custom components but it styles many of
-          HTML's standard elements and does so flexibly enough that they can be
-          combined in creative ways.
+          Oatcake doesn't have dozens of custom components but it styles many
+          standard elements and flexibly enough that they can be combined in
+          creative ways.
         </li>
 
         <li>
           <strong>Handles all sorts of minutiae and edge cases.</strong>
-          Sweats details like nested lists and block quotes, stacked headings,
-          vertical rhythm, horizontal overflows, etc.
+          Sweats details like typographic rhythm, nested lists, and stacked
+          headings; prevents horizontal overflows; supports obscure elements
+          like
+          <code>&lt;samp&gt;</code>, <code>&lt;kbd&gt;</code>,
+          <code>&lt;hgroup&gt;</code>, <code>&lt;aside&gt;</code>,
+          <code>&lt;details&gt;</code> &amp; <code>&lt;summary&gt;</code>, and
+          <code>&lt;figure&gt;</code> &amp; <code>&lt;figcaption&gt;</code>;
+          etc.
         </li>
         <li>
           <strong>Use alone or as a base layer.</strong>
@@ -221,7 +227,7 @@
           <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/@layer"
             >CSS layer</a
           >
-          so your own rules will override Oatcake's regardless of specificity.
+          so your rules take precedence regardless of specificity.
         </li>
       </ul>
 
@@ -271,7 +277,7 @@
 
         <p>
           You can customize the fonts by setting some CSS variables in your own
-          custom stylesheet that follows <code>oatcake.min.css</code>:
+          custom stylesheet:
         </p>
 
         <pre><code>&lt;style&gt;
@@ -341,11 +347,10 @@
       <p>
         By default Oatcake uses black text on a white background, and the
         standard
-        <a href="https://example.com">bright blue links</a>. It chooses a
-        typical light-gray background and/or border for <code>code</code>,
-        sample output, preformatted text blocks, block quotes, disclosure
-        widgets and asides. A yellow background for <mark>highlights</mark>, and
-        a
+        <a href="https://example.com">bright blue links</a>. It sets a typical
+        light-gray background and/or border for <code>code</code>, sample
+        output, preformatted text blocks, block quotes, disclosure widgets and
+        asides. A yellow background for <mark>highlights</mark>, and a
         <span style="color: var(--ok-color-muted-fg)">muted text color</span>
         for figure captions and footers.
       </p>
@@ -375,8 +380,7 @@
 
         <p>
           As with the fonts, you can customize Oatcake's colors by setting some
-          CSS variables in your own custom stylesheet that follows
-          <code>oatcake.min.css</code>:
+          CSS variables in your own custom stylesheet:
         </p>
 
         <pre><code>&lt;style&gt;
@@ -413,6 +417,9 @@
           <dt><code>--ok-color-bg</code></dt>
           <dd>The primary background color.</dd>
 
+          <dt><code>--ok-color-fg</code></dt>
+          <dd>The primary foreground <code>color</code>.</dd>
+
           <dt><code>--ok-color-block-bg</code></dt>
           <dd>
             The <code>background-color</code> of
@@ -437,9 +444,6 @@
             The foreground <code>color</code> of inline
             <code>&lt;code&gt;</code>'s and <code>&lt;samp&gt;</code>'s.
           </dd>
-
-          <dt><code>--ok-color-fg</code></dt>
-          <dd>The primary foreground <code>color</code>.</dd>
 
           <dt><code>--ok-color-muted-fg</code></dt>
           <dd>
@@ -817,7 +821,7 @@ if __name__ == "__main__":
         <h3 class="notoc"><b>Tip:</b> avoid long <code>&lt;kbd&gt;</code>'s</h3>
 
         <p>
-          Oatcake's CSS prevents line-wrapping within a
+          Oatcake prevents line-wrapping within a
           <code>&lt;kbd&gt;</code> (even if there are spaces) so don't make
           <code>&lt;kbd&gt;</code>'s too long or they'll overflow their
           container and break the layout.
@@ -1817,7 +1821,8 @@ disagree with this mission.&lt;/p&gt;</code></pre>
 
         <p>
           <code>&lt;u&gt;</code> is not meant to be used as a generic
-          "underline" element (use CSS for that). The HTML Standard and MDN
+          "underline" element (use CSS for that:
+          <code>text-decoration: underline;</code>). The HTML Standard and MDN
           encourage you to avoid <code>&lt;u&gt;</code> in most cases and choose
           other elements such as <code>&lt;em&gt;</code>,
           <code>&lt;b&gt;</code>, <code>&lt;mark&gt;</code>,
@@ -2200,7 +2205,7 @@ disagree with this mission.&lt;/p&gt;</code></pre>
 
       <p>
         You can add a subheading to an <code>&lt;h1&gt;</code> or
-        <code>&lt;h2&gt;</code> heading&mdash;just wrap the
+        <code>&lt;h2&gt;</code> heading by wrapping the
         <code>&lt;h1&gt;</code> or <code>&lt;h2&gt;</code> in an
         <code>&lt;hgroup&gt;</code> along with the subheading in a
         <code>&lt;p&gt;</code>. Oatcake will style the <code>&lt;p&gt;</code> as
@@ -2274,7 +2279,7 @@ disagree with this mission.&lt;/p&gt;</code></pre>
           <a
             href="https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/hgroup"
             >MDN</a
-          >) is a container for an <code>&lt;h1&gt;</code>&ndash;<code
+          >) is a container for a single <code>&lt;h1&gt;</code>&ndash;<code
             >&lt;h6&gt;</code
           >
           heading and one or more <code>&lt;p&gt;</code>'s representing a
@@ -2572,7 +2577,7 @@ disagree with this mission.&lt;/p&gt;</code></pre>
         <p>
           Did you know that you can reverse the order of the numbers in a
           numbered list by adding a <code>reversed</code> attribute to an
-          <code>&lt;ol&gt;</code>? (<code>&lt;ol reversed&gt;</code>)
+          <code>&lt;ol&gt;</code>?
         </p>
 
         <ol reversed>
@@ -2804,10 +2809,10 @@ disagree with this mission.&lt;/p&gt;</code></pre>
         <h3 class="notoc">Design notes</h3>
 
         <p>
-          Many themes style <code>&lt;blockquote&gt;</code>'s in italics but
-          this is problematic when the quoted text itself contains italics.
-          Another common choice is to use a different font for block quotes, but
-          that can be distracting.
+          Many themes style <code>&lt;blockquote&gt;</code>'s in italics or bold
+          but this is problematic when the quoted text itself contains italics
+          or bold. Another common choice is to use a different font or font-size
+          for block quotes, but that can be distracting.
         </p>
 
         <p>
@@ -3226,9 +3231,11 @@ disagree with this mission.&lt;/p&gt;</code></pre>
           figure.
         </p>
 
-        <h3 class="notoc"><b>Edge case:</b> inline elements in captions</h3>
+        <h3 class="notoc">
+          <b>Edge case:</b> inline elements in figure captions
+        </h3>
 
-        <p>All the inline elements work in captions:</p>
+        <p>All the inline elements work in figure captions:</p>
 
         <figure>
           <img
@@ -3247,7 +3254,7 @@ disagree with this mission.&lt;/p&gt;</code></pre>
           </figcaption>
         </figure>
 
-        <h3 class="notoc"><b>Usage:</b> captions</h3>
+        <h3 class="notoc"><b>Usage:</b> figure captions</h3>
         <p>
           Captions can be used for additional information about the figure
           content or its source, and/or to give a figure a number or other label
@@ -3274,7 +3281,7 @@ interface API declaration.&lt;/p&gt;
 }&lt;/code&gt;&lt;/pre&gt;
 &lt;/figure&gt;</code></pre>
 
-        <h3 class="notoc"><b>Tip:</b> left-aligned captions</h3>
+        <h3 class="notoc"><b>Tip:</b> left-aligned figure captions</h3>
 
         <p>
           Oatcake center-aligns figure captions by default. If you want to
@@ -3316,7 +3323,7 @@ interface API declaration.&lt;/p&gt;
   text-align: left;
 }</code></pre>
 
-        <h3 class="notoc"><b>Tip:</b> small text captions</h3>
+        <h3 class="notoc"><b>Tip:</b> small text figure captions</h3>
 
         <p>
           Small text can work well for figure captions: wrap the contents of the
@@ -3458,11 +3465,10 @@ int main()
         </h3>
 
         <p>
-          A common bug in themes is for long lines in preformatted text, code or
-          sample output blocks to stretch out the width of the entire page which
-          looks weird and breaks the layout on mobile screens. Oatcake fixes
-          this by giving wide preformatted and code blocks a horizontal
-          scrollbar:
+          A common bug is for long lines in preformatted text, code or sample
+          output blocks to stretch out the width of the entire page which looks
+          weird and breaks the layout on mobile screens. Oatcake fixes this by
+          giving wide preformatted and code blocks a horizontal scrollbar:
         </p>
 
         <pre><code class="nohighlight">def test_validate_url_returns_an_http_url_unmodified():
@@ -3625,7 +3631,7 @@ int main()
           giving them all the same <code>name</code> attribute. Only one
           disclosure widget with the same <code>name</code> can be open at the
           same time. If the user opens one of the named group of widgets it'll
-          close any others that're already open. For example, this:
+          close any other that's already open. For example, this:
         </p>
 
         <pre><code>&lt;details <mark>name="test"</mark>&gt;
@@ -3663,7 +3669,7 @@ int main()
         </h3>
 
         <p>
-          If your <code>&lt;details&gt;</code> only contains a single paragraph
+          If your <code>&lt;details&gt;</code> contains only a single paragraph
           you can omit the <code>&lt;p&gt;</code> and it'll look the same. This:
         </p>
 
@@ -4031,7 +4037,7 @@ int main()
 
       <p>
         Oatcake also prevents wrapping within certain elements:
-        <a href="#kbd"><code>&lt;kbd&gt;</code>'s</a>, and within headings:
+        <code>&lt;kbd&gt;</code>'s, and within headings:
         <code>&lt;code&gt;</code> and <code>&lt;samp&gt;</code>. To avoid
         horizontal scrollbars don't put anything too long in any of these
         elements.
