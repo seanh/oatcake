@@ -179,8 +179,8 @@
         <h1 class="noanchor">Oatcake: Plain Web Typography</h1>
         <p>
           A drop-in CSS stylesheet that makes pages attractive and readable.
-          Looks good without drawing attention to the design. Great on mobile
-          and desktop.
+          Looks good without drawing attention to the design. Works great on
+          both mobile and desktop.
         </p>
       </hgroup>
 
@@ -226,93 +226,17 @@
       </ul>
 
       <p>
+        To add Oatcake to your site see the instructions in the
+        <a href="https://github.com/seanh/oatcake">README</a>.
+      </p>
+
+      <p>
         The rest of this tremendously long page will demo Oatcake's features,
         show you how to use them, and explain some of the design choices. You
         might even learn some things about HTML along the way!
       </p>
 
       <div class="toc"></div>
-
-      <h2>Getting started</h2>
-
-      <p>
-        To style your own page with Oatcake just add this link to your HTML
-        file's <code>&lt;head&gt;</code>:
-      </p>
-
-      <pre><code>&lt;link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/oatcake@1.0.0-rc.1"&gt;</code></pre>
-      <p>
-        That's it! If all you want is a simple page like this one just add a
-        little CSS layout of your own (<code>max-width</code>,
-        <code>margin</code>, <code>padding</code>) and you're done.
-      </p>
-
-      <p>
-        To get notified of new releases so you can update your version number:
-        <a href="https://github.com/seanh/oatcake">follow Oatcake on GitHub</a>
-        or subscribe to the
-        <a href="https://github.com/seanh/oatcake/releases.atom"
-          >Atom feed for new releases</a
-        >.
-      </p>
-
-      <details>
-        <summary>Complete example HTML</summary>
-        <p>
-          Here's a complete HTML file that you can copy-and-paste to get
-          started:
-        </p>
-        <pre><code>&lt;!doctype html&gt;
-&lt;html lang="en"&gt;
-  &lt;head&gt;
-    &lt;meta charset="utf-8"&gt;
-    &lt;meta name="viewport" content="width=device-width, initial-scale=1"&gt;
-    &lt;title&gt;Page title&lt;/title&gt;
-    &lt;link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/oatcake@1.0.0-rc.1"&gt;
-  &lt;/head&gt;
-  &lt;body style="max-width:50em; margin:0 auto; padding:0 .5em;"&gt;
-    &lt;h1&gt;Page Title&lt;/h1&gt;
-    &lt;p&gt;Page content goes here&hellip;&lt;/p&gt;
-  &lt;/body&gt;
-&lt;/html&gt;</code></pre>
-      </details>
-
-      <details>
-        <summary><b>Tip:</b> applying Oatcake to only part of a page</summary>
-
-        <p>
-          You might want to apply Oatcake to only part of your HTML page. For
-          example maybe you're using <code>&lt;aside&gt;</code> for a site-wide
-          sidebar and <code>&lt;footer&gt;</code> for a site-wide footer and
-          don't want Oatcake's <code>&lt;aside&gt;</code> and
-          <code>&lt;footer&gt;</code> styles to affect those, but you
-          <em>do</em> want to apply Oatcake to the page's main content.
-        </p>
-
-        <p>
-          You can apply Oatcake to only part of a page by loading it in a
-          <a
-            href="https://developer.mozilla.org/en-US/docs/Web/API/Web_components/Using_shadow_DOM"
-            >Shadow DOM</a
-          >. Here's an example:
-        </p>
-
-        <pre><code>&lt;div&gt;
-  &lt;template shadowrootmode="open"&gt;
-    &lt;link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/oatcake@1.0.0-rc.1" /&gt;
-
-    &lt;p&gt;Oatcake's styles will be applied to everything within the "template" element.&lt;/p&gt;
-  &lt;/template&gt;
-&lt;/div&gt;</code></pre>
-
-        <p>
-          Any other CSS or JavaScript that you want to work within the
-          <code>&lt;template&gt;</code> element will need to be loaded within it
-          as well: the content inside the <code>&lt;template&gt;</code> is
-          isolated from <em>any</em> JavaScript or CSS running in the outer
-          page.
-        </p>
-      </details>
 
       <h2 id="fonts">Fonts</h2>
 
