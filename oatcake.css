@@ -150,6 +150,7 @@
     blockquote,
     details,
     dl,
+    figcaption,
     figure,
     footer,
     ol,
@@ -174,15 +175,6 @@
     }
 
     /* Some elements need a bit more breathing space above and below or they feel cramped. */
-    audio:not(li audio:first-child),
-    iframe:not(li iframe:first-child),
-    img:not(li img:first-child),
-    svg:not(li svg:first-child),
-    video:not(li video:first-child),
-    figure:not(li figure:first-child) {
-      margin-top: calc(2 * var(--ok-line-height));
-    }
-
     audio,
     iframe,
     img,
@@ -190,6 +182,19 @@
     video,
     figure {
       margin-bottom: calc(var(--ok-line-height) * 2);
+      margin-top: calc(var(--ok-line-height) * 2);
+    }
+
+    :is(aside, blockquote) > *:first-child,
+    details > :not(summary):first-child,
+    details > summary:first-child + *,
+    figure > :not(figcaption):first-child,
+    figure > figcaption:first-child + * {
+      margin-top: 0 !important;
+    }
+
+    :is(aside, blockquote, figure) > *:last-child {
+      margin-bottom: 0 !important;
     }
   }
 
@@ -471,10 +476,6 @@
     li blockquote {
       margin-left: 3px;
     }
-
-    blockquote > *:last-child {
-      margin-bottom: 0;
-    }
   }
 
   /* Lists. */
@@ -564,63 +565,11 @@
        example when the heading is the first child element of something like a
        blockquote, aside, or disclosure widget, or when the heading immediately
        follows another heading. */
-    aside h1:first-child,
-    aside h2:first-child,
-    aside h3:first-child,
-    aside h4:first-child,
-    aside h5:first-child,
-    aside h6:first-child,
-    blockquote h1:first-child,
-    blockquote h2:first-child,
-    blockquote h3:first-child,
-    details h1:first-child,
-    details h2:first-child,
-    details h3:first-child,
-    details h4:first-child,
-    details h5:first-child,
-    details h6:first-child,
-    details summary + h1,
-    details summary + h2,
-    details summary + h3,
-    details summary + h4,
-    details summary + h5,
-    details summary + h6,
-    h1 + h1,
-    h1 + h2,
-    h1 + h3,
-    h1 + h4,
-    h1 + h5,
-    h1 + h6,
-    h2 + h1,
-    h2 + h2,
-    h2 + h3,
-    h2 + h4,
-    h2 + h5,
-    h2 + h6,
-    h3 + h1,
-    h3 + h2,
-    h3 + h3,
-    h3 + h4,
-    h3 + h5,
-    h3 + h6,
-    h4 + h1,
-    h4 + h2,
-    h4 + h3,
-    h4 + h4,
-    h4 + h5,
-    h4 + h6,
-    h5 + h1,
-    h5 + h2,
-    h5 + h3,
-    h5 + h4,
-    h5 + h5,
-    h5 + h6,
-    h6 + h1,
-    h6 + h2,
-    h6 + h3,
-    h6 + h4,
-    h6 + h5,
-    h6 + h6 {
+    :is(aside, blockquote, details, figure)
+      :is(h1, h2, h3, h4, h5, h6):first-child,
+    figure > figcaption + :is(h1, h2, h3, h4, h5, h6),
+    details summary + :is(h1, h2, h3, h4, h5, h6),
+    :is(h1, h2, h3, h4, h5, h6) + :is(h1, h2, h3, h4, h5, h6) {
       padding-top: 0;
     }
 
@@ -707,19 +656,7 @@
   @layer elements {
     figure figcaption {
       color: var(--ok-color-muted-fg);
-      margin-bottom: var(--ok-line-height);
       text-align: center;
-    }
-
-    /* Images, videos, iframe and audio normally have two lines of top margin
-       but we only want one line of margin between a <figcaption> in a figure
-       and the image, video, iframe or audio player that follows it. */
-    figure figcaption + audio,
-    figure figcaption + iframe,
-    figure figcaption + img,
-    figure figcaption + svg,
-    figure figcaption + video {
-      margin-top: var(--ok-line-height);
     }
 
     /* Images, videos, iframe and audio normally have two lines of bottom margin
@@ -918,10 +855,6 @@
       padding-left: calc(var(--ok-line-height) * 0.5);
       padding-right: calc(var(--ok-line-height) * 0.5);
       padding-top: var(--ok-line-height);
-    }
-
-    aside > *:last-child {
-      margin-bottom: 0;
     }
 
     aside > h1:last-child,
