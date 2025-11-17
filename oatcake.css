@@ -13,6 +13,9 @@
     --ok-color-fg: rgb(16, 15, 15);
     --ok-color-highlight-bg: LemonChiffon;
     --ok-color-highlight-fg: rgb(16, 15, 15);
+    --ok-color-summary-marker: oklch(
+      from var(--ok-color-block-bg) calc(l - 0.22) c h
+    );
     --ok-color-kbd-bg: #fafbfc;
     --ok-color-kbd-border-bottom: rgb(68, 77, 86);
     --ok-color-kbd-fg: rgb(16, 15, 15);
@@ -745,7 +748,7 @@
     }
 
     details > summary::marker {
-      color: var(--ok-color-muted-fg);
+      color: var(--ok-color-summary-marker);
     }
 
     details:not([open]) > summary {
