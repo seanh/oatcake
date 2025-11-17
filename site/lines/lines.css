@@ -17,9 +17,26 @@
   overflow-x: hidden;
 }
 
-/* Make <pre>'s transparent when the guidelines are being shown so that you can
- * see the lines. */
+.columns {
+  background-size: var(--oatcake-body-line-height);
+  background-position: left top;
+  background-repeat: repeat-y;
+  background-image: url("columns.svg");
+}
+
+.columns aside,
+.columns pre,
+.columns pre code,
 .lines pre,
-.lines pre code {
-  background-color: rgba(243, 243, 243, 0.7);
+.lines pre code,
+.columns summary {
+  background-color: color-mix(
+    in srgb,
+    var(--ok-color-block-bg) 50%,
+    transparent
+  );
+}
+
+.columns blockquote {
+  border-left-color: var(--ok-color-fg);
 }
