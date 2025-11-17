@@ -423,7 +423,7 @@
   @layer elements {
     kbd {
       background-color: var(--ok-color-kbd-bg);
-      border-radius: 5px;
+      border-radius: var(--ok-border-radius);
       border: 1px solid var(--ok-color-border);
       border-bottom-color: var(--ok-color-kbd-border-bottom);
       color: var(--ok-color-kbd-fg);
@@ -677,7 +677,7 @@
     code,
     samp {
       background-color: var(--ok-color-code-bg);
-      border-radius: 5px;
+      border-radius: var(--ok-border-radius);
       color: var(--ok-color-code-fg);
       line-height: 18px;
       padding-left: 5px;
