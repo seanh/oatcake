@@ -507,15 +507,15 @@
 
   /* Subheadings. */
   @layer elements {
-    hgroup p {
+    hgroup:has(h1, h2) p {
       font-size: 19px; /* The same size as an <h2> heading, so subheadings can be used with <h1>'s or <h2>'s. */
     }
 
-    hgroup p :is(code, samp) {
+    hgroup:has(h1, h2) p :is(code, samp) {
       font-size: 0.8em;
     }
 
-    hgroup p kbd {
+    hgroup:has(h1, h2) p kbd {
       font-size: 0.75em;
       padding-bottom: 1px;
       padding-top: 1px;
