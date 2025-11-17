@@ -32,7 +32,7 @@ that you can copy-and-paste to get started:
       href="https://cdn.jsdelivr.net/npm/oatcake@1.0.0-rc.2"
     />
   </head>
-  <body style="max-width:50em; margin:0 auto; padding:0 .5em;">
+  <body style="max-width:40em; margin:0 auto; padding:0 12px;">
     <h1>Page Title</h1>
     <p>Page content goes here…</p>
   </body>
