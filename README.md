@@ -1,3 +1,5 @@
+<p align="center">🎉 <strong>Oatcake 1.0 released!</strong> 🎉 Read the <a href="">blog post</a>.</p>
+
 [![NPM Version](https://img.shields.io/npm/v/oatcake)](https://www.npmjs.com/package/oatcake)
 [![jsDelivr Hits](https://data.jsdelivr.com/v1/package/npm/oatcake/badge)](https://www.jsdelivr.com/package/npm/oatcake)
 
