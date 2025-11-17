@@ -567,13 +567,76 @@
       <h2 id="rhythm">Rhythm</h2>
 
       <p>
-        Oatcake picks a comfortable body <code>line-height</code> and sets all
-        other vertical and horizontal sizes, margins and paddings to multiples
-        of that rhythm, like writing on a sheet of lined paper. The regularity
-        makes pages more enjoyable to read: things flow like they belong
-        together and everything feels calmer, more orderly and harmonious. It's
-        surprisingly difficult to get this comprehensively right, without some
-        element or combination throwing off the rhythm.
+        Oatcake picks a comfortable base line-height and sets all sizes, margins
+        and paddings to multiples of that rhythm, like writing on a sheet of
+        lined paper:
+      </p>
+
+      <div
+        class="example lines"
+        style="
+          margin-left: 0;
+          border: 1px solid var(--ok-color-border);
+          padding: var(--ok-line-height);
+          padding-bottom: 0;
+          border-radius: var(--ok-border-radius);
+          margin-top: calc(2 * var(--ok-line-height) - 1px);
+          margin-bottom: calc(2 * var(--ok-line-height) - 1px);
+        "
+      >
+        <hgroup>
+          <h1 class="noanchor">Lorem ipsum</h1>
+          <p>
+            Ut convallis nisl ac tempor molestie. Pellentesque consectetur
+            mattis orci sit amet dignissim. Mauris in erat aliquam tellus
+            efficitur vehicula nec ac eros. Vivamus aliquet nibh erat, sit amet
+            vestibulum elit pretium sit amet. Sed vestibulum massa viverra orci
+            sollicitudin, vel ultrices justo faucibus.
+          </p>
+        </hgroup>
+
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed aliquam
+          suscipit nisi lacinia aliquam. Proin at lacinia massa. Etiam blandit
+          tortor nunc. Mauris ut porttitor elit. Nam massa nibh, ultrices a
+          consectetur ut, blandit at orci. Morbi pulvinar dignissim justo sed
+          blandit. Donec finibus condimentum urna, quis finibus eros posuere
+          vitae. Etiam sed leo sit amet diam porttitor bibendum. Etiam et leo
+          ligula.
+        </p>
+
+        <h3>Maecenas semper commodo venenatis</h3>
+
+        <ul>
+          <li>Vestibulum rutrum porta lorem at feugiat.</li>
+          <li>Praesent varius egestas tincidunt.</li>
+          <li>
+            Suspendisse rhoncus, erat vitae cursus consectetur, est lectus
+            iaculis tellus, non pellentesque est eros at eros.
+          </li>
+        </ul>
+
+        <figure>
+          <figcaption><b>Figure 1:</b> some example Python code:</figcaption>
+          <pre><code>def main():
+    print("Hello, world!")
+
+
+if __name__ == "__main__":
+    main()</code></pre>
+        </figure>
+      </div>
+
+      <p>
+        When the lines are hidden, the regularity makes pages more enjoyable to
+        read: things flow like they belong together and everything feels calmer,
+        more orderly and harmonious.
+      </p>
+
+      <p>
+        It's surprisingly difficult to get this comprehensively right, without
+        some element or combination throwing off the rhythm. Click the button to
+        toggle vertical rhythm lines for this entire page:
       </p>
 
       <p style="text-align: center">
