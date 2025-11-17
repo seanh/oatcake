@@ -23,6 +23,12 @@
   background-repeat: repeat-y;
   background-image: url("columns.svg");
 }
+.columns_right {
+  background-size: var(--oatcake-body-line-height);
+  background-position: right top;
+  background-repeat: repeat-y;
+  background-image: url("columns_right.svg");
+}
 
 .columns aside,
 .columns pre,

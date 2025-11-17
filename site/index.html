@@ -657,44 +657,46 @@ if __name__ == "__main__":
           borders and paddings:
         </p>
 
-        <div
-          class="columns"
-          style="
-            border: 1px solid var(--ok-color-border);
-            padding-top: calc(var(--ok-line-height) - 1px);
-            padding-left: calc(0.5 * var(--ok-line-height) - 1px);
-            padding-right: calc(0.5 * var(--ok-line-height) - 1px);
-            padding-bottom: 0;
-            border-radius: var(--ok-border-radius);
-            margin-top: calc(2 * var(--ok-line-height));
-            margin-bottom: calc(2 * var(--ok-line-height));
-          "
-        >
-          <p>This is a normal paragraph.</p>
+        <div class="columns_right">
+          <div
+            class="columns"
+            style="
+              border: 1px solid var(--ok-color-border);
+              padding-top: calc(var(--ok-line-height) - 1px);
+              padding-left: calc(0.5 * var(--ok-line-height) - 1px);
+              padding-right: calc(0.5 * var(--ok-line-height) - 1px);
+              padding-bottom: 0;
+              border-radius: var(--ok-border-radius);
+              margin-top: calc(2 * var(--ok-line-height));
+              margin-bottom: calc(2 * var(--ok-line-height));
+            "
+          >
+            <p>This is a normal paragraph.</p>
 
-          <blockquote>This is a block quote.</blockquote>
+            <blockquote>This is a block quote.</blockquote>
 
-          <p>This is a description list:</p>
+            <p>This is a description list:</p>
 
-          <dl>
-            <dt>Term</dt>
-            <dd>Description</dd>
-          </dl>
+            <dl>
+              <dt>Term</dt>
+              <dd>Description</dd>
+            </dl>
 
-          <p>Here's a code block:</p>
+            <p>Here's a code block:</p>
 
-          <pre><code>print("Hello, world!")</code></pre>
+            <pre><code>print("Hello, world!")</code></pre>
 
-          <p>Here's an <code>&lt;aside&gt;</code>:</p>
+            <p>Here's an <code>&lt;aside&gt;</code>:</p>
 
-          <aside>This is an <code>&lt;aside&gt;</code>.</aside>
+            <aside>This is an <code>&lt;aside&gt;</code>.</aside>
 
-          <p>Here's a disclosure widget:</p>
+            <p>Here's a disclosure widget:</p>
 
-          <details open>
-            <summary>This is the summary</summary>
-            Here are the details.
-          </details>
+            <details open>
+              <summary>This is the summary</summary>
+              Here are the details.
+            </details>
+          </div>
         </div>
       </details>
 
