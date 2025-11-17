@@ -2482,89 +2482,6 @@ disagree with this mission.&lt;/p&gt;</code></pre>
       <details>
         <summary><b>Details:</b> lists</summary>
 
-        <h3 class="notoc">
-          <b>Usage:</b> <code>&lt;ul&gt;</code> or <code>&lt;ol&gt;</code>?
-        </h3>
-
-        <p>
-          According to the HTML Standard and MDN
-          <code>&lt;ul&gt;</code> (unordered list) is for
-          <q
-            >where changing the order [of the list items] would not materially
-            change the meaning of the document.</q
-          >
-          If the order of the list items matters, use <code>&lt;ol&gt;</code>.
-        </p>
-
-        <h3 class="notoc"><b>Tip:</b> tricks with ordered lists</h3>
-
-        <p>
-          Did you know that you can reverse the order of the numbers in a
-          numbered list by adding a <code>reversed</code> attribute to an
-          <code>&lt;ol&gt;</code>? (<code>&lt;ol reversed&gt;</code>)
-        </p>
-
-        <ol reversed>
-          <li>Vivamus sit amet elit bibendum</li>
-          <li>Aliquam ornare sapien ut nisl tristique</li>
-          <li>Praesent aliquet erat eu felis</li>
-        </ol>
-
-        <p>
-          Or you can change the list starting number by adding a
-          <code>start="n"</code> attribute:
-        </p>
-
-        <ol start="4">
-          <li>Vivamus sit amet elit bibendum</li>
-          <li>Aliquam ornare sapien ut nisl tristique</li>
-          <li>Praesent aliquet erat eu felis</li>
-        </ol>
-
-        <p>
-          <code>reversed</code> and <code>start</code> can be used together on
-          the same list:
-        </p>
-
-        <ol reversed start="10">
-          <li>Vivamus sit amet elit bibendum</li>
-          <li>Aliquam ornare sapien ut nisl tristique</li>
-          <li>Praesent aliquet erat eu felis</li>
-        </ol>
-
-        <p>
-          You can change the type of list markers using the
-          <code>type</code> attribute: <code>type="1"</code> for numbers (the
-          default), <code>type="a"</code> for lower-case letters,
-          <code>type="A"</code> for upper-case letters,
-          <code>type="i"</code> for lower-case roman numerals, or
-          <code>type="I"</code> for upper-case roman numerals:
-        </p>
-
-        <ol type="a">
-          <li>Vivamus sit amet elit bibendum</li>
-          <li>Aliquam ornare sapien ut nisl tristique</li>
-          <li>Praesent aliquet erat eu felis</li>
-        </ol>
-
-        <ol type="A">
-          <li>Vivamus sit amet elit bibendum</li>
-          <li>Aliquam ornare sapien ut nisl tristique</li>
-          <li>Praesent aliquet erat eu felis</li>
-        </ol>
-
-        <ol type="i">
-          <li>Vivamus sit amet elit bibendum</li>
-          <li>Aliquam ornare sapien ut nisl tristique</li>
-          <li>Praesent aliquet erat eu felis</li>
-        </ol>
-
-        <ol type="I">
-          <li>Vivamus sit amet elit bibendum</li>
-          <li>Aliquam ornare sapien ut nisl tristique</li>
-          <li>Praesent aliquet erat eu felis</li>
-        </ol>
-
         <h3 class="notoc"><b>Edge case:</b> nested lists</h3>
 
         <p>
@@ -2710,6 +2627,89 @@ disagree with this mission.&lt;/p&gt;</code></pre>
           </li>
 
           <li>A normal list item to end the list.</li>
+        </ol>
+
+        <h3 class="notoc">
+          <b>Usage:</b> <code>&lt;ul&gt;</code> or <code>&lt;ol&gt;</code>?
+        </h3>
+
+        <p>
+          According to the HTML Standard and MDN
+          <code>&lt;ul&gt;</code> (unordered list) is for
+          <q
+            >where changing the order [of the list items] would not materially
+            change the meaning of the document.</q
+          >
+          If the order of the list items matters, use <code>&lt;ol&gt;</code>.
+        </p>
+
+        <h3 class="notoc"><b>Tip:</b> tricks with ordered lists</h3>
+
+        <p>
+          Did you know that you can reverse the order of the numbers in a
+          numbered list by adding a <code>reversed</code> attribute to an
+          <code>&lt;ol&gt;</code>? (<code>&lt;ol reversed&gt;</code>)
+        </p>
+
+        <ol reversed>
+          <li>Vivamus sit amet elit bibendum</li>
+          <li>Aliquam ornare sapien ut nisl tristique</li>
+          <li>Praesent aliquet erat eu felis</li>
+        </ol>
+
+        <p>
+          Or you can change the list starting number by adding a
+          <code>start="n"</code> attribute:
+        </p>
+
+        <ol start="4">
+          <li>Vivamus sit amet elit bibendum</li>
+          <li>Aliquam ornare sapien ut nisl tristique</li>
+          <li>Praesent aliquet erat eu felis</li>
+        </ol>
+
+        <p>
+          <code>reversed</code> and <code>start</code> can be used together on
+          the same list:
+        </p>
+
+        <ol reversed start="10">
+          <li>Vivamus sit amet elit bibendum</li>
+          <li>Aliquam ornare sapien ut nisl tristique</li>
+          <li>Praesent aliquet erat eu felis</li>
+        </ol>
+
+        <p>
+          You can change the type of list markers using the
+          <code>type</code> attribute: <code>type="1"</code> for numbers (the
+          default), <code>type="a"</code> for lower-case letters,
+          <code>type="A"</code> for upper-case letters,
+          <code>type="i"</code> for lower-case roman numerals, or
+          <code>type="I"</code> for upper-case roman numerals:
+        </p>
+
+        <ol type="a">
+          <li>Vivamus sit amet elit bibendum</li>
+          <li>Aliquam ornare sapien ut nisl tristique</li>
+          <li>Praesent aliquet erat eu felis</li>
+        </ol>
+
+        <ol type="A">
+          <li>Vivamus sit amet elit bibendum</li>
+          <li>Aliquam ornare sapien ut nisl tristique</li>
+          <li>Praesent aliquet erat eu felis</li>
+        </ol>
+
+        <ol type="i">
+          <li>Vivamus sit amet elit bibendum</li>
+          <li>Aliquam ornare sapien ut nisl tristique</li>
+          <li>Praesent aliquet erat eu felis</li>
+        </ol>
+
+        <ol type="I">
+          <li>Vivamus sit amet elit bibendum</li>
+          <li>Aliquam ornare sapien ut nisl tristique</li>
+          <li>Praesent aliquet erat eu felis</li>
         </ol>
       </details>
 
@@ -2894,6 +2894,41 @@ disagree with this mission.&lt;/p&gt;</code></pre>
           block quote starts and ends which is helpful with long block quotes.
         </p>
 
+        <h3 class="notoc"><b>Edge case:</b> nested block quotes</h3>
+
+        <p>
+          Sometimes a quoted section itself contains another quoted section. You
+          can nest <code>&lt;blockquote&gt;</code>'s to an arbitrary depth and
+          Oatcake will show the nested structure. A lot of themes get this
+          wrong:
+        </p>
+
+        <blockquote>
+          <p>Fusce porta quam non varius viverra.</p>
+
+          <blockquote>
+            <p>Vestibulum molestie nec massa et porta.</p>
+
+            <blockquote>
+              <p>Donec imperdiet pretium luctus.</p>
+
+              <p>
+                Etiam in malesuada lacus. Suspendisse eget velit lacinia,
+                hendrerit lorem nec, pretium urna.
+              </p>
+            </blockquote>
+
+            <p>
+              Morbi tempor luctus sodales. Vitae vehicula lorem gravida nec.
+            </p>
+          </blockquote>
+
+          <p>
+            Nam commodo felis at tortor tempor, sit amet vestibulum lorem
+            gravida. Suspendisse dignissim felis velit.
+          </p>
+        </blockquote>
+
         <h3 class="notoc">
           <b>Usage:</b> don't put quotation marks inside quotes or block quotes
         </h3>
@@ -2978,41 +3013,6 @@ disagree with this mission.&lt;/p&gt;</code></pre>
         </p>
 
         <pre><code>&lt;blockquote <mark>cite="https://quotes.example.org/s/sonnet130.html"</mark>&gt;</code></pre>
-
-        <h3 class="notoc"><b>Edge case:</b> nested block quotes</h3>
-
-        <p>
-          Sometimes a quoted section itself contains another quoted section. You
-          can nest <code>&lt;blockquote&gt;</code>'s to an arbitrary depth and
-          Oatcake will show the nested structure. A lot of themes get this
-          wrong:
-        </p>
-
-        <blockquote>
-          <p>Fusce porta quam non varius viverra.</p>
-
-          <blockquote>
-            <p>Vestibulum molestie nec massa et porta.</p>
-
-            <blockquote>
-              <p>Donec imperdiet pretium luctus.</p>
-
-              <p>
-                Etiam in malesuada lacus. Suspendisse eget velit lacinia,
-                hendrerit lorem nec, pretium urna.
-              </p>
-            </blockquote>
-
-            <p>
-              Morbi tempor luctus sodales. Vitae vehicula lorem gravida nec.
-            </p>
-          </blockquote>
-
-          <p>
-            Nam commodo felis at tortor tempor, sit amet vestibulum lorem
-            gravida. Suspendisse dignissim felis velit.
-          </p>
-        </blockquote>
       </details>
 
       <h2 id="img">Images</h2>
@@ -3302,6 +3302,27 @@ disagree with this mission.&lt;/p&gt;</code></pre>
           figure.
         </p>
 
+        <h3 class="notoc"><b>Edge case:</b> inline elements in captions</h3>
+
+        <p>All the inline elements work in captions:</p>
+
+        <figure>
+          <img
+            src="media/oats.jpg"
+            alt="A bowl of oats"
+            title="A bowl of oats"
+          />
+          <figcaption>
+            <strong>Laboris</strong> nisi ut aliquip ex ea commodo
+            <em>consequat</em>. Duis aute irure dolor in reprehenderit in
+            voluptate velit <code>esse cillum dolore</code> eu fugiat nulla
+            pariatur.
+            <a href="https://example.com">Excepteur sint occaecat</a> cupidatat
+            <u>non proident</u>, <em>sunt in culpa</em> qui <del>officia</del>
+            <mark>deserunt mollit anim id est laborum.</mark>
+          </figcaption>
+        </figure>
+
         <h3 class="notoc"><b>Usage:</b> captions</h3>
         <p>
           Captions can be used for additional information about the figure
@@ -3434,27 +3455,6 @@ interface API declaration.&lt;/p&gt;
             If debugging is the process of removing software bugs, then
             programming must be the process of putting them in.
           </blockquote>
-        </figure>
-
-        <h3 class="notoc"><b>Edge case:</b> inline elements in captions</h3>
-
-        <p>All the inline elements work in captions:</p>
-
-        <figure>
-          <img
-            src="media/oats.jpg"
-            alt="A bowl of oats"
-            title="A bowl of oats"
-          />
-          <figcaption>
-            <strong>Laboris</strong> nisi ut aliquip ex ea commodo
-            <em>consequat</em>. Duis aute irure dolor in reprehenderit in
-            voluptate velit <code>esse cillum dolore</code> eu fugiat nulla
-            pariatur.
-            <a href="https://example.com">Excepteur sint occaecat</a> cupidatat
-            <u>non proident</u>, <em>sunt in culpa</em> qui <del>officia</del>
-            <mark>deserunt mollit anim id est laborum.</mark>
-          </figcaption>
         </figure>
       </details>
 
