@@ -72,10 +72,10 @@ element will need to be loaded within it as well: the content inside the
 
 ## Releases
 
-New releases are published to [GitHub](https://github.com/seanh/oatcake/releases)
+Releases are published to [GitHub](https://github.com/seanh/oatcake/releases)
 and [npm](https://www.npmjs.com/package/oatcake?activeTab=versions).
 Subscribe to [GitHub's Atom feed for new releases](https://github.com/seanh/oatcake/releases.atom)
-to get notified of new releases so you can update your version number.
+to get notified so you can update your version number.
 
 ## Documentation
 
