@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" width="32" height="32"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <!-- Background -->
+  <rect width="32" height="32" fill="#FFF" rx="0"></rect>
+  
+  <!-- Simple stack of lines representing text/typography -->
+  <rect x="6" y="8" width="20" height="2.5" fill="#333" rx="0.5"></rect>
+  <rect x="6" y="13" width="20" height="2.5" fill="#333" rx="0.5"></rect>
+  <rect x="6" y="18" width="20" height="2.5" fill="#333" rx="0.5"></rect>
+  <rect x="6" y="23" width="14" height="2.5" fill="#333" rx="0.5"></rect>
+</svg><style>@media (prefers-color-scheme: light) { :root { filter: none; } }
+@media (prefers-color-scheme: dark) { :root { filter: none; } }
+</style></svg>
