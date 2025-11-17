@@ -465,7 +465,7 @@
   @layer elements {
     blockquote {
       border-left: 2px solid var(--ok-color-border);
-      padding-left: 20px;
+      padding-left: calc(0.5 * var(--ok-line-height) - 2px);
       quotes: none;
     }
 
@@ -473,11 +473,6 @@
     blockquote:after {
       content: "";
       content: none;
-    }
-
-    blockquote blockquote,
-    li blockquote {
-      margin-left: 3px;
     }
   }
 
@@ -495,7 +490,7 @@
   /* Description lists. */
   @layer elements {
     dl {
-      padding-left: 20px;
+      padding-left: calc(0.5 * var(--ok-line-height));
     }
 
     dt {
@@ -720,8 +715,8 @@
       border-radius: var(--ok-border-radius);
       border: 1px solid var(--ok-color-border);
       padding-bottom: var(--ok-line-height);
-      padding-left: calc(0.5 * var(--ok-line-height));
-      padding-right: calc(0.5 * var(--ok-line-height));
+      padding-left: calc(0.5 * var(--ok-line-height) - 1px);
+      padding-right: calc(0.5 * var(--ok-line-height) - 1px);
       padding-top: var(--ok-line-height);
     }
 
@@ -828,8 +823,8 @@
       border: 1px solid var(--ok-color-border);
       overflow: auto;
       padding-bottom: calc(var(--ok-line-height) - 2px);
-      padding-left: calc(0.5 * var(--ok-line-height));
-      padding-right: calc(0.5 * var(--ok-line-height));
+      padding-left: calc(0.5 * var(--ok-line-height) - 1px);
+      padding-right: calc(0.5 * var(--ok-line-height) - 1px);
       padding-top: var(--ok-line-height);
     }
 
@@ -855,8 +850,8 @@
       border-radius: var(--ok-border-radius);
       border: 1px solid var(--ok-color-border);
       padding-bottom: calc(var(--ok-line-height) - 2px);
-      padding-left: calc(var(--ok-line-height) * 0.5);
-      padding-right: calc(var(--ok-line-height) * 0.5);
+      padding-left: calc(0.5 * var(--ok-line-height) - 1px);
+      padding-right: calc(0.5 * var(--ok-line-height) - 1px);
       padding-top: var(--ok-line-height);
     }
 
