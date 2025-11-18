@@ -29,6 +29,6 @@ jobs:
           git switch --no-guess --no-track --force-create readme
           git commit README.md --allow-empty --message "Update version numbers in README"
       - run: git fetch origin main
-      - run: gh-pr-upsert --title "Update version numbers in README"
+      - run: gh-pr-upsert --title "Update version numbers in README" --body "This is an automated PR to update the version numbers in the README"
         env:
           GITHUB_TOKEN: ${{ steps.github_token.outputs.GITHUB_TOKEN }}
