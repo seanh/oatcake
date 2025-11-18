@@ -22,10 +22,9 @@ jobs:
         id: github_token
         env:
           PRIVATE_KEY: ${{ secrets.SEANH_GITHUB_APP_PRIVATE_KEY }}
-      - run: gh auth setup-git
-        env:
-          GITHUB_TOKEN: ${{ steps.github_token.outputs.GITHUB_TOKEN }}
       - uses: actions/checkout@v5
+        with:
+          token: ${{ steps.github_token.outputs.GITHUB_TOKEN }}
       - run: |
           make readme badges=yes version="${{ github.event.release.tag_name }}"
           git switch --no-guess --no-track --force-create readme "origin/main"
