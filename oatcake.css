@@ -401,13 +401,23 @@
 
   /* Footers. */
   @layer elements {
-    footer :link,
-    footer :visited,
-    footer code,
-    footer mark,
-    footer samp,
     footer {
       color: var(--ok-color-muted-fg);
+    }
+
+    /* Remove the color from links, code, highlights and samp elements in
+       footers: footers are supposed to be in a muted color style. */
+    footer :is(:link, :visited, code, mark, samp) {
+      color: inherit;
+    }
+
+    /* Remove the background from code and samp elements in footers: footers are
+       supposed to be in a muted style, and the code and samp backgrounds stand
+       out too much. */
+    footer :is(code, samp) {
+      background-color: inherit;
+      padding-left: 0;
+      padding-right: 0;
     }
   }
 
