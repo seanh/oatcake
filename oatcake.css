@@ -189,7 +189,7 @@
     }
 
     :is(aside, blockquote) > *:first-child,
-    details > :not(summary):first-child,
+    details:has(summary) > :not(summary):first-child,
     details > summary:first-child + *,
     figure > :not(figcaption):first-child,
     figure > figcaption:first-child + * {
