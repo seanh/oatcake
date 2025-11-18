@@ -559,49 +559,16 @@
       padding-top: 0;
     }
 
-    /* Remove the background from code elements in headings. */
-    h1 code,
-    h1 samp,
-    h2 code,
-    h2 samp,
-    h3 code,
-    h3 samp,
-    h4 code,
-    h4 samp,
-    h5 code,
-    h5 samp,
-    h6 code,
-    h6 samp {
+    /* Remove the background from code and samp elements in headings. */
+    :is(h1, h2, h3, h4, h5, h6) :is(code, samp) {
       background-color: inherit;
       padding: 0;
     }
 
     /* Surround <code> elements in headings with back-ticks to make them a bit more
        noticeable (the font change alone can be quite subtle). */
-    h1 code::after,
-    h1 code::before,
-    h1 samp::after,
-    h1 samp::before,
-    h2 code::after,
-    h2 code::before,
-    h2 samp::after,
-    h2 samp::before,
-    h3 code::after,
-    h3 code::before,
-    h3 samp::after,
-    h3 samp::before,
-    h4 code::after,
-    h4 code::before,
-    h4 samp::after,
-    h4 samp::before,
-    h5 code::after,
-    h5 code::before,
-    h5 samp::after,
-    h5 samp::before,
-    h6 code::after,
-    h6 code::before,
-    h6 samp::after,
-    h6 samp::before {
+    :is(h1, h2, h3, h4, h5, h6) :is(code, samp)::before,
+    :is(h1, h2, h3, h4, h5, h6) :is(code, samp)::after {
       content: "`";
       display: inline-block;
       /* This prevents link underlines from going under the ::before and ::after content. */
@@ -615,23 +582,18 @@
      * This doesn't seem to be necessary when reducing the font-sizes of other
      * elements like <code>'s and <samp>'s in headings and subheadings. */
     hgroup > :is(h1, h2) ~ p mark,
-    h1 mark,
-    h2 mark {
+    :is(h1, h2) mark {
       font-size: 0.8em;
       line-height: 100%;
     }
 
-    h1 kbd,
-    h2 kbd {
+    :is(h1, h2) kbd {
       font-size: 0.85em;
       padding-bottom: 0;
       padding-top: 0;
     }
 
-    h3 kbd,
-    h4 kbd,
-    h5 kbd,
-    h6 kbd {
+    :is(h3, h4, h5, h6) kbd {
       font-size: inherit;
       padding-bottom: 0;
       padding-top: 0;
