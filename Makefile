@@ -50,4 +50,4 @@ spell:
 
 .PHONY: readme
 readme:
-	cog -D badges=${badges} -D version=${version} -r README.md
+	cogapp -D badges=${badges} -D version=${version} -r README.md
