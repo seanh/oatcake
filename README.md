@@ -5,10 +5,8 @@ if badges == "yes":
   cog.outl("[![NPM Version](https://img.shields.io/npm/v/oatcake)](https://www.npmjs.com/package/oatcake)")
   cog.outl("[![jsDelivr Hits](https://data.jsdelivr.com/v1/package/npm/oatcake/badge)](https://www.jsdelivr.com/package/npm/oatcake)")
 ]]]-->
-
 [![NPM Version](https://img.shields.io/npm/v/oatcake)](https://www.npmjs.com/package/oatcake)
 [![jsDelivr Hits](https://data.jsdelivr.com/v1/package/npm/oatcake/badge)](https://www.jsdelivr.com/package/npm/oatcake)
-
 <!--[[[end]]]-->
 
 # Oatcake
@@ -28,11 +26,9 @@ cog.outl("```html")
 cog.outl(f'<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/oatcake@{version}" />')
 cog.outl("```")
 ]]]-->
-
 ```html
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/oatcake@1.0.0-rc.4" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/oatcake@" />
 ```
-
 <!--[[[end]]]-->
 
 That's it! If all you want is a simple page like [Oatcake's demo
@@ -62,7 +58,6 @@ cog.outl(f"""```html
 </html>
 ```""")
 ]]]-->
-
 ```html
 <!doctype html>
 <html lang="en">
@@ -72,7 +67,7 @@ cog.outl(f"""```html
     <title>Page title</title>
     <link
       rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/oatcake@1.0.0-rc.4"
+      href="https://cdn.jsdelivr.net/npm/oatcake@"
     />
   </head>
   <body style="max-width:40em; margin:0 auto; padding:0 12px;">
@@ -81,7 +76,6 @@ cog.outl(f"""```html
   </body>
 </html>
 ```
-
 <!--[[[end]]]-->
 
 ### Applying Oatcake to only part of a page
@@ -114,13 +108,12 @@ cog.outl(f"""```html
 </div>
 ```""")
 ]]]-->
-
 ```html
 <div>
   <template shadowrootmode="open">
     <link
       rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/oatcake@1.0.0-rc.4"
+      href="https://cdn.jsdelivr.net/npm/oatcake@"
     />
 
     <p>
@@ -130,7 +123,6 @@ cog.outl(f"""```html
   </template>
 </div>
 ```
-
 <!--[[[end]]]-->
 
 Any other CSS or JavaScript that you want to work within the `<template>`
