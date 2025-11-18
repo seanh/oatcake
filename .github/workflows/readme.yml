@@ -28,7 +28,7 @@ jobs:
       - run: |
           make readme badges=yes version="${{ github.event.release.tag_name }}"
           git switch --no-guess --no-track --force-create readme "origin/main"
-          git commit README.md --allow-empty --message "Update version numbers in README.md"
-      - run: gh-pr-upsert --title "Update version numbers in README.md"
+          git commit README.md --allow-empty --message "Update version numbers in README"
+      - run: gh-pr-upsert --title "Update version numbers in README"
         env:
           GITHUB_TOKEN: ${{ steps.github_token.outputs.GITHUB_TOKEN }}
