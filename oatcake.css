@@ -190,9 +190,9 @@
 
     :is(aside, blockquote) > *:first-child,
     details:has(summary) > :not(summary):first-child,
-    details > summary:first-child + *,
+    summary:first-child + *,
     figure > :not(figcaption):first-child,
-    figure > figcaption:first-child + * {
+    figcaption:first-child + * {
       margin-top: 0 !important;
     }
 
@@ -553,8 +553,8 @@
        follows another heading. */
     :is(aside, blockquote, details, figure)
       :is(h1, h2, h3, h4, h5, h6):first-child,
-    figure > figcaption + :is(h1, h2, h3, h4, h5, h6),
-    details summary + :is(h1, h2, h3, h4, h5, h6),
+    figcaption + :is(h1, h2, h3, h4, h5, h6),
+    summary + :is(h1, h2, h3, h4, h5, h6),
     :is(h1, h2, h3, h4, h5, h6) + :is(h1, h2, h3, h4, h5, h6) {
       padding-top: 0;
     }
@@ -602,7 +602,7 @@
 
   /* Figures and captions. */
   @layer elements {
-    figure figcaption {
+    figcaption {
       color: var(--ok-color-muted-fg);
       text-align: center;
     }
@@ -656,7 +656,7 @@
   /* Disclosure widgets. */
   @layer elements {
     details,
-    details > summary {
+    summary {
       border-radius: var(--ok-border-radius);
       border: 1px solid var(--ok-color-border);
       padding-bottom: var(--ok-line-height);
@@ -672,7 +672,7 @@
       margin-top: -2px;
     }
 
-    details > summary {
+    summary {
       background-color: var(--ok-color-block-bg);
       color: var(--ok-color-block-fg);
       cursor: pointer;
@@ -682,12 +682,12 @@
     }
 
     /* Give long text in <summary>'s a horizontal scrollbar instead of letting it overflow. */
-    details > summary {
+    summary {
       overflow: auto;
       white-space: nowrap;
     }
 
-    details > summary::marker {
+    summary::marker {
       color: var(--ok-color-summary-marker);
     }
 
@@ -730,17 +730,12 @@
     }
 
     /* Fix headings in summaries. */
-    details > summary h1,
-    details > summary h2,
-    details > summary h3,
-    details > summary h4,
-    details > summary h5,
-    details > summary h6 {
+    summary :is(h1, h2, h3, h4, h5, h6) {
       display: inline-block;
       padding: 0;
     }
 
-    details > summary:has(h1) {
+    summary:has(h1) {
       /* I have no idea why but the contents of <summary> elements that contain
          <h1>'s are ending up 27px high even though the heading is only 24px high.
          Correct it by removing 3px from the <summary>'s padding-bottom. This seems
@@ -748,7 +743,7 @@
       padding-bottom: calc(var(--ok-line-height) - 3px);
     }
 
-    details > summary:has(h2) {
+    summary:has(h2) {
       /* I have no idea why but the contents of <summary> elements that contain
          <h2>'s are ending up 25px high even though the heading is only 24px high.
          Correct it by removing 1px from the <summary>'s padding-bottom. This seems
