@@ -700,11 +700,6 @@
     sup samp {
       line-height: inherit;
     }
-
-    footer code,
-    footer samp {
-      background-color: inherit;
-    }
   }
 
   /* Disclosure widgets. */
