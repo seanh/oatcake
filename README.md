@@ -2,8 +2,10 @@
 import cog
 
 if badges == "yes":
+  cog.outl("")
   cog.outl("[![NPM Version](https://img.shields.io/npm/v/oatcake)](https://www.npmjs.com/package/oatcake)")
   cog.outl("[![jsDelivr Hits](https://data.jsdelivr.com/v1/package/npm/oatcake/badge)](https://www.jsdelivr.com/package/npm/oatcake)")
+  cog.outl("")
 ]]]-->
 
 [![NPM Version](https://img.shields.io/npm/v/oatcake)](https://www.npmjs.com/package/oatcake)
@@ -24,9 +26,11 @@ To style your own page with Oatcake just add this link to your HTML file's
 <!--[[[cog
 import cog
 
+cog.outl("")
 cog.outl("```html")
 cog.outl(f'<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/oatcake@{version}" />')
 cog.outl("```")
+cog.outl("")
 ]]]-->
 
 ```html
@@ -43,7 +47,8 @@ that you can copy-and-paste to get started:
 <!--[[[cog
 import cog
 
-cog.outl(f"""```html
+cog.outl(f"""
+```html
 <!doctype html>
 <html lang="en">
   <head>
@@ -60,7 +65,8 @@ cog.outl(f"""```html
     <p>Page content goes here…</p>
   </body>
 </html>
-```""")
+```
+""")
 ]]]-->
 
 ```html
@@ -98,7 +104,8 @@ Here's an example:
 <!--[[[cog
 import cog
 
-cog.outl(f"""```html
+cog.outl(f"""
+```html
 <div>
   <template shadowrootmode="open">
     <link
@@ -112,7 +119,8 @@ cog.outl(f"""```html
     </p>
   </template>
 </div>
-```""")
+```
+""")
 ]]]-->
 
 ```html
