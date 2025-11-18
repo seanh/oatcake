@@ -34,7 +34,10 @@ cog.outl("")
 ]]]-->
 
 ```html
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/oatcake@1.0.0-rc.4" />
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/oatcake@1.0.0-rc.11"
+/>
 ```
 
 <!--[[[end]]]-->
@@ -78,7 +81,7 @@ cog.outl(f"""
     <title>Page title</title>
     <link
       rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/oatcake@1.0.0-rc.4"
+      href="https://cdn.jsdelivr.net/npm/oatcake@1.0.0-rc.11"
     />
   </head>
   <body style="max-width:40em; margin:0 auto; padding:0 12px;">
@@ -128,7 +131,7 @@ cog.outl(f"""
   <template shadowrootmode="open">
     <link
       rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/oatcake@1.0.0-rc.4"
+      href="https://cdn.jsdelivr.net/npm/oatcake@1.0.0-rc.11"
     />
 
     <p>
