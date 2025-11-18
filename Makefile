@@ -12,6 +12,10 @@ help:
 	@echo "    Check that the code is formatted nicely."
 	@echo "make validate"
 	@echo "    Check that the code is valid."
+	@echo "make spell"
+	@echo "    Run the spell checker."
+	@echo "make readme badges=yes version=1.0.0"
+	@echo "    Update README.md with badges enabled and version number 1.0.0."
 	@echo "make help"
 	@echo "    Show this help message."
 
@@ -43,3 +47,7 @@ validate:
 spell: additional_args?=
 spell:
 	@DICPATH=hunspell hunspell -H -d en_US -r -p hunspell/personal.dict $(additional_args) site/index.html
+
+.PHONY: readme
+readme:
+	cog -D badges=${badges} -D version=${version} -r README.md
