@@ -190,9 +190,9 @@
 
     :is(aside, blockquote) > *:first-child,
     details:has(summary) > :not(summary):first-child,
-    summary:first-child + *,
+    details > summary:first-child + *,
     figure > :not(figcaption):first-child,
-    figcaption:first-child + * {
+    figure > figcaption:first-child + * {
       margin-top: 0 !important;
     }
 
@@ -420,10 +420,7 @@
       border-bottom-color: var(--ok-color-kbd-border-bottom);
       color: var(--ok-color-kbd-fg);
       font-size: 12px;
-      padding-bottom: 3px;
-      padding-left: 5px;
-      padding-right: 5px;
-      padding-top: 3px;
+      padding: 3px 5px;
       vertical-align: top;
     }
 
@@ -611,11 +608,7 @@
        but we only want one line of margin between an image, video, iframe or
        audio in a figure and the <figcaption> that follows it. Achieve this by
        applying a negative margin to the <figcaption> element. */
-    figure audio + figcaption,
-    figure iframe + figcaption,
-    figure img + figcaption,
-    figure svg + figcaption,
-    figure video + figcaption {
+    figure :is(audio, iframe, img, svg, video) + figcaption {
       margin-top: calc(var(--ok-line-height) * -1);
     }
   }
@@ -632,23 +625,13 @@
       padding-right: 5px;
     }
 
-    a code,
-    a samp,
-    kbd code,
-    kbd samp,
-    mark code,
-    mark samp {
+    :is(a, kbd, mark) :is(code, samp) {
       background-color: inherit;
       color: inherit;
       padding: 0;
     }
 
-    small code,
-    small samp,
-    sub code,
-    sub samp,
-    sup code,
-    sup samp {
+    :is(small, sub, sup) :is(code, samp) {
       line-height: inherit;
     }
   }
@@ -659,10 +642,7 @@
     summary {
       border-radius: var(--ok-border-radius);
       border: 1px solid var(--ok-color-border);
-      padding-bottom: var(--ok-line-height);
-      padding-left: calc(0.5 * var(--ok-line-height));
-      padding-right: calc(0.5 * var(--ok-line-height));
-      padding-top: var(--ok-line-height);
+      padding: var(--ok-line-height) calc(0.5 * var(--ok-line-height));
     }
 
     details {
@@ -679,10 +659,7 @@
       margin-left: calc(-0.5 * var(--ok-line-height) - 1px);
       margin-right: calc(-0.5 * var(--ok-line-height) - 1px);
       margin-top: calc(-1 * calc(var(--ok-line-height)) - 1px);
-    }
-
-    /* Give long text in <summary>'s a horizontal scrollbar instead of letting it overflow. */
-    summary {
+      /* Give long text in <summary>'s a horizontal scrollbar instead of letting it overflow. */
       overflow: auto;
       white-space: nowrap;
     }
@@ -762,21 +739,17 @@
       border-radius: var(--ok-border-radius);
       border: 1px solid var(--ok-color-border);
       overflow: auto;
-      padding-bottom: calc(var(--ok-line-height) - 2px);
-      padding-left: calc(0.5 * var(--ok-line-height) - 1px);
-      padding-right: calc(0.5 * var(--ok-line-height) - 1px);
-      padding-top: var(--ok-line-height);
+      padding: var(--ok-line-height) calc(0.5 * var(--ok-line-height) - 1px)
+        calc(var(--ok-line-height) - 2px);
     }
 
     pre,
-    pre code,
-    pre samp {
+    pre :is(code, samp) {
       background-color: var(--ok-color-block-bg);
       color: var(--ok-color-block-fg);
     }
 
-    pre code,
-    pre samp {
+    pre :is(code, samp) {
       padding: 0;
       white-space: pre;
     }
@@ -789,16 +762,8 @@
       color: var(--ok-color-block-fg);
       border-radius: var(--ok-border-radius);
       border: 1px solid var(--ok-color-border);
-      padding-bottom: calc(var(--ok-line-height) - 2px);
-      padding-left: calc(0.5 * var(--ok-line-height) - 1px);
-      padding-right: calc(0.5 * var(--ok-line-height) - 1px);
-      padding-top: var(--ok-line-height);
-    }
-
-    aside > h1:last-child,
-    aside > h2:last-child,
-    aside > h3:last-child {
-      padding-bottom: 0;
+      padding: var(--ok-line-height) calc(0.5 * var(--ok-line-height) - 1px)
+        calc(var(--ok-line-height) - 2px);
     }
   }
 }
