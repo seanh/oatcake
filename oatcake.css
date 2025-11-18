@@ -247,16 +247,24 @@
   @layer elements {
     /* These are the link colors suggested in the HTML standard:
        https://html.spec.whatwg.org/multipage/rendering.html#phrasing-content-3 */
-    :link {
+    :link,
+    mark :link,
+    :link mark {
       color: var(--ok-color-link-fg);
     }
 
-    :visited {
+    :visited,
+    mark :visited,
+    :visited mark {
       color: var(--ok-color-link-visited-fg);
     }
 
     :link:active,
-    :visited:active {
+    :visited:active,
+    mark :link:active,
+    mark :visited:active,
+    :link:active mark,
+    :visited:active mark {
       color: var(--ok-color-link-active-fg);
     }
 
@@ -411,12 +419,11 @@
 
   /* Footers. */
   @layer elements {
-    footer a,
-    footer b,
+    footer :link,
+    footer :visited,
     footer code,
     footer mark,
     footer samp,
-    footer strong,
     footer {
       color: var(--ok-color-muted-fg);
     }
