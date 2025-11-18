@@ -1,5 +1,15 @@
+<!--[[[cog
+import cog
+
+if badges == "yes":
+  cog.outl("[![NPM Version](https://img.shields.io/npm/v/oatcake)](https://www.npmjs.com/package/oatcake)")
+  cog.outl("[![jsDelivr Hits](https://data.jsdelivr.com/v1/package/npm/oatcake/badge)](https://www.jsdelivr.com/package/npm/oatcake)")
+]]]-->
+
 [![NPM Version](https://img.shields.io/npm/v/oatcake)](https://www.npmjs.com/package/oatcake)
 [![jsDelivr Hits](https://data.jsdelivr.com/v1/package/npm/oatcake/badge)](https://www.jsdelivr.com/package/npm/oatcake)
+
+<!--[[[end]]]-->
 
 # Oatcake
 
@@ -11,14 +21,47 @@ without drawing attention to the design. Works great on both mobile and desktop.
 To style your own page with Oatcake just add this link to your HTML file's
 `<head>`:
 
+<!--[[[cog
+import cog
+
+cog.outl("```html")
+cog.outl(f'<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/oatcake@{version}" />')
+cog.outl("```")
+]]]-->
+
 ```html
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/oatcake@1.0.0-rc.2" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/oatcake@1.0.0-rc.4" />
 ```
+
+<!--[[[end]]]-->
 
 That's it! If all you want is a simple page like [Oatcake's demo
 page](https://www.seanh.cc/oatcake/) just add a little CSS layout of your own
 (`max-width`, `margin`, `padding`) and you're done. Here's a complete HTML file
 that you can copy-and-paste to get started:
+
+<!--[[[cog
+import cog
+
+cog.outl(f"""```html
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Page title</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/oatcake@{version}"
+    />
+  </head>
+  <body style="max-width:40em; margin:0 auto; padding:0 12px;">
+    <h1>Page Title</h1>
+    <p>Page content goes here…</p>
+  </body>
+</html>
+```""")
+]]]-->
 
 ```html
 <!doctype html>
@@ -29,7 +72,7 @@ that you can copy-and-paste to get started:
     <title>Page title</title>
     <link
       rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/oatcake@1.0.0-rc.2"
+      href="https://cdn.jsdelivr.net/npm/oatcake@1.0.0-rc.4"
     />
   </head>
   <body style="max-width:40em; margin:0 auto; padding:0 12px;">
@@ -38,6 +81,8 @@ that you can copy-and-paste to get started:
   </body>
 </html>
 ```
+
+<!--[[[end]]]-->
 
 ### Applying Oatcake to only part of a page
 
@@ -50,12 +95,32 @@ You can apply Oatcake to only part of a page by loading it in a
 [Shadow DOM](https://developer.mozilla.org/en-US/docs/Web/API/Web_components/Using_shadow_DOM).
 Here's an example:
 
+<!--[[[cog
+import cog
+
+cog.outl(f"""```html
+<div>
+  <template shadowrootmode="open">
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/oatcake@{version}"
+    />
+
+    <p>
+      Oatcake's styles will be applied to everything within the "template"
+      element.
+    </p>
+  </template>
+</div>
+```""")
+]]]-->
+
 ```html
 <div>
   <template shadowrootmode="open">
     <link
       rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/oatcake@1.0.0-rc.2"
+      href="https://cdn.jsdelivr.net/npm/oatcake@1.0.0-rc.4"
     />
 
     <p>
@@ -65,6 +130,8 @@ Here's an example:
   </template>
 </div>
 ```
+
+<!--[[[end]]]-->
 
 Any other CSS or JavaScript that you want to work within the `<template>`
 element will need to be loaded within it as well: the content inside the
