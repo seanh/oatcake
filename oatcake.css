@@ -226,18 +226,7 @@
 
     /* Prevent line wrapping within certain elements. This does mean that if you
      * put really long text in one of these it will overflow. */
-    h1 code,
-    h1 samp,
-    h2 code,
-    h2 samp,
-    h3 code,
-    h3 samp,
-    h4 code,
-    h4 samp,
-    h5 code,
-    h5 samp,
-    h6 code,
-    h6 samp,
+    :is(h1, h2, h3, h4, h5, h6) :is(code, samp),
     kbd {
       white-space: nowrap;
     }
