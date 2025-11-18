@@ -1,0 +1,36 @@
+name: Update README
+on:
+  release:
+    types: [published]
+  workflow_dispatch:
+jobs:
+  Update_README:
+    name: "Update README"
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      id-token: write
+    steps:
+      - run: sudo apt install python3-cogapp
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.14"
+      - run: python3 -m pip install pipx
+      - run: python3 -m pipx install "git+https://github.com/seanh/gh-pr-upsert.git"
+      - run: python3 -m pipx install "git+https://github.com/seanh/gha-token.git"
+      - run: |
+          git config --global user.name "seanh-github-app[bot]"
+          git config --global user.email "244757293+seanh-github-app[bot]@users.noreply.github.com"
+      - run: echo GITHUB_TOKEN=$(gha-token --app-id 2313150 --installation-id 95349441 --private-key "$PRIVATE_KEY") >> $GITHUB_OUTPUT
+        id: github_token
+        env:
+          PRIVATE_KEY: ${{ secrets.SEANH_GITHUB_APP_PRIVATE_KEY }}
+      - run: gh auth setup-git
+        env:
+          GITHUB_TOKEN: ${{ steps.github_token.outputs.GITHUB_TOKEN }}
+      - uses: actions/checkout@v5
+      - run: |
+          make readme badges=yes version="${{ github.event.release.tag_name }}"
+          git switch --no-guess --no-track --force-create readme "origin/main"
+          git commit README.md --allow-empty --message "Update version numbers in README.md"
+          gh-pr-upsert --title "Update version numbers in README.md"
