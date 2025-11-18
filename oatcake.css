@@ -399,13 +399,6 @@
     }
   }
 
-  /* <var>. */
-  @layer elements {
-    var {
-      font-style: italic;
-    }
-  }
-
   /* Footers. */
   @layer elements {
     footer :link,
