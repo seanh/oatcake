@@ -191,11 +191,11 @@
 
       <ul>
         <li>
-          <strong>Just one little CSS file.</strong> &lt;2.5KB minified and
+          <strong>Just one little CSS file.</strong> ~2.3KB minified and
           compressed.
         </li>
         <li>
-          <strong>Styles ordinary HTML elements directly.</strong>
+          <strong>Styles ordinary HTML elements.</strong>
           No CSS classes or JavaScript, you can style HTML straight from
           Markdown.
         </li>
@@ -635,7 +635,7 @@ if __name__ == "__main__":
         <u>underlines</u>, <mark>highlights</mark>, (even mid-word highlights:
         un<mark>frigging</mark>believable), <small>small text</small>,
         subscripts<sub>24</sub> and superscripts<sup>42</sup>, abbreviations
-        (<abbr title="HyperText Markup Language">HTML</abbr>), <q>quotes</q>,
+        like <abbr title="HyperText Markup Language">HTML</abbr>, <q>quotes</q>,
         and keyboard input: <kbd>Ctrl</kbd> + <kbd>c</kbd>.
       </p>
 
@@ -871,8 +871,8 @@ if __name__ == "__main__":
           <a
             href="https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/cite"
             >MDN</a
-          >) for the <em>name</em> or title of a computer program or any other
-          work (book, research paper, poem, song, play, film, TV show, game,
+          >) for the name or title of a computer program or any other work
+          (book, research paper, poem, song, play, film, TV show, game,
           painting, website or web page, etc). Oatcake styles
           <code>&lt;cite&gt;</code> in italics, here's an example from the HTML
           Standard:
@@ -1124,12 +1124,12 @@ that allows off-world teams to open the iris.&lt;/p&gt;</code></pre>
 
         <p>
           When using <code>&lt;abbr&gt;</code> you don't have to use the
-          <code>title</code> attribute for the expansion: it's just as good to
-          put the expansion in parentheses following the first use of the
-          abbreviation. Subsequent uses of the abbreviation don't need to repeat
-          the expansion. This is probably <em>better</em> than the
-          <code>title</code> attribute in most cases because some browsers (e.g.
-          mobile browsers) don't support tooltips. Here's an example from MDN:
+          <code>title</code> attribute: it's just as good to put the expansion
+          in parentheses following the first use of the abbreviation. Subsequent
+          uses of the abbreviation don't need to repeat the expansion. This is
+          probably <em>better</em> than the <code>title</code> attribute in most
+          cases because some browsers (e.g. mobile browsers) don't support
+          tooltips. Here's an example from MDN:
         </p>
 
         <pre><code>You can use <mark>&lt;abbr&gt;CSS&lt;/abbr&gt; (Cascading Style Sheets)</mark> to
@@ -2063,7 +2063,7 @@ disagree with this mission.&lt;/p&gt;</code></pre>
         <p>
           A lot of themes break or look weird if you try to use emphasis,
           <code>&lt;kbd&gt;</code>, etc in a heading. Oatcake makes sure that
-          common inline elements work in headings:
+          all the inline elements work in headings:
         </p>
 
         <div class="example">
@@ -2086,13 +2086,16 @@ disagree with this mission.&lt;/p&gt;</code></pre>
         </div>
 
         <h3 class="notoc">
-          <b>Edge case:</b> <code>&lt;code&gt;</code> in headings
+          <b>Edge case:</b> <code>&lt;code&gt;</code> and
+          <code>&lt;samp&gt;</code> in headings
         </h3>
 
         <p>
           <code>&lt;code&gt;</code> and <code>&lt;samp&gt;</code> elements in
           headings get a monospaced font but this can be quite subtle so Oatcake
-          also surrounds the code in backticks:
+          also surrounds the code in backticks. Oatcake also prevents
+          line-wrapping within a <code>&lt;code&gt;</code> or
+          <code>&lt;samp&gt;</code> in a heading.
         </p>
 
         <div class="example">
@@ -2106,11 +2109,6 @@ disagree with this mission.&lt;/p&gt;</code></pre>
             An &lt;h3&gt; with <code>code</code> and <samp>sample output</samp>
           </h3>
         </div>
-
-        <p>
-          Oatcake also prevents line-wrapping within a
-          <code>&lt;code&gt;</code> in a heading: it looks bad.
-        </p>
 
         <h3 class="notoc"><b>Edge case:</b> headings that wrap</h3>
 
@@ -2358,10 +2356,7 @@ disagree with this mission.&lt;/p&gt;</code></pre>
 
         <h3 class="notoc"><b>Edge case:</b> inline elements in subheadings</h3>
 
-        <p>
-          Inline elements like <code>&lt;code&gt;</code> and
-          <code>&lt;samp&gt;</code> also work in subheadings:
-        </p>
+        <p>All the inline elements work in subheadings:</p>
 
         <hgroup class="example">
           <h1 class="noanchor">Aenean lacinia porta ullamcorper</h1>
@@ -2801,27 +2796,41 @@ disagree with this mission.&lt;/p&gt;</code></pre>
 
       <h2 id="blockquote">Block quotes</h2>
 
-      <p>
-        Here's what a
-        <code>&lt;blockquote&gt;</code> looks like with Oatcake:
-      </p>
+      <p>Use <code>&lt;blockquote&gt;</code> to create block quotes. This:</p>
 
-      <blockquote>
-        Ut fermentum turpis quis ligula sagittis, a fringilla orci ultrices. Nam
-        fringilla erat ac bibendum tristique. Morbi nec maximus augue.
-      </blockquote>
+      <pre><code>&lt;blockquote&gt;
+  &lt;p&gt;
+    Ut fermentum turpis quis ligula sagittis, a fringilla orci
+    ultrices. Nam fringilla erat ac bibendum tristique. Morbi
+    nec maximus augue.
+  &lt;/p&gt;
+&lt;/blockquote&gt;</code></pre>
 
-      <p>
-        You can optionally wrap the contents of a
-        <code>&lt;blockquote&gt;</code> in a <code>&lt;p&gt;</code>, it looks
-        the same:
-      </p>
+      <p>&hellip;renders like this:</p>
 
       <blockquote>
         <p>
           Ut fermentum turpis quis ligula sagittis, a fringilla orci ultrices.
           Nam fringilla erat ac bibendum tristique. Morbi nec maximus augue.
         </p>
+      </blockquote>
+
+      <p>
+        If your block quote contains only a single paragraph you can omit the
+        <code>&lt;p&gt;</code> and it'll look the same. This:
+      </p>
+
+      <pre><code>&lt;blockquote&gt;
+  Ut fermentum turpis quis ligula sagittis, a fringilla orci
+  ultrices. Nam fringilla erat ac bibendum tristique. Morbi nec
+  maximus augue.
+&lt;/blockquote&gt;</code></pre>
+
+      <p>&hellip;renders like this:</p>
+
+      <blockquote>
+        Ut fermentum turpis quis ligula sagittis, a fringilla orci ultrices. Nam
+        fringilla erat ac bibendum tristique. Morbi nec maximus augue.
       </blockquote>
 
       <details>
@@ -3607,11 +3616,11 @@ int main()
         <h3 class="notoc">Design notes</h3>
 
         <p>
-          To avoid distracting readers with too many different visual styles
+          To avoid distracting readers with too many different visual styles,
           Oatcake styles disclosure widgets similarly to preformatted text,
-          code, and asides: the same background color, border, rounded corners,
-          and padding. The difference is that instead of being preformatted or
-          monospaced disclosure widgets are collapsible.
+          code, and sample output blocks: the same background color, border,
+          rounded corners, and padding. The difference is that instead of being
+          preformatted or monospaced disclosure widgets are collapsible.
         </p>
 
         <p>
@@ -3715,6 +3724,27 @@ int main()
       </p>
 
       <pre><code>&lt;aside&gt;
+  &lt;p&gt;
+    People ask me what I do for fun when I'm not at work.
+    But I'm paid to do my hobby, so I never know what to answer.
+  &lt;/p&gt;
+&lt;/aside&gt;</code></pre>
+
+      <p>&hellip;renders like this:</p>
+
+      <aside>
+        <p>
+          People ask me what I do for fun when I'm not at work. But I'm paid to
+          do my hobby, so I never know what to answer.
+        </p>
+      </aside>
+
+      <p>
+        If your <code>&lt;aside&gt;</code> contains only a single paragraph you
+        can omit the <code>&lt;p&gt;</code> and it'll look the same. This:
+      </p>
+
+      <pre><code>&lt;aside&gt;
   People ask me what I do for fun when I'm not at work.
   But I'm paid to do my hobby, so I never know what to answer.
 &lt;/aside&gt;</code></pre>
@@ -3732,13 +3762,11 @@ int main()
         <h3 class="notoc">Design notes</h3>
 
         <p>
-          In-line with Oatcake's consistently unshowy nature asides are styled
-          the same as
-          <a href="#pre">preformatted text blocks</a>,
-          <a href="#pre-code">code blocks</a>, and
-          <a href="#details">disclosure widgets</a>. The difference is that an
-          aside's contents aren't preformatted, monospaced, or collapsible. It's
-          just a box!
+          In-line with Oatcake's consistently unshowy nature, asides are styled
+          the same as preformatted text blocks, code blocks, sample output
+          blocks, and disclosure widgets. The difference is that an aside's
+          contents aren't preformatted, monospaced, or collapsible. It's just a
+          box!
         </p>
 
         <h3 class="notoc">Usage</h3>
@@ -3951,7 +3979,7 @@ int main()
       <footer>
         <strong>Bold</strong>, <em>italics</em>, <code>code</code>,
         <u>underlines</u>, <mark>highlights</mark>, <del>strikethroughs</del>,
-        and <a href="https://example.com">links</a>, abbreviations:
+        and <a href="https://example.com">links</a>, abbreviations like
         <abbr title="HyperText Markup Language">HTML</abbr>,
         <small>small text</small>, etc.
       </footer>
@@ -3985,7 +4013,7 @@ int main()
       <p>
         Finally, here's what an <code>&lt;hr&gt;</code> (a horizontal rule
         representing a thematic break like a change of scene or topic) looks
-        like like with Oatcake:
+        like with Oatcake:
       </p>
 
       <blockquote>
