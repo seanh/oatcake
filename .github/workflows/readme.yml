@@ -7,9 +7,6 @@ jobs:
   Update_README:
     name: "Update README"
     runs-on: ubuntu-latest
-    permissions:
-      contents: read
-      id-token: write
     steps:
       - run: sudo apt install python3-cogapp
       - uses: actions/setup-python@v6
