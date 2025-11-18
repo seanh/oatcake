@@ -20,6 +20,7 @@ jobs:
         run: |
           make css
           mv site/oatcake.min.css .
+      - run: sudo apt install python3-cogapp
       - run: make readme badges=no version="${{ github.event.release.tag_name }}"
       - name: Publish package
         run: bin/release.sh "${{ github.event.release.tag_name }}"
