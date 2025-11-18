@@ -2,7 +2,6 @@ name: Update README
 on:
   release:
     types: [published]
-  workflow_dispatch:
 jobs:
   Update_README:
     name: "Update README"
