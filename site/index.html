@@ -3602,12 +3602,15 @@ int main()
     <u>printf</u>(<del>"Hello World!\n"</del>);
 <strong>}</strong></code></pre>
 
-      <p>
-        You can customize the fonts and colors of code blocks by setting a
-        couple of CSS variables. For example:
-      </p>
+      <details>
+        <summary><b>Customization:</b> code blocks</summary>
 
-      <pre><code>&lt;style&gt;
+        <p>
+          You can customize the fonts and colors of code blocks by setting a
+          couple of CSS variables. For example:
+        </p>
+
+        <pre><code>&lt;style&gt;
   pre:has(&gt; code:only-child),
   pre &gt; code:only-child {
     --ok-color-block-bg: #282828;
@@ -3617,14 +3620,15 @@ int main()
   }
 &lt;/style&gt;</code></pre>
 
-      <p>Now code blocks will look like this:</p>
+        <p>Now code blocks will look like this:</p>
 
-      <pre class="dark"><code>#include &lt;stdio.h&gt;
+        <pre class="dark"><code>#include &lt;stdio.h&gt;
 
 int main()
 {
     printf("Hello World!\n");
 }</code></pre>
+      </details>
 
       <h2 id="pre-samp">Sample output blocks</h2>
 
