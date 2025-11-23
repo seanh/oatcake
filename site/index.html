@@ -2202,15 +2202,17 @@ disagree with this mission.&lt;/p&gt;</code></pre>
       <h2 id="hgroup">Subheadings</h2>
 
       <p>
-        You can add a subheading to an <code>&lt;h1&gt;</code> or
-        <code>&lt;h2&gt;</code> heading by wrapping the
-        <code>&lt;h1&gt;</code> or <code>&lt;h2&gt;</code> in an
+        You can add a subheading to an <code>&lt;h1&gt;</code>&ndash;<code
+          >&lt;h6&gt;</code
+        >
+        heading by wrapping the
+        <code>&lt;h1&gt;</code>&ndash;<code>&lt;h6&gt;</code> in an
         <code>&lt;hgroup&gt;</code> along with the subheading in a
         <code>&lt;p&gt;</code>. Oatcake will style the <code>&lt;p&gt;</code> as
         a subheading&mdash;with larger text but not quite as big and bold as the
-        <code>&lt;h1&gt;</code> or <code>&lt;h2&gt;</code> heading itself. This
-        example from MDN uses a <code>&lt;p&gt;</code> to give an alternative
-        title:
+        <code>&lt;h1&gt;</code>&ndash;<code>&lt;h6&gt;</code> heading itself.
+        This example from MDN uses a <code>&lt;p&gt;</code> to give an
+        alternative title:
       </p>
 
       <pre><code>&lt;hgroup&gt;
@@ -2262,12 +2264,9 @@ disagree with this mission.&lt;/p&gt;</code></pre>
       </div>
 
       <p>
-        Subheadings only work with <code>&lt;h1&gt;</code> and
-        <code>&lt;h2&gt;</code> headings. If you put a <code>&lt;p&gt;</code> in
-        an <code>&lt;hgroup&gt;</code> with an
-        <code>&lt;h3&gt;</code>&ndash;<code>&lt;h6&gt;</code> heading it'll just
-        be styled like a normal paragraph, making the
-        <code>&lt;hgroup&gt;</code> semantic only:
+        Subheadings for <code>&lt;h3&gt;</code>&ndash;<code>&lt;h6&gt;</code>
+        headings have the same font-size as normal text but are visually
+        differentiated by their lighter font weight:
       </p>
 
       <div class="example">
