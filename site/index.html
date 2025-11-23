@@ -60,6 +60,28 @@
       .example:not(.padding) h6:first-child {
         padding-top: 0;
       }
+      pre:has(> code:only-child).dark,
+      pre.dark > code:only-child {
+        --ok-color-block-bg: #282828;
+        --ok-color-block-fg: #ebdbb2;
+        --ok-color-border: #d65d03;
+        --ok-font-family-mono: "Nimbus Mono PS", "Courier New", monospace;
+      }
+      blockquote.custom {
+        border: none;
+        font-size: 19px;
+        font-weight: 300;
+        position: relative;
+      }
+      blockquote.custom::before {
+        position: absolute;
+        font-size: 3em;
+        z-index: -1;
+        color: var(--ok-color-border);
+        content: "\201C";
+        left: 0;
+        top: 0;
+      }
       @media all and (max-width: 800px) {
         .wide-only {
           display: none !important;
@@ -180,9 +202,7 @@
           like
           <code>&lt;samp&gt;</code>, <code>&lt;kbd&gt;</code>,
           <code>&lt;hgroup&gt;</code>, <code>&lt;aside&gt;</code>,
-          <code>&lt;details&gt;</code> &amp; <code>&lt;summary&gt;</code>, and
-          <code>&lt;figure&gt;</code> &amp; <code>&lt;figcaption&gt;</code>;
-          etc.
+          <code>&lt;details&gt;</code> and <code>&lt;figure&gt;</code>; etc.
         </li>
         <li>
           <strong>Use alone or as a base layer.</strong>
@@ -196,14 +216,14 @@
       </ul>
 
       <p>
-        To add Oatcake to your site see the instructions in the
+        To style your own site with Oatcake, see the instructions in the
         <a href="https://github.com/seanh/oatcake">README</a>.
       </p>
 
       <p>
         The rest of this tremendously long page will demo Oatcake's features,
         show you how to use them, and explain some of the design choices. You
-        might even learn some things about HTML along the way!
+        might even learn something about HTML along the way!
       </p>
 
       <div class="toc"></div>
@@ -233,8 +253,22 @@
           writing. A system font stack follows Oatcake's philosophy of looking
           good without drawing attention to its design choices. It's fast (no
           fonts to download), readable (modern operating systems ship
-          high-quality fonts adapted to today's screens), and feels native to
-          the user's system (nothing too distinctive).
+          high-quality fonts adapted to today's screens and legible at small
+          sizes), and feels native to the user's system (nothing too
+          distinctive).
+        </p>
+
+        <p>
+          A system font stack also supports a wide range of weights:
+          <span style="font-weight: 700">bold</span> (<code
+            >font-weight: 700</code
+          >), <span style="font-weight: 900">bolder</span> (<code
+            >font-weight: 900</code
+          >), <span style="font-weight: 300">light</span> (<code
+            >font-weight: 300</code
+          >), <span style="font-weight: 100">lighter</span> (<code
+            >font-weight: 100</code
+          >).
         </p>
 
         <h3 class="notoc">Customizing Oatcake's fonts</h3>
@@ -2028,9 +2062,9 @@ disagree with this mission.&lt;/p&gt;</code></pre>
         <h3 class="notoc"><b>Edge case:</b> inline elements in headings</h3>
 
         <p>
-          A lot of themes break or look weird if you try to use emphasis,
-          <code>&lt;kbd&gt;</code>, etc in a heading. Oatcake makes sure that
-          all the inline elements work in headings:
+          A lot of themes break or look weird if you try to use inline elements
+          in a heading. Oatcake makes sure that all the inline elements work in
+          headings:
         </p>
 
         <div class="example">
@@ -2799,7 +2833,6 @@ disagree with this mission.&lt;/p&gt;</code></pre>
         Ut fermentum turpis quis ligula sagittis, a fringilla orci ultrices. Nam
         fringilla erat ac bibendum tristique. Morbi nec maximus augue.
       </blockquote>
-
       <details>
         <summary><b>Details:</b> block quotes</summary>
 
@@ -2819,6 +2852,47 @@ disagree with this mission.&lt;/p&gt;</code></pre>
           quotes (see below), and the left border makes it extra clear where the
           block quote starts and ends which is helpful with long block quotes.
         </p>
+
+        <h3 class="notoc">Customization</h3>
+
+        <p>
+          You can customize the style of block quotes with your own CSS. For
+          example this will use a larger font-size and a thinner font-weight,
+          and will use a "left double quotation mark" character rather than a
+          left border to indicate the block quote:
+        </p>
+
+        <pre><code>blockquote {
+  border: none;
+  font-size: 19px;
+  font-weight: 300;
+  position: relative;
+}
+blockquote::before {
+  position: absolute;
+  font-size: 3em;
+  z-index: -1;
+  color: var(--ok-color-border);
+  content: "\201C";
+  left: 0;
+  top: 0;
+}</code></pre>
+
+        <p>Now block quotes will look like this:</p>
+
+        <blockquote class="custom">
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec a
+            turpis at lacus accumsan dignissim sed vitae diam. Nullam bibendum
+            egestas libero, tincidunt tincidunt ex iaculis quis.
+          </p>
+
+          <p>
+            Maecenas eget velit luctus, maximus urna quis, condimentum odio.
+            Curabitur ultrices nunc quis turpis ullamcorper rutrum quis sit amet
+            massa. Sed vel odio vel massa rutrum scelerisque.
+          </p>
+        </blockquote>
 
         <h3 class="notoc"><b>Edge case:</b> nested block quotes</h3>
 
@@ -3242,9 +3316,9 @@ disagree with this mission.&lt;/p&gt;</code></pre>
           />
           <figcaption>
             <strong>Laboris</strong> nisi ut aliquip ex ea commodo
-            <em>consequat</em>. Duis aute irure dolor in reprehenderit in
-            voluptate velit <code>esse cillum dolore</code> eu fugiat nulla
-            pariatur.
+            <em>consequat</em>. <kbd>Ctrl</kbd> + <kbd>Alt</kbd> +
+            <kbd>Del</kbd> dolor in reprehenderit in voluptate velit
+            <code>esse cillum dolore</code> eu fugiat nulla pariatur.
             <a href="https://example.com">Excepteur sint occaecat</a> cupidatat
             <u>non proident</u>, <em>sunt in culpa</em> qui <del>officia</del>
             <mark>deserunt mollit anim id est laborum.</mark>
@@ -3349,7 +3423,7 @@ interface API declaration.&lt;/p&gt;
           </figcaption>
         </figure>
 
-        <h3 class="notoc"><b>Tip:</b> creative ways to use figures</h3>
+        <h3 class="notoc"><b>Tip:</b> anything can go in a figure</h3>
 
         <p>
           Figures aren't just for images. You can put anything in a figure.
@@ -3389,9 +3463,10 @@ interface API declaration.&lt;/p&gt;
       <h2 id="pre">Preformatted text</h2>
 
       <p>
-        Preformatted text blocks (created with the
-        <code>&lt;pre&gt;</code>
-        element) look like this in Oatcake:
+        You can create a block of preformatted text&mdash;where whitespace,
+        indentation and line breaks are rendered as-is, without compressing or
+        re-wrapping&mdash;using the <code>&lt;pre&gt;</code> element.
+        Preformatted text blocks look like this in Oatcake:
       </p>
 
       <pre>
@@ -3414,11 +3489,17 @@ it moves, inexhaustibly giving.</pre
       <h2 id="pre-code">Code blocks</h2>
 
       <p>
-        A code block can be created by wrapping the entire contents of a
+        HTML code blocks are created by wrapping the entire contents of a
         <code>&lt;pre&gt;</code> in a <code>&lt;code&gt;</code>. This is what
         indenting a block of text by four spaces or one tab does in Markdown (or
         "fenced code blocks" with <code>```</code> in many versions of
-        Markdown):
+        Markdown).
+      </p>
+
+      <p>
+        Oatcake aims to do more with fewer visual styles, so code blocks look
+        the same as preformatted text blocks but with a monospaced font. This is
+        less distracting for readers and makes Oatcake easier to maintain:
       </p>
 
       <pre><code>#include &lt;stdio.h&gt;
@@ -3429,9 +3510,8 @@ int main()
 }</code></pre>
 
       <p>
-        You can use links and other inline elements in preformatted text, code
-        and sample output blocks: bold, italics, underline, strikethrough, small
-        text. Here's one with a bunch:
+        You can use inline elements in preformatted text and code blocks: bold,
+        italics, underline, strikethrough, small text. Here's one with a bunch:
       </p>
 
       <pre><code><em><strong>#include &lt;stdio.h&gt;</strong></em>
@@ -3446,42 +3526,48 @@ int main()
     <u>printf</u>(<del>"Hello World!\n"</del>);
 <strong>}</strong></code></pre>
 
-      <details>
-        <summary><b>Details:</b> code blocks</summary>
+      <p>
+        You can customize the fonts and colors of code blocks by setting a
+        couple of CSS variables. For example:
+      </p>
 
-        <h3 class="notoc">Design notes</h3>
-        <p>
-          Oatcake aims to do more with fewer visual styles, so code blocks look
-          the same as preformatted text blocks but with a monospaced font. This
-          is less distracting for readers and writers and makes Oatcake easier
-          to maintain.
-        </p>
+      <pre><code>pre:has(&gt; code:only-child),
+pre &gt; code:only-child {
+  --ok-color-block-bg: #282828;
+  --ok-color-block-fg: #ebdbb2;
+  --ok-color-border: #d65d03;
+  --ok-font-family-mono: 'Nimbus Mono PS', 'Courier New', monospace;
+}</code></pre>
 
-        <h3 class="notoc">
-          <b>Edge case:</b> long lines in preformatted text blocks
-        </h3>
+      <p>Now code blocks will look like this:</p>
 
-        <p>
-          A common bug is for long lines in preformatted text, code or sample
-          output blocks to stretch out the width of the entire page which looks
-          weird and breaks the layout on mobile screens. Oatcake fixes this by
-          giving wide preformatted and code blocks a horizontal scrollbar:
-        </p>
+      <pre class="dark"><code>#include &lt;stdio.h&gt;
 
-        <pre><code class="nohighlight">def test_validate_url_returns_an_http_url_unmodified():
-    assert validate_url('https://github.com/jimsmith') == 'https://github.com/jimsmith'
-</code></pre>
-      </details>
+int main()
+{
+    printf("Hello World!\n");
+}</code></pre>
 
       <h2 id="pre-samp">Sample output blocks</h2>
 
       <p>
-        Oatcake also supports sample output blocks created by wrapping the
-        contents of a <code>&lt;pre&gt;</code> in a
-        <code>&lt;samp&gt;</code> instead of a <code>&lt;code&gt;</code>. These
-        have a different semantic meaning than code blocks&mdash;they represent
-        a block of computer <em>output</em> rather than input code:
+        HTML <em>sample output</em> blocks are created by wrapping the contents
+        of a <code>&lt;pre&gt;</code> in a <code>&lt;samp&gt;</code> instead of
+        a <code>&lt;code&gt;</code>. Sample output blocks have a different
+        semantic meaning than code blocks: they represent a block of computer
+        <em>output</em> rather than input code.
       </p>
+
+      <p>
+        As with inline <code>&lt;code&gt;</code> and
+        <code>&lt;samp&gt;</code> elements, Oatcake styles sample output blocks
+        the same as code blocks, letting the difference be semantic only. This
+        is to avoid having too many distracting visual styles and because
+        there's no obvious way to visually indicate the semantic difference
+        between "code" and "output".
+      </p>
+
+      <p>Here's what a sample output block looks like with Oatcake:</p>
 
       <pre><samp> _________________________________
 / You are taking yourself far too \
@@ -3494,24 +3580,10 @@ int main()
                 ||     ||</samp></pre>
 
       <details>
-        <summary><b>Details:</b> sample output blocks</summary>
-
-        <h3 class="notoc">Design notes</h3>
-
-        <p>
-          As with inline <code>&lt;code&gt;</code> and
-          <code>&lt;samp&gt;</code> elements Oatcake styles sample output blocks
-          the same as code blocks, letting the difference be semantic only. This
-          is to avoid having too many distracting visual styles and because
-          there's no obvious way to visually indicate the semantic difference
-          between "code" and "output".
-        </p>
-
-        <h3 class="notoc">
-          <b>Tip:</b> combining <code>&lt;pre&gt;</code>,
-          <code>&lt;code&gt;</code>, <code>&lt;samp&gt;</code> and
-          <code>&lt;kbd&gt;</code>
-        </h3>
+        <summary>
+          <b>Tip:</b> using <code>&lt;pre&gt;</code>, <code>&lt;code&gt;</code>,
+          <code>&lt;samp&gt;</code>, and <code>&lt;kbd&gt;</code> together
+        </summary>
 
         <p>
           <code>&lt;code&gt;</code>, <code>&lt;samp&gt;</code> and
@@ -3587,7 +3659,7 @@ int main()
           Oatcake styles disclosure widgets similarly to preformatted text,
           code, and sample output blocks: the same background color, border,
           rounded corners, and padding. The difference is that instead of being
-          preformatted or monospaced disclosure widgets are collapsible.
+          preformatted or monospaced, disclosure widgets are collapsible.
         </p>
 
         <p>
@@ -3687,8 +3759,18 @@ int main()
 
       <p>
         You can create pull-quotes and call-out boxes with
-        <code>&lt;aside&gt;</code>. This:
+        <code>&lt;aside&gt;</code>.
       </p>
+
+      <p>
+        In-line with Oatcake's consistently unshowy nature, asides are styled
+        the same as preformatted text blocks, code blocks and sample output
+        blocks, and very similarly to disclosure widgets. The difference is that
+        an aside's contents aren't preformatted, monospaced, or collapsible.
+        It's just a box!
+      </p>
+
+      <p>This:</p>
 
       <pre><code>&lt;aside&gt;
   &lt;p&gt;
@@ -3725,17 +3807,6 @@ int main()
 
       <details>
         <summary><b>Details:</b> asides</summary>
-
-        <h3 class="notoc">Design notes</h3>
-
-        <p>
-          In-line with Oatcake's consistently unshowy nature, asides are styled
-          the same as preformatted text blocks, code blocks, sample output
-          blocks, and disclosure widgets. The difference is that an aside's
-          contents aren't preformatted, monospaced, or collapsible. It's just a
-          box!
-        </p>
-
         <h3 class="notoc">Usage</h3>
 
         <p>
@@ -3913,13 +3984,6 @@ int main()
         </aside>
       </details>
 
-      <h2 id="table">Tables</h2>
-
-      <p>
-        <b>Todo!</b> Style HTML tables:
-        <a href="https://github.com/seanh/oatcake/issues/21">#21</a>
-      </p>
-
       <h2 id="footer">Footers</h2>
 
       <p>
@@ -3941,15 +4005,27 @@ int main()
         <a href="#">CSS</a>
       </footer>
 
-      <p>All the inline elements also work as you'd expect in footers:</p>
+      <p>
+        All the inline elements work in footers, but elements that would
+        normally stand out like
+        <a href="">links</a>, <mark>highlights</mark> and <code>code</code> have
+        a more muted style:
+      </p>
 
       <footer>
         <strong>Bold</strong>, <em>italics</em>, <code>code</code>,
-        <u>underlines</u>, <mark>highlights</mark>, <del>strikethroughs</del>,
-        and <a href="https://example.com">links</a>, abbreviations like
-        <abbr title="HyperText Markup Language">HTML</abbr>,
-        <small>small text</small>, etc.
+        <mark>highlights</mark>, <del>strikethroughs</del>, and
+        <a href="https://example.com">links</a>, abbreviations like
+        <abbr title="HyperText Markup Language">HTML</abbr>, and keyboard input:
+        <kbd>Ctrl</kbd> + <kbd>c</kbd>.
       </footer>
+
+      <p>
+        You can wrap the contents of a <code>&lt;footer&gt;</code> in a
+        <code>&lt;small&gt;</code> to create a small-text footer:
+      </p>
+
+      <footer><small>This is a small-text footer.</small></footer>
 
       <details>
         <summary><b>Usage:</b> footers</summary>
@@ -3995,15 +4071,9 @@ int main()
         </p>
       </blockquote>
 
-      <h2 id="form">Forms</h2>
-
-      <p>
-        <b>Won't fix!</b>
-        Oatcake is for styling articles, posts, etc: think Markdown files. It's
-        not meant for creating apps, UIs, forms, etc.
-      </p>
-
       <h2 id="overflow">Wrapping and horizontal scrollbars</h2>
+
+      <h3 class="notoc">Oatcake forces long words to wrap if necessary</h3>
 
       <p>
         Long unbroken words or other strings (such as URLs) that are too long to
@@ -4040,8 +4110,12 @@ int main()
         So then she pointed at the tiger and screamed "there<wbr />is<wbr />no<wbr />way<wbr />you<wbr />are<wbr />ever<wbr />going<wbr />to<wbr />catch<wbr />me"!
       </blockquote>
 
+      <h3 class="notoc">
+        Oatcake <em>prevents</em> wrapping within certain elements
+      </h3>
+
       <p>
-        Oatcake <em>doesn't</em> wrap long words inside preformatted text
+        Oatcake prevents any wrapping inside preformatted text
         (<code>&lt;pre&gt;</code>) blocks (including code and sample output
         blocks)&mdash;you don't want your code or other preformatted text being
         wrapped for you. So to prevent them from stretching out the width of the
@@ -4052,11 +4126,26 @@ int main()
       <pre><code>url = 'https://github.com/seanh/oatcake/commit/8675ffcb168b1d76d708c84a2821c20a3f99e86d'</code></pre>
 
       <p>
-        Oatcake also prevents wrapping within certain elements:
+        Oatcake also prevents wrapping within certain inline elements:
         <code>&lt;kbd&gt;</code>'s, and within headings:
         <code>&lt;code&gt;</code> and <code>&lt;samp&gt;</code>. To avoid
         horizontal scrollbars don't put anything too long in any of these
         elements.
+      </p>
+
+      <h2 id="table">Tables</h2>
+
+      <p>
+        <b>Todo!</b> Style HTML tables:
+        <a href="https://github.com/seanh/oatcake/issues/21">#21</a>
+      </p>
+
+      <h2 id="form">Forms</h2>
+
+      <p>
+        <b>Won't fix!</b>
+        Oatcake is for styling articles, posts, etc: think Markdown files. It's
+        not meant for creating apps, UIs, forms, etc.
       </p>
     </main>
     <script src="https://cdn.jsdelivr.net/npm/anchor-js/anchor.min.js"></script>
