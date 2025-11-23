@@ -2862,21 +2862,23 @@ disagree with this mission.&lt;/p&gt;</code></pre>
           left border to indicate the block quote:
         </p>
 
-        <pre><code>blockquote {
-  border: none;
-  font-size: 19px;
-  font-weight: 300;
-  position: relative;
-}
-blockquote::before {
-  position: absolute;
-  font-size: 3em;
-  z-index: -1;
-  color: var(--ok-color-border);
-  content: "\201C";
-  left: 0;
-  top: 0;
-}</code></pre>
+        <pre><code>&lt;style&gt;
+  blockquote {
+    border: none;
+    font-size: 19px;
+    font-weight: 300;
+    position: relative;
+  }
+  blockquote::before {
+    position: absolute;
+    font-size: 3em;
+    z-index: -1;
+    color: var(--ok-color-border);
+    content: "\201C";
+    left: 0;
+    top: 0;
+  }
+&lt;/style&gt;</code></pre>
 
         <p>Now block quotes will look like this:</p>
 
@@ -3531,13 +3533,15 @@ int main()
         couple of CSS variables. For example:
       </p>
 
-      <pre><code>pre:has(&gt; code:only-child),
-pre &gt; code:only-child {
-  --ok-color-block-bg: #282828;
-  --ok-color-block-fg: #ebdbb2;
-  --ok-color-border: #d65d03;
-  --ok-font-family-mono: 'Nimbus Mono PS', 'Courier New', monospace;
-}</code></pre>
+      <pre><code>&lt;style&gt;
+  pre:has(&gt; code:only-child),
+  pre &gt; code:only-child {
+    --ok-color-block-bg: #282828;
+    --ok-color-block-fg: #ebdbb2;
+    --ok-color-border: #d65d03;
+    --ok-font-family-mono: 'Nimbus Mono PS', 'Courier New', monospace;
+  }
+&lt;/style&gt;</code></pre>
 
       <p>Now code blocks will look like this:</p>
 
