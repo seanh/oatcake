@@ -25,9 +25,11 @@
     --ok-color-muted-fg: #888;
     --ok-font-family-mono:
       ui-monospace, "Cascadia Code", "Source Code Pro", Menlo, Consolas,
-      "DejaVu Sans Mono", monospace; /* This is the Monospace Code font stack from https://modernfontstacks.com/ */
+      "DejaVu Sans Mono", monospace, "Apple Color Emoji", "Segoe UI Emoji",
+      "Segoe UI Symbol", "Noto Color Emoji"; /* This is the Monospace Code font stack plus emoji support from https://modernfontstacks.com/ */
     --ok-font-family:
-      system-ui, sans-serif; /* This is the System UI font stack from https://modernfontstacks.com/ */
+      system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+      "Segoe UI Symbol", "Noto Color Emoji"; /* This is the System UI font stack plus emoji support from https://modernfontstacks.com/ */
     --ok-font-size-small: 13px;
     --ok-font-size: 16px;
     --ok-line-height: 24px; /* The line-height sets the vertical rhythm. All sizes, margins, paddings, and borders must be added in multiples of this line height. */
