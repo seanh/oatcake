@@ -38,6 +38,13 @@
         background-color: rgb(248, 215, 218);
         border-color: #f1aeb5;
       }
+      aside.custom {
+        border-left: none;
+        border-right: none;
+        border-radius: 0;
+        background-color: inherit;
+        font-weight: 300;
+      }
       samp.custom {
         border: 1px dashed #999;
       }
@@ -186,8 +193,8 @@
         </li>
         <li>
           <strong>Styles ordinary HTML elements.</strong>
-          No CSS classes or JavaScript, you can style HTML straight from
-          Markdown.
+          No CSS classes or JavaScript, you can style semantic HTML straight
+          from Markdown.
         </li>
         <li>
           <strong>Does lots with little.</strong>
@@ -197,7 +204,7 @@
         </li>
 
         <li>
-          <strong>Handles all sorts of minutiae and edge cases.</strong>
+          <strong>Handles minutiae and edge cases.</strong>
           Sweats details like typographic rhythm, nested lists, and stacked
           headings; prevents horizontal overflows; supports obscure elements
           like
@@ -223,8 +230,22 @@
 
       <p>
         The rest of this tremendously long page will demo Oatcake's features,
-        show you how to use them, and explain some of the design choices. You
-        might even learn something about HTML along the way!
+        show you how to use them, and explain some of the design choices.
+      </p>
+
+      <p>
+        You might even learn something about HTML along the way! Oatcake's
+        "classless" approach&mdash;styling standard HTML elements
+        directly&mdash;means every element comes with a semantic definition and
+        usage guidelines, complete with examples, from the
+        <a href="https://html.spec.whatwg.org/multipage/#toc-semantics"
+          >HTML Standard</a
+        >
+        and
+        <a
+          href="https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements"
+          >MDN</a
+        >. I'll link to and summarize this guidance as we go&hellip;
       </p>
 
       <div class="toc"></div>
@@ -2232,11 +2253,9 @@ disagree with this mission.&lt;/p&gt;</code></pre>
         heading by wrapping the
         <code>&lt;h1&gt;</code>&ndash;<code>&lt;h6&gt;</code> in an
         <code>&lt;hgroup&gt;</code> along with the subheading in a
-        <code>&lt;p&gt;</code>. Oatcake will style the <code>&lt;p&gt;</code> as
-        a subheading&mdash;with larger text but not quite as big and bold as the
-        <code>&lt;h1&gt;</code>&ndash;<code>&lt;h6&gt;</code> heading itself.
-        This example from MDN uses a <code>&lt;p&gt;</code> to give an
-        alternative title:
+        <code>&lt;p&gt;</code>. Oatcake will style the <code>&lt;p&gt;</code> in
+        a larger font-size and/or lighter weight. Here's some examples from MDN
+        and the HTML Standard, this <code>&lt;h1&gt;</code> with a subheading:
       </p>
 
       <pre><code>&lt;hgroup&gt;
@@ -2251,7 +2270,7 @@ disagree with this mission.&lt;/p&gt;</code></pre>
   sees it, follows Dr Frankenstein to the very ends of the earth.
 &lt;/p&gt;</code></pre>
 
-      <p>&hellip;in Oatcake it renders like this:</p>
+      <p>&hellip;renders like this:</p>
 
       <div class="example">
         <hgroup>
@@ -2269,9 +2288,7 @@ disagree with this mission.&lt;/p&gt;</code></pre>
       </div>
 
       <p>
-        Here's what an <code>&lt;h2&gt;</code> with a subheading looks like,
-        using an example from the HTML standard that uses the
-        <code>&lt;p&gt;</code> for a subtitle:
+        Here's what an <code>&lt;h2&gt;</code> with a subheading looks like:
       </p>
 
       <div class="example">
@@ -2287,11 +2304,7 @@ disagree with this mission.&lt;/p&gt;</code></pre>
         </p>
       </div>
 
-      <p>
-        Subheadings for <code>&lt;h3&gt;</code>&ndash;<code>&lt;h6&gt;</code>
-        headings have the same font-size as normal text but are visually
-        differentiated by their lighter font weight:
-      </p>
+      <p>And an <code>&lt;h3&gt;</code>:</p>
 
       <div class="example">
         <hgroup>
@@ -4047,6 +4060,30 @@ int main()
         <aside class="warning">
           <strong>Warning!</strong> Too many asides can overwhelm the reader.
         </aside>
+
+        <h3 class="notoc"><b>Customization:</b> aside design</h3>
+
+        <p>
+          You can change the design of asides by adding your own CSS. For
+          example:
+        </p>
+
+        <pre><code>&lt;style&gt;
+  aside {
+    border-left: none;
+    border-right: none;
+    border-radius: 0;
+    background-color: inherit;
+    font-weight: 300;
+  }
+&lt;/style&gt;</code></pre>
+
+        <p>Now <code>&lt;aside&gt;</code>'s will look like this:</p>
+
+        <aside class="custom">
+          People ask me what I do for fun when I'm not at work. But I'm paid to
+          do my hobby, so I never know what to answer.
+        </aside>
       </details>
 
       <h2 id="footer">Footers</h2>
@@ -4189,6 +4226,19 @@ int main()
       </p>
 
       <pre><code>url = 'https://github.com/seanh/oatcake/commit/8675ffcb168b1d76d708c84a2821c20a3f99e86d'</code></pre>
+
+      <p>
+        A horizontal scrollbar is also used to prevent wrapping in long
+        <code>&lt;summary&gt;</code>'s:
+      </p>
+
+      <details>
+        <summary>
+          This is a really long <code>&lt;summary&gt;</code> element that will
+          get a horizontal scrollbar rather than wrapping.
+        </summary>
+        These are the details.
+      </details>
 
       <p>
         Oatcake also prevents wrapping within certain inline elements:
