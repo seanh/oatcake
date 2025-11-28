@@ -153,7 +153,6 @@
 
     aside,
     blockquote,
-    caption,
     details,
     dl,
     figcaption,
@@ -792,11 +791,13 @@
       width: 100%;
     }
 
+    caption,
     td,
     th {
       line-height: var(--ok-line-height);
       padding-bottom: calc(0.5 * var(--ok-line-height));
       padding-top: calc(0.5 * var(--ok-line-height));
+      text-align: left;
     }
 
     :is(td, th):not(:first-child) {
@@ -810,12 +811,6 @@
 
     th {
       font-weight: bold;
-      text-align: left;
-    }
-
-    caption {
-      color: var(--ok-color-muted-fg);
-      text-align: center;
     }
   }
 }
