@@ -617,7 +617,6 @@
   /* Figures and captions. */
   @layer elements {
     figcaption {
-      color: var(--ok-color-muted-fg);
       text-align: center;
     }
 
