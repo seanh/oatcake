@@ -153,6 +153,7 @@
 
     aside,
     blockquote,
+    caption,
     details,
     dl,
     figcaption,
@@ -181,11 +182,12 @@
 
     /* Some elements need a bit more breathing space above and below or they feel cramped. */
     audio,
+    figure,
     iframe,
     img,
     svg,
-    video,
-    figure {
+    table,
+    video {
       margin-bottom: calc(var(--ok-line-height) * 2);
       margin-top: calc(var(--ok-line-height) * 2);
     }
@@ -780,6 +782,40 @@
       border: 1px solid var(--ok-color-border);
       padding: var(--ok-line-height) calc(0.5 * var(--ok-line-height) - 1px)
         calc(var(--ok-line-height) - 2px);
+    }
+  }
+
+  /* Tables. */
+  @layer elements {
+    table {
+      border-collapse: collapse;
+      width: 100%;
+    }
+
+    td,
+    th {
+      line-height: var(--ok-line-height);
+      padding-bottom: calc(0.5 * var(--ok-line-height));
+      padding-top: calc(0.5 * var(--ok-line-height));
+    }
+
+    :is(td, th):not(:first-child) {
+      padding-left: var(--ok-line-height);
+    }
+
+    :is(tbody, tfoot) :is(td, th) {
+      border-top: 1px solid var(--ok-color-border);
+      padding-top: calc(0.5 * var(--ok-line-height) - 1px);
+    }
+
+    th {
+      font-weight: bold;
+      text-align: left;
+    }
+
+    caption {
+      color: var(--ok-color-muted-fg);
+      text-align: center;
     }
   }
 }
