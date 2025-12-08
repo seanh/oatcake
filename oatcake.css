@@ -3,6 +3,7 @@
 
   :host,
   :root {
+    --ok-bold-fontweight: 700;
     --ok-border-radius: 7px;
     --ok-color-bg: white;
     --ok-color-block-bg: rgb(248, 249, 250);
@@ -313,7 +314,11 @@
        https://html.spec.whatwg.org/multipage/rendering.html#phrasing-content-3 */
     b,
     strong {
-      font-weight: bolder;
+      font-weight: var(--ok-bold-fontweight);
+    }
+
+    :is(b, strong) :is(b, strong) {
+      font-weight: 900;
     }
   }
 
@@ -492,7 +497,7 @@
     }
 
     dt {
-      font-weight: bold;
+      font-weight: var(--ok-bold-fontweight);
     }
 
     /* We don't generally want a blank line between two <dd>'s that belong to the
@@ -536,7 +541,7 @@
     h4,
     h5,
     h6 {
-      font-weight: bold;
+      font-weight: var(--ok-bold-fontweight);
       line-height: var(--ok-line-height);
     }
 
@@ -577,6 +582,10 @@
     :is(h1, h2, h3, h4, h5, h6) :is(code, samp) {
       background-color: inherit;
       padding: 0;
+    }
+
+    :is(h1, h2, h3, h4, h5, h6) :is(b, strong) {
+      font-weight: 900;
     }
 
     /* Surround <code> elements in headings with back-ticks to make them a bit more
@@ -809,7 +818,7 @@
     }
 
     th {
-      font-weight: bold;
+      font-weight: var(--ok-bold-fontweight);
     }
   }
 }
