@@ -509,8 +509,8 @@
       font-size: 19px; /* The same size as an <h2> heading, so subheadings can be used with <h1>'s or <h2>'s. */
     }
 
-    hgroup:has(h1, h2, h3, h4, h5, h6) p {
-      font-weight: 300; /* Use a lighter font-weight for subheadings. I think this looks nice and it adds a little more visual distinction between subheadings and headings or normal text, which I think is needed. This also allows subheadings to work with h3-headings: in this case the lighter font-weight is the only thing that distinguishes the subheading from normal text. */
+    hgroup:has(h3, h4, h5, h6) p {
+      font-weight: 300; /* Subheadings of h3-h6 headings use a lighter font-weight instead of a larger font-size. */
     }
 
     hgroup:has(h1, h2) p :is(code, samp) {
