@@ -484,10 +484,6 @@
     ol li {
       margin-left: 30px;
     }
-
-    li::marker {
-      color: var(--ok-color-muted-fg);
-    }
   }
 
   /* Description lists. */
