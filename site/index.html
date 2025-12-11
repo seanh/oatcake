@@ -3795,19 +3795,17 @@ int main()
       <h2 id="aside">Asides</h2>
 
       <p>
-        You can create pull-quotes and call-out boxes with
-        <code>&lt;aside&gt;</code>.
+        You can create pull-quotes and call-out boxes with the standard HTML
+        <code>&lt;aside&gt;</code> element.
       </p>
 
       <p>
         In-line with Oatcake's consistently unshowy nature, asides are styled
-        the same as preformatted text blocks, code blocks and sample output
-        blocks, and very similarly to disclosure widgets. The difference is that
-        an aside's contents aren't preformatted, monospaced, or collapsible.
-        It's just a box!
+        similarly to preformatted text blocks, code blocks, sample output
+        blocks, and disclosure widgets. The difference is that an aside's
+        contents aren't preformatted, monospaced, or collapsible. It's just a
+        box! This:
       </p>
-
-      <p>This:</p>
 
       <pre><code>&lt;aside&gt;
   &lt;p&gt;
@@ -3844,6 +3842,32 @@ int main()
 
       <details>
         <summary><b>Details:</b> asides</summary>
+
+        <h3 class="notoc">Design notes</h3>
+
+        <p>
+          Having asides look <em>exactly</em> the same as preformatted text
+          blocks would be taking it a bit too far, even for Oatcake, so asides
+          use a slightly different border style: with top and bottom borders but
+          no side borders.
+        </p>
+
+        <p>
+          The intention is to make asides different enough from code blocks to
+          differentiate them but not different enough that the multiple
+          different types of boxes become distracting to readers.
+        </p>
+
+        <p>
+          Top-and-bottom borders are a commonly used style for things like
+          pull-quotes and call-out boxes, and I hope it conveys
+          <i
+            >this is tangentially related to but separate from the surrounding
+            flow</i
+          >
+          well enough.
+        </p>
+
         <h3 class="notoc">Usage</h3>
 
         <p>
