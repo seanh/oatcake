@@ -781,9 +781,9 @@
     aside {
       background-color: var(--ok-color-block-bg);
       color: var(--ok-color-block-fg);
-      border-radius: var(--ok-border-radius);
-      border: 1px solid var(--ok-color-border);
-      padding: var(--ok-line-height) calc(0.5 * var(--ok-line-height) - 1px)
+      border-bottom: 1px solid var(--ok-color-border);
+      border-top: 1px solid var(--ok-color-border);
+      padding: var(--ok-line-height) calc(0.5 * var(--ok-line-height))
         calc(var(--ok-line-height) - 2px);
     }
   }
