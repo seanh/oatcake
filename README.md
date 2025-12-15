@@ -34,10 +34,7 @@ cog.outl("")
 ]]]-->
 
 ```html
-<link
-  rel="stylesheet"
-  href="https://cdn.jsdelivr.net/npm/oatcake@1.0.0-rc.20"
-/>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/oatcake@1.0.0" />
 ```
 
 <!--[[[end]]]-->
@@ -79,10 +76,7 @@ cog.outl(f"""
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Page title</title>
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/oatcake@1.0.0-rc.20"
-    />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/oatcake@1.0.0" />
   </head>
   <body style="max-width:40em; margin:0 auto; padding:0 12px;">
     <h1>Page Title</h1>
@@ -129,10 +123,7 @@ cog.outl(f"""
 ```html
 <div>
   <template shadowrootmode="open">
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/oatcake@1.0.0-rc.20"
-    />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/oatcake@1.0.0" />
 
     <p>
       Oatcake's styles will be applied to everything within the "template"
