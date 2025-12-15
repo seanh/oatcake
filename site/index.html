@@ -117,6 +117,17 @@
         border: none;
         margin-top: calc(3 * var(--ok-line-height));
       }
+      table:is(.custom-head, .custom-body, .custom-foot) :is(th, td) {
+        padding-left: calc(0.5 * var(--ok-line-height));
+        padding-right: calc(0.5 * var(--ok-line-height));
+      }
+      table.custom-head thead,
+      table.custom-foot tfoot {
+        background-color: var(--ok-color-block-bg);
+      }
+      table.custom-body tbody tr:nth-child(odd) {
+        background-color: var(--ok-color-block-bg);
+      }
     </style>
     <link
       rel="icon"
@@ -2114,12 +2125,9 @@ disagree with this mission.&lt;/p&gt;</code></pre>
         <p>
           <code>&lt;code&gt;</code> and <code>&lt;samp&gt;</code> elements in
           headings get a monospaced font but this can be quite subtle so Oatcake
-          also surrounds the code in backticks (thanks to
-          <a href="https://tailwindcss-typography.vercel.app/"
-            >Tailwind CSS Typography</a
-          >
-          for the idea). Oatcake also prevents line-wrapping within a
-          <code>&lt;code&gt;</code> or <code>&lt;samp&gt;</code> in a heading.
+          also surrounds the code in backticks. Oatcake also prevents
+          line-wrapping within a <code>&lt;code&gt;</code> or
+          <code>&lt;samp&gt;</code> in a heading.
         </p>
 
         <div class="example">
@@ -4133,58 +4141,561 @@ int main()
       <h2 id="table">Tables</h2>
 
       <p>
-        Tables get a pared-down look and the same colors and vertical rhythm as
-        Oatcake uses for other elements. The design is blatantly appropriated
-        from the tables in
-        <a href="https://tailwindcss-typography.vercel.app/"
-          >Tailwind CSS Typography</a
-        >, with added support for the <code>&lt;caption&gt;</code> element for
-        table captions:
+        You create an HTML table by using a <code>&lt;table&gt;</code> element
+        containing a <code>&lt;tr&gt;</code> for each table row and, within each
+        <code>&lt;tr&gt;</code>, a <code>&lt;td&gt;</code> for each cell of
+        table data. This:
+      </p>
+
+      <pre><code>&lt;table&gt;
+  &lt;tr&gt;
+    &lt;td&gt;&lt;/td&gt; &lt;!-- Empty cell --&gt;
+    &lt;td&gt;He-Man&lt;/td&gt;
+    &lt;td&gt;Skeletor&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;Role&lt;/td&gt;
+    &lt;td&gt;Hero&lt;/td&gt;
+    &lt;td&gt;Villain&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;Weapon&lt;/td&gt;
+    &lt;td&gt;Power Sword&lt;/td&gt;
+    &lt;td&gt;Havoc Staff&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;Dark secret&lt;/td&gt;
+    &lt;td&gt;Expert florist&lt;/td&gt;
+    &lt;td&gt;Cries at romcoms&lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/table&gt;</code></pre>
+
+      <p>
+        &hellip;renders like this with Oatcake (example from
+        <a
+          href="https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/caption#try_it"
+          >MDN</a
+        >):
       </p>
 
       <table>
+        <tr>
+          <td></td>
+          <td>He-Man</td>
+          <td>Skeletor</td>
+        </tr>
+        <tr>
+          <td>Role</td>
+          <td>Hero</td>
+          <td>Villain</td>
+        </tr>
+        <tr>
+          <td>Weapon</td>
+          <td>Power Sword</td>
+          <td>Havoc Staff</td>
+        </tr>
+        <tr>
+          <td>Dark secret</td>
+          <td>Expert florist</td>
+          <td>Cries at romcoms</td>
+        </tr>
+      </table>
+
+      <p>
+        You can replace some of the <code>&lt;td&gt;</code>'s with
+        <code>&lt;th&gt;</code> (table header) elements to represent row and
+        column headers. Oatcake styles <code>&lt;th&gt;</code>'s in bold. This:
+      </p>
+
+      <pre><code>&lt;table&gt;
+  &lt;tr&gt;
+    &lt;td&gt;&lt;/td&gt;
+    <mark>&lt;th&gt;He-Man&lt;/th&gt;</mark>
+    <mark>&lt;th&gt;Skeletor&lt;/th&gt;</mark>
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    <mark>&lt;th&gt;Role&lt;/th&gt;</mark>
+    [&hellip;]
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    <mark>&lt;th&gt;Weapon&lt;/th&gt;</mark>
+    [&hellip;]
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    <mark>&lt;th&gt;Dark secret&lt;/th&gt;</mark>
+    [&hellip;]
+  &lt;/tr&gt;
+&lt;/table&gt;</code></pre>
+
+      <p>&hellip;renders like this:</p>
+
+      <table>
+        <tr>
+          <td></td>
+          <th>He-Man</th>
+          <th>Skeletor</th>
+        </tr>
+        <tr>
+          <th>Role</th>
+          <td>Hero</td>
+          <td>Villain</td>
+        </tr>
+        <tr>
+          <th>Weapon</th>
+          <td>Power Sword</td>
+          <td>Havoc Staff</td>
+        </tr>
+        <tr>
+          <th>Dark secret</th>
+          <td>Expert florist</td>
+          <td>Cries at romcoms</td>
+        </tr>
+      </table>
+
+      <p>
+        Optionally, you can wrap one or more <code>&lt;tr&gt;</code>'s in a
+        <code>&lt;thead&gt;</code> (table head) element to indicate that they're
+        the table's header rows. Most Markdown extensions for creating tables
+        will output tables with <code>&lt;thead&gt;</code>'s, and they can be
+        useful for targeting custom CSS rules (see below). By default Oatcake
+        leaves <code>&lt;thead&gt;</code>'s unstyled and semantic-only, but
+        <code>&lt;th&gt;</code>'s inside a <code>&lt;thead&gt;</code>
+        are still bold. This:
+      </p>
+
+      <pre><code>&lt;table&gt;
+<mark>  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Character&lt;/th&gt;
+      &lt;th&gt;Role&lt;/th&gt;
+      &lt;th&gt;Weapon&lt;/th&gt;
+      &lt;th&gt;Dark secret&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;</mark>
+  &lt;tr&gt;
+    [&hellip;]
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    [&hellip;]
+  &lt;/tr&gt;
+&lt;/table&gt;</code></pre>
+
+      <p>&hellip;renders like this:</p>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Character</th>
+            <th>Role</th>
+            <th>Weapon</th>
+            <th>Dark secret</th>
+          </tr>
+        </thead>
+        <tr>
+          <td>He-Man</td>
+          <td>Hero</td>
+          <td>Power Sword</td>
+          <td>Expert florist</td>
+        </tr>
+        <tr>
+          <td>Skeletor</td>
+          <td>Villain</td>
+          <td>Havoc Staff</td>
+          <td>Cries at romcoms</td>
+        </tr>
+      </table>
+
+      <p>
+        You can add a <code>&lt;caption&gt;</code> element to a table to give it
+        a caption or title. This:
+      </p>
+
+      <pre><code>&lt;table&gt;
+  <mark>&lt;caption&gt;He-Man and Skeletor facts.&lt;/caption&gt;</mark>
+  [&hellip;]
+&lt;/table&gt;</code></pre>
+
+      <p>&hellip;renders like this:</p>
+
+      <table>
         <caption>
-          <b>Table 1:</b>
-          an example table lifted from
-          <a href="https://tailwindcss-typography.vercel.app/"
-            >Tailwind CSS Typography</a
-          >, as styled by Oatcake.
+          He-Man and Skeletor facts.
         </caption>
         <thead>
           <tr>
-            <th scope="col">Wrestler</th>
-            <th scope="col">Origin</th>
-            <th scope="col">Finisher</th>
+            <th scope="col">Character</th>
+            <th scope="col">Role</th>
+            <th scope="col">Weapon</th>
+            <th scope="col">Dark secret</th>
           </tr>
         </thead>
-        <tbody>
-          <tr>
-            <td>Bret "The Hitman" Hart</td>
-            <td>Calgary, AB</td>
-            <td>Sharpshooter</td>
-          </tr>
-          <tr>
-            <td>Stone Cold Steve Austin</td>
-            <td>Austin, TX</td>
-            <td>Stone Cold Stunner</td>
-          </tr>
-          <tr>
-            <td>Randy Savage</td>
-            <td>Sarasota, FL</td>
-            <td>Elbow Drop</td>
-          </tr>
-          <tr>
-            <td>Vader</td>
-            <td>Boulder, CO</td>
-            <td>Vader Bomb</td>
-          </tr>
-          <tr>
-            <td>Razor Ramon</td>
-            <td>Chuluota, FL</td>
-            <td>Razor's Edge</td>
-          </tr>
-        </tbody>
+        <tr>
+          <td>He-Man</td>
+          <td>Hero</td>
+          <td>Power Sword</td>
+          <td>Expert florist</td>
+        </tr>
+        <tr>
+          <td>Skeletor</td>
+          <td>Villain</td>
+          <td>Havoc Staff</td>
+          <td>Cries at romcoms</td>
+        </tr>
       </table>
+
+      <p>
+        Alternatively, you can put a <code>&lt;table&gt;</code> inside a
+        <code>&lt;figure&gt;</code> (see
+        <a href="#figure">Figures and captions</a>). In this case the HTML
+        standard says you should use the <code>&lt;figure&gt;</code>'s
+        <code>&lt;figcaption&gt;</code> element instead of the
+        <code>&lt;table&gt;</code>'s <code>&lt;caption&gt;</code> element. This:
+      </p>
+
+      <pre><code><mark>&lt;figure&gt;
+  &lt;figcaption&gt;&lt;b&gt;Table 1:&lt;/b&gt; He-Man and Skeletor facts.&lt;/figcaption&gt;</mark>
+  &lt;table&gt;
+    [&hellip;]
+  &lt;/table&gt;
+<mark>&lt;/figure&gt;</mark></code></pre>
+
+      <p>&hellip;renders like this:</p>
+
+      <figure>
+        <figcaption><b>Table 1:</b> He-Man and Skeletor facts.</figcaption>
+        <table>
+          <thead>
+            <tr>
+              <th scope="col">Character</th>
+              <th scope="col">Role</th>
+              <th scope="col">Weapon</th>
+              <th scope="col">Dark secret</th>
+            </tr>
+          </thead>
+          <tr>
+            <td>He-Man</td>
+            <td>Hero</td>
+            <td>Power Sword</td>
+            <td>Expert florist</td>
+          </tr>
+          <tr>
+            <td>Skeletor</td>
+            <td>Villain</td>
+            <td>Havoc Staff</td>
+            <td>Cries at romcoms</td>
+          </tr>
+        </table>
+      </figure>
+
+      <details>
+        <summary><b>Customization:</b> tables</summary>
+
+        <p>
+          There are lots of ways to build on Oatcake's simple default table
+          styling by adding your own CSS. Here are some examples&hellip;
+        </p>
+
+        <h3 class="notoc">Moving the caption to the bottom of a table</h3>
+
+        <p>
+          You can move a caption to the bottom of a figure just by moving the
+          <code>&lt;figcaption&gt;</code> element to the bottom of the
+          <code>&lt;figure&gt;</code> element, but this doesn't work with
+          <code>&lt;table&gt;</code> and <code>&lt;caption&gt;</code>: the
+          <code>&lt;caption&gt;</code> element must always be at the top of the
+          <code>&lt;table&gt;</code> in the HTML. If you still want the caption
+          to be <em>rendered</em> below the table you can do this by adding
+          <code>style="caption-side: bottom;"</code> to the
+          <code>&lt;table&gt;</code>. This:
+        </p>
+
+        <pre><code>&lt;table <mark>style="caption-side: bottom;"</mark>&gt;
+  &lt;caption&gt;He-Man and Skeletor facts.&lt;/caption&gt;
+  [&hellip;]
+&lt;/table&gt;</code></pre>
+
+        <p>&hellip;renders like this:</p>
+
+        <table style="caption-side: bottom">
+          <caption>
+            He-Man and Skeletor facts.
+          </caption>
+          <thead>
+            <tr>
+              <th scope="col">Character</th>
+              <th scope="col">Role</th>
+              <th scope="col">Weapon</th>
+              <th scope="col">Dark secret</th>
+            </tr>
+          </thead>
+          <tr>
+            <td>He-Man</td>
+            <td>Hero</td>
+            <td>Power Sword</td>
+            <td>Expert florist</td>
+          </tr>
+          <tr>
+            <td>Skeletor</td>
+            <td>Villain</td>
+            <td>Havoc Staff</td>
+            <td>Cries at romcoms</td>
+          </tr>
+        </table>
+
+        <h3 class="notoc">Styling table captions</h3>
+
+        <p>
+          It's easy to style table captions by writing CSS rules that target the
+          <code>&lt;caption&gt;</code> element. For example, you can easily make
+          a single caption bold by putting
+          <code>&lt;b&gt;&hellip;&lt;/b&gt;</code>'s inside it, but if you want
+          to make <em>all</em> table captions bold it's easier to add some CSS
+          like this to your page:
+        </p>
+
+        <pre><code>caption {
+  font-weight: bold;
+}</code></pre>
+
+        <p>Now all table captions will look like this:</p>
+
+        <table style="caption-side: bottom">
+          <caption style="font-weight: bold">
+            He-Man and Skeletor facts.
+          </caption>
+          <thead>
+            <tr>
+              <th scope="col">Character</th>
+              <th scope="col">Role</th>
+              <th scope="col">Weapon</th>
+              <th scope="col">Dark secret</th>
+            </tr>
+          </thead>
+          <tr>
+            <td>He-Man</td>
+            <td>Hero</td>
+            <td>Power Sword</td>
+            <td>Expert florist</td>
+          </tr>
+          <tr>
+            <td>Skeletor</td>
+            <td>Villain</td>
+            <td>Havoc Staff</td>
+            <td>Cries at romcoms</td>
+          </tr>
+        </table>
+
+        <h3 class="notoc">Styling table header rows</h3>
+
+        <p>
+          You can customize the style of table header rows by targeting the
+          <code>&lt;thead&gt;</code> element. For example:
+        </p>
+
+        <pre><code>thead {
+  background-color: var(--ok-color-block-bg);
+}
+td, th {
+  padding-left: calc(.5 * var(--ok-line-height));
+  padding-right: calc(.5 * var(--ok-line-height));
+}</code></pre>
+
+        <p>Now tables with header rows will look like this:</p>
+
+        <table class="custom-head">
+          <caption>
+            He-Man and Skeletor facts.
+          </caption>
+          <thead>
+            <tr>
+              <th scope="col">Character</th>
+              <th scope="col">Role</th>
+              <th scope="col">Weapon</th>
+              <th scope="col">Dark secret</th>
+            </tr>
+          </thead>
+          <tr>
+            <td>He-Man</td>
+            <td>Hero</td>
+            <td>Power Sword</td>
+            <td>Expert florist</td>
+          </tr>
+          <tr>
+            <td>Skeletor</td>
+            <td>Villain</td>
+            <td>Havoc Staff</td>
+            <td>Cries at romcoms</td>
+          </tr>
+        </table>
+
+        <h3 class="notoc">Styling table footer rows</h3>
+
+        <p>
+          You can use the <code>&lt;tfoot&gt;</code> element to add one or more
+          footer rows to a table. Like <code>&lt;thead&gt;</code>,
+          <code>&lt;tfoot&gt;</code> is unstyled by Oatcake by default, but you
+          can add your own CSS to style table footers:
+        </p>
+
+        <pre><code>thead, tfoot {
+  background-color: var(--ok-color-block-bg);
+}
+td, th {
+  padding-left: calc(.5 * var(--ok-line-height));
+  padding-right: calc(.5 * var(--ok-line-height));
+}</code></pre>
+
+        <p>
+          Now tables with header and footer rows will look like this (example
+          from
+          <a
+            href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Styling_basics/Tables#a_typical_html_table"
+            >MDN</a
+          >
+          again):
+        </p>
+
+        <table class="custom-head custom-foot">
+          <thead>
+            <tr>
+              <th scope="col">Band</th>
+              <th scope="col">Formed</th>
+              <th scope="col">No. Albums</th>
+              <th scope="col">Most famous song</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">Buzzcocks</th>
+              <td>1976</td>
+              <td>9</td>
+              <td>Ever fallen in love</td>
+            </tr>
+            <tr>
+              <th scope="row">The Clash</th>
+              <td>1976</td>
+              <td>6</td>
+              <td>London Calling</td>
+            </tr>
+            <tr>
+              <th scope="row">The Damned</th>
+              <td>1976</td>
+              <td>10</td>
+              <td>Smash it up</td>
+            </tr>
+            <tr>
+              <th scope="row">Sex Pistols</th>
+              <td>1975</td>
+              <td>1</td>
+              <td>Anarchy in the UK</td>
+            </tr>
+            <tr>
+              <th scope="row">Sham 69</th>
+              <td>1976</td>
+              <td>13</td>
+              <td>If The Kids Are United</td>
+            </tr>
+            <tr>
+              <th scope="row">Siouxsie and the Banshees</th>
+              <td>1976</td>
+              <td>11</td>
+              <td>Hong Kong Garden</td>
+            </tr>
+            <tr>
+              <th scope="row">Stiff Little Fingers</th>
+              <td>1977</td>
+              <td>10</td>
+              <td>Suspect Device</td>
+            </tr>
+            <tr>
+              <th scope="row">The Stranglers</th>
+              <td>1974</td>
+              <td>17</td>
+              <td>No More Heroes</td>
+            </tr>
+          </tbody>
+          <tfoot>
+            <tr>
+              <th scope="row" colspan="2">Total albums</th>
+              <td colspan="2">77</td>
+            </tr>
+          </tfoot>
+        </table>
+
+        <h3 class="notoc">Styling table body rows</h3>
+
+        <p>
+          One last example, you can give the body rows of tables alternating
+          background colors with some custom CSS:
+        </p>
+
+        <pre><code>tbody tr:nth-child(odd) {
+  background-color: var(--ok-color-block-bg);
+}</code></pre>
+
+        <p>Now table body rows will look like this:</p>
+
+        <table class="custom-body">
+          <thead>
+            <tr>
+              <th scope="col">Band</th>
+              <th scope="col">Formed</th>
+              <th scope="col">No. Albums</th>
+              <th scope="col">Most famous song</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">Buzzcocks</th>
+              <td>1976</td>
+              <td>9</td>
+              <td>Ever fallen in love</td>
+            </tr>
+            <tr>
+              <th scope="row">The Clash</th>
+              <td>1976</td>
+              <td>6</td>
+              <td>London Calling</td>
+            </tr>
+            <tr>
+              <th scope="row">The Damned</th>
+              <td>1976</td>
+              <td>10</td>
+              <td>Smash it up</td>
+            </tr>
+            <tr>
+              <th scope="row">Sex Pistols</th>
+              <td>1975</td>
+              <td>1</td>
+              <td>Anarchy in the UK</td>
+            </tr>
+            <tr>
+              <th scope="row">Sham 69</th>
+              <td>1976</td>
+              <td>13</td>
+              <td>If The Kids Are United</td>
+            </tr>
+            <tr>
+              <th scope="row">Siouxsie and the Banshees</th>
+              <td>1976</td>
+              <td>11</td>
+              <td>Hong Kong Garden</td>
+            </tr>
+            <tr>
+              <th scope="row">Stiff Little Fingers</th>
+              <td>1977</td>
+              <td>10</td>
+              <td>Suspect Device</td>
+            </tr>
+            <tr>
+              <th scope="row">The Stranglers</th>
+              <td>1974</td>
+              <td>17</td>
+              <td>No More Heroes</td>
+            </tr>
+          </tbody>
+        </table>
+      </details>
 
       <h2 id="hr">Horizontal rules</h2>
 

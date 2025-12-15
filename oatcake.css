@@ -625,11 +625,12 @@
       text-align: center;
     }
 
-    /* Images, videos, iframe and audio normally have two lines of bottom margin
-       but we only want one line of margin between an image, video, iframe or
-       audio in a figure and the <figcaption> that follows it. Achieve this by
-       applying a negative margin to the <figcaption> element. */
-    figure :is(audio, iframe, img, svg, video) + figcaption {
+    /* Images, videos, iframe, audio, and tables normally have two lines
+       of bottom margin but we only want one line of margin between an
+       image, video, iframe, audio or table in a figure and the <figcaption>
+       that follows it. Achieve this by applying a negative margin to the
+       <figcaption> element. */
+    figure :is(audio, iframe, img, svg, video, table) + figcaption {
       margin-top: calc(var(--ok-line-height) * -1);
     }
   }
@@ -802,6 +803,10 @@
       padding-bottom: calc(0.5 * var(--ok-line-height));
       padding-top: calc(0.5 * var(--ok-line-height));
       text-align: left;
+    }
+
+    table caption {
+      text-align: center;
     }
 
     :is(td, th):not(:first-child) {

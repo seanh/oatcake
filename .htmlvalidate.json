@@ -10,6 +10,8 @@
     "text-content": "off",
     "heading-level": "off",
     "unique-landmark": "off",
-    "no-unknown-elements": "error"
+    "no-unknown-elements": "error",
+    "prefer-tbody": "off",
+    "wcag/h63": "off"
   }
 }
