@@ -1,7 +1,7 @@
 {
   "author": "Sean Hammond (https://seanh.cc)",
   "devDependencies": {
-    "html-validate": "^11.5.5",
+    "html-validate": "^11.6.2",
     "lightningcss-cli": "^1.32.0",
     "prettier": "^3.9.4"
   },
