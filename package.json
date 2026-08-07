@@ -3,7 +3,7 @@
   "devDependencies": {
     "html-validate": "^11.5.5",
     "lightningcss-cli": "^1.32.0",
-    "prettier": "^3.9.4"
+    "prettier": "^3.9.6"
   },
   "files": [
     "oatcake.min.css"
